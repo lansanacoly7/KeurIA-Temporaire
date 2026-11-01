@@ -17,7 +17,7 @@ from .serializers import (
     LessonDetailSerializer,
     ModuleSerializer,
 )
-from .tracks import track_for
+from .tracks import can_open_lesson
 from .versions import live_version
 
 
@@ -118,10 +118,8 @@ class Content79View(PublicReadView):
     Contenu en ligne d'une leçon 7-9 modifiée dans le studio ; 404 si la leçon n'a pas été modifiée (le site garde alors son contenu d'origine).
     """
     def get(self, request, lesson_id):
-        if request.user and request.user.is_authenticated:
-            assigned_track = track_for(request.user)
-            if assigned_track and assigned_track != '7-9':
-                return Response({'error': "Cette leçon n'appartient pas à ton parcours."}, status=status.HTTP_403_FORBIDDEN)
+        if not can_open_lesson(request.user, '7-9'):
+            return Response({'error': "Cette leçon n'appartient pas à ton parcours."}, status=status.HTTP_403_FORBIDDEN)
 
         version = live_version(ContentVersion.KIND_LESSON79, lesson_id)
         if version is None or version.source == ContentVersion.SOURCE_IMPORT:
@@ -139,10 +137,8 @@ class LessonDetailView(PublicReadView):
             Lesson.objects.select_related('module__track', 'content'),
             lesson_id=lesson_id
         )
-        if request.user and request.user.is_authenticated:
-            assigned_track = track_for(request.user)
-            if assigned_track and lesson.module.track.key != assigned_track:
-                return Response({'error': "Cette leçon n'appartient pas à ton parcours."}, status=status.HTTP_403_FORBIDDEN)
+        if not can_open_lesson(request.user, lesson.module.track.key):
+            return Response({'error': "Cette leçon n'appartient pas à ton parcours."}, status=status.HTTP_403_FORBIDDEN)
 
         serializer = LessonDetailSerializer(lesson)
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -201,35 +197,39 @@ class LessonFicheView(APIView):
             }
             return Response(data, status=status.HTTP_200_OK)
 
-        # Chercher dans ContentVersion
-        cv = ContentVersion.objects.filter(kind__in=['lesson79ecole', 'lesson1012ecole', 'lesson79'], key=lesson_id).order_by('-number').first()
-        if cv and isinstance(cv.content, dict) and 'fiche' in cv.content:
-            fiche_obj = cv.content['fiche']
-            data = {
-                'lesson_id': lesson_id,
-                'title': lesson.title,
-                'fiche': fiche_obj,
-                **fiche_obj,
-            }
-            return Response(data, status=status.HTTP_200_OK)
+        # Chercher dans la version en ligne de ContentVersion (parcours école uniquement)
+        for kind in ('lesson79ecole', 'lesson1012ecole', 'lesson1315ecole'):
+            cv = live_version(kind, lesson_id)
+            if cv and isinstance(cv.content, dict) and 'fiche' in cv.content:
+                fiche_obj = cv.content['fiche']
+                data = {
+                    'lesson_id': lesson_id,
+                    'title': lesson.title,
+                    'fiche': fiche_obj,
+                    **fiche_obj,
+                }
+                return Response(data, status=status.HTTP_200_OK)
 
-        from apps.curriculum import parcours79
-        content_dir = parcours79.FRONTEND / 'content' / 'parcours79ecole'
-        if content_dir.exists():
-            for jfile in content_dir.glob('m*.json'):
-                try:
-                    jdata = json.loads(jfile.read_text(encoding='utf-8'))
-                    for les in jdata.get('lessons', []):
-                        if les.get('id') == lesson_id and 'fiche' in les:
-                            fiche_obj = les['fiche']
-                            data = {
-                                'lesson_id': lesson_id,
-                                'title': les.get('title', lesson.title),
-                                'fiche': fiche_obj,
-                                **fiche_obj,
-                            }
-                            return Response(data, status=status.HTTP_200_OK)
-                except Exception:
-                    continue
+        from apps.curriculum.parcours79 import TRACK_CONFIGS
+        for _trk, tcfg in TRACK_CONFIGS.items():
+            if not tcfg.get('school'):
+                continue
+            cdir = tcfg.get('content_dir')
+            if cdir and cdir.exists():
+                for jfile in cdir.glob(tcfg.get('file_glob', '*.json')):
+                    try:
+                        jdata = json.loads(jfile.read_text(encoding='utf-8'))
+                        for les in jdata.get('lessons', []):
+                            if les.get('id') == lesson_id and 'fiche' in les:
+                                fiche_obj = les['fiche']
+                                data = {
+                                    'lesson_id': lesson_id,
+                                    'title': les.get('title', lesson.title),
+                                    'fiche': fiche_obj,
+                                    **fiche_obj,
+                                }
+                                return Response(data, status=status.HTTP_200_OK)
+                    except Exception:
+                        continue
 
         return Response({'error': "Fiche introuvable pour cette leçon."}, status=status.HTTP_404_NOT_FOUND)

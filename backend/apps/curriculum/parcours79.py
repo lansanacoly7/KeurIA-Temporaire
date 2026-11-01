@@ -53,6 +53,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson79',
         'studio': True,
         'school': False,
+        'live': True,
+        'picto_grid': (4, 3),
     },
     '7-9-ecole': {
         'label': '7–9 ans École',
@@ -72,6 +74,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson79ecole',
         'studio': False,
         'school': True,
+        'live': False,
+        'picto_grid': (4, 3),
     },
     '10-12': {
         'label': '10–12 ans',
@@ -91,6 +95,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson1012',
         'studio': False,
         'school': False,
+        'live': False,
+        'picto_grid': (3, 3),
     },
     '10-12-ecole': {
         'label': '10–12 ans École',
@@ -110,6 +116,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson1012ecole',
         'studio': False,
         'school': True,
+        'live': False,
+        'picto_grid': (3, 3),
     },
     '13-15': {
         'label': '13–15 ans',
@@ -129,6 +137,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson1315',
         'studio': False,
         'school': False,
+        'live': False,
+        'picto_grid': (3, 3),
     },
     '13-15-ecole': {
         'label': '13–15 ans École',
@@ -148,6 +158,8 @@ TRACK_CONFIGS = {
         'kind': 'lesson1315ecole',
         'studio': False,
         'school': True,
+        'live': False,
+        'picto_grid': (3, 3),
     },
 }
 
@@ -229,27 +241,36 @@ def sentence_lengths(text):
     return [n for n in (len([w for w in p.split() if re.search(r'\w', w)]) for p in pieces) if n > 0]
 
 
-def _catalog_worlds(include_hidden=False, use_base=False):
+def _catalog_worlds(include_hidden=False, use_base=False, track='7-9', chapters=None):
     from apps.curriculum.catalog import base_catalog, get_active_catalog
     worlds = {}
-    catalog = base_catalog('7-9') if use_base else get_active_catalog('7-9')
-    for mod in sorted(catalog.get('modules', []), key=lambda m: m.get('order', 0)):
-        if mod.get('hidden') and not include_hidden:
-            continue
-        mod_lessons = [
-            les for les in catalog.get('lessons', [])
-            if les.get('moduleId') == mod['id'] and (include_hidden or not les.get('hidden'))
-        ]
-        mod_lessons.sort(key=lambda les: les.get('order', 0))
-        worlds[mod['id']] = [{'id': les['id'], 'title': les['title']} for les in mod_lessons]
-
-    for track in TRACKS_CATALOG:
-        if track.get('key') == '7-9':
-            continue
-        for world in track.get('worlds', []):
-            worlds[world['id']] = [
-                {'id': f"{world['id']}-{i + 1}", 'title': title} for i, title in enumerate(world.get('lessons', []))
+    if track == '7-9':
+        catalog = base_catalog('7-9') if use_base else get_active_catalog('7-9')
+        for mod in sorted(catalog.get('modules', []), key=lambda m: m.get('order', 0)):
+            if mod.get('hidden') and not include_hidden:
+                continue
+            mod_lessons = [
+                les for les in catalog.get('lessons', [])
+                if les.get('moduleId') == mod['id'] and (include_hidden or not les.get('hidden'))
             ]
+            mod_lessons.sort(key=lambda les: les.get('order', 0))
+            worlds[mod['id']] = [{'id': les['id'], 'title': les['title']} for les in mod_lessons]
+    else:
+        # Pour un parcours sans catalogue en base, la liste des modules et des leçons vient des fichiers de contenu eux-mêmes
+        if chapters:
+            for _cfile, data in chapters:
+                module = data.get('module', {})
+                mid = module.get('id')
+                if mid:
+                    lessons = data.get('lessons', [])
+                    worlds[mid] = [{'id': les.get('id'), 'title': les.get('title', '')} for les in lessons]
+        if not worlds:
+            for trk in TRACKS_CATALOG:
+                if trk.get('key') == track:
+                    for world in trk.get('worlds', []):
+                        worlds[world['id']] = [
+                            {'id': f"{world['id']}-{i + 1}", 'title': title} for i, title in enumerate(world.get('lessons', []))
+                        ]
     return worlds
 
 
@@ -807,13 +828,8 @@ def _check_round(report, where, rnd, stats=None, track='7-9'):
         if bins - used:
             report.error(where, 'une boîte ne reçoit aucun objet')
     elif kind in GAME_VALIDATORS:
-        import inspect
         fn = GAME_VALIDATORS[kind]
-        sig = inspect.signature(fn)
-        if len(sig.parameters) >= 4 or any(param.kind == inspect.Parameter.VAR_KEYWORD for param in sig.parameters.values()):
-            fn(report, where, rnd, stats)
-        else:
-            fn(report, where, rnd)
+        fn(report, where, rnd, stats)
     else:
         report.error(where, f'type de manche inconnu : {kind!r}')
 
@@ -1062,8 +1078,8 @@ def _check_lesson(report, chapter_file, index, lesson, catalog_lessons, module_i
                 report.error(where, f"le personnage « {sp} » parle mais n'est pas dans la distribution de la leçon")
             c_info = char_by_id.get(sp, {})
             c_mod = c_info.get('module')
-            main_chars = {'palou', 'moussa', 'fatou', 'papa-ibou'}
-            if c_mod and sp not in main_chars and c_mod != module_index:
+            is_principal = c_info.get('principal', False)
+            if c_mod and not is_principal and c_mod != module_index:
                 report.warn(where, f"le personnage « {sp} » parle dans le module {module_index} alors qu'il est rattaché à {c_mod}")
         if screen.get('wolof'):
             wolof += 1
@@ -1081,9 +1097,9 @@ def validate_all(content_dir=None, chapters=None, use_base=True, track='7-9'):
     manifest = cdir / 'pictos.json'
     if manifest.exists():
         report.pictos = json.loads(manifest.read_text(encoding='utf-8')).get('pictos', {})
-    catalog = _catalog_worlds(use_base=use_base)
-    seen = set()
     ch_list = chapters if chapters is not None else load_chapters(content_dir=content_dir, track=track)
+    catalog = _catalog_worlds(use_base=use_base, track=track, chapters=ch_list)
+    seen = set()
     if not ch_list:
         report.error(str(cdir), f"aucun contenu trouvé pour le parcours {track}")
         return report
@@ -1118,20 +1134,24 @@ def validate_all(content_dir=None, chapters=None, use_base=True, track='7-9'):
 
 def export_markdown(chapters=None, track='7-9'):
     """Document lisible du contenu (texte, bonnes réponses, explications, images)."""
-    out = ['# Contenu du parcours 7-9 ans', '', '✅ = bonne réponse.', '']
-    for _chapter_file, data in (chapters if chapters is not None else load_chapters()):
+    cfg = get_track_config(track)
+    cast_names = load_track_cast(track)
+    out = [f'# Contenu du parcours {cfg.get("label", track)}', '', '✅ = bonne réponse.', '']
+    for _chapter_file, data in (chapters if chapters is not None else load_chapters(track=track)):
         module = data['module']
-        out += [f'## Chapitre {module["chapter"]} · {module["title"]}', f'*Lieu : {module["place"]}*', '', f'> {module["intro"]}', '']
-        for lesson in data['lessons']:
-            out += [f'### {lesson["id"]} · {lesson["title"]}',
-                    f'- **Scène :** {lesson["scene"]["label"]}',
-                    f'- **Personnages :** {", ".join(CAST_NAMES[c] for c in lesson["cast"])}',
-                    f'- **Le problème :** {lesson["problem"]}']
+        out += [f'## Chapitre {module.get("chapter", 1)} · {module.get("title", "")}', f'*Lieu : {module.get("place", "")}*', '', f'> {module.get("intro", "")}', '']
+        for lesson in data.get('lessons', []):
+            cast_display = ", ".join(cast_names.get(c, c) for c in lesson.get("cast", []))
+            scene_label = lesson.get("scene", {}).get("label", "")
+            out += [f'### {lesson.get("id")} · {lesson.get("title")}',
+                    f'- **Scène :** {scene_label}',
+                    f'- **Personnages :** {cast_display}',
+                    f'- **Le problème :** {lesson.get("problem", "")}']
             if lesson.get('callback'):
                 out.append(f'- **Rappel :** {lesson["callback"]}')
             out.append('')
             for number, screen in enumerate(lesson['screens'], 1):
-                out.append(f'**Écran {number} · {screen["kind"]}**' + (f' · {CAST_NAMES[screen["speaker"]]} parle' if screen.get('speaker') else ''))
+                out.append(f'**Écran {number} · {screen.get("kind", "")}**' + (f' · {cast_names.get(screen["speaker"], screen["speaker"])} parle' if screen.get('speaker') else ''))
                 out.append(f'> {screen["text"]}')
                 if screen.get('wolof'):
                     out.append(f'- Wolof : *{screen["wolof"]["mot"]}* = {screen["wolof"]["sens"]}')

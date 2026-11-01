@@ -87,7 +87,4 @@ class Command(BaseCommand):
 
         if report.errors or db_errors:
             raise CommandError(f'{len(report.errors)} erreur(s) de contenu, {len(db_errors)} erreur(s) sur les versions en ligne.')
-        if track == '7-9':
-            self.stdout.write(self.style.SUCCESS('Contenu conforme.'))
-        else:
-            self.stdout.write(self.style.SUCCESS(f'Contenu du parcours {track} conforme.'))
+        self.stdout.write(self.style.SUCCESS(f'Contenu conforme. Contenu du parcours {track} conforme.'))

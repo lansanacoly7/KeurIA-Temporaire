@@ -75,7 +75,11 @@ def _transparent(cell):
 
 
 def _drop_fragments(rgba):
-    """Efface les petits morceaux orphelins (bords des pictogrammes voisins quand la planche est découpée en grille)."""
+    """Efface les petits morceaux orphelins (bords des pictogrammes voisins quand la planche est découpée en grille).
+
+    On regroupe les pixels visibles en îlots (deux morceaux proches sont un même dessin : un cœur et ses étincelles), puis on
+    garde les îlots d'une taille comparable au plus gros. Sans numpy/scipy, l'image est rendue telle quelle.
+    """
     try:
         import numpy as np
         from scipy import ndimage
@@ -132,7 +136,7 @@ class Command(BaseCommand):
         if grid_str:
             cols, rows = map(int, grid_str.split('x'))
         else:
-            cols, rows = (4, 3) if track == '7-9' else (3, 3)
+            cols, rows = cfg.get('picto_grid', (4, 3))
 
         source_base = Path(options['source']) if options.get('source') else cfg['content_dir']
         manifest_path = source_base / 'pictos.json'

@@ -6,17 +6,19 @@ from unittest import mock
 
 from django.core.management import call_command
 from django.test import TestCase
+from django.utils import timezone
 from PIL import Image
 from rest_framework import status
 from rest_framework.test import APIClient
 
 from apps.accounts.models import User
 from apps.curriculum import parcours79
-from apps.curriculum.models import AgeTrack, Module, Lesson, LessonContent, ContentVersion
-from apps.curriculum.tracks import track_for
+from apps.curriculum.catalog import base_catalog
+from apps.curriculum.models import AgeTrack, ContentVersion, Lesson, LessonContent, Module
+from apps.curriculum.tracks import can_open_lesson, track_for
+from apps.curriculum.voices import clips_of
 from apps.learners.models import LearnerProfile
 from apps.schools.models import School
-from apps.curriculum.voices import clips_of
 
 
 class TrackForAndIsolationTestCase(TestCase):
@@ -55,26 +57,43 @@ class TrackForAndIsolationTestCase(TestCase):
         self.pupil11 = User.objects.create_user(email="pupil11@test.sn", role=User.ROLE_STUDENT, age_group="10-12", school=self.school)
         LearnerProfile.objects.create(learner=self.pupil11, age_track="10-12", nickname="P11")
 
+        # Utilisateurs avec d'autres rôles
+        self.teacher = User.objects.create_user(email="prof@test.sn", role=User.ROLE_TEACHER, school=self.school)
+        self.parent = User.objects.create_user(email="parent@test.sn", role=User.ROLE_PARENT)
+        self.school_admin = User.objects.create_user(email="dir@test.sn", role=User.ROLE_SCHOOL_ADMIN, school=self.school)
+        self.admin = User.objects.create_user(email="admin_global@test.sn", role=User.ROLE_ADMIN, is_staff=True)
+
     def test_track_for_resolves_all_six_cases(self):
         # 1. enfant de 8 ans -> 7-9
         self.assertEqual(track_for(self.child8), '7-9')
         # 2. enfant de 11 ans -> 10-12
         self.assertEqual(track_for(self.child11), '10-12')
-        # 3. élève d'école de 8 ans -> 7-9-ecole
-        self.assertEqual(track_for(self.pupil8), '7-9-ecole')
-        # 4. élève d'école de 11 ans -> 10-12-ecole (sans repli) ou 10-12 (avec repli)
-        self.assertEqual(track_for(self.pupil11, fallback=False), '10-12-ecole')
+        # 3. élève d'école de 8 ans -> 7-9 (repli car 7-9-ecole live=False) ou 7-9-ecole (sans repli)
+        self.assertEqual(track_for(self.pupil8), '7-9')
+        self.assertEqual(track_for(self.pupil8, fallback=False), '7-9-ecole')
+        # 4. élève d'école de 11 ans -> 10-12 (repli car 10-12-ecole live=False) ou 10-12-ecole (sans repli)
         self.assertEqual(track_for(self.pupil11, fallback=True), '10-12')
+        self.assertEqual(track_for(self.pupil11, fallback=False), '10-12-ecole')
 
-    def test_pupil_cannot_access_child_lesson_when_fallback_disabled(self):
-        # Pupil 8 is 7-9-ecole. Accessing child lesson p1-1 must return 403.
+    def test_pupil_fallback_allows_p1_1_when_track_not_live(self):
+        # Quand 7-9-ecole n'est pas live, l'élève reçoit 7-9 et peut ouvrir p1-1 (200) et valider sa progression (200/201)
         self.client.force_authenticate(self.pupil8)
         resp = self.client.get('/api/curriculum/lessons/p1-1/')
-        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)
 
-        # Validating child lesson via progress must return 403
         resp_val = self.client.post('/api/progress', {'lessonId': 'p1-1', 'score': 100, 'stars': 3}, format='json')
-        self.assertEqual(resp_val.status_code, status.HTTP_403_FORBIDDEN)
+        self.assertIn(resp_val.status_code, (status.HTTP_200_OK, status.HTTP_201_CREATED))
+
+    def test_pupil_cannot_access_child_lesson_when_track_is_live(self):
+        # Quand 7-9-ecole est live, l'élève a le verrou strict : ouvrir p1-1 retourne 403
+        with mock.patch.dict(parcours79.TRACK_CONFIGS['7-9-ecole'], {'live': True}):
+            self.assertEqual(track_for(self.pupil8), '7-9-ecole')
+            self.client.force_authenticate(self.pupil8)
+            resp = self.client.get('/api/curriculum/lessons/p1-1/')
+            self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
+
+            resp_val = self.client.post('/api/progress', {'lessonId': 'p1-1', 'score': 100, 'stars': 3}, format='json')
+            self.assertEqual(resp_val.status_code, status.HTTP_403_FORBIDDEN)
 
     def test_child_cannot_access_pupil_lesson(self):
         # Child 8 is 7-9. Accessing pupil lesson ep1-1 must return 403.
@@ -84,6 +103,43 @@ class TrackForAndIsolationTestCase(TestCase):
 
         resp_val = self.client.post('/api/progress', {'lessonId': 'ep1-1', 'score': 100, 'stars': 3}, format='json')
         self.assertEqual(resp_val.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_teacher_and_parent_and_admin_can_open_any_lesson(self):
+        # R2: Seul l'élève a le verrou strict. Enseignant, parent, directeur et admin ouvrent n'importe quelle leçon.
+        for user in [self.teacher, self.parent, self.school_admin, self.admin]:
+            self.assertTrue(can_open_lesson(user, '7-9'))
+            self.assertTrue(can_open_lesson(user, '7-9-ecole'))
+            self.client.force_authenticate(user)
+            resp_child = self.client.get('/api/curriculum/lessons/p1-1/')
+            self.assertEqual(resp_child.status_code, status.HTTP_200_OK, f"Failed for {user.role}")
+            resp_pupil = self.client.get('/api/curriculum/lessons/ep1-1/')
+            self.assertEqual(resp_pupil.status_code, status.HTTP_200_OK, f"Failed for {user.role}")
+
+    def test_parcours1012_contains_no_test_fixtures(self):
+        # R4: Le dossier frontend/content/parcours1012/ ne doit contenir aucun fichier de test avec "Aminata", "Kofi", "Dr. Fall"
+        p1012 = Path(parcours79.FRONTEND) / "content" / "parcours1012"
+        if p1012.exists():
+            for f in p1012.glob("*.json"):
+                text = f.read_text(encoding='utf-8')
+                for forbidden in ["Aminata", "Kofi", "Dr. Fall"]:
+                    self.assertNotIn(forbidden, text, f"Forbidden string '{forbidden}' found in {f.name}")
+
+    def test_base_catalog_raises_readable_error_on_broken_json(self):
+        # R5: Lever une erreur lisible plutôt que masquer silencieusement si un JSON est cassé
+        with tempfile.TemporaryDirectory() as tmpdir:
+            tmppath = Path(tmpdir)
+            corrupted = tmppath / "m01.json"
+            corrupted.write_text('{"module": {invalid_json', encoding='utf-8')
+
+            fake_cfg = {
+                'content_dir': tmppath,
+                'file_glob': 'm*.json',
+                'live': True,
+            }
+            with mock.patch.dict(parcours79.TRACK_CONFIGS, {'test-track': fake_cfg}):
+                with self.assertRaises(ValueError) as ctx:
+                    base_catalog('test-track')
+                self.assertIn("Fichier de contenu invalide dans le catalogue", str(ctx.exception))
 
 
 class LessonFicheTestCase(TestCase):
@@ -119,6 +175,7 @@ class LessonFicheTestCase(TestCase):
             key="ep1-1",
             number=1,
             content=self.lesson_content,
+            publish_at=timezone.now(),
         )
 
     def test_pupil_and_parent_get_403_on_fiche(self):

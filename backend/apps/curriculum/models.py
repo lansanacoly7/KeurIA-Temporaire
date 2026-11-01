@@ -235,7 +235,13 @@ class TeacherGuide(models.Model):
 
 class ContentVersion(models.Model):
     """
-    Version d'un contenu éditable dans le studio.
+    Version d'un contenu éditable dans le studio (aujourd'hui : une leçon du parcours 7-9, `kind='lesson79'`).
+
+    Cycle de vie, sans tâche planifiée :
+      - `publish_at` vide → BROUILLON (copie de travail, une seule par contenu) ;
+      - `publish_at` dans le futur → publication PROGRAMMÉE (délai de sécurité : on peut encore l'annuler) ;
+      - `publish_at` passé → la version EN LIGNE est la plus récente de celles-ci ; les autres sont l'historique.
+    Un brouillon écarté ou une publication annulée reçoit `discarded_at` et disparaît de toutes les vues.
     """
     KIND_LESSON79 = 'lesson79'
     KIND_LESSON79ECOLE = 'lesson79ecole'
@@ -292,7 +298,8 @@ class CatalogVersion(ContentVersion):
 
 class MediaAsset(models.Model):
     """
-    Image ou petite vidéo envoyée depuis le studio, gardée dans la base de données.
+    Image ou petite vidéo envoyée depuis le studio, gardée dans la base de données (aucun hébergement à part).
+    Les images sont redimensionnées et converties en WebP à l'envoi ; les vidéos sont limitées en poids (voir media.py).
     """
     KIND_IMAGE = 'image'
     KIND_VIDEO = 'video'
@@ -321,6 +328,7 @@ class MediaAsset(models.Model):
 
     @property
     def ref(self) -> str:
+        """Référence à écrire dans un contenu : « media:<id>.<8 premiers caractères de l'empreinte> »."""
         return f'media:{self.pk}.{self.sha256[:8]}'
 
     @property

@@ -3,18 +3,21 @@
     {
       "id": "palou",
       "name": "Palou",
+      "principal": true,
       "role": "Mascotte et guide d'apprentissage",
       "avatar": "/images/parcours79/references/01_palou_reference.png"
     },
     {
       "id": "moussa",
       "name": "Moussa",
+      "principal": true,
       "role": "Ami curieux et inventif",
       "avatar": "/images/parcours79/references/03_moussa_reference.png"
     },
     {
       "id": "fatou",
       "name": "Fatou",
+      "principal": true,
       "role": "Amie observatrice et dynamique",
       "avatar": "/images/parcours79/references/04_fatou_reference.png"
     },
@@ -34,6 +37,7 @@
     {
       "id": "papa-ibou",
       "name": "Papa Ibou",
+      "principal": true,
       "role": "Père et commerçant",
       "avatar": "/images/parcours79/references/06_papa_ibou_reference.png"
     },
@@ -57,4 +61,3 @@
     }
   ]
 }
-

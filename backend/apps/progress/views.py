@@ -304,23 +304,10 @@ class ProgressView(APIView):
         # n'est pas qu'un affichage, il est aussi imposé ici.
         lesson_track = Lesson.objects.filter(lesson_id=lesson_id).values_list('module__track__key', flat=True).first()
         if not lesson_track:
-            import re
-            if re.match(r'^ep\d+-\d+$', lesson_id):
-                lesson_track = '7-9-ecole'
-            elif re.match(r'^p\d+-\d+$', lesson_id):
-                lesson_track = '7-9'
-            elif re.match(r'^ea\d+-\d+$', lesson_id):
-                lesson_track = '10-12-ecole'
-            elif re.match(r'^a\d+-\d+$', lesson_id):
-                lesson_track = '10-12'
-            elif re.match(r'^ec\d+-\d+$', lesson_id):
-                lesson_track = '13-15-ecole'
-            elif re.match(r'^c\d+-\d+$', lesson_id):
-                lesson_track = '13-15'
-        has_age = bool((hasattr(user, 'learner_profile') and getattr(user.learner_profile, 'age_track', None)) or getattr(user, 'age_group', None))
-        from apps.curriculum.tracks import track_for
-        assigned_track = track_for(user) if has_age else None
-        if lesson_track and assigned_track and lesson_track != assigned_track:
+            from apps.curriculum.tracks import track_of_lesson
+            lesson_track = track_of_lesson(lesson_id)
+        from apps.curriculum.tracks import can_open_lesson
+        if not can_open_lesson(user, lesson_track):
             return Response({"error": "Cette leçon n'appartient pas à ton parcours."}, status=status.HTTP_403_FORBIDDEN)
         # Dès qu'un utilisateur enregistre une activité, le tutoriel est définitivement validé
         if not user.tutorial_completed:

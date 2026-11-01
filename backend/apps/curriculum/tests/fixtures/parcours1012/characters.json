@@ -3,6 +3,7 @@
     {
       "id": "palou",
       "name": "Palou",
+      "principal": true,
       "role": "Guide et mascotte IA",
       "avatar": "/images/parcours1012/characters/palou.webp",
       "voice_id": "eleven_palou_senegal_01",

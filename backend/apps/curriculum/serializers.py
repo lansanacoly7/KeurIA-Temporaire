@@ -3,26 +3,18 @@ from .models import AgeTrack, Module, Lesson, LessonContent, Character
 
 
 def _voice_base_url(lesson_id: str) -> str:
+    from .tracks import track_of_lesson
+    from .parcours79 import TRACK_CONFIGS
     lid = lesson_id or ''
-    if lid.startswith('ep'):
-        mod = lid.split('-')[0]
-        return f"/audio/palou/ecole79/{mod}/{lid}"
-    if lid.startswith('p'):
-        mod_num = int(lid.split('-')[0][1:]) if lid.split('-')[0][1:].isdigit() else 1
-        return f"/audio/palou/lecons/m{mod_num:02d}/{lid}"
-    if lid.startswith('ea'):
-        mod = lid.split('-')[0]
-        return f"/audio/palou/ecole1012/{mod}/{lid}"
-    if lid.startswith('a'):
-        mod = lid.split('-')[0]
-        return f"/audio/palou/1012/{mod}/{lid}"
-    if lid.startswith('ec'):
-        mod = lid.split('-')[0]
-        return f"/audio/palou/ecole1315/{mod}/{lid}"
-    if lid.startswith('c'):
-        mod = lid.split('-')[0]
-        return f"/audio/palou/1315/{mod}/{lid}"
-    return f"/audio/palou/lecons/{lid}"
+    track = track_of_lesson(lid)
+    cfg = TRACK_CONFIGS.get(track, TRACK_CONFIGS['7-9'])
+    base = cfg.get('voice_base_url', '/audio/palou/lecons')
+    mod_raw = lid.split('-')[0] if '-' in lid else lid
+    if track == '7-9' and mod_raw.startswith('p') and mod_raw[1:].isdigit():
+        mod_sub = f"m{int(mod_raw[1:]):02d}"
+    else:
+        mod_sub = mod_raw
+    return f"{base}/{mod_sub}/{lid}"
 
 
 class LessonContentSerializer(serializers.ModelSerializer):

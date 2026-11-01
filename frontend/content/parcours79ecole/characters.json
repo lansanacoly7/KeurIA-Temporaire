@@ -3,80 +3,63 @@
     {
       "id": "palou",
       "name": "Palou",
-      "role": "Mascotte IA et guide"
-    },
-    {
-      "id": "mme-diop",
-      "name": "Madame Diop",
-      "aliases": ["Mme Diop"],
-      "role": "Enseignante de la classe"
+      "principal": true,
+      "role": "Mascotte et guide d'apprentissage",
+      "avatar": "/images/parcours79/references/01_palou_reference.png"
     },
     {
       "id": "moussa",
       "name": "Moussa",
-      "role": "Élève"
+      "principal": true,
+      "role": "Ami curieux et inventif",
+      "avatar": "/images/parcours79/references/03_moussa_reference.png"
     },
     {
       "id": "fatou",
       "name": "Fatou",
-      "role": "Élève"
+      "principal": true,
+      "role": "Amie observatrice et dynamique",
+      "avatar": "/images/parcours79/references/04_fatou_reference.png"
     },
     {
-      "id": "khady",
-      "name": "Khady",
-      "role": "Élève"
+      "id": "mme-diop",
+      "name": "Madame Diop",
+      "aliases": [
+        "Mme Diop"
+      ],
+      "role": "Enseignante bienveillante",
+      "avatar": "/images/parcours79/references/05_mme_diop_reference.png"
     },
     {
-      "id": "seydou",
-      "name": "Seydou",
-      "role": "Élève"
+      "id": "mame-awa",
+      "name": "Mame Awa",
+      "role": "Grand-mère protectrice",
+      "avatar": ""
     },
     {
-      "id": "lamine",
-      "name": "Lamine",
-      "role": "Élève"
+      "id": "papa-ibou",
+      "name": "Papa Ibou",
+      "principal": true,
+      "role": "Père et commerçant",
+      "avatar": "/images/parcours79/references/06_papa_ibou_reference.png"
     },
     {
-      "id": "aissatou",
-      "name": "Aïssatou",
-      "aliases": ["Aissatou"],
-      "role": "Élève"
+      "id": "tonton-cheikh",
+      "name": "Tonton Cheikh",
+      "role": "Oncle ingénieux",
+      "avatar": ""
     },
     {
-      "id": "bakary",
-      "name": "Oncle Bakary",
-      "aliases": ["Bakary"],
-      "role": "Invité"
+      "id": "baye",
+      "name": "Baye",
+      "role": "Grand-père conteur",
+      "avatar": ""
     },
     {
-      "id": "ndiaye",
-      "name": "Madame Ndiaye",
-      "aliases": ["Mme Ndiaye", "Ndiaye"],
-      "role": "Invitée"
-    },
-    {
-      "id": "sarr",
-      "name": "Monsieur Sarr",
-      "aliases": ["M. Sarr", "Sarr"],
-      "role": "Invité"
-    },
-    {
-      "id": "aminata",
-      "name": "Aminata",
-      "role": "Invitée"
-    },
-    {
-      "id": "diallo",
-      "name": "Monsieur Diallo",
-      "aliases": ["M. Diallo", "Diallo"],
-      "role": "Invité"
-    },
-    {
-      "id": "gueye",
-      "name": "Madame Guèye",
-      "aliases": ["Mme Guèye", "Madame Gueye", "Mme Gueye", "Guèye", "Gueye"],
-      "role": "Invitée"
+      "id": "mame-coumba",
+      "name": "Mame Coumba",
+      "role": "Ancienne du village",
+      "avatar": ""
     }
   ]
 }
-

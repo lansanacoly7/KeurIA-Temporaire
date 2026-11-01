@@ -64,43 +64,46 @@ def base_catalog(track_key='7-9') -> dict:
                     'hidden': False,
                 })
         return {'modules': modules, 'lessons': lessons}
-    # Découverte dynamique si des fichiers existent dans le dossier du parcours
-    try:
-        from apps.curriculum.parcours79 import TRACK_CONFIGS
-        if track_key in TRACK_CONFIGS:
-            cfg = TRACK_CONFIGS[track_key]
-            cdir = Path(cfg['content_dir'])
-            if cdir.exists():
-                modules, lessons = [], []
-                for p_file in sorted(cdir.glob(cfg['file_glob'])):
-                    try:
-                        d = json.loads(p_file.read_text(encoding='utf-8'))
-                        m = d.get('module', {})
-                        mid = m.get('id')
-                        if mid:
-                            modules.append({
-                                'id': mid,
-                                'title': m.get('title', ''),
-                                'description': m.get('intro', ''),
-                                'color': 'sun',
-                                'icon': m.get('emoji', '🤖'),
-                                'order': m.get('chapter', len(modules) + 1),
-                                'hidden': False,
-                            })
-                            for les_idx, les in enumerate(d.get('lessons', []), 1):
-                                lessons.append({
-                                    'id': les.get('id', f"{mid}-{les_idx}"),
-                                    'moduleId': mid,
-                                    'title': les.get('title', ''),
-                                    'order': les_idx,
-                                    'hidden': False,
-                                })
-                    except Exception:
-                        pass
-                if modules:
-                    return {'modules': modules, 'lessons': lessons}
-    except Exception:
-        pass
+    # Découverte dynamique si le parcours est configuré et 'live'
+    from apps.curriculum.parcours79 import TRACK_CONFIGS
+    import logging
+    logger = logging.getLogger(__name__)
+
+    if track_key in TRACK_CONFIGS:
+        cfg = TRACK_CONFIGS[track_key]
+        if not cfg.get('live', False):
+            return {'modules': [], 'lessons': []}
+        cdir = Path(cfg['content_dir'])
+        if cdir.exists():
+            modules, lessons = [], []
+            for p_file in sorted(cdir.glob(cfg['file_glob'])):
+                try:
+                    d = json.loads(p_file.read_text(encoding='utf-8'))
+                except Exception as exc:
+                    logger.error(f"Erreur de lecture du fichier catalogue {p_file}: {exc}")
+                    raise ValueError(f"Fichier de contenu invalide dans le catalogue ({p_file.name}) : {exc}") from exc
+                m = d.get('module', {})
+                mid = m.get('id')
+                if mid:
+                    modules.append({
+                        'id': mid,
+                        'title': m.get('title', ''),
+                        'description': m.get('intro', ''),
+                        'color': 'sun',
+                        'icon': m.get('emoji', '🤖'),
+                        'order': m.get('chapter', len(modules) + 1),
+                        'hidden': False,
+                    })
+                    for les_idx, les in enumerate(d.get('lessons', []), 1):
+                        lessons.append({
+                            'id': les.get('id', f"{mid}-{les_idx}"),
+                            'moduleId': mid,
+                            'title': les.get('title', ''),
+                            'order': les_idx,
+                            'hidden': False,
+                        })
+            if modules:
+                return {'modules': modules, 'lessons': lessons}
     return {'modules': [], 'lessons': []}
 
 
