@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#FDE68A" />
+    </linearGradient>
+  </defs>
+
+  <!-- Base -->
+  <rect x="30" y="45" width="40" height="35" fill="url(#wallGrad)" stroke="#D97706" stroke-width="2"/>
+  <!-- Door -->
+  <rect x="42" y="60" width="16" height="20" fill="#8B5A2B" stroke="#5C3A21" stroke-width="2"/>
+  <circle cx="54" cy="70" r="1.5" fill="#FFD700"/>
+  <!-- Roof -->
+  <path d="M 20 45 L 50 20 L 80 45 Z" fill="url(#roofGrad)" stroke="#7F1D1D" stroke-width="2" stroke-linejoin="round"/>
+</svg>

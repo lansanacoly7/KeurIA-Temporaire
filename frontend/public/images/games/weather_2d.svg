@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sun -->
+  <circle cx="65" cy="40" r="15" fill="url(#sunGrad)" />
+  <path d="M65 15 L65 20 M65 60 L65 65 M40 40 L45 40 M85 40 L90 40 M47 22 L51 26 M79 54 L83 58 M47 58 L51 54 M79 26 L83 22" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  <!-- Cloud -->
+  <path d="M 30 65 Q 25 65 25 60 Q 25 55 30 55 Q 35 45 45 45 Q 55 45 55 55 Q 65 55 65 60 Q 65 65 60 65 Z" fill="url(#cloudGrad)" stroke="#94A3B8" stroke-width="2"/>
+  <!-- Raindrops -->
+  <line x1="35" y1="70" x2="33" y2="78" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+  <line x1="45" y1="70" x2="43" y2="78" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+  <line x1="55" y1="70" x2="53" y2="78" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+</svg>

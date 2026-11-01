@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Aujourd'hui — Cahier de classe — kEur IA École</title>
+  <link rel="stylesheet" href="maquette.css">
+</head>
+<body>
+
+  <div class="maquette-demo-bar">
+    <div class="maquette-demo-left">
+      <span class="maquette-demo-badge">T11 Maquette</span>
+      <select class="maquette-nav-select" onchange="window.location.href=this.value">
+        <option value="index.html" >Hub & Galerie des Maquettes [Accueil]</option>
+<option value="01-aujourdhui.html" selected>01. Aujourd'hui — Cahier de classe [Élève (6-9 ans)]</option>
+<option value="02-mes-devoirs.html" >02. Mes devoirs (À rendre, Rendus, Notés) [Élève (6-9 ans)]</option>
+<option value="03-mon-parcours.html" >03. Mon parcours (Archipel CE1) [Élève (6-9 ans)]</option>
+<option value="04-ma-classe.html" >04. Ma classe (Tableau d'honneur & Camarades) [Élève (6-9 ans)]</option>
+<option value="05-mes-etoiles.html" >05. Mes étoiles (Badges & Niveau) [Élève (6-9 ans)]</option>
+<option value="06-libre.html" >06. Libre (Jeux & Studio Scratch) [Élève (6-9 ans)]</option>
+<option value="07-etats.html" >07. Écrans d'état (Horaires, Clôture, Devoirs faits) [Élève (6-9 ans)]</option>
+<option value="08-enseignant-seance.html" >08. Enseignant — Ouvrir une séance & En cours [Enseignant]</option>
+<option value="09-enseignant-annonces.html" >09. Enseignant — Annonces & Sondages [Enseignant]</option>
+<option value="10-enseignant-parcours-eleve.html" >10. Enseignant — Parcours d'un élève [Enseignant]</option>
+<option value="11-regles-classe.html" >11. Direction & Enseignant — Règles de classe [Direction & Enseignant]</option>
+      </select>
+    </div>
+    <div class="maquette-demo-actions">
+      <a href="index.html" class="btn-view-toggle">📚 Galerie</a>
+      <a href="LISEZMOI.md" class="btn-view-toggle" target="_blank">📄 LISEZMOI</a>
+    </div>
+  </div>
+
+  <div class="mockup-viewport-container">
+    <div class="app-shell">
+      
+    <aside class="app-sidebar">
+      <div class="school-brand-box">
+        <div class="school-logo-badge">🌳</div>
+        <div class="school-meta">
+          <h2>Les Baobabs</h2>
+          <p>École Partenaire</p>
+        </div>
+      </div>
+
+      <div class="student-badge-card">
+        <div class="student-avatar">👦🏾</div>
+        <div class="student-info">
+          <h3>Moussa</h3>
+          <p>CE1 A · Mme Faye</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        
+        <a href="01-aujourdhui.html" class="sidebar-nav-item active">
+          <span class="nav-icon">☀️</span>
+          <span>Aujourd'hui</span>
+          
+        </a>
+
+        <a href="02-mes-devoirs.html" class="sidebar-nav-item ">
+          <span class="nav-icon">📝</span>
+          <span>Mes devoirs</span>
+          <span class="nav-badge">2</span>
+        </a>
+
+        <a href="03-mon-parcours.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🗺️</span>
+          <span>Mon parcours</span>
+          
+        </a>
+
+        <a href="04-ma-classe.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🏫</span>
+          <span>Ma classe</span>
+          
+        </a>
+
+        <a href="05-mes-etoiles.html" class="sidebar-nav-item ">
+          <span class="nav-icon">⭐</span>
+          <span>Mes étoiles</span>
+          
+        </a>
+
+        <a href="06-libre.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🎮</span>
+          <span>Libre</span>
+          <span class="nav-badge">🔒</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-rule-alert">
+        <span style="font-size:18px;">🔒</span>
+        <div>
+          <strong style="display:block; font-size:12px; color:var(--school-secondary);">Règle active :</strong>
+          <span>Jeux coupés jusqu'à 16h00</span>
+        </div>
+      </div>
+    </aside>
+
+      
+    <header class="mobile-top-header">
+      <div class="mobile-profile-left">
+        <div class="student-avatar" style="width:36px; height:36px; font-size:18px;">👦🏾</div>
+        <div class="mobile-student-meta">
+          <div class="mobile-student-name">Moussa · CE1 A</div>
+          <span class="mobile-class-pill">Mme Faye · Baobabs</span>
+        </div>
+      </div>
+      <div class="xp-pill-badge">⭐ 48</div>
+    </header>
+
+
+      <main class="app-main-content">
+        <!-- Bandeau de règle active -->
+        <div class="rule-banner">
+          <span class="rule-banner-icon">🔒</span>
+          <div class="rule-banner-text">
+            <h4>Règle de classe : Jeux coupés jusqu'à 16h00</h4>
+            <p>Mme Faye a réservé l'accès aux jeux après la classe. Pendant la journée, nous nous concentrons sur les leçons !</p>
+          </div>
+        </div>
+
+        <!-- Carte Héro : Séance en cours -->
+        <section class="session-hero-card">
+          <div class="session-live-badge">
+            <span class="pulse-dot"></span>
+            <span>Séance en cours · Mme Faye</span>
+          </div>
+          <h2 class="session-title">L'Île des Algorithmes — Défi Boucles</h2>
+          <p class="session-subtitle">Apprends à répéter des actions pour guider le robot explorateur à travers le labyrinthe sans te tromper.</p>
+          
+          <div class="session-meta-row">
+            <div class="session-timer-pill">
+              <span>⏱️</span>
+              <span>Il reste 24 minutes</span>
+            </div>
+            <button class="btn-big-touch primary" onclick="alert('Lancement de la leçon en classe !')">
+              <span>🚀 Rejoindre la séance</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Mot de Mme Faye -->
+        <article class="teacher-note-card">
+          <div class="teacher-photo-box">👩🏾‍🏫</div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <span class="teacher-name">Mme Faye</span>
+              <span class="teacher-date">Aujourd'hui · 08h45</span>
+            </div>
+            <p class="teacher-message">
+              « Bonjour les explorateurs du CE1 A ! N'oubliez pas : une boucle sert à répéter un ordre pour aller plus vite. Prenez le temps d'observer le chemin avant de valider votre code. Bon travail ! »
+            </p>
+          </div>
+        </article>
+
+        <!-- Sondage Interactif -->
+        <article class="poll-card">
+          <span class="poll-eyebrow">📊 Sondage du jour</span>
+          <h3 class="poll-question">Quel animal robotique aimerais-tu programmer la semaine prochaine ?</h3>
+          
+          <div class="poll-options-grid" id="pollOptions">
+            <button class="poll-option-btn" onclick="selectPoll(this)">
+              <span class="check-indicator"></span>
+              <span class="poll-option-label">🦁 Le lion courageux de la savane</span>
+              <span style="font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--text-muted);">38%</span>
+              <div class="poll-pct-bar" style="width:38%;"></div>
+            </button>
+            
+            <button class="poll-option-btn selected" onclick="selectPoll(this)">
+              <span class="check-indicator">✓</span>
+              <span class="poll-option-label">🐢 La tortue rapide des lagunes</span>
+              <span style="font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--school-primary);">42%</span>
+              <div class="poll-pct-bar" style="width:42%; background:var(--school-primary); opacity:1;"></div>
+            </button>
+
+            <button class="poll-option-btn" onclick="selectPoll(this)">
+              <span class="check-indicator"></span>
+              <span class="poll-option-label">🦅 L'aigle observateur du Fouta</span>
+              <span style="font-family:var(--font-sans); font-size:12px; font-weight:700; color:var(--text-muted);">20%</span>
+              <div class="poll-pct-bar" style="width:20%;"></div>
+            </button>
+          </div>
+
+          <div class="poll-feedback-banner">
+            <span>✓ Tu as répondu : <strong>La tortue rapide</strong></span>
+            <span style="font-family:var(--font-sans); font-size:11px; opacity:0.8;">18/22 votes</span>
+          </div>
+        </article>
+
+        <!-- À faire aujourd'hui -->
+        <section style="margin-bottom: 22px;">
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 4px;">À faire aujourd'hui</h3>
+          <p class="page-subtitle" style="margin-bottom: 12px;">Ta prochaine leçon programmée par Mme Faye</p>
+
+          <div class="task-card">
+            <div class="task-icon-box">🤖</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag" style="background:#E0F2FE; color:#0369A1;">Algorithmes</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-muted);">⏱️ 15 min</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:var(--school-primary); font-weight:700;">+20 XP</span>
+              </div>
+              <h4 class="task-title">Étape 3 : La boucle magique de Palou</h4>
+              <p style="font-size:13.5px; color:var(--text-muted); margin-top:2px;">Répète le saut 3 fois pour franchir le ruisseau sans toucher l'eau.</p>
+            </div>
+            <button class="btn-big-touch primary" onclick="alert('Démarrage de la leçon !')">
+              <span>Commencer</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Devoirs à rendre -->
+        <section>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 12px;">
+            <h3 style="font-size: 20px; font-weight: 700;">Devoirs à rendre</h3>
+            <a href="02-mes-devoirs.html" style="font-size:13px; font-weight:700; color:var(--school-primary);">Voir tous →</a>
+          </div>
+
+          <div class="task-card">
+            <div class="task-icon-box" style="background:#FEF3C7; color:#92400E;">🧩</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag">Maison</span>
+                <span class="task-due-date">📅 Pour demain</span>
+              </div>
+              <h4 class="task-title">Entraîner le détecteur de formes</h4>
+              <p style="font-size:13.5px; color:var(--text-muted); margin-top:2px;">Classe 10 formes géométriques pour apprendre à l'IA à reconnaître les triangles.</p>
+            </div>
+            <button class="btn-big-touch secondary" onclick="window.location.href='02-mes-devoirs.html'">
+              <span>Ouvrir</span>
+            </button>
+          </div>
+        </section>
+
+      </main>
+
+      
+    <nav class="mobile-bottom-bar">
+      
+      <a href="01-aujourdhui.html" class="mobile-tab-btn active">
+        <span class="tab-icon">☀️</span>
+        <span>Aujourd'hui</span>
+        
+      </a>
+
+      <a href="02-mes-devoirs.html" class="mobile-tab-btn ">
+        <span class="tab-icon">📝</span>
+        <span>Devoirs</span>
+        <span class="mobile-tab-badge">2</span>
+      </a>
+
+      <a href="03-mon-parcours.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🗺️</span>
+        <span>Parcours</span>
+        
+      </a>
+
+      <a href="04-ma-classe.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🏫</span>
+        <span>Classe</span>
+        
+      </a>
+
+      <a href="05-mes-etoiles.html" class="mobile-tab-btn ">
+        <span class="tab-icon">⭐</span>
+        <span>Étoiles</span>
+        
+      </a>
+
+      <a href="06-libre.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🎮</span>
+        <span>Libre</span>
+        <span class="mobile-tab-badge">🔒</span>
+      </a>
+    </nav>
+
+    </div>
+  </div>
+
+  <script>
+    function selectPoll(btn) {
+      document.querySelectorAll('.poll-option-btn').forEach(b => {
+        b.classList.remove('selected');
+        b.querySelector('.check-indicator').textContent = '';
+      });
+      btn.classList.add('selected');
+      btn.querySelector('.check-indicator').textContent = '✓';
+    }
+  </script>
+
+</body>
+</html>

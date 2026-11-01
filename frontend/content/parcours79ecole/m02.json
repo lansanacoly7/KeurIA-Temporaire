@@ -1,0 +1,974 @@
+{
+ "module": {
+  "id": "ep2",
+  "chapter": 2,
+  "title": "Les données de ma classe",
+  "place": "La cour de l’école",
+  "emoji": "📊",
+  "intro": "Une nouvelle élève arrive avec un drôle de carnet. Elle note tout !",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep2-1",
+   "title": "Compter et noter",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady"
+   ],
+   "problem": "Toute la classe veut choisir le fruit du goûter… mais tout le monde parle en même temps !",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "👋🏾",
+     "image": "ep2-l1-khady-arrive.webp",
+     "alt": "Madame Diop présente Khady, une nouvelle élève avec un carnet et un crayon, à la classe.",
+     "text": "Madame Diop présente une nouvelle élève : « Voici Khady. Elle vient d’arriver dans notre école. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "moussa",
+     "emoji": "🥭",
+     "image": "ep2-l1-brouhaha.webp",
+     "alt": "Les élèves lèvent la main et crient tous en même temps des noms de fruits. Moussa se bouche les oreilles.",
+     "text": "Moussa demande : « Quel fruit voulez-vous pour le goûter de vendredi ? » Tout le monde crie en même temps !"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "khady",
+     "emoji": "📒",
+     "image": "ep2-l1-batons.webp",
+     "alt": "Khady écrit dans son carnet des petits bâtons à côté de dessins de fruits.",
+     "text": "Khady ouvre son carnet : « Une personne à la fois ! Je fais un bâton pour chaque réponse. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep2-l1-palou-donnees.webp",
+     "alt": "Palou regarde le carnet de Khady avec admiration.",
+     "text": "Palou est ravi : « Khady récolte des données ! Moi aussi, c’est avec des données que j’ai appris. »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "📒",
+     "word": {
+      "terme": "Donnée",
+      "sens": "Une information qu’on note pour s’en souvenir : un nombre, un mot, une couleur, une réponse…"
+     },
+     "text": "Quand on note les réponses de chacun, on récolte des données. Une IA apprend aussi avec des données."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide Khady à récolter les données !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pourquoi Khady note-t-elle chaque réponse dans son carnet ?",
+       "hint": "Que se passe-t-il quand tout le monde crie en même temps ?",
+       "success": "Bravo ! En notant, on ne perd aucune réponse et on peut compter.",
+       "options": [
+        {
+         "label": "Pour ne rien oublier et pouvoir compter",
+         "pict": "carnet-batons",
+         "correct": true
+        },
+        {
+         "label": "Pour faire joli",
+         "pict": "dessin-joli",
+         "explain": "Ce n’est pas pour décorer : noter permet de compter sans rien oublier."
+        },
+        {
+         "label": "Pour gronder ceux qui crient",
+         "pict": "gronder",
+         "explain": "Khady ne gronde personne : elle note pour se souvenir de chaque réponse."
+        }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche toutes les données.",
+       "hint": "Une donnée, c’est une information qu’on peut noter. Il y en a trois.",
+       "success": "Bravo ! Un âge, une couleur préférée et un fruit choisi sont des données.",
+       "options": [
+        {
+         "label": "L’âge de Fatou : 8 ans",
+         "pict": "gateau-anniversaire",
+         "emoji": "🎂",
+         "correct": true
+        },
+        {
+         "label": "La couleur préférée de Moussa : le jaune",
+         "pict": "tache-couleur",
+         "emoji": "🎨",
+         "correct": true
+        },
+        {
+         "label": "Un éternuement",
+         "pict": "eternuement",
+         "emoji": "🤧",
+         "explain": "Un éternuement, ça arrive, mais ce n’est pas une information qu’on note."
+        },
+        {
+         "label": "Le fruit choisi par Khady : la mangue",
+         "pict": "mangue",
+         "emoji": "🥭",
+         "correct": true
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Dans le carnet, la mangue a 6 bâtons et la banane 3 bâtons. Quel fruit a été le plus choisi ?",
+       "hint": "Chaque bâton, c’est une réponse.",
+       "success": "Exact ! 6 bâtons, c’est plus que 3 : la mangue gagne.",
+       "options": [
+        {
+         "label": "La mangue",
+         "pict": "mangue",
+         "correct": true
+        },
+        {
+         "label": "La banane",
+         "pict": "banane",
+         "explain": "La banane n’a que 3 bâtons : c’est moins que la mangue."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "📒",
+     "titre": "La récolte de données",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe pose la même question à 10 camarades : « Quel est ton fruit préféré : mangue, banane, orange ou papaye ? » Un élève pose la question, un autre fait les bâtons, les autres vérifient qu’on n’oublie personne.",
+     "materiel": [
+      "Une feuille par groupe, avec les 4 fruits dessinés"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "fatou",
+     "emoji": "💬",
+     "question": "Fatou demande : « Est-ce qu’on a le droit de noter tout ce qu’on veut sur quelqu’un ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Ton fruit préféré, d’accord… mais ton adresse ? Tes secrets ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’une donnée ?",
+       "hint": "Pense au carnet de Khady.",
+       "success": "Oui ! Une donnée, c’est une information qu’on note.",
+       "options": [
+        {
+         "label": "Une information qu’on note",
+         "pict": "carnet-batons",
+         "correct": true
+        },
+        {
+         "label": "Un cadeau qu’on donne",
+         "pict": "cadeau",
+         "explain": "« Donnée » ressemble à « donner », mais ce n’est pas un cadeau : c’est une information."
+        },
+        {
+         "label": "Un jeu de la récréation",
+         "pict": "ballon",
+         "explain": "Ce n’est pas un jeu : c’est une information qu’on note."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avec quoi une IA apprend-elle ?",
+       "hint": "Palou l’a dit en regardant le carnet de Khady.",
+       "success": "Exact ! Une IA apprend avec des données.",
+       "options": [
+        {
+         "label": "Avec des données",
+         "pict": "carnet-batons",
+         "correct": true
+        },
+        {
+         "label": "Avec de la nourriture",
+         "pict": "mangue",
+         "explain": "Une IA ne mange pas ! Elle apprend avec des données."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais récolter des données, comme Khady.",
+     "learned": "Une donnée est une information qu’on note. Noter permet de compter sans rien oublier. Une IA apprend avec des données."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre ce qu’est une donnée.",
+     "Savoir récolter des réponses avec des bâtons (comptage).",
+     "Faire le lien : une IA apprend avec des données."
+    ],
+    "deroule": [
+     "Histoire et mot nouveau sur l’écran de la classe (5 min).",
+     "Jeux sur les tablettes ou en collectif (10 min).",
+     "« En classe » : la récolte de données, par groupes de 4 (15 min).",
+     "Mise en commun : chaque groupe annonce le fruit gagnant (5 min).",
+     "« On en parle » : débat guidé (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "Une feuille par groupe avec 4 fruits dessinés (mangue, banane, orange, papaye).",
+     "Garder les feuilles : elles serviront à la leçon 2."
+    ],
+    "reponses": [
+     "Les bâtons se regroupent par paquets de 5 (quatre bâtons et un qui les barre) : plus facile à compter.",
+     "Débat : on peut noter ce qui sert au travail de la classe, si la personne est d’accord. On ne note pas les secrets, l’adresse ou ce qui pourrait gêner quelqu’un."
+    ],
+    "attention": "Garder les feuilles de chaque groupe pour la leçon 2 (faire un tableau)."
+   }
+  },
+  {
+   "id": "ep2-2",
+   "title": "Faire un tableau",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady"
+   ],
+   "problem": "Les feuilles des groupes sont pleines de bâtons partout. Comment s’y retrouver ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "moussa",
+     "emoji": "😵",
+     "image": "ep2-l2-feuilles.webp",
+     "alt": "Moussa devant un tas de feuilles couvertes de bâtons dans tous les sens, l’air perdu.",
+     "text": "Moussa regarde les feuilles des groupes : « Il y a des bâtons partout ! Je n’y comprends rien. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "khady",
+     "emoji": "📋",
+     "image": "ep2-l2-tableau.webp",
+     "alt": "Khady trace au tableau noir un grand quadrillage avec deux colonnes.",
+     "text": "Khady trace deux colonnes au tableau : « À gauche le fruit, à droite le nombre. Une ligne par fruit. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep2-l2-palou-tableau.webp",
+     "alt": "Palou montre le tableau bien rangé, les élèves hochent la tête.",
+     "text": "Palou applaudit : « Avec un tableau, on trouve une donnée en un coup d’œil. Les IA aussi rangent leurs données en tableaux ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "📋",
+     "word": {
+      "terme": "Tableau",
+      "sens": "Des données rangées en lignes et en colonnes, pour les retrouver facilement."
+     },
+     "text": "Un tableau range les données en lignes et en colonnes. Chaque case contient une seule information."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide Khady à remplir le tableau !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque donnée dans la bonne colonne.",
+       "hint": "Est-ce un fruit ou un nombre ?",
+       "success": "Bravo ! Les fruits à gauche, les nombres à droite.",
+       "bins": [
+        {
+         "id": "fruit",
+         "label": "Colonne « Fruit »",
+         "pict": "panier-fruits",
+         "emoji": "🧺"
+        },
+        {
+         "id": "nombre",
+         "label": "Colonne « Nombre »",
+         "pict": "carnet-batons",
+         "emoji": "🔢"
+        }
+       ],
+       "items": [
+        {
+         "id": "mangue",
+         "label": "Mangue",
+         "pict": "mangue",
+         "emoji": "🥭",
+         "bin": "fruit",
+         "explain": "La mangue est un fruit : colonne « Fruit »."
+        },
+        {
+         "id": "douze",
+         "label": "12",
+         "emoji": "🔢",
+         "pict": "nombre",
+         "bin": "nombre",
+         "explain": "12 est un nombre : colonne « Nombre »."
+        },
+        {
+         "id": "orange",
+         "label": "Orange",
+         "pict": "orange",
+         "emoji": "🍊",
+         "bin": "fruit",
+         "explain": "L’orange est un fruit : colonne « Fruit »."
+        },
+        {
+         "id": "cinq",
+         "label": "5",
+         "emoji": "🔢",
+         "pict": "nombre",
+         "bin": "nombre",
+         "explain": "5 est un nombre : colonne « Nombre »."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le groupe de Fatou a fait 8 bâtons pour la banane. Que faut-il écrire dans la case « Nombre » de la ligne banane ?",
+       "hint": "Un bâton = une réponse.",
+       "success": "Exact ! 8 bâtons, on écrit 8.",
+       "options": [
+        {
+         "label": "8",
+         "pict": "nombre",
+         "correct": true
+        },
+        {
+         "label": "Banane",
+         "pict": "banane",
+         "explain": "« Banane » est déjà dans la colonne « Fruit ». Ici, on écrit le nombre."
+        },
+        {
+         "label": "Rien du tout",
+         "pict": "case-vide",
+         "explain": "Une case vide, c’est une donnée perdue ! On écrit 8."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Moussa a recopié 3 au lieu de 8 dans le tableau. Que va-t-il se passer ?",
+       "hint": "Le tableau dira-t-il la vérité ?",
+       "success": "Oui ! Une donnée fausse donne une réponse fausse. On vérifie toujours.",
+       "options": [
+        {
+         "label": "Le tableau dira quelque chose de faux",
+         "pict": "erreur-croix",
+         "correct": true
+        },
+        {
+         "label": "Ce n’est pas grave, personne ne verra",
+         "pict": "cacher",
+         "explain": "Si : on croira que la banane a été moins choisie. Une erreur change le résultat."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "📋",
+     "titre": "Le grand tableau de la classe",
+     "duree": "20 minutes",
+     "groupes": "Toute la classe, puis par groupes",
+     "text": "Au tableau noir, la classe trace un grand tableau : « Fruit » et « Nombre ». Chaque groupe vient recopier ses résultats de la leçon 1. Puis on additionne les groupes pour avoir le total de la classe. Un élève « vérificateur » relit chaque nombre avec le groupe.",
+     "materiel": [
+      "Les feuilles de bâtons de la leçon 1",
+      "Craies de couleur"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "moussa",
+     "emoji": "💬",
+     "question": "Moussa demande : « Si une IA apprend avec un tableau plein d’erreurs, qu’est-ce qui va se passer ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qui doit vérifier les données ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "À quoi sert un tableau ?",
+       "hint": "Pense aux feuilles pleines de bâtons de Moussa.",
+       "success": "Oui ! Il range les données pour les retrouver facilement.",
+       "options": [
+        {
+         "label": "À ranger les données pour les retrouver",
+         "pict": "tableau-grille",
+         "correct": true
+        },
+        {
+         "label": "À décorer la classe",
+         "pict": "dessin-joli",
+         "explain": "Un tableau de données n’est pas une décoration : il range les informations."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA apprend avec des données pleines d’erreurs. Que va-t-elle faire ?",
+       "hint": "Souviens-toi de l’erreur de Moussa.",
+       "success": "Exact ! Avec des données fausses, une IA donne des réponses fausses.",
+       "options": [
+        {
+         "label": "Elle va se tromper",
+         "pict": "ia-hesite",
+         "correct": true
+        },
+        {
+         "label": "Elle va corriger les erreurs toute seule",
+         "pict": "robot-sait-tout",
+         "explain": "Une IA ne sait pas qu’une donnée est fausse : ce sont les humains qui doivent vérifier."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais ranger des données dans un tableau.",
+     "learned": "Un tableau range les données en lignes et en colonnes. Une donnée fausse donne un résultat faux : on vérifie toujours."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Organiser des données dans un tableau à deux colonnes.",
+     "Comprendre qu’une erreur de recopie fausse le résultat.",
+     "Faire le lien : une IA qui apprend avec des données fausses se trompe."
+    ],
+    "deroule": [
+     "Rappel : qu’est-ce qu’une donnée ? (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le grand tableau de la classe (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "Les feuilles de bâtons de la leçon 1.",
+     "Craies de couleur."
+    ],
+    "reponses": [
+     "Le total d’un fruit = la somme des nombres de tous les groupes pour ce fruit.",
+     "Débat : une IA ne sait pas qu’une donnée est fausse. Ce sont les humains qui récoltent, vérifient et corrigent les données."
+    ],
+    "attention": "Garder le grand tableau (photo ou copie sur une affiche) : il servira à la leçon 3 pour faire un graphique."
+   }
+  },
+  {
+   "id": "ep2-3",
+   "title": "Lire un graphique",
+   "scene": {
+    "id": "ecole-cour",
+    "label": "La cour de l’école"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady"
+   ],
+   "problem": "Le tableau est juste, mais les petits du CP ne savent pas encore bien lire les nombres. Comment leur montrer le résultat ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Question",
+     "speaker": "fatou",
+     "emoji": "🤔",
+     "image": "ep2-l3-petits.webp",
+     "alt": "Fatou montre le tableau à des petits élèves du CP qui ont l’air perdus devant les nombres.",
+     "text": "Fatou veut montrer le résultat aux petits du CP. Mais eux ne savent pas encore bien lire les nombres !"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "📊",
+     "image": "ep2-l3-barres.webp",
+     "alt": "Dans la cour, Palou dessine sur le sable des barres de hauteurs différentes, une pour chaque fruit.",
+     "text": "Palou dessine dans le sable une barre pour chaque fruit : « Plus il y a de réponses, plus la barre est haute ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "khady",
+     "emoji": "😃",
+     "image": "ep2-l3-cp-comprend.webp",
+     "alt": "Les petits du CP montrent du doigt la plus haute barre, celle de la mangue, et sourient.",
+     "text": "Les petits montrent tout de suite la plus haute barre : « La mangue ! » Khady sourit : « Ça marche ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "📊",
+     "word": {
+      "terme": "Graphique",
+      "sens": "Un dessin qui montre des données. Dans un graphique en barres, plus la barre est haute, plus le nombre est grand."
+     },
+     "text": "Un graphique montre les données en dessin. On voit la réponse d’un seul coup d’œil."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide les petits à lire le graphique !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Dans le graphique, la barre de la mangue est la plus haute. Qu’est-ce que ça veut dire ?",
+       "hint": "Plus la barre est haute, plus il y a de réponses.",
+       "success": "Bravo ! La mangue a reçu le plus de réponses.",
+       "options": [
+        {
+         "label": "La mangue a été la plus choisie",
+         "pict": "mangue",
+         "correct": true
+        },
+        {
+         "label": "La mangue est le plus gros fruit",
+         "pict": "fruit-geant",
+         "explain": "La barre ne montre pas la taille du fruit : elle montre le nombre de réponses."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "La barre de l’orange est toute petite. L’orange a reçu…",
+       "hint": "Petite barre = …",
+       "success": "Exact ! Petite barre, peu de réponses.",
+       "options": [
+        {
+         "label": "Peu de réponses",
+         "pict": "barre-petite",
+         "correct": true
+        },
+        {
+         "label": "Beaucoup de réponses",
+         "pict": "barre-haute",
+         "explain": "Une barre haute, c’est beaucoup de réponses. Celle de l’orange est petite."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Khady n’a demandé qu’à 3 élèves de toute l’école. Son graphique dit-il ce que préfère toute l’école ?",
+       "hint": "3 élèves, c’est beaucoup ou peu ?",
+       "success": "Exact ! Avec trop peu de réponses, le graphique peut se tromper.",
+       "options": [
+        {
+         "label": "Non, ce n’est pas assez de réponses",
+         "pict": "trois-personnes",
+         "correct": true
+        },
+        {
+         "label": "Oui, 3 élèves suffisent",
+         "pict": "robot-sait-tout",
+         "explain": "Trois élèves ne parlent pas pour toute l’école : il faut demander à beaucoup plus de monde."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🧍🏾",
+     "titre": "Le graphique vivant",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe, dans la cour",
+     "text": "Dans la cour, on dessine au sol une case par fruit. Chaque élève va se mettre en file derrière son fruit préféré. Les files forment des barres : quelle est la plus longue ? Puis on recommence avec une autre question (« Comment viens-tu à l’école ? »).",
+     "materiel": [
+      "Une craie ou un bâton pour tracer au sol",
+      "Facultatif : des dessins de fruits posés au sol"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "khady",
+     "emoji": "💬",
+     "question": "Khady demande : « Si on demande seulement aux enfants de notre classe, est-ce qu’on sait ce que préfèrent tous les enfants du Sénégal ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Et une IA qui n’apprend qu’avec les données d’un seul endroit ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Dans un graphique en barres, la plus haute barre montre…",
+       "hint": "Pense au graphique vivant dans la cour.",
+       "success": "Oui ! La plus haute barre, c’est la réponse la plus choisie.",
+       "options": [
+        {
+         "label": "La réponse la plus choisie",
+         "pict": "barre-haute",
+         "correct": true
+        },
+        {
+         "label": "La réponse la moins choisie",
+         "pict": "barre-petite",
+         "explain": "Non : la moins choisie a la plus petite barre."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour qu’une IA connaisse les goûts de tous les enfants, il faut…",
+       "hint": "Souviens-toi : 3 élèves, ce n’était pas assez.",
+       "success": "Exact ! Il faut des données de beaucoup d’enfants, de partout.",
+       "options": [
+        {
+         "label": "Des données de beaucoup d’enfants, de partout",
+         "pict": "foule-enfants",
+         "correct": true
+        },
+        {
+         "label": "Les données d’un seul enfant",
+         "pict": "un-enfant",
+         "explain": "Un seul enfant ne parle pas pour tous : l’IA se tromperait souvent."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais lire un graphique.",
+     "learned": "Un graphique montre les données en dessin. Plus la barre est haute, plus il y a de réponses. Avec trop peu de données, on peut se tromper."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Lire un graphique en barres simple.",
+     "Passer d’un tableau à un graphique.",
+     "Comprendre qu’avec trop peu de données (ou des données d’un seul endroit), on peut tirer de mauvaises conclusions, comme une IA."
+    ],
+    "deroule": [
+     "Rappel : le tableau de la leçon 2 (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le graphique vivant, dans la cour (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "Une craie ou un bâton pour tracer des cases au sol.",
+     "Le tableau de la leçon 2."
+    ],
+    "reponses": [
+     "Graphique vivant : la file la plus longue = la réponse la plus choisie.",
+     "Débat : notre classe ne représente pas tous les enfants du Sénégal (à Saint-Louis ou en Casamance, les goûts peuvent changer). Une IA qui apprend avec les données d’un seul endroit se trompe ailleurs."
+    ],
+    "attention": "Prévoir une solution s’il fait trop chaud dans la cour : le graphique vivant peut se faire dans la classe, en dessinant les cases au tableau."
+   }
+  },
+  {
+   "id": "ep2-4",
+   "title": "Le grand sondage de la classe",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady"
+   ],
+   "problem": "Le directeur demande l’avis des élèves pour choisir le jeu de la kermesse. La classe va faire un vrai sondage !",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "🎪",
+     "image": "ep2-l4-kermesse.webp",
+     "alt": "Madame Diop lit une lettre du directeur, les élèves écoutent avec attention.",
+     "text": "Madame Diop lit une lettre : « Le directeur veut savoir quel jeu les élèves préfèrent pour la kermesse. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "khady",
+     "emoji": "📒",
+     "image": "ep2-l4-plan.webp",
+     "alt": "Khady, Moussa et Fatou font un plan sur une grande feuille : une question, un tableau, un graphique.",
+     "text": "Khady fait un plan : « Une question. On récolte les réponses. Un tableau. Un graphique. Et on présente ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep2-l4-palou-conseil.webp",
+     "alt": "Palou lève la patte pour donner un conseil aux élèves.",
+     "text": "Palou ajoute : « N’oubliez pas : demandez à beaucoup d’élèves, et vérifiez vos nombres ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "🗳️",
+     "word": {
+      "terme": "Sondage",
+      "sens": "Poser la même question à beaucoup de personnes et noter leurs réponses."
+     },
+     "text": "Un sondage récolte les réponses de beaucoup de personnes. Les résultats aident à décider."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide la classe à préparer le sondage !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Quelle est la bonne question pour le sondage ?",
+       "hint": "Une bonne question est claire, avec des réponses à choisir.",
+       "success": "Bravo ! Une question claire, avec des choix : facile à compter.",
+       "options": [
+        {
+         "label": "« Quel jeu préfères-tu : la course en sac, le tir à la corde ou les chaises musicales ? »",
+         "pict": "question-choix",
+         "correct": true
+        },
+        {
+         "label": "« Raconte-moi tout ce que tu aimes. »",
+         "pict": "bulle-longue",
+         "explain": "Chacun répondrait une longue histoire différente : impossible à compter !"
+        },
+        {
+         "label": "« Tu n’aimes pas le football, hein ? »",
+         "pict": "ballon",
+         "explain": "Cette question pousse à répondre « non » : elle n’est pas juste."
+        }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Remets les étapes du sondage dans l’ordre : d’abord, puis, ensuite.",
+       "hint": "On ne peut pas faire un graphique avant d’avoir les réponses !",
+       "success": "Bravo ! D’abord on récolte, puis on range, ensuite on dessine.",
+       "bins": [
+        {
+         "id": "un",
+         "label": "D’abord",
+         "pict": "etape-1",
+         "emoji": "1️⃣"
+        },
+        {
+         "id": "deux",
+         "label": "Puis",
+         "pict": "etape-2",
+         "emoji": "2️⃣"
+        },
+        {
+         "id": "trois",
+         "label": "Ensuite",
+         "pict": "etape-3",
+         "emoji": "3️⃣"
+        }
+       ],
+       "items": [
+        {
+         "id": "recolter",
+         "label": "Récolter les réponses avec des bâtons",
+         "pict": "carnet-batons",
+         "emoji": "📒",
+         "bin": "un",
+         "explain": "On commence par récolter les réponses."
+        },
+        {
+         "id": "tableau",
+         "label": "Ranger les nombres dans un tableau",
+         "pict": "tableau-grille",
+         "emoji": "📋",
+         "bin": "deux",
+         "explain": "Puis on range les nombres dans un tableau."
+        },
+        {
+         "id": "graphique",
+         "label": "Dessiner le graphique en barres",
+         "pict": "barre-haute",
+         "emoji": "📊",
+         "bin": "trois",
+         "explain": "Ensuite, on dessine le graphique avec les nombres du tableau."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🗳️",
+     "titre": "Projet de classe : le grand sondage",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4, chaque groupe interroge une autre classe",
+     "text": "La classe choisit une vraie question pour l’école (le jeu de la kermesse, le plat de la cantine, l’activité du vendredi…). Chaque groupe va interroger une autre classe et fait les bâtons. De retour, on fait le tableau de toute l’école, puis une grande affiche avec le graphique. On l’apporte au directeur !",
+     "materiel": [
+      "Une feuille de bâtons par groupe",
+      "Une grande affiche, des feutres et une règle",
+      "L’accord des autres enseignants pour passer dans leur classe"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "palou",
+     "emoji": "💬",
+     "question": "Palou demande : « Si une IA apprenait seulement avec les réponses de notre école, saurait-elle ce que préfèrent tous les enfants du monde ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce qui manquerait à ses données ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Khady note la réponse de chaque élève. Elle récolte des…",
+       "hint": "Le mot nouveau de la leçon 1.",
+       "success": "Oui ! Des données.",
+       "options": [
+        {
+         "label": "Données",
+         "pict": "carnet-batons",
+         "correct": true
+        },
+        {
+         "label": "Cadeaux",
+         "pict": "cadeau",
+         "explain": "Ce ne sont pas des cadeaux : ce sont des informations, des données."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour retrouver facilement les données, on les range dans…",
+       "hint": "Des lignes et des colonnes…",
+       "success": "Exact ! Un tableau.",
+       "options": [
+        {
+         "label": "Un tableau",
+         "pict": "tableau-grille",
+         "correct": true
+        },
+        {
+         "label": "Un sac",
+         "pict": "sac",
+         "explain": "Dans un sac, tout est mélangé ! Le tableau range en lignes et colonnes."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA apprend avec très peu de données, toutes du même endroit. Elle risque de…",
+       "hint": "Souviens-toi des 3 élèves de Khady.",
+       "success": "Bravo ! Elle risque de se tromper pour tous les autres.",
+       "options": [
+        {
+         "label": "Se tromper pour les autres",
+         "pict": "ia-hesite",
+         "correct": true
+        },
+        {
+         "label": "Tout savoir sur tout le monde",
+         "pict": "robot-sait-tout",
+         "explain": "Avec peu de données, une IA ne connaît qu’une petite partie du monde."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton sondage est prêt. Le module 2 est terminé !",
+     "learned": "Un sondage récolte des données. On les range dans un tableau, on les montre dans un graphique. Pour bien apprendre, une IA a besoin de beaucoup de données, venues de partout."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Mener un sondage complet : question, récolte, tableau, graphique, présentation.",
+     "Écrire une question claire et juste.",
+     "Comprendre que la qualité et la variété des données comptent, pour un sondage comme pour une IA."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; choix de la question et préparation des feuilles (10 min) ; récolte dans les autres classes (20 min).",
+     "Séance 2 : tableau de l’école (15 min) ; affiche avec le graphique (15 min) ; « On en parle » (10 min) ; défi de Palou (5 min)."
+    ],
+    "materiel": [
+     "Une feuille de bâtons par groupe, une grande affiche, des feutres, une règle.",
+     "Prévenir les collègues pour le passage des groupes dans leurs classes."
+    ],
+    "reponses": [
+     "Une bonne question : claire, avec 3 ou 4 réponses au choix, qui ne pousse pas vers une réponse.",
+     "Débat : les réponses d’une seule école ne disent pas ce que préfèrent les enfants d’autres pays ou d’autres régions. Il manquerait des données variées."
+    ],
+    "attention": "Si possible, apporter vraiment l’affiche au directeur : les élèves voient que leurs données servent à décider."
+   }
+  }
+ ]
+}

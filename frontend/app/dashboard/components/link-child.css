@@ -1,0 +1,182 @@
+/* Fenêtre « Relier mon enfant » (espace parent). */
+
+.lc-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.45);
+  animation: lc-fade 0.15s ease;
+}
+
+.lc-dialog {
+  position: relative;
+  width: min(100%, 460px);
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  border-radius: 24px;
+  background: #fff;
+  color: #0f172a;
+  box-shadow: 0 30px 60px -20px rgba(15, 23, 42, 0.45);
+  animation: lc-rise 0.2s ease;
+}
+
+.lc-body {
+  display: grid;
+  gap: 14px;
+  padding: 28px;
+}
+
+.lc-body h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.lc-body p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.lc-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.lc-icon--ok {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.lc-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.lc-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.lc-field {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.lc-field small {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.lc-code {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--field-border, #7d958f);
+  border-radius: 14px;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.lc-code:focus {
+  border-color: #0f766e;
+  outline: 3px solid #99f6e4;
+}
+
+.lc-code[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.lc-body .lc-error {
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.lc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.lc-btn {
+  padding: 11px 18px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lc-btn:hover:not(:disabled) {
+  background: #f8fafc;
+}
+
+.lc-btn--primary {
+  border-color: #0d846e;
+  background: #0d846e;
+  color: #fff;
+}
+
+.lc-btn--primary:hover:not(:disabled) {
+  background: #0b6e5c;
+}
+
+.lc-btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+@keyframes lc-fade {
+  from { opacity: 0; }
+}
+
+@keyframes lc-rise {
+  from { opacity: 0; transform: translateY(12px); }
+}
+
+@media (max-width: 480px) {
+  .lc-body {
+    padding: 22px 18px;
+  }
+
+  .lc-actions .lc-btn {
+    flex: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-backdrop,
+  .lc-dialog {
+    animation: none;
+  }
+}

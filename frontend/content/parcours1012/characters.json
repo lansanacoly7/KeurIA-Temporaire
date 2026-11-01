@@ -1,0 +1,36 @@
+{
+    "characters": [
+        {
+            "id": "palou",
+            "name": "Palou",
+            "role": "Guide et mascotte IA",
+            "avatar": "/images/parcours1012/characters/palou.webp",
+            "voice_id": "eleven_palou_senegal_01",
+            "order": 1
+        },
+        {
+            "id": "aminata",
+            "name": "Aminata",
+            "role": "Jeune codeuse passionnée de robotique",
+            "avatar": "/images/parcours1012/characters/aminata.webp",
+            "voice_id": "eleven_aminata_dakar_02",
+            "order": 2
+        },
+        {
+            "id": "kofi",
+            "name": "Kofi",
+            "role": "Inventeur curieux et analyste d'algorithmes",
+            "avatar": "/images/parcours1012/characters/kofi.webp",
+            "voice_id": "eleven_kofi_tech_03",
+            "order": 3
+        },
+        {
+            "id": "dr-fall",
+            "name": "Dr. Fall",
+            "role": "Chercheuse en intelligence artificielle et mentor",
+            "avatar": "/images/parcours1012/characters/dr_fall.webp",
+            "voice_id": "eleven_drfall_mentor_04",
+            "order": 4
+        }
+    ]
+}

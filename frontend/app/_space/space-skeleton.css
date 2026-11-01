@@ -1,0 +1,280 @@
+/* Skeleton de chargement des espaces (voir SpaceSkeleton.tsx). */
+
+.sk-shell {
+  --sk-side-w: 264px;
+  --sk-side-bg: linear-gradient(180deg, #173e3c 0%, #0d2e2c 100%);
+  --sk-bg: #f4f7f6;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: var(--sk-side-w) minmax(0, 1fr);
+  overflow: hidden;
+  background: var(--sk-bg);
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+.sk-shell[data-kind="parent"] {
+  --sk-bg: #f8fafc;
+}
+
+.sk-shell[data-kind="eleve"] {
+  --sk-side-w: 230px;
+  --sk-side-bg: #103f3b;
+  --sk-bg: #f6f8f1;
+}
+
+.sk-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Os du skeleton, avec un reflet qui passe (désactivé si mouvement réduit). */
+.sk-bone {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #e3eae7;
+}
+
+.sk-bone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.65) 50%, transparent 100%);
+  transform: translateX(-100%);
+  animation: sk-shine 1.4s ease-in-out infinite;
+}
+
+@keyframes sk-shine {
+  to { transform: translateX(100%); }
+}
+
+/* ─── Barre latérale ─── */
+
+.sk-side {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 28px 20px;
+  background: var(--sk-side-bg);
+}
+
+.sk-side .sk-bone {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sk-side .sk-bone::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.12) 50%, transparent 100%);
+}
+
+.sk-logo {
+  width: 150px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.sk-nav {
+  display: grid;
+  gap: 10px;
+}
+
+.sk-nav-item {
+  height: 40px;
+  border-radius: 12px;
+}
+
+.sk-side .sk-nav-item.is-active {
+  background: rgba(217, 239, 89, 0.22);
+}
+
+/* ─── Contenu ─── */
+
+.sk-main {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.sk-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 32px;
+  border-bottom: 1px solid #e1eae7;
+  background: #fff;
+}
+
+.sk-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.sk-content {
+  display: grid;
+  gap: 24px;
+  padding: 32px;
+}
+
+.sk-inline {
+  min-height: 60vh;
+}
+
+.sk-inline .sk-content {
+  padding: 0;
+}
+
+.sk-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.sk-head-text {
+  display: grid;
+  flex: 1;
+  gap: 12px;
+}
+
+.sk-title {
+  width: min(280px, 60%);
+  height: 32px;
+}
+
+.sk-subtitle {
+  width: min(420px, 80%);
+  height: 14px;
+}
+
+.sk-action {
+  flex-shrink: 0;
+  width: 150px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.sk-card {
+  border: 1px solid #e1eae7;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.sk-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.sk-stat {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.sk-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+}
+
+.sk-stat-value {
+  width: 45%;
+  height: 26px;
+}
+
+.sk-panels {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+
+.sk-panel {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 22px;
+}
+
+.sk-panel-title {
+  margin-bottom: 4px;
+}
+
+.sk-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sk-dot {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.sk-line {
+  height: 12px;
+}
+
+.sk-w20 { width: 20%; }
+.sk-w35 { width: 35%; }
+.sk-w40 { width: 40%; }
+
+/* ─── Petits écrans : barre en haut, une colonne ─── */
+
+@media (max-width: 900px) {
+  .sk-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .sk-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: 56px minmax(0, 1fr);
+  }
+
+  .sk-side {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .sk-logo {
+    width: 110px;
+    height: 32px;
+  }
+
+  .sk-nav {
+    display: none;
+  }
+
+  .sk-topbar {
+    display: none;
+  }
+
+  .sk-content {
+    padding: 20px 16px;
+  }
+
+  .sk-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sk-action {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-bone::after {
+    animation: none;
+  }
+}

@@ -1,0 +1,32 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e01.mp3;1;1;texte (story);Mame Coumba veut envoyer un message vocal pour la fête du quartier.;Mamé Coumba veut envoyer un message vocal pour la fête du quartier.;67
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e02.mp3;1;2;texte (story);Madame Diop propose un petit dialogue en trois phrases courtes.;Madame Diop propose un petit dialogue en trois phrases courtes.;63
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e03.mp3;1;3;texte (story);Fatou répète les phrases lentement. Palou écoute, puis il répond.;Fatou répète les phrases lentement. Palou écoute, puis il répond.;65
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e04.mp3;1;4;texte (discover);Un dialogue, c’est parler chacun son tour. Si on ne comprend pas, on peut demander de répéter.;Un dialogue, c’est parler chacun son tour. Si on ne comprend pas, on peut demander de répéter.;94
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu as fini le chapitre 6 avec Palou.;Bravo ! Tu as fini le chapitre 6 avec Palou.;44
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e08-retiens.mp3;1;8;« Je retiens »;Une IA écoute mieux quand on parle clairement. Elle comprend moins bien les langues qu’elle connaît peu.;Une I A écoute mieux quand on parle clairement. Elle comprend moins bien les langues qu’elle connaît peu.;104
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Dans un dialogue, on parle chacun son tour. Maintenant, Palou répond.;Oui ! Dans un dialogue, on parle chacun son tour. Maintenant, Palou répond.;75
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m1-q.mp3;2;5;consigne du jeu;Fatou veut saluer Palou. Dis-lui bonjour poliment !;Fatou veut saluer Palou. Dis-lui bonjour poliment !;51
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Demander de répéter est une très bonne idée.;Oui ! Demander de répéter est une très bonne idée.;50
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m2-q.mp3;2;5;consigne du jeu;Palou n’a pas compris. Que peut-il dire ?;Palou n’a pas compris. Que peut-il dire ?;41
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m3-ok.mp3;2;5;bravo (bonne réponse);Oui ! Quand on ne comprend pas, on demande poliment de répéter.;Oui ! Quand on ne comprend pas, on demande poliment de répéter.;63
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m3-q.mp3;2;5;consigne du jeu;Palou n’a pas compris. Demande-lui poliment de répéter.;Palou n’a pas compris. Demande-lui poliment de répéter.;55
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05.mp3;2;5;texte (play);Aide Palou à bien dialoguer !;Aide Palou à bien dialoguer !;29
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e06.mp3;2;6;texte (ai);Une IA peut se tromper dans une langue qu’elle connaît peu. Vérifie toujours avec une personne.;Une I A peut se tromper dans une langue qu’elle connaît peu. Vérifie toujours avec une personne.;95
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! On dit bonjour poliment.;Oui ! On dit bonjour poliment.;30
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m1-q.mp3;2;7;consigne du jeu;Comment salue-t-on Palou ?;Comment salue-t-on Palou ?;26
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Exact ! On demande de répéter, poliment.;Exact ! On demande de répéter, poliment.;40
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m2-q.mp3;2;7;consigne du jeu;Palou n’a pas compris. Que dis-tu ?;Palou n’a pas compris. Que dis-tu ?;35
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Clairement, avec des mots simples.;Bravo ! Clairement, avec des mots simples.;42
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m3-q.mp3;2;7;consigne du jeu;Comment parler pour que Palou comprenne ?;Comment parler pour que Palou comprenne ?;41
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m1-o1.mp3;3;5;réponse de Palou (un mot manque);Pour saluer Palou, dis « Bonjour Palou » !;Pour saluer Palou, dis « Bonjour Palou » !;42
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m2-o1.mp3;3;5;explication (mauvaise réponse);Il n’a pas compris : mieux vaut le dire que faire semblant.;Il n’a pas compris : mieux vaut le dire que faire semblant.;59
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m2-o2.mp3;3;5;explication (mauvaise réponse);Arrêter d’écouter ne règle rien : il vaut mieux demander de répéter.;Arrêter d’écouter ne règle rien : il vaut mieux demander de répéter.;68
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e05-m3-o1.mp3;3;5;réponse de Palou (un mot manque);Pour demander de répéter, dis « répéter » et « s’il te plaît » !;Pour demander de répéter, dis « répéter » et « s’il te plaît » !;64
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);On salue poliment, avec un bonjour.;On salue poliment, avec un bonjour.;35
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Un petit bonjour fait plaisir, même à un robot.;Un petit bonjour fait plaisir, même à un robot.;47
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);On reste poli : ce n’est pas gentil.;On reste poli : ce n’est pas gentil.;36
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Ne plus écouter ne règle rien : on demande de répéter.;Ne plus écouter ne règle rien : on demande de répéter.;54
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Parler vite et la bouche pleine, c’est difficile à comprendre.;Parler vite et la bouche pleine, c’est difficile à comprendre.;62
+frontend/public/audio/palou/lecons/m06/p6-4/p6-4_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Crier ne l’aide pas : il comprend mieux une voix claire.;Crier ne l’aide pas : il comprend mieux une voix claire.;56

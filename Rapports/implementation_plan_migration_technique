@@ -1,0 +1,142 @@
+# Plan de Migration Backend Django REST Framework (DRF) & SQLite local / PostgreSQL
+
+Migration d'architecture du projet **kEur IA** (SIRIBRA GROUPE) :
+- **Frontend** : Conservation et consolidation de **Next.js**
+- **Backend** : Migration complète de l'API vers **Django REST Framework (DRF)**
+- **Base de données** : **SQLite** en local pour le développement rapide, avec configuration prête pour bascule immédiate sur **PostgreSQL** lors du déploiement
+- **Objectif absolu** : Zéro régression sur le code existant et respect des directives d'ingénierie (`antigravity_behaviour.md`).
+
+---
+
+## 1. Contexte & Architecture Cible
+
+Actuellement, l'application possède :
+- Un frontend Next.js (avec Tailwind CSS, Blockly, etc.).
+- 10 routes API REST dans `app/api/` (`auth`, `admin`, `profile(s)`, `progress`, `leaderboard`, `daily-usage`).
+- 7 tables de données gérées initialement par Drizzle / SQLite D1.
+
+### Architecture Cible Découplée
+
+```
+[ Frontend : Next.js (Port 5173 / 3000) ]
+       │  (Requêtes HTTP JSON /api/...)
+       ▼
+[ Proxy / Rewrite Vite & Next.js ]
+       │
+       ▼
+[ Backend : Django REST Framework (Port 8000) ]
+       │
+       ├─ App `accounts` (Utilisateurs, Rôles, Auth PBKDF2 + session Django)
+       ├─ App `learning` (Profils apprenants, Écoles, Progression, Quiz, Usage quotidien)
+       │
+       ▼
+[ Base de Données ]
+       ├─ Dev local : SQLite (`backend/db.sqlite3`)
+       └─ Déploiement Prod : PostgreSQL (`postgresql-x64-18` déjà disponible sur l'hôte)
+```
+
+---
+
+## 2. Découpage et Tâches d'Exécution
+
+### Phase 1 : Environnement & Initialisation du Projet Django
+- Création de l'environnement virtuel Python `.\venv` (avec Python 3.13 détecté sur la machine).
+- Installation des dépendances backend requises :
+  - `django`
+  - `djangorestframework`
+  - `django-cors-headers`
+  - ~~`djangorestframework-simplejwt`~~ — abandonné : l'authentification utilise la session Django (SessionAuthentication + CSRF), voir README « Authentification et autorisations ».
+  - `psycopg2-binary` (ou `psycopg[binary]`) pour la compatibilité PostgreSQL
+  - `python-dotenv` / `dj-database-url` pour le switch dynamique SQLite/Postgres
+- Création de la structure du projet dans un répertoire dédié `backend/` :
+  - Projet Django `keuria_backend`
+  - Applications `accounts` et `learning`
+- Configuration de `settings.py` :
+  - Base de données SQLite par défaut en local avec variable d'environnement `DATABASE_URL` permettant de basculer sur PostgreSQL sans modifier le code.
+  - Configuration CORS (`corsheaders`) pour autoriser le frontend Next.js.
+  - Configuration DRF (format de réponse, pagination, authentification).
+
+### Phase 2 : Modèles Django ORM (Transposition ISO-Fonctionnelle)
+Transposition exacte des 7 tables existantes en modèles Django avec typage strict et méthodes d'assistance :
+1. **`User` (dans `accounts`)** :
+   - Hérite de `AbstractBaseUser` ou modèle customisé.
+   - Champs : `email` (unique, identifiant principal), `displayName`, `role` (`admin`, `parent`, `enseignant`, `eleve`), `loginCount`, `lastSeenAt`, `createdAt`.
+   - Compatibilité immédiate avec les hashes de mots de passe existants (`pbkdf2_sha256$210000$...` qui est le format natif Django !).
+2. **`School` (dans `learning`)** :
+   - `name`, `slug`, `motto`, `primaryColor`, `secondaryColor`, `accentColor`, `createdByEmail`, `createdAt`.
+3. **`LearnerProfile` (dans `learning`)** :
+   - `ownerEmail`, `learnerEmail`, `nickname`, `ageTrack`, `avatar`, `createdAt`.
+4. **`Progress` (dans `learning`)** :
+   - `ownerEmail`, `lessonId`, `ageTrack`, `xp`, `score`, `completedAt` (unicité sur `ownerEmail` + `lessonId`).
+5. **`QuizAttempt` (dans `learning`)** :
+   - `ownerEmail`, `quizId`, `score`, `answers` (JSONField), `createdAt`.
+6. **`DailyUsage` (dans `learning`)** :
+   - `ownerEmail`, `usageDate`, `ageTrack`, `minutes`, `lessons`, `quizzes`, `games`, `updatedAt` (unicité sur `ownerEmail` + `usageDate` + `ageTrack`).
+7. **Exécution des migrations initiales** (`python manage.py makemigrations` et `migrate`).
+
+### Phase 3 : Serializers & Vues DRF (Couverture des 10 Endpoints)
+Chaque vue reproduit fidèlement les clés de sortie (camelCase) et les statuts HTTP attendus par Next.js :
+1. **Authentification** (`/api/auth/`) :
+   - `POST /api/auth/register/` (création compte, rôle par défaut `parent`, session/cookie)
+   - `POST /api/auth/login/` (vérification credentials, mise à jour `loginCount`/`lastSeenAt`, retour `{ ok: true, role: user.role }`)
+   - `POST /api/auth/logout/` (suppression de session/cookie)
+2. **Profil & Équipe** (`/api/profile/`, `/api/profiles/`) :
+   - `GET /api/profile/`, `PUT /api/profile/`
+   - `GET /api/profiles/`, `POST /api/profiles/` (inscription d'élèves/apprenants)
+3. **Progression & Activités** (`/api/progress/`, `/api/daily-usage/`, `/api/leaderboard/`) :
+   - `GET /api/progress/`, `POST /api/progress/` (calcul streak, cumul XP, liste des leçons terminées)
+   - `POST /api/daily-usage/` (incrément temps/leçons/quiz/jeux)
+   - `GET /api/leaderboard/` (classement des apprenants par XP)
+4. **Administration** (`/api/admin/`) :
+   - `GET /api/admin/users/`, `POST /api/admin/users/`, `PUT /api/admin/users/`, `DELETE /api/admin/users/` (gestion utilisateurs + apprenants + analytics)
+   - `GET /api/admin/schools/`, `POST /api/admin/schools/`, `PUT /api/admin/schools/`, `DELETE /api/admin/schools/` (gestion des écoles)
+5. **Enregistrement de l'Admin Django** :
+   - Inscription de tous les modèles dans `admin.py` avec filtres et recherche pour une interface d'administration clé en main.
+
+### Phase 4 : Raccordement Next.js & Proxy Transparent
+- Configuration du proxy dans `vite.config.ts` (pour le mode dev actuel) :
+  - Redirection automatique de tout appel `/api/...` vers `http://127.0.0.1:8000/api/...` avec transfert des cookies de session.
+- Mise en place d'un script de démarrage unifié ou documentation claire pour lancer le backend Django et le frontend Next.js en simultané.
+
+### Phase 5 : Création du compte Admin & Données Initiales
+- Script de peuplement (seed) automatique dans Django pour créer l'administrateur initial (`admin@keur-ia.local` ou `local-admin@keur-ia.test`).
+- Création de données de test (écoles, profils, leçons de démonstration).
+
+---
+
+## 3. Plan de Vérification & Validation
+
+### Tests Automatisés & Endpoints
+- Exécution de tests unitairement via un script de test Python/DRF (`tests.py` ou script de validation curl/Node) validant :
+  - Inscription d'un nouvel utilisateur
+  - Connexion et génération de session valide
+  - Récupération et mise à jour du profil
+  - Enregistrement d'une leçon et mise à jour du streak et du total d'XP
+  - Accès aux routes d'administration avec permissions adéquates
+
+### Validation Manuelle de Bout en Bout
+1. Démarrage de Django (`python manage.py runserver 8000`).
+2. Démarrage de Next.js (`npm run dev`).
+3. Navigation sur l'interface :
+   - Page d'accueil (`/`) : vérification du chargement du classement (leaderboard).
+   - Connexion (`/connexion`) : saisie des identifiants et redirection vers le dashboard.
+   - Dashboard (`/dashboard`) : affichage correct du profil, des jauges d'XP, complétion d'une leçon interactive.
+   - Administration (`/admin`) : listing des utilisateurs et gestion des écoles.
+   - Django Admin (`http://127.0.0.1:8000/admin/`) : vérification de l'interface d'administration native.
+
+---
+
+## 4. Préparation au Déploiement PostgreSQL
+- Le fichier `settings.py` sera architecturé ainsi :
+  ```python
+  if os.environ.get('DATABASE_URL'):
+      DATABASES = {'default': dj_database_url.config(conn_max_age=600)}
+  else:
+      DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.sqlite3',
+              'NAME': BASE_DIR / 'db.sqlite3',
+          }
+      }
+  ```
+  Ainsi, passer de SQLite à PostgreSQL en production ne nécessitera **aucune modification de code**, uniquement la définition de la variable d'environnement `DATABASE_URL`.

@@ -1,0 +1,450 @@
+/* Mode portrait : continu et fluide avec le défilement de la page (aucun conteneur scrollable interne) */
+.p79-ar-stage.portrait {
+  overflow: visible;
+  container-type: inline-size;
+  height: auto;
+  min-height: auto;
+  padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px));
+}
+.p79-ar-stage.portrait .p79-ar-map {
+  position: relative;
+  left: 50%;
+  top: 0;
+  translate: -50% 0;
+  width: min(100%, 720px);
+  height: calc(min(100cqw, 720px) * 2);
+  aspect-ratio: auto;
+}
+.p79-ar-stage.portrait.has-art::before { display: none; }
+.p79-ar-stage.portrait.has-art .p79-ar-map { -webkit-mask-image: none; mask-image: none; }
+.p79-ar-stage.portrait.has-art {
+  background: linear-gradient(180deg, #8ed5cb 0%, #56c2c7 45%, #48a1ba 85%, #48a1ba 100%);
+}
+.p79-ar-stage.portrait .p79-ar-map::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: calc(165px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(90deg, #48a1ba 0%, #48a1ba 20%, #55bac8 50%, #48a1ba 80%, #48a1ba 100%);
+  pointer-events: none;
+}
+.p79-ar-stage.portrait .p79-ar-title {
+  position: fixed;
+  bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  translate: -50% 0;
+  z-index: 25;
+}
+
+/* Le chemin : des pointillés animés qui coulent le long de l'eau */
+@keyframes p79-trail-flow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+/* Une île verrouillée : la même illustration, en noir et blanc, découpée autour de l'île et posée dessus (bords adoucis). */
+.p79-ar-grey {
+  position: absolute; z-index: 2; pointer-events: none; background-image: var(--ar-art); background-repeat: no-repeat; filter: grayscale(1) brightness(1.12) contrast(.88);
+  -webkit-mask-image: radial-gradient(ellipse 50% 52% at 50% 55%, #000 66%, transparent 98%); mask-image: radial-gradient(ellipse 50% 52% at 50% 55%, #000 66%, transparent 98%);
+}
+
+/* Animations de flottement doux des îles */
+@keyframes p79-isle-bob-1 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes p79-isle-bob-2 {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes p79-beacon-wave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(163, 230, 53, 0.85), 0 0 16px rgba(163, 230, 53, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(163, 230, 53, 0), 0 0 24px rgba(163, 230, 53, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(163, 230, 53, 0), 0 0 0 rgba(163, 230, 53, 0);
+  }
+}
+
+/* Une île : zone tactile englobant l'île peinte sur l'archipel */
+.p79-ar-isle { position: absolute; z-index: 3; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 28px; }
+.p79-ar-isle:disabled { cursor: default; }
+.p79-ar-isle:focus-visible { outline: 3px solid var(--lime); outline-offset: 3px; border-radius: 24px; }
+.p79-ar-isle.open {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.p79-ar-isle.open:hover {
+  cursor: pointer;
+  transform: translateY(-5px) scale(1.03);
+}
+.p79-ar-isle.open:hover::before, .p79-ar-isle.here::before, .p79-ar-isle.selected::before {
+  /* Suppression de l'ancienne ellipse jaune rigide qui défigurait l'île */
+  display: none;
+}
+.p79-ar-isle.here {
+  /* L'effet de balise se concentre avec élégance sur le badge */
+}
+.p79-ar-isle.shake { animation: p79-shake .4s; }
+
+@keyframes p79-pulse-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 3px 0 var(--ink), 0 0 0 3px rgba(216, 240, 91, .9), 0 0 12px rgba(216, 240, 91, .5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 4px 0 var(--ink), 0 0 0 7px rgba(216, 240, 91, .25), 0 0 20px rgba(216, 240, 91, .75);
+  }
+}
+
+.p79-ar-badge {
+  position: absolute; left: 50%; top: 100%; translate: -50% -42%; z-index: 3; display: grid; place-items: center; min-width: 36px; height: 36px; padding: 0 8px; border-radius: 99px;
+  background: var(--lime); color: var(--ink); border: 3px solid var(--ink); box-shadow: 0 3px 0 var(--ink); font-size: 19px; font-weight: 700; line-height: 1;
+  transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease, background 0.22s ease;
+}
+.p79-ar-isle.open:hover .p79-ar-badge {
+  transform: scale(1.22) translateY(-3px);
+  box-shadow: 0 6px 14px rgba(21, 59, 59, .35), 0 0 12px rgba(216, 240, 91, .7);
+  background: #e8f96e;
+}
+.p79-ar-isle.here .p79-ar-badge {
+  box-shadow: 0 3px 0 var(--ink), 0 0 0 3px rgba(216, 240, 91, .9), 0 0 14px rgba(216, 240, 91, .6);
+  animation: p79-pulse-badge 2.2s ease-in-out infinite;
+}
+.p79-ar-isle.done .p79-ar-badge { background: var(--green); color: #fff; }
+.p79-ar-isle.fog .p79-ar-badge { top: 50%; translate: -50% -50%; background: #fff; color: var(--muted); border-color: #7e918a; box-shadow: 0 3px 0 #7e918a; }
+/* Sans l'illustration (dessin provisoire) : l'île dessinée est grisée directement. */
+.p79-ar-stage.draft .p79-ar-isle { aspect-ratio: auto; }
+.p79-ar-stage.draft .p79-ar-isle img, .p79-ar-stage.draft .p79-ar-isle svg { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; filter: drop-shadow(0 8px 6px rgba(4, 60, 110, .25)); }
+.p79-ar-stage.draft .p79-ar-isle.fog img, .p79-ar-stage.draft .p79-ar-isle.fog svg { filter: grayscale(1) brightness(1.1); }
+
+/* Palou se tient devant son île et voyage jusqu'à la suivante. */
+.p79-ar-palou { position: absolute; z-index: 5; pointer-events: none; translate: -50% -100%; transition: left 2.2s cubic-bezier(.45, 0, .25, 1), top 2.2s cubic-bezier(.45, 0, .25, 1), width .4s; }
+.p79-ar-palou img { display: block; width: 100%; filter: drop-shadow(0 5px 0 rgba(9, 60, 76, .25)); animation: p79-bob 2.6s ease-in-out infinite; }
+.p79-ar-palou.moving img { animation: p79-step .42s ease-in-out infinite; }
+.p79-ar-palou.moving { z-index: 6; }
+
+/* Titre, musique, message de fin. */
+.p79-ar-title {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  translate: -50% 0;
+  z-index: 10;
+  width: fit-content;
+  max-width: min(780px, calc(100% - 32px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px 20px 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 3.5px solid var(--ink);
+  box-shadow: 0 6px 0 var(--ink), 0 16px 36px rgba(10, 50, 80, 0.22);
+  user-select: none;
+  box-sizing: border-box;
+  transition: transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.16s ease;
+}
+.p79-ar-title-badge {
+  flex: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.p79-ar-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 2.5px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+  white-space: nowrap;
+  transition: transform 0.12s ease;
+}
+.p79-ar-title-badge:hover .p79-ar-count {
+  transform: scale(1.04);
+}
+.p79-ar-count-short {
+  display: none;
+}
+
+.p79-ar-title-main {
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+  text-align: left;
+}
+.p79 .p79-ar-title h3 {
+  margin: 0;
+  font-size: clamp(16px, 1.8vw, 21px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p79-ar-title-sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p79-ar-title-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.p79-ar-title-place svg {
+  color: var(--muted);
+}
+.p79-ar-title-dot {
+  color: #9cb1a6;
+}
+.p79-ar-title-lesson-name {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.p79-ar-title-actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.p79-ar-btn-overview {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+  border: 2.5px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.p79-ar-btn-overview:hover {
+  background: var(--lime-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--ink);
+}
+.p79-ar-btn-overview:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.p79-ar-btn-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  border: 3px solid var(--ink);
+  box-shadow: 0 3px 0 var(--ink), 0 8px 16px rgba(10, 80, 50, 0.22);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.p79-ar-btn-start:hover {
+  background: #14836f;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 5px 0 var(--ink), 0 10px 18px rgba(10, 80, 50, 0.28);
+}
+.p79-ar-btn-start:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+.p79-ar-music {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+}
+.p79-ar-music-btn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid var(--ink);
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+}
+.p79-ar-music-btn:hover {
+  background: var(--lime);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--ink);
+}
+.p79-ar-music-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+.p79-ar-finale {
+  position: absolute;
+  left: 50%;
+  bottom: 96px;
+  translate: -50% 0;
+  z-index: 8;
+  width: max-content;
+  max-width: calc(100% - 40px);
+  text-align: center;
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: 0 5px 0 var(--ink);
+  font-size: 17px;
+}
+.p79-ar-finale b {
+  display: block;
+  font-size: 22px;
+  color: var(--green);
+}
+
+/* La fenêtre d'une île : un en-tête, puis quatre quarts séparés par des lignes (image, titre, étoiles, Jouer). */
+.p79-ar-back { position: fixed; inset: 0; z-index: 9400; display: grid; place-items: center; padding: 16px; background: rgba(21, 59, 59, .6); backdrop-filter: blur(3px); }
+.p79-ar-modal { width: min(780px, 100%); max-height: 94dvh; overflow: auto; background: var(--cream); border: 4px solid var(--ink); border-radius: 34px; box-shadow: 0 12px 0 rgba(21, 59, 59, .3); animation: p79-pop .35s cubic-bezier(.34, 1.4, .64, 1); }
+.p79-ar-modal-head { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px 24px 12px; border-bottom: 4px solid var(--ink); background: linear-gradient(135deg, #9be8f0, #55c6ea); }
+.p79 .p79-ar-modal-head h3 { margin: 4px 0 0; font-size: clamp(22px, 3vw, 32px); line-height: 1.1; font-weight: 700; color: var(--ink); }
+.p79-ar-modal-head p { margin: 0; font-size: 18px; font-weight: 500; }
+.p79-ar-close { flex: none; display: grid; place-items: center; width: 50px; height: 50px; padding: 0; border-radius: 50%; border: 3px solid var(--ink); background: #fff; color: var(--ink); cursor: pointer; box-shadow: 0 4px 0 var(--ink); }
+.p79-ar-close:hover { background: var(--lime); }
+.p79-ar-quads { display: flex; flex-direction: column; gap: 16px; padding: 20px 22px 24px; background: linear-gradient(180deg, #f3f9f0, #e6f2ec); }
+/* Une carte de cours : horizontale, posée à part, avec son ombre : image à gauche, numéro, titre, étoiles, bouton à droite. */
+.p79-ar-quad {
+  position: relative; display: grid; grid-template-columns: 148px minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 12px 20px 12px 12px; text-align: left;
+  background: #fff; border: 3px solid var(--ink); border-radius: 26px; box-shadow: 0 6px 0 var(--ink), 0 16px 26px rgba(10, 40, 70, .2); transition: transform .2s, box-shadow .2s;
+}
+.p79-ar-quad:hover:not(.lock):not(.soon):not(.next) { transform: translateY(-3px); box-shadow: 0 9px 0 var(--ink), 0 20px 30px rgba(10, 40, 70, .24); }
+.p79-ar-quad-pic { position: relative; width: 148px; height: 96px; overflow: hidden; border-radius: 18px; border: 3px solid var(--ink); background: #e7f4ec; display: grid; place-items: center; }
+.p79-ar-quad-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p79-ar-quad-n { position: absolute; left: 6px; top: 6px; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--lime); color: var(--ink); border: 3px solid var(--ink); box-shadow: 0 3px 0 rgba(21, 59, 59, .5); font-size: 21px; font-weight: 700; line-height: 1; }
+.p79-ar-quad.done .p79-ar-quad-n { background: var(--green); color: #fff; }
+.p79-ar-quad-info { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.p79-ar-quad-kicker { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.p79 .p79-ar-quad-title { margin: 0; font-size: clamp(19px, 2.1vw, 25px); line-height: 1.12; font-weight: 700; color: var(--ink); }
+.p79-ar-quad-stars { display: inline-flex; gap: 3px; margin-top: 2px; }
+.p79-ar-quad-stars .on { color: #f5b400; filter: drop-shadow(0 2px 0 rgba(21, 59, 59, .35)); }
+.p79-ar-quad-stars .off { color: #d3dcd6; }
+.p79-ar-quad-lock { margin: 2px 0 0; font-size: 17px; font-weight: 500; color: var(--muted); }
+.p79-ar-quad-padlock { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--muted); border: 3px solid #9bb0a7; }
+.p79-ar-play { display: inline-flex; align-items: center; gap: 8px; padding: 8px 24px 8px 18px; border-radius: 99px; cursor: pointer; font: inherit; font-size: 22px; font-weight: 700; white-space: nowrap; background: var(--green); color: #fff; border: 3px solid var(--ink); box-shadow: 0 4px 0 var(--ink); transition: transform .12s, box-shadow .12s; }
+.p79-ar-play:hover { transform: translateY(-2px); }
+.p79-ar-play:active { transform: translateY(4px); box-shadow: none; }
+.p79-ar-quad.done .p79-ar-play { background: #fff; color: var(--green); }
+.p79-ar-quad.now { background: #fbffe3; box-shadow: 0 6px 0 var(--ink), 0 0 0 5px var(--lime), 0 16px 26px rgba(10, 40, 70, .22); }
+.p79-ar-quad.lock, .p79-ar-quad.soon, .p79-ar-quad.next { background: #f1f6f2; border-color: #7e918a; box-shadow: 0 5px 0 #9bb0a7, 0 10px 18px rgba(10, 40, 70, .12); }
+.p79-ar-quad.lock .p79-ar-quad-pic, .p79-ar-quad.soon .p79-ar-quad-pic, .p79-ar-quad.next .p79-ar-quad-pic { filter: grayscale(1) brightness(1.1); opacity: .65; border-color: #9bb0a7; }
+.p79 .p79-ar-quad.lock .p79-ar-quad-title, .p79 .p79-ar-quad.soon .p79-ar-quad-title, .p79 .p79-ar-quad.next .p79-ar-quad-title { color: var(--muted); }
+.p79-ar-quad.lock .p79-ar-quad-n, .p79-ar-quad.soon .p79-ar-quad-n, .p79-ar-quad.next .p79-ar-quad-n { background: #fff; color: var(--muted); border-color: #7e918a; box-shadow: none; }
+.p79-ar-quad.shake { animation: p79-shake .4s; }
+
+@media (max-width: 760px) {
+  .p79-ar-title {
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    width: calc(100% - 20px);
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+  }
+  .p79-ar-title-badge {
+    padding: 0;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .p79-ar-count-full { display: none; }
+  .p79-ar-count-short { display: inline; font-weight: 900; }
+  .p79-ar-count { padding: 6px 10px; font-size: 13px; }
+  .p79-ar-title-main {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .p79 .p79-ar-title h3 {
+    font-size: 15px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+  .p79-ar-title-sub {
+    display: none;
+  }
+  .p79-ar-btn-overview {
+    display: none;
+  }
+  .p79-ar-btn-start {
+    font-size: 14px;
+    padding: 8px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .p79-ar-music { top: 12px; right: 10px; }
+  .p79-ar-music-btn { width: 46px; height: 46px; }
+  .p79-ar-badge { min-width: 28px; height: 28px; font-size: 16px; }
+  .p79-ar-finale { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); max-width: calc(100% - 24px); font-size: 14px; }
+  .p79-ar-finale b { font-size: 17px; }
+  .p79-ar-back { padding: 8px; align-items: start; }
+  .p79-ar-modal { max-height: calc(100dvh - 16px); border-radius: 26px; }
+  .p79-ar-modal-head { padding: 12px 14px; }
+  .p79-ar-quads { padding: 14px 12px 18px; gap: 12px; }
+  .p79-ar-quad { grid-template-columns: 88px minmax(0, 1fr); gap: 4px 12px; padding: 10px 12px; border-radius: 22px; }
+  .p79-ar-quad-pic { width: 88px; height: 70px; border-radius: 14px; grid-row: span 2; }
+  .p79-ar-quad-n { width: 30px; height: 30px; font-size: 17px; left: 4px; top: 4px; }
+  .p79-ar-play, .p79-ar-quad-padlock { grid-column: 2; justify-self: start; }
+  .p79-ar-play { font-size: 19px; padding: 5px 18px 5px 14px; }
+  .p79-ar-quad-padlock { width: 38px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .p79-ar-palou { transition: none; }
+  .p79-ar-isle.here::before, .p79-ar-palou img { animation: none; }
+}
+@media (min-width: 761px) and (max-width: 1024px) {
+  .p79-ar-stage.portrait .p79-ar-map {
+    width: min(100%, 820px);
+    height: calc(min(100cqw, 820px) * 2);
+  }
+  .p79-ar-stage.portrait .p79-ar-title {
+    left: calc(50% + 38px) !important;
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+    max-width: min(720px, calc(100vw - 110px)) !important;
+  }
+}

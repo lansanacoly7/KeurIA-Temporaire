@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kEur IA : pictogrammes et voix</title>
+<style>
+:root{--vert:#0f3d36;--teal:#0f766e;--citron:#d8f05b;--creme:#f6f4ec;--encre:#153b3b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--encre);font:16.5px/1.6 system-ui,"Segoe UI",sans-serif}
+header{background:var(--vert);color:#fff;padding:40px 24px}
+header h1{margin:0 0 6px;font-size:34px}header p{margin:0;opacity:.9}
+.badge{display:inline-block;background:var(--citron);color:var(--vert);font-weight:800;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+main{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+h2{color:var(--teal);margin:34px 0 10px;font-size:26px}
+.carte{background:#fff;border-radius:14px;padding:18px 22px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.05);border-top:6px solid var(--teal)}
+ul,ol{margin:4px 0;padding-left:22px}li{margin:3px 0}
+.note{background:#fff8d6;border-left:6px solid #e0b400;padding:12px 16px;border-radius:10px;margin:12px 0}
+.tableau{overflow-x:auto}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:9px 12px;border-bottom:1px solid #e3ebe7;text-align:left;vertical-align:top}th{background:#eef5f1}
+code{background:#eef5f1;border-radius:6px;padding:1px 5px;font-size:14px}
+@media print{body{background:#fff}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.carte{box-shadow:none;border:1px solid #ddd;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="badge">Production des médias</div>
+  <h1>Pictogrammes et voix</h1>
+  <p>Une série par parcours. On commence par le parcours enfant 10-12 ans et le parcours élève 7-9 ans, les leçons d'abord, puis les jeux.</p>
+</header>
+<main>
+
+<h2>1. La méthode du 7-9, qu'on reprend</h2>
+<div class="carte">
+<p><strong>Les pictogrammes</strong> sont les petites images des boutons de réponse : l'enfant voit une vache, un cadenas, une mangue, et le mot est écrit dessous. Le 7-9 en compte 511.</p>
+<ol>
+<li>Une fois les leçons écrites, on liste chaque pictogramme avec une courte description dans un fichier <code>pictos.json</code>.</li>
+<li>On les génère par <strong>planches de 12</strong> (4 colonnes × 3 lignes, 2048 × 1536 px, fond blanc), dans le style du parcours.</li>
+<li>Un outil découpe les planches en images séparées. Chaque pictogramme est vérifié, et les ratés sont refaits sur une planche de corrections.</li>
+</ol>
+<p><strong>Les voix</strong> sont produites leçon par leçon.</p>
+<ol>
+<li>Un outil sort, pour chaque leçon, la liste des phrases à enregistrer. Chaque phrase a son texte, sa prononciation corrigée et son nom de fichier.</li>
+<li>On les génère avec ElevenLabs et on les dépose à l'endroit prévu.</li>
+<li>Ce qui n'est pas encore enregistré est lu par la voix du navigateur : rien ne casse pendant la production.</li>
+</ol>
+<p>Les phrases d'une leçon sont enregistrées dans cet ordre : l'histoire, puis les consignes des jeux de la leçon, puis les explications après une erreur.</p>
+</div>
+
+<h2>2. Une série par parcours</h2>
+<p>kEur IA aura 6 parcours : pour chaque tranche d'âge (7-9, 10-12, 13-15), un parcours enfant et un parcours élève. <strong>Chaque parcours a sa propre série</strong> de pictogrammes et de voix, rangée dans ses propres dossiers : <code>parcours79</code>, <code>parcours79ecole</code>, <code>parcours1012</code>, <code>parcours1012ecole</code>, <code>parcours1315</code>, <code>parcours1315ecole</code>.</p>
+<p>Les deux séries à produire maintenant :</p>
+<div class="tableau">
+<table>
+<tr><th></th><th>Parcours enfant 10-12 ans</th><th>Parcours élève 7-9 ans</th></tr>
+<tr><td><strong>Contenu des leçons</strong></td><td><code>frontend/content/parcours1012/</code></td><td><code>frontend/content/parcours79ecole/</code></td></tr>
+<tr><td><strong>Liste des pictogrammes</strong></td><td><code>frontend/content/parcours1012/pictos.json</code></td><td><code>frontend/content/parcours79ecole/pictos.json</code></td></tr>
+<tr><td><strong>Pictogrammes</strong></td><td><code>frontend/public/images/parcours1012/pictos/</code></td><td><code>frontend/public/images/parcours79ecole/pictos/</code></td></tr>
+<tr><td><strong>Listes des voix</strong></td><td><code>docs/voix-1012/</code></td><td><code>docs/voix-ecole/</code></td></tr>
+<tr><td><strong>Fichiers audio</strong></td><td><code>frontend/public/audio/parcours1012/</code></td><td><code>frontend/public/audio/parcours79ecole/</code></td></tr>
+<tr><td><strong>Style des pictogrammes</strong></td><td>Pour des 10-12 ans : moins enfantin que le 7-9, plus de détails, des objets du quotidien d'un jeune à Dakar (téléphone, applis, réseaux).</td><td>Pour des 7-9 ans : objets et scènes de l'école (tableau, cahier, travail en groupe) et des lieux visités en sortie scolaire (coopérative, ferme, parc, radio…).</td></tr>
+<tr><td><strong>Voix</strong></td><td>Seulement Palou plus grand, avec une voix plus mûre. Il lit aussi les passages des autres personnages.</td><td>Seulement Palou, avec la voix du parcours enfant 7-9. Il lit aussi les passages des autres personnages pour donner le contexte.</td></tr>
+</table>
+</div>
+
+<h2>3. Dans quel ordre</h2>
+<div class="carte">
+<ol>
+<li><strong>Les leçons d'abord.</strong> Pour chaque série, module par module :
+  <ol type="a">
+  <li>Lansana écrit les textes de la leçon. Ils doivent être définitifs : une phrase changée après coup oblige à refaire sa voix.</li>
+  <li>Les outils sortent automatiquement la liste des pictogrammes et la liste des phrases.</li>
+  <li>Louise-Sophie génère les planches de pictogrammes. Lansana génère les voix.</li>
+  <li>Découpage, vérification, puis branchement dans les écrans.</li>
+  </ol>
+</li>
+<li><strong>Les jeux ensuite</strong>, avec la même méthode, une fois les leçons du module en place.</li>
+</ol>
+<div class="note">Pour chaque série, on termine d'abord <strong>le module 1 en entier</strong> (pictogrammes et voix) comme module pilote, avant de produire les suivants.</div>
+</div>
+
+<h2>4. Ce qu'il faut avant de commencer</h2>
+<div class="carte">
+<ul>
+<li><strong>Les textes des leçons.</strong> Ils n'existent encore ni pour le 10-12 ni pour le compte élève, et ce sont eux qui donnent la liste des pictogrammes et des phrases.</li>
+<li><strong>Les outils pour chaque parcours.</strong> Le découpage des planches et l'export des voix ne marchent aujourd'hui que pour le 7-9. Les adapter aux deux nouvelles séries est la tâche P1-7 de Pathe.</li>
+<li><strong>Les voix choisies une fois pour toutes</strong>, chacune avec une fiche : identifiant, réglages, exemples validés.
+  <ul>
+  <li>Pour le 10-12 : la voix de Palou plus grand, à choisir parmi trois essais sur une même phrase test.</li>
+  <li>Pour le parcours élève 7-9 : la voix actuelle de Palou, rien à choisir.</li>
+  </ul>
+  Seul Palou a une voix : il lit aussi les passages des autres personnages, comme dans le parcours enfant 7-9.
+</li>
+<li><strong>Une planche de référence par personnage</strong>, validée avant de générer des pictogrammes où il apparaît.</li>
+</ul>
+</div>
+
+<h2>5. Qui fait quoi</h2>
+<div class="tableau">
+<table>
+<tr><th>Membre</th><th>Rôle</th></tr>
+<tr><td><strong>Lansana</strong></td><td>Écrit les textes, choisit et génère les voix, valide chaque pictogramme et chaque voix.</td></tr>
+<tr><td><strong>Louise-Sophie Diouf</strong></td><td>Génère les planches de pictogrammes des deux séries et les branche dans les écrans.</td></tr>
+<tr><td><strong>Pathe Fall</strong></td><td>Adapte les outils de découpage et d'export des voix à chaque parcours (P1-7).</td></tr>
+</table>
+</div>
+
+</main>
+</body>
+</html>

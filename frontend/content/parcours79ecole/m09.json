@@ -1,0 +1,576 @@
+{
+ "module": {
+  "id": "ep9",
+  "chapter": 9,
+  "title": "Je protège, je vérifie",
+  "place": "La rédaction d’un journal, à Thiès",
+  "emoji": "🗞️",
+  "intro": "À Thiès, dans la rédaction d’un journal, la classe apprend à protéger ses informations et à démasquer les fausses nouvelles.",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep9-1",
+   "title": "Mes informations à moi",
+   "scene": { "id": "journal-thies", "label": "Le journal de Thiès" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "gueye"],
+   "problem": "Un jeu sur internet demande à Khady son nom, son adresse et sa photo. Doit-elle tout donner ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "gueye", "emoji": "🗞️",
+     "image": "ep9-l1-arrivee.webp",
+     "alt": "Dans la rédaction d’un journal à Thiès, Madame Guèye, la journaliste, accueille la classe entre les bureaux et les écrans.",
+     "text": "À Thiès, Madame Guèye, journaliste, accueille la classe dans la rédaction de son journal : « Ici, notre travail, c’est l’information. Et la vôtre est précieuse ! »"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "khady", "emoji": "📱",
+     "image": "ep9-l1-jeu.webp",
+     "alt": "Khady regarde un téléphone qui affiche un formulaire avec des cases vides et un cadeau.",
+     "text": "Sur une tablette, Khady voit un jeu : « Gagne un cadeau ! Écris ton nom, ton adresse, ton école et envoie ta photo. » Elle hésite."
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "gueye", "emoji": "🔒",
+     "image": "ep9-l1-explication.webp",
+     "alt": "Madame Guèye montre un cadenas dessiné sur un tableau, à côté d’une liste d’informations.",
+     "text": "Madame Guèye explique : « Ton nom complet, ton adresse, ton école, ta photo : ce sont des informations personnelles. Avec elles, un inconnu peut te retrouver. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep9-l1-palou.webp",
+     "alt": "Palou tient un grand cadenas et sourit à Khady.",
+     "text": "Palou ajoute : « Et les IA apprennent avec des données… parfois les nôtres ! Avant de donner une information, demande toujours à un adulte. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🔒",
+     "word": { "terme": "Information personnelle", "sens": "Une information qui dit qui tu es ou où te trouver : nom complet, adresse, école, téléphone, photo, mot de passe." },
+     "text": "Mes informations personnelles sont à moi. Je ne les donne jamais à un inconnu ni à un jeu sans demander à un adulte."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Khady à protéger ses informations !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque information : je peux la dire, ou je la protège ?",
+       "hint": "Est-ce qu’elle permet de te retrouver ?",
+       "success": "Bravo ! Tu sais quelles informations protéger.",
+       "bins": [
+        { "id": "ok", "label": "Je peux la dire", "pict": "coche-verte", "emoji": "🙂" },
+        { "id": "proteger", "label": "Je la protège", "pict": "cadenas", "emoji": "🔒" }
+       ],
+       "items": [
+        { "id": "a", "label": "Mon fruit préféré", "pict": "mangue", "emoji": "🥭", "bin": "ok", "explain": "Ton fruit préféré ne permet pas de te retrouver." },
+        { "id": "b", "label": "Mon adresse", "pict": "maison", "emoji": "🏠", "bin": "proteger", "explain": "Avec ton adresse, un inconnu peut trouver ta maison." },
+        { "id": "c", "label": "Mon mot de passe", "pict": "cle", "emoji": "🔑", "bin": "proteger", "explain": "Un mot de passe ne se dit à personne, sauf à tes parents." },
+        { "id": "d", "label": "Ma couleur préférée", "pict": "tache-couleur", "emoji": "🎨", "bin": "ok", "explain": "Ta couleur préférée ne dit pas où te trouver." },
+        { "id": "e", "label": "Ma photo avec mon école derrière", "pict": "photo-ecole", "emoji": "📸", "bin": "proteger", "explain": "On reconnaît ton visage et ton école : on te protège." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le jeu demande ton adresse pour « gagner un cadeau ». Que fais-tu ?",
+       "hint": "Qui peut t’aider à décider ?",
+       "success": "Exact ! Je ne remplis rien et je demande à un adulte.",
+       "options": [
+        { "label": "Je ne remplis rien et je demande à un adulte", "pict": "adulte-confiance", "correct": true },
+        { "label": "Je remplis vite pour avoir le cadeau", "pict": "cadeau", "explain": "Les faux cadeaux servent souvent à récolter des informations. On demande à un adulte." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi certaines entreprises veulent-elles beaucoup de données sur les gens ?",
+       "hint": "Avec quoi les IA apprennent-elles ?",
+       "success": "Exact ! Les données servent à entraîner des IA ou à vendre de la publicité. Elles ont de la valeur.",
+       "options": [
+        { "label": "Pour entraîner des IA ou faire de la publicité", "pict": "carnet-batons", "correct": true },
+        { "label": "Pour écrire des lettres aux enfants", "pict": "livre-ouvert", "explain": "Ce n’est pas pour écrire des lettres : les données ont de la valeur pour elles." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🔐",
+     "titre": "Le coffre à secrets",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe dessine un grand coffre fermé et un panneau « Je peux partager ». Il range des cartes d’informations (prénom, nom complet, adresse, animal préféré, numéro de téléphone, sport préféré, mot de passe, photo…) dans le coffre ou sur le panneau. On compare les choix des groupes.",
+     "materiel": ["Une affiche par groupe", "Des cartes d’informations"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "khady", "emoji": "💬",
+     "question": "Khady demande : « Si je donne une information sur internet, est-ce que je peux la reprendre après ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce qui se passe quand quelqu’un l’a déjà copiée ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une information personnelle, c’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Une information qui dit qui tu es ou où te trouver.",
+       "options": [
+        { "label": "Ce qui dit qui je suis ou où me trouver", "pict": "cadenas", "correct": true },
+        { "label": "Mon dessin préféré", "pict": "dessin-joli", "explain": "Un dessin préféré ne permet pas de te retrouver." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avant de donner une information sur internet, je…",
+       "hint": "Qui m’aide ?",
+       "success": "Exact ! Je demande à un adulte de confiance.",
+       "options": [
+        { "label": "Demande à un adulte de confiance", "pict": "adulte-confiance", "correct": true },
+        { "label": "La donne tout de suite", "pict": "cadeau", "explain": "On demande d’abord à un adulte." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais protéger tes informations.",
+     "learned": "Mon nom complet, mon adresse, mon école, ma photo et mes mots de passe sont à moi. Avant de les donner, je demande à un adulte."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Identifier les informations personnelles.",
+     "Adopter le réflexe de demander à un adulte avant de partager.",
+     "Comprendre que les données personnelles ont de la valeur (IA, publicité)."
+    ],
+    "deroule": [
+     "Présentation de la sortie (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le coffre à secrets (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Une affiche par groupe, des cartes d’informations."],
+    "reponses": [
+     "Dans le coffre : nom complet, adresse, numéro de téléphone, mot de passe, photo, nom de l’école. Partageable : prénom seul (selon le contexte), goûts, sport préféré.",
+     "Débat : une information publiée peut être copiée et partagée : elle est très difficile à reprendre. D’où l’importance de réfléchir avant."
+    ],
+    "attention": "Rester rassurant : le message n’est pas « internet est dangereux », mais « je demande à un adulte »."
+   }
+  },
+  {
+   "id": "ep9-2",
+   "title": "Une photo, ça se partage ?",
+   "scene": { "id": "journal-thies", "label": "Le journal de Thiès" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "gueye"],
+   "problem": "Moussa a pris une photo drôle de Seydou qui baille. Il veut l’envoyer à tout le monde. Est-ce une bonne idée ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "📸",
+     "image": "ep9-l2-photo.webp",
+     "alt": "Moussa montre en riant une photo de Seydou qui baille, la bouche grande ouverte.",
+     "text": "Moussa rit : il a pris une photo de Seydou qui baille, la bouche grande ouverte. « Je l’envoie à toute l’école ! »"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "seydou", "emoji": "😟",
+     "image": "ep9-l2-seydou.webp",
+     "alt": "Seydou a l’air gêné et triste.",
+     "text": "Seydou ne rit pas du tout : « Non ! Je ne veux pas que tout le monde voie ça. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "gueye", "emoji": "📰",
+     "image": "ep9-l2-gueye.webp",
+     "alt": "Madame Guèye montre un journal avec une photo et explique.",
+     "text": "Madame Guèye explique : « Au journal, avant de publier la photo de quelqu’un, on lui demande son accord. C’est une règle. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep9-l2-palou.webp",
+     "alt": "Palou montre une photo qui se copie et s’envoie partout, comme des papillons qui s’envolent.",
+     "text": "Palou ajoute : « Une photo envoyée peut être copiée, partagée, et même modifiée par une IA. On ne peut plus la rattraper. On demande toujours avant. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🤝🏾",
+     "word": { "terme": "Accord", "sens": "Dire oui après avoir bien compris. Avant de prendre ou de partager la photo de quelqu’un, on lui demande son accord." },
+     "text": "Le visage de chacun lui appartient. Avant de prendre ou de partager une photo de quelqu’un, on demande son accord."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Moussa à faire le bon choix !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Que doit faire Moussa avant d’envoyer la photo ?",
+       "hint": "Le mot nouveau.",
+       "success": "Exact ! Demander son accord à Seydou. Et Seydou a dit non.",
+       "options": [
+        { "label": "Demander son accord à Seydou", "pict": "main-levee", "correct": true },
+        { "label": "L’envoyer, c’est juste pour rire", "pict": "rire", "explain": "Ce qui fait rire l’un peut blesser l’autre. On demande d’abord." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Seydou a dit non. Que fait Moussa ?",
+       "hint": "Que veut dire « non » ?",
+       "success": "Bravo ! Il efface la photo. Non, c’est non.",
+       "options": [
+        { "label": "Il efface la photo", "pict": "poubelle", "correct": true },
+        { "label": "Il l’envoie seulement à quelques amis", "pict": "telephone", "explain": "Même à quelques amis, ils pourraient la renvoyer. Non, c’est non." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les bonnes habitudes avec les photos.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! Demander avant, et ne jamais transformer la photo de quelqu’un pour se moquer.",
+       "options": [
+        { "label": "Demander avant de prendre ou partager une photo", "pict": "main-levee", "emoji": "🤝🏾", "correct": true },
+        { "label": "Ne pas transformer la photo d’un camarade avec une IA pour se moquer", "pict": "photo-ecole", "emoji": "🚫", "correct": true },
+        { "label": "Partager toutes les photos drôles des autres", "pict": "rire", "emoji": "😂", "explain": "Drôle pour toi, mais peut-être blessant pour l’autre." },
+        { "label": "Publier la photo de la maison d’un camarade", "pict": "maison", "emoji": "🏠", "explain": "Ça dit où il habite : c’est une information à protéger." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🎭",
+     "titre": "Et si c’était toi ?",
+     "duree": "15 minutes",
+     "groupes": "Par deux, puis toute la classe",
+     "text": "Par deux, jouez des petites scènes : l’un veut prendre ou partager une photo, l’autre répond. Scènes : une photo de groupe pour le journal de l’école ; une photo de quelqu’un qui tombe ; une photo d’anniversaire. Après chaque scène, la classe dit : a-t-on demandé l’accord ? A-t-on respecté la réponse ?",
+     "materiel": ["Les cartes de scènes, dans la fiche enseignant"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Avec une IA, on peut faire une fausse photo de quelqu’un qui fait une bêtise. Est-ce que c’est grave ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Comment se sentirait la personne ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Avant de partager la photo d’un camarade, je…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Je demande son accord.",
+       "options": [
+        { "label": "Demande son accord", "pict": "main-levee", "correct": true },
+        { "label": "La partage vite", "pict": "telephone", "explain": "On demande toujours avant." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une photo envoyée peut…",
+       "hint": "Comme des papillons qui s’envolent…",
+       "success": "Exact ! Être copiée et partagée partout.",
+       "options": [
+        { "label": "Être copiée et partagée partout", "pict": "telephone", "correct": true },
+        { "label": "Revenir toute seule", "pict": "baguette-magique", "explain": "Une photo envoyée ne revient pas : on ne peut plus la rattraper." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu respectes l’image des autres.",
+     "learned": "Le visage de chacun lui appartient. Avant de prendre ou de partager une photo, je demande l’accord. Non, c’est non."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre le droit à l’image et la notion d’accord.",
+     "Comprendre qu’une photo partagée échappe à son auteur.",
+     "Sensibiliser aux fausses images créées par IA pour se moquer ou nuire."
+    ],
+    "deroule": [
+     "Rappel : informations personnelles (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : et si c’était toi ? (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Cartes de scènes : photo de groupe pour le journal de l’école ; photo de quelqu’un qui tombe ; photo d’anniversaire ; photo d’un camarade qui pleure."],
+    "reponses": [
+     "Dans chaque scène : on demande, on explique à quoi servira la photo, on respecte un refus.",
+     "Débat : une fausse photo peut faire croire des choses fausses et blesser profondément. C’est grave, et dans certains cas interdit par la loi. On en parle à un adulte si on en voit une."
+    ],
+    "attention": "Être attentif aux élèves qui auraient déjà vécu une moquerie en ligne : proposer d’en parler en privé."
+   }
+  },
+  {
+   "id": "ep9-3",
+   "title": "Vrai ou inventé ?",
+   "scene": { "id": "journal-thies", "label": "Le journal de Thiès" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "gueye"],
+   "problem": "Une nouvelle circule : « Un lion se promène dans le marché de Thiès ! » Avec une photo. Vrai ou inventé ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "aissatou", "emoji": "🦁",
+     "image": "ep9-l3-nouvelle.webp",
+     "alt": "Sur un téléphone, une image d’un lion au milieu d’un marché ; Aïssatou ouvre de grands yeux.",
+     "text": "Aïssatou montre un téléphone : « Regardez ! Un lion se promène dans le marché de Thiès ! Il y a même une photo ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "lamine", "emoji": "🔍",
+     "image": "ep9-l3-lamine.webp",
+     "alt": "Lamine regarde la photo avec sa loupe, très concentré.",
+     "text": "Lamine sort sa loupe : « Tu es sûre ? On vérifie ! Le lion a six doigts à la patte, et son ombre part dans le mauvais sens… »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "gueye", "emoji": "📰",
+     "image": "ep9-l3-gueye.webp",
+     "alt": "Madame Guèye téléphone à quelqu’un, en prenant des notes.",
+     "text": "Madame Guèye téléphone au marché. « Aucun lion ! C’est une image créée par une IA. Au journal, on vérifie toujours avant de publier. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep9-l3-palou.webp",
+     "alt": "Palou compte sur ses doigts les questions à se poser.",
+     "text": "Palou résume : « Trois questions de détective : qui le dit ? Est-ce que d’autres le disent aussi ? Est-ce que c’est possible ? »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🕵🏾",
+     "word": { "terme": "Fausse nouvelle", "sens": "Une information inventée qu’on fait passer pour vraie. Une IA peut créer de fausses images très réalistes." },
+     "text": "Une IA peut créer de fausses images et de faux textes qui ont l’air vrais. Avant de croire ou de partager, je vérifie."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Mène l’enquête avec Lamine !",
+     "rounds": [
+      {
+       "type": "multi",
+       "prompt": "Touche les indices qui montrent que la photo du lion est fausse.",
+       "hint": "Il y en a trois.",
+       "success": "Bravo ! Six doigts, une ombre dans le mauvais sens, et personne au marché ne l’a vu.",
+       "options": [
+        { "label": "Le lion a six doigts à la patte", "pict": "patte-six-doigts", "emoji": "🐾", "correct": true },
+        { "label": "L’ombre part dans le mauvais sens", "pict": "ombre", "emoji": "🌗", "correct": true },
+        { "label": "Personne au marché n’a vu de lion", "pict": "telephone", "emoji": "📞", "correct": true },
+        { "label": "Le lion est jaune", "pict": "lionceau-vivant", "emoji": "🦁", "explain": "Les vrais lions sont jaunes aussi : ce n’est pas un indice." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Quelle est la première question de détective ?",
+       "hint": "Palou l’a dit.",
+       "success": "Exact ! Qui le dit ?",
+       "options": [
+        { "label": "Qui le dit ?", "pict": "loupe-verifier", "correct": true },
+        { "label": "Est-ce que c’est drôle ?", "pict": "rire", "explain": "Drôle ou pas, ça ne dit pas si c’est vrai." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Tu reçois une nouvelle surprenante. Avant de la partager, tu…",
+       "hint": "Pense à Madame Guèye.",
+       "success": "Bravo ! Tu vérifies, et dans le doute, tu ne partages pas.",
+       "options": [
+        { "label": "Vérifies, et dans le doute, ne partages pas", "pict": "loupe-verifier", "correct": true },
+        { "label": "La partages vite à tout le monde", "pict": "telephone", "explain": "Si elle est fausse, tu aides à répandre un mensonge." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🕵🏾",
+     "titre": "La brigade anti-fausses nouvelles",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit 4 « nouvelles » (2 vraies, 2 inventées), par exemple : « Il pleut des poissons à Dakar » ou « Le Sénégal a un grand fleuve qui porte son nom ». Avec les trois questions de détective, le groupe décide : vrai, inventé ou à vérifier ? Puis il explique comment il a trouvé.",
+     "materiel": ["4 cartes « nouvelles » par groupe (voir la fiche enseignant)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "lamine", "emoji": "💬",
+     "question": "Lamine demande : « Pourquoi des gens inventent-ils de fausses nouvelles ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Pour faire peur ? Pour gagner de l’argent ? Pour rire ? Qu’est-ce que ça peut provoquer ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une fausse nouvelle, c’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Une information inventée qu’on fait passer pour vraie.",
+       "options": [
+        { "label": "Une information inventée qui a l’air vraie", "pict": "erreur-croix", "correct": true },
+        { "label": "Une nouvelle de la semaine dernière", "pict": "livre-ouvert", "explain": "Une vieille nouvelle peut être vraie ! Une fausse nouvelle est inventée." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA peut-elle créer une fausse photo qui a l’air vraie ?",
+       "hint": "Pense au lion du marché.",
+       "success": "Exact ! Oui : c’est pour ça qu’on vérifie.",
+       "options": [
+        { "label": "Oui, c’est pour ça qu’on vérifie", "pict": "loupe-verifier", "correct": true },
+        { "label": "Non, une photo dit toujours la vérité", "pict": "robot-sait-tout", "explain": "Une photo peut être fausse ou modifiée : on vérifie." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu es un vrai détective de l’information.",
+     "learned": "Une IA peut créer de fausses images et de faux textes. Je me pose trois questions : qui le dit ? D’autres le disent-ils ? Est-ce possible ? Dans le doute, je ne partage pas."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Développer l’esprit critique face aux informations et aux images.",
+     "Connaître trois questions pour vérifier une information.",
+     "Savoir que l’IA peut produire de faux contenus réalistes."
+    ],
+    "deroule": [
+     "Rappel : l’accord pour les photos (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : la brigade anti-fausses nouvelles (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Cartes « nouvelles » : vraies (le fleuve Sénégal ; les baobabs peuvent vivre très longtemps), inventées (il pleut des poissons à Dakar ; une mangue géante de 100 kilos)."],
+    "reponses": [
+     "Les trois questions : qui le dit (une source sérieuse ?) ; d’autres le disent-ils (plusieurs sources ?) ; est-ce possible (cohérent avec ce qu’on sait ?).",
+     "Débat : faire peur, gagner de l’argent avec des clics, nuire à quelqu’un, plaisanter. Conséquences : panique, disputes, personnes blessées."
+    ],
+    "attention": "Le lion dans le marché et la journaliste font partie de l’histoire. Laisser la catégorie « à vérifier » : on n’est pas toujours sûr, et c’est normal."
+   }
+  },
+  {
+   "id": "ep9-4",
+   "title": "L’enquête des détectives",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "De retour à l’école, la classe crée le journal des petits détectives, pour apprendre aux autres à se protéger et à vérifier.",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "lamine", "emoji": "🗞️",
+     "image": "ep9-l4-idee.webp",
+     "alt": "Lamine montre un journal fait main, avec une loupe dessinée sur la première page.",
+     "text": "Lamine a une idée : « Faisons notre propre journal ! Le journal des petits détectives, pour toute l’école. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "📰",
+     "image": "ep9-l4-rubriques.webp",
+     "alt": "Madame Diop écrit au tableau les rubriques du journal, les élèves lèvent la main.",
+     "text": "Madame Diop note les rubriques au tableau : « Vrai ou inventé ? », « Mes informations à moi », « Une photo, ça se demande », et une enquête !"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep9-l4-palou.webp",
+     "alt": "Palou rappelle les règles du journal, une patte levée.",
+     "text": "Palou rappelle : « Un vrai journal vérifie tout, donne ses sources, et demande l’accord pour chaque photo ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "✍🏾",
+     "word": { "terme": "Journaliste", "sens": "Une personne qui cherche des informations, les vérifie et les explique aux autres." },
+     "text": "Un journaliste vérifie les informations avant de les partager. Chacun de nous peut faire pareil."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare le journal des petits détectives !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque idée : on la met dans le journal, ou pas ?",
+       "hint": "Est-ce vérifié ? A-t-on l’accord ?",
+       "success": "Bravo ! Un journal sérieux et respectueux.",
+       "bins": [
+        { "id": "oui", "label": "Dans le journal", "pict": "coche-verte", "emoji": "✅" },
+        { "id": "non", "label": "Pas dans le journal", "pict": "erreur-croix", "emoji": "❌" }
+       ],
+       "items": [
+        { "id": "a", "label": "Une enquête vérifiée sur une fausse nouvelle", "pict": "loupe-verifier", "emoji": "🔍", "bin": "oui", "explain": "Vérifiée : parfaite pour le journal." },
+        { "id": "b", "label": "Une rumeur sur un élève, sans preuve", "pict": "bulle-longue", "emoji": "🗯️", "bin": "non", "explain": "Une rumeur sans preuve peut blesser : on ne la publie pas." },
+        { "id": "c", "label": "La photo de la classe, avec l’accord de tous", "pict": "photo-ecole", "emoji": "📸", "bin": "oui", "explain": "Tout le monde est d’accord : on peut la publier." },
+        { "id": "d", "label": "L’adresse de la maîtresse", "pict": "maison", "emoji": "🏠", "bin": "non", "explain": "C’est une information personnelle : on la protège." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une image du journal a été créée par une IA. Qu’écrit-on dessous ?",
+       "hint": "Souviens-toi du module 8.",
+       "success": "Exact ! On donne la source : « Image créée par une IA ».",
+       "options": [
+        { "label": "« Image créée par une IA »", "pict": "etiquette", "correct": true },
+        { "label": "« Vraie photo »", "pict": "photo-ecole", "explain": "Ce serait faux : c’est justement ce qu’on combat !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🗞️",
+     "titre": "Projet de classe : le journal des petits détectives",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4, une rubrique par groupe",
+     "text": "Chaque groupe prépare une page : « Vrai ou inventé ? » (une fausse nouvelle démasquée), « Mes informations à moi » (les conseils pour se protéger), « Une photo, ça se demande » (une bande dessinée), « L’enquête » (une vraie question sur l’école, vérifiée auprès de plusieurs personnes). On assemble le journal, on donne les sources, et on le distribue aux autres classes et aux parents.",
+     "materiel": ["Des feuilles A4 ou A3", "Feutres, crayons, colle", "Facultatif : une photocopieuse pour faire plusieurs exemplaires"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Si une IA peut écrire des articles toute seule, est-ce qu’on a encore besoin de journalistes ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qui va sur le terrain, interroge les gens, vérifie ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Mon adresse et mon mot de passe sont…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! Des informations personnelles à protéger.",
+       "options": [
+        { "label": "Des informations à protéger", "pict": "cadenas", "correct": true },
+        { "label": "Des informations à partager", "pict": "telephone", "explain": "On les protège : elles permettent de te retrouver." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avant de partager la photo d’un camarade, je…",
+       "hint": "La leçon 2.",
+       "success": "Exact ! Je demande son accord.",
+       "options": [
+        { "label": "Demande son accord", "pict": "main-levee", "correct": true },
+        { "label": "Ne demande rien", "pict": "rire", "explain": "On demande toujours." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une nouvelle incroyable circule. Je…",
+       "hint": "La leçon 3.",
+       "success": "Bravo ! Je vérifie avec les trois questions de détective.",
+       "options": [
+        { "label": "Vérifie avec les trois questions", "pict": "loupe-verifier", "correct": true },
+        { "label": "La crois tout de suite", "pict": "robot-sait-tout", "explain": "Une IA peut créer de fausses nouvelles : on vérifie." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton journal est prêt. Le module 9 est terminé !",
+     "learned": "Je protège mes informations, je demande l’accord pour les photos, je vérifie avant de croire ou de partager, et je donne mes sources."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Produire un support d’information vérifié et respectueux.",
+     "Réinvestir : informations personnelles, droit à l’image, vérification, sources.",
+     "Diffuser les bonnes pratiques auprès des autres classes et des familles."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; préparation des rubriques (30 min).",
+     "Séance 2 : finitions et assemblage (20 min) ; « On en parle » (10 min) ; distribution et défi (15 min)."
+    ],
+    "materiel": ["Feuilles, feutres, colle ; photocopies si possible."],
+    "reponses": [
+     "Chaque page doit indiquer ses sources et, pour les photos, l’accord des personnes.",
+     "Débat : les journalistes vont sur le terrain, interrogent, recoupent, vérifient et prennent la responsabilité de ce qu’ils publient. Une IA peut aider, mais elle peut se tromper ou inventer."
+    ],
+    "attention": "Relire le journal avant diffusion : aucune information personnelle, aucune moquerie."
+   }
+  }
+ ]
+}

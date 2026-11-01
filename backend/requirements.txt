@@ -1,0 +1,19 @@
+# Dépendances d'exécution (production). Versions vérifiées avec la suite de tests.
+Django==6.1.1
+djangorestframework==3.18.1
+django-cors-headers==4.9.0
+dj-database-url==3.1.2
+psycopg[binary]==3.3.5
+python-dotenv==1.2.3
+openpyxl==3.1.5      # import des classes d'une école (apps/scolaire/services/imports.py)
+gunicorn==23.0.0       # serveur WSGI de production
+redis==5.3.1           # cache partagé (REDIS_URL) : verrouillages de connexion, limitation de débit
+sentry-sdk>=2.0,<3     # suivi d'erreurs : actif seulement si SENTRY_DSN est défini (voir docs/EXPLOITATION.md)
+pywebpush~=2.5        # alertes push des parents (VAPID)
+asgiref==3.12.1
+sqlparse==0.6.0
+tzdata==2026.4
+pypdf==6.19.0       # lecture des PDF importés par l'école
+pillow==12.3.0       # contrôle du vrai format des logos d'école (apps/scolaire/services/ecole.py)
+drf-spectacular>=0.30.0 # documentation OpenAPI 3.0 / Swagger UI interactif
+whitenoise>=6.8.0,<7      # service performant des fichiers statiques en production (admin, Swagger)

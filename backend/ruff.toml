@@ -1,0 +1,15 @@
+# Analyse statique du backend (lancée par la CI : `python -m ruff check .`).
+target-version = "py313"
+extend-exclude = ["*/migrations/*"]
+
+[lint]
+# E/W : style, F : erreurs réelles (imports inutilisés, noms indéfinis), B : pièges courants (bugbear),
+# C4/PIE/RET/SIM/UP : simplifications sûres.
+select = ["E", "F", "W", "B", "C4", "PIE", "RET", "SIM", "UP"]
+# E501 (longueur de ligne) : le code est écrit en français avec des phrases d'interface longues, les couper nuit à la lecture.
+# SIM108 : un `if/else` explicite reste souvent plus lisible qu'un ternaire dans les services métier.
+ignore = ["E501", "SIM108"]
+
+[lint.per-file-ignores]
+# Les tests nomment volontairement des méthodes très descriptives et construisent des données d'exemple.
+"**/tests/**" = ["B011", "SIM117"]

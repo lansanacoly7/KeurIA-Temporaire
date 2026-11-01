@@ -1,0 +1,12 @@
+[Unit]
+Description=kEur IA - execution quotidienne de apply_retention
+
+[Timer]
+OnCalendar=*-*-* 03:30:00
+# Rattrape l'exécution si le serveur était éteint à l'heure prévue.
+Persistent=true
+RandomizedDelaySec=10m
+Unit=keuria-retention.service
+
+[Install]
+WantedBy=timers.target

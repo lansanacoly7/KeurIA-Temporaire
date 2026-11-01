@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "date": "2026-10-18T19:44:00.000Z",
+    "agent": "antigravity",
+    "cadre": "T17-D validation des inscriptions de parents",
+    "navigateur": "Google Chrome headless (CDP, profils éphémères)",
+    "resolutions": [
+      "1440x900 (bureau)",
+      "390x844 (mobile)"
+    ],
+    "adminDedie": "admin.t17d@keuria.test (créé pour le test, supprimé à la fin)",
+    "adminSupprime": true,
+    "statutGlobal": "TOUT EST PROUVÉ (8 étapes sur 8 au vert + preuve de bout en bout studio)"
+  },
+  "etapes": {
+    "etape_1": {
+      "description": "Inscription parent + enfant, code e-mail, écran d'attente et absence de session",
+      "titreAffiche": "Demande bien reçue !",
+      "texteStatut": "Votre demande d'inscription est en cours d'examen par l'équipe kEur IA. Vous recevrez un e-mail dès qu'elle sera acceptée : vous pourrez alors vous connecter.",
+      "etapesAffichees": [
+        {
+          "label": "Adresse e-mail confirmée",
+          "current": false
+        },
+        {
+          "label": "Validation par l'équipe kEur IA",
+          "current": true
+        },
+        {
+          "label": "Connexion à votre espace parent",
+          "current": false
+        }
+      ],
+      "apiProfileStatus": 401,
+      "sessionOuverte": false,
+      "conforme": true
+    },
+    "etape_2_parent": {
+      "description": "Reconnexion du parent en attente (même écran d'attente)",
+      "titreAffiche": "Demande bien reçue !",
+      "texteAffiche": "Votre demande d'inscription est en cours d'examen par l'équipe kEur IA. Vous recevrez un e-mail dès qu'elle sera acceptée : vous pourrez alors vous connecter.",
+      "conforme": true
+    },
+    "etape_2_enfant": {
+      "description": "Connexion de l'enfant du foyer en attente (message d'information sans écran d'attente)",
+      "messageAlerte": "Le compte de ton parent doit d'abord être validé par l'équipe kEur IA. Reviens très bientôt !",
+      "ecranAttenteAffiche": false,
+      "conforme": true
+    },
+    "etape_3": {
+      "description": "Admin : pastille compteur (1), carte parent avec coordonnées et enfant, refus motivé",
+      "pastilleAvant": "1",
+      "carteParent": {
+        "name": "Fatou Sow",
+        "role": "Mère",
+        "email": "fatou.sow@keuria.test",
+        "phone": "77 234 56 78",
+        "time": "Demandée À l'instant",
+        "child": "Enfant : Moussa Sow · parcours 7-9 ans"
+      },
+      "titreModale": "Refuser la demande de Fatou Sow ?",
+      "motifSaisi": "Numéro du parent injoignable lors de l'appel de vérification.",
+      "messageConfirmation": "La demande de Fatou Sow est refusée. Le parent a été prévenu par e-mail.",
+      "pastilleApres": "aucun",
+      "emailRefus": "Enregistré dans emails.txt (Objet: [kEur IA] À propos de votre demande d'inscription)",
+      "conforme": true
+    },
+    "etape_4": {
+      "description": "Reconnexion du parent refusé avec motif affiché",
+      "titreAffiche": "Demande non acceptée",
+      "texteAffiche": "Votre demande d'inscription n'a pas été acceptée. Motif : Numéro du parent injoignable lors de l'appel de vérification. Pour toute question, contactez l'équipe kEur IA.",
+      "contientMotif": true,
+      "conforme": true
+    },
+    "etape_5": {
+      "description": "Acceptation finale par l'admin, confirmation avec conséquences, accès parent et enfant",
+      "titreModale": "Accepter Fatou Sow ?",
+      "consequences": [
+        "Le parent peut se connecter à son espace dès maintenant, avec son e-mail et son mot de passe.",
+        "Moussa Sow peut aussi se connecter.",
+        "Le parent reçoit un e-mail pour l'en informer."
+      ],
+      "noticeAdmin": "Fatou Sow peut maintenant se connecter. Le parent a été prévenu par e-mail.",
+      "emailAcceptation": "Enregistré dans emails.txt (Objet: [kEur IA] Votre inscription est acceptée)",
+      "parentUrl": "/dashboard",
+      "parentSalutation": "Bonjour Fatou Sow",
+      "enfantDansFoyer": "Moussa Sow",
+      "enfantUrl": "/dashboard",
+      "enfantEspaceCharge": "Moussa Sow MON TABLEAU DE BORD • MON AVENTURE",
+      "conforme": true
+    },
+    "etape_6": {
+      "description": "Rappel sur le tableau de bord admin (« N demande d'inscription attend... ») puis disparition",
+      "texteRappelAvecDemande": "1 demande d'inscription de parent attend votre réponse.",
+      "rappelPresentApresTraitement": false,
+      "conforme": true
+    },
+    "etape_7": {
+      "description": "Interrupteur de validation désactivé : entrée directe dans l'espace après le code de vérification",
+      "urlApresCode": "/dashboard",
+      "entreeDirecte": true,
+      "conforme": true
+    },
+    "etape_7_preuve_studio_enfant": {
+      "description": "Preuve de bout en bout : leçon modifiée et publiée depuis le studio affichée dans le lecteur élève",
+      "capture": "D7-enfant-lecon-publiee-studio-1440.png",
+      "leconId": "p1-1",
+      "texteLuLecteurEnfant": "Bonjour Aminata ! Palou t'attend sur l'île des mots (texte modifié depuis le studio, T17).",
+      "conforme": true
+    },
+    "etape_8": {
+      "description": "Navigation au clavier seul : focus visible, ouverture de modale avec Entrée, piège du focus, fermeture avec Échap",
+      "actifDansModaleApresTab": "BUTTON",
+      "modaleFermeeApresEchap": true,
+      "conforme": true
+    }
+  }
+}

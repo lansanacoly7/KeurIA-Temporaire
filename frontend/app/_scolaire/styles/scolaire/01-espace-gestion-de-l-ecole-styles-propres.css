@@ -1,0 +1,454 @@
+/*
+ * Espace « Gestion de l'école » — styles propres à /ecole.
+ * Toutes les classes sont préfixées ec- et les couleurs sont des variables
+ * définies sur .ec-app : rien ne déborde sur le reste de l'application.
+ * Palette reprise de l'espace parent/enseignant (AdultLayout).
+ */
+
+.ec-app {
+  --ec-ink: #173e3c;
+  --ec-ink-deep: #0d2e2c;
+  --ec-brand: #0d846e;
+  --ec-brand-soft: #e8f6f1;
+  --ec-lime: #d9ef59;
+  --ec-mint: #a5d6c9;
+  --ec-bg: #f4f7f6;
+  --ec-surface: #ffffff;
+  --ec-line: #e1eae7;
+  --ec-text: #173e3c;
+  --ec-muted: #5b706c;
+  --ec-warn: #9a5b00;
+  --ec-warn-bg: #fff4dc;
+  --ec-danger: #b42318;
+  --ec-danger-bg: #fdecea;
+  --ec-info: #1d4ed8;
+  --ec-info-bg: #e8efff;
+  /* Touches de couleur douces (fonds pâles seulement, jamais pour du texte). */
+  --ec-tint-mint: #e8f6f1;
+  --ec-tint-mint-ink: #0d846e;
+  --ec-tint-lemon: #f3f9d2;
+  --ec-tint-lemon-ink: #5c6a0e;
+  --ec-tint-sky: #e6f1fb;
+  --ec-tint-sky-ink: #185fa5;
+  --ec-tint-lavender: #eeedfe;
+  --ec-tint-lavender-ink: #534ab7;
+  --ec-radius: 16px;
+  --ec-shadow: 0 1px 2px rgba(23, 62, 60, 0.06), 0 6px 20px rgba(23, 62, 60, 0.06);
+  --ec-sidebar: 264px;
+
+  min-height: calc(100vh / var(--app-zoom, 1));
+  background: var(--ec-bg);
+  color: var(--ec-text);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ec-app *,
+.ec-app *::before,
+.ec-app *::after {
+  box-sizing: border-box;
+}
+
+.ec-app .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.ec-app :focus-visible {
+  outline: 3px solid var(--ec-lime);
+  outline-offset: 2px;
+}
+
+/* ─── Menu latéral ──────────────────────────────────────────────────────── */
+
+.ec-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 50;
+  width: var(--ec-sidebar);
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--ec-ink) 0%, var(--ec-ink-deep) 100%);
+  color: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+
+.ec-sidebar[data-open="true"] {
+  transform: translateX(0);
+  box-shadow: 6px 0 24px rgba(0, 0, 0, 0.2);
+}
+
+.ec-brand {
+  display: grid;
+  gap: 10px;
+  padding: 20px 18px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ec-brand-logo {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.ec-brand-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ec-brand small {
+  display: block;
+  padding-left: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ec-mint);
+}
+
+.ec-school-chip {
+  margin: 16px 16px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+}
+
+.ec-school-chip b {
+  display: block;
+  font-size: 14px;
+}
+
+.ec-school-chip span {
+  color: var(--ec-mint);
+}
+
+.ec-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 12px;
+}
+
+.ec-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2px;
+  padding: 11px 14px;
+  border-left: 3px solid transparent;
+  border-radius: 12px;
+  color: var(--ec-mint);
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ec-nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.ec-nav a[aria-current="page"] {
+  border-left-color: var(--ec-lime);
+  background: linear-gradient(90deg, rgba(165, 214, 201, 0.26), rgba(165, 214, 201, 0.06));
+  color: #fff;
+  font-weight: 700;
+}
+
+.ec-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 16px 16px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ec-user b {
+  display: block;
+  font-size: 13.5px;
+}
+
+.ec-user span {
+  font-size: 12px;
+  color: var(--ec-mint);
+}
+
+/* Bouton de déconnexion en bas de la barre latérale. */
+.ec-account {
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ec-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ec-mint);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.ec-logout:hover {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+.ec-logout:focus-visible {
+  outline: 3px solid var(--ec-lime);
+  outline-offset: 2px;
+}
+
+.ec-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--ec-brand), var(--ec-lime));
+  color: var(--ec-ink);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.ec-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.ec-overlay[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─── Zone principale ───────────────────────────────────────────────────── */
+
+.ec-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(244, 247, 246, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--ec-line);
+}
+
+.ec-topbar-extra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.ec-main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+@media (min-width: 1024px) {
+  .ec-sidebar {
+    transform: none;
+  }
+
+  /* Spécificité renforcée : .ec-icon-btn (plus bas) fixe aussi display. */
+  .ec-app .ec-overlay,
+  .ec-app .ec-menu-button {
+    display: none;
+  }
+
+  .ec-shell {
+    margin-left: var(--ec-sidebar);
+  }
+
+  /* Déconnexion dans la barre latérale : le bandeau du haut ne sert qu'au menu mobile. */
+  .ec-topbar--mobile {
+    display: none;
+  }
+
+  .ec-main {
+    padding: 32px 40px 64px;
+  }
+}
+
+/* ─── En-tête de page ───────────────────────────────────────────────────── */
+
+.ec-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ec-page-header-main {
+  min-width: 260px;
+  flex: 1;
+}
+
+.ec-page-header-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.ec-header-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 14px 5px 6px;
+  border-radius: 999px;
+  background: var(--ec-surface);
+  border: 1px solid var(--ec-line);
+  box-shadow: 0 1px 2px rgba(23, 62, 60, 0.04);
+}
+
+.ec-header-user-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.ec-header-user-info b {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ec-ink);
+}
+
+.ec-header-user-info span {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ec-brand);
+}
+
+@media (max-width: 768px) {
+  .ec-page-header-aside {
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+
+/* Police principale (et non DM Serif) : avec la police décorative, le chiffre 1
+   de « CE1 A » ressemble à un I majuscule. */
+.ec-page-header h1 {
+  margin: 0;
+  font-size: clamp(26px, 3.6vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.ec-page-header[data-section] {
+  margin-bottom: 14px;
+}
+
+.ec-page-header h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.ec-page-header p {
+  margin: 6px 0 0;
+  color: var(--ec-muted);
+}
+
+.ec-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ─── Boutons ───────────────────────────────────────────────────────────── */
+
+.ec-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  background: var(--ec-surface);
+  color: var(--ec-text);
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.ec-btn:hover {
+  border-color: var(--ec-brand);
+}
+
+.ec-btn:active {
+  transform: translateY(1px);
+}
+
+.ec-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ec-btn--primary {
+  border-color: var(--ec-ink);
+  background: var(--ec-ink);
+  color: #fff;
+}
+
+.ec-btn--primary:hover {
+  background: var(--ec-ink-deep);
+}
+
+/* Action sensible mais courante (changer de classe) : rouge doux, bordé, texte ≥ 6:1. */
+.ec-btn--caution {
+  border: 1.5px solid #e29a93;
+  background: #fff5f4;
+  color: #a8261c;
+}
+
+.ec-btn--caution:hover:not(:disabled) {
+  border-color: #c9483d;
+  background: #fde8e6;
+}
+

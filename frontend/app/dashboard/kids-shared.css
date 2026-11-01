@@ -1,0 +1,8 @@
+/* kids-shared.css : sommaire. Le CSS est découpé en 6 fichiers (dossier ./styles/kids-shared/), importés dans l'ordre d'origine : la cascade est identique.
+   Pour modifier une règle, ouvrir le morceau concerné ; pour en ajouter, respecter cet ordre. */
+@import "./styles/kids-shared/01-modern-tail-for-the-bubble.css";
+@import "./styles/kids-shared/02-themed-illustrated-background.css";
+@import "./styles/kids-shared/03-dialogue-step-container-aligns-speech-bu.css";
+@import "./styles/kids-shared/04-identify-cards-game2.css";
+@import "./styles/kids-shared/05-transplanted-lessons-styling.css";
+@import "./styles/kids-shared/06-game-2-identify-cat.css";

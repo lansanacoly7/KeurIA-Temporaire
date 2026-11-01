@@ -1,0 +1,996 @@
+{
+  "module": {
+    "id": "p2",
+    "chapter": 2,
+    "title": "L’IA autour de moi",
+    "place": "Le car de Papa Ibou",
+    "emoji": "🚌",
+    "intro": "Le car de Papa Ibou est bloqué dans les embouteillages ! Cherche l’IA cachée dans un téléphone, à l’école et sur la route."
+  },
+  "lessons": [
+    {
+      "id": "p2-1",
+      "title": "Dans mon téléphone",
+      "scene": {
+        "id": "car",
+        "label": "Le car de Papa Ibou"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "papa-ibou"
+      ],
+      "problem": "Le car est bloqué dans les embouteillages. Moussa veut savoir à quelle heure la classe arrivera.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "emoji": "🚌",
+          "image": "m02-l1-car.webp",
+          "alt": "Palou et des enfants dans le car de Papa Ibou, bloqué dans une rue pleine de voitures.",
+          "text": "Ce matin, Palou monte dans le car de Papa Ibou. Le car roule au pas : embouteillage !"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "emoji": "📱",
+          "image": "m02-l1-telephone.webp",
+          "alt": "Moussa parle à son téléphone, Palou écoute avec de grands yeux.",
+          "text": "Moussa demande à son téléphone : « À quelle heure arrive-t-on à l’école ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "papa-ibou",
+          "emoji": "😲",
+          "text": "Le téléphone répond : « Dans vingt minutes. » Papa Ibou est impressionné !",
+          "image": "m02-l1-s03.webp",
+          "alt": "Illustration : Le téléphone répond : « Dans vingt minutes. » Papa Ibou est impressionné !"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "assistant vocal",
+            "sens": "Une IA qui comprend ta voix et te répond."
+          },
+          "text": "Un assistant vocal est une IA. Il comprend ta voix et te répond."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Aide Palou à comprendre le téléphone de Moussa !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait le téléphone quand Moussa lui parle ?",
+              "hint": "Le téléphone écoute les mots de Moussa.",
+              "success": "Bravo ! Il comprend la voix de Moussa et répond.",
+              "options": [
+                {
+                  "label": "Il comprend sa voix et répond",
+                  "pict": "telephone-voix-reponse",
+                  "correct": true
+                },
+                {
+                  "label": "Un petit homme est caché dedans",
+                  "pict": "personne-cachee",
+                  "explain": "Il n’y a personne dedans : c’est un programme fabriqué par des humains."
+                },
+                {
+                  "label": "Il lit dans ses pensées",
+                  "pict": "pensees-lues",
+                  "explain": "Il ne lit pas les pensées : il écoute seulement les mots dits à voix haute."
+                }
+              ]
+            },
+            {
+              "type": "multi",
+              "prompt": "Touche tout ce que le téléphone de Moussa fait avec une IA.",
+              "hint": "Il y en a deux : l’un comprend, l’autre reconnaît.",
+              "success": "Bravo ! Comprendre une voix et reconnaître un visage, ce sont des IA.",
+              "options": [
+                {
+                  "label": "Comprendre sa voix",
+                  "pict": "voix-micro",
+                  "emoji": "🗣️",
+                  "correct": true
+                },
+                {
+                  "label": "Sonner quand on l’appelle",
+                  "pict": "sonnerie",
+                  "emoji": "🔔",
+                  "explain": "La sonnerie est programmée à l’avance : elle ne devine rien."
+                },
+                {
+                  "label": "Ranger les photos par visage",
+                  "pict": "photos-visages",
+                  "emoji": "📷",
+                  "correct": true
+                },
+                {
+                  "label": "Allumer l’écran avec le bouton",
+                  "pict": "bouton-ecran",
+                  "emoji": "🔘",
+                  "explain": "Un bouton suffit pour allumer l’écran : pas besoin d’IA."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Le téléphone propose une route bloquée. Que fait Papa Ibou ?",
+              "hint": "Papa Ibou voit la route avec ses propres yeux.",
+              "success": "Oui ! Une IA peut se tromper, on regarde toujours la route.",
+              "options": [
+                {
+                  "label": "Il vérifie avec ses yeux",
+                  "pict": "yeux-route",
+                  "correct": true
+                },
+                {
+                  "label": "Il obéit sans jamais regarder la route",
+                  "pict": "yeux-fermes-route",
+                  "explain": "Une IA peut se tromper : le conducteur regarde toujours la route."
+                },
+                {
+                  "label": "Il continue sans réfléchir, par habitude",
+                  "pict": "pilote-automatique",
+                  "explain": "Il doit réfléchir et choisir la meilleure route, pas suivre sans regarder."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "emoji": "🤖",
+          "text": "Un assistant vocal a écouté beaucoup de voix pour apprendre. Il peut quand même se tromper."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Moussa dit « Appelle maman ». Que fait l’assistant vocal ?",
+              "hint": "Il écoute ce que Moussa dit.",
+              "success": "Oui ! Il comprend sa voix et répond.",
+              "options": [
+                {
+                  "label": "Il comprend sa voix",
+                  "pict": "voix-micro",
+                  "correct": true
+                },
+                {
+                  "label": "Il lit dans ses pensées",
+                  "pict": "pensees-lues",
+                  "explain": "Une IA ne lit pas dans les pensées : elle écoute ce que tu dis."
+                },
+                {
+                  "label": "Quelqu’un est caché dans le téléphone",
+                  "pict": "personne-cachee",
+                  "explain": "Personne n’est caché dedans : c’est une machine qui écoute."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "L’assistant comprend mal un mot. Que fait Moussa ?",
+              "hint": "Pas besoin de se fâcher : on peut réessayer.",
+              "success": "Bravo ! On répète doucement et on réessaie.",
+              "options": [
+                {
+                  "label": "Il répète doucement",
+                  "pict": "parler-doucement",
+                  "correct": true
+                },
+                {
+                  "label": "Il crie très fort pour qu’il entende",
+                  "pict": "crier",
+                  "explain": "Crier ne l’aide pas : parler doucement et clairement marche mieux."
+                },
+                {
+                  "label": "Il se fâche et éteint le téléphone",
+                  "pict": "se-facher",
+                  "explain": "Se fâcher n’aide pas : on peut simplement réessayer."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi vérifie-t-on ce que dit une IA ?",
+              "hint": "Une IA n’est pas parfaite.",
+              "success": "Exact ! Une IA peut se tromper, alors on vérifie.",
+              "options": [
+                {
+                  "label": "Elle peut se tromper",
+                  "pict": "ia-peut-se-tromper",
+                  "correct": true
+                },
+                {
+                  "label": "Elle ne se trompe jamais, mais c’est la règle",
+                  "pict": "robot-sait-tout",
+                  "explain": "Une IA peut se tromper, c’est pour cela qu’on vérifie."
+                },
+                {
+                  "label": "Elle n’écoute jamais personne",
+                  "explain": "Elle écoute, mais elle peut mal comprendre : on vérifie."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! Tu reconnais l’IA dans un téléphone.",
+          "learned": "Un assistant vocal est une IA : il comprend ta voix. Il peut se tromper, alors on vérifie."
+        }
+      ]
+    },
+    {
+      "id": "p2-2",
+      "title": "À l’école",
+      "scene": {
+        "id": "classe",
+        "label": "La classe de Madame Diop"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "fatou",
+        "moussa"
+      ],
+      "problem": "Madame Diop prépare la sortie au marché Kermel. Quels outils de la classe utilisent une IA ?",
+      "callback": "Tu te rappelles ? Le téléphone de Moussa comprend sa voix : c’est un assistant vocal.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "emoji": "🏫",
+          "image": "m02-l2-tablette.webp",
+          "alt": "Madame Diop annonce la sortie devant la classe, une tablette posée sur son bureau.",
+          "text": "Madame Diop annonce une sortie au marché Kermel. On y achètera des mangues pour la fête !"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "emoji": "📚",
+          "text": "Fatou et Palou ouvrent l’appli de lecture de la classe. Elle propose un conte à Fatou.",
+          "image": "m02-l2-s02.webp",
+          "alt": "Illustration : Fatou et Palou ouvrent l’appli de lecture de la classe. Elle propose un conte à Fatou."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "emoji": "⚽",
+          "text": "Moussa adore le foot. L’appli lui propose des histoires de foot !",
+          "image": "m02-l2-s03.webp",
+          "alt": "Illustration : Moussa adore le foot. L’appli lui propose des histoires de foot !"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "suggestion",
+            "sens": "Un choix que l’IA te propose selon ce que tu aimes."
+          },
+          "text": "Une suggestion est un choix proposé par l’IA. Elle devine ce que tu pourrais aimer."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Aide Palou à trier les outils de la classe !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse un outil dans sa boîte.",
+              "hint": "Cherche celui qui devine ou propose quelque chose.",
+              "success": "Bravo ! Tu sais quels outils de la classe utilisent une IA.",
+              "bins": [
+                {
+                  "id": "ia",
+                  "label": "IA",
+                  "pict": "ia-robot",
+                  "emoji": "🤖"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas une IA",
+                  "pict": "pas-ia",
+                  "emoji": "🙅"
+                }
+              ],
+              "items": [
+                {
+                  "id": "lecture",
+                  "label": "L’appli qui propose des histoires",
+                  "pict": "appli-lecture",
+                  "emoji": "📚",
+                  "bin": "ia",
+                  "explain": "Elle devine ce que tu aimes d’après tes lectures."
+                },
+                {
+                  "id": "craie",
+                  "label": "Le tableau et la craie",
+                  "pict": "tableau-craie",
+                  "emoji": "🖍️",
+                  "bin": "pas",
+                  "explain": "La craie écrit ce que la main dessine, rien de plus."
+                },
+                {
+                  "id": "cloche",
+                  "label": "La cloche de l’école",
+                  "pict": "cloche-ecole",
+                  "emoji": "🔔",
+                  "bin": "pas",
+                  "explain": "Elle sonne à heure fixe, sans rien comprendre."
+                },
+                {
+                  "id": "vocal",
+                  "label": "L’assistant vocal de la tablette",
+                  "pict": "assistant-vocal",
+                  "emoji": "🎙️",
+                  "bin": "ia",
+                  "explain": "Il comprend ta voix et te répond : c’est une IA."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Moussa aime le foot. Pourquoi l’appli lui propose-t-elle du foot ?",
+              "hint": "L’appli regarde ce que Moussa lit souvent.",
+              "success": "Oui ! Elle a remarqué ce que Moussa lit souvent.",
+              "options": [
+                {
+                  "label": "Elle a vu ce qu’il lit souvent",
+                  "pict": "historique-lecture",
+                  "correct": true
+                },
+                {
+                  "label": "Elle connaît ses pensées",
+                  "pict": "pensees-lues",
+                  "explain": "Elle ne lit pas les pensées : elle regarde seulement ses lectures passées."
+                },
+                {
+                  "label": "Madame Diop l’a choisi pour lui",
+                  "pict": "maitresse-choisit",
+                  "explain": "C’est l’appli qui choisit, sans que la maîtresse s’en mêle."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "emoji": "🤔",
+          "text": "Une suggestion est-elle toujours une bonne idée ?",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "L’appli propose une histoire que Fatou n’aime pas. Que fait Fatou ?",
+              "hint": "C’est Fatou qui décide, pas l’appli.",
+              "success": "Oui ! Une suggestion, on peut toujours dire non.",
+              "options": [
+                {
+                  "label": "Elle peut en choisir une autre",
+                  "pict": "choisir-autre",
+                  "correct": true
+                },
+                {
+                  "label": "Elle doit la lire jusqu’au bout",
+                  "pict": "livre-obligatoire",
+                  "explain": "Personne ne l’oblige : c’est Fatou qui décide."
+                },
+                {
+                  "label": "Elle éteint la tablette pour toujours",
+                  "pict": "tablette-eteinte",
+                  "explain": "Pas besoin ! Il suffit de choisir une autre histoire."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une suggestion de l’appli ?",
+              "hint": "Une suggestion se propose : tu peux dire oui ou non.",
+              "success": "Oui ! Une suggestion est un choix proposé.",
+              "options": [
+                {
+                  "label": "Un choix proposé",
+                  "pict": "choisir-autre",
+                  "correct": true
+                },
+                {
+                  "label": "Un ordre qu’on doit suivre",
+                  "pict": "livre-obligatoire",
+                  "explain": "Une suggestion n’est pas un ordre : tu peux dire non."
+                },
+                {
+                  "label": "Une punition de la maîtresse",
+                  "pict": "maitresse-choisit",
+                  "explain": "Une suggestion n’est jamais une punition."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "L’appli propose un livre que Fatou n’aime pas. Que fait-elle ?",
+              "hint": "C’est elle qui décide.",
+              "success": "Bravo ! Fatou choisit un autre livre.",
+              "options": [
+                {
+                  "label": "Elle choisit autre chose",
+                  "pict": "choisir-autre",
+                  "correct": true
+                },
+                {
+                  "label": "Elle doit le lire quand même",
+                  "pict": "livre-obligatoire",
+                  "explain": "Personne n’est obligé : c’est toi qui décides."
+                },
+                {
+                  "label": "Elle jette la tablette par terre",
+                  "pict": "tablette-eteinte",
+                  "explain": "Casser la tablette ne sert à rien : on peut juste choisir un autre livre."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qui décide à la fin ?",
+              "hint": "L’appli propose, mais…",
+              "success": "Exact ! L’IA propose, c’est toi qui décides.",
+              "options": [
+                {
+                  "label": "C’est moi",
+                  "pict": "enfant-moi",
+                  "correct": true
+                },
+                {
+                  "label": "L’appli, toute seule",
+                  "pict": "robot-sait-tout",
+                  "explain": "L’appli propose, mais elle ne décide pas pour toi."
+                },
+                {
+                  "label": "Le hasard, comme aux dés",
+                  "explain": "Ce n’est pas le hasard : c’est toi qui choisis."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! Tu repères l’IA à l’école.",
+          "learned": "Une suggestion est un choix proposé par une IA. C’est toi qui décides."
+        }
+      ]
+    },
+    {
+      "id": "p2-3",
+      "title": "Dans les transports",
+      "scene": {
+        "id": "car-sortie",
+        "label": "Le car de Papa Ibou, le jour de la sortie"
+      },
+      "cast": [
+        "palou",
+        "papa-ibou",
+        "moussa",
+        "fatou",
+        "mme-diop"
+      ],
+      "problem": "La classe part au marché Kermel, mais la route est pleine. Arrivera-t-on avant la fermeture ?",
+      "callback": "Tu te rappelles ? Madame Diop a annoncé la sortie au marché Kermel.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "emoji": "🚌",
+          "image": "m02-l3-embouteillage.webp",
+          "alt": "Le car de Papa Ibou est coincé entre des voitures et des bus, les enfants regardent par les fenêtres.",
+          "text": "Jour de sortie ! Le car de Papa Ibou est coincé dans les embouteillages."
+        },
+        {
+          "kind": "story",
+          "pose": "Triste",
+          "speaker": "fatou",
+          "emoji": "😟",
+          "text": "Fatou s’inquiète : « On va arriver trop tard au marché ! »",
+          "image": "m02-l3-s02.webp",
+          "alt": "Illustration : Fatou s’inquiète : « On va arriver trop tard au marché ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "emoji": "🗺️",
+          "text": "Moussa ouvre l’appli de trajet. Elle propose un autre chemin et une heure d’arrivée.",
+          "image": "m02-l3-s03.webp",
+          "alt": "Illustration : Moussa ouvre l’appli de trajet. Elle propose un autre chemin et une heure d’arrivée."
+        },
+        {
+          "kind": "story",
+          "pose": "Rire",
+          "speaker": "papa-ibou",
+          "emoji": "😄",
+          "wolof": {
+            "mot": "Jërëjëf",
+            "sens": "Merci"
+          },
+          "text": "Papa Ibou suit le nouveau chemin. Il remercie Moussa d’un grand sourire.",
+          "image": "m02-l3-s04.webp",
+          "alt": "Illustration : Papa Ibou suit le nouveau chemin. Il remercie Moussa d’un grand sourire."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "prédire",
+            "sens": "Deviner à l’avance ce qui va arriver."
+          },
+          "text": "L’appli prédit l’heure d’arrivée. Elle compare avec beaucoup de trajets déjà faits."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Aide Palou à comprendre l’appli de trajet !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Comment l’appli devine-t-elle l’heure d’arrivée ?",
+              "hint": "Elle utilise des exemples, comme Palou.",
+              "success": "Oui ! Elle compare avec des trajets déjà faits.",
+              "options": [
+                {
+                  "label": "Elle regarde l’avenir dans une boule de cristal",
+                  "pict": "boule-cristal",
+                  "explain": "Il n’y a pas de boule magique : l’appli calcule avec des exemples."
+                },
+                {
+                  "label": "Elle compare avec des trajets déjà faits",
+                  "pict": "trajets-compares",
+                  "correct": true
+                },
+                {
+                  "label": "Papa Ibou lui souffle l’heure à l’oreille",
+                  "pict": "chuchoter-oreille",
+                  "explain": "L’appli n’attend personne : elle calcule toute seule."
+                }
+              ]
+            },
+            {
+              "type": "sort",
+              "prompt": "Glisse un outil dans sa boîte.",
+              "hint": "Cherche celui qui devine ou propose quelque chose.",
+              "success": "Bravo ! Tu sais qui aide avec une IA sur la route.",
+              "bins": [
+                {
+                  "id": "ia",
+                  "label": "Une IA aide",
+                  "pict": "ia-robot",
+                  "emoji": "🤖"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas d’IA",
+                  "pict": "pas-ia",
+                  "emoji": "🙅"
+                }
+              ],
+              "items": [
+                {
+                  "id": "chemin",
+                  "label": "L’appli qui trouve un autre chemin",
+                  "pict": "appli-chemin",
+                  "emoji": "🗺️",
+                  "bin": "ia",
+                  "explain": "Elle propose un chemin selon la circulation."
+                },
+                {
+                  "id": "klaxon",
+                  "label": "Le klaxon du car",
+                  "pict": "klaxon",
+                  "emoji": "📯",
+                  "bin": "pas",
+                  "explain": "Il fait du bruit quand on appuie, sans rien deviner."
+                },
+                {
+                  "id": "heure",
+                  "label": "L’appli qui prédit l’heure d’arrivée",
+                  "pict": "appli-heure-arrivee",
+                  "emoji": "⏰",
+                  "bin": "ia",
+                  "explain": "Elle devine l’heure d’après d’autres trajets."
+                },
+                {
+                  "id": "stop",
+                  "label": "Le panneau STOP",
+                  "pict": "panneau-stop",
+                  "emoji": "🛑",
+                  "bin": "pas",
+                  "explain": "Un panneau reste toujours pareil : il ne devine rien."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "emoji": "🤖",
+          "text": "L’appli peut se tromper si la route change soudain. Papa Ibou garde les yeux sur la route."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Sur quoi l’appli s’appuie-t-elle pour prédire l’heure ?",
+              "hint": "Elle compare avec ce qui s’est déjà passé.",
+              "success": "Oui ! Elle compare avec des trajets déjà faits.",
+              "options": [
+                {
+                  "label": "Des trajets déjà faits",
+                  "pict": "trajets-compares",
+                  "correct": true
+                },
+                {
+                  "label": "Une boule de cristal magique",
+                  "pict": "boule-cristal",
+                  "explain": "Pas de magie : l’appli compare des trajets passés."
+                },
+                {
+                  "label": "Ce qu’un voisin lui chuchote à l’oreille",
+                  "pict": "chuchoter-oreille",
+                  "explain": "Personne ne lui chuchote rien : elle utilise des données."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Il y a un gros embouteillage. L’appli peut-elle se tromper ?",
+              "hint": "Une prédiction n’est jamais sûre à 100 %.",
+              "success": "Exact ! Une prédiction peut se tromper.",
+              "options": [
+                {
+                  "label": "Oui, parfois",
+                  "pict": "embouteillage",
+                  "correct": true
+                },
+                {
+                  "label": "Non, jamais, c’est une appli parfaite",
+                  "pict": "robot-sait-tout",
+                  "explain": "Aucune IA n’est parfaite, surtout quand la route change."
+                },
+                {
+                  "label": "Non, sauf quand il pleut vraiment fort",
+                  "explain": "Elle peut se tromper même sans pluie."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Le bus arrive plus tard que prévu. Que fait Moussa ?",
+              "hint": "La prédiction n’était pas sûre.",
+              "success": "Bravo ! Il reste calme : la prédiction n’était pas sûre.",
+              "options": [
+                {
+                  "label": "Il attend tranquillement",
+                  "pict": "arret-bus",
+                  "correct": true
+                },
+                {
+                  "label": "Il se fâche et supprime l’appli",
+                  "pict": "se-facher",
+                  "explain": "Se fâcher n’aide pas : une prédiction peut se tromper."
+                },
+                {
+                  "label": "Il crie sur le chauffeur du bus",
+                  "pict": "crier",
+                  "explain": "Le chauffeur n’y est pour rien : crier ne sert à rien."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! La classe arrive au marché.",
+          "learned": "Une appli de trajet prédit l’heure d’arrivée avec des trajets déjà faits. Elle peut se tromper."
+        }
+      ]
+    },
+    {
+      "id": "p2-4",
+      "title": "Bingo de l’IA",
+      "scene": {
+        "id": "marche-kermel",
+        "label": "Le marché Kermel"
+      },
+      "cast": [
+        "palou",
+        "mame-awa",
+        "mme-diop",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "La classe est arrivée au marché Kermel. Madame Diop lance un bingo : trouver les IA de la journée.",
+      "callback": "Tu te rappelles ? Un assistant vocal, une appli de lecture et une appli de trajet sont des IA.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mame-awa",
+          "emoji": "🥭",
+          "image": "m02-l4-bingo.webp",
+          "alt": "Mame Awa accueille la classe devant son étal de mangues au marché Kermel.",
+          "text": "Ça y est : la classe arrive au marché Kermel ! Mame Awa les accueille."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "mme-diop",
+          "emoji": "🎯",
+          "text": "Madame Diop distribue des cartes de bingo. « Trouvez les IA de la journée ! »",
+          "image": "m02-l4-s02.webp",
+          "alt": "Illustration : Madame Diop distribue des cartes de bingo. « Trouvez les IA de la journée ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "outil",
+            "sens": "Un objet ou une appli qui aide à faire un travail."
+          },
+          "text": "Une IA est un outil : elle aide à faire un travail. Cherche ce qu’elle reconnaît, devine ou propose."
+        },
+        {
+          "kind": "story",
+          "pose": "Reflexion",
+          "speaker": "fatou",
+          "emoji": "⚖️",
+          "text": "Mame Awa pèse des mangues sur sa balance. Fatou demande : « C’est une IA, ça ? »",
+          "image": "m02-l4-s04.webp",
+          "alt": "Illustration : Mame Awa pèse des mangues sur sa balance. Fatou demande : « C’est une IA, ça ? »"
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Aide Moussa à remplir le bingo !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse un objet du marché dans sa boîte.",
+              "hint": "Cherche celui qui reconnaît, devine ou propose.",
+              "success": "Bravo ! Ton bingo est bien rempli.",
+              "bins": [
+                {
+                  "id": "ia",
+                  "label": "IA",
+                  "pict": "ia-robot",
+                  "emoji": "🤖"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas une IA",
+                  "pict": "pas-ia",
+                  "emoji": "🙅"
+                }
+              ],
+              "items": [
+                {
+                  "id": "balance",
+                  "label": "La balance de Mame Awa",
+                  "pict": "balance",
+                  "emoji": "⚖️",
+                  "bin": "pas",
+                  "explain": "Elle pèse avec un ressort, sans rien deviner."
+                },
+                {
+                  "id": "traduit",
+                  "label": "Le téléphone qui traduit un panneau",
+                  "pict": "telephone-traduit-panneau",
+                  "emoji": "📷",
+                  "bin": "ia",
+                  "explain": "Il lit le panneau et le transforme : c’est une IA."
+                },
+                {
+                  "id": "sac",
+                  "label": "Le sac de mangues",
+                  "pict": "sac-mangues",
+                  "emoji": "🥭",
+                  "bin": "pas",
+                  "explain": "Un sac contient des mangues, rien d’autre."
+                },
+                {
+                  "id": "chanson",
+                  "label": "L’appli qui reconnaît la chanson de la radio",
+                  "pict": "telephone-reconnait-chanson",
+                  "emoji": "🎵",
+                  "bin": "ia",
+                  "explain": "Elle compare le son à des exemples : c’est une IA."
+                }
+              ]
+            },
+            {
+              "type": "multi",
+              "prompt": "Touche toutes les cases du bingo où se cache une IA.",
+              "hint": "Il y en a deux dans la journée de la classe.",
+              "success": "Bravo ! Deux cases gagnantes : la voix et le trajet.",
+              "options": [
+                {
+                  "label": "Assistant vocal",
+                  "pict": "assistant-vocal",
+                  "emoji": "🎙️",
+                  "correct": true
+                },
+                {
+                  "label": "Panier de fruits",
+                  "pict": "panier-fruits",
+                  "emoji": "🧺",
+                  "explain": "Un panier porte des fruits, il ne devine rien."
+                },
+                {
+                  "label": "Appli de trajet",
+                  "pict": "appli-chemin",
+                  "emoji": "🗺️",
+                  "correct": true
+                },
+                {
+                  "label": "Ombrelle du marché",
+                  "pict": "ombrelle",
+                  "emoji": "⛱️",
+                  "explain": "Une ombrelle donne de l’ombre : pas d’IA dedans."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Determine",
+          "emoji": "🛡️",
+          "text": "Moussa veut photographier Mame Awa pour son bingo.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait Moussa d’abord ?",
+              "hint": "Pense à la vie privée de Mame Awa.",
+              "success": "Oui ! On demande toujours avant de photographier quelqu’un.",
+              "options": [
+                {
+                  "label": "Il demande la permission",
+                  "pict": "demander-permission",
+                  "correct": true
+                },
+                {
+                  "label": "Il poste la photo tout de suite",
+                  "pict": "poster-photo",
+                  "explain": "Poster sans demander peut gêner : on demande d’abord."
+                },
+                {
+                  "label": "Il prend la photo sans rien dire",
+                  "pict": "photo-sans-demander",
+                  "explain": "Prendre quelqu’un en photo demande son accord, même pour un jeu."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quel objet du marché utilise une IA ?",
+              "hint": "Cherche celui qui devine ou propose un chemin.",
+              "success": "Oui ! Le GPS du téléphone propose un chemin.",
+              "options": [
+                {
+                  "label": "Le GPS du téléphone",
+                  "pict": "appli-chemin",
+                  "correct": true
+                },
+                {
+                  "label": "Le panier de fruits de Mame Awa",
+                  "pict": "panier-fruits",
+                  "explain": "Un panier est un simple objet : il ne devine rien."
+                },
+                {
+                  "label": "L’ombrelle colorée du marché",
+                  "pict": "ombrelle",
+                  "explain": "Une ombrelle protège du soleil, sans aucune IA."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Où peut-on trouver des IA ?",
+              "hint": "Regarde autour de toi : téléphone, école, route…",
+              "success": "Exact ! Il y a des IA un peu partout.",
+              "options": [
+                {
+                  "label": "Un peu partout",
+                  "pict": "assistant-vocal",
+                  "correct": true
+                },
+                {
+                  "label": "Seulement dans les films de science-fiction",
+                  "explain": "Les IA sont déjà dans les téléphones, à l’école et sur la route."
+                },
+                {
+                  "label": "Seulement dans les très grandes usines",
+                  "explain": "Il y en a aussi dans ton téléphone, à l’école et sur la route."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment repérer une IA ?",
+              "hint": "Elle reconnaît, devine ou propose.",
+              "success": "Bravo ! Elle devine ou propose quelque chose.",
+              "options": [
+                {
+                  "label": "Elle devine ou propose",
+                  "correct": true
+                },
+                {
+                  "label": "Elle a de belles lumières colorées",
+                  "explain": "Les lumières ne prouvent rien : une lampe n’est pas une IA."
+                },
+                {
+                  "label": "Elle coûte très très cher",
+                  "explain": "Le prix ne dit rien : une IA reconnaît, devine ou propose."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🏆",
+          "sticker": "m02",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 2 avec Palou.",
+          "learned": "L’IA est partout : dans le téléphone, à l’école et sur la route. Tu sais la repérer."
+        }
+      ]
+    }
+  ]
+}

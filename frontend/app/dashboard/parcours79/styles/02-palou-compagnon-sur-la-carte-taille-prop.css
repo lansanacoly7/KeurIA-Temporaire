@@ -1,0 +1,433 @@
+
+.p79-walker.walking {
+  animation: none !important;
+}
+
+@media (max-width: 760px) {
+  .p79-stop { width: 206px; }
+  .p79-sea .p79-medal { width: 86px; height: 86px; top: 42px; }
+  .p79-stop::before { width: 270px; height: 130px; top: 44px; }
+  .p79-stop::after { width: 220px; height: 82px; margin-left: -110px; top: 86px; }
+  .p79-isle { width: 196px; height: 155px; }
+  .p79-num { width: 40px; height: 40px; font-size: 23px; left: 2px; top: 8px; }
+  .p79-flag { right: 2px; top: 8px; }
+  .p79-ping { top: 72px; width: 170px; height: 62px; margin-left: -85px; }
+  .p79-stop-name { max-width: 206px; font-size: 20px; }
+  .p79-walker { width: 68px; }
+  .p79-walker-shadow { width: 48px; margin-left: -24px; }
+}
+
+/* Les jeux d'enfants doivent bouger : on ne coupe que les décors qui défilent en continu (nuages, vagues), jamais les réactions. */
+
+/* ══════════ RANGEMENT : la zone de jeu prend plus de place, pour que les images restent grandes sans réduire tout l'écran ══════════ */
+.p79-lesson.with-sort .p79-l-scene { grid-template-columns: minmax(110px, 11%) minmax(0, 1fr); column-gap: 1vw; padding: 0 2vw 0 1.5vw; }
+.p79-lesson.with-sort .p79-l-palou { height: min(75%, 300px); }
+.p79-tray.many .p79-item:has(.p79-pict) { width: 140px; }
+.p79-tray.many .p79-item .p79-pict { width: 96px; height: 96px; }
+.p79-sort .p79-feedback { margin-top: 8px; padding: 8px 16px; font-size: 22px; }
+@media (max-width: 860px) {
+  .p79-lesson.with-sort .p79-l-scene { grid-template-columns: minmax(0, 1fr); }
+}.p79-lesson.with-sort .p79-fit { gap: 10px; padding: 8px 6px; }
+.p79-lesson.with-sort .p79-activity { padding: 8px 18px 12px; }
+.p79-lesson.with-sort .p79-bubble { padding-top: 8px; padding-bottom: 10px; }
+.p79-lesson.with-sort .p79-bin-title .p79-pict { width: 52px; height: 52px; }
+/* La place du message de retour est réservée : l'écran ne se redimensionne plus quand il apparaît. */
+.p79-sort .p79-feedback-zone { min-height: 54px; }
+/* « Qui est-ce ? avec Palou » : l'objet à trouver, les objets que Palou regarde (ils s'écartent un à un) et les données à toucher. */
+.p79-whois { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-whois-top { display: flex; align-items: center; gap: 16px; }
+.p79-whois-target { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: none; padding: 8px 14px 6px; background: #fff7d6; border: 3px dashed #f0b429; border-radius: 22px; }
+.p79-whois-target .p79-pict { width: 92px; height: 92px; }
+.p79-whois-target span { font-size: 18px; font-weight: 700; color: #8a5a00; }
+.p79-whois-status { font-size: 22px; font-weight: 700; line-height: 1.25; color: #1f5f4a; }
+.p79-whois-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.p79-whois-item { display: grid; place-items: center; width: 118px; height: 118px; background: #fff; border: 3px solid #d3e3da; border-radius: 22px; box-shadow: 0 5px 0 #c4d9ce; transition: opacity .35s, transform .35s, filter .35s, border-color .2s; }
+.p79-whois-item .p79-pict { width: 92px; height: 92px; }
+.p79-whois-item.out { opacity: .2; filter: grayscale(1); transform: scale(.88); box-shadow: none; }
+.p79-whois-item.found { background: var(--brand-tint, #e5f8d3); border-color: #5fbf3f; box-shadow: 0 0 0 5px rgba(95, 191, 63, .35), 0 5px 0 #5fbf3f; animation: p79-correct .5s cubic-bezier(.34, 1.56, .64, 1); }
+.p79-whois-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.p79-opt.p79-whois-tag { justify-content: center; min-height: 58px; padding: 8px 20px; border-radius: 999px; font-size: 24px; }
+.p79 .p79-whois-tag .p79-opt-label { flex: none; }
+@media (max-width: 640px) {
+  /* Téléphone : tout doit tenir sans trop réduire l'écran : l'objet à trouver et la phrase de Palou côte à côte, les 5 objets sur une ligne. */
+  .p79-whois { gap: 8px; margin-top: 6px; }
+  .p79-whois-top { gap: 10px; }
+  .p79-whois-target { padding: 4px 8px 3px; border-radius: 16px; }
+  .p79-whois-target .p79-pict { width: 56px; height: 56px; }
+  .p79-whois-target span { font-size: 14px; }
+  .p79-whois-status { font-size: 17px; text-align: left; }
+  .p79-whois-grid { flex-wrap: nowrap; gap: 5px; }
+  .p79-whois-item { flex: 1 1 0; width: auto; height: auto; aspect-ratio: 1; min-width: 0; border-radius: 14px; box-shadow: 0 3px 0 #c4d9ce; }
+  .p79-whois-item .p79-pict { width: 82%; height: 82%; }
+  .p79-whois-tags { gap: 6px; }
+  .p79-opt.p79-whois-tag { font-size: 18px; min-height: 44px; padding: 4px 12px; box-shadow: 0 4px 0 #c4d9ce; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-whois-item { transition: none; } .p79-whois-item.found { animation: none; } }
+
+/* « La machine à trier » : les objets en vrac, puis rangés d'un coup selon la règle choisie ; les règles sont de gros boutons ronds. */
+.p79-rs { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-rs-field { display: flex; align-items: center; justify-content: center; min-height: 150px; padding: 12px; background: #f3faf6; border: 3px dashed #b9d9c9; border-radius: 24px; }
+.p79-rs-pile, .p79-rs-gitems { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.p79-rs-groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; }
+.p79-rs-group { flex: 1 1 150px; max-width: 280px; padding: 6px 8px 10px; text-align: center; background: #fff; border: 3px solid #d3e3da; border-radius: 20px; box-shadow: 0 5px 0 #c4d9ce; }
+.p79-rs-gtitle { margin-bottom: 4px; font-size: 20px; font-weight: 700; color: #1f5f4a; }
+.p79-rs-item { display: grid; place-items: center; width: 84px; height: 84px; background: #fff; border: 2px solid #e1ece6; border-radius: 18px; }
+.p79-rs-item .p79-pict { width: 66px; height: 66px; }
+.p79-rs-item.pop { animation: p79-correct .45s cubic-bezier(.34, 1.56, .64, 1); }
+.p79-rs-rules { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.p79-opt.p79-rs-rule, .p79-opt.p79-rs-rule:has(.p79-pict) { flex-direction: row; justify-content: center; align-items: center; gap: 10px; min-height: 64px; padding: 6px 20px 6px 12px; border-radius: 999px; font-size: 24px; }
+.p79-rs-rule .p79-pict { width: 46px; height: 46px; }
+.p79-opt.p79-rs-rule.on { border-color: #1f8f6a; }
+@media (max-width: 640px) {
+  .p79-rs { gap: 8px; margin-top: 6px; }
+  .p79-rs-field { min-height: 110px; padding: 8px; border-radius: 18px; }
+  .p79-rs-groups { gap: 6px; }
+  .p79-rs-group { flex: 1 1 0; min-width: 0; padding: 4px 4px 6px; border-radius: 14px; box-shadow: 0 3px 0 #c4d9ce; }
+  .p79-rs-gtitle { font-size: 15px; }
+  .p79-rs-item { width: 54px; height: 54px; border-radius: 12px; }
+  .p79-rs-item .p79-pict { width: 42px; height: 42px; }
+  .p79-opt.p79-rs-rule, .p79-opt.p79-rs-rule:has(.p79-pict) { min-height: 48px; padding: 4px 14px 4px 8px; font-size: 18px; }
+  .p79-rs-rule .p79-pict { width: 32px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-rs-item.pop { animation: none; } }
+
+/* « Données propres, IA contente » : Palou compte, l'enfant retire les intrus. */
+.p79-cl { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-cl-count { align-self: center; padding: 8px 22px; font-size: 24px; font-weight: 700; color: #8a5a00; background: #fff7d6; border: 3px dashed #f0b429; border-radius: 999px; transition: background .3s, color .3s, border-color .3s; }
+.p79-cl-count b { font-size: 32px; }
+.p79-cl-count.ok { color: #1f5f4a; background: var(--brand-tint, #e5f8d3); border: 3px solid #5fbf3f; }
+.p79-cl-rows { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.p79-opt.p79-cl-row, .p79-opt.p79-cl-row:has(.p79-pict) { flex-direction: row; align-items: center; gap: 10px; min-height: 76px; padding: 6px 18px 6px 10px; border-radius: 22px; font-size: 22px; transition: opacity .35s, transform .35s, filter .35s; }
+.p79-cl-row .p79-pict { width: 58px; height: 58px; }
+.p79-opt.p79-cl-row.gone { opacity: .2; filter: grayscale(1); transform: scale(.9); box-shadow: none; text-decoration: line-through; }
+@media (max-width: 640px) {
+  .p79-cl { gap: 8px; margin-top: 6px; }
+  .p79-cl-count { padding: 4px 14px; font-size: 17px; }
+  .p79-cl-count b { font-size: 22px; }
+  .p79-cl-rows { gap: 6px; }
+  .p79-opt.p79-cl-row, .p79-opt.p79-cl-row:has(.p79-pict) { min-height: 48px; padding: 3px 12px 3px 6px; gap: 6px; font-size: 16px; border-radius: 14px; }
+  .p79-cl-row .p79-pict { width: 38px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-opt.p79-cl-row { transition: none; } }
+
+/* « L'entraînement de Palou » : l'enfant montre des exemples, la jauge se remplit, Palou reconnaît. */
+.p79-tr { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-tr-top { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.p79-tr-test { display: flex; flex-direction: column; align-items: center; gap: 2px; flex: none; padding: 8px 14px 6px; background: #fff7d6; border: 3px dashed #f0b429; border-radius: 22px; }
+.p79-tr-test .p79-pict { width: 92px; height: 92px; }
+.p79-tr-test span { font-size: 18px; font-weight: 700; color: #8a5a00; }
+.p79-tr-side { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.p79-tr-says { padding: 10px 18px; font-size: 22px; font-weight: 700; line-height: 1.25; color: #1f5f4a; background: #fff; border: 3px solid #d3e3da; border-radius: 20px; }
+.p79-tr-says.ok { background: var(--brand-tint, #e5f8d3); border-color: #5fbf3f; }
+.p79-tr-gauge { display: flex; gap: 8px; }
+.p79-tr-gauge span { flex: 1; height: 16px; background: #e4ece8; border-radius: 999px; transition: background .3s; }
+.p79-tr-gauge span.on { background: #5fbf3f; }
+.p79-tr-rows { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.p79-opt.p79-tr-ex, .p79-opt.p79-tr-ex:has(.p79-pict) { flex-direction: row; align-items: center; gap: 10px; min-height: 76px; padding: 6px 18px 6px 10px; border-radius: 22px; font-size: 22px; transition: opacity .35s, transform .35s; }
+.p79-tr-ex .p79-pict { width: 58px; height: 58px; }
+.p79-opt.p79-tr-ex.gone { opacity: .45; transform: scale(.94); box-shadow: none; border-color: #5fbf3f; }
+@media (max-width: 640px) {
+  .p79-tr { gap: 8px; margin-top: 6px; }
+  .p79-tr-top { gap: 8px; }
+  .p79-tr-test { padding: 4px 8px 3px; border-radius: 16px; }
+  .p79-tr-test .p79-pict { width: 56px; height: 56px; }
+  .p79-tr-test span { font-size: 14px; }
+  .p79-tr-says { padding: 6px 10px; font-size: 16px; border-radius: 14px; }
+  .p79-tr-gauge span { height: 12px; }
+  .p79-tr-rows { gap: 6px; }
+  .p79-opt.p79-tr-ex, .p79-opt.p79-tr-ex:has(.p79-pict) { min-height: 48px; padding: 3px 12px 3px 6px; gap: 6px; font-size: 16px; border-radius: 14px; }
+  .p79-tr-ex .p79-pict { width: 38px; height: 38px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-opt.p79-tr-ex, .p79-tr-gauge span { transition: none; } }
+
+/* « Corrige l'étiquette » et « Le test de Palou ». */
+.p79-tr-says.no { background: #fff1ec; border-color: #f0a58e; color: #8a3a22; }
+.p79-opt.p79-rl-card, .p79-opt.p79-rl-card:has(.p79-pict) { flex-direction: column; justify-content: center; gap: 4px; min-width: 150px; min-height: 130px; padding: 8px 14px; }
+.p79-rl-card .p79-pict { width: 64px; height: 64px; }
+.p79-rl-tag { padding: 2px 14px; font-size: 20px; font-weight: 800; color: #fff; background: #1f5f4a; border-radius: 999px; }
+.p79-rl-tag.fixed { background: #5fbf3f; animation: p79-correct .5s cubic-bezier(.34, 1.56, .64, 1); }
+.p79-opt.p79-pb-photo, .p79-opt.p79-pb-photo:has(.p79-pict) { flex-direction: column; justify-content: center; gap: 4px; min-width: 150px; min-height: 140px; padding: 8px 14px; }
+.p79-pb-photo .p79-pict { width: 70px; height: 70px; }
+.p79-pb-guess { padding: 2px 12px; font-size: 18px; font-weight: 800; color: #8a5a00; background: #fff7d6; border-radius: 999px; }
+.p79-pb-photo.no .p79-pb-guess { color: #8a3a22; background: #fff1ec; }
+.p79-pb-photo.ok .p79-pb-guess { color: #1f5f4a; background: var(--brand-tint, #e5f8d3); }
+@media (max-width: 640px) {
+  .p79-opt.p79-rl-card, .p79-opt.p79-rl-card:has(.p79-pict), .p79-opt.p79-pb-photo, .p79-opt.p79-pb-photo:has(.p79-pict) { flex: 1 1 0; min-width: 0; min-height: 0; padding: 4px 6px; gap: 2px; }
+  .p79-opt.p79-pb-photo, .p79-opt.p79-pb-photo:has(.p79-pict) { flex: 1 1 42%; flex-direction: row; justify-content: flex-start; flex-wrap: wrap; text-align: left; }
+  .p79-rl-card .p79-pict, .p79-pb-photo .p79-pict { width: 44px; height: 44px; }
+  .p79-rl-tag { padding: 1px 8px; font-size: 14px; }
+  .p79-pb-guess { padding: 1px 6px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-rl-tag.fixed { animation: none; } }
+
+/* « Les yeux de Palou » : une photo plus ou moins nette, Palou dit ce qu'il voit. */
+.p79-fc { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-fc-top { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.p79-fc-photo { flex: none; display: grid; place-items: center; width: 220px; height: 220px; overflow: hidden; background: #fff; border: 3px solid #d3e3da; border-radius: 22px; }
+.p79-fc-img { width: 100%; height: 100%; object-fit: contain; image-rendering: auto; transition: filter .3s; }
+.p79-fc-btns { display: flex; justify-content: center; gap: 12px; }
+.p79-opt.p79-fc-btn { justify-content: center; min-width: 170px; min-height: 60px; padding: 8px 22px; border-radius: 999px; font-size: 24px; }
+@media (max-width: 640px) {
+  .p79-fc { gap: 8px; margin-top: 6px; }
+  .p79-fc-top { gap: 8px; }
+  .p79-fc-photo { width: 120px; height: 120px; border-radius: 16px; }
+  .p79-opt.p79-fc-btn { min-width: 0; flex: 1; min-height: 46px; padding: 4px 12px; font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-fc-img { transition: none; } }
+
+/* « Regarde comme Palou » : la photo vue avec un regard différent. */
+.p79-lens-shape { filter: brightness(0); }
+.p79-lens-colors { filter: blur(12px) saturate(1.5); }
+.p79-lens-sharp { filter: none; }
+
+/* « Parle à Palou » : micro du navigateur ou cartes de mots. */
+.p79-sp { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-sp-say { align-self: center; padding: 8px 22px; font-size: 26px; font-weight: 800; color: #1f5f4a; background: #fff; border: 3px solid #d3e3da; border-radius: 22px; text-align: center; }
+.p79-sp-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 14px; }
+.p79-sp-label { font-size: 18px; font-weight: 700; color: #4d6f62; }
+.p79-sp-phrase { min-width: 120px; padding: 6px 16px; font-size: 24px; font-weight: 800; color: #1f5f4a; background: #fff7d6; border: 3px dashed #f0b429; border-radius: 16px; }
+.p79-opt.p79-sp-card { justify-content: center; min-height: 54px; padding: 6px 18px; font-size: 22px; }
+.p79-sp-heard { align-self: center; padding: 8px 18px; font-size: 22px; color: #1f2d27; background: #f3faf6; border-radius: 16px; }
+.p79-sp-heard mark { padding: 0 6px; font-weight: 800; color: #1f5f4a; background: #d8f05b; border-radius: 8px; }
+@media (max-width: 640px) {
+  .p79-sp { gap: 8px; margin-top: 6px; }
+  .p79-sp-say { padding: 4px 14px; font-size: 18px; border-radius: 16px; }
+  .p79-sp-label { font-size: 14px; }
+  .p79-sp-phrase { padding: 3px 10px; font-size: 18px; }
+  .p79-opt.p79-sp-card { min-height: 40px; padding: 3px 12px; font-size: 16px; }
+  .p79-sp-heard { padding: 4px 10px; font-size: 16px; }
+}
+
+/* « Décris, Palou dessine » : des couches qui s'empilent dans le dessin de Palou. */
+.p79-ly { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-ly-top { display: flex; align-items: stretch; justify-content: center; gap: 16px; }
+.p79-ly-canvas { flex: 1; min-width: 0; max-width: 620px; min-height: 150px; display: flex; flex-wrap: wrap; align-content: center; justify-content: center; gap: 8px; padding: 10px; background: #fff; border: 3px solid #d3e3da; border-radius: 22px; }
+.p79-ly-empty { align-self: center; font-size: 20px; font-weight: 700; color: #8aa89a; }
+.p79-ly-sticker { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px 6px 8px; font-size: 20px; color: #1f5f4a; background: var(--brand-tint, #e5f8d3); border: 3px solid #5fbf3f; border-radius: 18px; animation: p79-correct .5s cubic-bezier(.34, 1.56, .64, 1); }
+.p79-ly-sticker .p79-pict { width: 56px; height: 56px; }
+.p79-ly-sticker.off { color: #8a3a22; background: #fff1ec; border-color: #f0a58e; transform: rotate(-4deg); }
+@media (max-width: 640px) {
+  .p79-ly { gap: 8px; margin-top: 6px; }
+  .p79-ly-top { flex-direction: column; align-items: stretch; gap: 6px; }
+  .p79-ly-top .p79-tr-test { flex-direction: row; justify-content: center; gap: 8px; }
+  .p79-ly-top .p79-tr-test .p79-pict { width: 40px; height: 40px; }
+  .p79-ly-top .p79-tr-test span { font-size: 15px; }
+  .p79-ly-canvas { max-width: none; min-height: 56px; gap: 4px; padding: 6px; border-radius: 16px; }
+  .p79-ly-empty { font-size: 14px; }
+  .p79-ly-sticker { gap: 4px; padding: 3px 8px 3px 4px; font-size: 14px; border-radius: 12px; }
+  .p79-ly-sticker .p79-pict { width: 32px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-ly-sticker { animation: none; } }
+
+/* « Enquête » (verify) et « La loupe » (loupe). */
+.p79-vf, .p79-lp { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-vf-top { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.p79-vf-meter { display: flex; flex-direction: column; gap: 4px; min-width: 220px; font-size: 18px; font-weight: 700; color: #1f5f4a; }
+.p79-vf-bar { height: 18px; background: #e4ece8; border-radius: 999px; overflow: hidden; }
+.p79-vf-bar i { display: block; height: 100%; background: linear-gradient(90deg, #e07a5f, #f0b429 55%, #5fbf3f); border-radius: 999px; transition: width .5s; }
+.p79-vf-meter b { font-size: 24px; }
+.p79-vf-file { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.p79-vf-file li { padding: 8px 14px; font-size: 20px; color: #1f2d27; background: #f3faf6; border-left: 6px solid #5fbf3f; border-radius: 12px; }
+.p79-vf-file li.off { color: #6b7a73; background: #f6f6f4; border-left-color: #c9c9c4; }
+.p79-vf-file li b { color: #1f5f4a; }
+.p79-opt.p79-vf-stamp, .p79-opt.p79-vf-stamp:has(.p79-pict) { min-height: 80px; padding: 8px 22px 8px 12px; font-size: 24px; border-width: 4px; }
+.p79-lp-top { display: flex; align-items: center; justify-content: center; gap: 18px; }
+.p79-lp-photo { position: relative; flex: none; width: 220px; height: 220px; background: #fff; border: 3px solid #d3e3da; border-radius: 22px; overflow: hidden; }
+.p79-lp-photo img { width: 100%; height: 100%; object-fit: contain; }
+.p79-lp-ring { position: absolute; width: 22%; height: 22%; border: 4px solid #f0b429; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 0 3px rgba(255, 255, 255, .7); pointer-events: none; }
+.p79-lp-ring.found { border-color: #5fbf3f; }
+.p79-lp-lens { flex: none; display: grid; place-items: center; width: 200px; height: 200px; font-size: 18px; font-weight: 700; color: #4d6f62; text-align: center; background-color: #fff; background-repeat: no-repeat; border: 8px solid #3b82a0; border-radius: 50%; box-shadow: 0 6px 0 #c4d9ce; }
+@media (max-width: 640px) {
+  .p79-vf, .p79-lp { gap: 8px; margin-top: 6px; }
+  .p79-vf-top { flex-direction: column; gap: 6px; }
+  .p79-vf-top .p79-tr-test { flex-direction: row; justify-content: center; gap: 8px; }
+  .p79-vf-top .p79-tr-test .p79-pict { width: 40px; height: 40px; }
+  .p79-vf-top .p79-tr-test span { font-size: 15px; }
+  .p79-vf-meter { min-width: 0; width: 100%; flex-direction: row; align-items: center; gap: 8px; font-size: 13px; }
+  .p79-vf-meter span { flex: 1; }
+  .p79-vf-bar { flex: 1; height: 12px; }
+  .p79-vf-meter b { font-size: 16px; }
+  .p79-vf-file li { padding: 4px 10px; font-size: 14px; border-left-width: 4px; }
+  .p79-opt.p79-vf-stamp, .p79-opt.p79-vf-stamp:has(.p79-pict) { min-height: 50px; padding: 4px 14px 4px 8px; font-size: 18px; }
+  .p79-lp-top { gap: 8px; }
+  .p79-lp-photo { width: 120px; height: 120px; border-radius: 16px; }
+  .p79-lp-lens { width: 120px; height: 120px; border-width: 5px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-vf-bar i { transition: none; } }
+
+/* « Construis ton IA » : 3 cases, puis la machine se met en marche. */
+.p79-mc { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-mc-slots { display: flex; justify-content: center; gap: 10px; }
+.p79-mc-slot { flex: 1; max-width: 240px; display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; text-align: center; background: #f6f6f4; border: 3px dashed #c9d6cf; border-radius: 18px; }
+.p79-mc-slot small { font-size: 16px; font-weight: 700; color: #6b7a73; }
+.p79-mc-slot b { font-size: 18px; color: #6b7a73; }
+.p79-mc-slot.now { background: #fff7d6; border-color: #f0b429; }
+.p79-mc-slot.full { background: var(--brand-tint, #e5f8d3); border: 3px solid #5fbf3f; }
+.p79-mc-slot.full small, .p79-mc-slot.full b { color: #1f5f4a; }
+.p79-mc-ask { align-self: center; font-size: 22px; font-weight: 800; color: #1f5f4a; text-align: center; }
+@media (max-width: 640px) {
+  .p79-mc { gap: 8px; margin-top: 6px; }
+  .p79-mc-slots { gap: 4px; }
+  .p79-mc-slot { padding: 4px 6px; border-width: 2px; border-radius: 12px; }
+  .p79-mc-slot small { font-size: 12px; }
+  .p79-mc-slot b { font-size: 13px; }
+  .p79-mc-ask { font-size: 16px; }
+}
+
+/* « Cache pour protéger » : les secrets se cachent sous un flou. */
+.p79-sh { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+.p79-sh .p79-tr-test { align-self: center; flex-direction: row; gap: 10px; }
+.p79-sh .p79-tr-test .p79-pict { width: 56px; height: 56px; }
+.p79-opt.p79-sh-item.hid { opacity: 1; border-color: #1f5f4a; background: #e4ece8; }
+.p79-sh-item.hid .p79-opt-label { filter: blur(7px); user-select: none; }
+.p79-sh-item.hid .p79-pict { filter: blur(6px) grayscale(1); }
+.p79-sh-view { align-self: center; padding: 8px 18px; font-size: 20px; color: #1f2d27; background: #fff1ec; border-radius: 16px; text-align: center; }
+@media (max-width: 640px) {
+  .p79-sh { gap: 8px; margin-top: 6px; }
+  .p79-sh .p79-tr-test .p79-pict { width: 36px; height: 36px; }
+  .p79-sh-view { padding: 4px 10px; font-size: 14px; }
+}
+
+@media (max-width: 640px) {
+}
+
+/* « Parle à Palou » : des boutons de décision bien distincts des cartes de mots. */
+.p79-sp-actions { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 4px; }
+.p79-sp-undo { display: inline-flex; align-items: center; gap: 8px; min-height: 60px; padding: 8px 20px; font: inherit; font-size: 20px; font-weight: 800; color: #8a3a22; background: #fff1ec; border: 3px solid #f0a58e; border-radius: 999px; box-shadow: 0 4px 0 #e3b9a8; cursor: pointer; }
+.p79-sp-undo:disabled { opacity: .45; cursor: default; box-shadow: none; }
+.p79-btn.p79-sp-say-btn { display: inline-flex; align-items: center; gap: 10px; min-height: 68px; padding: 10px 30px; font-size: 24px; }
+.p79-btn.p79-sp-say-btn:disabled { opacity: .55; }
+.p79-opt.p79-sp-card { background: #f6f6f4; }
+.p79-opt.p79-sp-card.help { border-color: #f0b429; background: #fff7d6; animation: p79-pulse-soft 1.4s ease-in-out infinite; }
+@keyframes p79-pulse-soft { 50% { transform: scale(1.06); box-shadow: 0 0 0 6px rgba(240, 180, 41, .3); } }
+@media (max-width: 640px) {
+  .p79-sp-actions { gap: 8px; }
+  .p79-sp-undo { min-height: 48px; padding: 4px 12px; font-size: 16px; border-width: 2px; }
+  .p79-btn.p79-sp-say-btn { min-height: 52px; padding: 6px 16px; font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .p79-opt.p79-sp-card.help { animation: none; } }
+
+/* ══════════ MISE EN PAGE DES ÉCRANS DE LEÇON : règles uniques, valables pour tous les écrans (voir useFit dans LessonPlayer79) ══════════
+   1. Taille de Palou : elle ne dépend JAMAIS du contenu (ni de la réduction de l'écran). Un plancher et un plafond, selon l'écran.
+   2. Le contenu reste lisible (jamais sous 85 %) ; s'il ne tient pas malgré la réorganisation sur plus de colonnes, la zone défile.
+   Ces règles remplacent les anciens réglages au cas par cas (« with-sort » réduisait Palou à 75 % de sa case, sur 11 % de la largeur). */
+.p79-l-scene { position: relative; }
+/* Ordinateur et tablette : une colonne pour Palou, la même pour tous les écrans. */
+.p79-l-scene, .p79-lesson.with-sort .p79-l-scene { grid-template-columns: clamp(170px, 20%, 320px) minmax(0, 1fr); column-gap: 2vw; padding: 0 2.5vw; }
+.p79-l-palou, .p79-lesson.with-sort .p79-l-palou { height: min(100%, clamp(220px, 46vh, 440px)); }
+.p79-l-box { overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.p79-l-box:not(.scrolls) { scrollbar-width: none; }
+.p79-scroll-hint { position: absolute; grid-column: -2 / -1; grid-row: -2 / -1; align-self: end; justify-self: center; z-index: 3; display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 6px; color: #fff; background: #1f5f4a; border-radius: 50%; box-shadow: 0 4px 0 rgba(21, 59, 59, .3); pointer-events: none; animation: p79-hint-bob 1.4s ease-in-out infinite; }
+.p79-scroll-hint svg { transform: rotate(90deg); }
+@keyframes p79-hint-bob { 50% { transform: translateY(6px); } }
+/* Téléphone et petites fenêtres : Palou en haut, sur une rangée à sa taille (jamais moins de 104 px), le contenu dessous. */
+@media (max-width: 860px) {
+  .p79-l-scene, .p79-lesson.with-sort .p79-l-scene { grid-template-columns: minmax(0, 1fr); grid-template-rows: clamp(104px, 17vh, 170px) minmax(0, 1fr); padding: 0 12px; column-gap: 0; }
+  .p79-l-palou, .p79-lesson.with-sort .p79-l-palou { height: 100%; }
+}
+/* Téléphone tenu en largeur (peu de hauteur) : Palou repasse à gauche, une colonne étroite, pour laisser toute la hauteur au contenu. */
+@media (max-height: 520px) and (min-width: 560px) {
+  .p79-l-scene, .p79-lesson.with-sort .p79-l-scene { grid-template-columns: clamp(110px, 16%, 190px) minmax(0, 1fr); grid-template-rows: none; padding: 0 12px; column-gap: 12px; }
+  .p79-l-palou, .p79-lesson.with-sort .p79-l-palou { height: min(100%, 230px); }
+}
+/* Les deux boutons du bas ne passent jamais à la ligne (« Reto ur ») : celui de gauche prend sa largeur, celui de droite le reste. */
+.p79-l-bottom .p79-btn { white-space: nowrap; justify-content: center; }
+.p79-l-bottom .p79-btn.alt { flex: 0 0 auto; }
+.p79-l-bottom .p79-btn:not(.alt) { flex: 0 0 auto; }
+@media (max-width: 860px) { .p79-l-bottom { gap: 10px; } .p79 .p79-l-bottom .p79-btn { font-size: 18px !important; padding: 8px 14px; } .p79-l-bottom .p79-btn svg { width: 22px; height: 22px; } }
+@media (prefers-reduced-motion: reduce) { .p79-scroll-hint { animation: none; } }
+
+/* Les tailles de texte ne suivent plus la HAUTEUR de l'écran (sur un téléphone en hauteur, 4,4 vh donnait 37 px de texte et un écran qui débordait) :
+   en dessous de 860 px de large elles suivent la largeur, avec un plancher lisible pour des enfants de 7 à 9 ans (21 px). */
+@media (max-width: 860px) {
+  .p79 .p79-say-text { font-size: clamp(21px, 5.4vw, 26px) !important; line-height: 1.25; }
+  .p79-top-row.p79-ts-sm .p79-say-text { font-size: clamp(16px, 4.2vw, 20px) !important; }
+  .p79-top-row.p79-ts-lg .p79-say-text { font-size: clamp(25px, 6.2vw, 32px) !important; }
+  .p79-top-row.p79-ts-xl .p79-say-text { font-size: clamp(29px, 7.2vw, 38px) !important; }
+  .p79 .p79-prompt, .p79 .p79-step-prompt { font-size: clamp(20px, 5.2vw, 25px) !important; }
+  .p79-bubble { padding: 10px 16px 14px; border-radius: 26px; }
+  .p79-activity { padding: 10px 14px 14px; border-radius: 24px; }
+  .p79-bubble-head { margin-bottom: 4px; gap: 8px; }
+  .p79-listen { padding: 4px 12px; font-size: 17px; }
+}
+
+/* Petits téléphones (moins de 700 px de haut) : les deux barres du lecteur prennent moins de place, pour garder la hauteur au contenu. */
+@media (max-width: 860px) and (max-height: 700px) {
+  .p79-l-top { height: 56px; }
+  .p79-round-btn { width: 44px; height: 44px; }
+  .p79-l-bottom { height: 72px; }
+  .p79 .p79-btn { min-height: 52px; padding: 6px 16px; font-size: 20px !important; }
+}
+
+/* Écran de chargement entre deux leçons (« Cours suivant » / « Refaire »). */
+.p79-transition { position: fixed; inset: 0; z-index: 10050; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 50% 30%, #fffdf0 0%, #dff1e2 70%); animation: p79-transition-in .25s ease-out; }
+.p79-transition-card { display: flex; flex-direction: column; align-items: center; gap: 10px; width: min(520px, 100%); text-align: center; }
+.p79-transition-palou { height: clamp(140px, 30vh, 260px); width: auto; animation: p79-bob 0.9s ease-in-out infinite; filter: drop-shadow(0 12px 10px rgba(21, 59, 59, .25)); }
+.p79-transition-kicker { padding: 4px 16px; font-size: 18px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: #1f5f4a; background: #d8f05b; border-radius: 999px; }
+.p79-transition-card h3 { margin: 4px 0 0; font-size: clamp(26px, 5vw, 38px); line-height: 1.15; color: #123c33; }
+.p79-transition-card p { margin: 0; font-size: 19px; font-weight: 700; color: #4d6f62; }
+.p79-transition-bar { width: min(360px, 80%); height: 16px; margin-top: 8px; background: #fff; border: 3px solid #cfe0d8; border-radius: 999px; overflow: hidden; }
+.p79-transition-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #11998e, #38ef7d); border-radius: 999px; animation: p79-transition-fill linear forwards; }
+@keyframes p79-transition-fill { to { width: 100%; } }
+@keyframes p79-transition-in { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .p79-transition-palou { animation: none; } .p79-transition { animation: none; } }
+
+/* Bouton « Cours suivant » de la page finale : une barre se remplit en 10 secondes, puis le cours suivant s'ouvre tout seul. */
+.p79-btn.p79-auto-next { position: relative; overflow: hidden; }
+.p79-btn.p79-auto-next.running::after { content: ""; position: absolute; left: 0; bottom: 0; height: 6px; width: 0; background: rgba(255, 255, 255, .85); animation: p79-auto-fill var(--auto-ms, 10s) linear forwards; }
+@keyframes p79-auto-fill { to { width: 100%; } }
+@media (prefers-reduced-motion: reduce) { .p79-btn.p79-auto-next.running::after { animation-duration: 0.01s; width: 100%; opacity: .5; } }
+
+/* ══════════ L'ARCHIPEL (Archipel79.tsx) : une grande carte avec les 10 îles, un chemin en pointillés, une fenêtre de 4 quarts pour les cours ══════════ */
+.p79 [hidden] { display: none !important; }
+
+/* Barre de bascule tout en haut de l'espace des modules */
+.p79-module-topbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 14px 16px 8px;
+  position: relative;
+  z-index: 15;
+}
+.p79-view-toggle button.on {
+  background: var(--lime);
+  color: var(--ink);
+  border-color: var(--ink);
+  box-shadow: 0 2.5px 0 var(--ink);
+  transform: scale(1.02);
+}
+
+.dash-content:has(> .p79-map.voyage) { max-width: none !important; padding: 0 !important; }
+.p79-map.voyage { max-width: none; padding: 0; }
+.p79-map.voyage > .p79-map-head { width: min(1000px, calc(100% - 32px)); margin: 10px auto 14px; }
+.p79-map.voyage > .p79-album { width: min(1000px, calc(100% - 32px)); margin: 0 auto 18px; box-sizing: border-box; }
+.p79-ar { margin: 0; }
+.p79-ar-stage {
+  position: relative; height: calc(100dvh - 68px); min-height: 480px; overflow: hidden; container-type: size; isolation: isolate;
+  background: radial-gradient(120% 80% at 70% 0%, #bff1f4, transparent 60%), linear-gradient(180deg, #5fd6ee 0%, #2a9fe0 55%, #1673c9 100%);
+}
+/* Écran plus large que l'image : de chaque côté, la mer continue avec les couleurs du bord de l'image (plus de copie floue de l'archipel, qui donnait des îles « flottantes »). */
+.p79-ar-stage.has-art::before { content: ""; position: absolute; inset: 0; z-index: 0;
+  background:
+    linear-gradient(180deg, #fcfae7 0%, #edefc9 12%, #bae5d0 25%, #8bdbd1 37%, #6fd6d2 50%, #5fd1d1 62%, #4daec2 75%, #4296b8 100%) left / 50% 100% no-repeat,
+    linear-gradient(180deg, #cfe7ec 0%, #4da0c6 12%, #4daac9 25%, #5dc0d3 37%, #72ccd7 50%, #49a4c3 62%, #3e8cb5 75%, #3d89b1 100%) right / 50% 100% no-repeat; }
+.p79-ar-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 65% 45% at 30% 30%, rgba(255, 255, 255, 0.22) 0%, transparent 65%),
+              radial-gradient(ellipse 55% 55% at 75% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 65%);
+  animation: p79-stage-shimmer 7s ease-in-out infinite;
+  z-index: 2;
+}
+@keyframes p79-stage-shimmer {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  50% { opacity: 0.42; transform: scale(1.02); }
+}
+
+.p79-ar-map { position: absolute; left: 50%; top: 50%; z-index: 1; translate: -50% -50%; aspect-ratio: var(--ar-ratio, 1.7778); width: min(100cqw, calc(100cqh * var(--ar-ratio, 1.7778))); }
+.p79-ar-stage.has-art .p79-ar-map { background: var(--ar-art) center / 100% 100% no-repeat; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 3.5%, #000 96.5%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 3.5%, #000 96.5%, transparent 100%); }
+

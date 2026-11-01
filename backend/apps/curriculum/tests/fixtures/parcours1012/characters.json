@@ -1,0 +1,28 @@
+{
+  "characters": [
+    {
+      "id": "palou",
+      "name": "Palou",
+      "role": "Guide et mascotte IA",
+      "avatar": "/images/parcours1012/characters/palou.webp",
+      "voice_id": "eleven_palou_senegal_01",
+      "order": 1
+    },
+    {
+      "id": "exemple-1",
+      "name": "Personnage exemple 1",
+      "role": "Personnage d'exemple pour les tests",
+      "avatar": "/images/parcours1012/characters/exemple1.webp",
+      "voice_id": "",
+      "order": 2
+    },
+    {
+      "id": "exemple-2",
+      "name": "Personnage exemple 2",
+      "role": "Second personnage d'exemple pour les tests",
+      "avatar": "/images/parcours1012/characters/exemple2.webp",
+      "voice_id": "",
+      "order": 3
+    }
+  ]
+}

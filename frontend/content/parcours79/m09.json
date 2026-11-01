@@ -1,0 +1,971 @@
+{
+  "module": {
+    "id": "p9",
+    "chapter": 9,
+    "title": "Vrai, faux… vérifions !",
+    "place": "La cour de l’école, un message vocal à la main",
+    "intro": "Une rumeur dit que la fête est annulée ! Aide la classe à retrouver la vérité."
+  },
+  "lessons": [
+    {
+      "id": "p9-1",
+      "title": "Palou peut se tromper",
+      "scene": {
+        "id": "cour-rumeur",
+        "label": "La cour de l’école"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Palou annonce que la fête est annulée, très sûr de lui. Mais est-ce vrai ?",
+      "callback": "Tu te rappelles ? Une IA peut dire « je ne suis pas sûre » quand elle manque d’indices.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "image": "m09-l1-rumeur.webp",
+          "alt": "Palou annonce une nouvelle d’un air très sûr dans la cour de l’école, les enfants autour de lui sont surpris.",
+          "text": "Palou annonce d’une voix sûre : « La fête est annulée ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "text": "Moussa est triste. Fatou demande : « Qui te l’a dit, Palou ? »",
+          "image": "m09-l1-s02.webp",
+          "alt": "Illustration : Moussa est triste. Fatou demande : « Qui te l’a dit, Palou ? »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "fausse information",
+            "sens": "Une information qui semble vraie, mais qui ne l’est pas."
+          },
+          "text": "Une fausse information semble vraie, mais elle ne l’est pas. Même une IA peut en donner."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à démêler le vrai du faux !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Palou parle d’une voix très sûre. Est-ce une preuve ?",
+              "hint": "Parler fort ne rend pas une information vraie.",
+              "success": "Oui ! Une IA peut se tromper, même avec beaucoup d’assurance.",
+              "options": [
+                {
+                  "label": "Oui, quand c’est sûr, c’est vrai",
+                  "pict": "sur-donc-vrai",
+                  "explain": "Une voix sûre ne prouve rien : on peut se tromper avec assurance."
+                },
+                {
+                  "label": "Non, il peut se tromper",
+                  "pict": "ia-peut-se-tromper",
+                  "correct": true
+                },
+                {
+                  "label": "Oui, car Palou ne ment jamais",
+                  "pict": "palou-ne-ment-pas",
+                  "explain": "Palou ne ment pas, mais il peut se tromper sans le savoir."
+                }
+              ]
+            },
+            {
+              "type": "verify",
+              "prompt": "Palou est très sûr de lui. Pose-lui des questions pour vérifier !",
+              "hint": "Demande-lui d’où vient l’information et où est la preuve.",
+              "success": "Oui ! Être sûr de soi ne prouve rien : il faut des preuves.",
+              "claim": {
+                "text": "La fête est annulée !",
+                "pict": "fete-annulee"
+              },
+              "meter": {
+                "label": "Palou est sûr à",
+                "start": 100,
+                "end": 20
+              },
+              "need": 2,
+              "ask": "Palou n’a pas de preuve. Quel tampon poses-tu ?",
+              "checks": [
+                {
+                  "id": "c1",
+                  "label": "Tu es sûr ?",
+                  "pict": "certain-sur",
+                  "reveal": "Oui, je suis sûr à 100 % !",
+                  "explain": "Palou répète qu’il est sûr, mais ça ne prouve rien. Pose une question sur la source !"
+                },
+                {
+                  "id": "c2",
+                  "label": "Qui te l’a dit ?",
+                  "pict": "qui-a-dit",
+                  "useful": true,
+                  "reveal": "Un message transféré. Je ne sais pas qui l’a écrit."
+                },
+                {
+                  "id": "c3",
+                  "label": "C’est quand ?",
+                  "pict": "c-etait-quand",
+                  "useful": true,
+                  "reveal": "Je ne sais plus… peut-être un vieux message."
+                },
+                {
+                  "id": "c4",
+                  "label": "Où est la preuve ?",
+                  "pict": "preuve-loupe",
+                  "useful": true,
+                  "reveal": "Je n’ai aucune preuve. Je l’ai juste entendu."
+                }
+              ],
+              "stamps": [
+                {
+                  "id": "t1",
+                  "label": "Vrai",
+                  "pict": "vrai-check",
+                  "explain": "Palou n’a aucune preuve : on ne peut pas dire que c’est vrai."
+                },
+                {
+                  "id": "t2",
+                  "label": "Pas encore prouvé",
+                  "pict": "a-verifier",
+                  "correct": true
+                },
+                {
+                  "id": "t3",
+                  "label": "Faux",
+                  "pict": "faux-croix",
+                  "explain": "On ne sait pas encore si c’est faux : sans preuve, on reste prudent."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut se tromper en parlant avec assurance. Vérifie toujours."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Une IA peut-elle se tromper même avec assurance ?",
+              "hint": "Parler fort ne prouve rien.",
+              "success": "Oui ! Une IA peut se tromper, même sûre d’elle.",
+              "options": [
+                {
+                  "label": "Oui, parfois",
+                  "pict": "ia-peut-se-tromper",
+                  "correct": true
+                },
+                {
+                  "label": "Non, jamais, car elle est très sûre",
+                  "pict": "sur-donc-vrai",
+                  "explain": "Être sûr de soi ne prouve rien : une IA peut se tromper."
+                },
+                {
+                  "label": "Non, car Palou ne ment jamais",
+                  "pict": "palou-ne-ment-pas",
+                  "explain": "Palou ne ment pas, mais il peut avoir tort : on vérifie."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fais-tu avant de croire une réponse ?",
+              "hint": "Pense à une loupe.",
+              "success": "Bravo ! Je vérifie.",
+              "options": [
+                {
+                  "label": "Je vérifie",
+                  "pict": "a-verifier",
+                  "correct": true
+                },
+                {
+                  "label": "Je la crois tout de suite",
+                  "pict": "croire-premier",
+                  "explain": "Croire sans vérifier, c’est risquer de se tromper."
+                },
+                {
+                  "label": "Je répète plus fort que tout le monde",
+                  "pict": "repeter-plus-fort",
+                  "explain": "Répéter plus fort ne prouve rien."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que prouve une voix très sûre d’elle ?",
+              "hint": "Regarde : est-ce une preuve ?",
+              "success": "Exact ! Cela ne prouve rien.",
+              "options": [
+                {
+                  "label": "Rien du tout",
+                  "pict": "sur-donc-vrai",
+                  "correct": true
+                },
+                {
+                  "label": "Que c’est toujours vrai",
+                  "pict": "croire-premier",
+                  "explain": "Même sûre, une voix peut se tromper."
+                },
+                {
+                  "label": "Que c’est toujours faux",
+                  "pict": "faux-croix",
+                  "explain": "Une voix sûre peut avoir raison ou tort : on vérifie."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu poses les bonnes questions.",
+          "learned": "Une IA peut se tromper, même avec assurance. Je vérifie avant de croire."
+        }
+      ]
+    },
+    {
+      "id": "p9-2",
+      "title": "Je vérifie",
+      "scene": {
+        "id": "cour-verification",
+        "label": "La cour de l’école, près de la radio"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "baye",
+        "mme-diop"
+      ],
+      "problem": "Un message vocal transféré dit que la fête est annulée à cause de la pluie. Comment vérifier ?",
+      "callback": "Tu te rappelles ? Palou peut se tromper, même en parlant avec assurance.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "fatou",
+          "image": "m09-l2-vocal.webp",
+          "alt": "Fatou écoute un message vocal sur un téléphone, l’air inquiet, dans la cour de l’école.",
+          "text": "Fatou reçoit un message vocal transféré : la fête est annulée."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "baye",
+          "text": "Baye écoute la radio dans la cour. Il propose de vérifier la météo.",
+          "image": "m09-l2-s02.webp",
+          "alt": "Illustration : Baye écoute la radio dans la cour. Il propose de vérifier la météo."
+        },
+        {
+          "kind": "story",
+          "pose": "Calme",
+          "speaker": "mme-diop",
+          "text": "Madame Diop montre le bulletin météo officiel : pas de pluie samedi.",
+          "image": "m09-l2-s03.webp",
+          "alt": "Illustration : Madame Diop montre le bulletin météo officiel : pas de pluie samedi."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "source",
+            "sens": "L’endroit ou la personne d’où vient une information."
+          },
+          "text": "La source, c’est d’où vient l’information. Une bonne source est connue et sérieuse."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à reconnaître les bonnes sources !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une source dans sa boîte.",
+              "hint": "Une source sûre dit qui parle et quand.",
+              "success": "Bravo ! Tu sais reconnaître une bonne source.",
+              "bins": [
+                {
+                  "id": "sure",
+                  "label": "Source sûre",
+                  "pict": "source-sure"
+                },
+                {
+                  "id": "douteuse",
+                  "label": "Source douteuse",
+                  "pict": "source-douteuse"
+                }
+              ],
+              "items": [
+                {
+                  "id": "s1",
+                  "label": "Le bulletin météo officiel",
+                  "pict": "bulletin-meteo",
+                  "bin": "sure",
+                  "explain": "On sait qui l’a fait : c’est une source sûre."
+                },
+                {
+                  "id": "s2",
+                  "label": "Un message transféré sans nom",
+                  "pict": "message-transfere",
+                  "bin": "douteuse",
+                  "explain": "Personne ne signe le message : on ne peut pas lui faire confiance."
+                },
+                {
+                  "id": "s3",
+                  "label": "Une radio qui donne le nom du journaliste",
+                  "pict": "radio-journaliste",
+                  "bin": "sure",
+                  "explain": "Elle dit qui parle : c’est une source plus sûre."
+                },
+                {
+                  "id": "s4",
+                  "label": "Une photo sans date d’un inconnu",
+                  "pict": "photo-sans-date",
+                  "bin": "douteuse",
+                  "explain": "On ne sait ni quand ni par qui : elle est douteuse."
+                }
+              ]
+            },
+            {
+              "type": "verify",
+              "prompt": "Un message dit que la fête est annulée. Ouvre les sources pour vérifier !",
+              "hint": "Ouvre le message, la radio et le bulletin météo.",
+              "success": "Oui ! Deux bonnes sources disent que la fête a bien lieu.",
+              "claim": {
+                "text": "La fête est annulée à cause de la pluie.",
+                "pict": "fete-pluie"
+              },
+              "meter": {
+                "label": "Confiance dans le message",
+                "start": 100,
+                "end": 10
+              },
+              "need": 2,
+              "ask": "Les bonnes sources parlent. Que dit la vérification ?",
+              "checks": [
+                {
+                  "id": "k1",
+                  "label": "Le message transféré",
+                  "pict": "message-transfere",
+                  "useful": true,
+                  "reveal": "Il dit : fête annulée. Mais personne ne sait qui l’a envoyé."
+                },
+                {
+                  "id": "k2",
+                  "label": "La radio de Baye",
+                  "pict": "radio",
+                  "useful": true,
+                  "reveal": "La radio annonce : la fête a bien lieu samedi."
+                },
+                {
+                  "id": "k3",
+                  "label": "Le bulletin météo officiel",
+                  "pict": "bulletin-meteo",
+                  "useful": true,
+                  "reveal": "Le bulletin dit : pas de pluie samedi."
+                },
+                {
+                  "id": "k4",
+                  "label": "L’avis d’un voisin",
+                  "pict": "avis-voisins",
+                  "reveal": "Il pense que oui, mais il ne sait pas pourquoi.",
+                  "explain": "Un voisin qui ne sait pas pourquoi n’est pas une bonne source."
+                }
+              ],
+              "stamps": [
+                {
+                  "id": "t1",
+                  "label": "La fête est annulée",
+                  "pict": "fete-annulee",
+                  "explain": "Deux bonnes sources disent le contraire : le message est faux."
+                },
+                {
+                  "id": "t2",
+                  "label": "La fête a bien lieu",
+                  "pict": "fete",
+                  "correct": true
+                },
+                {
+                  "id": "t3",
+                  "label": "On ne sait pas",
+                  "pict": "a-verifier",
+                  "explain": "Deux bonnes sources répondent : on peut conclure."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA ne vérifie pas toujours ses sources. C’est à toi de vérifier."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que cherche-t-on avant de partager un message ?",
+              "hint": "Il faut savoir d’où il vient.",
+              "success": "Oui ! La source et la date.",
+              "options": [
+                {
+                  "label": "La source et la date",
+                  "pict": "source-date",
+                  "correct": true
+                },
+                {
+                  "label": "Le nombre de partages",
+                  "pict": "partages-nombre",
+                  "explain": "Beaucoup de partages ne prouvent pas que c’est vrai."
+                },
+                {
+                  "label": "La couleur du message",
+                  "pict": "couleur-message",
+                  "explain": "La couleur ne dit rien sur la vérité du message."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Laquelle est une source sûre ?",
+              "hint": "Une personne qui sait vraiment.",
+              "success": "Bravo ! Madame Diop confirme.",
+              "options": [
+                {
+                  "label": "Madame Diop, qui confirme",
+                  "pict": "mme-diop-confirme",
+                  "correct": true
+                },
+                {
+                  "label": "Un message transféré mille fois",
+                  "pict": "message-transfere",
+                  "explain": "Être transféré beaucoup ne prouve rien."
+                },
+                {
+                  "label": "Un message sans auteur ni date",
+                  "pict": "sans-date-auteur",
+                  "explain": "Sans auteur ni date, on ne peut pas vérifier."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un message dit « Transfère vite ! ». Que fais-tu ?",
+              "hint": "Prends le temps de vérifier.",
+              "success": "Exact ! Je vérifie d’abord.",
+              "options": [
+                {
+                  "label": "Je vérifie d’abord",
+                  "pict": "chercher-source",
+                  "correct": true
+                },
+                {
+                  "label": "Je le transfère très vite",
+                  "pict": "transferer-vite",
+                  "explain": "Transférer vite, c’est risquer de partager une fausse info."
+                },
+                {
+                  "label": "Je le crois parce qu’un ami l’envoie",
+                  "pict": "croire-ami",
+                  "explain": "Un ami peut aussi se tromper : on vérifie."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu sais où vérifier.",
+          "learned": "Avant de croire ou de partager, je cherche la source et la date."
+        }
+      ]
+    },
+    {
+      "id": "p9-3",
+      "title": "Le détective des images",
+      "scene": {
+        "id": "classe-images",
+        "label": "La classe, devant la photo"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Une photo montre l’école sous l’eau, mais il n’a pas plu. Cette image est-elle vraie ?",
+      "callback": "Tu te rappelles ? Une IA peut fabriquer du nouveau : texte, image ou son.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "image": "m09-l3-photo.webp",
+          "alt": "Moussa montre sur un téléphone une photo de l’école entièrement sous l’eau. Palou et Fatou la regardent, surpris.",
+          "text": "Moussa montre une photo : l’école est sous l’eau ! Mais il n’a pas plu."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou regarde la photo de très près. « Il y a un détail bizarre… »",
+          "image": "m09-l3-s02.webp",
+          "alt": "Illustration : Fatou regarde la photo de très près. « Il y a un détail bizarre… »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "image truquée",
+            "sens": "Une image changée ou fabriquée pour faire croire une chose fausse."
+          },
+          "text": "Une image truquée est changée ou fabriquée. Elle veut faire croire quelque chose de faux."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à devenir détective des images !",
+          "rounds": [
+            {
+              "type": "loupe",
+              "prompt": "Cherche des indices avec la loupe : l’école est-elle vraiment sous l’eau ?",
+              "hint": "Regarde le ciel et l’eau avec la loupe.",
+              "success": "Oui ! Un ciel sans pluie et une eau trop propre : cette image est truquée.",
+              "photo": {
+                "label": "La photo de l’école sous l’eau",
+                "pict": "ecole-sous-eau"
+              },
+              "need": 2,
+              "spots": [
+                {
+                  "id": "ciel",
+                  "label": "Le ciel",
+                  "pict": "soleil-chaud",
+                  "x": 24,
+                  "y": 14,
+                  "clue": true,
+                  "says": "Le ciel est bleu, sans nuage de pluie : il n’a pas plu."
+                },
+                {
+                  "id": "eau",
+                  "label": "L’eau",
+                  "pict": "photo-eau",
+                  "x": 50,
+                  "y": 80,
+                  "clue": true,
+                  "says": "L’eau est propre et lisse : c’est bizarre pour une inondation."
+                },
+                {
+                  "id": "horloge",
+                  "label": "L’horloge",
+                  "pict": "horloge-heure",
+                  "x": 50,
+                  "y": 36,
+                  "says": "L’horloge est normale.",
+                  "explain": "L’horloge est normale : rien d’étrange ici. Cherche ailleurs !"
+                },
+                {
+                  "id": "drapeau",
+                  "label": "Le drapeau",
+                  "pict": "ecole",
+                  "x": 64,
+                  "y": 14,
+                  "says": "Le drapeau est normal.",
+                  "explain": "Le drapeau est normal : il n’aide pas à savoir si l’image est vraie."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment savoir si l’école est vraiment sous l’eau ?",
+              "hint": "Une personne qui y est peut le dire.",
+              "success": "Oui ! Un adulte qui est sur place peut confirmer.",
+              "options": [
+                {
+                  "label": "Croire la première personne qui la partage",
+                  "pict": "croire-premier",
+                  "explain": "Elle peut se tromper ou vouloir tromper : il faut vérifier."
+                },
+                {
+                  "label": "Regarder si l’image est grande",
+                  "pict": "image-grande",
+                  "explain": "La taille d’une image ne dit rien sur sa vérité."
+                },
+                {
+                  "label": "Demander à un adulte qui est sur place",
+                  "pict": "adulte-sur-place",
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut fabriquer de fausses images très réalistes. Cherche des indices."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que cherche-t-on sur une image douteuse ?",
+              "hint": "Regarde de près.",
+              "success": "Oui ! Des indices.",
+              "options": [
+                {
+                  "label": "Des indices",
+                  "pict": "detail-bizarre",
+                  "correct": true
+                },
+                {
+                  "label": "Seulement sa taille",
+                  "pict": "image-grande",
+                  "explain": "Une grande image n’est pas forcément vraie."
+                },
+                {
+                  "label": "Seulement si elle est jolie",
+                  "pict": "joli-ou-pas",
+                  "explain": "Une jolie image peut être fausse."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Une photo montre une main avec six doigts. Que penses-tu ?",
+              "hint": "Compte les doigts.",
+              "success": "Bravo ! Elle est peut-être truquée.",
+              "options": [
+                {
+                  "label": "Elle est peut-être truquée",
+                  "pict": "mains-six-doigts",
+                  "correct": true
+                },
+                {
+                  "label": "C’est sûrement vrai",
+                  "pict": "croire-premier",
+                  "explain": "Six doigts, c’est un indice : l’image est peut-être truquée."
+                },
+                {
+                  "label": "Une photo ne peut jamais mentir",
+                  "explain": "Une photo peut être truquée : on cherche des indices."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qui peut confirmer que l’école est sous l’eau ?",
+              "hint": "Quelqu’un qui est sur place.",
+              "success": "Exact ! Un adulte sur place.",
+              "options": [
+                {
+                  "label": "Un adulte sur place",
+                  "pict": "adulte-sur-place",
+                  "correct": true
+                },
+                {
+                  "label": "Le premier message qu’on reçoit",
+                  "pict": "croire-premier",
+                  "explain": "Le premier message n’est pas une preuve."
+                },
+                {
+                  "label": "La plus grande image du groupe",
+                  "pict": "image-grande",
+                  "explain": "La taille d’une image ne prouve rien."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu es un vrai détective des images.",
+          "learned": "Une image peut être truquée. Je cherche les indices, la date et l’auteur avant de la croire."
+        }
+      ]
+    },
+    {
+      "id": "p9-4",
+      "title": "Vrai ou faux ?",
+      "scene": {
+        "id": "classe-trois-questions",
+        "label": "La classe, devant la règle des trois questions"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "baye"
+      ],
+      "problem": "La rumeur circule dans tout le quartier. La classe doit retrouver la vérité avec trois questions.",
+      "callback": "Tu te rappelles ? Pour vérifier, on cherche la source, la date et un adulte de confiance.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m09-l4-verite.webp",
+          "alt": "Madame Diop montre au tableau trois grands points d’interrogation pour la règle des trois questions, devant Palou.",
+          "text": "Madame Diop affiche la règle des trois questions : qui, quand, preuve."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "text": "Palou se corrige : « Oups, je n’avais pas vérifié ! »",
+          "image": "m09-l4-s02.webp",
+          "alt": "Illustration : Palou se corrige : « Oups, je n’avais pas vérifié ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "baye",
+          "wolof": {
+            "mot": "Dëgg",
+            "sens": "Vrai"
+          },
+          "text": "Baye écoute la radio : la fête a bien lieu samedi.",
+          "image": "m09-l4-s03.webp",
+          "alt": "Illustration : Baye écoute la radio : la fête a bien lieu samedi."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "preuve",
+            "sens": "Ce qui montre qu’une information est vraie."
+          },
+          "text": "Une preuve montre qu’une information est vraie. Sans preuve, on reste prudent."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à trier le vrai et le faux !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une phrase dans sa boîte.",
+              "hint": "Cherche si une bonne source confirme la phrase.",
+              "success": "Bravo ! Tu as retrouvé la vérité.",
+              "bins": [
+                {
+                  "id": "vrai",
+                  "label": "Vrai",
+                  "pict": "vrai-check"
+                },
+                {
+                  "id": "faux",
+                  "label": "Faux",
+                  "pict": "faux-croix"
+                }
+              ],
+              "items": [
+                {
+                  "id": "v1",
+                  "label": "La radio confirme la fête samedi",
+                  "pict": "radio-fete-samedi",
+                  "bin": "vrai",
+                  "explain": "Une source sérieuse le dit : c’est vrai."
+                },
+                {
+                  "id": "v2",
+                  "label": "La fête est annulée à cause de la pluie",
+                  "pict": "fete-pluie",
+                  "bin": "faux",
+                  "explain": "Le bulletin météo annonce du soleil : c’est faux."
+                },
+                {
+                  "id": "v3",
+                  "label": "Madame Diop confirme la date de la fête",
+                  "pict": "mme-diop-confirme",
+                  "bin": "vrai",
+                  "explain": "Une adulte de confiance le confirme : c’est vrai."
+                },
+                {
+                  "id": "v4",
+                  "label": "L’école est sous l’eau (photo sans date)",
+                  "pict": "ecole-sous-eau",
+                  "bin": "faux",
+                  "explain": "La photo n’a ni date ni auteur, et il n’a pas plu : c’est faux."
+                }
+              ]
+            },
+            {
+              "type": "verify",
+              "prompt": "Pose les trois questions sur la rumeur : qui, quand, preuve !",
+              "hint": "Pose les questions « qui », « quand » et « preuve ».",
+              "success": "Oui ! Sans preuve et avec la radio qui dit le contraire, la rumeur est fausse.",
+              "claim": {
+                "text": "La rumeur dit : la fête est annulée.",
+                "pict": "fete-annulee"
+              },
+              "meter": {
+                "label": "Confiance dans la rumeur",
+                "start": 100,
+                "end": 0
+              },
+              "need": 3,
+              "ask": "Les trois questions sont posées. Quel tampon mets-tu ?",
+              "checks": [
+                {
+                  "id": "q1",
+                  "label": "Qui l’a dit ?",
+                  "pict": "qui-a-dit",
+                  "useful": true,
+                  "reveal": "Personne ne sait. Le message a été transféré."
+                },
+                {
+                  "id": "q2",
+                  "label": "C’est quand ?",
+                  "pict": "c-etait-quand",
+                  "useful": true,
+                  "reveal": "Le message n’a pas de date."
+                },
+                {
+                  "id": "q3",
+                  "label": "Où est la preuve ?",
+                  "pict": "preuve-loupe",
+                  "useful": true,
+                  "reveal": "Aucune preuve. Mais la radio de Baye dit que la fête a lieu."
+                },
+                {
+                  "id": "q4",
+                  "label": "Combien l’ont partagé ?",
+                  "pict": "likes-coeurs",
+                  "reveal": "Beaucoup de gens, et très vite !",
+                  "explain": "Beaucoup de partages ne prouvent rien : une rumeur peut circuler très vite."
+                }
+              ],
+              "stamps": [
+                {
+                  "id": "t1",
+                  "label": "Vrai",
+                  "pict": "vrai-check",
+                  "explain": "Sans preuve, la rumeur ne peut pas être vraie."
+                },
+                {
+                  "id": "t2",
+                  "label": "Faux",
+                  "pict": "faux-croix",
+                  "correct": true
+                },
+                {
+                  "id": "t3",
+                  "label": "Pas encore prouvé",
+                  "pict": "a-verifier",
+                  "explain": "La radio de Baye dit que la fête a lieu : on peut dire que la rumeur est fausse."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut aider à chercher. C’est toi qui décides si c’est vrai."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que demande-t-on d’abord sur une rumeur ?",
+              "hint": "Pense à la source.",
+              "success": "Oui ! Qui l’a dit ?",
+              "options": [
+                {
+                  "label": "Qui l’a dit ?",
+                  "pict": "qui-a-dit",
+                  "correct": true
+                },
+                {
+                  "label": "Qui est le plus fort de la classe ?",
+                  "explain": "Ce n’est pas la bonne question pour vérifier une rumeur."
+                },
+                {
+                  "label": "Qui a le plus de likes dessous ?",
+                  "pict": "likes-coeurs",
+                  "explain": "Les likes ne prouvent rien."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que cherche-t-on pour prouver une information ?",
+              "hint": "Quelque chose qu’on peut regarder.",
+              "success": "Bravo ! Une preuve.",
+              "options": [
+                {
+                  "label": "Une preuve",
+                  "pict": "preuve-loupe",
+                  "correct": true
+                },
+                {
+                  "label": "Un très gros titre",
+                  "pict": "gros-caracteres",
+                  "explain": "Un gros titre n’est pas une preuve."
+                },
+                {
+                  "label": "Une voix très forte",
+                  "pict": "repeter-plus-fort",
+                  "explain": "Une voix forte n’est pas une preuve."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "On n’a pas de preuve. Que dit-on ?",
+              "hint": "On reste prudent.",
+              "success": "Exact ! À vérifier.",
+              "options": [
+                {
+                  "label": "À vérifier",
+                  "pict": "a-verifier",
+                  "correct": true
+                },
+                {
+                  "label": "C’est vrai, j’en suis sûr",
+                  "pict": "vrai-check",
+                  "explain": "Sans preuve, on ne peut pas dire que c’est vrai."
+                },
+                {
+                  "label": "C’est faux, j’en suis sûr",
+                  "pict": "faux-croix",
+                  "explain": "Sans preuve, on ne peut pas non plus dire que c’est faux."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m09",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 9 avec Palou.",
+          "learned": "Avant de croire ou de partager, je vérifie : qui l’a dit, quand, et avec quelle preuve."
+        }
+      ]
+    }
+  ]
+}

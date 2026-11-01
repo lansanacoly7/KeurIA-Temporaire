@@ -1,0 +1,190 @@
+/* Game 2 — identify cat */
+.p11-identify-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 700px;
+}
+
+.p11-identify-card {
+  background: #ffffff;
+  border: 3px solid rgba(15, 117, 95, 0.15);
+  border-radius: 28px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  min-width: 180px;
+}
+
+.p11-identify-card:hover:not(.answered) {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.p11-identify-card:active:not(.answered) {
+  transform: translateY(3px) scale(0.97);
+}
+
+.p11-identify-card.correct {
+  border-color: #38ef7d;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.35), 0 0 30px rgba(56, 239, 125, 0.5), 0 0 0 3px #38ef7d;
+  animation: correctPop 0.4s ease-out;
+}
+
+.p11-identify-card.wrong {
+  border-color: #ff6b6b;
+  filter: saturate(0.4) brightness(0.6);
+}
+
+.p11-identify-card .id-img {
+  width: clamp(90px, 13vw, 150px);
+  height: clamp(90px, 13vw, 150px);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+  animation: floatAsset 4s ease-in-out infinite;
+}
+
+.p11-identify-card .id-label {
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  text-shadow: none;
+}
+
+/* Particle overlay */
+.p11-particle-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.p11-particle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: particle 0.8s ease-out forwards;
+}
+
+.p11-listen-btn {
+  margin-top: 15px;
+  background: #fff;
+  border: 2px solid var(--brand-mid, #0f755f);
+  color: var(--brand-mid, #0f755f);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.p11-listen-btn:hover {
+  background: var(--brand-mid, #0f755f);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.p11-listen-btn:active {
+  transform: translateY(1px);
+}
+
+.p11-listen-btn.speaking {
+  background: var(--brand-accent, #d8f05b);
+  color: var(--brand, #153b3b);
+  border-color: #8b9c1d;
+  animation: pulseAudio 1.5s infinite;
+}
+
+@keyframes pulseAudio {
+  0% {
+    box-shadow: 0 0 0 0 rgba(216, 240, 91, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(216, 240, 91, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(216, 240, 91, 0);
+  }
+}
+
+.p11-speech-highlight {
+  background-color: rgba(216, 240, 91, 0.3);
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* Bottom bar */
+.p11-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(12px, 2vh, 20px) clamp(16px, 3vw, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  background: linear-gradient(to top, rgba(255, 248, 235, 0.85) 60%, transparent 100%);
+}
+
+.p11-btn-back {
+  background: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50px;
+  padding: clamp(10px, 1.5vh, 14px) clamp(18px, 2.5vw, 28px);
+  color: var(--brand, #1a3a2a);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.p11-btn-back:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.p11-btn-next {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  border: none;
+  border-radius: 50px;
+  padding: clamp(12px, 1.8vh, 16px) clamp(24px, 3.5vw, 40px);
+  color: white;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 8px 0 var(--brand-mid, #0a6e62), 0 16px 40px rgba(17, 153, 142, 0.5);
+  transition: transform 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.5px;
+}
+
+.p11-btn-next:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 11px 0 var(--brand-mid, #0a6e62), 0 20px 40px rgba(17, 153, 142, 0.6);
+}
+
+.p11-btn-next:active:not(:disabled) {
+  transform: translateY(5px);
+  box-shadow: 0 3px 0 var(--brand-mid, #0a6e62), 0 8px 20px rgba(17, 153, 142, 0.4);
+}
+
+.p11-btn-next:disabled {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}

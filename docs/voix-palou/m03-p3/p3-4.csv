@@ -1,0 +1,37 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e01.mp3;1;1;texte (story);Madame Diop montre une pile de vingt livres. Il faut les classer avant la fête.;Madame Diop montre une pile de vingt livres. Il faut les classer avant la fête.;79
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e02.mp3;1;2;texte (story);Moussa veut les classer par couleur. Fatou préfère les classer par sujet.;Moussa veut les classer par couleur. Fatou préfère les classer par sujet.;73
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e03.mp3;1;3;texte (discover);Un critère est ce qu’on regarde pour classer. Changer de critère change le classement.;Un critère est ce qu’on regarde pour classer. Changer de critère change le classement.;86
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu as fini le chapitre 3 avec Palou.;Bravo ! Tu as fini le chapitre 3 avec Palou.;44
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e08-retiens.mp3;1;8;« Je retiens »;Trier, c’est ranger par catégorie avec un bon critère. Les IA apprennent avec des données bien triées.;Trier, c’est ranger par catégorie avec un bon critère. Les I A apprennent avec des données bien triées.;102
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Tous les livres sont rangés par sujet.;Bravo ! Tous les livres sont rangés par sujet.;46
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-q.mp3;2;4;consigne du jeu;Glisse un livre dans son étagère.;Glisse un livre dans son étagère.;33
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Avec deux bons critères, Palou trouve le bon livre.;Bravo ! Avec deux bons critères, Palou trouve le bon livre.;59
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m2-q.mp3;2;4;consigne du jeu;Madame Diop cherche un livre sur les insectes. Donne deux critères à Palou !;Madame Diop cherche un livre sur les insectes. Donne deux critères à Palou !;76
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04.mp3;2;4;texte (play);Aide Palou à ranger la bibliothèque !;Aide Palou à ranger la bibliothèque !;37
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Bien classées, les données l’aident à apprendre.;Oui ! Bien classées, les données l’aident à apprendre.;54
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e05-m1-q.mp3;2;5;consigne du jeu;Pourquoi le bon critère est-il important pour une IA ?;Pourquoi le bon critère est-il important pour une I A ?;54
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e05.mp3;2;5;texte (why);Le bon critère change tout !;Le bon critère change tout !;28
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e06.mp3;2;6;texte (ai);Une IA range aussi avec des critères. Elle classe les photos, les sons ou les messages.;Une I A range aussi avec des critères. Elle classe les photos, les sons ou les messages.;87
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Un critère, c’est ce qu’on regarde pour classer.;Oui ! Un critère, c’est ce qu’on regarde pour classer.;54
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m1-q.mp3;2;7;consigne du jeu;Qu’est-ce qu’un critère ?;Qu’est-ce qu’un critère ?;25
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Exact ! Le classement change.;Exact ! Le classement change.;29
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m2-q.mp3;2;7;consigne du jeu;Si on change de critère, que se passe-t-il ?;Si on change de critère, que se passe-t-il ?;44
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Sans critère, il est perdu.;Bravo ! Sans critère, il est perdu.;35
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m3-q.mp3;2;7;consigne du jeu;Sans critère, comment est le robot ?;Sans critère, comment est le robot ?;36
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-i1.mp3;3;4;explication (objet à ranger);C’est un conte : il va avec les histoires.;C’est un conte : il va avec les histoires.;42
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-i2.mp3;3;4;explication (objet à ranger);Il explique le ciel : c’est un livre de sciences.;Il explique le ciel : c’est un livre de sciences.;49
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-i3.mp3;3;4;explication (objet à ranger);C’est une histoire : il va avec les contes.;C’est une histoire : il va avec les contes.;43
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m1-i4.mp3;3;4;explication (objet à ranger);Il explique la nature : c’est un livre de sciences.;Il explique la nature : c’est un livre de sciences.;51
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m2-o3.mp3;3;4;explication (mauvaise donnée);Ce n’est pas un conte : Palou écarterait le bon livre.;Ce n’est pas un conte : Palou écarterait le bon livre.;54
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m2-o4.mp3;3;4;explication (mauvaise donnée);Ce n’est pas un livre de sport : Palou chercherait au mauvais endroit.;Ce n’est pas un livre de sport : Palou chercherait au mauvais endroit.;70
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e04-m2-o5.mp3;3;4;explication (mauvaise donnée);Ce livre ne parle pas du ciel : Palou écarterait le bon livre.;Ce livre ne parle pas du ciel : Palou écarterait le bon livre.;62
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e05-m1-o2.mp3;3;5;explication (mauvaise réponse);Sans critère, les données sont mélangées et l’IA apprend mal.;Sans critère, les données sont mélangées et l’I A apprend mal.;61
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e05-m1-o3.mp3;3;5;explication (mauvaise réponse);Un seul critère ne convient pas à tout : il faut choisir le bon.;Un seul critère ne convient pas à tout : il faut choisir le bon.;64
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Un critère n’est pas un titre : c’est ce qu’on regarde pour trier.;Un critère n’est pas un titre : c’est ce qu’on regarde pour trier.;66
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Un critère n’est pas un livre : c’est ce qu’on regarde pour trier.;Un critère n’est pas un livre : c’est ce qu’on regarde pour trier.;66
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Si on change de critère, les groupes changent aussi.;Si on change de critère, les groupes changent aussi.;52
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Les livres restent : ils sont seulement rangés autrement.;Les livres restent : ils sont seulement rangés autrement.;57
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Sans critère, il ne sait pas comment ranger.;Sans critère, il ne sait pas comment ranger.;44
+frontend/public/audio/palou/lecons/m03/p3-4/p3-4_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Sans critère, il ne sait pas comment ranger.;Sans critère, il ne sait pas comment ranger.;44

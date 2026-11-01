@@ -1,0 +1,459 @@
+/* --- Bandeau Défilant Fluide & Aérien (Sans bordures ni conteneur fermé) --- */
+.fun-ribbon-ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  padding: 18px 0 24px;
+  position: relative;
+  z-index: 4;
+  margin: -12px 0 10px;
+}
+
+.fun-ribbon-track {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  animation: ribbonMarquee 28s linear infinite;
+  will-change: transform;
+}
+
+.fun-ribbon-ticker-wrap:hover .fun-ribbon-track {
+  animation-play-state: paused;
+}
+
+@keyframes ribbonMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.fun-ticker-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 24px;
+  border-radius: var(--kia-radius-full);
+  font-size: 14.5px;
+  font-weight: 750;
+  white-space: nowrap;
+  background: #ffffff;
+  color: #0f755f;
+  border: 1.5px solid #a7f3d0;
+  box-shadow: 0 4px 14px rgba(15, 117, 95, 0.07), 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+}
+
+.fun-ticker-chip:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: #10b981;
+  box-shadow: 0 8px 20px rgba(15, 117, 95, 0.15);
+}
+
+.fun-ticker-chip .chip-icon {
+  flex-shrink: 0;
+  color: #10b981;
+}
+
+.landing-section {
+  padding: 65px max(24px, calc((100vw - 1180px) / 2));
+}
+
+.landing-section-alt {
+  background: linear-gradient(180deg, #f4f7f6 0%, #ebf3f0 16%, #ebf3f0 84%, #f4f7f6 100%);
+  border: none;
+}
+
+.landing-section-header {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 38px;
+}
+
+.landing-section-header span.tag {
+  font-size: 16px;
+  font-weight: 850;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #0b7a63;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.landing-section-header span.tag::before,
+.landing-section-header span.tag::after {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 2px;
+  background: #10b981;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.landing-section-header h2 {
+  font-size: 28px;
+  color: var(--kia-ink);
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.landing-section-header p {
+  font-size: 14.5px;
+  color: var(--kia-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Carrousel Album 3D en Arc de Cercle (« Cover Flow & Duolingo Style ») --- */
+.pillars-album-wrapper {
+  position: relative;
+  max-width: 1040px;
+  margin: 10px auto;
+  padding: 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pillars-album-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+  perspective-origin: center 42%;
+}
+
+/* Carte de l'album 3D */
+.pillar-album-card {
+  position: absolute;
+  width: min(90vw, 360px);
+  background: #ffffff;
+  border: 2px solid var(--kia-line);
+  border-radius: 24px;
+  padding: 26px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.65s ease,
+              box-shadow 0.65s ease,
+              filter 0.65s ease;
+  will-change: transform, opacity;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Carte centrale active */
+.pillar-album-card.pos-active {
+  transform: translateX(0) translateY(0) scale(1.02) translateZ(80px);
+  opacity: 1;
+  z-index: 10;
+  cursor: default;
+  pointer-events: auto;
+  filter: none;
+}
+
+.pillar-album-card.mint.pos-active {
+  background: linear-gradient(180deg, #ffffff 0%, #f0fdf7 100%);
+  border-color: #34d399;
+  box-shadow: 0 24px 50px -10px rgba(13, 132, 110, 0.28), 0 0 0 1px #a7f3d0;
+}
+
+.pillar-album-card.cyan.pos-active {
+  background: linear-gradient(180deg, #ffffff 0%, #eff8ff 100%);
+  border-color: #38bdf8;
+  box-shadow: 0 24px 50px -10px rgba(2, 132, 199, 0.28), 0 0 0 1px #bae6fd;
+}
+
+.pillar-album-card.amber.pos-active {
+  background: linear-gradient(180deg, #ffffff 0%, #fffbeb 100%);
+  border-color: #fbbf24;
+  box-shadow: 0 24px 50px -10px rgba(217, 119, 6, 0.28), 0 0 0 1px #fde68a;
+}
+
+.pillar-album-card.purple.pos-active {
+  background: linear-gradient(180deg, #ffffff 0%, #faf5ff 100%);
+  border-color: #c084fc;
+  box-shadow: 0 24px 50px -10px rgba(124, 58, 237, 0.28), 0 0 0 1px #e9d5ff;
+}
+
+/* Carte suivante arquée à droite */
+.pillar-album-card.pos-next {
+  transform: translateX(270px) translateY(12px) scale(0.85) rotateY(-22deg) rotateZ(3deg) translateZ(-50px);
+  opacity: 0.65;
+  z-index: 5;
+  filter: blur(0.4px);
+}
+
+.pillar-album-card.pos-next:hover {
+  opacity: 0.9;
+  transform: translateX(265px) translateY(8px) scale(0.88) rotateY(-18deg) rotateZ(2deg) translateZ(-30px);
+}
+
+/* Carte précédente arquée à gauche */
+.pillar-album-card.pos-prev {
+  transform: translateX(-270px) translateY(12px) scale(0.85) rotateY(22deg) rotateZ(-3deg) translateZ(-50px);
+  opacity: 0.65;
+  z-index: 5;
+  filter: blur(0.4px);
+}
+
+.pillar-album-card.pos-prev:hover {
+  opacity: 0.9;
+  transform: translateX(-265px) translateY(8px) scale(0.88) rotateY(18deg) rotateZ(-2deg) translateZ(-30px);
+}
+
+/* Carte opposée en retrait */
+.pillar-album-card.pos-back {
+  transform: translateX(0) translateY(35px) scale(0.72) translateZ(-160px);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Zone du sticker avec micro-animation de flottement */
+.pillar-sticker-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  margin-bottom: 14px;
+}
+
+.pillar-sticker-img {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.pillar-album-card.mint .pillar-sticker-img {
+  animation: palouPillarFloat 3.8s ease-in-out infinite;
+}
+.pillar-album-card.cyan .pillar-sticker-img {
+  animation: palouPillarFloat 4.2s ease-in-out infinite 0.7s;
+}
+.pillar-album-card.amber .pillar-sticker-img {
+  animation: palouPillarFloat 3.6s ease-in-out infinite 1.4s;
+}
+.pillar-album-card.purple .pillar-sticker-img {
+  animation: palouPillarFloat 4s ease-in-out infinite 2.1s;
+}
+
+@keyframes palouPillarFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.pillar-album-card:hover .pillar-sticker-img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.pillar-badge-pill {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  width: max-content;
+}
+
+.pillar-album-card.mint .pillar-badge-pill {
+  color: #0d846e;
+}
+.pillar-album-card.cyan .pillar-badge-pill {
+  color: #0369a1;
+}
+.pillar-album-card.amber .pillar-badge-pill {
+  color: #b45309;
+}
+.pillar-album-card.purple .pillar-badge-pill {
+  color: #6d28d9;
+}
+
+.pillar-album-card h3 {
+  font-size: 17.5px;
+  font-weight: 850;
+  color: var(--kia-ink);
+  margin: 0 0 6px;
+  letter-spacing: -0.2px;
+}
+
+.pillar-album-card p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #43625b;
+  margin: 0 0 14px;
+}
+
+.pillar-points-list {
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.pillar-points-list li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #2b453f;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.pillar-album-card.mint .pillar-check-icon {
+  color: #0d846e;
+}
+.pillar-album-card.cyan .pillar-check-icon {
+  color: #0284c7;
+}
+.pillar-album-card.amber .pillar-check-icon {
+  color: #d97706;
+}
+.pillar-album-card.purple .pillar-check-icon {
+  color: #7c3aed;
+}
+
+/* Boutons de navigation latéraux */
+.album-nav-btn {
+  position: absolute;
+  top: 48%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid var(--kia-line);
+  color: var(--kia-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  z-index: 15;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.album-nav-btn:hover {
+  background: var(--kia-brand);
+  color: #ffffff;
+  border-color: var(--kia-brand);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 8px 24px rgba(15, 117, 95, 0.28);
+}
+
+.album-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.album-nav-btn.prev {
+  left: 15px;
+}
+
+.album-nav-btn.next {
+  right: 15px;
+}
+
+/* Puces de navigation sous l'album */
+.album-dots-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 18px;
+  z-index: 12;
+}
+
+.album-dot {
+  box-sizing: content-box;
+  width: 12px;
+  height: 12px;
+  border-radius: var(--kia-radius-full);
+  background: #cbd5e1;
+  background-clip: content-box;
+  border: 10px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.album-dot.active {
+  width: 32px;
+  background: var(--kia-brand);
+  background-clip: content-box;
+  box-shadow: 0 2px 8px rgba(15, 117, 95, 0.3);
+}
+
+.album-dot.active.mint {
+  background: #0f755f;
+}
+
+.album-dot.active.cyan {
+  background: #0284c7;
+}
+
+.album-dot.active.amber {
+  background: #d97706;
+}
+
+.album-dot.active.purple {
+  background: #7c3aed;
+}
+
+/* Mobile responsive pour l'album en arc */
+@media (max-width: 768px) {
+  .pillars-album-stage {
+    height: 500px;
+    perspective: 800px;
+  }
+  .pillar-album-card {
+    width: min(86vw, 320px);
+    padding: 20px 18px;
+  }
+  .pillar-album-card.pos-next {
+    transform: translateX(110px) translateY(14px) scale(0.8) rotateY(-18deg) translateZ(-40px);
+    opacity: 0.35;
+  }
+  .pillar-album-card.pos-prev {
+    transform: translateX(-110px) translateY(14px) scale(0.8) rotateY(18deg) translateZ(-40px);
+    opacity: 0.35;
+  }
+  .album-nav-btn.prev {
+    left: -5px;
+  }
+  .album-nav-btn.next {
+    right: -5px;
+  }
+}
+

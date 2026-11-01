@@ -1,0 +1,42 @@
+# Sauvegarde quotidienne : réutilise scripts/backup-loop.sh (le même script que la pile Docker)
+# en mode « une seule passe » (BACKUP_ONCE=1), le rythme venant de keuria-backup.timer.
+# Produit /var/backups/keuria/keuria-<horodatage>.dump (pg_dump format custom, vérifié par
+# pg_restore --list) et media-<horodatage>.tar.gz, puis supprime ce qui dépasse BACKUP_KEEP_DAYS.
+#
+# Les variables PG* viennent de /etc/keuria/backup.env (mode 600, propriété root:keuria) :
+#   PGHOST=127.0.0.1
+#   PGUSER=keuria
+#   PGDATABASE=keuria
+#   PGPASSWORD=<le mot de passe du rôle keuria>
+# Facultatif, dans ce même fichier : BACKUP_PING_URL=<adresse d'un service heartbeat>. Elle est appelée après
+# chaque sauvegarde réussie (et avec « /fail » après un échec) : c'est ce qui permet d'être prévenu quand une
+# sauvegarde MANQUE, et pas seulement quand elle rate.
+#
+# RAPPEL : une sauvegarde sur le disque du serveur ne protège pas d'une panne de ce disque.
+# Copier /var/backups/keuria hors de la machine (voir docs/EXPLOITATION.md).
+
+[Unit]
+Description=kEur IA - sauvegarde de la base et des fichiers televerses
+After=postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=oneshot
+User=keuria
+Group=keuria
+EnvironmentFile=/etc/keuria/backup.env
+Environment=BACKUP_ONCE=1
+Environment=BACKUP_DIR=/var/backups/keuria
+Environment=MEDIA_DIR=/opt/keuria/backend/media
+Environment=BACKUP_KEEP_DAYS=14
+ExecStart=/bin/sh /opt/keuria/scripts/backup-loop.sh
+SyslogIdentifier=keuria-backup
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/backups/keuria
+
+[Install]
+WantedBy=multi-user.target

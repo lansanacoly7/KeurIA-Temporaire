@@ -1,0 +1,31 @@
+/* Lisibilité renforcée dans toute l'application */
+html{font-size:16px}
+body{font-size:16px;line-height:1.55}
+body p{font-size:15px!important;line-height:1.65}
+body small{font-size:12px!important;line-height:1.45}
+body label,body input,body select,body textarea{font-size:15px!important}
+body button,body a{font-size:14px;line-height:1.4}
+body td,body th{font-size:14px;line-height:1.5}/* Navigation et repères pédagogiques */
+
+
+.nav-links a,.nav-links button,.dash-nav button,.sidebar button,.age-tabs button{font-size:14px!important}
+.tiny-kicker,.bubble-label,.course-card small,.lesson-world,.module-guide small,.lesson-list small,.lesson-player>header small,.lesson-player>header span,.lesson-guide small,.pilot-content small,.pilot-content>section>span,.pilot-content>article>div>small,.quick-quiz>span,.learn-intro small,.learn-challenge>span,.scratch-labs-hero>div:first-child>span,.scratch-labs-section>header small,.scratch-lab-number>b,.scratch-lab-card footer small,.arcade-card>span,.game-modal-head small,.game-question>span{font-size:12px!important;line-height:1.45}/* Cours, parcours guidé et quiz */
+
+
+.lesson-body p,.learn-intro p,.learn-grid p,.learn-challenge p,.pilot-content p,.lesson-vocab p,.lesson-story p,.lesson-steps li,.lesson-project p,.lesson-discussion p{font-size:16px!important;line-height:1.7}
+.pilot-activity button,.pilot-quiz button,.quick-quiz button,.game-question button,.answers button{font-size:15px!important;line-height:1.5;min-height:48px}
+.lesson-player>footer button,.lesson-actions button,.guided-check{font-size:14px!important;min-height:44px}
+.quiz-ok,.quiz-hint,.feedback,.game-feedback,.answer-locked{font-size:14px!important;line-height:1.55}
+.pilot-remediation article b,.pilot-remediation article p{font-size:14px!important}/* Cartes, tableaux de bord, jeux et programmation */
+
+
+.course-card p,.arcade-card p,.scratch-lab-card>p,.scratch-labs-section>header p,.scratch-labs-cta p,.teacher-stats small,.student,.skill,.notice{font-size:14px!important;line-height:1.6}
+.scratch-lab-meta span,.scratch-lab-card footer b,.arcade-skill,.games-score b,.blockly-top small,.blockly-top button,.blockly-stage>header,.blockly-stage>div>span,.blockly-stage>footer,.blockly-code>header span,.blockly-code pre,.blockly-status{font-size:12px!important;line-height:1.5}
+.blocklyTreeLabel{font-size:14px!important}
+
+@media(max-width:700px){
+  html{font-size:17px}
+  body p,.lesson-body p,.learn-intro p,.learn-grid p,.learn-challenge p,.pilot-content p{font-size:16px!important}
+  body button,body a,.nav-links a,.dash-nav button,.sidebar button,.age-tabs button{font-size:15px!important}
+  body small,.lesson-guide small,.pilot-guide ol small{font-size:12px!important}}
+.lms-anchor{scroll-margin-top:88px}

@@ -1,0 +1,262 @@
+[
+  {
+    "screen": "01-enseignant-classe-initial",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 768,
+        "pass": false
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "02-enseignant-seance-active",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 768,
+        "pass": false
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "03-enseignant-annonces-publiees",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 768,
+        "pass": false
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "04-enseignant-parcours-eleve",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "05-eleve-aujourdhui-avant-vote",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "06-eleve-aujourdhui-apres-vote",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "07-eleve-mes-devoirs",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "08-eleve-mon-parcours",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "09-eleve-ma-classe",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "10-eleve-mes-etoiles",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "11-eleve-libre",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 390,
+        "pass": true
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "12-enseignant-sondage-resultats",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 768,
+        "pass": false
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  },
+  {
+    "screen": "13-enseignant-seance-terminee",
+    "measurements": {
+      "390": {
+        "target": 390,
+        "measured": 768,
+        "pass": false
+      },
+      "768": {
+        "target": 768,
+        "measured": 768,
+        "pass": true
+      },
+      "1280": {
+        "target": 1280,
+        "measured": 1280,
+        "pass": true
+      }
+    }
+  }
+]

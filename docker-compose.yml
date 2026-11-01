@@ -1,0 +1,131 @@
+# Environnement de démonstration / pré-production : `docker compose up -d --build`
+# Les secrets viennent de backend/.env (copié depuis backend/.env.example) et de POSTGRES_PASSWORD (fichier .env à la racine
+# ou variable d'environnement) : jamais écrits ici. Procédure complète : docs/DEPLOIEMENT.md
+name: keuria
+
+x-backend-env: &backend-env
+  env_file: ./backend/.env
+  environment:
+    DATABASE_URL: postgres://keuria:${POSTGRES_PASSWORD}@db:5432/keuria
+    REDIS_URL: redis://redis:6379/1
+
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: keuria
+      POSTGRES_USER: keuria
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?définir POSTGRES_PASSWORD}
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U keuria -d keuria"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # Migrations : exécutées une seule fois à chaque déploiement, AVANT le démarrage du backend (jamais dans chaque worker).
+  migrate:
+    build: ./backend
+    <<: *backend-env
+    command: ["python", "manage.py", "migrate", "--noinput"]
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+    # Premier déploiement seulement, le catalogue de leçons : docker compose run --rm backend python manage.py seed_curriculum
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    <<: *backend-env
+    volumes:
+      - mediadata:/app/media  # logos d'école téléversés : sans ce volume, ils disparaissent à chaque redéploiement
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    # Pas de port publié : seul le frontend (même réseau Docker) joint Django. Le HEALTHCHECK vient de l'image.
+
+  # Tâches quotidiennes : conservation limitée des comptes familiaux inactifs (avertissement, désactivation, suppression)
+  # et chiffres mensuels figés. `--dry-run` pour simuler : docker compose run --rm backend python manage.py apply_retention --dry-run
+  retention:
+    build: ./backend
+    restart: unless-stopped
+    <<: *backend-env
+    command: ["sh", "-c", "while true; do python manage.py apply_retention; sleep 86400; done"]
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+
+  # Sauvegarde quotidienne de la base (pg_dump compressé), conservée BACKUP_KEEP_DAYS jours (14 par défaut) dans le volume « backups ».
+  # Copier ce volume HORS de la machine (autre serveur, stockage objet) : une sauvegarde sur le même disque ne protège pas d'une panne disque.
+  # Restauration : voir docs/EXPLOITATION.md (scripts/restore.sh).
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: keuria
+      PGDATABASE: keuria
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      BACKUP_KEEP_DAYS: ${BACKUP_KEEP_DAYS:-14}
+      BACKUP_PING_URL: ${BACKUP_PING_URL:-}  # facultatif : service de surveillance qui alerte si une sauvegarde manque
+    volumes:
+      - backups:/backups
+      - mediadata:/media:ro  # les logos d'école sont sauvegardés avec la base
+      - ./scripts/backup-loop.sh:/usr/local/bin/backup-loop.sh:ro
+    command: ["sh", "/usr/local/bin/backup-loop.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Copie des sauvegardes HORS du serveur (stockage objet compatible S3, autre machine en SFTP…), avec rclone. Facultatif :
+  #   docker compose --profile offsite up -d offsite
+  # Réglages dans .env (voir .env.example) : OFFSITE_REMOTE (ex. « offsite:mon-bucket/keuria ») et la configuration du remote rclone en
+  # variables RCLONE_CONFIG_OFFSITE_* (type, clés d'accès…). Rien de secret n'est écrit dans ce fichier.
+  offsite:
+    image: rclone/rclone:1.68
+    profiles: ["offsite"]
+    restart: unless-stopped
+    environment:
+      OFFSITE_REMOTE: ${OFFSITE_REMOTE:?définir OFFSITE_REMOTE}
+    env_file:
+      - path: ./.env
+        required: false
+    volumes:
+      - backups:/backups:ro
+    entrypoint: ["sh", "-c", "while true; do rclone copy /backups \"$$OFFSITE_REMOTE\" --include 'keuria-*.dump' --include 'media-*.tar.gz' --max-age 3d -v || echo 'ECHEC de la copie hors serveur' >&2; sleep 21600; done"]
+    depends_on:
+      - backup
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        DJANGO_API_URL: http://backend:8000
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  dbdata:
+  mediadata:
+  backups:
+

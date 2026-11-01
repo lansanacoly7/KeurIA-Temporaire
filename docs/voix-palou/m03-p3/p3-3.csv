@@ -1,0 +1,35 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e01.mp3;1;1;texte (story);Madame Diop veut la bibliothèque rangée avant la fête. Sur l’étagère « Contes », quelque chose cloche.;Madame Diop veut la bibliothèque rangée avant la fête. Sur l’étagère « Contes », quelque chose cloche.;102
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e02.mp3;1;2;texte (story);Palou regarde l’étagère avec Moussa. « Ce livre a l’air différent ! »;Palou regarde l’étagère avec Moussa. « Ce livre a l’air différent ! »;69
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e03.mp3;1;3;texte (story);Fatou sourit : « Comme Mame Awa qui range ses mangues ensemble ! »;Fatou sourit : « Comme Mamé Awa qui range ses mangues ensemble ! »;66
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e04.mp3;1;4;texte (discover);L’intrus est ce qui ne ressemble pas aux autres. Pour le trouver, cherche ce qui les réunit.;L’intrus est ce qui ne ressemble pas aux autres. Pour le trouver, cherche ce qui les réunit.;92
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! L’étagère « Contes » est en ordre.;Bravo ! L’étagère « Contes » est en ordre.;42
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e08-retiens.mp3;1;8;« Je retiens »;L’intrus est ce qui ne ressemble pas aux autres. Le retirer aide à garder des données justes.;L’intrus est ce qui ne ressemble pas aux autres. Le retirer aide à garder des données justes.;93
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Sans les intrus, Palou compte juste : 3 contes.;Oui ! Sans les intrus, Palou compte juste : 3 contes.;53
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m1-q.mp3;2;5;consigne du jeu;Palou compte les contes de l’étagère. Touche les intrus pour qu’il compte juste !;Palou compte les contes de l’étagère. Touche les intrus pour qu’il compte juste !;81
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Une chaussette n’est pas un fruit.;Oui ! Une chaussette n’est pas un fruit.;40
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m2-q.mp3;2;5;consigne du jeu;Dans le panier de Mame Awa, quel objet est l’intrus ?;Dans le panier de Mamé Awa, quel objet est l’intrus ?;53
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05.mp3;2;5;texte (play);Aide Palou à trouver les intrus !;Aide Palou à trouver les intrus !;33
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Retirer l’intrus aide l’IA à mieux apprendre.;Oui ! Retirer l’intrus aide l’I A à mieux apprendre.;51
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e06-m1-q.mp3;2;6;consigne du jeu;À quoi sert de repérer l’intrus dans des données ?;À quoi sert de repérer l’intrus dans des données ?;50
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e06.mp3;2;6;texte (why);Pourquoi l’intrus compte-t-il pour une IA ?;Pourquoi l’intrus compte-t-il pour une I A ?;43
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! La chaussette n’est pas un fruit.;Oui ! La chaussette n’est pas un fruit.;39
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m1-q.mp3;2;7;consigne du jeu;Dans le panier : une mangue, une orange et une chaussette. Quel est l’intrus ?;Dans le panier : une mangue, une orange et une chaussette. Quel est l’intrus ?;78
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Bravo ! On retire l’intrus.;Bravo ! On retire l’intrus.;27
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m2-q.mp3;2;7;consigne du jeu;Que fait-on d’un intrus ?;Que fait-on d’un intrus ?;25
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Exact ! Pour garder des données justes.;Exact ! Pour garder des données justes.;39
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m3-q.mp3;2;7;consigne du jeu;Pourquoi retirer l’intrus ?;Pourquoi retirer l’intrus ?;27
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m1-o1.mp3;3;5;explication (bonne donnée touchée);C’est un recueil de contes : c’est une bonne donnée, Palou la garde.;C’est un recueil de contes : c’est une bonne donnée, Palou la garde.;68
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m1-o2.mp3;3;5;explication (bonne donnée touchée);Leuk-le-Lièvre est un conte célèbre : Palou doit le garder.;Leuk-le-Lièvre est un conte célèbre : Palou doit le garder.;59
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m1-o3.mp3;3;5;explication (bonne donnée touchée);C’est bien un conte : il est à sa place, Palou le garde.;C’est bien un conte : il est à sa place, Palou le garde.;56
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m2-o1.mp3;3;5;explication (mauvaise réponse);Une mangue est un fruit, comme les autres objets du panier.;Une mangue est un fruit, comme les autres objets du panier.;59
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e05-m2-o3.mp3;3;5;explication (mauvaise réponse);Une orange est un fruit : elle est bien dans le panier.;Une orange est un fruit : elle est bien dans le panier.;55
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Ajouter des objets ne règle rien : l’intrus reste caché parmi les autres.;Ajouter des objets ne règle rien : l’intrus reste caché parmi les autres.;73
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Mélanger les données les rend plus difficiles à comprendre.;Mélanger les données les rend plus difficiles à comprendre.;59
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Une mangue est un fruit, comme l’orange.;Une mangue est un fruit, comme l’orange.;40
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);L’orange est un fruit, comme la mangue.;L’orange est un fruit, comme la mangue.;39
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Ajouter des intrus rend les données moins justes.;Ajouter des intrus rend les données moins justes.;49
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Mélanger l’intrus fausse le tri.;Mélanger l’intrus fausse le tri.;32
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Ce n’est pas une question de beauté, mais de données justes.;Ce n’est pas une question de beauté, mais de données justes.;60
+frontend/public/audio/palou/lecons/m03/p3-3/p3-3_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Ce n’est pas la place qui compte : ce sont les données justes.;Ce n’est pas la place qui compte : ce sont les données justes.;62

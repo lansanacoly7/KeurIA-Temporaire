@@ -1,0 +1,241 @@
+/* kids-theme.css - Design ultra-ludique pour le parcours 7-9 ans */
+
+:root {
+  --kids-bg: #f9fcff;
+  --kids-primary: #ffaa00;
+  --kids-secondary: #00d2ff;
+  --kids-accent: #ff4d6d;
+  --kids-green: #38b000;
+  --kids-text: #003049;
+  --kids-card: #ffffff;
+}
+
+body[data-age="7-9"] {
+  background: var(--kids-bg);
+  color: var(--kids-text);
+  font-family: 'Fredoka', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Formes arrondies ultra douces */
+.squircle {
+  border-radius: 30px;
+}
+
+/* Animations de transition de page */
+.page-transition-enter {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Boutons ludiques 3D */
+.kids-btn {
+  background: var(--kids-primary);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #d68f00;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.kids-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 0 #d68f00, 0 10px 20px rgba(255, 170, 0, 0.3);
+}
+
+.kids-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #d68f00;
+}
+
+/* Couleurs alternatives pour les boutons */
+.kids-btn.blue { background: var(--kids-secondary); box-shadow: 0 8px 0 #00a8cc; }
+.kids-btn.blue:hover { box-shadow: 0 12px 0 #00a8cc, 0 10px 20px rgba(0, 210, 255, 0.3); }
+.kids-btn.blue:active { box-shadow: 0 4px 0 #00a8cc; }
+
+.kids-btn.green { background: var(--kids-green); box-shadow: 0 8px 0 #2b8a00; }
+.kids-btn.green:hover { box-shadow: 0 12px 0 #2b8a00, 0 10px 20px rgba(56, 176, 0, 0.3); }
+.kids-btn.green:active { box-shadow: 0 4px 0 #2b8a00; }
+
+/* Cartes (Modules, Jeux) */
+.kids-card {
+  background: var(--kids-card);
+  border: 3px solid #e2e8f0;
+  border-radius: 35px;
+  padding: 25px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0, 48, 73, 0.05);
+}
+
+.kids-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--kids-secondary);
+  box-shadow: 0 20px 40px rgba(0, 210, 255, 0.2);
+}
+
+/* Typographie */
+.kids-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--kids-text);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.kids-subtitle {
+  font-size: 22px;
+  color: #5c7c8a;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Animations de Palou */
+.palou-companion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 250px;
+  height: 250px;
+  z-index: 1000;
+  pointer-events: none; /* Laisse cliquer à travers sauf sur Palou lui-même si nécessaire */
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+.palou-companion img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* Animation de base (Idle) : Respiration et lévitation douces */
+.anim-idle {
+  animation: palou-float 4s ease-in-out infinite, palou-breathe 3s ease-in-out infinite alternate;
+}
+
+/* Animation d'entrée */
+.anim-enter {
+  animation: palou-pop-in 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Animation de joie (succès) */
+.anim-joy {
+  animation: palou-jump 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 2;
+}
+
+/* Animation de tristesse (échec) */
+.anim-sad {
+  animation: palou-shake 0.5s ease-in-out;
+}
+
+@keyframes palou-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes palou-breathe {
+  0% { transform: scaleX(1) scaleY(1); }
+  100% { transform: scaleX(1.02) scaleY(0.98); }
+}
+
+@keyframes palou-pop-in {
+  0% { transform: scale(0) rotate(-20deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes palou-jump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-40px) scale(1.05); }
+}
+
+@keyframes palou-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px) rotate(-5deg); }
+  75% { transform: translateX(10px) rotate(5deg); }
+}
+
+/* Bulle de dialogue pour Palou */
+.palou-bubble {
+  position: absolute;
+  bottom: 80%;
+  right: 60%;
+  background: white;
+  border: 4px solid var(--kids-secondary);
+  border-radius: 25px 25px 5px 25px;
+  padding: 15px 25px;
+  min-width: 200px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--kids-text);
+  pointer-events: auto;
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transform-origin: bottom right;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.palou-bubble.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Layout pour le dashboard 7-9 ans */
+.kids-layout {
+  display: flex;
+  min-height: calc(100vh / var(--app-zoom, 1));
+  background: var(--kids-bg);
+}
+
+.kids-sidebar {
+  width: 250px;
+  background: white;
+  padding: 30px 20px;
+  border-right: 3px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.kids-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5c7c8a;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.kids-nav-link:hover {
+  background: #f1f5f9;
+  color: var(--kids-secondary);
+  transform: translateX(5px);
+}
+
+.kids-nav-link.active {
+  background: var(--kids-secondary);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+}
+
+.kids-main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#1E1B4B" />
+      <stop offset="45%" stopColor="#312E81" />
+      <stop offset="80%" stopColor="#4338CA" />
+      <stop offset="100%" stopColor="#6366F1" />
+    </linearGradient>
+    <linearGradient id="castleWall" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#F59E0B" />
+      <stop offset="50%" stopColor="#D97706" />
+      <stop offset="100%" stopColor="#92400E" />
+    </linearGradient>
+    <linearGradient id="roofPurple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#C084FC" />
+      <stop offset="50%" stopColor="#9333EA" />
+      <stop offset="100%" stopColor="#581C87" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#FEF08A" />
+      <stop offset="50%" stopColor="#FACC15" />
+      <stop offset="100%" stopColor="#CA8A04" />
+    </linearGradient>
+    <radialGradient id="portalAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stopColor="#FEF9C3" stopOpacity="0.9" />
+      <stop offset="40%" stopColor="#FDE047" stopOpacity="0.6" />
+      <stop offset="80%" stopColor="#EAB308" stopOpacity="0.2" />
+      <stop offset="100%" stopColor="#CA8A04" stopOpacity="0" />
+    </radialGradient>
+    <linearGradient id="labyrinthHedge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#4ADE80" />
+      <stop offset="60%" stopColor="#16A34A" />
+      <stop offset="100%" stopColor="#14532D" />
+    </linearGradient>
+  </defs>
+
+  <!-- Fond Ciel Nocturne Féerique -->
+  <rect width="800" height="800" fill="url(#nightSky)" />
+
+  <!-- Lune dorée brillante -->
+  <circle cx="160" cy="140" r="55" fill="#FEF08A" filter="drop-shadow(0 0 16px rgba(254,240,138,0.7))" />
+  <circle cx="180" cy="130" r="48" fill="#312E81" />
+
+  <!-- Étoiles magiques dans le ciel -->
+  <g fill="#FEF9C3" opacity="0.9">
+    <circle cx="280" cy="80" r="4" />
+    <circle cx="340" cy="120" r="5" />
+    <circle cx="480" cy="90" r="6" />
+    <circle cx="600" cy="110" r="4" />
+    <circle cx="680" cy="70" r="5" />
+    <circle cx="720" cy="140" r="4" />
+    <circle cx="220" cy="220" r="3" />
+    <polygon points="520,60 524,72 536,76 524,80 520,92 516,80 504,76 516,72" fill="#FDE047" />
+    <polygon points="650,150 653,160 663,163 653,166 650,176 647,166 637,163 647,160" fill="#FDE047" />
+    <polygon points="120,60 123,70 133,73 123,76 120,86 117,76 107,73 117,70" fill="#FDE047" />
+  </g>
+
+  <!-- Montagne et collines d'assise -->
+  <path d="M 0 520 Q 220 440 400 470 T 800 490 L 800 800 L 0 800 Z" fill="#1E293B" />
+  <path d="M 0 550 Q 200 480 400 510 T 800 530 L 800 800 L 0 800 Z" fill="#0F172A" />
+
+  <!-- Donjon & Citadelle Royale Enchantée -->
+  <!-- Tour Centrale Arrière -->
+  <rect x="340" y="240" width="120" height="220" fill="url(#castleWall)" stroke="#451A03" strokeWidth="6" rx="4" />
+  <!-- Toit pointu violet Tour Centrale -->
+  <polygon points="400,90 320,240 480,240" fill="url(#roofPurple)" stroke="#3B0764" strokeWidth="6" />
+  <!-- Fanion doré au sommet -->
+  <line x1="400" y1="90" x2="400" y2="40" stroke="#FDE047" strokeWidth="5" strokeLinecap="round" />
+  <polygon points="400,45 445,58 400,72" fill="#FACC15" stroke="#B45309" strokeWidth="3" />
+
+  <!-- Tour Gauche -->
+  <rect x="210" y="300" width="90" height="200" fill="url(#castleWall)" stroke="#451A03" strokeWidth="6" rx="4" />
+  <polygon points="255,160 190,300 320,300" fill="url(#roofPurple)" stroke="#3B0764" strokeWidth="6" />
+  <line x1="255" y1="160" x2="255" y2="120" stroke="#FDE047" strokeWidth="4" strokeLinecap="round" />
+  <polygon points="255,124 290,135 255,146" fill="#FACC15" stroke="#B45309" strokeWidth="2.5" />
+
+  <!-- Tour Droite -->
+  <rect x="500" y="300" width="90" height="200" fill="url(#castleWall)" stroke="#451A03" strokeWidth="6" rx="4" />
+  <polygon points="545,160 480,300 610,300" fill="url(#roofPurple)" stroke="#3B0764" strokeWidth="6" />
+  <line x1="545" y1="160" x2="545" y2="120" stroke="#FDE047" strokeWidth="4" strokeLinecap="round" />
+  <polygon points="545,124 580,135 545,146" fill="#FACC15" stroke="#B45309" strokeWidth="2.5" />
+
+  <!-- Muraille avant avec créneaux -->
+  <rect x="270" y="380" width="260" height="150" fill="url(#castleWall)" stroke="#451A03" strokeWidth="6" rx="6" />
+  <!-- Créneaux -->
+  <rect x="280" y="358" width="30" height="24" fill="#D97706" stroke="#451A03" strokeWidth="5" />
+  <rect x="330" y="358" width="30" height="24" fill="#D97706" stroke="#451A03" strokeWidth="5" />
+  <rect x="385" y="358" width="30" height="24" fill="#D97706" stroke="#451A03" strokeWidth="5" />
+  <rect x="440" y="358" width="30" height="24" fill="#D97706" stroke="#451A03" strokeWidth="5" />
+  <rect x="490" y="358" width="30" height="24" fill="#D97706" stroke="#451A03" strokeWidth="5" />
+
+  <!-- Fenêtres gothiques lumineuses -->
+  <path d="M 380 270 C 380 250 420 250 420 270 L 420 310 L 380 310 Z" fill="#FEF08A" stroke="#451A03" strokeWidth="4" />
+  <line x1="400" y1="250" x2="400" y2="310" stroke="#451A03" strokeWidth="3" />
+  <path d="M 240 340 C 240 325 270 325 270 340 L 270 375 L 240 375 Z" fill="#FEF08A" stroke="#451A03" strokeWidth="3" />
+  <path d="M 530 340 C 530 325 560 325 560 340 L 560 375 L 530 375 Z" fill="#FEF08A" stroke="#451A03" strokeWidth="3" />
+
+  <!-- Halo magique du portail central -->
+  <circle cx="400" cy="460" r="90" fill="url(#portalAura)" />
+
+  <!-- Grande Arche d'Entrée Mystérieuse -->
+  <path d="M 350 530 L 350 440 C 350 395 450 395 450 440 L 450 530 Z" fill="#FEF08A" stroke="#451A03" strokeWidth="7" />
+  <!-- Porte entrouverte vers l'or -->
+  <path d="M 365 530 L 365 450 C 365 415 435 415 435 450 L 435 530 Z" fill="#FACC15" />
+
+  <!-- Clé Magique d'Or Flottante (Élément de jeu / énigme) -->
+  <g transform="translate(400, 420) scale(1.1)">
+    <circle cx="0" cy="-25" r="16" fill="none" stroke="#78350F" strokeWidth="6" />
+    <circle cx="0" cy="-25" r="16" fill="none" stroke="#FDE047" strokeWidth="4" />
+    <line x1="0" y1="-9" x2="0" y2="28" stroke="#78350F" strokeWidth="6" strokeLinecap="round" />
+    <line x1="0" y1="-9" x2="0" y2="28" stroke="#FDE047" strokeWidth="4" strokeLinecap="round" />
+    <line x1="0" y1="12" x2="10" y2="12" stroke="#FDE047" strokeWidth="4" strokeLinecap="round" />
+    <line x1="0" y1="24" x2="14" y2="24" stroke="#FDE047" strokeWidth="4" strokeLinecap="round" />
+  </g>
+
+  <!-- Labyrinthe de Haies Émeraude et Escaliers au Premier Plan -->
+  <!-- Plateforme de dallage -->
+  <path d="M 120 800 L 260 550 L 540 550 L 680 800 Z" fill="#CBD5E1" stroke="#334155" strokeWidth="5" />
+  <!-- Pavés géométriques du labyrinthe -->
+  <line x1="280" y1="620" x2="520" y2="620" stroke="#64748B" strokeWidth="4" />
+  <line x1="230" y1="710" x2="570" y2="710" stroke="#64748B" strokeWidth="5" />
+  <line x1="360" y1="550" x2="330" y2="800" stroke="#64748B" strokeWidth="4" />
+  <line x1="440" y1="550" x2="470" y2="800" stroke="#64748B" strokeWidth="4" />
+
+  <!-- Haies vertes taillées du labyrinthe -->
+  <rect x="60" y="620" width="160" height="60" rx="14" fill="url(#labyrinthHedge)" stroke="#064E3B" strokeWidth="5" />
+  <rect x="580" y="620" width="160" height="60" rx="14" fill="url(#labyrinthHedge)" stroke="#064E3B" strokeWidth="5" />
+  <rect x="150" y="720" width="130" height="60" rx="14" fill="url(#labyrinthHedge)" stroke="#064E3B" strokeWidth="5" />
+  <rect x="520" y="720" width="130" height="60" rx="14" fill="url(#labyrinthHedge)" stroke="#064E3B" strokeWidth="5" />
+
+  <!-- Lanternes magiques suspendues aux haies -->
+  <circle cx="230" cy="625" r="14" fill="#FDE047" filter="drop-shadow(0 0 10px #F59E0B)" />
+  <circle cx="570" cy="625" r="14" fill="#FDE047" filter="drop-shadow(0 0 10px #F59E0B)" />
+</svg>

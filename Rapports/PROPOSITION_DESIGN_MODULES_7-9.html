@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposition de design : modules 7-9 ans</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Palette officielle de Palou (frontend/app/design/tokens.css, thème « explorer ») */
+  :root{
+    --gold:#FEDA82; --brown:#CD6D19; --ink:#381204; --coral:#FF9971; --cream:#FFF4E8; --cream2:#FFF9F0;
+    --blue:#3B82F6; --green:#34D399; --pink:#F472B6; --muted:#7A5C3E; --white:#fff;
+    --radius:28px; --shadow:0 10px 0 rgba(56,18,4,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Fredoka','Baloo 2','Nunito',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5;font-size:18px}
+  a{color:inherit}
+  header.top{background:linear-gradient(135deg,#381204,#7A3B10);color:var(--cream);padding:38px 24px 30px}
+  header.top h1{margin:0 0 8px;font-size:clamp(26px,4vw,40px)} header.top p{margin:0;max-width:820px;opacity:.9}
+  nav.toc{position:sticky;top:0;z-index:20;background:var(--cream2);border-bottom:2px solid #f1dcc4;display:flex;gap:6px;flex-wrap:wrap;padding:10px 16px}
+  nav.toc a{text-decoration:none;font-weight:600;font-size:15px;padding:6px 14px;border-radius:99px;background:#fff;border:2px solid #f1dcc4}
+  nav.toc a:hover{background:var(--gold)}
+  main{max-width:1100px;margin:0 auto;padding:10px 20px 80px}
+  section{margin:54px 0}
+  h2{font-size:clamp(24px,3vw,32px);margin:0 0 6px} h2 small{display:block;font-size:15px;color:var(--muted);font-weight:500}
+  h3{margin:22px 0 8px;font-size:21px}
+  .card{background:#fff;border-radius:22px;padding:20px 22px;box-shadow:var(--shadow);border:2px solid #f6e4cd}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  table{width:100%;border-collapse:collapse;font-size:15px;background:#fff;border-radius:16px;overflow:hidden}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #f1dcc4;vertical-align:top} th{background:#FFF0D6}
+  .bad{color:#b42318;font-weight:600} .good{color:#067647;font-weight:600}
+  .pill{display:inline-block;padding:2px 12px;border-radius:99px;background:var(--gold);font-weight:600;font-size:14px}
+  button{font-family:inherit}
+  .btn{border:0;cursor:pointer;font-weight:700;font-size:20px;padding:16px 30px;border-radius:99px;background:var(--brown);color:#fff;box-shadow:0 7px 0 #8f4a10;transition:transform .12s,box-shadow .12s;min-height:60px}
+  .btn:active{transform:translateY(5px);box-shadow:0 2px 0 #8f4a10}
+  .btn.alt{background:#fff;color:var(--ink);box-shadow:0 7px 0 #e6cfae;border:3px solid #f1dcc4}
+  .btn.sm{font-size:16px;padding:10px 20px;min-height:48px}
+
+  /* ═════ 1. CARTE DE L'ÎLE ═════ */
+  .island{position:relative;border-radius:36px;overflow:hidden;background:linear-gradient(180deg,#bfe9ff 0%,#e4f7ff 28%,#fff1c9 60%,#ffd9a8 100%);border:4px solid #fff;box-shadow:var(--shadow);padding:26px 18px 40px}
+  .island::before{content:"☁️      ☁️           ☁️";position:absolute;top:10px;left:8%;font-size:38px;opacity:.75;letter-spacing:40px;pointer-events:none}
+  .island-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:space-between;position:relative;z-index:2}
+  .island-head h3{margin:0;font-size:30px}
+  .chips{display:flex;gap:10px}
+  .chip{background:#fff;border-radius:99px;padding:8px 18px;font-weight:700;font-size:20px;border:3px solid #f6e4cd}
+  .hero-cta{position:relative;z-index:2;display:flex;align-items:center;gap:18px;background:#fff;border-radius:30px;padding:16px 22px;margin:20px 0 6px;box-shadow:var(--shadow);border:3px solid var(--gold);flex-wrap:wrap}
+  .hero-cta img{width:96px;height:96px;object-fit:contain}
+  .hero-cta .t{flex:1;min-width:200px} .hero-cta .t b{font-size:23px;display:block}
+  .trail{position:relative;height:1180px;margin-top:6px}
+  .trail svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+  .stop{position:absolute;transform:translate(-50%,-50%);z-index:3;width:150px;text-align:center;cursor:pointer;border:0;background:none;padding:0;font:inherit;color:inherit}
+  .stop .bub{width:118px;height:118px;border-radius:50%;margin:0 auto;display:grid;place-items:center;font-size:56px;background:var(--c1);border:6px solid #fff;box-shadow:0 9px 0 var(--c2);position:relative;transition:transform .15s}
+  .stop:hover .bub{transform:scale(1.07) rotate(-3deg)}
+  .stop.done .bub::after{content:"✓";position:absolute;right:-6px;top:-6px;width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;font-size:24px;font-weight:700;display:grid;place-items:center;border:4px solid #fff}
+  .stop.now .bub{width:142px;height:142px;font-size:68px;animation:bob 1.8s ease-in-out infinite}
+  .stop.lock .bub{filter:grayscale(1) brightness(1.12);opacity:.72;box-shadow:0 9px 0 #b9b2a6;background:#e4ddd0}
+  .stop.lock .bub::after{content:"🔒";position:absolute;right:-4px;bottom:-4px;font-size:30px}
+  .stop .nm{margin-top:12px;font-weight:700;font-size:18px;line-height:1.15;background:#ffffffd9;border-radius:14px;padding:5px 8px;display:inline-block}
+  .stop .st{font-size:15px;margin-top:4px;color:var(--muted);font-weight:600}
+  .palou-walk{position:absolute;z-index:4;width:104px;transform:translate(70px,-100px);pointer-events:none;filter:drop-shadow(0 8px 6px rgba(0,0,0,.18));animation:bob 2s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-8px)}} .palou-walk{animation:walk 2.2s ease-in-out infinite}
+  @keyframes walk{50%{transform:translate(70px,-112px) rotate(3deg)}}
+  .shake{animation:shake .4s}@keyframes shake{25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  /* fiche de module (feuille du bas) */
+  .sheet-back{position:fixed;inset:0;background:rgba(56,18,4,.5);z-index:60;display:none;align-items:flex-end;justify-content:center}
+  .sheet-back.on{display:flex}
+  .sheet{background:var(--cream);width:min(720px,100%);border-radius:36px 36px 0 0;padding:0 0 28px;max-height:92vh;overflow:auto;animation:up .3s ease-out}
+  @keyframes up{from{transform:translateY(60px);opacity:0}}
+  .sheet-hero{background:var(--c1);padding:26px 26px 20px;border-radius:36px 36px 0 0;display:flex;gap:18px;align-items:center;position:relative}
+  .sheet-hero .em{font-size:74px} .sheet-hero h3{margin:0;font-size:29px} .sheet-hero p{margin:4px 0 0;font-size:18px}
+  .sheet .x{position:absolute;right:14px;top:14px;width:52px;height:52px;border-radius:50%;border:0;background:#fff;font-size:26px;cursor:pointer}
+  .steps{padding:18px 22px 0;display:flex;flex-direction:column;gap:12px}
+  .step{display:flex;align-items:center;gap:14px;background:#fff;border-radius:22px;padding:12px 16px;border:3px solid #f1dcc4;min-height:82px}
+  .step .n{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:26px;background:var(--gold);font-weight:700;flex:none}
+  .step.done .n{background:var(--green);color:#fff} .step.lock{opacity:.55} .step.now{border-color:var(--brown);box-shadow:0 0 0 5px #ffe3b8}
+  .step b{font-size:20px;display:block} .step small{color:var(--muted);font-size:15px}
+  .step .stars{margin-left:auto;font-size:26px;letter-spacing:2px;white-space:nowrap}
+
+  /* ═════ 2. ÉCRAN DE LEÇON ═════ */
+  .device{max-width:860px;margin:0 auto;border-radius:36px;border:10px solid #2a1206;background:#2a1206;box-shadow:0 20px 40px rgba(0,0,0,.25)}
+  .lesson{border-radius:26px;overflow:hidden;background:linear-gradient(180deg,#fff7e6,#ffe9c7);min-height:560px;display:flex;flex-direction:column;position:relative}
+  .lesson::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 20%,#fff9,transparent 40%),radial-gradient(circle at 90% 85%,#ffd39a88,transparent 45%);pointer-events:none}
+  .l-top{display:flex;align-items:center;gap:14px;padding:16px 20px;position:relative;z-index:2}
+  .l-x{width:52px;height:52px;border-radius:50%;border:3px solid #f1dcc4;background:#fff;font-size:24px;cursor:pointer}
+  .l-bar{flex:1;height:22px;border-radius:99px;background:#fff;border:3px solid #f1dcc4;overflow:hidden} .l-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#7ee2b8);border-radius:99px;transition:width .5s}
+  .l-snd{width:52px;height:52px;border-radius:50%;border:3px solid #f1dcc4;background:#fff;font-size:24px;cursor:pointer}
+  .l-body{flex:1;display:grid;grid-template-columns:200px 1fr;gap:18px;padding:0 22px 12px;position:relative;z-index:2;align-items:center}
+  @media(max-width:640px){.l-body{grid-template-columns:1fr}.l-body .pal{display:flex;justify-content:center}}
+  .pal img{width:100%;max-width:190px;filter:drop-shadow(0 10px 8px rgba(0,0,0,.18));animation:bob 3s ease-in-out infinite}
+  .say{background:#fff;border-radius:28px;padding:20px 24px;border:3px solid #f1dcc4;box-shadow:var(--shadow);position:relative;font-size:clamp(22px,2.6vw,28px);font-weight:600;line-height:1.35}
+  .say .listen{margin-top:12px;display:inline-flex;gap:8px;align-items:center;background:var(--gold);border:0;border-radius:99px;padding:8px 18px;font-weight:700;font-size:17px;cursor:pointer;min-height:48px}
+  .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:16px}
+  .opt{background:#fff;border:4px solid #f1dcc4;border-radius:24px;padding:14px 8px;font-size:52px;cursor:pointer;min-height:110px;transition:transform .12s;text-align:center}
+  .opt small{display:block;font-size:16px;font-weight:600;color:var(--muted);margin-top:4px}
+  .opt:hover{transform:translateY(-3px);border-color:var(--gold)} .opt.ok{background:#d9f7ea;border-color:var(--green)} .opt.no{background:#fff0d9;border-color:var(--coral);animation:shake .4s}
+  .txtopt{font-size:21px;font-weight:600;display:flex;align-items:center;justify-content:center;min-height:84px}
+  .fb{margin-top:14px;padding:12px 16px;border-radius:18px;font-size:20px;font-weight:600;display:none}
+  .fb.on{display:block} .fb.ok{background:#d9f7ea} .fb.no{background:#fff0d9}
+  .l-bottom{display:flex;justify-content:space-between;padding:8px 22px 20px;position:relative;z-index:2}
+  .stars-big{font-size:64px;letter-spacing:6px;animation:pop .6s}@keyframes pop{from{transform:scale(.2);opacity:0}}
+  .sticker{display:inline-block;background:#fff;border:4px dashed var(--brown);border-radius:24px;padding:10px 20px;font-weight:700;margin-top:8px;transform:rotate(-3deg)}
+  .demo-note{font-size:15px;color:var(--muted);text-align:center;margin-top:12px}
+
+  /* ═════ 3+ DESIGN SYSTEM ═════ */
+  .sw{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+  .sw div{border-radius:18px;padding:14px 12px;font-weight:600;font-size:14px;min-height:96px;display:flex;flex-direction:column;justify-content:flex-end;border:2px solid #0001}
+  .worlds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+  .w{border-radius:22px;padding:14px;border:3px solid #fff;box-shadow:var(--shadow);background:linear-gradient(160deg,var(--c1),var(--c3))}
+  .w b{display:block;font-size:19px} .w span{font-size:14px} .w .em{font-size:40px}
+  .sounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .snd{display:flex;flex-direction:column;gap:6px}
+  code{background:#FFF0D6;padding:1px 7px;border-radius:8px;font-size:.9em}
+  pre{white-space:pre-wrap;background:#2a1206;color:#ffe9c7;padding:14px 16px;border-radius:16px;font-size:14px;overflow:auto}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Modules du parcours 7-9 ans : la proposition</h1>
+  <p>Une carte d'île à parcourir avec Palou, des leçons courtes lues à voix haute, des mini-jeux qu'on touche du doigt, et une bande son douce.
+     Tout ce qui est cliquable ci-dessous fonctionne : touchez, écoutez, essayez.</p>
+</header>
+<nav class="toc">
+  <a href="#carte">1 · Page « Modules »</a><a href="#lecon">2 · Une leçon</a><a href="#modele">3 · Modèle de contenu</a>
+  <a href="#design">4 · Charte visuelle</a><a href="#sons">5 · Sons</a><a href="#images">6 · Images et fonds</a><a href="#plan">7 · Plan</a>
+</nav>
+<main>
+
+<!-- ═════════════ 1. CARTE ═════════════ -->
+<section id="carte">
+  <h2>1 · La page « Modules » devient une carte d'île <small>Au lieu d'une grille de cartes avec du jargon (« LMS », « progression obligatoire »)</small></h2>
+  <div class="island" id="island">
+    <div class="island-head">
+      <h3>🏝️ L'île des Petits Explorateurs</h3>
+      <div class="chips"><span class="chip">⭐ 14</span><span class="chip">🔥 3 jours</span></div>
+    </div>
+    <div class="hero-cta">
+      <img src="../frontend/public/images/palou/Palou_Content.png" alt="Palou content">
+      <div class="t"><b>Salut Awa ! On continue ?</b>Prochaine étape : « Le panier de fruits »</div>
+      <button class="btn" onclick="openStop(2)">▶ Continuer</button>
+    </div>
+    <div class="trail" id="trail">
+      <svg id="path"></svg>
+      <img class="palou-walk" id="walker" src="../frontend/public/images/palou/Palou_Hero.png" alt="Palou marche vers ton étape">
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:22px">
+    <div class="card"><h3 style="margin-top:0">Ce qui change pour l'enfant</h3>
+      <ul><li><b>Un seul gros bouton</b> « Continuer » : plus besoin de chercher.</li>
+      <li><b>Un chemin, pas 10 cartes</b> : on voit d'où on vient et où on va.</li>
+      <li><b>Zéro jauge chiffrée</b> : des étoiles et des coches, pas des « 3/8 ».</li>
+      <li><b>Les modules verrouillés sont des silhouettes</b> avec un message doux (« Finis l'étape d'avant ! »).</li>
+      <li><b>Un vrai monde par module</b> : couleur, décor et musique propres.</li></ul></div>
+    <div class="card"><h3 style="margin-top:0">Ce qui est retiré</h3>
+      <ul><li>« MON ESPACE LMS • PARCOURS GUIDÉ », « Progression obligatoire : Module → cours → quiz → validation ».</li>
+      <li>Le tableau « Programme du jour » à 4 jauges, illisible pour un enfant de 7 ans.</li>
+      <li>Les textes de 11 à 14 px : <b>rien en dessous de 18 px</b>.</li>
+      <li>La carte « Classement » de l'accueil (déjà décidée), et l'attente artificielle de 4,5 s avant chaque leçon.</li></ul></div>
+  </div>
+</section>
+
+<div class="sheet-back" id="sheetBack" onclick="if(event.target===this)closeSheet()">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<!-- ═════════════ 2. LEÇON ═════════════ -->
+<section id="lecon">
+  <h2>2 · Une leçon : « Trouve l'intrus » (module 3, leçon 3) <small>C'est la première des 30 leçons aujourd'hui impossibles à terminer. Cette démo montre la mécanique ; sa version finale se passera dans la bibliothèque de la classe, avec Moussa et Fatou (voir la bible narrative)</small></h2>
+  <div class="device"><div class="lesson" id="lesson"></div></div>
+  <p class="demo-note">Démonstration : touchez les réponses, écoutez avec 🔊 (voix du navigateur ; en production, voix enregistrée), suivez la barre de progression.</p>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card"><h3 style="margin-top:0">Règles de toutes les leçons</h3>
+      <ul><li><b>6 à 7 écrans, 3 à 4 minutes</b> au total.</li>
+      <li><b>2 phrases maximum par écran</b>, 12 mots maximum par phrase.</li>
+      <li><b>🔊 sur chaque écran</b>, la lecture à voix haute est le mode normal, pas une option.</li>
+      <li><b>Tout se touche</b> : jamais de glisser-déposer, jamais de dessin obligatoire.</li>
+      <li><b>Jamais d'échec</b> : une erreur donne « Presque ! » et un indice ; 3 étoiles au 1<sup>er</sup> essai, 2 au 2<sup>e</sup>, 1 ensuite.</li>
+      <li><b>Chaque erreur est expliquée</b> ; les mauvaises réponses sont des confusions réalistes, pas « des nuages ».</li>
+      <li><b>La bonne réponse change de place</b> à chaque fois.</li></ul></div>
+    <div class="card"><h3 style="margin-top:0">Ce que l'enfant garde</h3>
+      <ul><li>Une <b>étoile</b> selon ses essais (vrai reflet de sa réussite, pas 100 % automatique).</li>
+      <li>Un <b>autocollant</b> collé dans son carnet à la fin du module.</li>
+      <li>Une phrase « <b>ce que j'ai appris</b> » d'une seule ligne.</li>
+      <li>Sa <b>création</b> (l'intrus qu'il a inventé), enregistrée dans son carnet et montrable à son parent.</li></ul></div>
+  </div>
+</section>
+
+<!-- ═════════════ 3. MODELE ═════════════ -->
+<section id="modele">
+  <h2>3 · Modèle de contenu : le même squelette pour les 40 leçons <small>On écrit une seule fois, un seul endroit (le serveur), et l'écran l'affiche</small></h2>
+  <table>
+    <tr><th>#</th><th>Écran</th><th>Contenu</th><th>Exemple, leçon « Trouve l'intrus »</th></tr>
+    <tr><td>1</td><td>🦁 Palou raconte</td><td>Une mini-histoire avec un problème</td><td>« Oh non ! Un intrus s'est glissé dans mon panier de fruits. Peux-tu m'aider ? »</td></tr>
+    <tr><td>2</td><td>💡 Découvre</td><td>UNE idée, un mot nouveau, une image</td><td>« Un intrus ne va pas avec les autres. Pour le trouver, cherche ce qu'ils ont en commun. »</td></tr>
+    <tr><td>3</td><td>👆 Essaie</td><td>Mini-jeu tactile en 3 manches, difficulté croissante</td><td>🍊 🍌 🥭 🧦 → 🐕 🐈 🐄 🚗 → 🍎 🍒 🍓 🍌 (le critère devient la couleur)</td></tr>
+    <tr><td>4</td><td>🤔 Pourquoi ?</td><td>1 question de compréhension, 3 choix plausibles</td><td>« Pourquoi la banane est-elle l'intrus ? » (les autres sont rouges / elle est plus grosse / elle est plus sucrée)</td></tr>
+    <tr><td>5</td><td>🤖 Et l'IA ?</td><td>Le lien avec l'IA, en 1 phrase</td><td>« Une IA trie comme toi : elle cherche ce qui se ressemble et ce qui est différent. »</td></tr>
+    <tr><td>6</td><td>🎨 Crée</td><td>Choix à toucher (jamais de dessin imposé), enregistré</td><td>« Invente ton intrus : touche 3 objets qui vont ensemble et 1 intrus. »</td></tr>
+    <tr><td>7</td><td>🎉 Bravo</td><td>Étoiles, autocollant, « ce que j'ai appris »</td><td>« Un intrus ne suit pas la règle du groupe. »</td></tr>
+  </table>
+  <h3>Trois choses à réparer dans le contenu existant</h3>
+  <table>
+    <tr><th>Aujourd'hui</th><th>Demain</th></tr>
+    <tr><td class="bad">30 leçons sans mission, activité ni quiz (bloquées)</td><td class="good">Toutes les leçons suivent le squelette ci-dessus ; un test parcourt les 40 leçons et vérifie qu'elles se terminent.</td></tr>
+    <tr><td class="bad">Distracteurs absurdes (« Des nuages », « Une cuillère »), bonne réponse la plus longue dans 75 % des QCM</td><td class="good">Confusions plausibles ; longueur égale ; position aléatoire ; explication à chaque erreur.</td></tr>
+    <tr><td class="bad">Vocabulaire d'adulte (« algorithme », « statistiques », « hallucination ») dans 8 leçons</td><td class="good">Mots d'enfant : « ça se ressemble », « il s'entraîne », « il invente une histoire » ; un seul mot nouveau par leçon, avec image.</td></tr>
+  </table>
+</section>
+
+<!-- ═════════════ 4. CHARTE ═════════════ -->
+<section id="design">
+  <h2>4 · Charte visuelle unique <small>Aujourd'hui : 3 palettes concurrentes, 7 polices chargées, et le site entier est en thème « aventurier » (11-13 ans)</small></h2>
+  <h3>Palette : celle de Palou (déjà définie dans le code, thème « explorer »)</h3>
+  <div class="sw">
+    <div style="background:#FEDA82">Or · énergie<br>#FEDA82</div><div style="background:#CD6D19;color:#fff">Brun · confiance<br>#CD6D19</div>
+    <div style="background:#381204;color:#fff">Brun foncé · texte<br>#381204</div><div style="background:#FF9971">Corail · chaleur<br>#FF9971</div>
+    <div style="background:#FFF4E8">Crème · fond<br>#FFF4E8</div><div style="background:#34D399">Vert · réussite<br>#34D399</div>
+    <div style="background:#3B82F6;color:#fff">Bleu · technologie<br>#3B82F6</div><div style="background:#F472B6">Rose · plaisir<br>#F472B6</div>
+  </div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h3 style="margin-top:0">Typographie et tailles</h3>
+      <ul><li><b>Une seule police : Fredoka</b> (ronde, très lisible). On retire les 6 autres.</li>
+      <li>Texte courant <b>22 à 28 px</b> dans les leçons, 18 px minimum partout.</li>
+      <li>Boutons : <b>60 px de haut minimum</b> (doigt d'enfant), coins très arrondis.</li>
+      <li>Contraste texte/fond conforme WCAG AA ; jamais d'information portée par la seule couleur (icône + texte).</li></ul></div>
+    <div class="card"><h3 style="margin-top:0">Principes</h3>
+      <ul><li><b>Boutons « 3D »</b> qui s'enfoncent au toucher (comme ci-dessus).</li>
+      <li><b>Un décor clair et doux par module</b>, jamais un fond sombre pour les petits.</li>
+      <li><b>Une animation = un sens</b> (Palou marche, l'étoile apparaît) ; option « réduire les animations ».</li>
+      <li><b>Réglage du thème</b> : forcer <code>data-theme="explorer"</code> pour les comptes 7-9.</li></ul></div>
+  </div>
+  <h3>Un chapitre, un lieu réel de Dakar, une couleur (les 10 modules)</h3>
+  <div class="worlds" id="worlds"></div>
+</section>
+
+<!-- ═════════════ 5. SONS ═════════════ -->
+<section id="sons">
+  <h2>5 · Une bande son douce et utile <small>Aujourd'hui : 4 bips synthétiques (dont un buzzer « sawtooth » agressif pour une erreur), aucun fichier audio, aucun bouton pour couper le son</small></h2>
+  <div class="card">
+    <p style="margin-top:0">Cliquez pour écouter les sons proposés (générés dans la page ; en production, de courts fichiers enregistrés de même caractère).</p>
+    <div class="sounds">
+      <div class="snd"><button class="btn sm alt" onclick="S.tap()">👆 Toucher</button><small>Pop doux, 80 ms</small></div>
+      <div class="snd"><button class="btn sm alt" onclick="S.ok()">✅ Bonne réponse</button><small>Marimba montant : do-mi-sol</small></div>
+      <div class="snd"><button class="btn sm alt" onclick="S.almost()">🤏 Presque !</button><small>Deux notes douces qui descendent. Fini le buzzer.</small></div>
+      <div class="snd"><button class="btn sm alt" onclick="S.star()">⭐ Étoile</button><small>Scintillement aigu</small></div>
+      <div class="snd"><button class="btn sm alt" onclick="S.page()">📖 Page tournée</button><small>Petit souffle entre deux écrans</small></div>
+      <div class="snd"><button class="btn sm alt" onclick="S.win()">🎉 Module terminé</button><small>Fanfare de 4 notes</small></div>
+    </div>
+  </div>
+  <table style="margin-top:16px">
+    <tr><th>Élément</th><th>Proposition</th></tr>
+    <tr><td>Voix de Palou</td><td>Voix <b>enregistrée une fois</b> (ou générée hors ligne puis relue), un fichier de 3 à 6 s par écran, en français avec accent chaleureux ; environ 280 fichiers de 20 à 40 Ko, soit <b>8 à 10 Mo</b> au total, mis en cache. La voix robotique du navigateur reste un secours.</td></tr>
+    <tr><td>Musique d'ambiance</td><td>Une boucle douce par module (30 à 60 s, instruments africains : kora, balafon, djembé léger), volume bas, <b>coupée par défaut</b>, activable.</td></tr>
+    <tr><td>Réglages</td><td>Bouton 🔊 toujours visible, <b>interrupteur son / musique / voix</b> mémorisé ; jamais de son avant le premier toucher (règle des navigateurs).</td></tr>
+    <tr><td>Erreurs</td><td>Aucun son agressif : notes douces et voix encourageante (« Presque ! Regarde encore. »).</td></tr>
+    <tr><td>Sobriété</td><td>Pas de son en continu pendant la lecture d'un texte ; volume unique normalisé ; respect du contrôle parental (silence à l'heure du coucher).</td></tr>
+  </table>
+</section>
+
+<!-- ═════════════ 6. IMAGES ═════════════ -->
+<section id="images">
+  <h2>6 · Images et fonds : une seule ligne graphique <small>Manque aujourd'hui : les 10 illustrations de modules (images cassées), et les visuels existants mélangent 3 styles</small></h2>
+  <div class="grid2">
+    <div class="card"><h3 style="margin-top:0">Ligne graphique : celle de Palou (correction de ma première proposition)</h3>
+      <ul><li><b>Illustration plate d'album jeunesse, contours bruns épais</b> comme Palou (2D), aplats de couleur, yeux expressifs, formes rondes. Le style « 3D jouet » que j'avais cité ne s'accorde pas avec la mascotte.</li>
+      <li>Fond clair et lumineux, ombre douce au sol, pas de noir.</li>
+      <li>Personnages : Palou et une petite classe de Dakar (Moussa, Fatou, Madame Diop, Mame Awa, Papa Ibou, Tonton Cheikh), voir la bible narrative.</li>
+      <li>Format <b>WebP</b>, 800 px maxi, <b>moins de 120 Ko</b> par image (aujourd'hui : jusqu'à 2,6 Mo).</li></ul></div>
+    <div class="card"><h3 style="margin-top:0">Ce qu'il faut produire</h3>
+      <table><tr><th>Lot</th><th>Nombre</th></tr>
+      <tr><td>Illustration de module (carte + bandeau)</td><td>10</td></tr>
+      <tr><td>Décor de fond doux par module</td><td>10</td></tr>
+      <tr><td>Images d'écran de leçon (une par leçon écrite)</td><td>30</td></tr>
+      <tr><td>Autocollants de fin de module</td><td>10</td></tr>
+      <tr><td>Poses de Palou manquantes (marche, écoute, réfléchit)</td><td>3 à 5</td></tr></table></div>
+  </div>
+  <h3>Consignes d'images</h3><div class="card"><p style="margin:0">Les consignes de la première version étaient génériques (« village sénégalais », « savane ») : c'était du décor. Elles sont remplacées par des scènes tirées d'une <b>histoire suivie à Dakar</b> : voir <code>BIBLE_NARRATIVE_7-9.md</code> et <code>PROMPTS_ILLUSTRATIONS_7-9.md</code> (6 personnages, 10 illustrations de module, 10 fonds, 10 autocollants).</p></div>
+  <p>Vérification automatique à prévoir : un test qui échoue si une image référencée par le code n'existe pas sur le disque.</p>
+</section>
+
+<!-- ═════════════ 7. PLAN ═════════════ -->
+<section id="plan">
+  <h2>7 · Plan de réalisation <small>Ordre proposé, du plus urgent au plus agréable</small></h2>
+  <table>
+    <tr><th>Étape</th><th>Contenu</th><th>Résultat</th></tr>
+    <tr><td><b>A · Débloquer</b> (1 à 2 j)</td><td>Brancher le contenu déjà écrit pour les modules 2 à 10 ; garde-fou qui empêche d'afficher une leçon incomplète ; vrai prénom de l'enfant ; test des 40 leçons ; images provisoires (emoji + dégradé) pour les modules.</td><td>Tous les enfants peuvent finir tout le parcours.</td></tr>
+    <tr><td><b>B · Nouvelle page Modules</b> (2 à 3 j)</td><td>Carte d'île, fiche de module, vocabulaire d'enfant, suppression des jauges et de l'attente de 4,5 s ; thème « explorer » ; une seule police.</td><td>Page lisible et cohérente.</td></tr>
+    <tr><td><b>C · Nouveau lecteur de leçon</b> (3 à 4 j)</td><td>Un seul lecteur à 7 écrans piloté par les données ; mini-jeux tactiles (plus de glisser-déposer) ; étoiles réelles ; carnet et autocollants ; 🔊 partout.</td><td>Un seul code pour 40 leçons, à la place de 1 840 lignes spécifiques.</td></tr>
+    <tr><td><b>D · Contenu</b> (1 à 2 sem.)</td><td>Réécriture des 30 leçons au squelette ci-dessus, distracteurs plausibles, mots d'enfant, relecture par un enseignant du primaire.</td><td>Contenu adapté à 7-9 ans, validé.</td></tr>
+    <tr><td><b>E · Sons et images</b> (en parallèle)</td><td>Enregistrement des voix, sons, musiques ; production des 10 illustrations, fonds et autocollants ; réglages audio ; images légères.</td><td>Ambiance complète, page légère.</td></tr>
+  </table>
+</section>
+</main>
+
+<script>
+/* ═════ Sons de démonstration (WebAudio, aucun fichier) ═════ */
+const AC=window.AudioContext||window.webkitAudioContext; let ctx;
+function C(){ if(!ctx) ctx=new AC(); if(ctx.state==='suspended') ctx.resume(); return ctx; }
+function tone(f,t0,d,type='sine',v=.16){ const c=C(),o=c.createOscillator(),g=c.createGain(); o.type=type; o.frequency.value=f;
+  const t=c.currentTime+t0; g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.012); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+d+.02); }
+function noise(t0,d,v=.05){ const c=C(),b=c.createBuffer(1,c.sampleRate*d,c.sampleRate),a=b.getChannelData(0); for(let i=0;i<a.length;i++)a[i]=(Math.random()*2-1)*(1-i/a.length);
+  const s=c.createBufferSource(); s.buffer=b; const f=c.createBiquadFilter(); f.type='bandpass'; f.frequency.value=1400; const g=c.createGain(); g.gain.value=v; s.connect(f); f.connect(g); g.connect(c.destination); s.start(c.currentTime+t0); }
+const S={
+  tap(){tone(620,0,.09,'sine',.14)},
+  ok(){[523.25,659.25,783.99].forEach((f,i)=>tone(f,i*.09,.32,'triangle',.16))},
+  almost(){tone(392,0,.22,'sine',.11);tone(329.6,.16,.32,'sine',.1)},
+  star(){[1318,1568,1975].forEach((f,i)=>tone(f,i*.07,.28,'sine',.09))},
+  page(){noise(0,.16,.05)},
+  win(){[523.25,659.25,783.99,1046.5].forEach((f,i)=>tone(f,i*.13,.5,'triangle',.15));tone(261.6,.5,.9,'sine',.12)}
+};
+function speak(t){ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel(); const u=new SpeechSynthesisUtterance(t); u.lang='fr-FR'; u.rate=.9; u.pitch=1.1; speechSynthesis.speak(u); }
+
+/* ═════ 1 · La carte ═════ */
+const WORLDS=[
+ {n:'Bonjour, l’IA !',e:'🤖',c1:'#FFE08A',c2:'#E8B93C',c3:'#FFF3C4',d:'Cour de l’école',done:4},
+ {n:'L’IA autour de moi',e:'👀',c1:'#B8F0D6',c2:'#5CC59B',c3:'#E3FAF0',d:'Le car et la rue',done:4},
+ {n:'Les données',e:'🧺',c1:'#FFB7A0',c2:'#E9825F',c3:'#FFE6DC',d:'Marché Kermel',done:2},
+ {n:'Apprendre avec des exemples',e:'🐾',c1:'#A9CCFF',c2:'#5F95E8',c3:'#DCEBFF',d:'Plage de Ngor',done:0},
+ {n:'L’IA qui regarde',e:'🖼️',c1:'#D8C4F5',c2:'#9B78D8',c3:'#EFE5FB',d:'Jardin et manguier',done:0},
+ {n:'L’IA qui parle',e:'💬',c1:'#B8F0D6',c2:'#5CC59B',c3:'#E3FAF0',d:'Marché bruyant',done:0},
+ {n:'Créer avec l’IA',e:'🎨',c1:'#FFE08A',c2:'#E8B93C',c3:'#FFF3C4',d:'La classe (Set Setal)',done:0},
+ {n:'Mon bouclier numérique',e:'🛡️',c1:'#FFB7A0',c2:'#E9825F',c3:'#FFE6DC',d:'Groupe WhatsApp',done:0},
+ {n:'Vrai, faux… vérifions !',e:'🔍',c1:'#A9CCFF',c2:'#5F95E8',c3:'#DCEBFF',d:'Message vocal',done:0},
+ {n:'Une IA pour mon quartier',e:'🌍',c1:'#BDEB9B',c2:'#6FBF3E',c3:'#E6F7D6',d:'Place du quartier',done:0}
+];
+const LESSONS=[['Histoire','📖'],['Jeu','🎮'],['Quiz','🤔'],['Atelier','🎨']];
+const POS=[[50,4],[26,13],[70,22],[34,32],[72,41],[30,51],[68,60],[32,69],[70,78],[50,89]];
+const CUR=2;
+function build(){
+  const t=document.getElementById('trail');
+  WORLDS.forEach((w,i)=>{
+    const st=i<CUR?'done':i===CUR?'now':'lock';
+    const b=document.createElement('button'); b.className='stop '+st; b.id='stop'+i; b.style.left=POS[i][0]+'%'; b.style.top=POS[i][1]+'%';
+    b.style.setProperty('--c1',w.c1); b.style.setProperty('--c2',w.c2);
+    b.setAttribute('aria-label','Module '+(i+1)+' : '+w.n+(st==='lock'?' (verrouillé)':''));
+    b.innerHTML='<div class="bub">'+w.e+'</div><div class="nm">'+(i+1)+' · '+w.n+'</div><div class="st">'+(st==='done'?'⭐⭐⭐ Terminé':st==='now'?'À toi de jouer !':'Bientôt')+'</div>';
+    b.onclick=()=>openStop(i); t.appendChild(b);
+  });
+  requestAnimationFrame(draw); addEventListener('resize',draw);
+  const wl=document.getElementById('worlds');
+  WORLDS.forEach((w,i)=>{ wl.insertAdjacentHTML('beforeend','<div class="w" style="--c1:'+w.c1+';--c3:'+w.c3+'"><div class="em">'+w.e+'</div><b>'+(i+1)+' · '+w.n+'</b><span>Décor : '+w.d+'</span></div>'); });
+}
+function draw(){
+  const t=document.getElementById('trail'),svg=document.getElementById('path'),r=t.getBoundingClientRect(); svg.setAttribute('viewBox','0 0 '+r.width+' '+r.height);
+  const pts=[...t.querySelectorAll('.stop')].map(s=>{const q=s.getBoundingClientRect();return[q.left+q.width/2-r.left,q.top+q.height/2-r.top-24]});
+  let d='M'+pts[0][0]+' '+pts[0][1];
+  for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i],my=(a[1]+b[1])/2; d+=' C'+a[0]+' '+my+' '+b[0]+' '+my+' '+b[0]+' '+b[1];}
+  svg.innerHTML='<path d="'+d+'" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" opacity=".85"/><path d="'+d+'" fill="none" stroke="#E8B93C" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 16"/>';
+  const w=document.getElementById('walker'),p=pts[CUR]; w.style.left=(p[0]-52)+'px'; w.style.top=(p[1]+24)+'px';
+}
+function openStop(i){
+  const b=document.getElementById('stop'+i),w=WORLDS[i];
+  if(b.classList.contains('lock')){ b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake'); S.almost(); speak('Finis d’abord l’étape d’avant !'); return; }
+  S.page();
+  const rows=LESSONS.map((l,k)=>{ const done=k<w.done, now=k===w.done&&i===CUR, lock=!done&&!now;
+    const cls=done?'done':now?'now':'lock';
+    return '<div class="step '+cls+'"><div class="n">'+(done?'✓':l[1])+'</div><div><b>'+(k+1)+'. '+(i===2&&k===2?'Trouve l’intrus':l[0])+'</b><small>'+(lock?'Finis l’étape d’avant':'3 à 4 minutes')+'</small></div>'+
+    '<div class="stars">'+(done?'⭐⭐⭐':now?'<button class="btn sm" onclick="closeSheet();location.hash=\'#lecon\'">Jouer</button>':'🔒')+'</div></div>'; }).join('');
+  document.getElementById('sheet').style.setProperty('--c1',w.c1);
+  document.getElementById('sheet').innerHTML='<div class="sheet-hero"><div class="em">'+w.e+'</div><div><h3>Module '+(i+1)+' · '+w.n+'</h3><p>4 étapes avec Palou</p></div><button class="x" onclick="closeSheet()" aria-label="Fermer">✕</button></div><div class="steps">'+rows+'</div>';
+  document.getElementById('sheetBack').classList.add('on');
+}
+function closeSheet(){ document.getElementById('sheetBack').classList.remove('on'); S.tap(); }
+
+/* ═════ 2 · La leçon (démo jouable) ═════ */
+const P='../frontend/public/images/palou/';
+const ROUNDS=[
+  {q:'Touche l’intrus !',items:[['🍊','une orange'],['🍌','une banane'],['🥭','une mangue'],['🧦','une chaussette']],bad:3,why:'Bravo ! La chaussette n’est pas un fruit.',hint:'Presque ! Peut-on la manger ?'},
+  {q:'Et maintenant ?',items:[['🐕','un chien'],['🚗','une voiture'],['🐈','un chat'],['🐄','une vache']],bad:1,why:'Bravo ! La voiture n’est pas un animal.',hint:'Presque ! Lesquels sont vivants ?'},
+  {q:'Attention, cherche la couleur !',items:[['🍎','pomme rouge'],['🍒','cerises rouges'],['🍌','banane jaune'],['🍓','fraise rouge']],bad:2,why:'Bravo ! Tous les autres sont rouges.',hint:'Presque ! Regarde bien les couleurs.'}
+];
+const WHY={q:'Pourquoi la banane est-elle l’intrus ?',opts:['Elle est jaune, les autres sont rouges','Elle est plus grosse','Elle est plus sucrée'],ok:0};
+let L={step:0,tries:0,round:0,why:null,stars:0,order:[]};
+const SCREENS=7;
+function shuffle(a){return a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]);}
+function render(){
+  const el=document.getElementById('lesson'); const pct=Math.round(L.step/(SCREENS-1)*100); let img=P+'Palou_Content.png',txt='',body='',next=true;
+  if(L.step===0){img=P+'Palou_Surpris.png';txt='Oh non ! Un intrus s’est glissé dans mon panier de fruits. Peux-tu m’aider ?';body='<div class="opts" style="font-size:60px;justify-content:center;grid-template-columns:repeat(4,1fr)"><span>🍊</span><span>🍌</span><span>🥭</span><span>🧦</span></div>';}
+  else if(L.step===1){img=P+'Palou_Intelligent.png';txt='Un intrus ne va pas avec les autres. Pour le trouver, cherche ce qu’ils ont en commun.';body='<span class="pill" style="margin-top:12px">Nouveau mot : intrus</span>';}
+  else if(L.step===2){const r=ROUNDS[L.round];img=P+'Palou_Question.png';txt=r.q;
+    body='<div class="opts">'+L.order.map(i=>'<button class="opt" data-i="'+i+'" onclick="pick(this,'+i+')">'+r.items[i][0]+'<small>'+r.items[i][1]+'</small></button>').join('')+'</div><div class="fb" id="fb"></div>';next=false;}
+  else if(L.step===3){img=P+'Palou_Reflexion.png';txt=WHY.q;
+    body='<div class="opts">'+L.order.map(i=>'<button class="opt txtopt" onclick="pickWhy(this,'+i+')">'+WHY.opts[i]+'</button>').join('')+'</div><div class="fb" id="fb"></div>';next=false;}
+  else if(L.step===4){img=P+'Palou_Intelligent.png';txt='Une IA trie comme toi : elle cherche ce qui se ressemble et ce qui est différent.';body='<span class="pill" style="margin-top:12px">🤖 Et l’IA ?</span>';}
+  else if(L.step===5){img=P+'Palou_Hero.png';txt='Invente ton intrus ! Touche 3 objets qui vont ensemble, puis 1 intrus.';body='<div class="opts" style="grid-template-columns:repeat(5,1fr)">'+['🐟','🐠','🦀','🐙','🚲'].map(e=>'<button class="opt" style="font-size:44px;min-height:84px" onclick="this.classList.toggle(\'ok\');S.tap()">'+e+'</button>').join('')+'</div><small>Ta création est gardée dans ton carnet.</small>';}
+  else {img=P+'Palou_Celebration.png';S.win();const st=L.stars;txt='Bravo Awa ! Tu as trouvé tous les intrus.';
+    body='<div class="stars-big">'+'⭐'.repeat(st)+'☆'.repeat(3-st)+'</div><div class="sticker">🕵️ Détective des intrus</div><p style="font-size:20px;margin:12px 0 0"><b>Ce que j’ai appris :</b> un intrus ne suit pas la règle du groupe.</p>';next=false;}
+  el.innerHTML='<div class="l-top"><button class="l-x" onclick="S.tap()" aria-label="Quitter">✕</button><div class="l-bar"><i style="width:'+pct+'%"></i></div><button class="l-snd" onclick="S.tap()" aria-label="Son">🔊</button></div>'+
+   '<div class="l-body"><div class="pal"><img src="'+img+'" alt="Palou"></div><div><div class="say">'+txt+'<br><button class="listen" onclick="speak(\''+txt.replace(/'/g,'\\\'')+'\')">🔊 Écouter</button>'+body+'</div></div></div>'+
+   '<div class="l-bottom"><button class="btn alt sm" onclick="back()" '+(L.step===0?'style="visibility:hidden"':'')+'>← Retour</button>'+
+   (L.step===SCREENS-1?'<button class="btn" onclick="L={step:0,tries:0,round:0,why:null,stars:0,order:[]};go(0)">↺ Rejouer</button>':'<button class="btn" id="nextBtn" onclick="go(1)" '+(next?'':'disabled style="opacity:.4"')+'>Continuer →</button>')+'</div>';
+}
+function prep(){ if(L.step===2)L.order=shuffle([0,1,2,3]); if(L.step===3)L.order=shuffle([0,1,2]); }
+function go(d){ S.page(); if(d===0){L={step:0,tries:0,round:0,why:null,stars:0,order:[]};} else L.step+=d; if(L.step===2&&d===1&&L.round>0)L.round=0; prep(); render(); }
+function back(){ if(L.step>0){L.step--;prep();render();S.page();} }
+function pick(b,i){ const r=ROUNDS[L.round],fb=document.getElementById('fb'); if(i===r.bad){ b.classList.add('ok'); S.ok(); fb.className='fb on ok'; fb.textContent=r.why; speak(r.why);
+    if(L.round<ROUNDS.length-1){ setTimeout(()=>{L.round++;L.order=shuffle([0,1,2,3]);render();},1300);} else { setTimeout(()=>{L.step=3;prep();render();},1300);} }
+  else{ L.tries++; b.classList.add('no'); S.almost(); fb.className='fb on no'; fb.textContent=r.hint; speak(r.hint); } }
+function pickWhy(b,i){ const fb=document.getElementById('fb'); if(i===WHY.ok){ b.classList.add('ok'); S.ok(); fb.className='fb on ok'; fb.textContent='Bravo ! Les autres fruits sont tous rouges.'; L.stars=L.tries===0?3:L.tries<3?2:1; setTimeout(()=>{S.star();document.getElementById('nextBtn').disabled=false;document.getElementById('nextBtn').style.opacity=1;},500);} else{ L.tries++; b.classList.add('no'); S.almost(); fb.className='fb on no'; fb.textContent='Presque ! Regarde la couleur des autres fruits.'; } }
+document.addEventListener('DOMContentLoaded',()=>{build();render();});
+</script>
+</body>
+</html>

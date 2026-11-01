@@ -1,0 +1,135 @@
+/* Page « Inscriptions des parents » (espace de l'équipe kEur IA). */
+.rg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.rg-tabs {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: var(--ec-surface, #fff);
+  border: 1px solid var(--ec-line, #e1eae7);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.rg-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ec-muted, #5b706c);
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.rg-tabs button:hover { background: var(--ec-brand-soft, #e8f6f1); }
+
+.rg-tabs button[data-active="true"] {
+  background: var(--ec-ink, #173e3c);
+  color: #fff;
+}
+
+.rg-tabs button:focus-visible { outline: 3px solid var(--ec-brand, #0d846e); outline-offset: 2px; }
+
+.rg-count {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--ec-brand-soft, #e8f6f1);
+  color: var(--ec-brand, #0d846e);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.rg-tabs button[data-active="true"] .rg-count { background: rgba(255, 255, 255, 0.18); color: #fff; }
+.rg-count[data-urgent="true"] { background: var(--ec-lime, #d9ef59); color: var(--ec-ink-deep, #0d2e2c); }
+
+.rg-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.rg-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: var(--ec-radius, 16px);
+  border: 1px solid var(--ec-line, #e1eae7);
+  border-left: 5px solid var(--ec-lime, #d9ef59);
+  background: var(--ec-surface, #fff);
+  box-shadow: var(--ec-shadow);
+}
+
+.rg-card[data-status="approved"] { border-left-color: var(--ec-brand, #0d846e); }
+.rg-card[data-status="rejected"] { border-left-color: var(--ec-danger, #b42318); }
+
+.rg-avatar { width: 48px; height: 48px; font-size: 16px; }
+
+.rg-main { display: grid; gap: 6px; min-width: 0; }
+
+.rg-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  color: var(--ec-ink, #173e3c);
+}
+
+.rg-head .ec-badge { display: inline-flex; align-items: center; gap: 4px; }
+
+.rg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  color: var(--ec-muted, #5b706c);
+  font-size: 14px;
+}
+
+.rg-meta span { display: inline-flex; align-items: center; gap: 6px; overflow-wrap: anywhere; }
+
+.rg-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--ec-tint-lemon, #f3f9d2);
+  color: var(--ec-tint-lemon-ink, #5c6a0e);
+  font-size: 14px;
+}
+
+.rg-decision { margin: 0; color: var(--ec-muted, #5b706c); font-size: 14px; }
+
+.rg-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.rg-actions .ec-btn { display: inline-flex; align-items: center; gap: 6px; }
+
+@media (max-width: 720px) {
+  .rg-card { grid-template-columns: auto 1fr; padding: 16px; }
+  .rg-actions { grid-column: 1 / -1; justify-content: stretch; }
+  .rg-actions .ec-btn { flex: 1; justify-content: center; }
+  .rg-toolbar .ec-search { width: 100%; }
+}

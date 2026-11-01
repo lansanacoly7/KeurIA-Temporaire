@@ -1,0 +1,578 @@
+{
+ "module": {
+  "id": "ep6",
+  "chapter": 6,
+  "title": "Les oreilles de la machine",
+  "place": "Une radio communautaire, dans le Fouta",
+  "emoji": "📻",
+  "intro": "Une nouvelle élève emmène la classe à la radio de sa ville, dans le Fouta. Là-bas, une machine écrit tout ce qu’on dit !",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep6-1",
+   "title": "La machine écoute",
+   "scene": { "id": "radio-fouta", "label": "La radio du Fouta" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "aminata"],
+   "problem": "À la radio, une machine écrit à l’écran tout ce que dit l’animatrice. Comment fait-elle pour « entendre » ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "👋🏾",
+     "image": "ep6-l1-aissatou.webp",
+     "alt": "Aïssatou, une petite fille avec un foulard jaune, accueille la classe devant la radio de sa ville, au bord du fleuve.",
+     "text": "Aïssatou, la nouvelle élève, accueille la classe dans sa ville du Fouta : « Bienvenue ! Ma tante travaille à la radio. Venez voir ! »"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "aminata", "emoji": "🎙️",
+     "image": "ep6-l1-studio.webp",
+     "alt": "Dans le studio, l’animatrice Aminata parle au micro ; sur un écran, des lignes de texte apparaissent au fur et à mesure.",
+     "text": "Dans le studio, Aminata, l’animatrice, parle au micro. Sur l’écran, ses mots s’écrivent tout seuls, au fur et à mesure !"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "aissatou", "emoji": "❓",
+     "image": "ep6-l1-pourquoi.webp",
+     "alt": "Aïssatou lève la main vers Palou, l’air très curieux.",
+     "text": "Aïssatou demande aussitôt : « Pourquoi la machine comprend ce que dit ma tante ? Elle a des oreilles ? »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "🌊",
+     "image": "ep6-l1-ondes.webp",
+     "alt": "Palou montre sur l’écran une ligne en vagues : le son de la voix.",
+     "text": "Palou montre l’écran : « Le micro transforme la voix en vagues. La machine a appris, avec des milliers d’heures de paroles, quels sons forment quels mots. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🎙️",
+     "word": { "terme": "Reconnaissance de la parole", "sens": "Quand une machine transforme ce qu’on dit en texte écrit, grâce à des exemples de paroles." },
+     "text": "Une IA peut transformer la parole en texte. Elle a appris en écoutant beaucoup d’exemples de voix, avec le texte qui va avec."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Aïssatou à comprendre la machine qui écoute !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Que fait le micro avec la voix d’Aminata ?",
+       "hint": "Regarde l’écran de Palou.",
+       "success": "Exact ! Il la transforme en vagues que la machine peut traiter.",
+       "options": [
+        { "label": "Il la transforme en vagues de son", "pict": "ondes-son", "correct": true },
+        { "label": "Il la garde dans une boîte", "pict": "cadeau", "explain": "Le micro ne garde pas la voix dans une boîte : il la transforme en vagues." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Comment la machine a-t-elle appris à reconnaître les mots ?",
+       "hint": "Comme toutes les IA…",
+       "success": "Bravo ! Avec beaucoup d’exemples de paroles, et le texte qui va avec.",
+       "options": [
+        { "label": "Avec des exemples de paroles et leur texte", "pict": "photos-exemples", "correct": true },
+        { "label": "Elle a de vraies oreilles", "pict": "oreille", "explain": "Elle n’a pas d’oreilles : un micro, et des exemples pour apprendre." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les machines qui écoutent et reconnaissent la parole.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! L’assistant vocal et la dictée vocale reconnaissent la parole.",
+       "options": [
+        { "label": "L’assistant vocal qui répond à une question", "pict": "assistant-vocal", "emoji": "🔊", "correct": true },
+        { "label": "La dictée vocale du téléphone", "pict": "micro-telephone", "emoji": "🎤", "correct": true },
+        { "label": "Un haut-parleur qui joue de la musique", "pict": "haut-parleur", "emoji": "🔈", "explain": "Il fait sortir du son, mais il ne reconnaît aucun mot." },
+        { "label": "Un tambour", "pict": "tambour", "emoji": "🥁", "explain": "Le tambour fait du son, il n’écoute rien." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🙉",
+     "titre": "Le téléphone arabe des sons",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe, en ligne",
+     "text": "La maîtresse chuchote une phrase au premier élève, qui la chuchote au suivant, et ainsi de suite. Le dernier l’écrit au tableau. Est-ce la même phrase ? Quels mots ont changé ? Une machine qui écoute peut aussi mal entendre !",
+     "materiel": ["Une phrase préparée, avec un mot rare ou difficile"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "aissatou", "emoji": "💬",
+     "question": "Aïssatou demande : « Pourquoi une machine qui écoute tout ce qu’on dit, ça peut gêner certaines personnes ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Est-ce qu’on dit tout à voix haute ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "La reconnaissance de la parole, c’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Transformer ce qu’on dit en texte.",
+       "options": [
+        { "label": "Transformer ce qu’on dit en texte", "pict": "micro-telephone", "correct": true },
+        { "label": "Reconnaître un visage", "pict": "telephone-visage", "explain": "Ça, c’est la vision. Ici, la machine écoute la parole." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "La machine de la radio a-t-elle des oreilles ?",
+       "hint": "Qu’est-ce qui capte la voix ?",
+       "success": "Exact ! Elle a un micro, et elle a appris avec des exemples.",
+       "options": [
+        { "label": "Non : un micro et des exemples", "pict": "ondes-son", "correct": true },
+        { "label": "Oui, deux grandes oreilles", "pict": "oreille", "explain": "Pas d’oreilles : un micro capte le son." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment une machine écoute.",
+     "learned": "Le micro transforme la voix en vagues de son. L’IA a appris avec beaucoup d’exemples de paroles à les transformer en texte."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre le principe de la reconnaissance de la parole : son → texte, appris avec des exemples.",
+     "Identifier des outils du quotidien qui l’utilisent.",
+     "Ouvrir sur la confidentialité de la parole."
+    ],
+    "deroule": [
+     "Présentation d’Aïssatou et de la sortie (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le téléphone arabe des sons (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Une phrase préparée avec un mot rare (« Le pélican mange un poisson argenté au bord du fleuve »)."],
+    "reponses": [
+     "Les mots rares ou mal articulés changent le plus : c’est aussi là que la machine se trompe.",
+     "Débat : on ne dit pas tout à voix haute (secrets, informations de famille). Un appareil qui écoute doit être utilisé avec l’accord de chacun."
+    ],
+    "attention": "Si possible, montrer la dictée vocale d’un téléphone en direct : les élèves voient la machine écrire."
+   }
+  },
+  {
+   "id": "ep6-2",
+   "title": "Wolof, français, pulaar : toutes nos langues",
+   "scene": { "id": "radio-fouta", "label": "La radio du Fouta" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "aminata"],
+   "problem": "La machine écrit très bien le français… mais quand Aminata parle pulaar, elle écrit n’importe quoi !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "aminata", "emoji": "🎙️",
+     "image": "ep6-l2-francais.webp",
+     "alt": "Aminata parle en français au micro ; l’écran montre des lignes de texte bien alignées.",
+     "text": "Aminata parle en français : la machine écrit tout, sans erreur. La classe applaudit."
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "aissatou", "emoji": "😮",
+     "image": "ep6-l2-pulaar.webp",
+     "alt": "Aminata parle en pulaar ; l’écran affiche des mots mélangés et des points d’interrogation. Aïssatou fronce les sourcils.",
+     "text": "Puis Aminata dit « On jaraama » en pulaar, pour remercier les auditeurs. La machine écrit n’importe quoi ! Aïssatou proteste : « Elle ne connaît pas ma langue ? »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "aminata", "emoji": "📚",
+     "image": "ep6-l2-explication.webp",
+     "alt": "Aminata montre une énorme pile de livres et d’enregistrements en français, et une toute petite pile en pulaar.",
+     "text": "Aminata explique : « La machine a écouté des millions d’heures de français, mais très peu de pulaar ou de wolof. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep6-l2-palou.webp",
+     "alt": "Palou tend un micro aux élèves, comme pour dire « à vous de parler ».",
+     "text": "Palou propose : « Pour qu’une IA comprenne nos langues, il faut lui donner des exemples dans nos langues. Et ça, c’est nous qui pouvons le faire ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🗣️",
+     "word": { "terme": "Langue nationale", "sens": "Une langue parlée par beaucoup de personnes dans un pays. Au Sénégal : le wolof, le pulaar, le sérère, le diola, le mandinka, le soninké…" },
+     "text": "Une IA comprend bien les langues qu’elle a beaucoup entendues. Pour qu’elle comprenne nos langues nationales, il faut lui en donner des exemples."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Aïssatou à faire comprendre sa langue à la machine !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pourquoi la machine se trompe-t-elle en pulaar ?",
+       "hint": "Combien d’exemples en pulaar a-t-elle entendus ?",
+       "success": "Exact ! Elle a entendu très peu d’exemples en pulaar.",
+       "options": [
+        { "label": "Elle a entendu très peu de pulaar", "pict": "pile-petite", "correct": true },
+        { "label": "Le pulaar est une langue trop difficile", "pict": "erreur-croix", "explain": "Aucune langue n’est « trop difficile » : il lui manque juste des exemples." },
+        { "label": "Aminata parle mal", "pict": "gronder", "explain": "Aminata parle très bien ! C’est la machine qui manque d’exemples." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les langues nationales du Sénégal.",
+       "hint": "Il y en a trois.",
+       "success": "Bravo ! Le wolof, le pulaar et le diola sont des langues nationales du Sénégal.",
+       "options": [
+        { "label": "Le wolof", "pict": "bulle-wolof", "emoji": "🗣️", "correct": true },
+        { "label": "Le pulaar", "pict": "bulle-pulaar", "emoji": "🗣️", "correct": true },
+        { "label": "Le diola", "pict": "bulle-diola", "emoji": "🗣️", "correct": true },
+        { "label": "Le japonais", "pict": "bulle-lointaine", "emoji": "🗾", "explain": "Le japonais est la langue du Japon, très loin du Sénégal." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Que peut faire la classe pour aider la machine à apprendre le pulaar et le wolof ?",
+       "hint": "Une IA apprend avec…",
+       "success": "Bravo ! Enregistrer des phrases dans nos langues, avec leur texte.",
+       "options": [
+        { "label": "Enregistrer des phrases dans nos langues, avec leur texte", "pict": "micro-telephone", "correct": true },
+        { "label": "Parler seulement français", "pict": "bulle-longue", "explain": "Alors la machine n’apprendrait jamais nos langues !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🌍",
+     "titre": "La carte des langues de la classe",
+     "duree": "20 minutes",
+     "groupes": "Toute la classe",
+     "text": "Chaque élève dit quelles langues on parle chez lui. Au tableau, on fait un tableau et un graphique des langues de la classe (comme au module 2 !). Puis chacun apprend aux autres à dire « merci » dans sa langue : « Jërëjëf » en wolof, « On jaraama » en pulaar…",
+     "materiel": ["Craies de couleur", "Le tableau des langues"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "aissatou", "emoji": "💬",
+     "question": "Aïssatou demande : « Si les machines comprennent seulement le français ou l’anglais, qu’est-ce qui arrive aux gens qui ne parlent que pulaar ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qui pourrait être laissé de côté ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une IA comprend bien une langue quand…",
+       "hint": "Pense aux deux piles de livres.",
+       "success": "Oui ! Quand elle l’a beaucoup entendue.",
+       "options": [
+        { "label": "Elle l’a beaucoup entendue", "pict": "pile-grande", "correct": true },
+        { "label": "Cette langue est la plus belle", "pict": "dessin-joli", "explain": "Toutes les langues sont belles ! Ce qui compte, c’est le nombre d’exemples." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le wolof, le pulaar, le sérère sont…",
+       "hint": "Le mot nouveau.",
+       "success": "Exact ! Des langues nationales du Sénégal.",
+       "options": [
+        { "label": "Des langues nationales du Sénégal", "pict": "bulle-wolof", "correct": true },
+        { "label": "Des plats sénégalais", "pict": "mangue", "explain": "Ce ne sont pas des plats : ce sont des langues !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais pourquoi les machines doivent apprendre nos langues.",
+     "learned": "Une IA comprend bien les langues qu’elle a beaucoup entendues. Pour nos langues nationales, il faut lui donner des exemples dans nos langues."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre que les performances d’une IA dépendent de la quantité d’exemples dans chaque langue.",
+     "Valoriser les langues nationales du Sénégal.",
+     "Réfléchir à l’exclusion des personnes dont la langue est peu représentée."
+    ],
+    "deroule": [
+     "Rappel : la machine écoute (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : la carte des langues de la classe (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Craies de couleur."],
+    "reponses": [
+     "Langues nationales du Sénégal (exemples) : wolof, pulaar, sérère, diola, mandinka, soninké, et d’autres. Le français est la langue officielle.",
+     "« Merci » : jërëjëf (wolof), on jaraama (pulaar). Faire vérifier les autres langues par les élèves et leurs familles.",
+     "Débat : sans exemples dans leurs langues, des personnes ne pourront pas utiliser ces outils. Des chercheurs sénégalais et africains travaillent à créer ces données."
+    ],
+    "attention": "Valoriser toutes les langues parlées dans la classe, y compris celles d’autres pays."
+   }
+  },
+  {
+   "id": "ep6-3",
+   "title": "Parler à un assistant",
+   "scene": { "id": "radio-fouta", "label": "La radio du Fouta" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "aminata"],
+   "problem": "À la radio, un assistant vocal répond aux questions. Mais il faut savoir comment lui parler !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "🔊",
+     "image": "ep6-l3-assistant.webp",
+     "alt": "Moussa parle à un petit haut-parleur rond posé sur la table du studio.",
+     "text": "Dans le studio, il y a un petit assistant vocal. Moussa lui demande, très vite et en marmonnant : « Euh… le truc là… il fait quel temps ? »"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "fatou", "emoji": "🤷🏾",
+     "image": "ep6-l3-incompris.webp",
+     "alt": "Le haut-parleur affiche un point d’interrogation ; Fatou rit doucement.",
+     "text": "L’assistant répond : « Je n’ai pas compris. » Fatou rit : « Moi non plus, je n’ai rien compris ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "📒",
+     "image": "ep6-l3-khady.webp",
+     "alt": "Khady parle clairement devant l’assistant, qui affiche un soleil.",
+     "text": "Khady essaie, lentement et clairement : « Quel temps fera-t-il demain à Podor ? » L’assistant répond : « Demain, il fera chaud et ensoleillé. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "lamine", "emoji": "🤨",
+     "image": "ep6-l3-lamine.webp",
+     "alt": "Lamine regarde le ciel par la fenêtre, puis l’assistant, avec sa loupe.",
+     "text": "Lamine ajoute : « Et on vérifie quand même ! L’assistant peut se tromper, comme toutes les IA. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🗨️",
+     "word": { "terme": "Assistant vocal", "sens": "Une IA à qui on parle : elle reconnaît la question et cherche une réponse." },
+     "text": "Un assistant vocal comprend mieux une question claire et précise. Mais il peut se tromper : on vérifie ses réponses."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide la classe à bien parler à l’assistant !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Quelle question l’assistant comprendra-t-il le mieux ?",
+       "hint": "Claire, complète, précise.",
+       "success": "Bravo ! Une question claire, avec le lieu et le jour.",
+       "options": [
+        { "label": "« Quel temps fera-t-il demain à Podor ? »", "pict": "question-choix", "correct": true },
+        { "label": "« Euh… le truc… il fait quoi ? »", "pict": "bulle-longue", "explain": "Trop flou ! Il ne sait pas de quoi tu parles." },
+        { "label": "« Temps ! »", "pict": "soleil", "explain": "Un seul mot : il ne sait pas quel jour, ni quel endroit." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "L’assistant dit qu’il va pleuvoir, mais le ciel est tout bleu. Que fais-tu ?",
+       "hint": "Lamine a un conseil…",
+       "success": "Exact ! On vérifie avec une autre source : le ciel, un adulte, la radio.",
+       "options": [
+        { "label": "Je vérifie autrement : le ciel, un adulte, la radio", "pict": "loupe-verifier", "correct": true },
+        { "label": "Je le crois, il ne se trompe jamais", "pict": "robot-sait-tout", "explain": "Un assistant peut se tromper : on vérifie." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les bonnes habitudes pour parler à un assistant.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! Parler clairement et ne pas donner d’informations personnelles.",
+       "options": [
+        { "label": "Parler clairement, sans aller trop vite", "pict": "bouche-claire", "emoji": "🗣️", "correct": true },
+        { "label": "Ne jamais lui donner mon adresse ou mes secrets", "pict": "cadenas", "emoji": "🔒", "correct": true },
+        { "label": "Crier très fort", "pict": "crier", "emoji": "📢", "explain": "Crier n’aide pas : parler clairement suffit." },
+        { "label": "Lui dire mon mot de passe", "pict": "cle", "emoji": "🔑", "explain": "Jamais ! Un mot de passe, ça ne se dit à personne, même pas à une machine." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🎤",
+     "titre": "L’assistant humain",
+     "duree": "15 minutes",
+     "groupes": "Par deux",
+     "text": "Un élève joue l’assistant vocal : il ne répond que si la question est claire et complète (sinon il dit « Je n’ai pas compris »). L’autre élève doit poser des questions sur la classe : « Combien d’élèves sont absents aujourd’hui ? ». Puis on échange.",
+     "materiel": ["Aucun"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "khady", "emoji": "💬",
+     "question": "Khady demande : « Est-ce que l’assistant est notre ami ? Est-ce qu’on peut tout lui raconter ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quelle différence entre un ami et une machine qui répond ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour qu’un assistant vocal comprenne, ta question doit être…",
+       "hint": "Pense à Khady.",
+       "success": "Oui ! Claire et précise.",
+       "options": [
+        { "label": "Claire et précise", "pict": "question-choix", "correct": true },
+        { "label": "Très très longue", "pict": "bulle-longue", "explain": "Pas besoin d’être long : il faut être clair." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Que ne dit-on jamais à un assistant vocal ?",
+       "hint": "Ce qui est privé…",
+       "success": "Exact ! Ses secrets, son adresse, ses mots de passe.",
+       "options": [
+        { "label": "Ses secrets et ses mots de passe", "pict": "cadenas", "correct": true },
+        { "label": "« Quel temps fait-il ? »", "pict": "soleil", "explain": "Ça, on peut le demander sans problème !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais bien parler à un assistant.",
+     "learned": "Un assistant vocal comprend mieux une question claire. Il peut se tromper : je vérifie. Je ne lui confie jamais mes secrets."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Formuler une question claire et précise pour un assistant.",
+     "Vérifier les réponses d’un assistant.",
+     "Protéger ses informations personnelles."
+    ],
+    "deroule": [
+     "Rappel : nos langues et la machine (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : l’assistant humain (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Aucun."],
+    "reponses": [
+     "Une bonne question contient : de quoi on parle, où, quand (« Quel temps fera-t-il demain à Podor ? »).",
+     "Débat : un ami nous connaît, nous aime, garde nos secrets. Un assistant est une machine d’une entreprise : il ne ressent rien, et ce qu’on lui dit peut être enregistré."
+    ],
+    "attention": "Ne pas faire peur : les assistants sont utiles, il faut juste de bonnes habitudes."
+   }
+  },
+  {
+   "id": "ep6-4",
+   "title": "Le dictionnaire parlé de la classe",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "De retour en classe, les élèves créent un dictionnaire parlé dans toutes leurs langues, pour aider les machines… et les nouveaux élèves !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "📖",
+     "image": "ep6-l4-idee.webp",
+     "alt": "Aïssatou, debout devant la classe, propose une idée avec enthousiasme.",
+     "text": "Aïssatou a une idée : « Faisons un dictionnaire parlé dans toutes nos langues ! Pour les nouveaux élèves… et pour apprendre aux machines. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "🎙️",
+     "image": "ep6-l4-enregistrement.webp",
+     "alt": "Madame Diop tient un téléphone qui enregistre ; Seydou dit un mot en souriant.",
+     "text": "Madame Diop sort le téléphone de la classe : « Chacun dit un mot dans sa langue, et on écrit ce mot à côté. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep6-l4-palou.webp",
+     "alt": "Palou montre une grande affiche avec des colonnes : français, wolof, pulaar, et un petit dessin de haut-parleur à côté de chaque mot.",
+     "text": "Palou est enchanté : « Un mot, sa voix et son texte : c’est exactement le genre d’exemple dont une IA a besoin pour apprendre une langue ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🎧",
+     "word": { "terme": "Enregistrement", "sens": "Un son gardé pour pouvoir l’écouter plus tard. Avec son texte, il devient un exemple pour une IA." },
+     "text": "Un enregistrement, avec le texte qui va avec, est un exemple précieux pour apprendre une langue à une IA."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare le dictionnaire parlé !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour un bon exemple, qu’enregistre-t-on avec chaque mot ?",
+       "hint": "Une IA a besoin du son… et de quoi d’autre ?",
+       "success": "Exact ! La voix et le texte écrit du mot.",
+       "options": [
+        { "label": "La voix et le texte écrit du mot", "pict": "micro-telephone", "correct": true },
+        { "label": "Seulement la voix, sans rien écrire", "pict": "ondes-son", "explain": "Sans texte, l’IA ne sait pas quel mot elle entend." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avant d’enregistrer la voix d’un camarade, il faut…",
+       "hint": "Sa voix est à lui…",
+       "success": "Bravo ! Lui demander son accord.",
+       "options": [
+        { "label": "Lui demander s’il est d’accord", "pict": "main-levee", "correct": true },
+        { "label": "L’enregistrer en cachette", "pict": "cacher", "explain": "Jamais en cachette : sa voix lui appartient, on demande son accord." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour qu’une IA comprenne bien le wolof, mieux vaut des enregistrements…",
+       "hint": "Souviens-toi des exemples variés.",
+       "success": "Exact ! De beaucoup de personnes différentes : filles, garçons, adultes, de plusieurs régions.",
+       "options": [
+        { "label": "De beaucoup de personnes différentes", "pict": "foule-enfants", "correct": true },
+        { "label": "D’une seule personne", "pict": "un-enfant", "explain": "Avec une seule voix, l’IA comprendrait mal toutes les autres." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "📖",
+     "titre": "Projet de classe : le dictionnaire parlé",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "La classe choisit 20 mots utiles à l’école (bonjour, merci, cahier, maîtresse, récréation…). Chaque groupe s’occupe de 5 mots : il les écrit en français et dans les langues de la classe, puis enregistre chaque mot avec plusieurs voix, avec l’accord de chacun. On fait une grande affiche du dictionnaire et on garde les enregistrements pour les nouveaux élèves.",
+     "materiel": ["Un téléphone ou une tablette pour enregistrer", "Une grande affiche", "L’accord des élèves pour l’enregistrement de leur voix"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Si une entreprise voulait vos enregistrements pour créer une IA, que faudrait-il lui demander avant d’accepter ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. À quoi serviront-ils ? Qui pourra les écouter ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une machine qui transforme la parole en texte a appris avec…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! Des exemples de paroles avec leur texte.",
+       "options": [
+        { "label": "Des exemples de paroles avec leur texte", "pict": "micro-telephone", "correct": true },
+        { "label": "Des photos d’oiseaux", "pict": "pelican", "explain": "Les photos d’oiseaux, c’était au module 5 ! Ici, il faut des paroles." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi la machine se trompait-elle en pulaar ?",
+       "hint": "La leçon 2.",
+       "success": "Exact ! Elle avait très peu d’exemples en pulaar.",
+       "options": [
+        { "label": "Très peu d’exemples en pulaar", "pict": "pile-petite", "correct": true },
+        { "label": "Le pulaar n’existe pas", "pict": "erreur-croix", "explain": "Bien sûr que si ! Des millions de personnes le parlent." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avant d’enregistrer la voix de quelqu’un, on…",
+       "hint": "La leçon 4.",
+       "success": "Bravo ! On demande son accord.",
+       "options": [
+        { "label": "Demande son accord", "pict": "main-levee", "correct": true },
+        { "label": "Enregistre en cachette", "pict": "cacher", "explain": "Jamais en cachette !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton dictionnaire parlé est prêt. Le module 6 est terminé !",
+     "learned": "Une IA apprend à comprendre la parole avec des exemples de voix et leur texte. Pour nos langues, il faut des exemples dans nos langues, enregistrés avec l’accord de chacun."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Produire un corpus simple (mot + texte + voix) et comprendre son utilité pour une IA.",
+     "Valoriser le plurilinguisme de la classe.",
+     "Comprendre le consentement pour l’enregistrement de la voix."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; choix des mots et écriture dans les différentes langues (30 min).",
+     "Séance 2 : enregistrements (20 min) ; affiche (10 min) ; « On en parle » (10 min) ; défi (5 min)."
+    ],
+    "materiel": ["Un téléphone ou une tablette, une grande affiche, des feutres."],
+    "reponses": [
+     "Les écritures des langues nationales peuvent varier : accepter les propositions des élèves et, si possible, les faire vérifier par une famille ou un collègue.",
+     "Débat : demander à quoi serviront les enregistrements, qui pourra les écouter, combien de temps ils seront gardés, et pouvoir dire non."
+    ],
+    "attention": "Ne jamais enregistrer un élève qui refuse. Garder les enregistrements dans la classe, ne pas les publier."
+   }
+  }
+ ]
+}

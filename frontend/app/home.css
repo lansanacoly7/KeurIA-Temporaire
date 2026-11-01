@@ -1,0 +1,12 @@
+/* home.css : sommaire. Le CSS est découpé en 10 fichiers (dossier ./styles/home/), importés dans l'ordre d'origine : la cascade est identique.
+   Pour modifier une règle, ouvrir le morceau concerné ; pour en ajouter, respecter cet ordre. */
+@import "./styles/home/01-palette-officielle-de-l-application-cf-s.css";
+@import "./styles/home/02-vague-organique-inferieure-fluide.css";
+@import "./styles/home/03-bandeau-defilant-fluide-aerien-sans-bord.css";
+@import "./styles/home/04-grille-des-modules.css";
+@import "./styles/home/05-slider-defilant-des-partenaires-glisseme.css";
+@import "./styles/home/06-bouton-secondaire-tactile-vert-officiel.css";
+@import "./styles/home/07-verrouillage-absolu-anti-scroll-horizont.css";
+@import "./styles/home/08-grille-des-modules-grille-2-colonnes-int.css";
+@import "./styles/home/09-styles.css";
+@import "./styles/home/10-3-ultra-petits-ecrans-380px.css";

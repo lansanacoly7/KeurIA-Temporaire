@@ -1,0 +1,967 @@
+{
+  "module": {
+    "id": "p1",
+    "chapter": 1,
+    "title": "Bonjour, l’IA !",
+    "place": "La cour de l’école",
+    "emoji": "🤖",
+    "intro": "Une grande caisse est arrivée dans la cour ! Viens vite voir ce qu’il y a dedans."
+  },
+  "lessons": [
+    {
+      "id": "p1-1",
+      "title": "C’est quoi une IA ?",
+      "scene": {
+        "id": "ecole-cour",
+        "label": "La cour de l’école"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "moussa",
+        "fatou",
+        "baye"
+      ],
+      "problem": "Une caisse mystérieuse est arrivée à l’école. Qui est ce nouveau venu ?",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "emoji": "📦",
+          "image": "m01-l1-caisse.webp",
+          "alt": "Une grande caisse en carton au milieu de la cour de l’école, des enfants curieux autour.",
+          "text": "C’est la récréation ! Une grande caisse vient d’arriver dans la cour de l’école."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "palou",
+          "emoji": "🦁",
+          "wolof": {
+            "mot": "Nanga def ?",
+            "sens": "Comment vas-tu ?"
+          },
+          "image": "m01-l1-palou-sort.webp",
+          "alt": "Palou sort de la caisse en agitant la patte, Madame Diop et Moussa sont étonnés.",
+          "text": "Bonjour ! Moi, c’est Palou, une IA."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "emoji": "🤔",
+          "text": "Moussa et Fatou se regardent : « Une IA ? C’est quoi, ça ? »",
+          "image": "m01-l1-s03.webp",
+          "alt": "Illustration : Moussa et Fatou se regardent : « Une IA ? C’est quoi, ça ? »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "IA",
+            "sens": "Intelligence artificielle : un outil fabriqué par des humains."
+          },
+          "text": "IA veut dire intelligence artificielle : un outil fabriqué par des humains. Il aide, mais il ne pense pas comme toi."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Aide Palou à comprendre ! Réponds avec ton doigt.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Baye met la radio. Le téléphone de Madame Diop reconnaît la chanson. Utilise-t-il une IA ?",
+              "hint": "Regarde : le téléphone trouve le nom de la chanson tout seul.",
+              "success": "Bravo ! Le téléphone reconnaît la chanson : c’est une IA.",
+              "options": [
+                {
+                  "label": "Oui, il reconnaît la chanson",
+                  "pict": "telephone-musique",
+                  "correct": true
+                },
+                {
+                  "label": "Non, c’est de la magie",
+                  "pict": "baguette-magique",
+                  "explain": "Ce n’est pas de la magie : des humains ont fabriqué cet outil."
+                },
+                {
+                  "label": "Non, un chanteur est caché dedans",
+                  "pict": "personne-cachee",
+                  "explain": "Il n’y a personne dedans ! Le téléphone compare le son à des exemples."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou marche, parle et rit. Est-il vivant comme Moussa ?",
+              "hint": "Pense à qui a fabriqué Palou.",
+              "success": "Exact ! Palou a l’air vivant, mais c’est une machine.",
+              "options": [
+                {
+                  "label": "Non, c’est une machine",
+                  "pict": "robot-machine",
+                  "correct": true
+                },
+                {
+                  "label": "Oui, il respire comme nous",
+                  "pict": "respirer",
+                  "explain": "Palou a l’air vivant, mais il ne respire pas : il a été construit."
+                },
+                {
+                  "label": "Oui, il a un cœur qui bat",
+                  "pict": "coeur-bat",
+                  "explain": "Palou n’a pas de cœur qui bat. Il est fait de pièces et de programmes."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Une IA peut-elle se tromper ?",
+              "hint": "Une IA peut manquer d’exemples pour bien apprendre.",
+              "success": "Oui ! C’est pour ça qu’on vérifie toujours ses réponses.",
+              "options": [
+                {
+                  "label": "Oui, si elle a peu appris",
+                  "pict": "ia-hesite",
+                  "correct": true
+                },
+                {
+                  "label": "Non : elle sait toujours tout",
+                  "pict": "robot-sait-tout",
+                  "explain": "Aucune IA ne sait tout. On vérifie toujours ses réponses."
+                },
+                {
+                  "label": "Oui, mais seulement quand on l’éteint",
+                  "pict": "bouton-eteindre",
+                  "explain": "Éteinte, une IA ne fait rien du tout !"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Palou est une IA. Qu’est-ce qu’une IA ?",
+              "hint": "Pense à qui a construit Palou.",
+              "success": "Oui ! Une IA est un outil fabriqué par des humains.",
+              "options": [
+                {
+                  "label": "Un outil fabriqué par des humains",
+                  "pict": "robot-machine",
+                  "correct": true
+                },
+                {
+                  "label": "Un être vivant comme moi",
+                  "pict": "respirer",
+                  "explain": "Une IA ne respire pas : elle est construite."
+                },
+                {
+                  "label": "De la magie",
+                  "pict": "baguette-magique",
+                  "explain": "Ce n’est pas de la magie : des humains l’ont fabriquée."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Lequel de ces objets est une IA ?",
+              "hint": "Cherche celui qui comprend ta voix et te répond.",
+              "success": "Bravo ! L’assistant vocal comprend ta question et répond.",
+              "options": [
+                {
+                  "label": "Un assistant vocal qui répond",
+                  "pict": "assistant-vocal",
+                  "correct": true
+                },
+                {
+                  "label": "Une lampe qu’on allume",
+                  "pict": "lampe",
+                  "explain": "Une lampe s’allume, mais elle ne comprend rien."
+                },
+                {
+                  "label": "Un vélo",
+                  "pict": "velo",
+                  "explain": "Un vélo roule grâce à tes jambes, pas grâce à une IA."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou donne une mauvaise réponse. Que fais-tu ?",
+              "hint": "Une IA peut se tromper : qui peut t’aider à vérifier ?",
+              "success": "Exact ! Une IA peut se tromper : on vérifie avec un adulte.",
+              "options": [
+                {
+                  "label": "Je vérifie avec un adulte",
+                  "pict": "adulte-confiance",
+                  "correct": true
+                },
+                {
+                  "label": "Je le crois sans réfléchir",
+                  "pict": "sur-donc-vrai",
+                  "explain": "Une IA peut se tromper : il faut vérifier."
+                },
+                {
+                  "label": "Je me fâche contre lui",
+                  "pict": "se-facher",
+                  "explain": "Se fâcher n’aide pas. Mieux vaut vérifier avec un adulte."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! Palou est ton nouvel ami.",
+          "learned": "Une IA est un outil fabriqué par des humains. Elle aide, mais elle peut se tromper."
+        }
+      ]
+    },
+    {
+      "id": "p1-2",
+      "title": "Comment apprend une IA ?",
+      "scene": {
+        "id": "ecole-cour",
+        "label": "La cour de l’école"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "baye"
+      ],
+      "problem": "Palou ne connaît pas les chats. Comment peut-il apprendre à les reconnaître ?",
+      "callback": "Tu te rappelles ? Palou est une IA : il a besoin d’apprendre.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Question",
+          "emoji": "🐈",
+          "image": "m01-l2-thiof.webp",
+          "alt": "Thiof, le chat de l’école, se lèche la patte dans la cour. Palou et Fatou le regardent.",
+          "text": "Le chat de Baye, Thiof, se lave au soleil dans la cour. Palou ne sait pas ce qu’est un chat."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "emoji": "🖼️",
+          "text": "Fatou sort des photos de chats. « Regarde, Palou : ce sont des exemples ! »",
+          "image": "m01-l2-s02.webp",
+          "alt": "Illustration : Fatou sort des photos de chats. « Regarde, Palou : ce sont des exemples ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "exemple",
+            "sens": "Une image ou une information qu’on montre pour apprendre."
+          },
+          "text": "Pour apprendre, une IA regarde beaucoup d’exemples. Plus il y en a, mieux elle apprend."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "À toi de jouer avec Palou !",
+          "rounds": [
+            {
+              "type": "multi",
+              "prompt": "Aide Palou : touche tous les chats.",
+              "hint": "Il y en a deux.",
+              "success": "Bravo ! Ces deux-là sont bien des chats.",
+              "options": [
+                {
+                  "label": "Un chat",
+                  "pict": "chat",
+                  "emoji": "🐈",
+                  "correct": true
+                },
+                {
+                  "label": "Un chien",
+                  "pict": "chien",
+                  "emoji": "🐕",
+                  "explain": "C’est un chien : il n’a pas le même museau que le chat."
+                },
+                {
+                  "label": "Un chaton",
+                  "pict": "chaton",
+                  "emoji": "🐱",
+                  "correct": true
+                },
+                {
+                  "label": "Une vache",
+                  "pict": "vache",
+                  "emoji": "🐄",
+                  "explain": "C’est une vache : elle est bien plus grande qu’un chat."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qui aide le mieux Palou à apprendre ?",
+              "hint": "Pense à tous les chats qui existent : gris, noirs, petits, gros.",
+              "success": "Oui ! Des exemples variés apprennent plus à Palou.",
+              "options": [
+                {
+                  "label": "Beaucoup de photos différentes",
+                  "pict": "photos-variees",
+                  "correct": true
+                },
+                {
+                  "label": "Une seule photo, très grande",
+                  "pict": "une-grande-photo",
+                  "explain": "Une seule photo ne montre pas tous les chats : gris, noirs, petits, gros."
+                },
+                {
+                  "label": "Le mot « chat » répété dix fois",
+                  "pict": "mot-repete",
+                  "explain": "Répéter un mot ne suffit pas : Palou a besoin de voir des images."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou n’a vu que des chats gris. Il voit un chat orange. Que peut-il faire ?",
+              "hint": "Palou n’a jamais vu de chat de cette couleur.",
+              "success": "Oui ! Avec peu d’exemples, une IA peut se tromper.",
+              "options": [
+                {
+                  "label": "Hésiter, car il en a vu peu",
+                  "pict": "hesiter",
+                  "correct": true
+                },
+                {
+                  "label": "Le reconnaître à coup sûr, sans hésiter",
+                  "pict": "certain-sur",
+                  "explain": "Il n’a vu que des chats gris : il peut hésiter devant un chat orange."
+                },
+                {
+                  "label": "Dire que c’est une vache",
+                  "pict": "vache",
+                  "explain": "Pas forcément une vache ! Mais il peut se tromper si on lui a montré trop peu de chats."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "emoji": "🤖",
+          "text": "Une IA fait comme toi : elle apprend avec des exemples variés. Avec peu d’exemples, elle se trompe plus."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Pour apprendre ce qu’est un chat, que montre-t-on à Palou ?",
+              "hint": "Plus il voit de chats différents, mieux il apprend.",
+              "success": "Oui ! Beaucoup d’exemples variés aident l’IA à bien apprendre.",
+              "options": [
+                {
+                  "label": "Plein de photos différentes",
+                  "pict": "photos-variees",
+                  "correct": true
+                },
+                {
+                  "label": "Une seule photo, toujours la même",
+                  "pict": "une-grande-photo",
+                  "explain": "Avec une seule photo, l’IA apprend très peu."
+                },
+                {
+                  "label": "Aucune photo : il devine tout seul",
+                  "pict": "rien",
+                  "explain": "Sans exemple, une IA ne peut rien apprendre."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Une IA a vu très peu d’exemples. Que risque-t-elle ?",
+              "hint": "Pense à toi quand tu n’as presque rien appris.",
+              "success": "Exact ! Avec peu d’exemples, une IA se trompe plus souvent.",
+              "options": [
+                {
+                  "label": "Elle se trompe",
+                  "pict": "ia-hesite",
+                  "correct": true
+                },
+                {
+                  "label": "Elle devient parfaite d’un coup",
+                  "pict": "ia-parfaite",
+                  "explain": "Aucune IA n’est parfaite, surtout avec peu d’exemples."
+                },
+                {
+                  "label": "Elle sait déjà tout sur tout",
+                  "pict": "robot-sait-tout",
+                  "explain": "Une IA ne sait jamais tout."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pour que Palou reconnaisse bien les chiens, que lui montre-t-on ?",
+              "hint": "Il faut des exemples qui ne se ressemblent pas tous.",
+              "success": "Bravo ! Des chiens variés, c’est un bon entraînement.",
+              "options": [
+                {
+                  "label": "Des chiens variés",
+                  "pict": "photos-differentes",
+                  "correct": true
+                },
+                {
+                  "label": "Seulement des photos de chats",
+                  "pict": "chat",
+                  "explain": "Des chats ne l’aident pas à reconnaître les chiens."
+                },
+                {
+                  "label": "Toujours la même photo de chien",
+                  "pict": "memes-photos",
+                  "explain": "Toujours la même photo, c’est trop peu varié."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! Palou reconnaît les chats.",
+          "learned": "Une IA apprend avec des exemples. Plus ils sont variés, mieux elle apprend."
+        }
+      ]
+    },
+    {
+      "id": "p1-3",
+      "title": "IA ou pas IA ?",
+      "scene": {
+        "id": "ecole-cour",
+        "label": "La cour de l’école"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou",
+        "mme-diop",
+        "baye",
+        "mame-awa"
+      ],
+      "problem": "Moussa croit que tout ce qui s’allume est une IA. Palou n’en est pas sûr.",
+      "callback": "Tu te rappelles ? Le téléphone de Madame Diop reconnaît les chansons.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "emoji": "🕵️",
+          "image": "m01-l3-dispute.webp",
+          "alt": "Moussa montre sa radio, Fatou n’est pas d’accord, Madame Diop les observe avec calme.",
+          "text": "Moussa crie : « Tout ce qui s’allume est une IA ! » Fatou n’est pas d’accord."
+        },
+        {
+          "kind": "story",
+          "pose": "Reflexion",
+          "speaker": "palou",
+          "emoji": "🔎",
+          "text": "Palou propose une enquête. Les enfants vont chercher des indices.",
+          "image": "m01-l3-s02.webp",
+          "alt": "Illustration : Palou propose une enquête. Les enfants vont chercher des indices."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "indice",
+            "sens": "Ce qui aide à trouver la réponse."
+          },
+          "text": "Une IA reconnaît, devine ou propose quelque chose. Un objet qui s’allume, ça ne suffit pas."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Range chaque objet : IA ou pas IA ?",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse un objet dans sa boîte.",
+              "hint": "Cherche : est-ce qu’il reconnaît, devine ou propose quelque chose ?",
+              "success": "Bravo ! Tous les objets sont bien rangés.",
+              "bins": [
+                {
+                  "id": "ia",
+                  "label": "IA",
+                  "pict": "ia-robot",
+                  "emoji": "🤖"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas une IA",
+                  "pict": "pas-ia",
+                  "emoji": "🙅"
+                }
+              ],
+              "items": [
+                {
+                  "id": "lampe",
+                  "label": "La lampe de la classe",
+                  "pict": "lampe",
+                  "emoji": "💡",
+                  "bin": "pas",
+                  "explain": "Elle s’allume avec un bouton, c’est tout."
+                },
+                {
+                  "id": "visage",
+                  "label": "Le téléphone qui reconnaît ton visage",
+                  "pict": "telephone-visage",
+                  "emoji": "📱",
+                  "bin": "ia",
+                  "explain": "Il reconnaît un visage : c’est un travail d’IA."
+                },
+                {
+                  "id": "velo",
+                  "label": "Le vélo de Moussa",
+                  "pict": "velo",
+                  "emoji": "🚲",
+                  "bin": "pas",
+                  "explain": "Un vélo avance avec tes jambes, sans rien deviner."
+                },
+                {
+                  "id": "radio",
+                  "label": "La radio de Baye",
+                  "pict": "radio",
+                  "emoji": "📻",
+                  "bin": "pas",
+                  "explain": "Elle joue les ondes qu’elle reçoit, elle ne comprend rien."
+                }
+              ]
+            },
+            {
+              "type": "sort",
+              "prompt": "Encore un essai ! Glisse un objet dans sa boîte.",
+              "hint": "Une balance pèse avec un ressort. Une IA, elle, comprend ou devine.",
+              "success": "Bravo ! Tu sais reconnaître une IA.",
+              "bins": [
+                {
+                  "id": "ia",
+                  "label": "IA",
+                  "pict": "ia-robot",
+                  "emoji": "🤖"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas une IA",
+                  "pict": "pas-ia",
+                  "emoji": "🙅"
+                }
+              ],
+              "items": [
+                {
+                  "id": "traduit",
+                  "label": "L’appli qui traduit une phrase",
+                  "pict": "appli-traduction",
+                  "emoji": "🌐",
+                  "bin": "ia",
+                  "explain": "Elle comprend une phrase et la transforme : c’est une IA."
+                },
+                {
+                  "id": "balance",
+                  "label": "La balance de Mame Awa",
+                  "pict": "balance",
+                  "emoji": "⚖️",
+                  "bin": "pas",
+                  "explain": "Elle pèse avec un ressort : pas d’IA dedans."
+                },
+                {
+                  "id": "ballon",
+                  "label": "Le ballon de foot",
+                  "pict": "ballon",
+                  "emoji": "⚽",
+                  "bin": "pas",
+                  "explain": "Un ballon roule, il ne comprend rien."
+                },
+                {
+                  "id": "assistant",
+                  "label": "L’assistant vocal du téléphone",
+                  "pict": "assistant-vocal",
+                  "emoji": "🎙️",
+                  "bin": "ia",
+                  "explain": "Il comprend ta voix et te répond : c’est une IA."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "emoji": "🤔",
+          "text": "Pourquoi ces objets sont-ils des IA ?",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quel indice montre qu’un objet utilise une IA ?",
+              "hint": "Pense au téléphone de Madame Diop et à l’assistant vocal.",
+              "success": "Oui ! Reconnaître une voix ou un visage est un indice d’IA.",
+              "options": [
+                {
+                  "label": "Il reconnaît une voix",
+                  "pict": "voix-micro",
+                  "correct": true
+                },
+                {
+                  "label": "Il a un écran",
+                  "pict": "ecran",
+                  "explain": "Un écran ne suffit pas : une télévision n’est pas forcément une IA."
+                },
+                {
+                  "label": "Il marche avec l’électricité",
+                  "pict": "prise-electrique",
+                  "explain": "Une lampe aussi ! L’électricité ne veut pas dire IA."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Lequel de ces objets n’est pas une IA ?",
+              "hint": "Cherche l’objet qui s’allume mais ne devine rien.",
+              "success": "Oui ! Une torche s’allume, mais elle ne reconnaît ni ne devine rien.",
+              "options": [
+                {
+                  "label": "Une torche",
+                  "pict": "torche",
+                  "correct": true
+                },
+                {
+                  "label": "Un assistant vocal",
+                  "pict": "assistant-vocal",
+                  "explain": "Un assistant vocal comprend ta voix : c’est une IA."
+                },
+                {
+                  "label": "Une appli qui traduit",
+                  "pict": "appli-traduction",
+                  "explain": "Une appli qui traduit comprend les mots : c’est une IA."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "L’appli météo dit : « Il va pleuvoir demain. » Que fait-elle ?",
+              "hint": "Elle ne connaît pas l’avenir : elle fait comme une devinette.",
+              "success": "Exact ! Une IA peut deviner ce qui va arriver.",
+              "options": [
+                {
+                  "label": "Elle devine ce qui va arriver",
+                  "pict": "meteo",
+                  "correct": true
+                },
+                {
+                  "label": "Elle reconnaît ton visage",
+                  "pict": "telephone-visage",
+                  "explain": "Pour la météo, elle ne regarde pas ton visage."
+                },
+                {
+                  "label": "Elle chante une chanson",
+                  "pict": "chanter-note",
+                  "explain": "L’appli météo ne chante pas."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Moussa dit : « Tout ce qui s’allume est une IA ! » A-t-il raison ?",
+              "hint": "Une lampe s’allume. Devine-t-elle quelque chose ?",
+              "success": "Bravo ! S’allumer ne suffit pas : une IA reconnaît, devine ou propose.",
+              "options": [
+                {
+                  "label": "Non, une lampe s’allume sans rien deviner",
+                  "pict": "lampe",
+                  "correct": true
+                },
+                {
+                  "label": "Oui, tout ce qui s’allume est une IA",
+                  "pict": "television",
+                  "explain": "Une télé simple affiche des images, mais elle ne devine rien."
+                },
+                {
+                  "label": "Oui, tous les objets sont des IA",
+                  "pict": "ia-robot",
+                  "explain": "Beaucoup d’objets ne reconnaissent, ne devinent et ne proposent rien."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "text": "Bravo {prenom} ! Tu es un vrai détective.",
+          "learned": "Un objet qui s’allume n’est pas forcément une IA. Cherche s’il reconnaît, devine ou propose."
+        }
+      ]
+    },
+    {
+      "id": "p1-4",
+      "title": "Ma chasse aux IA",
+      "scene": {
+        "id": "ecole",
+        "label": "Dans l’école"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "mme-diop"
+      ],
+      "problem": "Madame Diop lance la chasse aux IA dans l’école. Il faut protéger la vie privée de chacun.",
+      "callback": "Tu te rappelles ? Une IA reconnaît, devine ou propose quelque chose.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Calme",
+          "speaker": "mme-diop",
+          "emoji": "🔎",
+          "image": "m01-l4-chasse.webp",
+          "alt": "Palou cherche des indices avec une loupe, Moussa montre le sol, Madame Diop sourit.",
+          "text": "Madame Diop lance la chasse aux IA dans l’école. Chaque équipe cherche des indices."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "emoji": "📱",
+          "text": "Moussa sort son téléphone. Il veut photographier les messages de Madame Diop !",
+          "image": "m01-l4-s02.webp",
+          "alt": "Illustration : Moussa sort son téléphone. Il veut photographier les messages de Madame Diop !"
+        },
+        {
+          "kind": "discover",
+          "pose": "Determine",
+          "emoji": "🛡️",
+          "word": {
+            "terme": "vie privée",
+            "sens": "Ce qui te concerne, toi et ta famille, et qu’on ne montre pas à tout le monde."
+          },
+          "text": "Pendant une enquête, on note à quoi sert un outil. On ne prend jamais les secrets des gens."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "👆",
+          "text": "Protège les secrets, comme un vrai détective !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une information dans sa boîte.",
+              "hint": "Un mot de passe et une adresse restent secrets.",
+              "success": "Bravo ! Tu sais ce qu’on peut partager.",
+              "bins": [
+                {
+                  "id": "partage",
+                  "label": "Je peux partager",
+                  "pict": "partage-ok",
+                  "emoji": "🙂"
+                },
+                {
+                  "id": "secret",
+                  "label": "Je garde secret",
+                  "pict": "cadenas-secret",
+                  "emoji": "🔒"
+                }
+              ],
+              "items": [
+                {
+                  "id": "plat",
+                  "label": "Mon plat préféré",
+                  "pict": "assiette-plat",
+                  "emoji": "🍲",
+                  "bin": "partage",
+                  "explain": "Ton plat préféré n’est pas un secret dangereux."
+                },
+                {
+                  "id": "mdp",
+                  "label": "Le mot de passe de ma tablette",
+                  "pict": "mot-de-passe-cle",
+                  "emoji": "🔑",
+                  "bin": "secret",
+                  "explain": "Un mot de passe protège tes affaires : il reste secret."
+                },
+                {
+                  "id": "jeu",
+                  "label": "Le nom de mon jeu préféré",
+                  "pict": "jeu-manette",
+                  "emoji": "🎮",
+                  "bin": "partage",
+                  "explain": "Le nom d’un jeu ne dit rien de privé sur toi."
+                },
+                {
+                  "id": "adresse",
+                  "label": "L’adresse de ma maison",
+                  "pict": "maison-adresse",
+                  "emoji": "🏠",
+                  "bin": "secret",
+                  "explain": "Une adresse permet de te trouver : on ne la donne pas."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait Moussa pour respecter Madame Diop ?",
+              "hint": "Une enquête regarde ce que fait l’outil, pas la vie des gens.",
+              "success": "Oui ! Il note ce que fait l’appli, sans prendre de secret.",
+              "options": [
+                {
+                  "label": "Il note à quoi sert l’appli",
+                  "pict": "carnet-note",
+                  "correct": true
+                },
+                {
+                  "label": "Il photographie tous ses messages",
+                  "pict": "photographier-ecran",
+                  "explain": "Ses messages sont privés : on ne les photographie pas."
+                },
+                {
+                  "label": "Il demande son mot de passe",
+                  "pict": "demande-mot-de-passe",
+                  "explain": "Un mot de passe est un secret : on ne le demande jamais."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qui t’accompagne pendant l’enquête ?",
+              "hint": "Pense à une personne qui te protège et que tu connais bien.",
+              "success": "Oui ! Un adulte de confiance rend l’enquête plus sûre.",
+              "options": [
+                {
+                  "label": "Un adulte de confiance",
+                  "pict": "adulte-confiance",
+                  "correct": true
+                },
+                {
+                  "label": "Un inconnu rencontré en ligne",
+                  "pict": "inconnu-ombre",
+                  "explain": "On ne suit jamais un inconnu : on reste avec un adulte de confiance."
+                },
+                {
+                  "label": "Personne, je pars seul",
+                  "pict": "enfant-seul-chemin",
+                  "explain": "Mieux vaut ne pas partir seul : un adulte peut t’aider au moindre doute."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Moussa veut photographier les messages de Madame Diop. Que lui dis-tu ?",
+              "hint": "Les messages de quelqu’un sont ses secrets.",
+              "success": "Oui ! On ne prend jamais les secrets des gens.",
+              "options": [
+                {
+                  "label": "Non, ce sont ses secrets",
+                  "pict": "cadenas-secret",
+                  "correct": true
+                },
+                {
+                  "label": "Oui, c’est pour l’enquête",
+                  "pict": "photographier-ecran",
+                  "explain": "Une enquête regarde l’outil, pas les messages privés."
+                },
+                {
+                  "label": "Oui, mais juste un peu",
+                  "pict": "partage-ok",
+                  "explain": "Même un peu, un secret reste un secret."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un inconnu te demande ton mot de passe. Que fais-tu ?",
+              "hint": "Un mot de passe est un secret.",
+              "success": "Exact ! On ne donne jamais son mot de passe, et on prévient un adulte.",
+              "options": [
+                {
+                  "label": "Je ne le donne jamais, je préviens un adulte",
+                  "pict": "adulte-confiance",
+                  "correct": true
+                },
+                {
+                  "label": "Je le donne s’il est gentil",
+                  "pict": "inconnu-gentil",
+                  "explain": "Même gentil, un inconnu ne reçoit jamais ton mot de passe."
+                },
+                {
+                  "label": "Je le donne vite",
+                  "pict": "demande-mot-de-passe",
+                  "explain": "Un mot de passe ne se donne jamais."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que note un bon détective de l’IA ?",
+              "hint": "Il regarde l’outil, pas la vie des gens.",
+              "success": "Bravo ! Il note à quoi sert l’outil, sans prendre de secret.",
+              "options": [
+                {
+                  "label": "À quoi sert l’outil",
+                  "pict": "carnet-note",
+                  "correct": true
+                },
+                {
+                  "label": "Les secrets des gens",
+                  "pict": "secret-chuchote",
+                  "explain": "Un détective responsable ne prend pas de secrets."
+                },
+                {
+                  "label": "Le mot de passe de chacun",
+                  "pict": "mot-de-passe-tablette",
+                  "explain": "Un mot de passe ne se note jamais."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🏆",
+          "sticker": "m01",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 1 avec Palou.",
+          "learned": "Une enquête responsable regarde ce que fait l’outil, pas la vie privée des gens."
+        }
+      ]
+    }
+  ]
+}

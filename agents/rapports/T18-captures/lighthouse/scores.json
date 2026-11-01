@@ -1,0 +1,12 @@
+[
+  {
+    "name": "studio79-accueil",
+    "url": "http://localhost:3000/admin/studio79",
+    "score": 100
+  },
+  {
+    "name": "studio79-editeur",
+    "url": "http://localhost:3000/admin/studio79/p1-1",
+    "score": 100
+  }
+]

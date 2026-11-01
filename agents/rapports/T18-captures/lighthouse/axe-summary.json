@@ -1,0 +1,31 @@
+[
+  {
+    "name": "studio79-accueil",
+    "url": "http://localhost:3000/admin/studio79",
+    "passes": 39,
+    "violations": [
+      {
+        "id": "aria-required-children",
+        "impact": "critical",
+        "description": "Ensure elements with an ARIA role that require child roles contain them",
+        "help": "Certain ARIA roles must contain particular children",
+        "nodes": 1
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "nodes": 41
+      }
+    ],
+    "score": 95
+  },
+  {
+    "name": "studio79-editeur",
+    "url": "http://localhost:3000/admin/studio79/p1-1",
+    "passes": 36,
+    "violations": [],
+    "score": 100
+  }
+]

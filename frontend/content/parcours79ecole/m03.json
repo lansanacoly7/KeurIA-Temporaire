@@ -1,0 +1,1022 @@
+{
+ "module": {
+  "id": "ep3",
+  "chapter": 3,
+  "title": "Trier et ranger",
+  "place": "Une coopérative de mangues, en Casamance",
+  "emoji": "🥭",
+  "intro": "Un nouvel élève arrive avec un panier de mangues… et une invitation en Casamance !",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep3-1",
+   "title": "Ranger avec une règle",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady",
+    "seydou"
+   ],
+   "problem": "Seydou apporte un panier de mangues toutes mélangées. Comment les ranger ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "seydou",
+     "emoji": "🥭",
+     "image": "ep3-l1-seydou-arrive.webp",
+     "alt": "Seydou, le nouvel élève, entre en classe avec un grand panier de mangues.",
+     "text": "Un nouvel élève arrive avec un grand panier : « Bonjour ! Je m’appelle Seydou. Ma famille cultive des mangues en Casamance. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "moussa",
+     "emoji": "🧺",
+     "image": "ep3-l1-melange.webp",
+     "alt": "Le panier est renversé sur la table : des mangues grosses, petites, vertes et jaunes, toutes mélangées.",
+     "text": "Moussa renverse le panier sur la table. Grosses, petites, vertes, jaunes… tout est mélangé !"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "khady",
+     "emoji": "📏",
+     "image": "ep3-l1-regle.webp",
+     "alt": "Khady sépare les mangues en deux tas : les jaunes d’un côté, les vertes de l’autre.",
+     "text": "Khady propose : « Choisissons une règle. Par exemple : les mangues jaunes ici, les vertes là. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "🚌",
+     "image": "ep3-l1-invitation.webp",
+     "alt": "Madame Diop montre une lettre, les élèves sautent de joie.",
+     "text": "Madame Diop sourit : « L’oncle de Seydou nous invite à sa coopérative. Là-bas, une machine trie les mangues ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "📏",
+     "word": {
+      "terme": "Règle de tri",
+      "sens": "Une consigne qui dit où va chaque objet. Par exemple : « jaune ici, vert là »."
+     },
+     "text": "Pour trier, on choisit une règle. Avec la même règle, tout le monde range de la même façon."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide la classe à trier les mangues !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Règle de Khady : jaune ici, vert là. Range chaque mangue.",
+       "hint": "Regarde seulement la couleur.",
+       "success": "Bravo ! Tu as suivi la règle.",
+       "bins": [
+        {
+         "id": "jaune",
+         "label": "Mangues jaunes",
+         "pict": "mangue-jaune",
+         "emoji": "🟡"
+        },
+        {
+         "id": "verte",
+         "label": "Mangues vertes",
+         "pict": "mangue-verte",
+         "emoji": "🟢"
+        }
+       ],
+       "items": [
+        {
+         "id": "m1",
+         "label": "Une grosse mangue jaune",
+         "pict": "mangue-jaune",
+         "emoji": "🥭",
+         "bin": "jaune",
+         "explain": "Elle est jaune : elle va avec les jaunes, même si elle est grosse."
+        },
+        {
+         "id": "m2",
+         "label": "Une petite mangue verte",
+         "pict": "mangue-verte",
+         "emoji": "🥭",
+         "bin": "verte",
+         "explain": "Elle est verte : elle va avec les vertes."
+        },
+        {
+         "id": "m3",
+         "label": "Une petite mangue jaune",
+         "pict": "mangue-jaune",
+         "emoji": "🥭",
+         "bin": "jaune",
+         "explain": "La taille ne compte pas ici : seulement la couleur."
+        },
+        {
+         "id": "m4",
+         "label": "Une grosse mangue verte",
+         "pict": "mangue-verte",
+         "emoji": "🥭",
+         "bin": "verte",
+         "explain": "Elle est verte : elle va avec les vertes."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Moussa range avec la règle « grosse ou petite », Fatou avec « jaune ou verte ». Que se passe-t-il ?",
+       "hint": "Ont-ils la même règle ?",
+       "success": "Exact ! Avec deux règles différentes, les tas ne sont pas les mêmes. Il faut se mettre d’accord.",
+       "options": [
+        {
+         "label": "Leurs tas ne seront pas pareils",
+         "pict": "deux-tas-differents",
+         "correct": true
+        },
+        {
+         "label": "Leurs tas seront exactement pareils",
+         "pict": "egal",
+         "explain": "Non : une grosse mangue verte n’ira pas au même endroit selon la règle."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Quelle règle est la plus claire pour trier ?",
+       "hint": "Une bonne règle : tout le monde trouve la même réponse.",
+       "success": "Bravo ! « Jaune ou verte », tout le monde voit pareil.",
+       "options": [
+        {
+         "label": "« Jaune ou verte »",
+         "pict": "mangue-jaune",
+         "correct": true
+        },
+        {
+         "label": "« Jolie ou pas jolie »",
+         "pict": "dessin-joli",
+         "explain": "Chacun trouve jolies des mangues différentes : cette règle n’est pas claire."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "📦",
+     "titre": "La trousse mélangée",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe vide ses trousses sur la table. Choisissez une règle de tri secrète et rangez les objets en deux tas. Les autres groupes doivent deviner votre règle !",
+     "materiel": [
+      "Les trousses des élèves"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "seydou",
+     "emoji": "💬",
+     "question": "Seydou demande : « Est-ce qu’il existe une règle de tri qui soit juste pour tout le monde ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Et si on triait les élèves ? Quelles règles seraient injustes ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’une règle de tri ?",
+       "hint": "Pense à la règle de Khady.",
+       "success": "Oui ! Une consigne qui dit où va chaque objet.",
+       "options": [
+        {
+         "label": "Une consigne qui dit où va chaque objet",
+         "pict": "deux-tas-differents",
+         "correct": true
+        },
+        {
+         "label": "Une règle pour tracer des traits",
+         "pict": "regle",
+         "explain": "Ici, « règle » veut dire consigne, pas l’outil pour tracer !"
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi faut-il se mettre d’accord sur la règle ?",
+       "hint": "Souviens-toi de Moussa et Fatou.",
+       "success": "Exact ! Avec la même règle, tout le monde range pareil.",
+       "options": [
+        {
+         "label": "Pour que tout le monde range pareil",
+         "pict": "egal",
+         "correct": true
+        },
+        {
+         "label": "Pour aller plus vite à la récréation",
+         "pict": "ballon",
+         "explain": "Ce n’est pas une question de vitesse : avec la même règle, on range pareil."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais trier avec une règle.",
+     "learned": "Pour trier, on choisit une règle claire. Avec la même règle, tout le monde range de la même façon."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Trier des objets selon une règle (un critère).",
+     "Comprendre qu’une règle doit être claire et partagée.",
+     "Préparer la sortie à la coopérative de mangues."
+    ],
+    "deroule": [
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : la trousse mélangée (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min).",
+     "Présentation de la sortie : autorisations des parents (5 min)."
+    ],
+    "materiel": [
+     "Les trousses des élèves.",
+     "Facultatif : de vraies mangues de couleurs et de tailles différentes."
+    ],
+    "reponses": [
+     "Règles faciles à deviner : « ce qui écrit / ce qui n’écrit pas », « en bois / en plastique », « rouge / pas rouge ».",
+     "Débat : trier des objets, c’est utile ; trier des personnes selon leur apparence est injuste. Une règle juste ne dépend pas de qui on est."
+    ],
+    "attention": "Si une vraie sortie n’est pas possible, les leçons 2 et 3 se font comme une « sortie imaginaire » avec les images de la coopérative."
+   }
+  },
+  {
+   "id": "ep3-2",
+   "title": "L’arbre des questions",
+   "scene": {
+    "id": "cooperative-mangues",
+    "label": "La coopérative de mangues"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady",
+    "seydou",
+    "bakary"
+   ],
+   "problem": "À la coopérative, les ouvrières trient très vite. Comment font-elles pour ne jamais se tromper ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "bakary",
+     "emoji": "🌴",
+     "image": "ep3-l2-arrivee.webp",
+     "alt": "La classe arrive à la coopérative, sous les manguiers. L’oncle de Seydou les accueille.",
+     "text": "La classe arrive en Casamance. L’oncle de Seydou, Bakary, les accueille sous les manguiers : « Bienvenue à la coopérative ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "fatou",
+     "emoji": "👀",
+     "image": "ep3-l2-ouvrieres.webp",
+     "alt": "Des ouvrières trient des mangues très vite sur une grande table, en les posant dans trois caisses.",
+     "text": "Des ouvrières trient très vite, dans trois caisses. Fatou est impressionnée : « Comment elles savent où mettre chaque mangue ? »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "bakary",
+     "emoji": "❓",
+     "image": "ep3-l2-questions.webp",
+     "alt": "Oncle Bakary montre une mangue et compte sur ses doigts les questions à se poser.",
+     "text": "Oncle Bakary explique : « On se pose deux questions. Est-elle abîmée ? Si oui, jus. Sinon : est-elle mûre ? Si oui, marché. Sinon, elle attend. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "🌳",
+     "image": "ep3-l2-arbre.webp",
+     "alt": "Palou dessine sur le sol un arbre : chaque branche est une question, chaque feuille est une caisse.",
+     "text": "Palou dessine un arbre : « Chaque branche est une question, chaque bout de branche est une caisse. C’est un arbre des questions ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "🌳",
+     "word": {
+      "terme": "Arbre des questions",
+      "sens": "Des questions posées l’une après l’autre. Chaque réponse (oui ou non) mène à une nouvelle question, ou à la décision."
+     },
+     "text": "Un arbre des questions aide à décider, étape par étape. Beaucoup de machines trient comme ça."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Trie les mangues avec l’arbre d’Oncle Bakary !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Si elle est abîmée, jus. Sinon, si elle est mûre, marché. Sinon, elle attend.",
+       "hint": "Pose d’abord la question : est-elle abîmée ?",
+       "success": "Bravo ! Tu as suivi l’arbre des questions.",
+       "bins": [
+        {
+         "id": "jus",
+         "label": "Pour le jus",
+         "pict": "jus-mangue",
+         "emoji": "🧃"
+        },
+        {
+         "id": "marche",
+         "label": "Pour le marché",
+         "pict": "etal-marche",
+         "emoji": "🛒"
+        },
+        {
+         "id": "attendre",
+         "label": "Elle attend",
+         "pict": "sablier",
+         "emoji": "⏳"
+        }
+       ],
+       "items": [
+        {
+         "id": "a",
+         "label": "Mangue abîmée et mûre",
+         "pict": "mangue-abimee",
+         "emoji": "🥭",
+         "bin": "jus",
+         "explain": "Elle est abîmée : la première question l’envoie au jus, même si elle est mûre."
+        },
+        {
+         "id": "b",
+         "label": "Mangue belle et mûre",
+         "pict": "mangue-jaune",
+         "emoji": "🥭",
+         "bin": "marche",
+         "explain": "Pas abîmée, et mûre : direction le marché !"
+        },
+        {
+         "id": "c",
+         "label": "Mangue belle mais pas mûre",
+         "pict": "mangue-verte",
+         "emoji": "🥭",
+         "bin": "attendre",
+         "explain": "Pas abîmée, mais pas encore mûre : elle attend quelques jours."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Quelle est la première question de l’arbre d’Oncle Bakary ?",
+       "hint": "Relis l’histoire.",
+       "success": "Exact ! On commence par : est-elle abîmée ?",
+       "options": [
+        {
+         "label": "Est-elle abîmée ?",
+         "pict": "mangue-abimee",
+         "correct": true
+        },
+        {
+         "label": "Est-elle grosse ?",
+         "pict": "fruit-geant",
+         "explain": "La taille n’est pas dans l’arbre d’Oncle Bakary."
+        },
+        {
+         "label": "Qui l’a cueillie ?",
+         "pict": "main-cueille",
+         "explain": "Ce n’est pas une question de l’arbre : on regarde la mangue elle-même."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une mangue n’est pas abîmée. Quelle question pose-t-on ensuite ?",
+       "hint": "Suis la branche « non ».",
+       "success": "Bravo ! Ensuite : est-elle mûre ?",
+       "options": [
+        {
+         "label": "Est-elle mûre ?",
+         "pict": "mangue-jaune",
+         "correct": true
+        },
+        {
+         "label": "Aucune, elle va au jus",
+         "pict": "jus-mangue",
+         "explain": "Non : le jus, c’est pour les mangues abîmées. Celle-ci passe à la question suivante."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🌳",
+     "titre": "L’arbre de la classe",
+     "duree": "20 minutes",
+     "groupes": "Toute la classe",
+     "text": "Au tableau, la classe dessine un arbre des questions pour trier les fruits du goûter : « A-t-il une peau qu’on épluche ? », « Est-il plus gros que mon poing ? »… Puis on teste l’arbre : un élève pense à un fruit, les autres suivent les branches pour le trouver.",
+     "materiel": [
+      "Craies de couleur",
+      "Des dessins ou des photos de fruits"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "khady",
+     "emoji": "💬",
+     "question": "Khady demande : « Si l’arbre oublie une question importante, qu’est-ce qui peut arriver ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Par exemple : une mangue pourrie au fond, qui ne se voit pas ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Dans un arbre des questions, chaque réponse…",
+       "hint": "Pense aux branches.",
+       "success": "Oui ! Chaque réponse mène à une autre question, ou à la décision.",
+       "options": [
+        {
+         "label": "Mène à une autre question ou à la décision",
+         "pict": "arbre-questions",
+         "correct": true
+        },
+        {
+         "label": "Fait pousser une mangue",
+         "pict": "mangue",
+         "explain": "C’est un arbre dessiné, pas un vrai manguier !"
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi beaucoup de machines trient-elles avec un arbre des questions ?",
+       "hint": "Une question à la fois…",
+       "success": "Exact ! C’est clair, étape par étape, et toujours pareil.",
+       "options": [
+        {
+         "label": "C’est clair, étape par étape",
+         "pict": "arbre-questions",
+         "correct": true
+        },
+        {
+         "label": "Parce que les machines aiment les arbres",
+         "pict": "lionceau-vivant",
+         "explain": "Les machines n’aiment rien ! L’arbre est simplement une méthode claire."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais suivre un arbre des questions.",
+     "learned": "Un arbre des questions aide à décider étape par étape : chaque réponse mène à une autre question ou à la décision."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Trier avec plusieurs critères posés dans l’ordre.",
+     "Lire et construire un arbre de décision simple (oui / non).",
+     "Comprendre qu’un oubli dans l’arbre provoque des erreurs."
+    ],
+    "deroule": [
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : l’arbre de la classe (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "Craies de couleur.",
+     "Des dessins ou photos de fruits (mangue, banane, orange, citron, pastèque, papaye)."
+    ],
+    "reponses": [
+     "Arbre d’Oncle Bakary : abîmée ? oui → jus ; non → mûre ? oui → marché ; non → attendre.",
+     "Débat : si l’arbre ne demande pas « est-elle pourrie à l’intérieur ? », une mauvaise mangue peut partir au marché. Ce sont les humains qui doivent penser à toutes les questions."
+    ],
+    "attention": "Garder les questions en oui / non : c’est ce qui rend l’arbre facile à suivre."
+   }
+  },
+  {
+   "id": "ep3-3",
+   "title": "Quand la machine trie seule",
+   "scene": {
+    "id": "cooperative-mangues",
+    "label": "La coopérative de mangues"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady",
+    "seydou",
+    "bakary"
+   ],
+   "problem": "Une machine avec une caméra trie les mangues toute seule. Comment a-t-elle appris ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "moussa",
+     "emoji": "📷",
+     "image": "ep3-l3-machine.webp",
+     "alt": "Un tapis roulant transporte des mangues sous une petite caméra ; des bras poussent certaines mangues dans des caisses.",
+     "text": "Les mangues passent sur un tapis, sous une caméra. Clac ! La machine pousse chaque mangue dans la bonne caisse. Moussa est bouche bée."
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "bakary",
+     "emoji": "🖼️",
+     "image": "ep3-l3-photos.webp",
+     "alt": "Oncle Bakary montre un écran avec des milliers de petites photos de mangues, chacune avec une étiquette.",
+     "text": "Oncle Bakary montre un écran : « Les ouvrières ont pris des milliers de photos de mangues, et pour chacune elles ont dit : jus, marché ou attendre. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep3-l3-palou-explique.webp",
+     "alt": "Palou devant la machine explique aux élèves, une ampoule au-dessus de la tête.",
+     "text": "Palou explique : « La machine a appris avec ces photos étiquetées. Maintenant, elle compare chaque nouvelle mangue à ses exemples. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "fatou",
+     "emoji": "😮",
+     "image": "ep3-l3-erreur.webp",
+     "alt": "Une belle mangue couverte de terre est envoyée par erreur dans la caisse du jus. Fatou la montre du doigt.",
+     "text": "Oups ! Une belle mangue pleine de terre part au jus. Fatou rit : « Elle a cru qu’elle était abîmée ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "🏷️",
+     "word": {
+      "terme": "Étiquette",
+      "sens": "Le nom qu’on donne à un exemple pour qu’une IA apprenne : « marché », « jus », « chat »…"
+     },
+     "text": "Une IA de tri apprend avec des exemples étiquetés par des humains. Devant un cas nouveau, elle peut se tromper."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide Oncle Bakary à comprendre sa machine !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qui a appris à la machine où mettre chaque mangue ?",
+       "hint": "Qui a mis les étiquettes sur les photos ?",
+       "success": "Exact ! Les ouvrières ont étiqueté les photos : la machine a appris grâce à elles.",
+       "options": [
+        {
+         "label": "Les ouvrières, avec des photos étiquetées",
+         "pict": "photos-exemples",
+         "correct": true
+        },
+        {
+         "label": "Personne, elle savait déjà",
+         "pict": "robot-sait-tout",
+         "explain": "Une machine ne sait rien au départ : elle apprend avec des exemples."
+        },
+        {
+         "label": "Les mangues elles-mêmes",
+         "pict": "mangue",
+         "explain": "Les mangues ne parlent pas ! Ce sont des humains qui ont étiqueté les photos."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi la machine a-t-elle envoyé la mangue pleine de terre au jus ?",
+       "hint": "Avait-elle vu des mangues pleines de terre dans ses exemples ?",
+       "success": "Bravo ! Elle n’avait jamais vu de mangue sale : elle a cru qu’elle était abîmée.",
+       "options": [
+        {
+         "label": "Elle n’avait jamais vu de mangue sale",
+         "pict": "mangue-sale",
+         "correct": true
+        },
+        {
+         "label": "Elle n’aime pas la terre",
+         "pict": "gronder",
+         "explain": "Une machine n’aime ou n’aime pas rien : elle compare avec ses exemples."
+        }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Que peut faire Oncle Bakary pour que la machine se trompe moins ?",
+       "hint": "Il y a deux bonnes idées.",
+       "success": "Bravo ! Plus d’exemples variés, et un humain qui vérifie.",
+       "options": [
+        {
+         "label": "Ajouter des photos de mangues sales, bien étiquetées",
+         "pict": "photos-exemples",
+         "emoji": "🖼️",
+         "correct": true
+        },
+        {
+         "label": "Garder une ouvrière qui vérifie la caisse du jus",
+         "pict": "loupe-verifier",
+         "emoji": "🔍",
+         "correct": true
+        },
+        {
+         "label": "Crier sur la machine",
+         "pict": "gronder",
+         "emoji": "😠",
+         "explain": "Crier n’apprend rien à une machine."
+        },
+        {
+         "label": "Peindre le tapis en rouge",
+         "pict": "pinceau",
+         "emoji": "🖌️",
+         "explain": "La couleur du tapis ne lui apprend rien sur les mangues."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🏷️",
+     "titre": "Les étiqueteurs",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit 10 dessins de fruits et met une étiquette sur chacun (« pour le marché » ou « pour le jus »). Puis on échange les dessins avec un autre groupe : a-t-il mis les mêmes étiquettes ? Si ce n’est pas pareil, discutez : qui a raison ?",
+     "materiel": [
+      "10 dessins de fruits par groupe (beaux, abîmés, sales…)",
+      "Des petits papiers pour les étiquettes"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "moussa",
+     "emoji": "💬",
+     "question": "Moussa demande : « Si la machine trie toute seule, est-ce que les ouvrières vont perdre leur travail ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qui étiquette les photos ? Qui vérifie ? Qui répare la machine ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’une étiquette, pour une IA ?",
+       "hint": "Pense aux photos de mangues d’Oncle Bakary.",
+       "success": "Oui ! Le nom donné à un exemple pour qu’elle apprenne.",
+       "options": [
+        {
+         "label": "Le nom donné à un exemple",
+         "pict": "etiquette",
+         "correct": true
+        },
+        {
+         "label": "Le prix de la mangue",
+         "pict": "argent",
+         "explain": "Ici, l’étiquette ne dit pas le prix : elle dit « jus », « marché » ou « attendre »."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA de tri voit une mangue très différente de ses exemples. Que peut-il se passer ?",
+       "hint": "Souviens-toi de la mangue pleine de terre.",
+       "success": "Exact ! Elle peut se tromper : un humain vérifie.",
+       "options": [
+        {
+         "label": "Elle peut se tromper",
+         "pict": "ia-hesite",
+         "correct": true
+        },
+        {
+         "label": "Elle trie toujours parfaitement",
+         "pict": "robot-sait-tout",
+         "explain": "Aucune IA ne trie parfaitement : devant un cas nouveau, elle peut se tromper."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment une machine apprend à trier.",
+     "learned": "Une IA de tri apprend avec des exemples étiquetés par des humains. Devant un cas nouveau, elle peut se tromper : un humain vérifie."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre qu’une IA de tri apprend avec des exemples étiquetés.",
+     "Comprendre l’importance d’exemples variés et d’une vérification humaine.",
+     "Réfléchir au travail des humains autour des machines."
+    ],
+    "deroule": [
+     "Rappel : l’arbre des questions (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : les étiqueteurs (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "10 dessins de fruits par groupe, dont certains ambigus (un peu tachés, sales, très petits).",
+     "Des petits papiers."
+    ],
+    "reponses": [
+     "Les désaccords entre groupes sont normaux : ils montrent que l’étiquetage est un vrai travail humain, et qu’il faut des règles claires.",
+     "Débat : certains métiers changent. Des humains restent indispensables : étiqueter, vérifier, réparer, décider. L’important est d’apprendre ces nouveaux métiers."
+    ],
+    "attention": "Ne pas affirmer que telle coopérative existe : la sortie est une histoire. On peut chercher ensemble des vidéos de machines de tri de fruits."
+   }
+  },
+  {
+   "id": "ep3-4",
+   "title": "Le grand jeu du tri",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou",
+    "khady",
+    "seydou"
+   ],
+   "problem": "De retour à l’école, la classe invente sa propre machine à trier… jouée par des élèves !",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "seydou",
+     "emoji": "🚌",
+     "image": "ep3-l4-retour.webp",
+     "alt": "La classe de retour à l’école, Seydou distribue des mangues de la coopérative.",
+     "text": "De retour à l’école, Seydou distribue les mangues offertes par son oncle. « Et si on fabriquait notre machine à trier ? »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "🧩",
+     "image": "ep3-l4-projet.webp",
+     "alt": "Madame Diop explique le projet devant une grande affiche avec un arbre dessiné.",
+     "text": "Madame Diop explique : « Chaque groupe invente un arbre des questions. Puis des élèves joueront la machine ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep3-l4-palou-test.webp",
+     "alt": "Palou tient un objet surprise derrière son dos, les élèves rient.",
+     "text": "Palou ajoute : « Et moi, je viendrai avec des objets surprises, pour voir si votre machine se trompe ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "🧪",
+     "word": {
+      "terme": "Tester",
+      "sens": "Essayer une machine avec des cas nouveaux pour voir si elle marche bien."
+     },
+     "text": "Avant de faire confiance à une machine, on la teste avec des cas qu’elle n’a jamais vus."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Prépare ta machine à trier !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "L’arbre de Khady : si ça écrit, trousse. Sinon, si ça se mange, goûter. Sinon, cartable.",
+       "hint": "Pose les questions dans l’ordre.",
+       "success": "Bravo ! Ta machine marche.",
+       "bins": [
+        {
+         "id": "trousse",
+         "label": "Trousse",
+         "pict": "trousse",
+         "emoji": "✏️"
+        },
+        {
+         "id": "gouter",
+         "label": "Goûter",
+         "pict": "boite-gouter",
+         "emoji": "🍪"
+        },
+        {
+         "id": "cartable",
+         "label": "Cartable",
+         "pict": "cartable",
+         "emoji": "🎒"
+        }
+       ],
+       "items": [
+        {
+         "id": "crayon",
+         "label": "Un crayon",
+         "pict": "crayon",
+         "emoji": "✏️",
+         "bin": "trousse",
+         "explain": "Il écrit : trousse !"
+        },
+        {
+         "id": "banane",
+         "label": "Une banane",
+         "pict": "banane",
+         "emoji": "🍌",
+         "bin": "gouter",
+         "explain": "Elle n’écrit pas, mais elle se mange : goûter !"
+        },
+        {
+         "id": "cahier",
+         "label": "Un cahier",
+         "pict": "cahier",
+         "emoji": "📓",
+         "bin": "cartable",
+         "explain": "Il n’écrit pas tout seul et ne se mange pas : cartable."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Palou apporte une craie en sucre (on peut écrire avec, et la manger). Où va-t-elle avec l’arbre de Khady ?",
+       "hint": "Quelle est la première question ?",
+       "success": "Exact ! La première question est « Ça écrit ? » : oui, donc trousse. Un cas surprise peut piéger la machine !",
+       "options": [
+        {
+         "label": "Dans la trousse",
+         "pict": "trousse",
+         "correct": true
+        },
+        {
+         "label": "Dans le goûter",
+         "pict": "boite-gouter",
+         "explain": "Elle se mange, oui, mais l’arbre pose d’abord « Ça écrit ? » : oui, donc trousse."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🤖",
+     "titre": "Projet de classe : la machine à trier humaine",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe invente un arbre de 2 ou 3 questions pour trier des objets de la classe, et le dessine sur une affiche. Puis deux élèves jouent la « machine » : ils suivent l’arbre à la lettre. Les autres groupes apportent des objets surprises pour tester la machine. On note chaque erreur et on améliore l’arbre !",
+     "materiel": [
+      "Une grande feuille par groupe",
+      "Des objets de la classe",
+      "Une feuille « erreurs trouvées » par groupe"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "palou",
+     "emoji": "💬",
+     "question": "Palou demande : « Votre machine s’est trompée. Est-ce qu’on peut lui faire confiance quand même ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quand faut-il un humain pour vérifier ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour trier, il faut d’abord…",
+       "hint": "La leçon 1…",
+       "success": "Oui ! Une règle claire.",
+       "options": [
+        {
+         "label": "Une règle claire",
+         "pict": "deux-tas-differents",
+         "correct": true
+        },
+        {
+         "label": "Beaucoup de bruit",
+         "pict": "rire",
+         "explain": "Pas besoin de bruit : il faut une règle claire !"
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "La machine de la coopérative a appris avec…",
+       "hint": "Des photos avec un nom…",
+       "success": "Exact ! Des exemples étiquetés par des humains.",
+       "options": [
+        {
+         "label": "Des exemples étiquetés par des humains",
+         "pict": "etiquette",
+         "correct": true
+        },
+        {
+         "label": "Des chansons",
+         "pict": "telephone-musique",
+         "explain": "Pas de chansons : des photos de mangues avec leur étiquette."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Avant de faire confiance à une machine, on…",
+       "hint": "Le mot nouveau de cette leçon.",
+       "success": "Bravo ! On la teste avec des cas nouveaux.",
+       "options": [
+        {
+         "label": "La teste avec des cas nouveaux",
+         "pict": "loupe-verifier",
+         "correct": true
+        },
+        {
+         "label": "La croit tout de suite",
+         "pict": "robot-sait-tout",
+         "explain": "On ne fait pas confiance sans tester : elle peut se tromper."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ta machine à trier est prête. Le module 3 est terminé !",
+     "learned": "On trie avec une règle claire ou un arbre des questions. Une IA de tri apprend avec des exemples étiquetés. Avant de lui faire confiance, on la teste."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Concevoir un arbre de décision simple et le faire exécuter.",
+     "Tester un système avec des cas imprévus et l’améliorer.",
+     "Comprendre pourquoi on teste une IA avant de lui faire confiance."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; construction des arbres en groupes (30 min).",
+     "Séance 2 : la machine humaine et les tests croisés (25 min) ; améliorations (5 min) ; « On en parle » (10 min) ; défi (5 min)."
+    ],
+    "materiel": [
+     "Une grande feuille par groupe.",
+     "Des objets variés de la classe.",
+     "Une feuille « erreurs trouvées » par groupe."
+    ],
+    "reponses": [
+     "Les « machines » humaines doivent suivre l’arbre à la lettre, même quand elles voient que c’est absurde : c’est ce que fait une machine.",
+     "Débat : une machine qui se trompe parfois peut rester utile, à condition de connaître ses limites et qu’un humain vérifie les cas importants."
+    ],
+    "attention": "Valoriser les groupes qui trouvent des erreurs : trouver une erreur est une réussite, pas un échec."
+   }
+  }
+ ]
+}

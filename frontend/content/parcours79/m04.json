@@ -1,0 +1,932 @@
+{
+  "module": {
+    "id": "p4",
+    "chapter": 4,
+    "title": "Apprendre avec des exemples",
+    "place": "Guet Ndar, à Saint-Louis",
+    "intro": "La classe part à Saint-Louis avec Papa Ibou ! Tonton Cheikh va apprendre à Palou à reconnaître les poissons."
+  },
+  "lessons": [
+    {
+      "id": "p4-1",
+      "title": "Montre-moi des exemples",
+      "scene": {
+        "id": "guet-ndar-plage",
+        "label": "La plage de Guet Ndar"
+      },
+      "cast": [
+        "palou",
+        "papa-ibou",
+        "tonton-cheikh",
+        "moussa"
+      ],
+      "problem": "La classe visite Guet Ndar. Palou ne connaît aucun poisson : comment peut-il apprendre ?",
+      "callback": "Tu te rappelles ? Avec les chats, Palou a appris grâce à des exemples.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "image": "m04-l1-plage.webp",
+          "alt": "Des pirogues colorées alignées sur la plage de Guet Ndar, à Saint-Louis, devant le car de la classe.",
+          "text": "Sortie de fin de trimestre ! Papa Ibou conduit la classe à Saint-Louis, à Guet Ndar."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "tonton-cheikh",
+          "wolof": {
+            "mot": "Thiof",
+            "sens": "Un gros poisson très apprécié : le mérou."
+          },
+          "image": "m04-l1-poissons.webp",
+          "alt": "Tonton Cheikh, pêcheur, pose trois poissons sur une caisse : un thiof, une sardinelle et un capitaine.",
+          "text": "Tonton Cheikh pose trois poissons : un thiof, une sardinelle, un capitaine."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "text": "Moussa demande : « Palou, tu connais ces poissons ? » Palou secoue la tête.",
+          "image": "m04-l1-s03.webp",
+          "alt": "Illustration : Moussa demande : « Palou, tu connais ces poissons ? » Palou secoue la tête."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "entraînement",
+            "sens": "Montrer beaucoup d’exemples à une IA pour qu’elle apprenne."
+          },
+          "text": "Pour apprendre, Palou a besoin d’un entraînement. On lui montre beaucoup d’exemples."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Tonton Cheikh à entraîner Palou !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Comment Tonton Cheikh apprend-il les poissons à Palou ?",
+              "hint": "Palou apprend ce qu’il voit et ce qu’on lui dit.",
+              "success": "Oui ! Il lui montre des poissons et dit leur nom.",
+              "options": [
+                {
+                  "label": "Il lui cache tous les poissons de la plage",
+                  "pict": "poissons-caches",
+                  "explain": "Sans voir les poissons, Palou ne peut rien apprendre."
+                },
+                {
+                  "label": "Il lui montre des poissons avec leur nom",
+                  "pict": "poissons-avec-noms",
+                  "correct": true
+                },
+                {
+                  "label": "Il lui répète seulement le mot « poisson »",
+                  "pict": "mot-poisson",
+                  "explain": "Un seul mot ne suffit pas : Palou doit voir chaque poisson et son nom."
+                }
+              ]
+            },
+            {
+              "type": "train",
+              "prompt": "Palou ne connaît pas le thiof. Montre-lui des thiofs pour l’entraîner !",
+              "hint": "Montre à Palou des thiofs, pas d’autres poissons.",
+              "success": "Oui ! Avec trois exemples, Palou reconnaît le thiof.",
+              "learns": "thiof",
+              "test": {
+                "label": "Quel poisson ?",
+                "pict": "thiof-net"
+              },
+              "says": [
+                "Je ne connais pas ce poisson…",
+                "Hmm… un seul exemple, je n’en suis pas sûr.",
+                "Presque ! Encore un exemple, s’il te plaît."
+              ],
+              "examples": [
+                {
+                  "id": "t1",
+                  "label": "Un thiof",
+                  "pict": "thiof",
+                  "good": true
+                },
+                {
+                  "id": "t2",
+                  "label": "Des thiofs différents",
+                  "pict": "thiofs-differents",
+                  "good": true
+                },
+                {
+                  "id": "t3",
+                  "label": "Des thiofs nets",
+                  "pict": "thiofs-nets",
+                  "good": true
+                },
+                {
+                  "id": "c1",
+                  "label": "Un capitaine",
+                  "pict": "capitaine",
+                  "explain": "Un capitaine n’est pas un thiof : Palou apprendrait un autre poisson."
+                },
+                {
+                  "id": "s1",
+                  "label": "Une sardinelle",
+                  "pict": "sardinelle",
+                  "explain": "Une sardinelle n’est pas un thiof : elle ne l’aide pas à reconnaître le thiof."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA apprend comme Palou, avec des exemples qui ont un nom."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un bon exemple pour Palou ?",
+              "hint": "Il lui faut voir la photo ET son nom.",
+              "success": "Oui ! Une photo avec son nom, c’est un bon exemple.",
+              "options": [
+                {
+                  "label": "Une photo avec son nom",
+                  "pict": "poissons-avec-noms",
+                  "correct": true
+                },
+                {
+                  "label": "Une photo cachée sous un drap",
+                  "pict": "poissons-caches",
+                  "explain": "Sans voir la photo, Palou ne peut rien apprendre."
+                },
+                {
+                  "label": "Un nom, mais aucune photo",
+                  "pict": "mot-poisson",
+                  "explain": "Il faut la photo et son nom ensemble."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que faut-il à Palou pour bien apprendre ?",
+              "hint": "Un seul exemple, ça ne suffit pas.",
+              "success": "Exact ! Beaucoup d’exemples.",
+              "options": [
+                {
+                  "label": "Beaucoup d’exemples",
+                  "pict": "photos-differentes",
+                  "correct": true
+                },
+                {
+                  "label": "Un seul poisson, regardé très longtemps",
+                  "pict": "une-grande-photo",
+                  "explain": "Un seul exemple, c’est trop peu pour apprendre."
+                },
+                {
+                  "label": "Aucun poisson : il devine tout seul",
+                  "pict": "rien",
+                  "explain": "Sans exemple, une IA ne peut pas apprendre."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce que chaque exemple reçoit pour que Palou le comprenne ?",
+              "hint": "Comme « thiof » sur la photo du poisson.",
+              "success": "Bravo ! Chaque exemple a un nom.",
+              "options": [
+                {
+                  "label": "Un nom",
+                  "pict": "thiof-etiquette",
+                  "correct": true
+                },
+                {
+                  "label": "Un parfum de poisson frais",
+                  "explain": "Une photo n’a pas de parfum : elle a un nom, appelé étiquette."
+                },
+                {
+                  "label": "Une petite chanson à retenir",
+                  "explain": "Une photo n’a pas de chanson : elle a un nom, appelé étiquette."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Palou a appris ses premiers poissons.",
+          "learned": "Une IA apprend avec beaucoup d’exemples. Chaque exemple a un nom."
+        }
+      ]
+    },
+    {
+      "id": "p4-2",
+      "title": "Chat ou chien ?",
+      "scene": {
+        "id": "guet-ndar-pirogues",
+        "label": "Près des pirogues"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "moussa",
+        "tonton-cheikh"
+      ],
+      "problem": "Un chat et un chien se promènent entre les pirogues. Palou doit apprendre à les reconnaître.",
+      "callback": "Tu te rappelles ? Palou a déjà appris à reconnaître des chats avec des photos.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "image": "m04-l2-animaux.webp",
+          "alt": "Un chat qui dort et un chien qui court entre les pirogues de Guet Ndar, Fatou et Palou les regardent.",
+          "text": "Près des pirogues, un chat dort et un chien court. Fatou demande : « Palou, tu les reconnais ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "text": "Moussa a pris des photos avec Tonton Cheikh. Chaque photo porte un nom : chat ou chien.",
+          "image": "m04-l2-s02.webp",
+          "alt": "Illustration : Moussa a pris des photos avec Tonton Cheikh. Chaque photo porte un nom : chat ou chien."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "étiquette",
+            "sens": "Le nom qu’on associe à un exemple."
+          },
+          "text": "Chaque photo reçoit une étiquette : « chat » ou « chien ». Palou apprend avec elles."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à ranger les exemples !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse un exemple dans sa boîte.",
+              "hint": "Pense à ce que fait chaque animal.",
+              "success": "Bravo ! Chaque exemple a la bonne étiquette.",
+              "bins": [
+                {
+                  "id": "chat",
+                  "label": "Chat",
+                  "pict": "chat"
+                },
+                {
+                  "id": "chien",
+                  "label": "Chien",
+                  "pict": "chien"
+                }
+              ],
+              "items": [
+                {
+                  "id": "e1",
+                  "label": "Un animal qui miaule",
+                  "pict": "chat-miaule",
+                  "bin": "chat",
+                  "explain": "Il miaule : c’est un chat."
+                },
+                {
+                  "id": "e2",
+                  "label": "Un animal qui aboie",
+                  "pict": "chien-aboie",
+                  "bin": "chien",
+                  "explain": "Il aboie : c’est un chien."
+                },
+                {
+                  "id": "e3",
+                  "label": "Un animal qui ronronne",
+                  "pict": "chat-ronronne",
+                  "bin": "chat",
+                  "explain": "Il ronronne : c’est un chat."
+                },
+                {
+                  "id": "e4",
+                  "label": "Un animal qui rapporte le bâton",
+                  "pict": "chien-baton",
+                  "bin": "chien",
+                  "explain": "Il rapporte le bâton : c’est un chien."
+                }
+              ]
+            },
+            {
+              "type": "relabel",
+              "prompt": "Palou se trompe de nom ! Touche la photo qui a une fausse étiquette.",
+              "hint": "Cherche la photo dont l’étiquette ne va pas avec l’animal.",
+              "success": "Oui ! Avec la bonne étiquette, Palou répond « chat ».",
+              "test": {
+                "label": "Quel animal ?",
+                "pict": "chat"
+              },
+              "says": "Je crois que c’est un chien !",
+              "cards": [
+                {
+                  "id": "c1",
+                  "label": "Un chien qui court",
+                  "pict": "chien-court",
+                  "tag": "chien",
+                  "explain": "Cette étiquette est juste : c’est bien un chien."
+                },
+                {
+                  "id": "c2",
+                  "label": "Un petit chien",
+                  "pict": "chiot-dort",
+                  "tag": "chien",
+                  "explain": "Cette étiquette est juste : c’est bien un chien."
+                },
+                {
+                  "id": "c3",
+                  "label": "Un chat qui miaule",
+                  "pict": "chat-miaule",
+                  "tag": "chat",
+                  "explain": "Cette étiquette est juste : c’est bien un chat."
+                },
+                {
+                  "id": "c4",
+                  "label": "Un chat",
+                  "pict": "chat-etiquette-chien",
+                  "tag": "chien",
+                  "fix": "chat"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "text": "Une étiquette peut être fausse !",
+          "rounds": [
+            {
+              "type": "multi",
+              "prompt": "Touche les bons exemples pour apprendre « chien ».",
+              "hint": "Un bon exemple a la bonne étiquette.",
+              "success": "Bravo ! Ces exemples montrent bien ce qu’est un chien.",
+              "options": [
+                {
+                  "label": "Un chien qui court",
+                  "pict": "chien-court",
+                  "correct": true
+                },
+                {
+                  "label": "Un chat étiqueté « chien »",
+                  "pict": "chat-etiquette-chien",
+                  "explain": "Une mauvaise étiquette apprend une erreur à Palou."
+                },
+                {
+                  "label": "Un petit chien qui dort",
+                  "pict": "chiot-dort",
+                  "correct": true
+                },
+                {
+                  "label": "Une photo sans animal",
+                  "pict": "photo-vide",
+                  "explain": "Sans animal, il n’y a rien à apprendre sur les chiens."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA a besoin d’étiquettes justes. Une mauvaise étiquette lui apprend une erreur."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une étiquette ?",
+              "hint": "Palou la lit à côté de la photo.",
+              "success": "Oui ! Une étiquette est le nom de l’exemple.",
+              "options": [
+                {
+                  "label": "Le nom de l’exemple",
+                  "pict": "thiof-etiquette",
+                  "correct": true
+                },
+                {
+                  "label": "Un dessin qu’on ajoute sur la photo",
+                  "explain": "Une étiquette est un nom, pas un dessin."
+                },
+                {
+                  "label": "La couleur de la photo qu’on a prise",
+                  "explain": "Une étiquette est un nom, pas une couleur."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un chat reçoit l’étiquette « chien ». Qu’apprend Palou ?",
+              "hint": "L’étiquette est fausse.",
+              "success": "Exact ! Une fausse étiquette apprend une erreur.",
+              "options": [
+                {
+                  "label": "Une erreur",
+                  "pict": "chat-etiquette-chien",
+                  "correct": true
+                },
+                {
+                  "label": "La bonne réponse, bien sûr",
+                  "pict": "bravo-verifier",
+                  "explain": "Une fausse étiquette ne donne jamais la bonne réponse."
+                },
+                {
+                  "label": "Rien du tout, il ne regarde pas",
+                  "explain": "Palou lit les étiquettes : il apprend aussi les erreurs."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pour apprendre « chien », quel exemple est bon ?",
+              "hint": "Il faut une vraie photo de chien.",
+              "success": "Bravo ! Un vrai chien, avec la bonne étiquette.",
+              "options": [
+                {
+                  "label": "Un chien qui court",
+                  "pict": "chien-court",
+                  "correct": true
+                },
+                {
+                  "label": "Un cadre photo vide",
+                  "pict": "photo-vide",
+                  "explain": "Sans photo, il n’y a rien à apprendre."
+                },
+                {
+                  "label": "Un chat avec le nom « chien »",
+                  "pict": "chat-etiquette-chien",
+                  "explain": "Cette étiquette est fausse : elle apprend une erreur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Palou sait distinguer un chat d’un chien.",
+          "learned": "Chaque exemple reçoit une étiquette. Une étiquette fausse apprend une erreur à l’IA."
+        }
+      ]
+    },
+    {
+      "id": "p4-3",
+      "title": "Quand Palou se trompe",
+      "scene": {
+        "id": "guet-ndar-quai",
+        "label": "Le quai de Guet Ndar"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "tonton-cheikh"
+      ],
+      "problem": "Palou confond un thiof et un capitaine sur une photo floue. Pourquoi se trompe-t-il ?",
+      "callback": "Tu te rappelles ? Avec peu d’exemples, une IA peut se tromper.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "fatou",
+          "image": "m04-l3-photo-floue.webp",
+          "alt": "Fatou montre une photo floue d’un poisson sur un téléphone, Palou la regarde et montre la photo du doigt.",
+          "text": "Fatou montre une photo floue d’un poisson. Palou dit : « C’est un capitaine ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "tonton-cheikh",
+          "text": "Tonton Cheikh sourit : « Regarde mieux, petit lion. C’est un thiof ! »",
+          "image": "m04-l3-s02.webp",
+          "alt": "Illustration : Tonton Cheikh sourit : « Regarde mieux, petit lion. C’est un thiof ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "flou",
+            "sens": "Une image pas assez nette : on ne voit pas bien les détails."
+          },
+          "text": "Une photo floue cache les détails. Palou peut alors se tromper."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à comprendre son erreur !",
+          "rounds": [
+            {
+              "type": "probe",
+              "prompt": "Palou devine quatre photos. Touche celle où il se trompe !",
+              "hint": "Cherche la photo floue.",
+              "success": "Oui ! Avec une photo nette, Palou corrige son erreur.",
+              "photos": [
+                {
+                  "id": "q1",
+                  "label": "Un thiof net",
+                  "pict": "thiof-net",
+                  "guess": "thiof",
+                  "explain": "Palou a bien reconnu ce thiof : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "q2",
+                  "label": "Un capitaine",
+                  "pict": "capitaine",
+                  "guess": "capitaine",
+                  "explain": "Palou a bien reconnu ce capitaine : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "q3",
+                  "label": "Une sardinelle",
+                  "pict": "sardinelle",
+                  "guess": "sardinelle",
+                  "explain": "Palou a bien reconnu cette sardinelle : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "q4",
+                  "label": "Un thiof, photo floue",
+                  "pict": "photo-floue",
+                  "guess": "capitaine",
+                  "wrong": true
+                }
+              ],
+              "found": "Bien vu ! La photo est floue. Quel exemple aide Palou à mieux voir ?",
+              "fix": {
+                "options": [
+                  {
+                    "label": "Une photo bien nette",
+                    "pict": "photo-nette",
+                    "correct": true
+                  },
+                  {
+                    "label": "Une photo très sombre",
+                    "pict": "photo-sombre",
+                    "explain": "Une photo sombre cache les détails : elle n’aide pas Palou."
+                  },
+                  {
+                    "label": "Une photo sans poisson",
+                    "pict": "photo-vide",
+                    "explain": "Sans poisson, Palou n’apprend rien de nouveau."
+                  }
+                ]
+              }
+            },
+            {
+              "type": "sort",
+              "prompt": "Glisse une photo dans sa boîte.",
+              "hint": "Un bon exemple est net et bien éclairé.",
+              "success": "Bravo ! Tu sais choisir de bons exemples.",
+              "bins": [
+                {
+                  "id": "bon",
+                  "label": "Bon exemple",
+                  "pict": "bon-exemple"
+                },
+                {
+                  "id": "mauvais",
+                  "label": "Mauvais exemple",
+                  "pict": "mauvais-exemple"
+                }
+              ],
+              "items": [
+                {
+                  "id": "p1",
+                  "label": "Un thiof net, bien éclairé",
+                  "pict": "thiof-net",
+                  "bin": "bon",
+                  "explain": "On voit tous les détails : c’est un bon exemple."
+                },
+                {
+                  "id": "p2",
+                  "label": "Une photo très sombre",
+                  "pict": "photo-sombre",
+                  "bin": "mauvais",
+                  "explain": "On ne voit presque rien : ce n’est pas un bon exemple."
+                },
+                {
+                  "id": "p3",
+                  "label": "Un capitaine net, pris de près",
+                  "pict": "capitaine-net",
+                  "bin": "bon",
+                  "explain": "Les détails sont bien visibles : c’est un bon exemple."
+                },
+                {
+                  "id": "p4",
+                  "label": "Une photo où l’on ne voit que l’eau",
+                  "pict": "photo-eau",
+                  "bin": "mauvais",
+                  "explain": "Il n’y a pas de poisson : ce n’est pas un bon exemple."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Quand une IA se trompe, ce n’est pas grave. On lui montre de meilleurs exemples."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Pourquoi Palou se trompe-t-il sur une photo floue ?",
+              "hint": "Regarde bien : voit-on tous les détails ?",
+              "success": "Oui ! Sur une photo floue, on ne voit pas les détails.",
+              "options": [
+                {
+                  "label": "On ne voit pas les détails",
+                  "pict": "photo-floue",
+                  "correct": true
+                },
+                {
+                  "label": "Parce qu’il est fatigué ce matin",
+                  "explain": "Palou n’est pas fatigué : c’est la photo qui cache les détails."
+                },
+                {
+                  "label": "Parce que la photo est trop jolie",
+                  "explain": "Une jolie photo ne trompe pas : c’est le flou qui cache les détails."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait-on pour aider Palou ?",
+              "hint": "Il lui faut mieux que du flou.",
+              "success": "Bravo ! De meilleurs exemples l’aident à mieux apprendre.",
+              "options": [
+                {
+                  "label": "De meilleurs exemples",
+                  "pict": "meilleurs-exemples",
+                  "correct": true
+                },
+                {
+                  "label": "Encore plus de photos floues",
+                  "pict": "photo-floue",
+                  "explain": "Plus de photos floues ne l’aident pas."
+                },
+                {
+                  "label": "On lui crie dessus très fort",
+                  "pict": "crier",
+                  "explain": "Crier ne l’aide pas : il lui faut de meilleurs exemples."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Quelle photo aide le mieux Palou à apprendre ?",
+              "hint": "Choisis celle où l’on voit tout.",
+              "success": "Exact ! La photo nette.",
+              "options": [
+                {
+                  "label": "La photo nette",
+                  "pict": "photo-nette",
+                  "correct": true
+                },
+                {
+                  "label": "La photo très sombre",
+                  "pict": "photo-sombre",
+                  "explain": "On devine à peine la forme : elle n’aide pas."
+                },
+                {
+                  "label": "La photo toute floue",
+                  "pict": "photo-floue",
+                  "explain": "On ne voit pas les détails : elle n’aide pas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Palou a compris son erreur.",
+          "learned": "Une image floue peut tromper une IA. Pour l’aider, on lui montre de meilleurs exemples."
+        }
+      ]
+    },
+    {
+      "id": "p4-4",
+      "title": "Entraîne ton mini-robot",
+      "scene": {
+        "id": "guet-ndar-tente",
+        "label": "Sous la tente de Tonton Cheikh"
+      },
+      "cast": [
+        "palou",
+        "tonton-cheikh",
+        "papa-ibou"
+      ],
+      "problem": "Le car va bientôt repartir pour Dakar. Palou veut reconnaître tous les poissons avant de partir.",
+      "callback": "Tu te rappelles ? Une photo floue a trompé Palou sur le thiof.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "tonton-cheikh",
+          "image": "m04-l4-entrainement.webp",
+          "alt": "Tonton Cheikh pose un grand plateau de poissons devant Palou, sous sa tente au bord de l’eau.",
+          "text": "Tonton Cheikh prépare un grand plateau de poissons. Palou a une dernière leçon."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "papa-ibou",
+          "text": "Papa Ibou klaxonne : « Le car repart bientôt ! » L’entraînement doit finir vite.",
+          "image": "m04-l4-s02.webp",
+          "alt": "Illustration : Papa Ibou klaxonne : « Le car repart bientôt ! » L’entraînement doit finir vite."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "modèle",
+            "sens": "Ce que l’IA a retenu à la fin de son entraînement."
+          },
+          "text": "Quand l’entraînement est fini, l’IA a un modèle. Il lui sert à reconnaître."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Entraîne Palou, puis teste-le !",
+          "rounds": [
+            {
+              "type": "train",
+              "prompt": "Prépare l’entraînement de Palou : choisis seulement de bons exemples !",
+              "hint": "Un bon exemple est net, avec le bon nom.",
+              "success": "Bravo ! Avec des exemples nets, Palou reconnaît tous les poissons.",
+              "learns": "poissons",
+              "test": {
+                "label": "Un poisson nouveau",
+                "pict": "poisson-nouveau"
+              },
+              "says": [
+                "Je ne connais pas ce poisson…",
+                "Je commence à les reconnaître !",
+                "Presque prêt ! Un dernier lot, s’il te plaît."
+              ],
+              "examples": [
+                {
+                  "id": "t1",
+                  "label": "Des thiofs bien nets",
+                  "pict": "thiofs-nets",
+                  "good": true
+                },
+                {
+                  "id": "t2",
+                  "label": "Des sardinelles bien nettes",
+                  "pict": "sardinelles-nettes",
+                  "good": true
+                },
+                {
+                  "id": "t3",
+                  "label": "Des capitaines bien nets",
+                  "pict": "capitaines-nets",
+                  "good": true
+                },
+                {
+                  "id": "m1",
+                  "label": "Des photos floues et sombres",
+                  "pict": "photos-floues-sombres",
+                  "explain": "Elles cachent les détails : elles risquent de tromper Palou."
+                },
+                {
+                  "id": "m2",
+                  "label": "Une photo sans poisson",
+                  "pict": "photo-vide",
+                  "explain": "Sans poisson, Palou n’apprend rien : ce n’est pas un exemple."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment vérifier que Palou a bien appris ?",
+              "hint": "Il doit reconnaître un poisson nouveau.",
+              "success": "Oui ! Un poisson nouveau montre s’il a vraiment compris.",
+              "options": [
+                {
+                  "label": "Lui redonner exactement les mêmes photos",
+                  "pict": "memes-photos",
+                  "explain": "Avec les mêmes photos, il peut seulement les avoir retenues par cœur."
+                },
+                {
+                  "label": "Lui montrer un poisson nouveau",
+                  "pict": "poisson-nouveau",
+                  "correct": true
+                },
+                {
+                  "label": "Lui demander s’il se sent content",
+                  "pict": "palou-content",
+                  "explain": "Être content ne prouve pas qu’il reconnaît les poissons."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Entraîner, tester, corriger : c’est ainsi qu’on fabrique une IA."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quand l’entraînement est fini, à quoi sert le modèle de Palou ?",
+              "hint": "Il lui sert à reconnaître.",
+              "success": "Oui ! Le modèle sert à reconnaître.",
+              "options": [
+                {
+                  "label": "À reconnaître",
+                  "pict": "poisson-nouveau",
+                  "correct": true
+                },
+                {
+                  "label": "À dormir pendant la nuit",
+                  "explain": "Un modèle ne sert pas à dormir : il sert à reconnaître."
+                },
+                {
+                  "label": "À décorer l’école de Palou",
+                  "explain": "Un modèle ne sert pas à décorer : il sert à reconnaître."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou se trompe à son test. Que fait-on ?",
+              "hint": "Il peut encore s’améliorer.",
+              "success": "Exact ! On le corrige et il progresse.",
+              "options": [
+                {
+                  "label": "On le corrige",
+                  "pict": "ia-ameliorer",
+                  "correct": true
+                },
+                {
+                  "label": "On jette toutes les photos",
+                  "pict": "tout-jeter",
+                  "explain": "Tout jeter est inutile : on corrige et il apprend mieux."
+                },
+                {
+                  "label": "On arrête de le tester pour toujours",
+                  "pict": "pas-tester",
+                  "explain": "Sans test, on ne sait pas s’il progresse."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi teste-t-on avec une photo nouvelle ?",
+              "hint": "Une photo qu’il n’a jamais vue.",
+              "success": "Bravo ! On voit s’il a vraiment appris.",
+              "options": [
+                {
+                  "label": "Pour voir s’il sait",
+                  "pict": "photo-nouvelle",
+                  "correct": true
+                },
+                {
+                  "label": "Pour lui faire une petite farce",
+                  "explain": "Le test n’est pas une farce : il vérifie ce que Palou a appris."
+                },
+                {
+                  "label": "Parce que les anciennes photos sont cassées",
+                  "explain": "Les anciennes photos ne sont pas cassées : on veut voir s’il sait reconnaître du nouveau."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m04",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 4 avec Palou.",
+          "learned": "Une IA apprend avec des exemples nets, puis on la teste. Quand elle se trompe, on la corrige."
+        }
+      ]
+    }
+  ]
+}

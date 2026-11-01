@@ -1,0 +1,603 @@
+{
+  "date": "2026-10-18T03:42:57.655Z",
+  "environement": "Chrome Headless via CDP",
+  "defauts_corriges": {
+    "plein_ecran_zoom": {
+      "description": "Recouvrement 100% de la fenêtre sans marge ni menu visible par .sx-editor sous zoom 0.85",
+      "resultats": [
+        {
+          "viewport": 1440,
+          "rect": {
+            "width": 1440,
+            "height": 900,
+            "top": 0,
+            "left": 0,
+            "right": 1440,
+            "bottom": 900
+          },
+          "window": {
+            "innerWidth": 1440,
+            "innerHeight": 900
+          },
+          "zoom": "0.85",
+          "coversFullWindow": true
+        },
+        {
+          "viewport": 1366,
+          "rect": {
+            "width": 1366,
+            "height": 900,
+            "top": 0,
+            "left": 0,
+            "right": 1366,
+            "bottom": 900
+          },
+          "window": {
+            "innerWidth": 1366,
+            "innerHeight": 900
+          },
+          "zoom": "0.85",
+          "coversFullWindow": true
+        },
+        {
+          "viewport": 1280,
+          "rect": {
+            "width": 1280,
+            "height": 900,
+            "top": 0,
+            "left": 0,
+            "right": 1280,
+            "bottom": 900
+          },
+          "window": {
+            "innerWidth": 1280,
+            "innerHeight": 900
+          },
+          "zoom": "0.85",
+          "coversFullWindow": true
+        },
+        {
+          "viewport": 1100,
+          "rect": {
+            "width": 1100,
+            "height": 900,
+            "top": 0,
+            "left": 0,
+            "right": 1100,
+            "bottom": 900
+          },
+          "window": {
+            "innerWidth": 1100,
+            "innerHeight": 900
+          },
+          "zoom": "0.85",
+          "coversFullWindow": true
+        },
+        {
+          "viewport": 1024,
+          "rect": {
+            "width": 1024,
+            "height": 900,
+            "top": 0,
+            "left": 0,
+            "right": 1024,
+            "bottom": 900
+          },
+          "window": {
+            "innerWidth": 1024,
+            "innerHeight": 900
+          },
+          "zoom": "1",
+          "coversFullWindow": true
+        }
+      ],
+      "verdict": "CONFORME"
+    },
+    "barre_haut_responsive": {
+      "description": "Boutons sans coupure de mots (white-space: nowrap, icones sous 1200px, hauteur <= 44px)",
+      "resultats": [
+        {
+          "viewport": 900,
+          "topbarHeight": 56,
+          "allButtonsOk": true,
+          "buttons": [
+            {
+              "tag": "A",
+              "text": "Quitter",
+              "height": 40,
+              "width": 42,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Annuler la dernière modification",
+              "height": 26,
+              "width": 40,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Rétablir la modification annulée",
+              "height": 26,
+              "width": 40,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Problèmes",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Historique",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Inspecteur",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Publier",
+              "height": 40,
+              "width": 108,
+              "wraps": false,
+              "exceedsHeight": false
+            }
+          ]
+        },
+        {
+          "viewport": 1024,
+          "topbarHeight": 56,
+          "allButtonsOk": true,
+          "buttons": [
+            {
+              "tag": "A",
+              "text": "Quitter",
+              "height": 40,
+              "width": 42,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Annuler la dernière modification",
+              "height": 26,
+              "width": 40,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Rétablir la modification annulée",
+              "height": 26,
+              "width": 40,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Problèmes",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Historique",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Inspecteur",
+              "height": 29,
+              "width": 41,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Publier",
+              "height": 40,
+              "width": 108,
+              "wraps": false,
+              "exceedsHeight": false
+            }
+          ]
+        },
+        {
+          "viewport": 1100,
+          "topbarHeight": 48,
+          "allButtonsOk": true,
+          "buttons": [
+            {
+              "tag": "A",
+              "text": "Quitter",
+              "height": 34,
+              "width": 36,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Annuler la dernière modification",
+              "height": 22,
+              "width": 34,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Rétablir la modification annulée",
+              "height": 22,
+              "width": 34,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Problèmes",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Historique",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Inspecteur",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Publier",
+              "height": 34,
+              "width": 91,
+              "wraps": false,
+              "exceedsHeight": false
+            }
+          ]
+        },
+        {
+          "viewport": 1199,
+          "topbarHeight": 48,
+          "allButtonsOk": true,
+          "buttons": [
+            {
+              "tag": "A",
+              "text": "Quitter",
+              "height": 34,
+              "width": 36,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Annuler la dernière modification",
+              "height": 22,
+              "width": 34,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Rétablir la modification annulée",
+              "height": 22,
+              "width": 34,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Problèmes",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Historique",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Inspecteur",
+              "height": 25,
+              "width": 35,
+              "wraps": false,
+              "exceedsHeight": false
+            },
+            {
+              "tag": "BUTTON",
+              "text": "Publier",
+              "height": 34,
+              "width": 91,
+              "wraps": false,
+              "exceedsHeight": false
+            }
+          ]
+        }
+      ],
+      "verdict": "CONFORME"
+    },
+    "isolation_focus": {
+      "description": "Vérification que studio79.css ne modifie pas le focus des pages d'administration externes",
+      "focus_page_comptes": {
+        "tag": "A",
+        "outline": "rgb(255, 255, 255) none 2.35294px",
+        "outlineColor": "rgb(255, 255, 255)",
+        "isBrandStudio": false
+      },
+      "pollue_hors_studio": false,
+      "verdict": "CONFORME"
+    }
+  },
+  "etapes": {
+    "01_accueil_et_ouverture": {
+      "valeur_accueil": {
+        "stats": [
+          {
+            "valeur": 1,
+            "libelle": "Leçon modifiée"
+          },
+          {
+            "valeur": 1,
+            "libelle": "Brouillon en cours"
+          },
+          {
+            "valeur": 0,
+            "libelle": "Publication en attente"
+          }
+        ],
+        "lessonCards": 40
+      },
+      "lecon_ouverte": "p1-1",
+      "apercu_charge": true,
+      "verdict": "SUCCÈS"
+    },
+    "02_edition_texte_autosave": {
+      "texte_avant": "C’est la récréation ! Une grande caisse vient d’arriver dans la cour de l’école.",
+      "texte_apres": "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante ! Que va-t-il apprendre aujourd'hui ?",
+      "statut_sauvegarde": "Brouillon enregistré à 03:43",
+      "compteur_phrases": "3 phrases · plus longue : 6 mots — idéal : 2 phrases, 12 mots chacune",
+      "verdict": "SUCCÈS"
+    },
+    "03_erreur_structure_et_correction": {
+      "problemes_detectes_avant": [
+        "[error] Écran 2 : texte manquant",
+        "[error] Écran 2 : « prompt » manquant",
+        "[error] Écran 2 : « hint » manquant",
+        "[error] Écran 2 : « success » manquant",
+        "[error] Écran 2 : la mauvaise réponse « » n'est pas expliquée"
+      ],
+      "publication_bloquee_avant": false,
+      "ecrans_origine_preserves": true,
+      "erreurs_bloquantes_apres": 0,
+      "verdict": "SUCCÈS"
+    },
+    "04_glisser_deposer": {
+      "ordre_avant": [
+        "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante !",
+        "Moussa et Fatou se regardent : « Une IA ? C’est quoi, ça ? »",
+        "IA veut dire intelligence artificielle : un outil fabriqué par des hum",
+        "Aide Palou à comprendre ! Réponds avec ton doigt.",
+        "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+        "Bravo {prenom} ! Palou est ton nouvel ami."
+      ],
+      "ordre_apres": [
+        "Moussa et Fatou se regardent : « Une IA ? C’est quoi, ça ? »",
+        "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante !",
+        "IA veut dire intelligence artificielle : un outil fabriqué par des hum",
+        "Aide Palou à comprendre ! Réponds avec ton doigt.",
+        "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+        "Bravo {prenom} ! Palou est ton nouvel ami."
+      ],
+      "changement_effectif": true,
+      "verdict": "SUCCÈS"
+    },
+    "05_mediatheque": {
+      "dialogue_ouvert": true,
+      "elements_vus": 3,
+      "verdict": "SUCCÈS"
+    },
+    "06_annuler_retablir": {
+      "texte_initial": "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante ! Que va-t-il apprendre aujourd'hui ?",
+      "texte_modifie": "Phrase de test pour Annuler et Rétablir. Palou part en voyage d'exploration.",
+      "texte_apres_annuler": "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante ! Que va-t-il apprendre aujourd'hui ?",
+      "texte_apres_retablir": "Phrase de test pour Annuler et Rétablir. Palou part en voyage d'exploration.",
+      "verdict": "SUCCÈS"
+    },
+    "07_publication_differee_et_annulation": {
+      "texte_bandeau": "Publication programmée : La version 2 sera en ligne à 03:59 (dans 15 min)Annuler la publication",
+      "bandeau_supprime_apres_annulation": true,
+      "verdict": "SUCCÈS"
+    },
+    "08_verification_enfant_avant_apres": {
+      "statut_http_avant_terme": 404,
+      "version_vue_avant_terme": 404,
+      "statut_http_apres_terme": 200,
+      "version_vue_apres_terme": 2,
+      "texte_lu_par_enfant": "Palou arrive à Dakar avec ses amis. Il découvre une ville fascinante ! Que va-t-il apprendre aujourd'hui ?",
+      "verdict": "SUCCÈS"
+    },
+    "09_historique_et_restauration": {
+      "versions_dans_tiroir": [
+        "Version 3Retour arrière · par local-admin@keur-ia.testEnregistrée À l'instant« Retour à la version 1 »",
+        "Version 2Modification · par local-admin@keur-ia.testEnregistrée Il y a 1 min Restaurer",
+        "Version 1Contenu d'origineEnregistrée Il y a 3 h« Contenu d'origine » Restaurer"
+      ],
+      "version_apres_rollback": 3,
+      "texte_restaure_lu_enfant": "C’est la récréation ! Une grande caisse vient d’arriver dans la cour de l’école.",
+      "retour_immediat_reussi": true,
+      "verdict": "SUCCÈS"
+    },
+    "10_apercu_telephone": {
+      "gabarit": "phone",
+      "sans_tiroir": true,
+      "verdict": "SUCCÈS"
+    },
+    "11_accessibilite_clavier": {
+      "controles_testes": [
+        "Quitter",
+        "Annuler",
+        "Problèmes",
+        "Historique",
+        "Premier écran du rail",
+        "Aperçu grand format",
+        "Champ texte inspecteur",
+        "Publier",
+        "Premier contrôle modale",
+        "Retour focus sur Publier"
+      ],
+      "details_par_capture": [
+        {
+          "controle": "Quitter",
+          "tag": "A",
+          "nom_accessible": "Quitter vers l'accueil du studio",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-btn-back",
+          "capture": "11a-focus-quitter-1440.png"
+        },
+        {
+          "controle": "Annuler",
+          "tag": "BUTTON",
+          "nom_accessible": "Annuler la dernière modification",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "",
+          "capture": "11b-focus-annuler-1440.png"
+        },
+        {
+          "controle": "Problèmes",
+          "tag": "BUTTON",
+          "nom_accessible": "Problèmes détectés : 0 erreurs, 0 avertissements",
+          "contour_calcule": "rgb(21, 125, 106) solid 2.35294px",
+          "couleur_contour": "rgb(21, 125, 106)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-ghost",
+          "capture": "11c-focus-problemes-1440.png"
+        },
+        {
+          "controle": "Historique",
+          "tag": "BUTTON",
+          "nom_accessible": "Historique des versions",
+          "contour_calcule": "rgb(17, 129, 108) solid 2.35294px",
+          "couleur_contour": "rgb(17, 129, 108)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-ghost",
+          "capture": "11d-focus-historique-1440.png"
+        },
+        {
+          "controle": "Premier écran du rail",
+          "tag": "BUTTON",
+          "nom_accessible": "Déplacer l'écran 1",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-handle",
+          "capture": "11e-focus-rail-ecran1-1440.png"
+        },
+        {
+          "controle": "Aperçu grand format",
+          "tag": "BUTTON",
+          "nom_accessible": "Aperçu grand format",
+          "contour_calcule": "rgb(28, 140, 119) solid 2.35294px",
+          "couleur_contour": "rgb(28, 140, 119)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-ghost",
+          "capture": "11f-focus-apercu-grand-format-1440.png"
+        },
+        {
+          "controle": "Champ texte inspecteur",
+          "tag": "TEXTAREA",
+          "nom_accessible": "Deux phrases courtes, pour un enfant de 7 à 9 ans.",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-input",
+          "capture": "11g-focus-inspecteur-texte-1440.png"
+        },
+        {
+          "controle": "Publier",
+          "tag": "BUTTON",
+          "nom_accessible": "Programmer la publication de cette leçon",
+          "contour_calcule": "rgb(22, 118, 87) solid 2.35294px",
+          "couleur_contour": "rgb(22, 118, 87)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-btn-publish",
+          "capture": "11h-focus-publier-actif-1440.png"
+        },
+        {
+          "controle": "Premier contrôle modale",
+          "tag": "BUTTON",
+          "nom_accessible": "Fermer",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "ec-icon-btn",
+          "capture": "11i-focus-modal-premier-controle-1440.png"
+        },
+        {
+          "controle": "Retour focus sur Publier",
+          "tag": "BUTTON",
+          "nom_accessible": "Programmer la publication de cette leçon",
+          "contour_calcule": "rgb(13, 132, 110) solid 2.35294px",
+          "couleur_contour": "rgb(13, 132, 110)",
+          "largeur_contour": "2.35294px",
+          "focus_visible": true,
+          "classe": "sx-btn-publish",
+          "capture": "11j-focus-retour-publier-1440.png"
+        }
+      ],
+      "couleur_anneau_reelle": "vert de marque (#0d846e / rgb(13, 132, 110))",
+      "epaisseur_anneau": "3px (ajusté sous zoom)",
+      "tous_focus_visible": true,
+      "piege_focus_modal": true,
+      "retour_focus_echap": true,
+      "verdict": "SUCCÈS"
+    }
+  }
+}

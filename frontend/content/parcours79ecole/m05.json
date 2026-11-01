@@ -1,0 +1,572 @@
+{
+ "module": {
+  "id": "ep5",
+  "chapter": 5,
+  "title": "Les yeux de la machine",
+  "place": "Le parc des oiseaux du Djoudj, près de Saint-Louis",
+  "emoji": "🦩",
+  "intro": "Au parc du Djoudj, des caméras comptent les oiseaux toutes seules. Comment une machine peut-elle « voir » ?",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep5-1",
+   "title": "Une image, ce sont des points",
+   "scene": { "id": "parc-djoudj", "label": "Le parc du Djoudj" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "sarr"],
+   "problem": "Au Djoudj, une caméra regarde les oiseaux. Mais une machine n’a pas d’yeux : que voit-elle vraiment ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "sarr", "emoji": "🦩",
+     "image": "ep5-l1-arrivee.webp",
+     "alt": "Au bord de l’eau, Monsieur Sarr, le garde du parc, accueille la classe. Des pélicans et des flamants au loin.",
+     "text": "Au parc du Djoudj, Monsieur Sarr, le garde, accueille la classe : « Ici vivent des milliers d’oiseaux. Une caméra nous aide à les compter. »"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "fatou", "emoji": "📷",
+     "image": "ep5-l1-camera.webp",
+     "alt": "Fatou regarde de près la caméra fixée sur un poteau, face à l’eau.",
+     "text": "Fatou s’approche de la caméra : « Mais elle n’a pas d’yeux ! Comment elle voit les oiseaux ? »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "🔍",
+     "image": "ep5-l1-pixels.webp",
+     "alt": "Sur l’écran de Monsieur Sarr, Palou agrandit la photo d’un pélican jusqu’à voir des petits carrés de couleur.",
+     "text": "Palou agrandit une photo sur l’écran, encore et encore… Le pélican devient des petits carrés de couleur ! « Pour la machine, une image, c’est plein de petits points. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "📒",
+     "image": "ep5-l1-khady.webp",
+     "alt": "Khady dessine une grille dans son carnet et colorie des cases pour faire un petit oiseau.",
+     "text": "Khady colorie des cases dans son carnet : « Regardez ! Avec des cases, je fais un oiseau. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🟦",
+     "word": { "terme": "Pixel", "sens": "Un tout petit point de couleur. Une photo est faite de milliers de pixels." },
+     "text": "Une image numérique est faite de milliers de petits points de couleur : les pixels. La machine ne voit que ces points."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Découvre ce que voit la machine !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour la machine, une photo de pélican, c’est…",
+       "hint": "Souviens-toi de la photo agrandie.",
+       "success": "Exact ! Des milliers de petits points de couleur.",
+       "options": [
+        { "label": "Des milliers de petits points de couleur", "pict": "pixels", "correct": true },
+        { "label": "Un vrai oiseau vivant", "pict": "pelican", "explain": "La machine ne voit pas un oiseau vivant : seulement des points de couleur." },
+        { "label": "Un dessin fait à la main", "pict": "crayon-dessin", "explain": "Une photo de la caméra est faite de pixels, pas d’un dessin." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Si on agrandit beaucoup une photo, on voit…",
+       "hint": "Qu’a fait Palou sur l’écran ?",
+       "success": "Bravo ! On voit apparaître les petits carrés : les pixels.",
+       "options": [
+        { "label": "Des petits carrés de couleur", "pict": "pixels", "correct": true },
+        { "label": "Des mots cachés", "pict": "bulle-longue", "explain": "Il n’y a pas de mots cachés : seulement des carrés de couleur." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une image avec très peu de pixels (de gros carrés) est…",
+       "hint": "Avec peu de cases, peut-on dessiner les détails ?",
+       "success": "Exact ! Avec peu de pixels, on voit mal les détails : c’est plus dur à reconnaître.",
+       "options": [
+        { "label": "Plus difficile à reconnaître", "pict": "photo-floue", "correct": true },
+        { "label": "Plus facile à reconnaître", "pict": "loupe-verifier", "explain": "Avec de gros carrés, les détails disparaissent : c’est plus difficile." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🟥",
+     "titre": "Le dessin en pixels",
+     "duree": "20 minutes",
+     "groupes": "Par deux",
+     "text": "Sur une grille de 8 cases sur 8, un élève colorie un dessin secret (un oiseau, un poisson, une maison). Puis il dicte les cases à son voisin, ligne par ligne : « case 1 blanche, case 2 noire… ». Le voisin colorie sans regarder. Les deux dessins sont-ils pareils ?",
+     "materiel": ["Deux grilles de 8 × 8 cases par binôme", "Un crayon noir ou de couleur"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Une caméra qui filme tout le temps, c’est bien pour les oiseaux… Et si elle filmait les gens ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Où est-ce utile ? Où est-ce gênant ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’un pixel ?",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Un tout petit point de couleur d’une image.",
+       "options": [
+        { "label": "Un petit point de couleur d’une image", "pict": "pixels", "correct": true },
+        { "label": "Un oiseau du Djoudj", "pict": "pelican", "explain": "Les pélicans vivent au Djoudj, mais un pixel est un point de couleur." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Que voit vraiment une caméra ?",
+       "hint": "Elle n’a pas d’yeux comme nous…",
+       "success": "Exact ! Elle voit des pixels, pas des oiseaux.",
+       "options": [
+        { "label": "Des pixels", "pict": "pixels", "correct": true },
+        { "label": "Tout, comme nos yeux", "pict": "robot-sait-tout", "explain": "Elle ne comprend pas ce qu’elle voit comme nous : elle reçoit des points de couleur." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais ce que voit une machine.",
+     "learned": "Une image numérique est faite de milliers de petits points de couleur, les pixels. La machine ne voit que ces points."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre qu’une image numérique est une grille de pixels.",
+     "Coder et décoder une image simple en pixels.",
+     "Ouvrir la réflexion sur les caméras et la vie privée."
+    ],
+    "deroule": [
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le dessin en pixels (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Grilles 8 × 8 imprimées ou tracées sur papier quadrillé."],
+    "reponses": [
+     "Si le binôme se trompe d’une case, le dessin change un peu : une image numérique, ce sont des nombres et des couleurs, case par case.",
+     "Débat : une caméra pour compter les oiseaux protège la nature. Filmer les gens sans leur accord peut être gênant ou interdit. Il faut des règles."
+    ],
+    "attention": "Montrer, si possible, une vraie photo agrandie sur un écran jusqu’à voir les pixels."
+   }
+  },
+  {
+   "id": "ep5-2",
+   "title": "Reconnaître une forme",
+   "scene": { "id": "parc-djoudj", "label": "Le parc du Djoudj" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "sarr"],
+   "problem": "La caméra sait dire « pélican » ou « flamant ». Comment reconnaît-elle un oiseau avec seulement des points ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "moussa", "emoji": "🦩",
+     "image": "ep5-l2-ecran.webp",
+     "alt": "Sur l’écran du garde, des cadres entourent les oiseaux avec un petit dessin de pélican ou de flamant à côté.",
+     "text": "Sur l’écran de Monsieur Sarr, la caméra entoure chaque oiseau d’un cadre : pélican, flamant, pélican… Moussa n’en revient pas."
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "sarr", "emoji": "🖼️",
+     "image": "ep5-l2-exemples.webp",
+     "alt": "Monsieur Sarr montre des centaines de photos de pélicans et de flamants, chacune avec son nom.",
+     "text": "Monsieur Sarr explique : « Elle a appris avec des milliers de photos de pélicans et de flamants. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep5-l2-indices.webp",
+     "alt": "Palou montre les indices : le long cou rose du flamant, le grand bec avec une poche du pélican.",
+     "text": "Palou montre les indices : « Le flamant : long cou, pattes fines, couleur rose. Le pélican : grand bec avec une poche. La machine a appris à repérer ces indices dans les pixels. »"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "lamine", "emoji": "🤨",
+     "image": "ep5-l2-lamine.webp",
+     "alt": "Lamine, une main sur le menton, regarde l’écran avec méfiance.",
+     "text": "Lamine réfléchit : « Donc elle ne sait pas ce qu’est un oiseau. Elle reconnaît juste des formes et des couleurs. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🔺",
+     "word": { "terme": "Forme", "sens": "Le contour d’une chose : rond, long, pointu… La machine repère les formes et les couleurs dans les pixels." },
+     "text": "Pour reconnaître, une IA cherche dans les pixels les formes et les couleurs qu’elle a vues dans ses exemples."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide la caméra à reconnaître les oiseaux !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque indice avec le bon oiseau.",
+       "hint": "Relis les indices de Palou.",
+       "success": "Bravo ! Tu repères les indices comme la machine.",
+       "bins": [
+        { "id": "flamant", "label": "Flamant", "pict": "flamant", "emoji": "🦩" },
+        { "id": "pelican", "label": "Pélican", "pict": "pelican", "emoji": "🐦" }
+       ],
+       "items": [
+        { "id": "a", "label": "Couleur rose", "pict": "tache-rose", "emoji": "🩷", "bin": "flamant", "explain": "Le flamant est rose." },
+        { "id": "b", "label": "Grand bec avec une poche", "pict": "bec-poche", "emoji": "👄", "bin": "pelican", "explain": "La poche sous le bec, c’est le pélican." },
+        { "id": "c", "label": "Pattes très fines et longues", "pict": "pattes-fines", "emoji": "🦵🏾", "bin": "flamant", "explain": "Le flamant a de longues pattes fines." },
+        { "id": "d", "label": "Gros corps blanc", "pict": "corps-blanc", "emoji": "⚪", "bin": "pelican", "explain": "Le pélican a un gros corps blanc." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "La machine sait-elle ce qu’est un oiseau, comme toi ?",
+       "hint": "Pense à ce qu’a dit Lamine.",
+       "success": "Exact ! Elle reconnaît des formes et des couleurs, sans comprendre ce qu’est un oiseau.",
+       "options": [
+        { "label": "Non, elle reconnaît des formes et des couleurs", "pict": "pixels", "correct": true },
+        { "label": "Oui, elle sait qu’un oiseau vole et chante", "pict": "robot-sait-tout", "explain": "Elle ne sait rien de la vie des oiseaux : elle repère des formes." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour que la caméra reconnaisse aussi les hérons, que faut-il ?",
+       "hint": "Comment a-t-elle appris les pélicans ?",
+       "success": "Bravo ! Beaucoup de photos de hérons, bien étiquetées.",
+       "options": [
+        { "label": "Beaucoup de photos de hérons, avec leur nom", "pict": "photos-exemples", "correct": true },
+        { "label": "Lui dire « devine ! »", "pict": "de-hasard", "explain": "Elle ne peut pas deviner un oiseau qu’elle n’a jamais vu." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🙈",
+     "titre": "Devine à partir des indices",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe",
+     "text": "L’enseignant cache une image d’animal derrière une feuille, et la découvre petit à petit (un coin, puis un autre). À chaque étape, les élèves disent quel indice ils voient (« une forme pointue », « une couleur orange ») et proposent un animal. À partir de quand est-on sûr ?",
+     "materiel": ["Des images d’animaux et une feuille pour les cacher"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "lamine", "emoji": "💬",
+     "question": "Lamine demande : « Si la machine ne comprend pas vraiment, est-ce qu’on peut dire qu’elle voit ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce que toi, tu sais d’un oiseau, que la caméra ne sait pas ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour reconnaître, la machine cherche dans les pixels…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Des formes et des couleurs.",
+       "options": [
+        { "label": "Des formes et des couleurs", "pict": "forme-couleur", "correct": true },
+        { "label": "Des chansons", "pict": "telephone-musique", "explain": "Pas de chansons dans une image ! Des formes et des couleurs." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Où la machine a-t-elle appris quelles formes cherchent ?",
+       "hint": "Monsieur Sarr l’a expliqué.",
+       "success": "Exact ! Dans ses milliers d’exemples.",
+       "options": [
+        { "label": "Dans ses exemples", "pict": "photos-exemples", "correct": true },
+        { "label": "Dans un livre de contes", "pict": "livre-ouvert", "explain": "Pas dans un conte : dans ses milliers de photos d’exemples." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment une machine reconnaît une forme.",
+     "learned": "Une IA reconnaît en cherchant dans les pixels les formes et les couleurs vues dans ses exemples. Elle ne comprend pas ce qu’elle voit."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre que la reconnaissance d’images s’appuie sur des indices (formes, couleurs) appris avec des exemples.",
+     "Distinguer reconnaître et comprendre."
+    ],
+    "deroule": [
+     "Rappel : les pixels (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : devine à partir des indices (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["5 ou 6 images d’animaux et une feuille opaque."],
+    "reponses": [
+     "On devient sûr quand on voit un indice très typique (la trompe de l’éléphant, les rayures du zèbre) : c’est aussi ce que cherche la machine.",
+     "Débat : nous savons qu’un oiseau vit, mange, vole, a des petits. La caméra repère seulement une forme. On peut dire qu’elle « détecte », pas qu’elle comprend."
+    ],
+    "attention": "Le parc du Djoudj existe vraiment (parc national et site du patrimoine mondial). La caméra et Monsieur Sarr font partie de l’histoire."
+   }
+  },
+  {
+   "id": "ep5-3",
+   "title": "Quand la vision se trompe",
+   "scene": { "id": "parc-djoudj", "label": "Le parc du Djoudj" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "sarr"],
+   "problem": "La caméra annonce un pélican… mais c’est un sac en plastique blanc ! Pourquoi la vision d’une machine se trompe-t-elle ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "seydou", "emoji": "🛍️",
+     "image": "ep5-l3-sac.webp",
+     "alt": "Sur l’écran, un cadre « pélican » entoure un sac en plastique blanc accroché dans les roseaux. Seydou éclate de rire.",
+     "text": "L’écran affiche : « Pélican ! » Seydou éclate de rire : c’est un sac en plastique blanc, accroché dans les roseaux !"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "fatou", "emoji": "🌅",
+     "image": "ep5-l3-contrejour.webp",
+     "alt": "Au coucher du soleil, des oiseaux en ombres noires ; l’écran affiche un point d’interrogation.",
+     "text": "Le soir, à contre-jour, les oiseaux deviennent des ombres noires. La caméra n’arrive plus à dire lesquels c’est. Fatou demande pourquoi."
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "sarr", "emoji": "👨🏾‍🌾",
+     "image": "ep5-l3-garde.webp",
+     "alt": "Monsieur Sarr vérifie avec ses jumelles et corrige sur sa tablette.",
+     "text": "Monsieur Sarr prend ses jumelles : « C’est pour ça que je vérifie chaque soir. Et je corrige les erreurs pour que la machine apprenne. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep5-l3-palou.webp",
+     "alt": "Palou montre côte à côte un pélican et un sac blanc : même couleur, forme un peu pareille.",
+     "text": "Palou explique : « Même couleur, forme un peu pareille… La machine se fait piéger par ce qui ressemble à ses exemples, ou par une mauvaise lumière. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "⚠️",
+     "word": { "terme": "Piège", "sens": "Une image qui ressemble à autre chose et trompe la machine : mauvaise lumière, objet qui ressemble, image cachée en partie…" },
+     "text": "La vision d’une machine peut être piégée : objets qui se ressemblent, mauvaise lumière, chose à moitié cachée. Un humain vérifie."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Monsieur Sarr à trouver les pièges !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pourquoi la caméra a-t-elle pris le sac pour un pélican ?",
+       "hint": "Qu’ont-ils en commun ?",
+       "success": "Exact ! Même couleur blanche, forme un peu pareille : la machine s’est fait piéger.",
+       "options": [
+        { "label": "Même couleur et forme un peu pareille", "pict": "sac-plastique", "correct": true },
+        { "label": "Le sac savait voler", "pict": "baguette-magique", "explain": "Un sac ne vole pas tout seul ! La caméra a été trompée par sa couleur et sa forme." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les situations où la caméra risque de se tromper.",
+       "hint": "Il y en a trois.",
+       "success": "Bravo ! Contre-jour, oiseau à moitié caché, et objet qui ressemble : trois pièges.",
+       "options": [
+        { "label": "Oiseaux à contre-jour, le soir", "pict": "contre-jour", "emoji": "🌅", "correct": true },
+        { "label": "Oiseau à moitié caché dans les roseaux", "pict": "oiseau-cache", "emoji": "🌾", "correct": true },
+        { "label": "Un pélican bien visible, en plein jour", "pict": "pelican", "emoji": "🐦", "explain": "Bien visible, en plein jour : c’est le cas le plus facile pour la caméra." },
+        { "label": "Un ballon blanc qui flotte sur l’eau", "pict": "ballon-blanc", "emoji": "⚪", "correct": true }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Monsieur Sarr corrige les erreurs de la caméra chaque soir. À quoi ça sert ?",
+       "hint": "Les corrections deviennent…",
+       "success": "Exact ! Ses corrections deviennent de nouveaux exemples : la machine s’améliore.",
+       "options": [
+        { "label": "La machine apprend de ses erreurs", "pict": "photos-exemples", "correct": true },
+        { "label": "À rien, la machine ne change jamais", "pict": "erreur-croix", "explain": "Les corrections servent de nouveaux exemples : la machine peut s’améliorer." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🎭",
+     "titre": "Piégeons la machine !",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe dessine une image-piège : un objet qui ressemble à un animal (un nuage en forme de mouton, un caillou qui ressemble à une tortue). Les autres groupes, qui jouent la machine, doivent dire ce qu’ils voient en 3 secondes. La machine s’est-elle fait piéger ?",
+     "materiel": ["Feuilles et crayons de couleur"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "fatou", "emoji": "💬",
+     "question": "Fatou demande : « Si une caméra se trompe sur une personne, et l’accuse de quelque chose qu’elle n’a pas fait, qu’est-ce qui se passe ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Pourquoi un humain doit-il toujours vérifier ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "La vision d’une machine peut se tromper quand…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Quand un piège la trompe : lumière, ressemblance, chose cachée.",
+       "options": [
+        { "label": "Un piège la trompe", "pict": "contre-jour", "correct": true },
+        { "label": "Jamais", "pict": "robot-sait-tout", "explain": "Elle peut se tromper, comme pour le sac en plastique." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Que fait-on quand une machine se trompe sur ce qu’elle voit ?",
+       "hint": "Pense à Monsieur Sarr.",
+       "success": "Exact ! Un humain vérifie et corrige.",
+       "options": [
+        { "label": "Un humain vérifie et corrige", "pict": "loupe-verifier", "correct": true },
+        { "label": "On la jette", "pict": "poubelle", "explain": "Pas besoin de la jeter : on vérifie et on corrige pour qu’elle s’améliore." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais quand la vision d’une machine se trompe.",
+     "learned": "La vision d’une machine peut être piégée par la lumière, une ressemblance ou une chose cachée. Un humain vérifie et corrige."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Identifier des situations qui trompent la vision artificielle.",
+     "Comprendre le rôle de la correction humaine.",
+     "Réfléchir aux conséquences d’une erreur sur des personnes."
+    ],
+    "deroule": [
+     "Rappel : reconnaître une forme (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : piégeons la machine (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Feuilles et crayons de couleur."],
+    "reponses": [
+     "Les meilleures images-pièges jouent sur la couleur et le contour, comme pour la machine.",
+     "Débat : une erreur sur un oiseau n’est pas grave ; une erreur sur une personne peut être injuste. C’est pourquoi la décision finale doit revenir à un humain."
+    ],
+    "attention": "Le débat peut évoquer la reconnaissance faciale : rester factuel et rassurant."
+   }
+  },
+  {
+   "id": "ep5-4",
+   "title": "L’atelier des images mystère",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine"],
+   "problem": "De retour en classe, les élèves créent un jeu d’images mystère en pixels pour l’école.",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "🟦",
+     "image": "ep5-l4-idee.webp",
+     "alt": "Khady montre son carnet plein de petits dessins en pixels à la classe.",
+     "text": "Khady montre son carnet plein de dessins en pixels : « Et si on faisait un jeu d’images mystère pour toute l’école ? »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "🖼️",
+     "image": "ep5-l4-projet.webp",
+     "alt": "Madame Diop distribue de grandes grilles aux groupes.",
+     "text": "Madame Diop distribue de grandes grilles : « Chaque groupe crée une image mystère, de plus en plus détaillée. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep5-l4-palou.webp",
+     "alt": "Palou montre trois versions d’un même oiseau : en gros carrés, en carrés moyens, en petits carrés.",
+     "text": "Palou montre une idée : « D’abord une image en gros carrés, puis en carrés moyens, puis en petits carrés. À partir de quand les autres devinent ? »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🔎",
+     "word": { "terme": "Détail", "sens": "Une petite partie qui aide à reconnaître. Plus il y a de pixels, plus on voit les détails." },
+     "text": "Plus une image a de pixels, plus on voit de détails, et plus c’est facile à reconnaître, pour nous comme pour une machine."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare l’atelier des images mystère !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range les images de la plus difficile à la plus facile à deviner.",
+       "hint": "Plus de pixels = plus de détails.",
+       "success": "Bravo ! Gros carrés, carrés moyens, puis petits carrés.",
+       "bins": [
+        { "id": "un", "label": "La plus difficile", "pict": "etape-1", "emoji": "1️⃣" },
+        { "id": "deux", "label": "Moyenne", "pict": "etape-2", "emoji": "2️⃣" },
+        { "id": "trois", "label": "La plus facile", "pict": "etape-3", "emoji": "3️⃣" }
+       ],
+       "items": [
+        { "id": "a", "label": "L’oiseau en 4 gros carrés", "pict": "pixels-gros", "emoji": "🟫", "bin": "un", "explain": "Avec 4 carrés, on ne voit presque rien." },
+        { "id": "b", "label": "L’oiseau en 64 carrés moyens", "pict": "pixels-moyens", "emoji": "🟨", "bin": "deux", "explain": "On commence à voir la forme." },
+        { "id": "c", "label": "L’oiseau en milliers de petits carrés", "pict": "pixels", "emoji": "🟦", "bin": "trois", "explain": "Tous les détails sont là : facile !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une caméra de mauvaise qualité (peu de pixels) va…",
+       "hint": "Peu de pixels, peu de…",
+       "success": "Exact ! Elle verra moins de détails et se trompera plus souvent.",
+       "options": [
+        { "label": "Se tromper plus souvent", "pict": "ia-hesite", "correct": true },
+        { "label": "Mieux voir", "pict": "loupe-verifier", "explain": "Avec moins de pixels, elle voit moins de détails, pas mieux." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🖼️",
+     "titre": "Projet de classe : l’atelier des images mystère",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe choisit un animal ou un objet du Sénégal et le dessine trois fois en pixels : sur une grille de 4 × 4, de 8 × 8, puis de 16 × 16. On affiche les images de la plus floue à la plus nette. Les élèves des autres classes viennent deviner : à quelle grille trouvent-ils ?",
+     "materiel": ["Des grilles 4 × 4, 8 × 8 et 16 × 16 par groupe", "Crayons de couleur ou feutres", "Une feuille de résultats"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Une caméra qui reconnaît les animaux, ça peut aider à protéger la nature. À quoi d’autre pourrait servir une machine qui voit, au Sénégal ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Et à quoi elle ne devrait pas servir ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une image numérique est faite de…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! De pixels.",
+       "options": [
+        { "label": "Pixels", "pict": "pixels", "correct": true },
+        { "label": "Plumes", "pict": "pelican", "explain": "Les oiseaux ont des plumes, les images ont des pixels !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour reconnaître, la machine cherche…",
+       "hint": "La leçon 2.",
+       "success": "Exact ! Des formes et des couleurs apprises dans ses exemples.",
+       "options": [
+        { "label": "Des formes et des couleurs", "pict": "forme-couleur", "correct": true },
+        { "label": "L’avis des oiseaux", "pict": "flamant", "explain": "Les oiseaux ne donnent pas d’avis ! Elle cherche des formes et des couleurs." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le sac en plastique pris pour un pélican, c’était…",
+       "hint": "La leçon 3.",
+       "success": "Bravo ! Un piège : un humain vérifie.",
+       "options": [
+        { "label": "Un piège pour la machine", "pict": "sac-plastique", "correct": true },
+        { "label": "Un vrai pélican", "pict": "pelican", "explain": "C’était bien un sac : la machine s’est trompée." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton atelier d’images mystère est prêt. Le module 5 est terminé !",
+     "learned": "Une machine voit des pixels. Elle reconnaît des formes et des couleurs apprises dans ses exemples. Elle peut être piégée : un humain vérifie."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Réinvestir : pixels, reconnaissance de formes, erreurs de vision.",
+     "Expérimenter le lien entre résolution (nombre de pixels) et reconnaissance.",
+     "Réfléchir aux bons et mauvais usages de la vision artificielle."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; dessins sur les trois grilles (30 min).",
+     "Séance 2 : finitions et affichage (15 min) ; jeu avec une autre classe (15 min) ; « On en parle » (10 min) ; défi (5 min)."
+    ],
+    "materiel": ["Grilles 4 × 4, 8 × 8 et 16 × 16 par groupe, crayons ou feutres."],
+    "reponses": [
+     "On reconnaît rarement en 4 × 4, souvent en 8 × 8 pour des formes simples, presque toujours en 16 × 16.",
+     "Débat : usages utiles (compter les animaux, repérer les maladies des plantes, aider les malvoyants) ; usages à encadrer (surveiller les gens sans leur accord)."
+    ],
+    "attention": "Choisir des sujets bien connus des élèves : baobab, pirogue, mouton, mangue, lion."
+   }
+  }
+ ]
+}

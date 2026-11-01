@@ -1,0 +1,25 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1280
+PlayResY: 720
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Card,Nimbus Sans,36,&H00FFFFFF,&H000000FF,&H00354A26,&HA0213D33,-1,0,0,0,100,100,0,0,3,2,0,2,70,70,44,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:07.00,Card,,0,0,0,,{\fad(350,350)\fs46}Bonjour, bienvenue dans cette aventure kEur IA !\N{\fs25}Jeunes Aventuriers • 10–12 ans • avec Kër
+Dialogue: 0,0:00:07.00,0:00:13.00,Card,,0,0,0,,{\fad(250,250)}Module 1 • Bienvenue dans l’IA\N{\fs23}IA, robot ou programme ?
+Dialogue: 0,0:00:13.00,0:00:19.00,Card,,0,0,0,,{\fad(250,250)}Module 2 • L’IA dans mon quotidien\N{\fs23}Téléphone, GPS, jeux et recommandations.
+Dialogue: 0,0:00:19.00,0:00:25.00,Card,,0,0,0,,{\fad(250,250)}Module 3 • Le pouvoir des données\N{\fs23}Collecte, trie et questionne.
+Dialogue: 0,0:00:25.00,0:00:31.00,Card,,0,0,0,,{\fad(250,250)}Module 4 • Comment une IA apprend ?\N{\fs23}Entraînement, modèle et prédiction.
+Dialogue: 0,0:00:31.00,0:00:37.00,Card,,0,0,0,,{\fad(250,250)}Module 5 • Vision artificielle\N{\fs23}Analyse et classification des images.
+Dialogue: 0,0:00:37.00,0:00:43.00,Card,,0,0,0,,{\fad(250,250)}Module 6 • Langage & chatbots\N{\fs23}Comment l’IA travaille avec nos mots.
+Dialogue: 0,0:00:43.00,0:00:49.00,Card,,0,0,0,,{\fad(250,250)}Module 7 • IA générative\N{\fs23}Texte, image, son et limites.
+Dialogue: 0,0:00:49.00,0:00:55.00,Card,,0,0,0,,{\fad(250,250)}Module 8 • L’école des prompts\N{\fs23}Donne des consignes claires et précises.
+Dialogue: 0,0:00:55.00,0:01:01.00,Card,,0,0,0,,{\fad(250,250)}Module 9 • Biais & équité\N{\fs23}Comprends pourquoi une IA peut être injuste.
+Dialogue: 0,0:01:01.00,0:01:07.00,Card,,0,0,0,,{\fad(250,250)}Module 10 • Deepfakes & info\N{\fs23}Vérifie avant de croire ou partager.
+Dialogue: 0,0:01:07.00,0:01:13.00,Card,,0,0,0,,{\fad(250,250)}Module 11 • IA responsable\N{\fs23}Protège tes données et questionne les usages.
+Dialogue: 0,0:01:13.00,0:01:19.00,Card,,0,0,0,,{\fad(250,250)}Module 12 • IA pour le Sénégal\N{\fs23}Imagine une solution pour un défi local.
+Dialogue: 0,0:01:19.00,0:01:24.00,Card,,0,0,0,,{\fad(300,500)\fs43}Ton parcours est prêt ! 🚀\N{\fs23}OBSERVE • QUESTIONNE • VÉRIFIE • CRÉE

@@ -1,0 +1,282 @@
+{
+  "base": "http://localhost:3011",
+  "steps": [
+    {
+      "name": "login yacine (CE1 A)",
+      "status": 200
+    },
+    {
+      "name": "classement CE1 A",
+      "shots": [
+        {
+          "width": 1280,
+          "innerWidth": 1280,
+          "docScrollWidth": 1280,
+          "bodyScrollWidth": 1506,
+          "ok": false,
+          "file": "01-ma-classe-CE1A-yacine-1280.png"
+        },
+        {
+          "width": 768,
+          "innerWidth": 768,
+          "docScrollWidth": 768,
+          "bodyScrollWidth": 768,
+          "ok": true,
+          "file": "01-ma-classe-CE1A-yacine-768.png"
+        },
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "01-ma-classe-CE1A-yacine-390.png"
+        }
+      ],
+      "status": 200,
+      "classroom": "CE1 A",
+      "names": [
+        "1 Khady S. 525",
+        "2 Serigne N. 490",
+        "3 Bineta S. 420",
+        "4 Abdoulaye N. 385",
+        "4 Khady D. 385",
+        "4 Moussa C. 385",
+        "7 Ousmane N. 280",
+        "8 Maïmouna S. 210",
+        "9 Moussa D. 140",
+        "10 Yacine S. 60 (moi)",
+        "11 Aminata M. 40",
+        "11 Oumy F. 40",
+        "13 Mariama T. 35",
+        "14 Adja C. 20"
+      ],
+      "screenNames": [
+        "Khady S.",
+        "Serigne N.",
+        "Bineta S.",
+        "Abdoulaye N.",
+        "Khady D.",
+        "Moussa C.",
+        "Ousmane N.",
+        "Maïmouna S.",
+        "Moussa D.",
+        "Yacine S. (toi)",
+        "Aminata M.",
+        "Oumy F.",
+        "Mariama T.",
+        "Adja C."
+      ]
+    },
+    {
+      "name": "login elhadji (CE1 B)",
+      "status": 200
+    },
+    {
+      "name": "classement CE1 B",
+      "shots": [
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "02-ma-classe-CE1B-elhadji-390.png"
+        }
+      ],
+      "classroom": "CE1 B",
+      "names": [
+        "Cheikh T.",
+        "Dieynaba G.",
+        "Bineta M.",
+        "Ndèye C.",
+        "Omar D.",
+        "Yacine C.",
+        "Abdoulaye S.",
+        "Bineta N.",
+        "Elhadji C.",
+        "Cheikh D.",
+        "Coumba D.",
+        "Idrissa N."
+      ],
+      "communs_avec_CE1A": [],
+      "fuite_email_ou_matricule": null
+    },
+    {
+      "name": "élève absent du classement (CE1 A, 0 point)",
+      "shots": [
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "03-absent-du-classement-390.png"
+        }
+      ],
+      "text": "Classement de la classe\n\nPoints gagnés du 10 au 16 octobre (7 derniers jours)\n\nClassement de la classe CE1 A, du 10 au 16 octobre\nRANG\tÉLÈVE\tPOINTS\tLEÇONS\n1\tKhady S.\t525\t15\n2\tSerigne N.\t490\t14\n3\tBineta S.\t420\t12\n4\tAbdoulaye N.\t385\t11\n4\tKhady D.\t385\t11\n4\tMoussa C.\t385\t11\n7\tOusmane N.\t280\t8\n8\tMaïmouna S.\t210\t6\n9\tMoussa D.\t140\t4\n10\tYacine S.\t60\t1\n11\tAminata M.\t40\t1\n11\tOumy F.\t40\t1\n13\tMariama T.\t35\t1\n14\tAdja C.\t20\t1\n\nTu n’as pas encore de points cette semaine : termine une leçon pour entrer dans le classement.\n\n14 élèves sur 17 ont des points cette semaine."
+    },
+    {
+      "name": "classe vide (CI A, aucun point)",
+      "shots": [
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "04-classe-vide-390.png"
+        }
+      ],
+      "text": "Classement de la classe\n\nPoints gagnés du 10 au 16 octobre (7 derniers jours)\n\nPersonne n’a encore gagné de points cette semaine. Toi le premier ?\n\nTu n’as pas encore de points cette semaine : termine une leçon pour entrer dans le classement.\n\n0 élève sur 18 a des points cette semaine."
+    },
+    {
+      "name": "chargement (requête retenue)",
+      "loadingVisible": true,
+      "heading": "Classement de la classe",
+      "m": {
+        "innerWidth": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390
+      }
+    },
+    {
+      "name": "erreur réseau puis Réessayer",
+      "retryButton": {
+        "w": 133,
+        "h": 44
+      },
+      "afterRetryRows": 14,
+      "m": {
+        "innerWidth": 390,
+        "docScrollWidth": 390,
+        "bodyScrollWidth": 390
+      }
+    },
+    {
+      "name": "login direction",
+      "status": 200
+    },
+    {
+      "name": "direction ferme le classement",
+      "before": true,
+      "after": false,
+      "status": "Enregistré avec succès."
+    },
+    {
+      "name": "élève : classement fermé",
+      "shots": [
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "08-classement-ferme-par-la-direction-390.png"
+        },
+        {
+          "width": 1280,
+          "innerWidth": 1280,
+          "docScrollWidth": 1280,
+          "bodyScrollWidth": 1506,
+          "ok": false,
+          "file": "08-classement-ferme-par-la-direction-1280.png"
+        }
+      ],
+      "text": "Classement de la classe\n\nLe classement : coupé par la direction de l'école.",
+      "api": {
+        "status": 403,
+        "body": {
+          "reason": "closed",
+          "by": "school",
+          "error": "Le classement : coupé par la direction de l'école."
+        }
+      },
+      "restrictionsMessages": [
+        "Le classement : coupé par la direction de l'école."
+      ]
+    },
+    {
+      "name": "direction rouvre le classement",
+      "before": false,
+      "after": true,
+      "status": "Enregistré avec succès."
+    },
+    {
+      "name": "élève : classement rouvert",
+      "shots": [
+        {
+          "width": 390,
+          "innerWidth": 390,
+          "docScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "ok": true,
+          "file": "09-classement-rouvert-390.png"
+        }
+      ],
+      "rows": 14
+    },
+    {
+      "name": "parcours avant exception",
+      "kidsTheme": true,
+      "sequenceNote": false,
+      "title": "L’île des Petits Explorateurs",
+      "ageGroup": "7-9",
+      "todayTrack": "7-9"
+    },
+    {
+      "name": "login enseignante CE1 A",
+      "status": 200
+    },
+    {
+      "name": "enseignante pose 10-12",
+      "notice": "Parcours enregistré : 10-12 ans."
+    },
+    {
+      "name": "parcours avec exception 10-12",
+      "kidsTheme": false,
+      "sequenceNote": true,
+      "title": "Mes modules, étape par étape",
+      "ageGroup": "10-12",
+      "todayTrack": "10-12"
+    },
+    {
+      "name": "carte Ma classe",
+      "card": "Classe de CE1 A\n\nCours élémentaire 1 · Parcours 10–12 ans\n\nEnseignant : Khady Faye"
+    },
+    {
+      "name": "enseignante retire l'exception",
+      "notice": "Parcours enregistré : Par défaut — parcours du niveau (7-9 ans)."
+    },
+    {
+      "name": "parcours après retrait",
+      "kidsTheme": true,
+      "sequenceNote": false,
+      "title": "L’île des Petits Explorateurs",
+      "ageGroup": "7-9",
+      "todayTrack": "7-9"
+    },
+    {
+      "name": "login enfant de famille",
+      "status": 200
+    },
+    {
+      "name": "enfant de famille",
+      "kidsTheme": true,
+      "cahierMenu": false,
+      "ageGroup": "7-9",
+      "classement": {
+        "status": 403,
+        "body": {
+          "reason": "no_class",
+          "error": "Le classement de la classe est réservé aux élèves inscrits dans une classe d'école."
+        }
+      },
+      "m": {
+        "innerWidth": 1280,
+        "docScrollWidth": 1280,
+        "bodyScrollWidth": 1506
+      }
+    }
+  ]
+}

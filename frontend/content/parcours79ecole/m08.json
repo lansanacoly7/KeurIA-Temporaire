@@ -1,0 +1,576 @@
+{
+ "module": {
+  "id": "ep8",
+  "chapter": 8,
+  "title": "L’IA à l’école, bien l’utiliser",
+  "place": "La bibliothèque de l’école",
+  "emoji": "📚",
+  "intro": "L’ordinateur de la bibliothèque a maintenant une IA qui répond aux questions. Comment bien s’en servir ?",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep8-1",
+   "title": "Apprendre ou tricher ?",
+   "scene": { "id": "bibliotheque", "label": "La bibliothèque" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Seydou demande à l’IA de la bibliothèque d’écrire sa rédaction à sa place. Est-ce qu’il a appris quelque chose ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "💻",
+     "image": "ep8-l1-bibliotheque.webp",
+     "alt": "Dans la bibliothèque de l’école, Madame Diop présente l’ordinateur aux élèves.",
+     "text": "Madame Diop annonce : « L’ordinateur de la bibliothèque a maintenant une IA qui peut répondre à vos questions et vous aider. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "seydou", "emoji": "😏",
+     "image": "ep8-l1-seydou.webp",
+     "alt": "Seydou tape sur le clavier en souriant malicieusement.",
+     "text": "Seydou a une rédaction à faire sur les mangues. Il tape : « Écris ma rédaction à ma place. » Trois secondes plus tard, le texte est là !"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "lamine", "emoji": "🤨",
+     "image": "ep8-l1-question.webp",
+     "alt": "Lamine pose une question à Seydou, qui hésite et se gratte la tête.",
+     "text": "Lamine lui demande : « Alors, tu peux m’expliquer ce que tu as écrit ? » Seydou bafouille… Il n’en sait rien !"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep8-l1-palou.webp",
+     "alt": "Palou pose la patte sur l’épaule de Seydou, gentiment.",
+     "text": "Palou explique gentiment : « Si l’IA fait le travail à ta place, c’est elle qui s’entraîne, pas toi. Ton cerveau, lui, n’a rien appris. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🧠",
+     "word": { "terme": "Tricher", "sens": "Faire passer le travail de quelqu’un d’autre, ou d’une machine, pour le sien." },
+     "text": "Faire faire son travail par une IA et dire que c’est le sien, c’est tricher. Et surtout, on n’apprend rien."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Seydou à faire la différence !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque situation : apprendre ou tricher ?",
+       "hint": "Qui fait vraiment le travail ?",
+       "success": "Bravo ! Tu sais quand l’IA aide à apprendre, et quand c’est tricher.",
+       "bins": [
+        { "id": "apprendre", "label": "J’apprends", "pict": "cerveau-content", "emoji": "🧠" },
+        { "id": "tricher", "label": "Je triche", "pict": "cacher", "emoji": "🙈" }
+       ],
+       "items": [
+        { "id": "a", "label": "L’IA écrit ma rédaction et je la rends", "pict": "texte-copie", "emoji": "📄", "bin": "tricher", "explain": "C’est l’IA qui a travaillé : tu n’as rien appris." },
+        { "id": "b", "label": "Je demande à l’IA d’expliquer un mot difficile", "pict": "livre-ouvert", "emoji": "📖", "bin": "apprendre", "explain": "Tu comprends le mot : tu apprends !" },
+        { "id": "c", "label": "L’IA fait mes calculs et je recopie", "pict": "cahier", "emoji": "📓", "bin": "tricher", "explain": "Tu n’as pas fait les calculs : ton cerveau ne s’est pas entraîné." },
+        { "id": "d", "label": "J’écris seul, puis je demande à l’IA de m’aider à trouver mes fautes", "pict": "loupe-verifier", "emoji": "🔍", "bin": "apprendre", "explain": "Tu as écrit toi-même, et tu apprends de tes erreurs." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi Seydou n’a-t-il rien appris ?",
+       "hint": "Qui s’est entraîné ?",
+       "success": "Exact ! C’est l’IA qui a fait le travail : son cerveau à lui ne s’est pas entraîné.",
+       "options": [
+        { "label": "C’est l’IA qui a fait le travail", "pict": "texte-copie", "correct": true },
+        { "label": "La rédaction était trop courte", "pict": "bulle-longue", "explain": "Ce n’est pas une question de longueur : c’est qu’il n’a pas écrit lui-même." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le cerveau, c’est comme un muscle. Pour qu’il devienne fort, il faut…",
+       "hint": "Comme pour courir vite…",
+       "success": "Bravo ! L’entraîner soi-même.",
+       "options": [
+        { "label": "L’entraîner soi-même", "pict": "cerveau-content", "correct": true },
+        { "label": "Laisser une machine travailler", "pict": "robot-sait-tout", "explain": "Si la machine travaille, c’est elle qui s’entraîne, pas toi." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "⚖️",
+     "titre": "Le jeu du pour ou contre",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe",
+     "text": "La maîtresse lit des situations. Les élèves vont d’un côté de la classe si c’est « apprendre », de l’autre si c’est « tricher », au milieu s’ils hésitent. Chaque fois, un élève de chaque côté explique son choix.",
+     "materiel": ["La liste des situations, dans la fiche enseignant"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Si l’IA écrit mieux que moi, pourquoi je devrais apprendre à écrire ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce que tu perdrais si tu n’apprenais jamais à écrire toi-même ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "L’IA écrit ma rédaction et je dis que c’est moi. C’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! C’est tricher.",
+       "options": [
+        { "label": "Tricher", "pict": "cacher", "correct": true },
+        { "label": "Apprendre", "pict": "cerveau-content", "explain": "Tu n’as rien fait toi-même : ce n’est pas apprendre." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Comment l’IA peut-elle m’aider à apprendre ?",
+       "hint": "Je travaille, elle m’aide.",
+       "success": "Exact ! En m’expliquant ce que je ne comprends pas.",
+       "options": [
+        { "label": "En m’expliquant ce que je ne comprends pas", "pict": "livre-ouvert", "correct": true },
+        { "label": "En faisant mes devoirs à ma place", "pict": "texte-copie", "explain": "Ça, c’est tricher : tu n’apprends rien." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais faire la différence entre apprendre et tricher.",
+     "learned": "Si l’IA fait mon travail, c’est elle qui s’entraîne, pas moi. Je l’utilise pour comprendre, pas pour faire à ma place."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Distinguer l’usage de l’IA qui aide à apprendre et celui qui remplace l’effort.",
+     "Comprendre l’intérêt de s’entraîner soi-même.",
+     "Préparer la charte IA de la classe (leçon 4)."
+    ],
+    "deroule": [
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le jeu du pour ou contre (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["La liste des situations ci-dessous."],
+    "reponses": [
+     "Apprendre : demander l’explication d’un mot, demander des exercices supplémentaires, faire vérifier son texte après l’avoir écrit, demander un exemple pour comprendre.",
+     "Tricher : recopier une réponse de l’IA à un contrôle, faire écrire sa rédaction, faire faire ses calculs.",
+     "Situations « au milieu » (à discuter) : demander des idées avant d’écrire ; demander à l’IA de corriger toute la rédaction.",
+     "Débat : écrire permet de penser, de s’exprimer, de défendre ses idées, de vérifier ce que dit une IA. Celui qui ne sait pas écrire dépend de la machine."
+    ],
+    "attention": "Ne pas culpabiliser : l’objectif est d’apprendre à bien utiliser l’IA, pas d’en avoir peur."
+   }
+  },
+  {
+   "id": "ep8-2",
+   "title": "Demander de l’aide à une IA",
+   "scene": { "id": "bibliotheque", "label": "La bibliothèque" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Fatou ne comprend pas sa leçon sur les plantes. Comment demander de l’aide à l’IA de la bibliothèque, pour vraiment apprendre ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Question", "speaker": "fatou", "emoji": "🌱",
+     "image": "ep8-l2-fatou.webp",
+     "alt": "Fatou, devant son cahier de sciences, a l’air perdue.",
+     "text": "Fatou ne comprend pas sa leçon : « Comment une plante boit-elle ? » Elle va voir l’ordinateur de la bibliothèque."
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "fatou", "emoji": "😵",
+     "image": "ep8-l2-reponse-longue.webp",
+     "alt": "Sur l’écran, une très longue réponse pleine de mots compliqués ; Fatou se tient la tête.",
+     "text": "Elle tape juste : « plante ». L’IA répond avec un texte très long, plein de mots compliqués. Fatou ne comprend rien !"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "📒",
+     "image": "ep8-l2-khady.webp",
+     "alt": "Khady aide Fatou à écrire une meilleure question, en comptant sur ses doigts.",
+     "text": "Khady l’aide : « Dis qui tu es et ce que tu veux. Écris : “J’ai 8 ans. Explique-moi simplement comment une plante boit l’eau.” »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "palou", "emoji": "💡",
+     "image": "ep8-l2-palou.webp",
+     "alt": "L’écran affiche une réponse courte avec un petit dessin de racines ; Fatou sourit, Palou lève le pouce.",
+     "text": "Cette fois, la réponse est simple : « Les racines boivent l’eau de la terre, comme des pailles. » Palou ajoute : « Et maintenant, vérifie dans ton livre ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "✍🏾",
+     "word": { "terme": "Bonne question", "sens": "Une question claire et précise : de quoi on parle, ce qu’on veut, et pour qui (« explique simplement, j’ai 8 ans »)." },
+     "text": "Une IA répond mieux à une bonne question : claire, précise, qui dit ce qu’on veut. Puis on vérifie la réponse."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Fatou à poser de bonnes questions !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Quelle est la meilleure question pour comprendre la pluie ?",
+       "hint": "Claire, précise, et adaptée à ton âge.",
+       "success": "Bravo ! Elle dit ce que tu veux et pour qui.",
+       "options": [
+        { "label": "« J’ai 8 ans. Explique-moi simplement d’où vient la pluie. »", "pict": "question-choix", "correct": true },
+        { "label": "« pluie »", "pict": "nuage-pluie", "explain": "Un seul mot : l’IA ne sait pas ce que tu veux savoir." },
+        { "label": "« Dis-moi tout sur tout. »", "pict": "bulle-longue", "explain": "Trop vague ! La réponse serait énorme et pas utile." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "L’IA a répondu. Que fait Fatou ensuite ?",
+       "hint": "Palou l’a dit…",
+       "success": "Exact ! Elle vérifie dans son livre ou avec la maîtresse.",
+       "options": [
+        { "label": "Elle vérifie dans son livre ou avec la maîtresse", "pict": "loupe-verifier", "correct": true },
+        { "label": "Elle recopie sans réfléchir", "pict": "texte-copie", "explain": "Une IA peut se tromper : on vérifie, et on écrit avec ses propres mots." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche les bonnes façons de demander de l’aide à une IA pour apprendre.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! Demander une explication simple, et demander un exemple.",
+       "options": [
+        { "label": "« Explique-moi avec un exemple. »", "pict": "livre-ouvert", "emoji": "📖", "correct": true },
+        { "label": "« Donne-moi un exercice pour m’entraîner. »", "pict": "cahier", "emoji": "📓", "correct": true },
+        { "label": "« Fais mon contrôle à ma place. »", "pict": "texte-copie", "emoji": "📄", "explain": "Ça, c’est tricher !" },
+        { "label": "« Donne-moi le mot de passe de Lamine. »", "pict": "cle", "emoji": "🔑", "explain": "Jamais ! Les mots de passe des autres sont secrets." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "❓",
+     "titre": "L’atelier des bonnes questions",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit trois « mauvaises » questions (« animal », « fais mes devoirs », « dis tout »). Il les transforme en bonnes questions pour apprendre : claires, précises, adaptées à son âge. Puis un élève joue l’IA et répond seulement si la question est bonne !",
+     "materiel": ["Des cartes avec des mauvaises questions"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "fatou", "emoji": "💬",
+     "question": "Fatou demande : « Si l’IA explique très bien, est-ce qu’on a encore besoin de la maîtresse ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce que la maîtresse fait, qu’une IA ne peut pas faire ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une bonne question pour une IA est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Claire et précise.",
+       "options": [
+        { "label": "Claire et précise", "pict": "question-choix", "correct": true },
+        { "label": "Un seul mot", "pict": "bulle-longue", "explain": "Un seul mot, c’est souvent trop vague." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Après la réponse de l’IA, je…",
+       "hint": "Comme Fatou.",
+       "success": "Exact ! Je vérifie.",
+       "options": [
+        { "label": "Vérifie", "pict": "loupe-verifier", "correct": true },
+        { "label": "Recopie sans lire", "pict": "texte-copie", "explain": "Une IA peut se tromper : je vérifie." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais demander de l’aide à une IA pour apprendre.",
+     "learned": "Je pose une bonne question : claire, précise, adaptée à mon âge. Puis je vérifie la réponse et je l’écris avec mes mots."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Formuler une demande claire et précise à une IA (une « consigne »).",
+     "Utiliser l’IA pour comprendre, s’entraîner, et non pour faire à sa place.",
+     "Vérifier et reformuler la réponse."
+    ],
+    "deroule": [
+     "Rappel : apprendre ou tricher (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : l’atelier des bonnes questions (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Des cartes de mauvaises questions (3 par groupe)."],
+    "reponses": [
+     "Une bonne question contient : le sujet, ce qu’on attend (expliquer, donner un exemple, un exercice), pour qui (« j’ai 8 ans »).",
+     "Débat : la maîtresse connaît chaque élève, voit quand il est triste ou fatigué, l’encourage, adapte, juge ce qui est juste. Une IA ne connaît pas l’élève."
+    ],
+    "attention": "Rappeler que les élèves de cet âge utilisent une IA avec un adulte, selon les règles de l’école."
+   }
+  },
+  {
+   "id": "ep8-3",
+   "title": "Dire d’où vient une idée",
+   "scene": { "id": "bibliotheque", "label": "La bibliothèque" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Pour l’exposé de la classe, une image a été créée par une IA. Faut-il le dire ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "🖼️",
+     "image": "ep8-l3-affiche.webp",
+     "alt": "Aïssatou et Moussa préparent une affiche sur le fleuve Sénégal, avec un grand dessin.",
+     "text": "Aïssatou et Moussa préparent un exposé sur le fleuve Sénégal. Moussa a fait créer une belle image par une IA."
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "aissatou", "emoji": "❓",
+     "image": "ep8-l3-question.webp",
+     "alt": "Aïssatou montre l’image et demande quelque chose à Moussa.",
+     "text": "Aïssatou demande : « Pourquoi on ne dit pas que c’est une IA qui a fait l’image ? Les autres vont croire que c’est toi qui l’as dessinée ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "📚",
+     "image": "ep8-l3-sources.webp",
+     "alt": "Khady écrit en bas de l’affiche une petite liste : d’où viennent les informations.",
+     "text": "Khady sort son carnet : « Et les informations, elles viennent d’où ? De notre livre de géographie et de la radio du Fouta. On l’écrit ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep8-l3-palou.webp",
+     "alt": "Palou montre le bas de l’affiche où il est écrit d’où viennent l’image et les informations.",
+     "text": "Palou approuve : « Dire d’où vient une idée ou une image, c’est honnête. Et ça permet aux autres de vérifier. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🔖",
+     "word": { "terme": "Source", "sens": "L’endroit d’où vient une information, une idée ou une image : un livre, une personne, un site, une IA…" },
+     "text": "On dit toujours d’où viennent nos informations et nos images, même quand c’est une IA. C’est honnête, et ça permet de vérifier."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Aïssatou et Moussa à finir leur affiche !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "L’image de l’affiche a été créée par une IA. Que faut-il écrire en dessous ?",
+       "hint": "On dit d’où elle vient.",
+       "success": "Bravo ! On dit qu’elle a été créée par une IA.",
+       "options": [
+        { "label": "« Image créée par une IA »", "pict": "etiquette", "correct": true },
+        { "label": "« Dessin de Moussa »", "pict": "crayon-dessin", "explain": "Ce n’est pas vrai : ce n’est pas Moussa qui l’a dessinée." },
+        { "label": "Rien du tout", "pict": "case-vide", "explain": "Sans rien dire, les autres croiront que c’est un dessin de la classe." }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Range chaque information avec sa source.",
+       "hint": "D’où vient-elle ?",
+       "success": "Exact ! Chaque information a sa source.",
+       "bins": [
+        { "id": "livre", "label": "Le livre de géographie", "pict": "livre-ouvert", "emoji": "📖" },
+        { "id": "personne", "label": "Une personne", "pict": "micro-telephone", "emoji": "🎙️" }
+       ],
+       "items": [
+        { "id": "a", "label": "« Le fleuve Sénégal est très long » (lu dans le manuel)", "pict": "fleuve", "emoji": "🌊", "bin": "livre", "explain": "Lu dans le manuel : la source est le livre." },
+        { "id": "b", "label": "« Les pêcheurs de Podor partent tôt le matin » (dit par Aminata à la radio)", "pict": "pirogue", "emoji": "🛶", "bin": "personne", "explain": "C’est Aminata qui l’a dit : la source est une personne." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi est-ce utile de donner ses sources ?",
+       "hint": "Pense à Lamine, qui vérifie toujours.",
+       "success": "Exact ! Les autres peuvent vérifier, et on est honnête.",
+       "options": [
+        { "label": "Pour être honnête et que les autres puissent vérifier", "pict": "loupe-verifier", "correct": true },
+        { "label": "Pour remplir l’affiche", "pict": "dessin-joli", "explain": "Ce n’est pas pour remplir : c’est pour être honnête et permettre de vérifier." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🔖",
+     "titre": "D’où ça vient ?",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit 6 cartes : des phrases, des images, des idées. Pour chacune, le groupe imagine d’où elle vient (un livre, un parent, un journal, une IA, un camarade) et comment on pourrait le vérifier. Puis chaque groupe fabrique une petite étiquette « source » pour chaque carte.",
+     "materiel": ["6 cartes par groupe", "Des petites étiquettes"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "moussa", "emoji": "💬",
+     "question": "Moussa demande : « Si c’est moi qui ai eu l’idée de demander l’image à l’IA, est-ce que l’image est un peu à moi ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce qui est vraiment à toi dans ce travail ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une source, c’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! L’endroit d’où vient une information.",
+       "options": [
+        { "label": "L’endroit d’où vient une information", "pict": "livre-ouvert", "correct": true },
+        { "label": "Une fontaine d’eau", "pict": "robinet", "explain": "Une source d’eau existe aussi, mais ici c’est d’où vient une information !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une image a été faite par une IA. Je…",
+       "hint": "Comme Aïssatou et Moussa.",
+       "success": "Exact ! Je le dis.",
+       "options": [
+        { "label": "Le dis", "pict": "etiquette", "correct": true },
+        { "label": "Le cache", "pict": "cacher", "explain": "Le cacher, c’est faire croire quelque chose de faux." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais donner tes sources.",
+     "learned": "Je dis toujours d’où viennent mes informations et mes images, même quand c’est une IA. C’est honnête, et ça permet de vérifier."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre la notion de source.",
+     "Signaler l’usage d’une IA dans un travail (image, texte).",
+     "Relier honnêteté et possibilité de vérifier."
+    ],
+    "deroule": [
+     "Rappel : bien demander de l’aide (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : d’où ça vient ? (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["6 cartes (phrases, images, idées) par groupe, des petites étiquettes."],
+    "reponses": [
+     "Exemples d’étiquettes : « D’après notre manuel de géographie », « Dit par la maman de Khady », « Image créée avec une IA ».",
+     "Débat : l’idée de la demande est à Moussa, et le choix de l’image aussi, mais le dessin a été fait par la machine. On peut écrire : « Image créée par une IA, à partir de l’idée de Moussa »."
+    ],
+    "attention": "Ce travail prépare la charte de la leçon 4 : garder les idées des élèves au tableau."
+   }
+  },
+  {
+   "id": "ep8-4",
+   "title": "La charte IA de notre classe",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "La classe écrit ses propres règles pour bien utiliser l’IA, et les affiche pour toute l’école.",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "📜",
+     "image": "ep8-l4-annonce.webp",
+     "alt": "Madame Diop montre une grande feuille blanche avec un titre : la charte.",
+     "text": "Madame Diop montre une grande feuille : « Ensemble, nous allons écrire la charte IA de notre classe : nos règles pour bien utiliser l’IA. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "lamine", "emoji": "✋🏾",
+     "image": "ep8-l4-idees.webp",
+     "alt": "Tous les élèves lèvent la main pour proposer des règles.",
+     "text": "Tout le monde a des idées ! Lamine : « On vérifie toujours. » Seydou : « On ne fait pas faire ses devoirs. » Aïssatou : « On dit quand on a utilisé une IA. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep8-l4-palou.webp",
+     "alt": "Palou aide à écrire les règles en phrases courtes, avec un petit dessin pour chacune.",
+     "text": "Palou conseille : « Des règles courtes, claires, avec un dessin. Et tout le monde doit être d’accord ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "📜",
+     "word": { "terme": "Charte", "sens": "Une liste de règles qu’un groupe écrit ensemble et que chacun s’engage à respecter." },
+     "text": "Une charte, ce sont des règles écrites ensemble. Quand on les a choisies, on a envie de les respecter."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide la classe à choisir les règles de la charte !",
+     "rounds": [
+      {
+       "type": "multi",
+       "prompt": "Touche les bonnes règles pour la charte IA de la classe.",
+       "hint": "Il y en a trois.",
+       "success": "Bravo ! Vérifier, apprendre soi-même et dire quand on utilise une IA.",
+       "options": [
+        { "label": "Je vérifie toujours ce que dit une IA", "pict": "loupe-verifier", "emoji": "🔍", "correct": true },
+        { "label": "J’utilise l’IA pour comprendre, pas pour faire à ma place", "pict": "cerveau-content", "emoji": "🧠", "correct": true },
+        { "label": "Je dis quand j’ai utilisé une IA", "pict": "etiquette", "emoji": "🔖", "correct": true },
+        { "label": "Je crois tout ce que dit l’IA", "pict": "robot-sait-tout", "explain": "Une IA peut se tromper : on vérifie toujours.", "emoji": "🤖" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Quelle règle est la mieux écrite pour la charte ?",
+       "hint": "Courte et claire.",
+       "success": "Exact ! Courte, claire, tout le monde comprend.",
+       "options": [
+        { "label": "« Je ne donne jamais mes secrets à une IA. »", "pict": "cadenas", "correct": true },
+        { "label": "« Il faudrait peut-être éventuellement faire attention parfois à certaines informations. »", "pict": "bulle-longue", "explain": "Trop longue et pas claire : on ne sait pas quoi faire." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "✍🏾",
+     "titre": "Projet de classe : la charte IA",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4, puis toute la classe",
+     "text": "Chaque groupe propose 3 règles, en reprenant tout ce que la classe a appris depuis le module 1 (vérifier, exemples, données personnelles, sources…). On les met en commun, on vote pour garder les 6 à 8 meilleures, et chaque groupe illustre une règle. Tout le monde signe la charte. On l’affiche dans la classe et à la bibliothèque, et on la présente aux autres classes.",
+     "materiel": ["Une grande affiche", "Feutres et crayons de couleur", "Des petits papiers pour voter"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Et les adultes ? Est-ce qu’ils devraient aussi avoir une charte pour bien utiliser l’IA ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quelles règles proposeriez-vous aux adultes ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Faire écrire sa rédaction par une IA et la rendre, c’est…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! Tricher, et on n’apprend rien.",
+       "options": [
+        { "label": "Tricher", "pict": "cacher", "correct": true },
+        { "label": "Apprendre", "pict": "cerveau-content", "explain": "C’est l’IA qui a travaillé, pas toi." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour que l’IA m’aide bien, je pose…",
+       "hint": "La leçon 2.",
+       "success": "Exact ! Une bonne question, claire et précise.",
+       "options": [
+        { "label": "Une bonne question, claire et précise", "pict": "question-choix", "correct": true },
+        { "label": "Un seul mot", "pict": "bulle-longue", "explain": "Trop vague !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "J’ai utilisé une image créée par une IA. Je…",
+       "hint": "La leçon 3.",
+       "success": "Bravo ! Je donne la source.",
+       "options": [
+        { "label": "Donne la source", "pict": "etiquette", "correct": true },
+        { "label": "Dis que c’est mon dessin", "pict": "crayon-dessin", "explain": "Ce ne serait pas honnête." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ta classe a sa charte IA. Le module 8 est terminé !",
+     "learned": "J’utilise l’IA pour comprendre, pas pour faire à ma place. Je pose de bonnes questions, je vérifie, je donne mes sources et je respecte la charte de ma classe."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Élaborer collectivement des règles d’usage de l’IA.",
+     "Réinvestir les acquis des modules précédents.",
+     "S’engager (signature) et diffuser (affichage, présentation)."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; propositions en groupes (20 min) ; mise en commun (10 min).",
+     "Séance 2 : vote (10 min) ; illustrations et signature (20 min) ; « On en parle » (10 min) ; défi (5 min)."
+    ],
+    "materiel": ["Une grande affiche, des feutres, des papiers pour voter."],
+    "reponses": [
+     "Règles souvent proposées : je vérifie ; j’apprends moi-même ; je dis quand j’utilise une IA ; je ne donne pas mes informations personnelles ; je demande à un adulte avant d’utiliser une IA ; je respecte les autres (pas de fausses images de camarades).",
+     "Débat : les adultes aussi devraient vérifier, protéger les données des enfants, dire quand ils utilisent une IA, ne pas tout lui confier."
+    ],
+    "attention": "La charte peut être envoyée aux parents : c’est un bon lien école-famille."
+   }
+  }
+ ]
+}

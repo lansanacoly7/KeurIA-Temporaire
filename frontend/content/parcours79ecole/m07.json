@@ -1,0 +1,579 @@
+{
+ "module": {
+  "id": "ep7",
+  "chapter": 7,
+  "title": "Robots et instructions",
+  "place": "Un atelier de robotique (fablab), à Dakar",
+  "emoji": "🤖",
+  "intro": "À Dakar, dans un atelier plein de petits robots, la classe découvre comment une machine sent le monde… et obéit.",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep7-1",
+   "title": "Capteurs : sentir le monde",
+   "scene": { "id": "fablab-dakar", "label": "Le fablab de Dakar" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "diallo"],
+   "problem": "Un petit robot s’arrête tout seul devant le mur. Comment sait-il que le mur est là ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "moussa", "emoji": "🤖",
+     "image": "ep7-l1-fablab.webp",
+     "alt": "La classe entre dans un atelier plein de petits robots à roues, de câbles et d’outils. Moussa a les yeux qui brillent.",
+     "text": "À Dakar, la classe entre dans un fablab plein de petits robots. Moussa, l’inventeur, n’en croit pas ses yeux : « C’est le paradis ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "diallo", "emoji": "🧱",
+     "image": "ep7-l1-robot-mur.webp",
+     "alt": "Un petit robot roule vers un mur et s’arrête juste avant. Monsieur Diallo, le technicien, sourit.",
+     "text": "Monsieur Diallo, le technicien, lance un petit robot vers le mur. Juste avant de le toucher, le robot s’arrête tout seul !"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "aissatou", "emoji": "❓",
+     "image": "ep7-l1-question.webp",
+     "alt": "Aïssatou montre du doigt deux petits « yeux » ronds à l’avant du robot.",
+     "text": "Aïssatou demande : « Pourquoi il s’arrête ? Il voit le mur avec ces deux petits yeux ronds ? »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep7-l1-capteur.webp",
+     "alt": "Palou montre le capteur à l’avant du robot ; des petites ondes partent vers le mur et reviennent.",
+     "text": "Palou explique : « Ce ne sont pas des yeux, c’est un capteur. Il envoie un petit son qu’on n’entend pas, qui rebondit sur le mur. Le robot sait alors que le mur est proche. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "📡",
+     "word": { "terme": "Capteur", "sens": "Une pièce qui mesure quelque chose autour de la machine : la distance, la lumière, la chaleur, le son…" },
+     "text": "Une machine sent le monde grâce à ses capteurs. Nous, nous avons nos cinq sens ; le robot a des capteurs."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Découvre les capteurs avec Monsieur Diallo !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Associe chaque capteur au sens humain qui lui ressemble.",
+       "hint": "Que mesure le capteur ?",
+       "success": "Bravo ! Chaque capteur ressemble un peu à un de nos sens.",
+       "bins": [
+        { "id": "vue", "label": "Comme la vue", "pict": "oeil", "emoji": "👁️" },
+        { "id": "ouie", "label": "Comme l’ouïe", "pict": "oreille", "emoji": "👂🏾" },
+        { "id": "toucher", "label": "Comme le toucher", "pict": "main-levee", "emoji": "✋🏾" }
+       ],
+       "items": [
+        { "id": "a", "label": "Le capteur de lumière", "pict": "capteur-lumiere", "emoji": "💡", "bin": "vue", "explain": "Il sent la lumière, un peu comme nos yeux." },
+        { "id": "b", "label": "Le micro", "pict": "micro-telephone", "emoji": "🎤", "bin": "ouie", "explain": "Il capte les sons, comme nos oreilles." },
+        { "id": "c", "label": "Le capteur de chaleur", "pict": "thermometre", "emoji": "🌡️", "bin": "toucher", "explain": "Il sent le chaud et le froid, comme notre peau." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le ventilateur de la classe s’allume tout seul quand il fait trop chaud. Quel capteur utilise-t-il ?",
+       "hint": "Que mesure-t-il ?",
+       "success": "Exact ! Un capteur de chaleur.",
+       "options": [
+        { "label": "Un capteur de chaleur", "pict": "thermometre", "correct": true },
+        { "label": "Un micro", "pict": "micro-telephone", "explain": "Le micro capte les sons, pas la chaleur." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le capteur du robot est couvert de poussière. Que peut-il se passer ?",
+       "hint": "Le capteur mesure-t-il encore bien ?",
+       "success": "Exact ! Il mesure mal : le robot peut se cogner. On entretient les capteurs.",
+       "options": [
+        { "label": "Il mesure mal, le robot peut se cogner", "pict": "erreur-croix", "correct": true },
+        { "label": "Rien, la poussière ne change rien", "pict": "robot-sait-tout", "explain": "Un capteur sale mesure mal, comme des lunettes sales." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🙈",
+     "titre": "Le robot aux yeux bandés",
+     "duree": "15 minutes",
+     "groupes": "Par trois, dans la cour",
+     "text": "Un élève, les yeux bandés, joue le robot. Il avance doucement. Un deuxième élève joue le capteur : il tape dans ses mains quand un obstacle est proche (un tap = loin, deux taps = proche, trois taps = stop !). Le troisième vérifie la sécurité. Le robot arrive-t-il sans se cogner ?",
+     "materiel": ["Un foulard pour bander les yeux", "Quelques obstacles souples (cartables, cartons)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "fatou", "emoji": "💬",
+     "question": "Fatou demande : « Si les capteurs d’une machine tombent en panne, qui est responsable des accidents ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Le robot ? Celui qui l’a fabriqué ? Celui qui l’utilise ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’un capteur ?",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Une pièce qui mesure quelque chose autour de la machine.",
+       "options": [
+        { "label": "Une pièce qui mesure autour de la machine", "pict": "capteur-lumiere", "correct": true },
+        { "label": "Une roue", "pict": "engrenage", "explain": "La roue fait avancer le robot, elle ne mesure rien." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le robot s’arrête devant le mur grâce à…",
+       "hint": "Pense aux deux petits ronds à l’avant.",
+       "success": "Exact ! Son capteur de distance.",
+       "options": [
+        { "label": "Son capteur de distance", "pict": "capteur-distance", "correct": true },
+        { "label": "La peur du mur", "pict": "gronder", "explain": "Un robot n’a pas peur : son capteur mesure la distance." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment une machine sent le monde.",
+     "learned": "Une machine sent le monde grâce à ses capteurs : distance, lumière, chaleur, son. Un capteur sale ou en panne mesure mal."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre le rôle des capteurs et les comparer aux sens humains.",
+     "Identifier des capteurs dans des objets du quotidien.",
+     "Ouvrir la réflexion sur la responsabilité."
+    ],
+    "deroule": [
+     "Présentation de la sortie (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le robot aux yeux bandés (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Un foulard, des obstacles souples."],
+    "reponses": [
+     "Capteurs du quotidien : la porte automatique (mouvement), l’écran du téléphone (toucher), le réfrigérateur (température), la lampe de rue qui s’allume la nuit (lumière).",
+     "Débat : la responsabilité est partagée entre ceux qui fabriquent, vérifient et utilisent la machine. La machine elle-même n’est pas « responsable »."
+    ],
+    "attention": "Sécurité pendant l’activité : avancer lentement, obstacles souples, un élève toujours chargé de la sécurité."
+   }
+  },
+  {
+   "id": "ep7-2",
+   "title": "Suivre des instructions",
+   "scene": { "id": "fablab-dakar", "label": "Le fablab de Dakar" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "diallo"],
+   "problem": "Moussa veut faire aller le robot jusqu’à une mangue. Mais le robot fait exactement ce qu’on lui dit… même les erreurs !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "diallo", "emoji": "🥭",
+     "image": "ep7-l2-defi.webp",
+     "alt": "Sur un grand quadrillage au sol, un petit robot et une mangue posée un peu plus loin.",
+     "text": "Monsieur Diallo pose une mangue au bout d’un grand quadrillage : « Qui peut amener le robot jusqu’à la mangue, avec des instructions ? »"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "moussa", "emoji": "↪️",
+     "image": "ep7-l2-erreur.webp",
+     "alt": "Le robot est parti dans la mauvaise direction ; Moussa se tient la tête.",
+     "text": "Moussa tape : avancer, avancer, tourner à gauche… Le robot part à l’opposé ! Moussa voulait dire « à droite »."
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "lamine", "emoji": "🔍",
+     "image": "ep7-l2-lamine.webp",
+     "alt": "Lamine relit avec sa loupe la liste des instructions écrite par Moussa.",
+     "text": "Lamine relit la liste avec sa loupe : « Le robot a fait exactement ce que tu as écrit. C’est l’instruction qui était fausse ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep7-l2-palou.webp",
+     "alt": "Palou montre une liste d’instructions en flèches, numérotées de haut en bas.",
+     "text": "Palou résume : « Une liste d’instructions, dans l’ordre, c’est un programme. Le robot ne devine pas ce qu’on veut : il suit le programme à la lettre. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "📜",
+     "word": { "terme": "Programme", "sens": "Une liste d’instructions, dans l’ordre, que la machine suit exactement." },
+     "text": "Un programme est une liste d’instructions dans l’ordre. La machine le suit à la lettre : si l’instruction est fausse, elle se trompe."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Programme le robot !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Le robot regarde vers la mangue, 2 cases devant lui. Quel programme l’y amène ?",
+       "hint": "La mangue est tout droit.",
+       "success": "Bravo ! Deux fois « avancer », et il arrive à la mangue.",
+       "options": [
+        { "label": "Avancer, avancer", "pict": "fleches-avancer", "correct": true },
+        { "label": "Tourner à gauche, avancer", "pict": "fleche-gauche", "explain": "En tournant à gauche, il ne regarde plus la mangue !" },
+        { "label": "Avancer", "pict": "fleche-avancer", "explain": "Une seule case : il s’arrête avant la mangue." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi le robot de Moussa est-il parti du mauvais côté ?",
+       "hint": "Qu’a-t-il écrit ?",
+       "success": "Exact ! Moussa a écrit « gauche » au lieu de « droite ». Le robot a obéi.",
+       "options": [
+        { "label": "Moussa a écrit la mauvaise instruction", "pict": "erreur-croix", "correct": true },
+        { "label": "Le robot a désobéi exprès", "pict": "gronder", "explain": "Un robot ne désobéit pas : il fait exactement ce qui est écrit." }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Range les instructions pour se laver les mains, dans l’ordre.",
+       "hint": "Que fait-on en premier ?",
+       "success": "Bravo ! Ouvrir le robinet, mettre du savon, puis rincer.",
+       "bins": [
+        { "id": "un", "label": "D’abord", "pict": "etape-1", "emoji": "1️⃣" },
+        { "id": "deux", "label": "Puis", "pict": "etape-2", "emoji": "2️⃣" },
+        { "id": "trois", "label": "Ensuite", "pict": "etape-3", "emoji": "3️⃣" }
+       ],
+       "items": [
+        { "id": "a", "label": "Ouvrir le robinet", "pict": "robinet", "emoji": "🚰", "bin": "un", "explain": "D’abord l’eau." },
+        { "id": "b", "label": "Mettre du savon et frotter", "pict": "savon", "emoji": "🧼", "bin": "deux", "explain": "Puis le savon." },
+        { "id": "c", "label": "Rincer et fermer le robinet", "pict": "mains-propres", "emoji": "👐🏾", "bin": "trois", "explain": "Ensuite on rince." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🧭",
+     "titre": "Le robot-élève",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Sur un quadrillage tracé au sol (ou au tableau), un élève joue le robot. Les autres écrivent un programme avec des flèches (avancer, tourner à droite, tourner à gauche) pour l’amener jusqu’à un trésor. Le robot suit le programme à la lettre, même s’il est faux ! On corrige et on recommence.",
+     "materiel": ["Un quadrillage de 5 × 5 au sol (craie ou ruban)", "Des cartes flèches", "Un « trésor » (une mangue, une gomme)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "moussa", "emoji": "💬",
+     "question": "Moussa demande : « Si une machine obéit à tout, est-ce qu’elle peut faire quelque chose de mal si on lui demande ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qui doit faire attention aux instructions qu’on donne ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’un programme ?",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Une liste d’instructions dans l’ordre.",
+       "options": [
+        { "label": "Une liste d’instructions dans l’ordre", "pict": "fleches-avancer", "correct": true },
+        { "label": "Une émission de télévision", "pict": "television", "explain": "Ici, un programme, c’est une liste d’instructions pour une machine." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une instruction est fausse. Le robot…",
+       "hint": "Pense à Moussa.",
+       "success": "Exact ! Il la suit quand même : il se trompe.",
+       "options": [
+        { "label": "La suit quand même et se trompe", "pict": "erreur-croix", "correct": true },
+        { "label": "La corrige tout seul", "pict": "robot-sait-tout", "explain": "Il ne devine pas ce qu’on voulait dire : il suit le programme." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais écrire un programme.",
+     "learned": "Un programme est une liste d’instructions dans l’ordre. La machine le suit à la lettre : si une instruction est fausse, elle se trompe."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Écrire et exécuter une suite d’instructions (algorithme).",
+     "Comprendre qu’une machine suit un programme à la lettre.",
+     "Déboguer : trouver et corriger une instruction fausse."
+    ],
+    "deroule": [
+     "Rappel : les capteurs (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le robot-élève (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Quadrillage au sol, cartes flèches, un objet « trésor »."],
+    "reponses": [
+     "Bien préciser au départ : « tourner » fait pivoter sur place sans avancer.",
+     "Débat : une machine qui obéit peut faire du mal si on lui donne de mauvaises instructions. Les humains qui programment sont responsables, et les machines importantes ont des règles de sécurité."
+    ],
+    "attention": "Le robot-élève doit suivre le programme sans « aider » : c’est ce qui rend l’activité drôle et instructive."
+   }
+  },
+  {
+   "id": "ep7-3",
+   "title": "Robot ou IA ?",
+   "scene": { "id": "fablab-dakar", "label": "Le fablab de Dakar" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou", "diallo"],
+   "problem": "Seydou est sûr que tous les robots sont des IA. Monsieur Diallo n’est pas d’accord. Qui a raison ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "seydou", "emoji": "🤖",
+     "image": "ep7-l3-seydou.webp",
+     "alt": "Seydou montre un robot qui suit une ligne noire au sol et dit fièrement que c’est une IA.",
+     "text": "Seydou montre un robot qui suit une ligne noire au sol : « Regardez, c’est une IA ! Tous les robots sont des IA ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "diallo", "emoji": "📜",
+     "image": "ep7-l3-diallo.webp",
+     "alt": "Monsieur Diallo montre l’écran avec un programme très court : si ligne à gauche, tourner à gauche ; si ligne à droite, tourner à droite.",
+     "text": "Monsieur Diallo sourit : « Celui-là suit juste une règle que j’ai écrite : ligne à gauche, il tourne à gauche. Il n’a rien appris. »"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "fatou", "emoji": "🍊",
+     "image": "ep7-l3-bras.webp",
+     "alt": "Un bras robot avec une caméra trie des fruits : il a appris avec des photos.",
+     "text": "Puis il montre un bras robot avec une caméra, qui trie des fruits. Fatou se souvient : « Comme la machine de la coopérative ! Lui, il a appris avec des exemples ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep7-l3-palou.webp",
+     "alt": "Palou montre deux affiches : un robot avec une liste de règles, un robot avec une pile de photos-exemples.",
+     "text": "Palou résume : « Un robot, c’est un corps qui bouge. Une IA, c’est un programme qui a appris avec des exemples. Certains robots ont une IA, d’autres non ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🦾",
+     "word": { "terme": "Robot", "sens": "Une machine qui bouge et agit dans le monde, grâce à des capteurs et des moteurs. Elle peut avoir une IA… ou pas." },
+     "text": "Un robot bouge et agit. Une IA apprend avec des exemples. Un robot peut avoir une IA, mais pas toujours. Et une IA peut vivre sans corps, dans un téléphone."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Seydou à faire la différence !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque machine.",
+       "hint": "Bouge-t-elle ? A-t-elle appris avec des exemples ?",
+       "success": "Bravo ! Tu sais faire la différence entre robot et IA.",
+       "bins": [
+        { "id": "robot", "label": "Robot sans IA", "pict": "robot-roues", "emoji": "🤖" },
+        { "id": "robotia", "label": "Robot avec IA", "pict": "robot-camera", "emoji": "🦾" },
+        { "id": "ia", "label": "IA sans corps", "pict": "telephone-visage", "emoji": "📱" }
+       ],
+       "items": [
+        { "id": "a", "label": "Le robot qui suit une ligne noire", "pict": "robot-ligne", "emoji": "➰", "bin": "robot", "explain": "Il bouge, mais il suit juste une règle écrite : pas d’IA." },
+        { "id": "b", "label": "Le bras robot qui trie les fruits avec une caméra", "pict": "robot-camera", "emoji": "🦾", "bin": "robotia", "explain": "Il bouge ET il a appris avec des exemples : robot avec IA." },
+        { "id": "c", "label": "L’application qui traduit le wolof", "pict": "appli-traduction", "emoji": "🗣️", "bin": "ia", "explain": "Elle a appris, mais elle n’a pas de corps : IA sans corps." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Palou ressemble à un lionceau, il bouge et il a appris avec des exemples. Palou est…",
+       "hint": "Il a un corps ET il apprend.",
+       "success": "Exact ! Un robot avec une IA.",
+       "options": [
+        { "label": "Un robot avec une IA", "pict": "robot-camera", "correct": true },
+        { "label": "Un robot sans IA", "pict": "robot-roues", "explain": "Palou a appris avec des exemples : il a une IA." },
+        { "label": "Un vrai lion", "pict": "lionceau-vivant", "explain": "Palou ressemble à un lionceau, mais il a été fabriqué." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Tous les robots sont-ils des IA ?",
+       "hint": "Pense au robot qui suit la ligne.",
+       "success": "Exact ! Non : certains suivent seulement des règles écrites.",
+       "options": [
+        { "label": "Non, certains suivent juste des règles", "pict": "robot-ligne", "correct": true },
+        { "label": "Oui, tous", "pict": "robot-sait-tout", "explain": "Le robot qui suit la ligne n’a rien appris : ce n’est pas une IA." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🗂️",
+     "titre": "Le grand tri des machines",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit des cartes de machines (une porte automatique, un aspirateur-robot, un drone, une calculatrice, un assistant vocal, une voiture qui se gare seule…). Rangez-les en trois colonnes : « robot sans IA », « robot avec IA », « IA sans corps ». Comparez avec les autres groupes et justifiez.",
+     "materiel": ["Des cartes de machines (dessins ou photos)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Dans les films, les robots veulent parfois prendre le pouvoir. Est-ce que c’est vrai ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce qui est inventé dans les films ? Qu’est-ce qui est vrai ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Un robot, c’est…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Une machine qui bouge et agit dans le monde.",
+       "options": [
+        { "label": "Une machine qui bouge et agit", "pict": "robot-roues", "correct": true },
+        { "label": "Toujours une IA", "pict": "ia-ampoule", "explain": "Pas toujours : certains robots n’ont pas d’IA." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA a-t-elle toujours un corps ?",
+       "hint": "Pense à l’application qui traduit.",
+       "success": "Exact ! Non : une IA peut vivre dans un téléphone ou un ordinateur.",
+       "options": [
+        { "label": "Non, elle peut être dans un téléphone", "pict": "telephone-visage", "correct": true },
+        { "label": "Oui, toujours", "pict": "robot-roues", "explain": "Beaucoup d’IA n’ont pas de corps : elles sont dans des téléphones." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais faire la différence entre robot et IA.",
+     "learned": "Un robot bouge et agit grâce à des capteurs et des moteurs. Une IA apprend avec des exemples. Un robot peut avoir une IA, ou pas."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Distinguer robot (corps, capteurs, moteurs) et IA (apprentissage par l’exemple).",
+     "Classer des machines selon ces deux critères.",
+     "Démêler la fiction et la réalité."
+    ],
+    "deroule": [
+     "Rappel : programmes et instructions (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le grand tri des machines (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Des cartes de machines."],
+    "reponses": [
+     "Robot sans IA : porte automatique, robot qui suit une ligne. Robot avec IA : aspirateur-robot qui reconnaît les obstacles, voiture qui se gare seule, drone qui suit une personne. IA sans corps : assistant vocal, traducteur. Calculatrice : ni robot ni IA.",
+     "Débat : les robots des films sont inventés. Les vraies machines n’ont pas d’envies : elles font ce pour quoi des humains les ont programmées et entraînées."
+    ],
+    "attention": "Certaines machines peuvent être discutées (un aspirateur simple n’a pas toujours d’IA) : valoriser les justifications plutôt qu’une réponse unique."
+   }
+  },
+  {
+   "id": "ep7-4",
+   "title": "On programme le robot-élève",
+   "scene": { "id": "ecole-cour", "label": "La cour de l’école" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "De retour à l’école, la classe organise un grand parcours dans la cour, avec des robots-élèves à programmer.",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "🗺️",
+     "image": "ep7-l4-plan.webp",
+     "alt": "Moussa dessine sur une grande feuille un parcours avec des obstacles et un trésor.",
+     "text": "Moussa a dessiné un grand parcours pour la cour : « Des obstacles, un trésor, et des robots-élèves à programmer ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "📡",
+     "image": "ep7-l4-capteur.webp",
+     "alt": "Aïssatou tient des cartes avec des yeux dessinés : les cartes capteurs.",
+     "text": "Aïssatou ajoute : « Et des cartes capteurs ! Quand le robot arrive devant un obstacle, il a le droit de regarder. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep7-l4-palou.webp",
+     "alt": "Palou écrit au tableau une instruction : « SI obstacle ALORS tourner à droite ».",
+     "text": "Palou écrit une instruction spéciale : « SI obstacle, ALORS tourner à droite. » « Avec SI… ALORS, le robot réagit à ce que voient ses capteurs ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🔀",
+     "word": { "terme": "Si… alors", "sens": "Une instruction qui dépend d’une condition : SI il y a un obstacle, ALORS je tourne." },
+     "text": "Avec « si… alors », un programme réagit à ce que mesurent les capteurs. C’est comme ça que les robots évitent les obstacles."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare le grand parcours !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "« SI le capteur sent un obstacle, ALORS… » Que doit faire le robot pour ne pas se cogner ?",
+       "hint": "On évite l’obstacle.",
+       "success": "Bravo ! Il tourne pour éviter l’obstacle.",
+       "options": [
+        { "label": "Tourner pour l’éviter", "pict": "fleche-gauche", "correct": true },
+        { "label": "Avancer tout droit", "pict": "fleches-avancer", "explain": "Tout droit, il se cogne !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "« SI il fait nuit, ALORS allumer la lampe. » Quel capteur faut-il ?",
+       "hint": "La nuit, c’est quand il n’y a plus de…",
+       "success": "Exact ! Un capteur de lumière.",
+       "options": [
+        { "label": "Un capteur de lumière", "pict": "capteur-lumiere", "correct": true },
+        { "label": "Un micro", "pict": "micro-telephone", "explain": "Le micro capte le son, pas la lumière." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🏁",
+     "titre": "Projet de classe : le grand parcours des robots-élèves",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Dans la cour, on trace un grand quadrillage avec des obstacles et un trésor. Chaque groupe écrit un programme avec des flèches et au moins une carte « SI obstacle, ALORS… ». Un élève joue le robot, les yeux bandés ou non, et suit le programme à la lettre. Si le robot se cogne ou se perd, le groupe corrige le programme (on « débogue ») et recommence. Bonus : présenter le parcours aux petits du CP !",
+     "materiel": ["Craie pour le quadrillage", "Cartes flèches et cartes « SI… ALORS… »", "Obstacles souples, un trésor"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Quels robots seraient vraiment utiles au Sénégal ? Pour les champs, la pêche, l’hôpital, l’école ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. De quels capteurs auraient-ils besoin ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Le robot sent le mur grâce à…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! Un capteur.",
+       "options": [
+        { "label": "Un capteur", "pict": "capteur-distance", "correct": true },
+        { "label": "Son nez", "pict": "lionceau-vivant", "explain": "Pas de nez : un capteur de distance." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une liste d’instructions dans l’ordre, c’est…",
+       "hint": "La leçon 2.",
+       "success": "Exact ! Un programme.",
+       "options": [
+        { "label": "Un programme", "pict": "fleches-avancer", "correct": true },
+        { "label": "Un pixel", "pict": "pixels", "explain": "Le pixel, c’était au module 5 ! Ici, c’est un programme." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Tous les robots ont-ils une IA ?",
+       "hint": "La leçon 3.",
+       "success": "Bravo ! Non : certains suivent seulement des règles.",
+       "options": [
+        { "label": "Non", "pict": "robot-ligne", "correct": true },
+        { "label": "Oui", "pict": "robot-sait-tout", "explain": "Le robot qui suit la ligne n’a pas d’IA." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu as programmé un robot. Le module 7 est terminé !",
+     "learned": "Un robot sent le monde avec ses capteurs et suit un programme. Avec « si… alors », il réagit à ce qu’il sent. Un robot peut avoir une IA, ou pas."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Écrire un programme avec une condition (si… alors).",
+     "Tester et déboguer un programme.",
+     "Imaginer des robots utiles dans son environnement."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; tracé du parcours et écriture des programmes (30 min).",
+     "Séance 2 : essais et débogage (25 min) ; « On en parle » (10 min) ; défi (5 min) ; présentation aux CP si possible."
+    ],
+    "materiel": ["Craie, cartes flèches et cartes « SI… ALORS… », obstacles souples, un trésor."],
+    "reponses": [
+     "Le débogage est le cœur de l’activité : trouver l’instruction fausse est une victoire.",
+     "Débat : robots pour surveiller les cultures (capteurs d’humidité), aider les pêcheurs (capteurs météo), porter des médicaments, nettoyer les plages…"
+    ],
+    "attention": "Les robots-élèves avancent lentement ; un élève de chaque groupe veille à la sécurité."
+   }
+  }
+ ]
+}

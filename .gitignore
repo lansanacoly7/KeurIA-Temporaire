@@ -1,0 +1,138 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+dist/
+build/
+.next/
+out/
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vite
+.vite/
+.wrangler/
+.vinext/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+backups/
+
+# Logs
+logs/
+*.log
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Python (backend/)
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+backend/staticfiles/
+backend/mediafiles/
+/scratch/
+!frontend/public/scratch/
+# Fichiers de travail et sorties d'outils (ne pas commiter)
+/*.diff
+/diff*.txt
+/old_*
+/1.zip
+/*.mp4
+/*history*.txt
+/*transcript*.txt
+/extract*.js
+/extract*.py
+/extracted_content.txt
+/overwrite.py
+/antigravity_behaviour.md
+*.tsbuildinfo
+frontend/DashboardClient_reconstructed.tsx
+frontend/apply_advanced.py
+frontend/dashboard_client_edits.txt
+frontend/dc_*
+frontend/diff_clean.patch
+frontend/extract3.cjs
+frontend/next_dev_log.txt
+frontend/nodes.html
+frontend/patch_fuzzy.py
+/dashboard_client_diff.txt
+
+backend/media/
+
+# Sources brutes des illustrations du parcours 7-9 (les WebP finaux suffisent)
+frontend/public/images/parcours79/provisoire/
+
+# Restes de « git apply --reject » / patch : jamais versionnes
+*.orig
+*.rej
+
+# TypeScript Next.js generated types
+frontend/next-env.d.ts
+frontend/public/images/parcours79/pictos-src/
+
+# Clé secrète générée automatiquement pour le développement (jamais versionnée)
+backend/.dev_secret_key
+
+# Moteur MediaPipe copié depuis node_modules au build (voir frontend/scripts/copy-mediapipe.mjs)
+frontend/public/mediapipe/wasm/
+
+# Fichiers locaux (plan interne, enregistrement de test) : ne plus les suivre
+KEURIA_Plan_Taches_Auth_Autorisation.xlsx
+audio.wav
+
+# Sauvegardes locales qui ne doivent jamais �tre pouss�es (ex. l'ancienne vue Carte)
+frontend/local-only/
+
+_sauvegarde_audio_*/
+# Python wheel packages
+*.whl
+# Video guide enseignant (medias generes)
+scripts/video-guide-enseignant/output/
+scripts/video-guide-enseignant/*.mp4
+scripts/video-guide-enseignant/*.webm
+scripts/video-guide-enseignant/*.mp3
+scripts/video-guide-enseignant/*.wav
+scripts/video-guide-enseignant/audio/
+scripts/video-guide-enseignant/captures/
+scripts/video-guide-enseignant/videos/
+
+# Rapports Lighthouse contenant des en-tetes ou sessions
+agents/rapports/**/lighthouse/*headers*.json
+
+# Scripts de capture des videos guidees : usage local seulement (mots de passe de demonstration en clair, nettoyages de base sans garde)
+scripts/video-guide/

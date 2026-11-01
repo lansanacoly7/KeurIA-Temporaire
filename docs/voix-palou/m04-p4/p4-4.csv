@@ -1,0 +1,31 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e01.mp3;1;1;texte (story);Tonton Cheikh prépare un grand plateau de poissons. Palou a une dernière leçon.;Tonton Cheikh prépare un grand plateau de poissons. Palou a une dernière leçon.;79
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e02.mp3;1;2;texte (story);Papa Ibou klaxonne : « Le car repart bientôt ! » L’entraînement doit finir vite.;Papa Ibou klaxonne : « Le car repart bientôt ! » L’entraînement doit finir vite.;80
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e03.mp3;1;3;texte (discover);Quand l’entraînement est fini, l’IA a un modèle. Il lui sert à reconnaître.;Quand l’entraînement est fini, l’I A a un modèle. Il lui sert à reconnaître.;75
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu as fini le chapitre 4 avec Palou.;Bravo ! Tu as fini le chapitre 4 avec Palou.;44
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e07-retiens.mp3;1;7;« Je retiens »;Une IA apprend avec des exemples nets, puis on la teste. Quand elle se trompe, on la corrige.;Une I A apprend avec des exemples nets, puis on la teste. Quand elle se trompe, on la corrige.;93
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Avec des exemples nets, Palou reconnaît tous les poissons.;Bravo ! Avec des exemples nets, Palou reconnaît tous les poissons.;66
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-q.mp3;2;4;consigne du jeu;Prépare l’entraînement de Palou : choisis seulement de bons exemples !;Prépare l’entraînement de Palou : choisis seulement de bons exemples !;70
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Un poisson nouveau montre s’il a vraiment compris.;Oui ! Un poisson nouveau montre s’il a vraiment compris.;56
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m2-q.mp3;2;4;consigne du jeu;Comment vérifier que Palou a bien appris ?;Comment vérifier que Palou a bien appris ?;42
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04.mp3;2;4;texte (play);Entraîne Palou, puis teste-le !;Entraîne Palou, puis teste-le !;31
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e05.mp3;2;5;texte (ai);Entraîner, tester, corriger : c’est ainsi qu’on fabrique une IA.;Entraîner, tester, corriger : c’est ainsi qu’on fabrique une I A.;64
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Le modèle sert à reconnaître.;Oui ! Le modèle sert à reconnaître.;35
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m1-q.mp3;2;6;consigne du jeu;Quand l’entraînement est fini, à quoi sert le modèle de Palou ?;Quand l’entraînement est fini, à quoi sert le modèle de Palou ?;63
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Exact ! On le corrige et il progresse.;Exact ! On le corrige et il progresse.;38
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m2-q.mp3;2;6;consigne du jeu;Palou se trompe à son test. Que fait-on ?;Palou se trompe à son test. Que fait-on ?;41
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Bravo ! On voit s’il a vraiment appris.;Bravo ! On voit s’il a vraiment appris.;39
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m3-q.mp3;2;6;consigne du jeu;Pourquoi teste-t-on avec une photo nouvelle ?;Pourquoi teste-t-on avec une photo nouvelle ?;45
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-o4.mp3;3;4;explication (mauvais exemple);Elles cachent les détails : elles risquent de tromper Palou.;Elles cachent les détails : elles risquent de tromper Palou.;60
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-o5.mp3;3;4;explication (mauvais exemple);Sans poisson, Palou n’apprend rien : ce n’est pas un exemple.;Sans poisson, Palou n’apprend rien : ce n’est pas un exemple.;61
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-s1.mp3;3;4;réaction de Palou (exemple reçu);Je commence à les reconnaître !;Je commence à les reconnaître !;31
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m1-s2.mp3;3;4;réaction de Palou (exemple reçu);Presque prêt ! Un dernier lot, s’il te plaît.;Presque prêt ! Un dernier lot, s’il te plaît.;45
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m2-o1.mp3;3;4;explication (mauvaise réponse);Avec les mêmes photos, il peut seulement les avoir retenues par cœur.;Avec les mêmes photos, il peut seulement les avoir retenues par cœur.;69
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e04-m2-o3.mp3;3;4;explication (mauvaise réponse);Être content ne prouve pas qu’il reconnaît les poissons.;Être content ne prouve pas qu’il reconnaît les poissons.;56
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Un modèle ne sert pas à dormir : il sert à reconnaître.;Un modèle ne sert pas à dormir : il sert à reconnaître.;55
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Un modèle ne sert pas à décorer : il sert à reconnaître.;Un modèle ne sert pas à décorer : il sert à reconnaître.;56
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Tout jeter est inutile : on corrige et il apprend mieux.;Tout jeter est inutile : on corrige et il apprend mieux.;56
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Sans test, on ne sait pas s’il progresse.;Sans test, on ne sait pas s’il progresse.;41
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Le test n’est pas une farce : il vérifie ce que Palou a appris.;Le test n’est pas une farce : il vérifie ce que Palou a appris.;63
+frontend/public/audio/palou/lecons/m04/p4-4/p4-4_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Les anciennes photos ne sont pas cassées : on veut voir s’il sait reconnaître du nouveau.;Les anciennes photos ne sont pas cassées : on veut voir s’il sait reconnaître du nouveau.;89

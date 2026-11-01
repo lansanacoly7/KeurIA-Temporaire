@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-19T03:44:20.931Z",
+  "agent": "antigravity",
+  "task": "T21 - Catalogue en base dynamique, création et réordonnancement",
+  "tests": [
+    {
+      "test": "Module 11 creation in Studio UI",
+      "status": "PASS"
+    },
+    {
+      "test": "New lesson creation in Module 1",
+      "status": "PASS"
+    },
+    {
+      "test": "Lesson duplication in same module",
+      "status": "PASS"
+    },
+    {
+      "test": "Toggle hide lesson",
+      "status": "PASS"
+    },
+    {
+      "test": "Progress protection prevents deletion with 409 Conflict",
+      "status": "PASS"
+    },
+    {
+      "test": "Archipelago procedural rendering for Module 11+",
+      "status": "PASS",
+      "islandsCount": 11
+    }
+  ],
+  "captures": [
+    "01-studio-home-catalog-desktop-1440.png",
+    "02-studio-home-catalog-mobile-390.png",
+    "03-studio-create-module-modal.png",
+    "04-studio-new-module-created-desktop.png",
+    "05-studio-create-lesson-modal.png",
+    "06-studio-new-lesson-created.png",
+    "07-studio-duplicate-lesson.png",
+    "08-studio-hide-lesson.png",
+    "09-studio-delete-409-conflict-modal.png",
+    "10-studio-publish-catalog-success.png",
+    "11-archipel-map-module11-desktop-1440.png",
+    "12-archipel-map-module11-mobile-390.png"
+  ]
+}

@@ -1,0 +1,454 @@
+@media (max-width: 768px) {
+  /* Verrouillage absolu anti-scroll horizontal */
+  html, body, .landing-page {
+    overflow-x: clip !important;
+    max-width: 100vw;
+  }
+
+  /* Visibilité immédiate de tous les blocs sur mobile (plus aucun vide) */
+  .anim-fade-up,
+  .anim-fade-down,
+  .anim-fade-left,
+  .anim-fade-right,
+  .anim-scale-up,
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* --- Topbar compacte & bouton menu hamburger --- */
+  .landing-topbar {
+    height: 60px;
+    padding: 0 16px;
+    justify-content: space-between;
+  }
+
+  .landing-brand img.official-logo {
+    height: 32px;
+  }
+
+  .landing-nav {
+    display: none !important;
+  }
+
+  /* Sur mobile, masquer les boutons desktop pour laisser le header aéré et afficher le hamburger */
+  .landing-auth-buttons {
+    display: none !important;
+  }
+
+  .landing-mobile-menu-btn {
+    display: inline-flex !important;
+  }
+
+  /* --- Hero Section responsive : Écritures à gauche, Palou à droite, Boutons en bas --- */
+  .trust-pill-desktop { display: none !important; }
+  .trust-pill-mobile { display: inline !important; }
+  .title-text-desktop { display: none !important; }
+  .title-text-mobile { display: inline !important; }
+  .hero-desc-desktop { display: none !important; }
+  .hero-desc-mobile { display: inline !important; }
+  .bubble-text-desktop { display: none !important; }
+  .bubble-text-mobile { display: inline !important; }
+  .badge-text-desktop { display: none !important; }
+  .badge-text-mobile { display: inline !important; }
+
+  .landing-hero {
+    padding: 16px 14px 28px;
+    overflow: hidden;
+  }
+
+  .landing-hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.32fr) minmax(115px, 1fr) !important;
+    grid-template-areas:
+      "copy art"
+      "bottom bottom" !important;
+    align-items: center;
+    gap: 12px 10px;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* 1. Écritures à gauche */
+  .landing-hero-copy {
+    grid-area: copy;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+    min-width: 0 !important;
+    z-index: 2;
+  }
+
+  .landing-trust-pill {
+    max-width: 100%;
+    white-space: normal;
+    text-align: left;
+    font-size: 10.5px;
+    padding: 3px 8px;
+    margin: 0;
+    line-height: 1.3;
+    gap: 5px;
+  }
+
+  .landing-hero h1 {
+    font-size: clamp(19px, 5.2vw, 22.5px);
+    line-height: 1.22;
+    text-align: left;
+    letter-spacing: -0.3px;
+    margin: 0;
+  }
+
+  .landing-hero-desc {
+    font-size: 12px;
+    line-height: 1.45;
+    text-align: left;
+    color: #385750;
+    margin: 0;
+    display: block !important;
+    -webkit-line-clamp: unset !important;
+    overflow: visible !important;
+  }
+
+  /* 2. Palou à droite */
+  .landing-hero-art {
+    grid-area: art;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: auto;
+    width: 100%;
+    min-width: 0 !important;
+    overflow: visible;
+  }
+
+  .landing-mascot-wrapper {
+    width: 100%;
+    max-width: 130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    animation: palouFloat 4s ease-in-out infinite;
+  }
+
+  /* Bulle de dialogue compacte officielle adaptée mobile */
+  .palou-speech-bubble {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 5px 8px;
+    margin: 0 auto 5px;
+    max-width: 124px;
+    box-shadow: 0 4px 14px rgba(13, 132, 110, 0.12);
+    z-index: 5;
+    animation: none !important;
+  }
+
+  .palou-bubble-text {
+    font-size: 10px;
+    line-height: 1.25;
+    color: var(--kia-ink);
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .palou-bubble-name {
+    color: var(--kia-brand);
+    font-weight: 850;
+  }
+
+  .palou-bubble-tail {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: 1.5px solid #a7f3d0;
+    border-bottom: 1.5px solid #a7f3d0;
+    border-radius: 0;
+  }
+
+  .landing-mascot-img {
+    width: 100%;
+    max-width: 110px;
+    max-height: 130px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(65, 45, 20, 0.2));
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Badge flottant compact sous Palou */
+  .palou-floating-badge {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #a5d6c9;
+    border-radius: 999px;
+    padding: 2px 7px;
+    font-size: 9.5px;
+    font-weight: 750;
+    color: #0f755f;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 4px auto 0;
+    white-space: nowrap;
+    animation: none !important;
+    z-index: 5;
+  }
+
+  .badge-pulse-dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .mascot-backdrop-glow {
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+  }
+
+  .palou-ground-shadow {
+    width: 95px;
+    height: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2px;
+  }
+
+  /* 3. Les boutons en bas */
+  .landing-hero-bottom {
+    grid-area: bottom;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 9px;
+    margin-top: 6px;
+    z-index: 2;
+  }
+
+  .landing-hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .landing-hero-actions .btn-hero-cta,
+  .landing-hero-actions .btn-hero-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    min-height: 38px !important;
+    font-size: 11.5px !important;
+    font-weight: 750 !important;
+    line-height: 1.2 !important;
+    padding: 7px 6px !important;
+    border-radius: 9px !important;
+    gap: 4px !important;
+  }
+
+  .landing-hero-actions .btn-hero-cta {
+    box-shadow: 0 2px 0 #acc42b, 0 3px 8px rgba(172, 196, 43, 0.22);
+  }
+
+  .landing-hero-actions .btn-hero-secondary {
+    box-shadow: 0 2px 0 #cbd8d3, 0 3px 6px rgba(0, 0, 0, 0.04);
+  }
+
+  .landing-hero-actions .btn-hero-cta svg,
+  .landing-hero-actions .btn-hero-secondary svg {
+    flex-shrink: 0;
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  .scroll-indicator-link {
+    justify-content: center;
+    font-size: 11.5px;
+    margin-top: 2px;
+  }
+
+  .hero-scene-panoramic {
+    height: 220px;
+    bottom: 0;
+    opacity: 0.35;
+  }
+
+  .hero-doodles-layer {
+    display: none;
+  }
+
+  /* --- Bandeau Défilant Ticker --- */
+  .fun-ribbon-ticker-wrap {
+    padding: 10px 0 16px;
+    margin: 0 0 6px;
+  }
+
+  .fun-ticker-chip {
+    padding: 8px 16px;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  /* --- En-têtes de Sections --- */
+  .landing-section {
+    padding: 40px 16px;
+  }
+
+  .landing-section-alt {
+    padding: 40px 16px;
+  }
+
+  .landing-section-header {
+    margin: 0 auto 24px;
+    padding: 0 4px;
+  }
+
+  .landing-section-header span.tag {
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .landing-section-header span.tag::before,
+  .landing-section-header span.tag::after {
+    width: 16px;
+  }
+
+  .landing-section-header h2 {
+    font-size: clamp(20px, 5.8vw, 24px);
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .landing-section-header p {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  /* --- Piliers Pédagogiques (Album optimisé Mobile) --- */
+  .pillars-album-wrapper {
+    padding: 8px 10px 20px;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillars-album-stage {
+    height: 410px;
+    perspective: none;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pillar-album-card {
+    position: absolute;
+    width: min(78vw, 290px);
+    padding: 18px 14px 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .pillar-album-card.pos-active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    pointer-events: auto !important;
+    z-index: 10 !important;
+  }
+
+  /* Masquer les cartes inactives sur mobile pour concentrer l'attention et éviter le débordement */
+  .pillar-album-card:not(.pos-active) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: scale(0.9) !important;
+    z-index: 1 !important;
+  }
+
+  .pillar-sticker-wrap {
+    height: 70px;
+    margin-bottom: 8px;
+  }
+
+  .pillar-sticker-img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .pillar-badge-pill {
+    font-size: 10.5px;
+  }
+
+  .pillar-album-card h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .pillar-album-card p {
+    font-size: 12.5px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .pillar-points-list {
+    gap: 6px;
+  }
+
+  .pillar-points-list li {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .album-nav-btn {
+    width: 36px;
+    height: 36px;
+    z-index: 25;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--kia-line);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .album-nav-btn.prev {
+    left: 4px;
+  }
+
+  .album-nav-btn.next {
+    right: 4px;
+  }
+
+}

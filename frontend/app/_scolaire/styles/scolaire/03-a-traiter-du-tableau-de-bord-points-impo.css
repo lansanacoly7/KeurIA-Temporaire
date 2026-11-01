@@ -1,0 +1,520 @@
+/*
+ * « À traiter » du tableau de bord : points importants, bien visibles.
+ * Fond chaud, barre orange à gauche, bouton plein (texte blanc ≥ 5:1).
+ */
+.ec-todo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ec-todo-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: #b45309;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.ec-todo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #f3d19c;
+  border-left: 4px solid #d97706;
+  border-radius: 12px;
+  background: #fffaf0;
+  color: var(--ec-ink);
+}
+
+.ec-todo + .ec-todo {
+  margin-top: 10px;
+}
+
+.ec-todo-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fde7c2;
+  color: #b45309;
+}
+
+.ec-todo-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ec-todo-text b {
+  color: #92400e;
+}
+
+.ec-todo-action {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: #b45309;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgba(146, 64, 14, 0.25);
+  transition: background 0.15s ease;
+}
+
+.ec-todo-action:hover {
+  background: #92400e;
+}
+
+.ec-todo--brand {
+  border-color: var(--ec-line);
+  border-left-color: var(--ec-brand);
+  background: var(--ec-surface);
+}
+
+.ec-todo--brand .ec-todo-icon {
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+}
+
+.ec-todo--brand .ec-todo-text b {
+  color: var(--ec-ink);
+}
+
+.ec-todo--brand .ec-todo-action {
+  background: var(--ec-brand);
+  box-shadow: 0 1px 2px rgba(13, 132, 110, 0.25);
+}
+
+.ec-todo--brand .ec-todo-action:hover {
+  background: var(--ec-ink);
+}
+
+/* ─── Tableaux ──────────────────────────────────────────────────────────── */
+
+/* Le tableau défile dans son cadre : la colonne qui le contient ne doit jamais s'élargir avec lui (min-width:auto des grilles et flex). */
+.ec-main,
+.ec-main > *,
+.ec-card,
+.ec-detail-grid > * {
+  min-width: 0;
+}
+
+.ec-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--ec-line);
+  border-radius: var(--ec-radius);
+  background: var(--ec-surface);
+}
+
+.ec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ec-table th {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ec-line);
+  background: #f9fbfa;
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ec-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ec-line);
+  vertical-align: middle;
+}
+
+.ec-table tr:last-child td {
+  border-bottom: 0;
+}
+
+/*
+ * Ligne cliquable (ouvre une fiche) : même esprit que les cartes de classe.
+ * Fond menthe, barre verte à gauche, nom en vert souligné, flèche qui avance.
+ */
+.ec-table tbody tr[data-clickable="true"] {
+  cursor: pointer;
+}
+
+.ec-table tbody tr[data-clickable="true"] td {
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ec-table tbody tr[data-clickable="true"]:hover td,
+.ec-table tbody tr[data-clickable="true"]:focus-visible td {
+  background: var(--ec-brand-soft);
+}
+
+.ec-table tbody tr[data-clickable="true"]:hover td:first-child,
+.ec-table tbody tr[data-clickable="true"]:focus-visible td:first-child {
+  box-shadow: inset 4px 0 0 var(--ec-brand);
+}
+
+.ec-table tbody tr[data-clickable="true"]:hover td:first-child b,
+.ec-table tbody tr[data-clickable="true"]:focus-visible td:first-child b {
+  color: var(--ec-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ec-table tbody tr[data-clickable="true"]:focus-visible {
+  outline: 3px solid var(--ec-lime);
+  outline-offset: -3px;
+}
+
+.ec-table .ec-row-go {
+  width: 40px;
+  padding-left: 0;
+  text-align: right;
+  color: #b7c6c2;
+}
+
+.ec-table .ec-row-go svg {
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.ec-table tbody tr[data-clickable="true"]:hover .ec-row-go svg,
+.ec-table tbody tr[data-clickable="true"]:focus-visible .ec-row-go svg {
+  color: var(--ec-brand);
+  transform: translateX(3px);
+}
+
+/* ─── Formulaires ───────────────────────────────────────────────────────── */
+
+.ec-field {
+  display: grid;
+  gap: 6px;
+  /* Sans cela, quand le champ voisin a un texte d'aide plus long, la grille étire ses lignes : le menu déroulant
+     grossit et descend. Le contenu reste collé en haut, l'espace en trop va en bas. */
+  align-content: start;
+}
+
+.ec-field > span {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ec-field small {
+  color: var(--ec-muted);
+  font-size: 12px;
+}
+
+.ec-field small[data-error="true"] {
+  color: var(--ec-danger);
+}
+
+.ec-input,
+.ec-select {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box; /* même hauteur pour un champ texte et un menu déroulant */
+  padding: 0 12px;
+  /* Bordure visible avant même la saisie (jeton global, voir design/tokens.css), pas le gris pâle des cartes. */
+  border: 1px solid var(--field-border, #7d958f);
+  border-radius: 10px;
+  background: var(--ec-surface);
+  color: var(--ec-text);
+  font: inherit;
+}
+
+.ec-input:hover,
+.ec-select:hover {
+  border-color: var(--field-border-hover, #5f7a74);
+}
+
+.ec-input:focus,
+.ec-select:focus {
+  border-color: var(--ec-brand);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 132, 110, 0.15);
+}
+
+/* ─── Fenêtre modale ────────────────────────────────────────────────────── */
+
+.ec-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(13, 46, 44, 0.55);
+}
+
+/*
+ * Fenêtre : en-tête et boutons fixes, seul le contenu défile (les boutons
+ * restent visibles sur les longues fenêtres).
+ */
+.ec-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(560px, 100%);
+  max-height: calc(100dvh - 32px);
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--ec-surface);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.ec-modal-head {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 24px 6px;
+}
+
+.ec-modal-head h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ec-modal-body {
+  display: grid;
+  flex: 1 1 auto;
+  gap: 16px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 14px 24px 22px;
+}
+
+.ec-modal-foot {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid var(--ec-line);
+  background: var(--ec-surface);
+}
+
+/* Téléphone : boutons pleine largeur, le principal (dernier) au-dessus. */
+@media (max-width: 560px) {
+  .ec-modal-head {
+    padding: 18px 18px 4px;
+  }
+
+  .ec-modal-body {
+    padding: 12px 18px 18px;
+  }
+
+  .ec-modal-foot {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 14px 18px 18px;
+  }
+
+  .ec-modal-foot > .ec-btn {
+    justify-content: center;
+  }
+}
+
+/* Fenêtre de confirmation : conséquences, ce qui ne change pas, réversibilité. */
+.ec-confirm-intro {
+  color: var(--ec-text);
+}
+
+.ec-confirm-block {
+  padding: 12px 14px;
+  border: 1px solid #f3d19c;
+  border-radius: 12px;
+  background: #fffaf0;
+}
+
+.ec-confirm-block[data-danger] {
+  border-color: #f2b8b1;
+  background: #fff5f4;
+}
+
+.ec-confirm-block > b {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #92400e;
+}
+
+.ec-confirm-block[data-danger] > b {
+  color: #a8261c;
+}
+
+.ec-confirm-block ul {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.ec-confirm-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  color: var(--ec-muted);
+}
+
+.ec-confirm-line svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ec-confirm-line[data-kind="ok"] {
+  color: var(--ec-ink);
+}
+
+.ec-confirm-line[data-kind="ok"] svg {
+  color: var(--ec-brand);
+}
+
+/* ─── États vides et chargement ─────────────────────────────────────────── */
+
+.ec-empty {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--ec-muted);
+}
+
+.ec-empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+}
+
+.ec-empty h2 {
+  margin: 4px 0 0;
+  color: var(--ec-text);
+  font-size: 18px;
+}
+
+.ec-empty p {
+  max-width: 420px;
+  margin: 0;
+}
+
+.ec-skeleton {
+  border-radius: 12px;
+  background: linear-gradient(90deg, #eaf0ee 0%, #f5f8f7 50%, #eaf0ee 100%);
+  background-size: 200% 100%;
+  animation: ec-shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes ec-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.ec-error {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--ec-danger-bg);
+  color: var(--ec-danger);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ec-app *,
+  .ec-app *::before,
+  .ec-app *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ─── Barre d'outils et filtres ─────────────────────────────────────────── */
+
+.ec-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ec-segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px;
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  background: var(--ec-surface);
+  flex-wrap: wrap;
+}
+
+.ec-segmented button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ec-muted);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ec-segmented button:hover:not([aria-selected="true"]):not([aria-pressed="true"]) {
+  color: var(--ec-ink);
+  background: rgba(23, 62, 60, 0.05);
+}
+
+.ec-segmented button[aria-pressed="true"],
+.ec-segmented button[aria-selected="true"] {
+  background: var(--ec-ink);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.ec-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ec-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ec-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ec-brand);
+}
+

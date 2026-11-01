@@ -1,0 +1,31 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e01.mp3;1;1;texte (story);Sur la tablette, un inconnu écrit à Fatou : « Envoie-moi une photo ! »;Sur la tablette, un inconnu écrit à Fatou : « Envoie-moi une photo ! »;70
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e02.mp3;1;2;texte (story);Palou s’inquiète pour Fatou. « Qui peut nous aider ? »;Palou s’inquiète pour Fatou. « Qui peut nous aider ? »;54
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e03.mp3;1;3;texte (story);Madame Diop reste calme : « Tu as bien fait de me le montrer. »;Madame Diop reste calme : « Tu as bien fait de me le montrer. »;63
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e04.mp3;1;4;texte (discover);Un adulte de confiance, tu le connais bien. Il te protège et il t’écoute.;Un adulte de confiance, tu le connais bien. Il te protège et il t’écoute.;73
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu sais à qui parler.;Bravo ! Tu sais à qui parler.;29
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e08-retiens.mp3;1;8;« Je retiens »;Un adulte de confiance me protège et m’écoute. Je lui montre ce qui me gêne.;Un adulte de confiance me protège et m’écoute. Je lui montre ce qui me gêne.;76
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Je ne réponds pas et je montre le message à un adulte.;Oui ! Je ne réponds pas et je montre le message à un adulte.;60
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m1-q.mp3;2;5;consigne du jeu;Un inconnu te demande une photo. Que fais-tu ?;Un inconnu te demande une photo. Que fais-tu ?;46
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Fatou montre le message à un adulte de confiance : elle a bien fait.;Oui ! Fatou montre le message à un adulte de confiance : elle a bien fait.;74
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m2-q.mp3;2;5;consigne du jeu;Un inconnu a écrit à Fatou. À qui le montre-t-elle ?;Un inconnu a écrit à Fatou. À qui le montre-t-elle ?;52
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05.mp3;2;5;texte (play);Aide Fatou à bien réagir !;Aide Fatou à bien réagir !;26
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e06.mp3;2;6;texte (ai);Une IA n’est pas un adulte de confiance. Si quelque chose te gêne, parle à une vraie personne.;Une I A n’est pas un adulte de confiance. Si quelque chose te gêne, parle à une vraie personne.;94
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Un adulte qui m’écoute.;Oui ! Un adulte qui m’écoute.;29
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m1-q.mp3;2;7;consigne du jeu;Qui est un adulte de confiance ?;Qui est un adulte de confiance ?;32
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Exact ! Je le montre à un adulte.;Exact ! Je le montre à un adulte.;33
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m2-q.mp3;2;7;consigne du jeu;Un message te gêne. Que fais-tu ?;Un message te gêne. Que fais-tu ?;33
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Bravo ! J’en parle à un adulte.;Bravo ! J’en parle à un adulte.;31
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m3-q.mp3;2;7;consigne du jeu;On te demande un secret qui te gêne. Que fais-tu ?;On te demande un secret qui te gêne. Que fais-tu ?;50
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m1-o1.mp3;3;5;explication (mauvaise réponse);Jamais : un inconnu ne doit pas avoir ta photo.;Jamais : un inconnu ne doit pas avoir ta photo.;47
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m1-o3.mp3;3;5;explication (mauvaise réponse);Lui répondre peut être dangereux : montre plutôt le message à un adulte.;Lui répondre peut être dangereux : montre plutôt le message à un adulte.;72
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m2-o3.mp3;3;5;explication (carte hors sujet);Un inconnu n’est pas un adulte de confiance : on ne lui répond pas.;Un inconnu n’est pas un adulte de confiance : on ne lui répond pas.;67
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m2-o4.mp3;3;5;explication (carte hors sujet);Un ami qui répète tout peut montrer le message à d’autres : choisis un adulte.;Un ami qui répète tout peut montrer le message à d’autres : choisis un adulte.;78
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e05-m2-s1.mp3;3;5;réaction de Palou (carte placée);Une personne de confiance : très bien ! Une autre ?;Une personne de confiance : très bien ! Une autre ?;51
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Un inconnu gentil n’est pas un adulte de confiance.;Un inconnu gentil n’est pas un adulte de confiance.;51
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Un adulte de confiance ne te demande pas de secret qui te gêne.;Un adulte de confiance ne te demande pas de secret qui te gêne.;63
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Répondre à un inconnu peut être dangereux.;Répondre à un inconnu peut être dangereux.;42
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Garder pour soi ne règle rien : on en parle à un adulte.;Garder pour soi ne règle rien : on en parle à un adulte.;56
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Un secret qui gêne, on ne le garde pas : on en parle.;Un secret qui gêne, on ne le garde pas : on en parle.;53
+frontend/public/audio/palou/lecons/m08/p8-3/p8-3_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);N’envoie jamais de photo à quelqu’un qui te gêne.;N’envoie jamais de photo à quelqu’un qui te gêne.;49

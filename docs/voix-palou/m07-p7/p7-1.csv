@@ -1,0 +1,28 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e01.mp3;1;1;texte (story);Samedi, c’est Set Setal : on nettoie et on décore le quartier !;Samedi, c’est Set Setal : on nettoie et on décore le quartier !;63
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e02.mp3;1;2;texte (story);Madame Diop demande une affiche. Moussa soupire : « Je n’ai aucune idée ! »;Madame Diop demande une affiche. Moussa soupire : « Je n’ai aucune idée ! »;75
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e03.mp3;1;3;texte (discover);Une IA générative fabrique du nouveau : texte, image ou son.;Une I A générative fabrique du nouveau : texte, image ou son.;60
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu as plein d’idées pour l’affiche.;Bravo ! Tu as plein d’idées pour l’affiche.;43
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e07-retiens.mp3;1;7;« Je retiens »;Une IA générative propose des idées. C’est toi qui choisis.;Une I A générative propose des idées. C’est toi qui choisis.;59
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Oui ! Palou propose des idées de slogans.;Oui ! Palou propose des idées de slogans.;41
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m1-q.mp3;2;4;consigne du jeu;Que peut proposer Palou à Moussa ?;Que peut proposer Palou à Moussa ?;34
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Palou propose, mais c’est toi qui choisis le slogan.;Oui ! Palou propose, mais c’est toi qui choisis le slogan.;58
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m2-q.mp3;2;4;consigne du jeu;Moussa n’a pas d’idée. Demande des slogans à Palou, puis choisis le tien !;Moussa n’a pas d’idée. Demande des slogans à Palou, puis choisis le tien !;74
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04.mp3;2;4;texte (play);Aide Palou à aider Moussa !;Aide Palou à aider Moussa !;27
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e05.mp3;2;5;texte (ai);Une IA peut donner des idées. C’est toi le créateur qui choisis.;Une I A peut donner des idées. C’est toi le créateur qui choisis.;64
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Il propose des idées.;Oui ! Il propose des idées.;27
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m1-q.mp3;2;6;consigne du jeu;Qu’est-ce que Palou propose à Moussa ?;Qu’est-ce que Palou propose à Moussa ?;38
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Bravo ! C’est Moussa qui choisit.;Bravo ! C’est Moussa qui choisit.;33
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m2-q.mp3;2;6;consigne du jeu;Palou propose trois slogans. Qui choisit le bon ?;Palou propose trois slogans. Qui choisit le bon ?;49
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Exact ! On lit et on choisit.;Exact ! On lit et on choisit.;29
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m3-q.mp3;2;6;consigne du jeu;Que fait-on des idées de Palou ?;Que fait-on des idées de Palou ?;32
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m1-o2.mp3;3;4;explication (mauvaise réponse);Palou ne peut pas nettoyer à la place des enfants : il propose des idées.;Palou ne peut pas nettoyer à la place des enfants : il propose des idées.;73
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m1-o3.mp3;3;4;explication (mauvaise réponse);C’est Moussa l’auteur : il décide.;C’est Moussa l’auteur : il décide.;34
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e04-m2-o4.mp3;3;4;explication (carte hors sujet);Ce slogan a des fautes : l’IA peut se tromper, c’est à toi de vérifier.;Ce slogan a des fautes : l’I A peut se tromper, c’est à toi de vérifier.;71
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Il propose, il n’ordonne pas : c’est toi qui choisis.;Il propose, il n’ordonne pas : c’est toi qui choisis.;53
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);La décision finale revient toujours à Moussa.;La décision finale revient toujours à Moussa.;45
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Palou propose, mais c’est Moussa qui choisit.;Palou propose, mais c’est Moussa qui choisit.;45
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Ce n’est pas le hasard : c’est Moussa qui choisit.;Ce n’est pas le hasard : c’est Moussa qui choisit.;50
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Il faut lire avant de choisir.;Il faut lire avant de choisir.;30
+frontend/public/audio/palou/lecons/m07/p7-1/p7-1_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Effacer ne sert à rien : on lit et on choisit.;Effacer ne sert à rien : on lit et on choisit.;46

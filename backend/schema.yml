@@ -1,0 +1,3325 @@
+openapi: 3.0.3
+info:
+  title: kEur IA API
+  version: 1.0.0
+  description: Documentation OpenAPI 3.0 interactive des points d'accès de la plateforme
+    éducative kEur IA (apprentissage de l'IA pour les enfants au Sénégal).
+paths:
+  /api/account/delete:
+    post:
+      operationId: account_delete_create
+      description: POST /api/account/delete {password} — supprime le compte parent
+        ET ceux de ses enfants.
+      tags:
+      - account
+      responses:
+        '200':
+          description: No response body
+  /api/account/export:
+    get:
+      operationId: account_export_retrieve
+      description: GET /api/account/export — téléchargement JSON des données du compte
+        connecté.
+      tags:
+      - account
+      responses:
+        '200':
+          description: No response body
+  /api/auth/activity:
+    post:
+      operationId: auth_activity_create
+      description: |-
+        POST /api/auth/activity — signal envoyé par l'interface quand la personne agit réellement (clic, saisie, retour sur l'onglet).
+
+        Il remet à zéro le compte à rebours d'inactivité. Réponse 200 {active: bool} : `false` pour un visiteur non connecté
+        (aucune erreur, les pages publiques peuvent l'appeler) ; 401 si la session vient d'expirer par inactivité.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/csrf:
+    get:
+      operationId: auth_csrf_retrieve
+      description: GET /api/auth/csrf — garantit la présence du cookie csrftoken.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/csrf/:
+    get:
+      operationId: auth_csrf_retrieve_2
+      description: GET /api/auth/csrf — garantit la présence du cookie csrftoken.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/deactivate:
+    post:
+      operationId: auth_deactivate_create
+      description: |-
+        POST /api/auth/deactivate {password} — désactive le compte parent connecté et détruit la session.
+
+        Le mot de passe est exigé (une session volée ne doit pas suffire à enfermer le propriétaire dehors).
+      tags:
+      - auth
+      responses:
+        '200':
+          description: No response body
+  /api/auth/deactivate/:
+    post:
+      operationId: auth_deactivate_create_2
+      description: |-
+        POST /api/auth/deactivate {password} — désactive le compte parent connecté et détruit la session.
+
+        Le mot de passe est exigé (une session volée ne doit pas suffire à enfermer le propriétaire dehors).
+      tags:
+      - auth
+      responses:
+        '200':
+          description: No response body
+  /api/auth/forgot-password:
+    post:
+      operationId: auth_forgot_password_create
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/forgot-password/:
+    post:
+      operationId: auth_forgot_password_create_2
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/login:
+    post:
+      operationId: auth_login_create
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/login/:
+    post:
+      operationId: auth_login_create_2
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/login-2fa:
+    post:
+      operationId: auth_login_2fa_create
+      description: POST /api/auth/login-2fa {email, code} — second facteur de la connexion,
+        ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/login-2fa/:
+    post:
+      operationId: auth_login_2fa_create_2
+      description: POST /api/auth/login-2fa {email, code} — second facteur de la connexion,
+        ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/logout:
+    post:
+      operationId: auth_logout_create
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/logout/:
+    post:
+      operationId: auth_logout_create_2
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/reactivate:
+    post:
+      operationId: auth_reactivate_create
+      description: POST /api/auth/reactivate {email, code} — valide le code OTP, réactive
+        le compte parent et ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/reactivate/:
+    post:
+      operationId: auth_reactivate_create_2
+      description: POST /api/auth/reactivate {email, code} — valide le code OTP, réactive
+        le compte parent et ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/register:
+    post:
+      operationId: auth_register_create
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/register/:
+    post:
+      operationId: auth_register_create_2
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/request-reactivation:
+    post:
+      operationId: auth_request_reactivation_create
+      description: POST /api/auth/request-reactivation {email, password} — vérifie
+        les identifiants et envoie un code OTP par email.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/request-reactivation/:
+    post:
+      operationId: auth_request_reactivation_create_2
+      description: POST /api/auth/request-reactivation {email, password} — vérifie
+        les identifiants et envoie un code OTP par email.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/resend-verification:
+    post:
+      operationId: auth_resend_verification_create
+      description: POST /api/auth/resend-verification {email} — réponse identique
+        dans tous les cas.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/resend-verification/:
+    post:
+      operationId: auth_resend_verification_create_2
+      description: POST /api/auth/resend-verification {email} — réponse identique
+        dans tous les cas.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/reset-password:
+    post:
+      operationId: auth_reset_password_create
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/reset-password/:
+    post:
+      operationId: auth_reset_password_create_2
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/verify-email:
+    post:
+      operationId: auth_verify_email_create
+      description: POST /api/auth/verify-email {email, code} — valide l'adresse et
+        ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/auth/verify-email/:
+    post:
+      operationId: auth_verify_email_create_2
+      description: POST /api/auth/verify-email {email, code} — valide l'adresse et
+        ouvre la session.
+      tags:
+      - auth
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/charter:
+    get:
+      operationId: charter_retrieve
+      tags:
+      - charter
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: charter_update
+      tags:
+      - charter
+      responses:
+        '200':
+          description: No response body
+  /api/charter/:
+    get:
+      operationId: charter_retrieve_2
+      tags:
+      - charter
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: charter_update_2
+      tags:
+      - charter
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/characters/:
+    get:
+      operationId: curriculum_characters_retrieve
+      description: |-
+        GET /api/curriculum/characters/?track=10-12&module=a1
+        Renvoie les personnages du parcours avec nom, rôle, avatar, identifiant de voix et module.
+        Si ?module= est fourni, renvoie les personnages rattachés à ce module ainsi que les personnages principaux (module vide ou non défini).
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/content79/:
+    get:
+      operationId: curriculum_content79_retrieve
+      description: |-
+        GET /api/curriculum/content79/
+        Leçons 7-9 dont le contenu a été modifié dans le studio : {identifiant: numéro de version en ligne}. Les autres leçons
+        restent celles du site (fichiers frontend/content/parcours79).
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/content79/{lesson_id}/:
+    get:
+      operationId: curriculum_content79_retrieve_2
+      description: |-
+        GET /api/curriculum/content79/<str:lesson_id>/
+        Contenu en ligne d'une leçon 7-9 modifiée dans le studio ; 404 si la leçon n'a pas été modifiée (le site garde alors son contenu d'origine).
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/fiche/{lesson_id}/:
+    get:
+      operationId: curriculum_fiche_retrieve
+      description: |-
+        GET /api/curriculum/fiche/<str:lesson_id>/
+        Renvoie la fiche pédagogique d'une leçon (réservée aux enseignants, directeurs d'école et administrateurs).
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - curriculum
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/glossary/:
+    get:
+      operationId: curriculum_glossary_retrieve
+      description: |-
+        GET /api/curriculum/glossary/
+        Renvoie les mots du dictionnaire, par ordre alphabétique. Un élève ne reçoit que les mots des leçons qu'il a terminées
+        (plus le nombre de mots restant à découvrir) : voir apps/curriculum/glossary.py.
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/lessons/{lesson_id}/:
+    get:
+      operationId: curriculum_lessons_retrieve
+      description: |-
+        GET /api/curriculum/lessons/<str:lesson_id>/
+        Renvoie une leçon avec son contenu pédagogique complet (mission, quiz, activités).
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/modules/{world_id}/:
+    get:
+      operationId: curriculum_modules_retrieve
+      description: |-
+        GET /api/curriculum/modules/<str:world_id>/
+        Renvoie le détail d'un module/monde (ex: 'p1') avec ses leçons.
+      parameters:
+      - in: path
+        name: world_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/overview/:
+    get:
+      operationId: curriculum_overview_retrieve
+      description: |-
+        GET /api/curriculum/overview/
+        Renvoie un dictionnaire structuré indexé par clé ('7-9', '10-12', '13-15')
+        directement compatible avec le state client frontend.
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/tracks/:
+    get:
+      operationId: curriculum_tracks_retrieve
+      description: |-
+        GET /api/curriculum/tracks/
+        Renvoie la liste complète des parcours par tranche d'âge avec leurs mondes et leçons.
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/curriculum/tracks/{key}/:
+    get:
+      operationId: curriculum_tracks_retrieve_2
+      description: |-
+        GET /api/curriculum/tracks/<str:key>/
+        Renvoie le détail d'un parcours spécifique (ex: '7-9').
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      tags:
+      - curriculum
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/daily-challenge:
+    get:
+      operationId: daily_challenge_retrieve
+      tags:
+      - daily-challenge
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_challenge_create
+      tags:
+      - daily-challenge
+      responses:
+        '200':
+          description: No response body
+  /api/daily-challenge/:
+    get:
+      operationId: daily_challenge_retrieve_2
+      tags:
+      - daily-challenge
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_challenge_create_2
+      tags:
+      - daily-challenge
+      responses:
+        '200':
+          description: No response body
+  /api/daily-riddle:
+    get:
+      operationId: daily_riddle_retrieve
+      tags:
+      - daily-riddle
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_riddle_create
+      tags:
+      - daily-riddle
+      responses:
+        '200':
+          description: No response body
+  /api/daily-riddle/:
+    get:
+      operationId: daily_riddle_retrieve_2
+      tags:
+      - daily-riddle
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_riddle_create_2
+      tags:
+      - daily-riddle
+      responses:
+        '200':
+          description: No response body
+  /api/daily-usage:
+    get:
+      operationId: daily_usage_retrieve
+      tags:
+      - daily-usage
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_usage_create
+      tags:
+      - daily-usage
+      responses:
+        '200':
+          description: No response body
+  /api/daily-usage/:
+    get:
+      operationId: daily_usage_retrieve_2
+      tags:
+      - daily-usage
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: daily_usage_create_2
+      tags:
+      - daily-usage
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/classes:
+    get:
+      operationId: ecole_classes_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: ecole_classes_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/classes/{id}:
+    get:
+      operationId: ecole_classes_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: ecole_classes_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: ecole_classes_destroy
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '204':
+          description: No response body
+  /api/ecole/classes/{id}/archive:
+    post:
+      operationId: ecole_classes_archive_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/credentials:
+    post:
+      operationId: ecole_credentials_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/dashboard:
+    get:
+      operationId: ecole_dashboard_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/import/preview:
+    post:
+      operationId: ecole_import_preview_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/import/read:
+    post:
+      operationId: ecole_import_read_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/leaderboard:
+    get:
+      operationId: ecole_leaderboard_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/parents:
+    get:
+      operationId: ecole_parents_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/restrictions:
+    get:
+      operationId: ecole_restrictions_retrieve
+      description: Règles de toute l'école (direction).
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: ecole_restrictions_update
+      description: Règles de toute l'école (direction).
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/school:
+    get:
+      operationId: ecole_school_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: ecole_school_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students:
+    get:
+      operationId: ecole_students_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: ecole_students_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/{id}:
+    get:
+      operationId: ecole_students_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: ecole_students_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/{id}/move:
+    post:
+      operationId: ecole_students_move_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/{id}/move-preview:
+    get:
+      operationId: ecole_students_move_preview_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/{id}/parent-link:
+    get:
+      operationId: ecole_students_parent_link_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: ecole_students_parent_link_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: ecole_students_parent_link_destroy
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '204':
+          description: No response body
+  /api/ecole/students/{id}/password:
+    post:
+      operationId: ecole_students_password_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/{id}/status:
+    post:
+      operationId: ecole_students_status_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/bulk:
+    post:
+      operationId: ecole_students_bulk_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/matricule-check:
+    get:
+      operationId: ecole_students_matricule_check_retrieve
+      description: GET ecole/students/matricule-check?matricule=…&ignore=<id> — le
+        matricule est-il libre ? (vérification en direct du formulaire)
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/students/next-matricule:
+    get:
+      operationId: ecole_students_next_matricule_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/teachers:
+    get:
+      operationId: ecole_teachers_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: ecole_teachers_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/teachers/{id}:
+    get:
+      operationId: ecole_teachers_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: ecole_teachers_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/teachers/{id}/password:
+    post:
+      operationId: ecole_teachers_password_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/teachers/{id}/status:
+    post:
+      operationId: ecole_teachers_status_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/teachers/bulk:
+    post:
+      operationId: ecole_teachers_bulk_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years:
+    get:
+      operationId: ecole_years_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/{label}:
+    get:
+      operationId: ecole_years_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: label
+        schema:
+          type: string
+          pattern: ^\d{4}-\d{4}$
+        required: true
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/archive:
+    post:
+      operationId: ecole_years_archive_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/close:
+    post:
+      operationId: ecole_years_close_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/closure-check:
+    get:
+      operationId: ecole_years_closure_check_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/current:
+    patch:
+      operationId: ecole_years_current_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/promotion-plan:
+    get:
+      operationId: ecole_years_promotion_plan_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/ecole/years/undo:
+    post:
+      operationId: ecole_years_undo_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - ecole
+      responses:
+        '200':
+          description: No response body
+  /api/eleve/annonces/{id}/reponse:
+    post:
+      operationId: eleve_annonces_reponse_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - eleve
+      responses:
+        '200':
+          description: No response body
+  /api/eleve/aujourdhui:
+    get:
+      operationId: eleve_aujourdhui_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - eleve
+      responses:
+        '200':
+          description: No response body
+  /api/eleve/classement:
+    get:
+      operationId: eleve_classement_retrieve
+      description: |-
+        Classement de la semaine de SA classe (prénom et initiale) ; 403 si l'école ou la classe l'a fermé. Débit : celui des
+        autres routes élève (limite par utilisateur par défaut de DRF).
+      tags:
+      - eleve
+      responses:
+        '200':
+          description: No response body
+  /api/eleve/restrictions:
+    get:
+      operationId: eleve_restrictions_retrieve
+      description: Ce que l'élève d'école peut faire maintenant, avec qui a posé chaque
+        restriction.
+      tags:
+      - eleve
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/annonces/{id}:
+    get:
+      operationId: enseignant_annonces_retrieve
+      description: Résultats d'une annonce (GET) ou fermeture (DELETE).
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: enseignant_annonces_destroy
+      description: Résultats d'une annonce (GET) ou fermeture (DELETE).
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '204':
+          description: No response body
+  /api/enseignant/assignments:
+    get:
+      operationId: enseignant_assignments_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: enseignant_assignments_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/assignments/{id}:
+    get:
+      operationId: enseignant_assignments_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: enseignant_assignments_destroy
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '204':
+          description: No response body
+  /api/enseignant/classes:
+    get:
+      operationId: enseignant_classes_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}:
+    get:
+      operationId: enseignant_classes_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/analytics:
+    get:
+      operationId: enseignant_classes_analytics_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/annonces:
+    get:
+      operationId: enseignant_classes_annonces_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: enseignant_classes_annonces_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/blocages:
+    get:
+      operationId: enseignant_classes_blocages_retrieve
+      description: 'Tableau « Élèves bloqués » (T4) : difficulté et arrêt par leçon.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/credentials:
+    post:
+      operationId: enseignant_classes_credentials_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/restrictions:
+    get:
+      operationId: enseignant_classes_restrictions_retrieve
+      description: 'Règles d''une classe (enseignant de la classe) : jamais plus souples
+        que celles de l''école.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: enseignant_classes_restrictions_update
+      description: 'Règles d''une classe (enseignant de la classe) : jamais plus souples
+        que celles de l''école.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/classes/{id}/seance:
+    get:
+      operationId: enseignant_classes_seance_retrieve
+      description: 'Séance de classe : voir, ouvrir, terminer.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: enseignant_classes_seance_create
+      description: 'Séance de classe : voir, ouvrir, terminer.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: enseignant_classes_seance_destroy
+      description: 'Séance de classe : voir, ouvrir, terminer.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '204':
+          description: No response body
+  /api/enseignant/leaderboard:
+    get:
+      operationId: enseignant_leaderboard_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/me:
+    get:
+      operationId: enseignant_me_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/missions:
+    get:
+      operationId: enseignant_missions_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/overview:
+    get:
+      operationId: enseignant_overview_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/programme:
+    get:
+      operationId: enseignant_programme_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/programme/lessons/{lesson_id}:
+    get:
+      operationId: enseignant_programme_lessons_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/school:
+    get:
+      operationId: enseignant_school_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/settings:
+    get:
+      operationId: enseignant_settings_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/students/{id}:
+    get:
+      operationId: enseignant_students_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/students/{id}/parcours:
+    put:
+      operationId: enseignant_students_parcours_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/students/{id}/parent-link:
+    get:
+      operationId: enseignant_students_parent_link_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: enseignant_students_parent_link_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/enseignant/students/{id}/password:
+    post:
+      operationId: enseignant_students_password_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - enseignant
+      responses:
+        '200':
+          description: No response body
+  /api/famille/messages:
+    get:
+      operationId: famille_messages_retrieve
+      description: |-
+        GET  /api/famille/messages[?after=<id>] — messages du canal de ma famille.
+        POST /api/famille/messages {text}       — envoie un message dans ce canal.
+        Connexion obligatoire (réglage par défaut) ; aucun identifiant de famille
+        n'est accepté du navigateur.
+      tags:
+      - famille
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: famille_messages_create
+      description: |-
+        GET  /api/famille/messages[?after=<id>] — messages du canal de ma famille.
+        POST /api/famille/messages {text}       — envoie un message dans ce canal.
+        Connexion obligatoire (réglage par défaut) ; aucun identifiant de famille
+        n'est accepté du navigateur.
+      tags:
+      - famille
+      responses:
+        '200':
+          description: No response body
+  /api/famille/messages/:
+    get:
+      operationId: famille_messages_retrieve_2
+      description: |-
+        GET  /api/famille/messages[?after=<id>] — messages du canal de ma famille.
+        POST /api/famille/messages {text}       — envoie un message dans ce canal.
+        Connexion obligatoire (réglage par défaut) ; aucun identifiant de famille
+        n'est accepté du navigateur.
+      tags:
+      - famille
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: famille_messages_create_2
+      description: |-
+        GET  /api/famille/messages[?after=<id>] — messages du canal de ma famille.
+        POST /api/famille/messages {text}       — envoie un message dans ce canal.
+        Connexion obligatoire (réglage par défaut) ; aucun identifiant de famille
+        n'est accepté du navigateur.
+      tags:
+      - famille
+      responses:
+        '200':
+          description: No response body
+  /api/monitoring/client-error:
+    post:
+      operationId: monitoring_client_error_create
+      tags:
+      - monitoring
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/palou/chat:
+    post:
+      operationId: palou_chat_create
+      tags:
+      - palou
+      responses:
+        '200':
+          description: No response body
+  /api/palou/chat/:
+    post:
+      operationId: palou_chat_create_2
+      tags:
+      - palou
+      responses:
+        '200':
+          description: No response body
+  /api/parent/children:
+    get:
+      operationId: parent_children_retrieve
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: parent_children_create
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: parent_children_destroy
+      description: DELETE /api/parent/children {childId} — voir remove_child.
+      tags:
+      - parent
+      responses:
+        '204':
+          description: No response body
+  /api/parent/children/:
+    get:
+      operationId: parent_children_retrieve_2
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: parent_children_create_2
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: parent_children_destroy_2
+      description: DELETE /api/parent/children {childId} — voir remove_child.
+      tags:
+      - parent
+      responses:
+        '204':
+          description: No response body
+  /api/parent/children/{child_id}:
+    delete:
+      operationId: parent_children_destroy_3
+      description: DELETE /api/parent/children/<id> — retire du foyer un enfant relié
+        par le code de son école.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '204':
+          description: No response body
+  /api/parent/children/{child_id}/:
+    delete:
+      operationId: parent_children_destroy_4
+      description: DELETE /api/parent/children/<id> — retire du foyer un enfant relié
+        par le code de son école.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '204':
+          description: No response body
+  /api/parent/children/{child_id}/delete:
+    post:
+      operationId: parent_children_delete_create
+      description: POST /api/parent/children/<id>/delete {password} — place un enfant
+        du foyer en attente de suppression (3 jours de grâce pour récupération).
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/parent/children/{child_id}/reset-password:
+    post:
+      operationId: parent_children_reset_password_create
+      description: POST /api/parent/children/<id>/reset-password — permet à un parent
+        de définir un nouveau mot de passe pour son enfant.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/parent/children/{child_id}/reset-password/:
+    post:
+      operationId: parent_children_reset_password_create_2
+      description: POST /api/parent/children/<id>/reset-password — permet à un parent
+        de définir un nouveau mot de passe pour son enfant.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/parent/children/{child_id}/restore:
+    post:
+      operationId: parent_children_restore_create
+      description: POST /api/parent/children/<id>/restore — permet au parent de récupérer
+        le compte de son enfant pendant les 3 jours de grâce.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/parent/children/{child_id}/restore/:
+    post:
+      operationId: parent_children_restore_create_2
+      description: POST /api/parent/children/<id>/restore — permet au parent de récupérer
+        le compte de son enfant pendant les 3 jours de grâce.
+      parameters:
+      - in: path
+        name: child_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/parent/link-code:
+    post:
+      operationId: parent_link_code_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - parent
+      responses:
+        '200':
+          description: No response body
+  /api/profile:
+    get:
+      operationId: profile_retrieve
+      tags:
+      - profile
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: profile_update
+      tags:
+      - profile
+      responses:
+        '200':
+          description: No response body
+  /api/profile/:
+    get:
+      operationId: profile_retrieve_2
+      tags:
+      - profile
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: profile_update_2
+      tags:
+      - profile
+      responses:
+        '200':
+          description: No response body
+  /api/profiles:
+    get:
+      operationId: profiles_retrieve
+      description: 'Profils des enfants du parent connecté (relation officielle :
+        User.parent).'
+      tags:
+      - profiles
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: profiles_create
+      description: 'Profils des enfants du parent connecté (relation officielle :
+        User.parent).'
+      tags:
+      - profiles
+      responses:
+        '200':
+          description: No response body
+  /api/profiles/:
+    get:
+      operationId: profiles_retrieve_2
+      description: 'Profils des enfants du parent connecté (relation officielle :
+        User.parent).'
+      tags:
+      - profiles
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: profiles_create_2
+      description: 'Profils des enfants du parent connecté (relation officielle :
+        User.parent).'
+      tags:
+      - profiles
+      responses:
+        '200':
+          description: No response body
+  /api/progress:
+    get:
+      operationId: progress_retrieve
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: progress_create
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/:
+    get:
+      operationId: progress_retrieve_2
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: progress_create_2
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/leaderboard/weekly:
+    get:
+      operationId: progress_leaderboard_weekly_retrieve
+      description: |-
+        Classement de l'élève connecté :
+          - rattaché à une école → uniquement les élèves de son établissement ;
+          - sans école → les élèves sans école de son parcours d'âge.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/leaderboard/weekly/:
+    get:
+      operationId: progress_leaderboard_weekly_retrieve_2
+      description: |-
+        Classement de l'élève connecté :
+          - rattaché à une école → uniquement les élèves de son établissement ;
+          - sans école → les élèves sans école de son parcours d'âge.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/mark-event-seen:
+    post:
+      operationId: progress_mark_event_seen_create
+      description: |-
+        Marque un événement/récompense/animation comme vu côté serveur de façon permanente.
+        Même si l'enfant change d'appareil ou vide son cache, l'animation ne sera JAMAIS rejouée.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/mark-event-seen/:
+    post:
+      operationId: progress_mark_event_seen_create_2
+      description: |-
+        Marque un événement/récompense/animation comme vu côté serveur de façon permanente.
+        Même si l'enfant change d'appareil ou vide son cache, l'animation ne sera JAMAIS rejouée.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/notifications:
+    get:
+      operationId: progress_notifications_retrieve
+      description: Liste les 25 dernières notifications enrichies (exploits, progrès,
+        alertes, demandes).
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: progress_notifications_partial_update
+      description: Marquer toutes les notifications comme lues.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/notifications/:
+    get:
+      operationId: progress_notifications_retrieve_2
+      description: Liste les 25 dernières notifications enrichies (exploits, progrès,
+        alertes, demandes).
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: progress_notifications_partial_update_2
+      description: Marquer toutes les notifications comme lues.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/parental-limits:
+    get:
+      operationId: progress_parental_limits_retrieve
+      description: |-
+        GET  : parent → réglages (+ temps du jour de chaque enfant) ; enfant → son état de verrouillage ;
+               visiteur anonyme → « non verrouillé » (l'écran de verrouillage est monté sur toutes les pages).
+        POST : parent seulement, pour lui-même (tous les enfants) ou pour un de ses enfants.
+      tags:
+      - progress
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: progress_parental_limits_create
+      description: |-
+        GET  : parent → réglages (+ temps du jour de chaque enfant) ; enfant → son état de verrouillage ;
+               visiteur anonyme → « non verrouillé » (l'écran de verrouillage est monté sur toutes les pages).
+        POST : parent seulement, pour lui-même (tous les enfants) ou pour un de ses enfants.
+      tags:
+      - progress
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/progress/parental-limits/:
+    get:
+      operationId: progress_parental_limits_retrieve_2
+      description: |-
+        GET  : parent → réglages (+ temps du jour de chaque enfant) ; enfant → son état de verrouillage ;
+               visiteur anonyme → « non verrouillé » (l'écran de verrouillage est monté sur toutes les pages).
+        POST : parent seulement, pour lui-même (tous les enfants) ou pour un de ses enfants.
+      tags:
+      - progress
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: progress_parental_limits_create_2
+      description: |-
+        GET  : parent → réglages (+ temps du jour de chaque enfant) ; enfant → son état de verrouillage ;
+               visiteur anonyme → « non verrouillé » (l'écran de verrouillage est monté sur toutes les pages).
+        POST : parent seulement, pour lui-même (tous les enfants) ou pour un de ses enfants.
+      tags:
+      - progress
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/progress/parental-limits/unlock:
+    post:
+      operationId: progress_parental_limits_unlock_create
+      description: |-
+        POST /api/progress/parental-limits/unlock — l'action dépend du rôle de la session :
+
+        Parent :  {action: "respond_request", notifId, decision: "approved"|"declined"}
+                  {action: "unlock", childId, extraMinutes?}      (accorde du temps à un de ses enfants)
+        Enfant :  {action: "request_time"}                        (demande du temps à son parent)
+                  {action: "unlock", parentPassword}              (le parent saisit son mot de passe)
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/parental-limits/unlock/:
+    post:
+      operationId: progress_parental_limits_unlock_create_2
+      description: |-
+        POST /api/progress/parental-limits/unlock — l'action dépend du rôle de la session :
+
+        Parent :  {action: "respond_request", notifId, decision: "approved"|"declined"}
+                  {action: "unlock", childId, extraMinutes?}      (accorde du temps à un de ses enfants)
+        Enfant :  {action: "request_time"}                        (demande du temps à son parent)
+                  {action: "unlock", parentPassword}              (le parent saisit son mot de passe)
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/record-activity:
+    post:
+      operationId: progress_record_activity_create
+      description: |-
+        Enregistre les événements d'activité (erreurs, sans-faute) côté serveur
+        pour conserver la progression vers les badges comportementaux quel que soit le device.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/record-activity/:
+    post:
+      operationId: progress_record_activity_create_2
+      description: |-
+        Enregistre les événements d'activité (erreurs, sans-faute) côté serveur
+        pour conserver la progression vers les badges comportementaux quel que soit le device.
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/tracking:
+    get:
+      operationId: progress_tracking_retrieve
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/tracking/:
+    get:
+      operationId: progress_tracking_retrieve_2
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/tutorial-complete:
+    post:
+      operationId: progress_tutorial_complete_create
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/progress/tutorial-complete/:
+    post:
+      operationId: progress_tutorial_complete_create_2
+      tags:
+      - progress
+      responses:
+        '200':
+          description: No response body
+  /api/push/public-key:
+    get:
+      operationId: push_public_key_retrieve
+      description: 'GET /api/push/public-key — clé VAPID publique, ou `available:
+        false` si le serveur n''est pas configuré.'
+      tags:
+      - push
+      responses:
+        '200':
+          description: No response body
+  /api/push/subscribe:
+    post:
+      operationId: push_subscribe_create
+      description: POST /api/push/subscribe {endpoint, keys:{p256dh, auth}} — enregistre
+        l'appareil du parent.
+      tags:
+      - push
+      responses:
+        '200':
+          description: No response body
+  /api/push/unsubscribe:
+    post:
+      operationId: push_unsubscribe_create
+      description: POST /api/push/unsubscribe {endpoint} — oublie l'appareil.
+      tags:
+      - push
+      responses:
+        '200':
+          description: No response body
+  /api/schools/{slug}:
+    get:
+      operationId: schools_retrieve
+      description: GET /api/schools/<slug> — habillage public d'un espace école.
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - schools
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/schools/{slug}/:
+    get:
+      operationId: schools_retrieve_2
+      description: GET /api/schools/<slug> — habillage public d'un espace école.
+      parameters:
+      - in: path
+        name: slug
+        schema:
+          type: string
+        required: true
+      tags:
+      - schools
+      security:
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/student/assignments:
+    get:
+      operationId: student_assignments_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - student
+      responses:
+        '200':
+          description: No response body
+  /api/student/assignments/{id}/answer:
+    post:
+      operationId: student_assignments_answer_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - student
+      responses:
+        '200':
+          description: No response body
+  /api/student/assignments/{id}/complete:
+    post:
+      operationId: student_assignments_complete_create
+      description: 'Le corps de la requête est ignoré : la note est calculée par le
+        serveur (voir eleve.complete_assignment).'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - student
+      responses:
+        '200':
+          description: No response body
+  /api/student/assignments/{id}/quiz:
+    get:
+      operationId: student_assignments_quiz_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - student
+      responses:
+        '200':
+          description: No response body
+  /api/student/assignments/{id}/restart:
+    post:
+      operationId: student_assignments_restart_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - student
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/accounts:
+    get:
+      operationId: superadmin_accounts_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: superadmin_accounts_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/accounts/{id}:
+    patch:
+      operationId: superadmin_accounts_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_accounts_destroy
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/accounts/{id}/status:
+    post:
+      operationId: superadmin_accounts_status_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/audit:
+    get:
+      operationId: superadmin_audit_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/curriculum/lessons:
+    post:
+      operationId: superadmin_curriculum_lessons_create
+      description: 'POST /api/superadmin/curriculum/lessons : créer une nouvelle leçon.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/curriculum/lessons/{lesson_id}:
+    get:
+      operationId: superadmin_curriculum_lessons_retrieve
+      description: |-
+        GET /api/superadmin/curriculum/lessons/<str:lesson_id>
+        PATCH /api/superadmin/curriculum/lessons/<str:lesson_id>
+        DELETE /api/superadmin/curriculum/lessons/<str:lesson_id>
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: superadmin_curriculum_lessons_partial_update
+      description: |-
+        GET /api/superadmin/curriculum/lessons/<str:lesson_id>
+        PATCH /api/superadmin/curriculum/lessons/<str:lesson_id>
+        DELETE /api/superadmin/curriculum/lessons/<str:lesson_id>
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_curriculum_lessons_destroy
+      description: |-
+        GET /api/superadmin/curriculum/lessons/<str:lesson_id>
+        PATCH /api/superadmin/curriculum/lessons/<str:lesson_id>
+        DELETE /api/superadmin/curriculum/lessons/<str:lesson_id>
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/curriculum/lessons/{lesson_id}/duplicate:
+    post:
+      operationId: superadmin_curriculum_lessons_duplicate_create
+      description: 'POST /api/superadmin/curriculum/lessons/<str:lesson_id>/duplicate
+        : dupliquer une leçon.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/curriculum/lessons/{lesson_id}/reorder:
+    post:
+      operationId: superadmin_curriculum_lessons_reorder_create
+      description: 'POST /api/superadmin/curriculum/lessons/<str:lesson_id>/reorder
+        : monter ou descendre une leçon.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/curriculum/modules:
+    post:
+      operationId: superadmin_curriculum_modules_create
+      description: 'POST /api/superadmin/curriculum/modules : créer ou modifier un
+        module.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/curriculum/tracks:
+    get:
+      operationId: superadmin_curriculum_tracks_retrieve
+      description: 'GET /api/superadmin/curriculum/tracks : liste des parcours, mondes
+        et leçons.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/dashboard:
+    get:
+      operationId: superadmin_dashboard_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/learners:
+    get:
+      operationId: superadmin_learners_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/media:
+    get:
+      operationId: superadmin_media_retrieve
+      description: 'GET : la médiathèque avec recherche, filtres et métriques de stockage.
+        POST : envoie une image ou vidéo.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: superadmin_media_create
+      description: 'GET : la médiathèque avec recherche, filtres et métriques de stockage.
+        POST : envoie une image ou vidéo.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/media/{id}:
+    get:
+      operationId: superadmin_media_retrieve_2
+      description: 'GET : détail d''un média avec ses utilisations. PATCH/PUT : métadonnées
+        (nom, texte alternatif). DELETE : suppression si inutilisé.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: superadmin_media_update
+      description: 'GET : détail d''un média avec ses utilisations. PATCH/PUT : métadonnées
+        (nom, texte alternatif). DELETE : suppression si inutilisé.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: superadmin_media_partial_update
+      description: 'GET : détail d''un média avec ses utilisations. PATCH/PUT : métadonnées
+        (nom, texte alternatif). DELETE : suppression si inutilisé.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_media_destroy
+      description: 'GET : détail d''un média avec ses utilisations. PATCH/PUT : métadonnées
+        (nom, texte alternatif). DELETE : suppression si inutilisé.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/missions:
+    get:
+      operationId: superadmin_missions_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: superadmin_missions_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/missions/{mission_id}:
+    patch:
+      operationId: superadmin_missions_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: mission_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/missions/{mission_id}/status:
+    post:
+      operationId: superadmin_missions_status_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: mission_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/registrations:
+    get:
+      operationId: superadmin_registrations_retrieve
+      description: Demandes d'inscription des parents (en attente / acceptées / refusées).
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/registrations/{id}/approve:
+    post:
+      operationId: superadmin_registrations_approve_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/registrations/{id}/reject:
+    post:
+      operationId: superadmin_registrations_reject_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools:
+    get:
+      operationId: superadmin_schools_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: superadmin_schools_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}:
+    get:
+      operationId: superadmin_schools_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: superadmin_schools_partial_update
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/activity:
+    get:
+      operationId: superadmin_schools_activity_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/admins:
+    post:
+      operationId: superadmin_schools_admins_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/admins/{admin_id}/password:
+    post:
+      operationId: superadmin_schools_admins_password_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: admin_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/admins/{admin_id}/status:
+    post:
+      operationId: superadmin_schools_admins_status_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: admin_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/classes:
+    get:
+      operationId: superadmin_schools_classes_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/classes/{class_id}:
+    get:
+      operationId: superadmin_schools_classes_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: class_id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/overview:
+    get:
+      operationId: superadmin_schools_overview_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/parents:
+    get:
+      operationId: superadmin_schools_parents_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/reactivate:
+    post:
+      operationId: superadmin_schools_reactivate_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/students:
+    get:
+      operationId: superadmin_schools_students_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/students/{student_id}:
+    get:
+      operationId: superadmin_schools_students_retrieve_2
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      - in: path
+        name: student_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/suspend:
+    post:
+      operationId: superadmin_schools_suspend_create
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/schools/{id}/teachers:
+    get:
+      operationId: superadmin_schools_teachers_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/search:
+    get:
+      operationId: superadmin_search_retrieve
+      description: 'APIView qui transforme ApiError en réponse {"error": …}.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/stats-history:
+    get:
+      operationId: superadmin_stats_history_retrieve
+      description: Chiffres mensuels figés avant chaque passage de la conservation
+        des comptes (l'historique survit aux suppressions).
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog:
+    get:
+      operationId: superadmin_studio79_catalog_retrieve
+      description: 'GET : le catalogue complet (modules et leçons). PUT : sauvegarde
+        le brouillon. DELETE : écarte le brouillon.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    put:
+      operationId: superadmin_studio79_catalog_update
+      description: 'GET : le catalogue complet (modules et leçons). PUT : sauvegarde
+        le brouillon. DELETE : écarte le brouillon.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_studio79_catalog_destroy
+      description: 'GET : le catalogue complet (modules et leçons). PUT : sauvegarde
+        le brouillon. DELETE : écarte le brouillon.'
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/studio79/catalog/cancel:
+    post:
+      operationId: superadmin_studio79_catalog_cancel_create
+      description: 'POST : annule la publication programmée du catalogue.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/lessons/{lesson_id}:
+    delete:
+      operationId: superadmin_studio79_catalog_lessons_destroy
+      description: 'DELETE : supprime une leçon si aucune progression élève n''existe,
+        sinon 409.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/studio79/catalog/lessons/{lesson_id}/duplicate:
+    post:
+      operationId: superadmin_studio79_catalog_lessons_duplicate_create
+      description: 'POST : duplique une leçon dans le même module.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/lessons/{lesson_id}/toggle-hide:
+    post:
+      operationId: superadmin_studio79_catalog_lessons_toggle_hide_create
+      description: 'POST : bascule l''état masqué/affiché d''une leçon.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/lessons/new:
+    post:
+      operationId: superadmin_studio79_catalog_lessons_new_create
+      description: 'POST {moduleId, title} : crée une nouvelle leçon dans un module.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/modules/new:
+    post:
+      operationId: superadmin_studio79_catalog_modules_new_create
+      description: 'POST {title, description, color, icon} : crée un nouveau module.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/publish:
+    post:
+      operationId: superadmin_studio79_catalog_publish_create
+      description: 'POST : programme ou applique la mise en ligne du catalogue.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/reorder:
+    post:
+      operationId: superadmin_studio79_catalog_reorder_create
+      description: 'POST {type: ''lessons''|''modules'', ...} : réordonne les leçons
+        d''un module ou les modules.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/catalog/rollback:
+    post:
+      operationId: superadmin_studio79_catalog_rollback_create
+      description: 'POST {number} : restaure une ancienne version du catalogue.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}:
+    get:
+      operationId: superadmin_studio79_items_retrieve
+      description: 'GET : liste tous les éléments d''un type (riddle, daily_challenge,
+        mission, activity).'
+      parameters:
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}:
+    get:
+      operationId: superadmin_studio79_items_retrieve_2
+      description: 'GET : détail d''un élément (brouillon, en ligne, en attente, historique).'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/cancel:
+    post:
+      operationId: superadmin_studio79_items_cancel_create
+      description: 'POST : annule la publication programmée d''un élément.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/draft:
+    put:
+      operationId: superadmin_studio79_items_draft_update
+      description: 'PUT : enregistre le brouillon. DELETE : l''écarte.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_studio79_items_draft_destroy
+      description: 'PUT : enregistre le brouillon. DELETE : l''écarte.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/publish:
+    post:
+      operationId: superadmin_studio79_items_publish_create
+      description: 'POST : programme ou applique la publication d''un élément.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/rollback:
+    post:
+      operationId: superadmin_studio79_items_rollback_create
+      description: 'POST {number} : restaure une ancienne version.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/toggle-active:
+    post:
+      operationId: superadmin_studio79_items_toggle_active_create
+      description: 'POST : active ou désactive un élément.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/{key}/validate:
+    post:
+      operationId: superadmin_studio79_items_validate_create
+      description: 'POST {content} : valide un contenu sans l''enregistrer.'
+      parameters:
+      - in: path
+        name: key
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/items/{kind}/new:
+    post:
+      operationId: superadmin_studio79_items_new_create
+      description: 'POST {initialData} : crée un nouvel élément avec son brouillon.'
+      parameters:
+      - in: path
+        name: kind
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons:
+    get:
+      operationId: superadmin_studio79_lessons_retrieve
+      description: 'GET : les 40 leçons du parcours 7-9 et leur état.'
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}:
+    get:
+      operationId: superadmin_studio79_lessons_retrieve_2
+      description: 'GET : une leçon (contenu en ligne, brouillon, publication en attente,
+        historique, problèmes à corriger).'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}/cancel:
+    post:
+      operationId: superadmin_studio79_lessons_cancel_create
+      description: 'POST : annule la publication en attente.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}/draft:
+    put:
+      operationId: superadmin_studio79_lessons_draft_update
+      description: 'PUT : enregistre le brouillon. DELETE : l''écarte.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: superadmin_studio79_lessons_draft_destroy
+      description: 'PUT : enregistre le brouillon. DELETE : l''écarte.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '204':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}/publish:
+    post:
+      operationId: superadmin_studio79_lessons_publish_create
+      description: 'POST {acknowledge} : programme la mise en ligne du brouillon (après
+        le délai de sécurité).'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}/rollback:
+    post:
+      operationId: superadmin_studio79_lessons_rollback_create
+      description: 'POST {number} : remet en ligne une ancienne version, tout de suite.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+  /api/superadmin/studio79/lessons/{lesson_id}/validate:
+    post:
+      operationId: superadmin_studio79_lessons_validate_create
+      description: 'POST {content} : contrôle un contenu sans l''enregistrer.'
+      parameters:
+      - in: path
+        name: lesson_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - superadmin
+      responses:
+        '200':
+          description: No response body
+components: {}
+tags:
+- name: Authentification
+  description: Connexion, déconnexion, session et réinitialisation de mot de passe
+- name: Progression & Énigmes
+  description: Progression des leçons, gain d'XP, étoiles, badges et usage quotidien
+- name: Écoles & Classes
+  description: Gestion des établissements scolaires, classes et affectations
+- name: Curriculum
+  description: Modules pédagogiques et contenu des parcours
+- name: Superadmin
+  description: Administration de la plateforme et métriques globales

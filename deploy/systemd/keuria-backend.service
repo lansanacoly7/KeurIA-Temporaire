@@ -1,0 +1,63 @@
+# API Django servie par gunicorn.
+#
+# Le nom « keuria-backend » n'est pas libre : le workflow n8n d'auto-réparation
+# (n8n/workflows/keuria_self_healing_and_alerting.json) appelle « systemctl restart keuria-backend »
+# et « journalctl -u keuria-backend ». Le renommer casse l'auto-réparation.
+
+[Unit]
+Description=kEur IA - API Django (gunicorn)
+Documentation=file:/opt/keuria/docs/DEPLOIEMENT_DEBIAN_NGINX.md
+After=network-online.target postgresql.service redis-server.service
+Wants=network-online.target
+Requires=postgresql.service redis-server.service
+
+[Service]
+Type=exec
+User=keuria
+Group=keuria
+WorkingDirectory=/opt/keuria/backend
+
+# Django ne doit JAMAIS être joignable autrement que par le proxy Next : NUM_PROXIES=1 suppose
+# exactement un relais devant lui, et rien ici ne filtre les en-têtes X-Forwarded-*.
+Environment=GUNICORN_BIND=127.0.0.1:8100
+# Sans cette variable, Python tamponne sa sortie et les journaux n'arrivent dans journalctl
+# que par blocs, avec du retard (l'image Docker la posait, ici il faut le faire).
+Environment=PYTHONUNBUFFERED=1
+# Pas de fichiers .pyc écrits dans /opt/keuria au fil des requêtes.
+Environment=PYTHONDONTWRITEBYTECODE=1
+# Workers gunicorn : (2 x coeurs + 1), plafonné à 4 par défaut. Chaque worker garde sa connexion
+# PostgreSQL (CONN_MAX_AGE=600) : au-delà de 4, relever aussi max_connections côté PostgreSQL.
+#Environment=WEB_CONCURRENCY=4
+# Tout le reste (SECRET_KEY, DATABASE_URL, REDIS_URL, EMAIL_*...) vient de
+# /opt/keuria/backend/.env, que Django lit lui-même via python-dotenv.
+
+# Garde-fou avant chaque démarrage : « check --deploy » échoue (keuria.E005) si DATABASE_URL
+# n'est pas une URL postgres://. Sans ce contrôle, un .env incomplet ferait démarrer le service
+# sur un fichier SQLite SANS erreur visible, et les données des familles vivraient là.
+# Vérifie aussi Redis (E001), les hôtes (E003) et le SMTP (E004). Aucune connexion réseau n'est
+# ouverte : le contrôle lit la configuration, il ne peut pas échouer parce que la base est lente.
+ExecStartPre=/opt/keuria/backend/.venv/bin/python manage.py check --deploy
+ExecStart=/opt/keuria/backend/.venv/bin/gunicorn keuria.wsgi:application -c gunicorn.conf.py
+# Rechargement sans coupure : gunicorn remplace ses workers un par un.
+ExecReload=/bin/kill -s HUP $MAINPID
+
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+# Au-delà du graceful_timeout de gunicorn (30 s) : les requêtes en cours finissent avant l'arrêt.
+TimeoutStopSec=40
+SyslogIdentifier=keuria-backend
+
+# Durcissement
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+# Les logos d'école téléversés : le seul dossier où le service écrit.
+ReadWritePaths=/opt/keuria/backend/media
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,303 @@
+.premium-hero {
+  position: relative;
+  min-height: 600px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 85px 40px 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 40px;
+  background: radial-gradient(circle at top left, #ffffff, #fdfaf3);
+}
+
+.gradient-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.7;
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.gs-1 {
+  width: 500px;
+  height: 500px;
+  background: #d8f05b; /* lime */
+  top: -150px;
+  right: -100px;
+}
+
+.gs-2 {
+  width: 400px;
+  height: 400px;
+  background: #0f755f; /* green */
+  bottom: -150px;
+  left: -50px;
+  animation-delay: -4s;
+  opacity: 0.15;
+}
+
+.gs-3 {
+  width: 300px;
+  height: 300px;
+  background: #ffb86c; /* warm accent */
+  top: 40%;
+  right: 25%;
+  animation-delay: -8s;
+  opacity: 0.2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 45px;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(15, 117, 95, 0.08), inset 0 2px 0 rgba(255, 255, 255, 1);
+}
+
+.badge-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0f755f, #153b3b);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(15, 117, 95, 0.3);
+}
+
+.badge-premium .sparkle {
+  font-size: 14px;
+}
+
+.premium-hero h1 {
+  font-size: 64px;
+  line-height: 1.05;
+  margin: 0 0 24px;
+  letter-spacing: -2.5px;
+  font-weight: 800;
+  color: #153b3b;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0f755f 0%, #1db392 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.text-gradient::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 12px;
+  background: #d8f05b;
+  z-index: -1;
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  opacity: 0.8;
+}
+
+.premium-hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #647a78;
+  margin-bottom: 35px;
+}
+
+.premium-hero p b {
+  color: #153b3b;
+  font-weight: 700;
+}
+
+.primary-btn-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: #0f755f;
+  color: white;
+  padding: 16px 28px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 0 #0b5645, 0 15px 20px rgba(15, 117, 95, 0.2);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+
+.primary-btn-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 0 #0b5645, 0 20px 25px rgba(15, 117, 95, 0.3);
+}
+
+.primary-btn-premium:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #0b5645, 0 10px 10px rgba(15, 117, 95, 0.2);
+}
+
+.primary-btn-premium .arrow {
+  background: #d8f05b;
+  color: #0f755f;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.premium-picker {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(15, 117, 95, 0.1);
+}
+
+.premium-picker span {
+  font-weight: 700;
+  color: #153b3b;
+  margin-right: 8px;
+}
+
+.premium-picker button {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(15, 117, 95, 0.15);
+  transition: all 0.2s ease;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.premium-picker button:hover {
+  background: #fdfdfd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.premium-picker button.selected {
+  background: #d8f05b;
+  border-color: #c5dc51;
+  color: #0f755f;
+  box-shadow: 0 4px 12px rgba(216, 240, 91, 0.4);
+}
+
+/* HERO ART */
+.float-animation {
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mascot-hero {
+  height: 120%;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 35px rgba(21, 59, 59, 0.2));
+  animation: hover-mascot 4s ease-in-out infinite;
+  z-index: 2;
+  position: relative;
+}
+
+.mascot-shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 30px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  animation: shadow-pulse 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.floating-bubble {
+  position: absolute;
+  top: 10%;
+  right: 0%;
+  background: white;
+  padding: 14px 22px;
+  border-radius: 20px 20px 20px 4px;
+  font-weight: 800;
+  font-size: 16px;
+  color: #153b3b;
+  box-shadow: 0 10px 30px rgba(15, 117, 95, 0.15);
+  border: 2px solid #d8f05b;
+  z-index: 3;
+  animation: float-bubble 5s ease-in-out infinite 1s;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+@keyframes hover-mascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+  50% { transform: translateX(-50%) scale(0.85); opacity: 0.4; }
+}
+
+@keyframes float-bubble {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-8px) rotate(0deg); }
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .premium-hero {
+    padding: 40px 20px;
+  }
+  .glass-panel {
+    padding: 30px;
+  }
+  .premium-hero h1 {
+    font-size: 42px;
+  }
+  .premium-picker {
+    justify-content: center;
+  }
+  .floating-bubble {
+    right: 10%;
+    top: -5%;
+  }
+}

@@ -1,0 +1,456 @@
+/* ── Dialogue Step Container (Aligns speech bubble vertically with Palou) ── */
+.p11-dialogue-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 880px;
+  gap: clamp(16px, 2.5vh, 26px);
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px 0;
+}
+
+/* ── Speech bubble (Standard Dialogue) ── */
+.p11-speech {
+  background: #ffffff;
+  border-radius: 34px;
+  padding: clamp(16px, 2.5vh, 24px) clamp(20px, 3vw, 32px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.04);
+  border: none;
+  width: 100%;
+  max-width: 880px;
+  margin-left: 0;
+  position: relative;
+  animation: bubbleIn 0.5s cubic-bezier(0.175,0.885,0.32,1.275) both;
+  font-size: clamp(22px, 2.5vw, 28px) !important;
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  line-height: 1.55;
+}
+
+.p11-speech::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  border-width: 16px 20px 16px 0;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  filter: drop-shadow(-3px 0px 3px rgba(0,0,0,0.05));
+}
+
+.p11-speech p {
+  margin: 0 0 12px;
+  font-size: clamp(20px, 2.2vw, 26px) !important;
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  line-height: 1.55;
+  letter-spacing: 0.3px;
+}
+
+.p11-speech p:last-child {
+  margin-bottom: 0;
+}
+
+.p11-speech .p11-highlight {
+  font-size: clamp(25px, 2.9vw, 33px) !important;
+  font-weight: 900;
+  color: var(--brand, #0a4f40);
+  background: var(--brand-soft, #e6f7f5);
+  padding: 10px 22px;
+  border-radius: 18px;
+  border: 2px dashed #11998e;
+  display: inline-block;
+  margin-top: 6px;
+  box-shadow: 0 3px 10px rgba(17, 153, 142, 0.12);
+}
+
+/* ── Compact speech bubble for rich activity steps ── */
+.p11-speech.compact,
+.p12-speech {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: clamp(18px, 2.4vh, 28px) clamp(24px, 2.8vw, 40px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.03);
+  border: none;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 0;
+  position: relative;
+  animation: bubbleIn 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p11-speech.compact::before,
+.p12-speech::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+  border-width: 14px 18px 14px 0;
+  border-style: solid;
+  border-color: transparent #ffffff transparent transparent;
+  filter: drop-shadow(-2px 0px 2px rgba(0, 0, 0, 0.04));
+}
+
+.p11-speech.compact p,
+.p12-speech p {
+  margin: 0 0 8px 0;
+  font-size: clamp(25px, 2.8vw, 30px) !important;
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
+
+.p11-speech.compact p:last-child,
+.p12-speech p:last-child {
+  margin-bottom: 0;
+}
+
+.p11-speech.compact .p11-highlight,
+.p12-speech .p11-highlight {
+  font-size: clamp(25px, 2.9vw, 31px) !important;
+  font-weight: 900;
+  color: var(--brand, #0a4f40);
+  background: var(--brand-soft, #e6f7f5);
+  padding: 8px 20px;
+  border-radius: 16px;
+  border: 1.5px dashed #11998e;
+  display: inline-block;
+  margin-top: 5px;
+  box-shadow: 0 2px 8px rgba(17, 153, 142, 0.1);
+}
+
+@keyframes bounceInFb {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceOutFb {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* ── Feedback bubble (after choice) ── */
+.p11-feedback {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  z-index: 100;
+  background: linear-gradient(145deg, var(--brand-soft, #e6f7f5), #c8f0e9);
+  border-radius: 24px;
+  padding: 16px 24px;
+  box-shadow: 0 12px 30px rgba(17, 153, 142, 0.3);
+  border: 3px solid #11998e;
+  width: auto;
+  max-width: 320px;
+  text-align: center;
+  animation: bounceInFb 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  font-size: clamp(20px, 2.5vw, 24px) !important;
+  font-weight: 800;
+  color: var(--brand, #0a4f40);
+  line-height: 1.4;
+}
+
+.p11-feedback.exit {
+  animation: bounceOutFb 0.4s ease-in both;
+}
+
+.p11-feedback.error {
+  background: linear-gradient(145deg, #fceae9, #fad4d4);
+  border-color: #e74c3c;
+  color: #8b0000;
+  box-shadow: 0 12px 30px rgba(231, 76, 60, 0.3);
+}
+
+.p11-feedback::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 14px 14px 0;
+  border-style: solid;
+  border-color: #11998e transparent transparent transparent;
+}
+
+.p11-feedback.error::after {
+  border-color: #e74c3c transparent transparent transparent;
+}
+
+/* ── À retenir box ── */
+.p11-retenir-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 32px;
+  box-shadow: 0 10px 0 #f4b942, 0 16px 40px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 900px;
+  border: 5px solid #f4b942;
+  animation: bubbleIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+.p11-retenir-box p {
+  margin: 0;
+  font-size: clamp(26px, 3.5vw, 34px) !important;
+  font-weight: 900;
+  color: #7a4f00;
+}
+
+/* ── Choice buttons row ── */
+.p11-choice-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  animation: btnIn 0.5s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  justify-content: center;
+}
+
+.p11-choice-btn {
+  flex: 1;
+  min-width: 150px;
+  max-width: 280px;
+  padding: 16px 22px;
+  border-radius: 18px;
+  border: none;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.2px;
+}
+
+.p11-choice-btn::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 10%;
+  right: 10%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.p11-choice-btn:hover:not(:disabled) {
+  transform: translateY(-4px);
+}
+
+.p11-choice-btn:active:not(:disabled) {
+  transform: translateY(3px) scale(0.97);
+}
+
+.p11-choice-btn.yes {
+  background: linear-gradient(145deg, #11998e 0%, #38ef7d 100%);
+  color: white;
+  box-shadow: 0 7px 0 var(--brand-mid, #0a6e62), 0 14px 28px rgba(17, 153, 142, 0.35);
+}
+
+.p11-choice-btn.no {
+  background: linear-gradient(145deg, #6c5ce7 0%, #a29bfe 100%);
+  color: white;
+  box-shadow: 0 7px 0 #4b3bc4, 0 14px 28px rgba(108, 92, 231, 0.35);
+}
+
+.p11-choice-btn.chosen {
+  transform: translateY(6px) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) !important;
+  filter: brightness(0.93);
+}
+
+/* ── Discovery image ── */
+.p11-discovery-img {
+  width: 100%;
+  max-width: min(650px, 62vw);
+  max-height: min(450px, 56vh);
+  object-fit: cover;
+  border-radius: 26px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18), 0 0 0 4px rgba(255, 255, 255, 0.7);
+  animation: bubbleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* ── Game cards ── */
+.p11-cards-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  animation: btnIn 0.5s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p11-game-card {
+  background: transparent;
+  border: none;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 1;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.p11-game-card:hover:not(.answered) {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.p11-game-card:active:not(.answered) {
+  transform: translateY(2px) scale(0.97);
+}
+
+.p11-game-card.correct {
+  animation: correctPop 0.45s ease-out;
+}
+
+.p11-game-card.correct .card-img {
+  filter: drop-shadow(0 0 30px rgba(56, 239, 125, 0.8));
+}
+
+.p11-game-card.wrong {
+  animation: shakeWrong 0.4s ease-out;
+  filter: saturate(0.5) brightness(0.75);
+}
+
+.p11-game-card.wrong .card-img {
+  filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.8));
+}
+
+.p11-game-card .card-img {
+  width: min(240px, 28vw);
+  height: min(240px, 28vw);
+  object-fit: contain;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+  animation: floatAsset 3.5s ease-in-out infinite;
+}
+
+.p11-game-card .card-label {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  text-align: center;
+}
+
+.p11-game-card .card-result {
+  font-size: 1.8rem;
+  animation: correctPop 0.35s ease-out;
+}
+
+/* ── True/False buttons ── */
+.p11-tf-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  max-width: 700px;
+  animation: btnIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p11-tf-btn {
+  flex: 1;
+  max-width: 200px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.p11-tf-btn::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 15%;
+  right: 15%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.p11-tf-btn span.label {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.p11-tf-btn.true-btn {
+  background: linear-gradient(160deg, #00b894, #00cec9);
+  color: white;
+  box-shadow: 0 9px 0 var(--brand-mid, #007d6b), 0 18px 36px rgba(0, 184, 148, 0.35);
+}
+
+.p11-tf-btn.false-btn {
+  background: linear-gradient(160deg, #e17055, #d63031);
+  color: white;
+  box-shadow: 0 9px 0 #a83226, 0 18px 36px rgba(214, 48, 49, 0.35);
+}
+
+.p11-tf-btn:hover:not(:disabled) {
+  transform: translateY(-5px);
+}
+
+.p11-tf-btn:active:not(:disabled) {
+  transform: translateY(5px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+.p11-tf-btn.chosen {
+  transform: translateY(8px) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2) !important;
+}
+
+.p11-tf-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+

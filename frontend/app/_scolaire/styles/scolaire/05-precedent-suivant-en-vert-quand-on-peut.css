@@ -1,0 +1,512 @@
+/* Précédent / Suivant : en vert quand on peut cliquer, gris neutre sinon. */
+.ec-pagination .ec-btn:not(:disabled) {
+  border-color: var(--ec-ink);
+  background: var(--ec-ink);
+  color: #fff;
+}
+
+.ec-pagination .ec-btn:not(:disabled):hover {
+  background: var(--ec-ink-deep);
+}
+
+.ec-pagination .ec-btn:disabled {
+  border-color: var(--ec-line);
+  background: var(--ec-bg);
+  color: var(--ec-muted);
+  opacity: 1;
+}
+
+.ec-radio-group {
+  display: flex;
+  gap: 16px;
+  min-height: 42px;
+  align-items: center;
+}
+
+.ec-radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ec-radio-group input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ec-brand);
+}
+
+.ec-dl {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) 1fr;
+  gap: 10px 16px;
+  margin: 0;
+  font-size: 14px;
+}
+
+.ec-dl dt {
+  color: var(--ec-muted);
+  font-weight: 600;
+}
+
+.ec-dl dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.ec-cards-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .ec-cards-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ec-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.ec-fieldset legend {
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ─── Choix multiple de classes ─────────────────────────────────────────── */
+
+.ec-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.ec-checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  background: var(--ec-surface);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ec-checklist label:has(input:checked) {
+  border-color: var(--ec-brand);
+  background: var(--ec-brand-soft);
+}
+
+.ec-checklist input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--ec-brand);
+}
+
+.ec-checklist b {
+  display: block;
+  font-size: 14px;
+}
+
+.ec-checklist small {
+  display: block;
+  color: var(--ec-muted);
+  font-size: 12px;
+}
+
+.ec-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* ─── Assistant d'import ────────────────────────────────────────────────── */
+
+.ec-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: ec-step;
+}
+
+.ec-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px 8px 8px;
+  border: 1px solid var(--ec-line);
+  border-radius: 999px;
+  background: var(--ec-surface);
+  color: var(--ec-muted);
+  font-size: 14px;
+  font-weight: 700;
+  counter-increment: ec-step;
+}
+
+.ec-steps li::before {
+  content: counter(ec-step);
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--ec-bg);
+  font-size: 13px;
+}
+
+.ec-steps li[aria-current="step"] {
+  border-color: var(--ec-ink);
+  color: var(--ec-ink);
+}
+
+.ec-steps li[aria-current="step"]::before {
+  background: var(--ec-ink);
+  color: #fff;
+}
+
+.ec-steps li[data-done="true"]::before {
+  content: "✓";
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+}
+
+.ec-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.ec-choice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px;
+  border: 2px solid var(--ec-line);
+  border-radius: 14px;
+  background: var(--ec-surface);
+  cursor: pointer;
+}
+
+.ec-choice:has(input:checked) {
+  border-color: var(--ec-brand);
+  background: var(--ec-brand-soft);
+}
+
+.ec-choice input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--ec-brand);
+}
+
+.ec-choice b {
+  display: block;
+}
+
+.ec-choice small {
+  color: var(--ec-muted);
+}
+
+.ec-dropzone {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 40px 24px;
+  border: 2px dashed var(--ec-mint);
+  border-radius: 18px;
+  background: var(--ec-surface);
+  color: var(--ec-muted);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ec-dropzone[data-dragging="true"],
+.ec-dropzone:hover {
+  border-color: var(--ec-brand);
+  background: var(--ec-brand-soft);
+}
+
+.ec-dropzone b {
+  color: var(--ec-text);
+  font-size: 16px;
+}
+
+.ec-wizard-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.ec-table .ec-cell-input {
+  min-width: 110px;
+  min-height: 36px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+.ec-table td[data-invalid="true"] .ec-cell-input {
+  border-color: var(--ec-danger);
+  background: var(--ec-danger-bg);
+}
+
+.ec-cell-message {
+  display: block;
+  max-width: 220px;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+.ec-cell-message[data-kind="error"] { color: var(--ec-danger); }
+.ec-cell-message[data-kind="warning"] { color: var(--ec-warn); }
+
+.ec-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--ec-info-bg);
+  color: var(--ec-info);
+  font-weight: 600;
+}
+
+/* ─── Planche de fiches de connexion ────────────────────────────────────── */
+
+.ec-sheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr));
+  gap: 12px;
+}
+
+.ec-sheet .ec-credential {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  .ec-sheet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8mm;
+  }
+
+  .ec-sheet .ec-credential {
+    border-color: #000;
+    background: #fff;
+    color: #000;
+  }
+}
+
+/* Paramètres : ligne de l'année, avec le bouton vers la page Années scolaires à droite. */
+.ec-year-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ec-line);
+}
+
+/* Changement de classe : trajet « CE1 A → CE1 B » et bouton Annuler du message. */
+.ec-move-route {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ec-move-route span {
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: var(--ec-bg);
+}
+
+.ec-move-route span[data-to="true"] {
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+}
+
+.ec-current-class {
+  display: grid;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--ec-bg);
+  border: 1px solid var(--ec-line);
+}
+
+.ec-current-class span {
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ec-current-class b {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ec-current-class small {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+.ec-notice-undo {
+  padding: 4px 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 8px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ─── Années scolaires et clôture ─────────────────────────────────────── */
+
+.ec-year-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ec-year-head h2 {
+  margin: 0;
+}
+
+.ec-year-head p {
+  margin: 4px 0 0;
+  color: var(--ec-muted);
+}
+
+.ec-year-closing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ec-line);
+}
+
+.ec-year-closing > div {
+  flex: 1 1 320px;
+}
+
+.ec-year-closing h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.ec-year-closing p {
+  margin: 0;
+  color: var(--ec-muted);
+}
+
+/* Aide réservée à la démonstration (disparaît au branchement du backend). */
+.ec-demo-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px dashed var(--ec-tint-lavender-ink);
+  border-radius: 12px;
+  background: var(--ec-tint-lavender);
+  color: var(--ec-tint-lavender-ink);
+}
+
+.ec-check-ok {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--ec-brand);
+  font-weight: 600;
+}
+
+.ec-decision-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ec-decision-counts span {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--ec-tint-mint);
+  color: var(--ec-ink);
+  font-size: 14px;
+}
+
+.ec-decision-counts span:nth-child(2) {
+  background: var(--ec-tint-lemon);
+}
+
+.ec-decision-counts span:nth-child(3) {
+  background: var(--ec-tint-sky);
+}
+
+.ec-promo {
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ec-promo summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  cursor: pointer;
+}
+
+.ec-promo summary span {
+  color: var(--ec-muted);
+  font-size: 14px;
+}
+
+.ec-promo[open] summary {
+  margin-bottom: 12px;
+}
+
+.ec-promo tr[data-changed="true"] td {
+  background: var(--ec-tint-lemon);
+}
+
+.ec-promo .ec-select {
+  min-width: 190px;
+}
+

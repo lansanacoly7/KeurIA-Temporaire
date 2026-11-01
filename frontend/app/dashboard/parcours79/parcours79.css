@@ -1,0 +1,5 @@
+/* parcours79.css : sommaire. Le CSS est découpé en 3 fichiers (dossier ./styles/), importés dans l'ordre d'origine : la cascade est identique.
+   Pour modifier une règle, ouvrir le morceau concerné ; pour en ajouter, respecter cet ordre. */
+@import "./styles/01-parcours-7-9-ans-carte-des-iles-fenetre.css";
+@import "./styles/02-palou-compagnon-sur-la-carte-taille-prop.css";
+@import "./styles/03-mode-portrait-continu-et-fluide-avec-le.css";

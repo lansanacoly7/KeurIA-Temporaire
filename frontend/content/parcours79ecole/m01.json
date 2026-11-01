@@ -1,0 +1,1107 @@
+{
+ "module": {
+  "id": "ep1",
+  "chapter": 1,
+  "title": "Une machine qui pense ?",
+  "place": "La classe",
+  "emoji": "🏫",
+  "intro": "C’est la rentrée ! Madame Diop a une surprise pour la classe.",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep1-1",
+   "title": "Outil ou machine ?",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou"
+   ],
+   "problem": "Un nouveau venu arrive en classe. Est-ce un outil, une machine… ou autre chose ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "🏫",
+     "image": "ep1-l1-rentree.webp",
+     "alt": "Madame Diop devant le tableau, les élèves assis, le jour de la rentrée.",
+     "text": "C’est la rentrée. Madame Diop sourit : « Cette année, nous allons beaucoup apprendre, et même partir en sortie ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "palou",
+     "emoji": "🦁",
+     "wolof": {
+      "mot": "Asalaa maalekum",
+      "sens": "Bonjour (que la paix soit sur vous)"
+     },
+     "image": "ep1-l1-palou-arrive.webp",
+     "alt": "Palou entre dans la classe et salue les élèves de la patte.",
+     "text": "« Bonjour la classe ! Moi, c’est Palou, une IA. Cette année, je vous accompagne partout. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Question",
+     "speaker": "moussa",
+     "emoji": "✏️",
+     "image": "ep1-l1-taille-crayon.webp",
+     "alt": "Moussa tient son taille-crayon et regarde Palou d’un air curieux.",
+     "text": "Moussa lève son taille-crayon : « Palou, tu es un outil, comme ça ? »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "fatou",
+     "emoji": "🌀",
+     "image": "ep1-l1-ventilateur.webp",
+     "alt": "Fatou montre du doigt le ventilateur du plafond qui tourne.",
+     "text": "Fatou montre le ventilateur : « Ou une machine, comme lui ? Il tourne tout seul ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "⚙️",
+     "word": {
+      "terme": "Machine",
+      "sens": "Un objet qui fait un travail tout seul, grâce à l’énergie : l’électricité, une pile, l’essence."
+     },
+     "text": "Un outil t’aide, mais c’est ta main qui le fait marcher. Une machine fait son travail toute seule, grâce à l’énergie."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide la classe à ranger les objets de l’école !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Le taille-crayon de Moussa marche quand Moussa tourne le crayon. C’est…",
+       "hint": "Qui fait le travail : Moussa ou le taille-crayon ?",
+       "success": "Bravo ! C’est la main de Moussa qui le fait marcher : c’est un outil.",
+       "options": [
+        {
+         "label": "Un outil",
+         "pict": "taille-crayon",
+         "correct": true
+        },
+        {
+         "label": "Une machine",
+         "pict": "prise-electrique",
+         "explain": "Il n’a ni pile ni électricité : sans la main de Moussa, il ne fait rien."
+        }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Glisse chaque objet dans sa boîte.",
+       "hint": "Demande-toi : est-ce qu’il marche tout seul, avec de l’énergie ?",
+       "success": "Bravo ! Tous les objets de la classe sont bien rangés.",
+       "bins": [
+        {
+         "id": "outil",
+         "label": "Outil",
+         "pict": "main-outil",
+         "emoji": "✋"
+        },
+        {
+         "id": "machine",
+         "label": "Machine",
+         "pict": "engrenage",
+         "emoji": "⚙️"
+        }
+       ],
+       "items": [
+        {
+         "id": "regle",
+         "label": "La règle",
+         "pict": "regle",
+         "emoji": "📏",
+         "bin": "outil",
+         "explain": "C’est ta main qui la tient et trace le trait."
+        },
+        {
+         "id": "ventilateur",
+         "label": "Le ventilateur",
+         "pict": "ventilateur",
+         "emoji": "🌀",
+         "bin": "machine",
+         "explain": "Il tourne tout seul grâce à l’électricité."
+        },
+        {
+         "id": "ciseaux",
+         "label": "Les ciseaux",
+         "pict": "ciseaux",
+         "emoji": "✂️",
+         "bin": "outil",
+         "explain": "Ils coupent seulement quand ta main les ferme."
+        },
+        {
+         "id": "photocopieuse",
+         "label": "La photocopieuse",
+         "pict": "photocopieuse",
+         "emoji": "🖨️",
+         "bin": "machine",
+         "explain": "Elle copie les feuilles toute seule, avec l’électricité."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Palou parle, répond et reconnaît les élèves. Il marche à l’électricité. Palou est…",
+       "hint": "Il ne marche pas avec ta main…",
+       "success": "Exact ! Palou est une machine. Mais une machine un peu spéciale… on verra pourquoi !",
+       "options": [
+        {
+         "label": "Une machine",
+         "pict": "engrenage",
+         "correct": true
+        },
+        {
+         "label": "Un outil, comme la règle",
+         "pict": "regle",
+         "explain": "Une règle ne fait rien toute seule. Palou, lui, marche avec l’énergie."
+        },
+        {
+         "label": "Un vrai lionceau",
+         "pict": "lionceau-vivant",
+         "explain": "Palou ressemble à un lionceau, mais il a été fabriqué par des humains."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🔎",
+     "titre": "La chasse aux objets",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "En groupe, cherchez dans la classe 3 outils et 3 machines. Dessinez-les dans deux colonnes : « Outil » et « Machine ».",
+     "materiel": [
+      "Une feuille et des crayons par groupe"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "moussa",
+     "emoji": "💬",
+     "question": "Moussa demande : « Si une machine fait le travail toute seule, est-ce qu’on a encore besoin des humains ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Il n’y a pas une seule bonne réponse."
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Quelle est la différence entre un outil et une machine ?",
+       "hint": "Pense au ventilateur et à la règle.",
+       "success": "Oui ! La machine travaille toute seule grâce à l’énergie.",
+       "options": [
+        {
+         "label": "La machine marche toute seule, avec de l’énergie",
+         "pict": "engrenage",
+         "correct": true
+        },
+        {
+         "label": "L’outil est toujours plus grand",
+         "pict": "regle",
+         "explain": "La taille ne compte pas : un taille-crayon est petit, un ventilateur aussi."
+        },
+        {
+         "label": "Il n’y a aucune différence",
+         "pict": "egal",
+         "explain": "Un outil a besoin de ta main. Une machine travaille toute seule."
+        }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche toutes les machines.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! Le mixeur et la télévision marchent avec l’électricité.",
+       "options": [
+        {
+         "label": "Un mixeur",
+         "pict": "mixeur",
+         "emoji": "🥤",
+         "correct": true
+        },
+        {
+         "label": "Un balai",
+         "pict": "balai",
+         "emoji": "🧹",
+         "explain": "Le balai a besoin de tes bras : c’est un outil."
+        },
+        {
+         "label": "Une télévision",
+         "pict": "television",
+         "emoji": "📺",
+         "correct": true
+        },
+        {
+         "label": "Une cuillère",
+         "pict": "cuillere",
+         "emoji": "🥄",
+         "explain": "La cuillère ne fait rien toute seule : c’est un outil."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais faire la différence entre un outil et une machine.",
+     "learned": "Un outil a besoin de ma main. Une machine travaille toute seule, grâce à l’énergie."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Distinguer un outil (actionné par la main) d’une machine (qui fonctionne grâce à une énergie).",
+     "Préparer la leçon suivante : certaines machines, comme Palou, font plus que travailler seules."
+    ],
+    "deroule": [
+     "Lecture de l’histoire et du mot nouveau sur l’écran de la classe (5 min).",
+     "Jeux sur les tablettes ou en collectif (10 min).",
+     "« En classe » : la chasse aux objets, par groupes de 4 (15 min).",
+     "Mise en commun : chaque groupe présente un outil et une machine (5 min).",
+     "« On en parle » : débat guidé (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "Une feuille et des crayons par groupe.",
+     "Facultatif : un objet de chaque sorte à montrer (une règle, une lampe de poche)."
+    ],
+    "reponses": [
+     "Outils fréquents dans une classe : règle, ciseaux, taille-crayon, craie, gomme, balai.",
+     "Machines fréquentes : ventilateur, lampe, photocopieuse, ordinateur, téléphone.",
+     "Débat : aider les élèves à voir qu’il faut des humains pour fabriquer, régler, réparer et décider à quoi servent les machines."
+    ],
+    "attention": "Une lampe de poche à piles est une machine simple : elle utilise de l’énergie, même si c’est la main qui appuie sur le bouton. Accepter la discussion si les élèves hésitent."
+   }
+  },
+  {
+   "id": "ep1-2",
+   "title": "Machine ou IA ?",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou"
+   ],
+   "problem": "Palou dit qu’il est une machine « un peu spéciale ». Qu’est-ce qui le rend différent du ventilateur ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "palou",
+     "emoji": "🦁",
+     "image": "ep1-l2-palou-special.webp",
+     "alt": "Palou au milieu de la classe, une petite ampoule allumée au-dessus de la tête.",
+     "text": "« Je suis une machine, c’est vrai. Mais je ne fais pas toujours la même chose, comme le ventilateur. Moi, j’ai appris ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "mme-diop",
+     "emoji": "📱",
+     "image": "ep1-l2-telephone-visage.webp",
+     "alt": "Madame Diop regarde son téléphone, qui s’ouvre en reconnaissant son visage. Moussa et Fatou regardent par-dessus son épaule.",
+     "text": "Madame Diop regarde son téléphone. Il s’ouvre tout seul : « Il a reconnu mon visage ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Question",
+     "speaker": "fatou",
+     "emoji": "🖨️",
+     "image": "ep1-l2-photocopieuse.webp",
+     "alt": "Fatou à côté de la photocopieuse, qui sort des feuilles toutes pareilles.",
+     "text": "Fatou regarde la photocopieuse : « Elle, elle copie toujours pareil. Elle ne reconnaît personne. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "palou",
+     "emoji": "💡",
+     "image": "ep1-l2-exemples.webp",
+     "alt": "Palou devant un tableau couvert de petites photos de visages : les exemples qui l’ont aidé à apprendre.",
+     "text": "« Le téléphone et moi, nous avons appris avec beaucoup d’exemples. C’est pour ça qu’on peut reconnaître. »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "💡",
+     "word": {
+      "terme": "IA",
+      "sens": "Intelligence artificielle : une machine qui a appris avec des exemples. Elle peut reconnaître, deviner ou proposer."
+     },
+     "text": "Une machine simple fait toujours la même chose. Une IA a appris avec des exemples : elle reconnaît, devine ou propose."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide la classe à reconnaître les IA !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Le téléphone de Madame Diop s’ouvre en reconnaissant son visage. Il utilise…",
+       "hint": "Il reconnaît quelqu’un : est-ce qu’une machine simple sait faire ça ?",
+       "success": "Bravo ! Reconnaître un visage, c’est un travail d’IA.",
+       "options": [
+        {
+         "label": "Une IA",
+         "pict": "telephone-visage",
+         "correct": true
+        },
+        {
+         "label": "Une machine simple",
+         "pict": "engrenage",
+         "explain": "Une machine simple ne reconnaît personne. Le téléphone, lui, a appris à reconnaître des visages."
+        }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Glisse chaque machine dans sa boîte.",
+       "hint": "Demande-toi : est-ce qu’elle reconnaît, devine ou propose quelque chose ?",
+       "success": "Bravo ! Tu sais faire la différence entre une machine simple et une IA.",
+       "bins": [
+        {
+         "id": "simple",
+         "label": "Machine simple",
+         "pict": "engrenage",
+         "emoji": "⚙️"
+        },
+        {
+         "id": "ia",
+         "label": "IA",
+         "pict": "ia-ampoule",
+         "emoji": "💡"
+        }
+       ],
+       "items": [
+        {
+         "id": "ventilateur",
+         "label": "Le ventilateur",
+         "pict": "ventilateur",
+         "emoji": "🌀",
+         "bin": "simple",
+         "explain": "Il tourne toujours de la même façon. Il ne reconnaît rien."
+        },
+        {
+         "id": "traducteur",
+         "label": "L’application qui traduit du wolof en français",
+         "pict": "appli-traduction",
+         "emoji": "🗣️",
+         "bin": "ia",
+         "explain": "Elle a appris avec beaucoup de phrases pour proposer une traduction."
+        },
+        {
+         "id": "photocopieuse",
+         "label": "La photocopieuse",
+         "pict": "photocopieuse",
+         "emoji": "🖨️",
+         "bin": "simple",
+         "explain": "Elle copie toujours pareil, sans rien reconnaître."
+        },
+        {
+         "id": "chanson",
+         "label": "Le téléphone qui trouve le nom d’une chanson",
+         "pict": "telephone-musique",
+         "emoji": "🎵",
+         "bin": "ia",
+         "explain": "Il reconnaît la chanson en la comparant à des exemples."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Comment Palou a-t-il appris à reconnaître les élèves ?",
+       "hint": "Pense au tableau couvert de photos.",
+       "success": "Exact ! Une IA apprend avec beaucoup d’exemples.",
+       "options": [
+        {
+         "label": "Avec beaucoup d’exemples",
+         "pict": "photos-exemples",
+         "correct": true
+        },
+        {
+         "label": "Il est né en sachant tout",
+         "pict": "robot-sait-tout",
+         "explain": "Aucune IA ne naît en sachant tout. Elle apprend avec des exemples."
+        },
+        {
+         "label": "Par magie",
+         "pict": "baguette-magique",
+         "explain": "Ce n’est pas de la magie : des humains lui ont donné des exemples."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🙋",
+     "titre": "Debout si c’est une IA !",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe",
+     "text": "Madame Diop lit des situations. Si la machine reconnaît, devine ou propose quelque chose, tout le monde se lève : c’est une IA ! Sinon, on reste assis. À chaque fois, un élève explique pourquoi.",
+     "materiel": [
+      "La liste des situations, dans la fiche enseignant"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "fatou",
+     "emoji": "💬",
+     "question": "Fatou demande : « Si le téléphone reconnaît mon visage, est-ce qu’il me connaît vraiment, comme mes amis ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Qu’est-ce qu’un ami sait de toi, que le téléphone ne sait pas ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’une IA sait faire, et pas une machine simple ?",
+       "hint": "Pense au téléphone de Madame Diop.",
+       "success": "Oui ! Une IA reconnaît, devine ou propose.",
+       "options": [
+        {
+         "label": "Reconnaître, deviner ou proposer",
+         "pict": "ia-ampoule",
+         "correct": true
+        },
+        {
+         "label": "Tourner très vite",
+         "pict": "ventilateur",
+         "explain": "Le ventilateur tourne vite, mais ce n’est pas une IA."
+        },
+        {
+         "label": "Respirer",
+         "pict": "respirer",
+         "explain": "Une IA ne respire pas : c’est une machine."
+        }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche toutes les IA.",
+       "hint": "Il y en a deux.",
+       "success": "Bravo ! L’assistant vocal et le clavier qui propose des mots ont appris avec des exemples.",
+       "options": [
+        {
+         "label": "Un assistant vocal qui répond",
+         "pict": "assistant-vocal",
+         "emoji": "🔊",
+         "correct": true
+        },
+        {
+         "label": "Une lampe",
+         "pict": "lampe",
+         "emoji": "💡",
+         "explain": "La lampe s’allume et s’éteint, c’est tout : machine simple."
+        },
+        {
+         "label": "Le téléphone qui propose le mot suivant quand tu écris",
+         "pict": "clavier-suggestion",
+         "emoji": "⌨️",
+         "correct": true
+        },
+        {
+         "label": "Un mixeur",
+         "pict": "mixeur",
+         "emoji": "🥤",
+         "explain": "Le mixeur tourne toujours pareil : machine simple."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais reconnaître une IA.",
+     "learned": "Une machine simple fait toujours la même chose. Une IA a appris avec des exemples : elle reconnaît, devine ou propose."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Distinguer une machine simple d’une IA.",
+     "Retenir qu’une IA apprend avec des exemples, et qu’elle reconnaît, devine ou propose."
+    ],
+    "deroule": [
+     "Rappel de la leçon 1 : outil ou machine ? (5 min).",
+     "Histoire et mot nouveau sur l’écran de la classe (5 min).",
+     "Jeux sur les tablettes ou en collectif (10 min).",
+     "« En classe » : Debout si c’est une IA ! (15 min).",
+     "« On en parle » : débat guidé (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "La liste des situations ci-dessous."
+    ],
+    "reponses": [
+     "Situations IA (on se lève) : le téléphone s’ouvre en reconnaissant un visage ; l’application traduit une phrase ; le téléphone propose le mot suivant quand on écrit un message ; la caméra reconnaît une plaque de voiture ; l’assistant vocal répond à une question.",
+     "Situations machine simple (on reste assis) : la lampe s’allume ; la photocopieuse copie une feuille ; le ventilateur tourne ; la sonnerie de l’école sonne à 10 heures ; la calculatrice fait 2 + 2.",
+     "Débat : le téléphone reconnaît la forme d’un visage, mais il ne sait pas ce que tu aimes, ce que tu ressens, ni ton histoire. Un ami, si."
+    ],
+    "attention": "La calculatrice calcule toute seule, mais elle suit toujours la même règle et n’a rien appris avec des exemples : c’est une machine simple. Si un élève propose qu’elle « réfléchit », c’est une bonne occasion d’en parler."
+   }
+  },
+  {
+   "id": "ep1-3",
+   "title": "Comment une IA décide",
+   "scene": {
+    "id": "ecole-cour",
+    "label": "La cour de l’école"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou"
+   ],
+   "problem": "Palou reconnaît les fruits du goûter… jusqu’à ce qu’il se trompe. Pourquoi ?",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "moussa",
+     "emoji": "🥭",
+     "image": "ep1-l3-gouter.webp",
+     "alt": "Dans la cour, à la récréation, Moussa montre une mangue à Palou. Fatou tient un panier de fruits.",
+     "text": "À la récréation, Moussa montre une mangue : « Palou, c’est quoi ? » — « Une mangue ! » répond Palou."
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "palou",
+     "emoji": "🍌",
+     "image": "ep1-l3-banane.webp",
+     "alt": "Fatou montre une banane, Palou répond tout de suite, très sûr de lui.",
+     "text": "Fatou montre une banane. « Une banane ! J’ai vu des milliers de photos de mangues et de bananes. »"
+    },
+    {
+     "kind": "story",
+     "pose": "Surpris",
+     "speaker": "palou",
+     "emoji": "🤔",
+     "image": "ep1-l3-papaye.webp",
+     "alt": "Moussa montre une papaye. Palou se gratte la tête, un point d’interrogation au-dessus de lui.",
+     "text": "Moussa sort une papaye. Palou hésite : « Euh… une grosse mangue ? » Tout le monde rit."
+    },
+    {
+     "kind": "story",
+     "pose": "Intelligent",
+     "speaker": "mme-diop",
+     "emoji": "👩🏾‍🏫",
+     "image": "ep1-l3-explication.webp",
+     "alt": "Madame Diop s’accroupit près de Palou et des élèves, et leur explique en souriant.",
+     "text": "Madame Diop explique : « Palou n’a jamais vu de papaye. Il a choisi ce qui ressemblait le plus à ses exemples. »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "🖼️",
+     "word": {
+      "terme": "Exemple",
+      "sens": "Une chose qu’on montre à une IA pour qu’elle apprenne : une photo, un son, une phrase…"
+     },
+     "text": "Une IA décide en comparant avec les exemples qu’elle a vus. Si elle n’a jamais vu quelque chose, elle peut se tromper."
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide Palou à comprendre son erreur !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pourquoi Palou a-t-il dit « mangue » en voyant la papaye ?",
+       "hint": "Qu’est-ce que Palou n’avait jamais vu ?",
+       "success": "Exact ! Il n’avait jamais vu de papaye, alors il a choisi ce qui ressemblait le plus.",
+       "options": [
+        {
+         "label": "Il n’avait jamais vu de papaye",
+         "pict": "papaye",
+         "correct": true
+        },
+        {
+         "label": "Il voulait faire une blague",
+         "pict": "rire",
+         "explain": "Palou ne fait pas exprès : il compare avec ses exemples, et il n’avait pas de papaye."
+        },
+        {
+         "label": "La papaye est vraiment une mangue",
+         "pict": "mangue",
+         "explain": "Non, ce sont deux fruits différents. Palou s’est trompé."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Que faut-il faire pour que Palou reconnaisse les papayes ?",
+       "hint": "Comment Palou a-t-il appris les mangues ?",
+       "success": "Bravo ! Avec des photos de papayes, Palou pourra apprendre.",
+       "options": [
+        {
+         "label": "Lui montrer beaucoup de photos de papayes",
+         "pict": "photos-exemples",
+         "correct": true
+        },
+        {
+         "label": "Le gronder",
+         "pict": "gronder",
+         "explain": "Gronder Palou ne lui apprend rien. Il lui faut des exemples."
+        },
+        {
+         "label": "L’éteindre et le rallumer",
+         "pict": "bouton-eteindre",
+         "explain": "Éteint puis rallumé, Palou ne connaîtra toujours pas les papayes."
+        }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Palou doit apprendre à reconnaître les chèvres. Touche les bons exemples.",
+       "hint": "Il y en a deux : seulement des chèvres.",
+       "success": "Bravo ! De bons exemples, ce sont des chèvres, bien visibles.",
+       "options": [
+        {
+         "label": "Une photo de chèvre",
+         "pict": "chevre",
+         "emoji": "🐐",
+         "correct": true
+        },
+        {
+         "label": "Une photo de mouton",
+         "pict": "mouton",
+         "emoji": "🐑",
+         "explain": "C’est un mouton : il pourrait embrouiller Palou."
+        },
+        {
+         "label": "Une autre photo de chèvre",
+         "pict": "chevre-2",
+         "emoji": "🐐",
+         "correct": true
+        },
+        {
+         "label": "Une photo toute floue",
+         "pict": "photo-floue",
+         "emoji": "🌫️",
+         "explain": "On ne voit rien sur une photo floue : ce n’est pas un bon exemple."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🧑‍🏫",
+     "titre": "On entraîne la « machine » de la classe",
+     "duree": "20 minutes",
+     "groupes": "Toute la classe, avec un volontaire",
+     "text": "Un élève volontaire joue la « machine ». Il sort de la classe. Les autres choisissent une règle secrète (par exemple : « les fruits ronds »). Le volontaire revient : on lui montre des dessins de fruits avec « oui » ou « non ». Puis on lui montre un fruit nouveau : saura-t-il décider ?",
+     "materiel": [
+      "Des dessins de fruits sur des feuilles : mangue, orange, banane, papaye, citron, pastèque…"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "moussa",
+     "emoji": "💬",
+     "question": "Moussa demande : « Quand Palou se trompe, c’est la faute de qui ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Palou ? Les personnes qui ont choisi ses exemples ? Personne ?"
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Comment une IA décide-t-elle ?",
+       "hint": "Pense à la papaye.",
+       "success": "Oui ! Elle compare avec les exemples qu’elle a vus.",
+       "options": [
+        {
+         "label": "Elle compare avec ses exemples",
+         "pict": "photos-exemples",
+         "correct": true
+        },
+        {
+         "label": "Elle tire au hasard",
+         "pict": "de-hasard",
+         "explain": "Non : elle choisit ce qui ressemble le plus à ses exemples."
+        },
+        {
+         "label": "Elle demande à un magicien",
+         "pict": "baguette-magique",
+         "explain": "Pas de magie : seulement des exemples."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA n’a jamais vu de pastèque. On lui en montre une. Que peut-il se passer ?",
+       "hint": "Souviens-toi de Palou et de la papaye.",
+       "success": "Exact ! Sans exemple, elle peut se tromper. On vérifie toujours.",
+       "options": [
+        {
+         "label": "Elle peut se tromper",
+         "pict": "ia-hesite",
+         "correct": true
+        },
+        {
+         "label": "Elle trouve forcément la bonne réponse",
+         "pict": "robot-sait-tout",
+         "explain": "Une IA ne sait pas tout : sans exemple, elle peut se tromper."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment une IA décide.",
+     "learned": "Une IA décide en comparant avec ses exemples. Si elle n’a jamais vu quelque chose, elle peut se tromper : on vérifie toujours."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre qu’une IA décide en comparant avec les exemples qu’elle a appris.",
+     "Comprendre qu’une IA peut se tromper face à une chose qu’elle n’a jamais vue.",
+     "Commencer à réfléchir à la responsabilité des humains qui choisissent les exemples."
+    ],
+    "deroule": [
+     "Rappel : qu’est-ce qu’une IA ? (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux sur les tablettes ou en collectif (10 min).",
+     "« En classe » : on entraîne la « machine » de la classe (20 min).",
+     "« On en parle » : débat guidé (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": [
+     "8 à 10 dessins de fruits sur des feuilles, préparés à l’avance ou dessinés par les élèves."
+    ],
+    "reponses": [
+     "Règles secrètes faciles : « les fruits ronds », « les fruits jaunes », « les fruits qu’on épluche ».",
+     "Ce qu’on veut faire voir : avec peu d’exemples, la « machine » se trompe plus souvent ; avec un fruit très différent des exemples, elle hésite.",
+     "Débat : Palou n’a pas fait exprès. Les humains choisissent les exemples : s’il en manque, l’IA se trompe. C’est pour ça qu’on vérifie toujours."
+    ],
+    "attention": "Le volontaire ne doit pas se sentir moqué quand il se trompe : rappeler que c’est exactement ce qui arrive à une IA, et que c’est normal."
+   }
+  },
+  {
+   "id": "ep1-4",
+   "title": "L’expo des machines de l’école",
+   "scene": {
+    "id": "ecole-classe",
+    "label": "La classe"
+   },
+   "cast": [
+    "palou",
+    "mme-diop",
+    "moussa",
+    "fatou"
+   ],
+   "problem": "La classe organise une exposition pour montrer aux autres classes ce qu’elle a appris.",
+   "screens": [
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "mme-diop",
+     "emoji": "🖼️",
+     "image": "ep1-l4-annonce.webp",
+     "alt": "Madame Diop annonce une nouvelle aux élèves, qui lèvent les bras de joie.",
+     "text": "Madame Diop annonce : « Vendredi, les autres classes viendront voir notre exposition sur les machines ! »"
+    },
+    {
+     "kind": "story",
+     "pose": "Content",
+     "speaker": "moussa",
+     "emoji": "🛠️",
+     "image": "ep1-l4-groupes.webp",
+     "alt": "Les élèves travaillent en groupes autour de grandes feuilles, Moussa dessine un ventilateur.",
+     "text": "Chaque groupe choisit trois objets : un outil, une machine simple et une IA. Moussa dessine déjà le ventilateur."
+    },
+    {
+     "kind": "story",
+     "pose": "Question",
+     "speaker": "fatou",
+     "emoji": "🔎",
+     "image": "ep1-l4-preuve.webp",
+     "alt": "Fatou montre l’affiche de son groupe à Palou, qui pointe une case vide.",
+     "text": "Fatou montre son affiche à Palou. « C’est bien, dit Palou, mais il manque la preuve ! »"
+    },
+    {
+     "kind": "discover",
+     "pose": "Intelligent",
+     "emoji": "✅",
+     "word": {
+      "terme": "Preuve",
+      "sens": "Une raison qui montre que ce qu’on dit est vrai."
+     },
+     "text": "Pour chaque objet, on donne une preuve : « C’est une IA, parce qu’elle reconnaît les visages. »"
+    },
+    {
+     "kind": "play",
+     "pose": "Question",
+     "emoji": "👆",
+     "text": "Aide les groupes à préparer l’exposition !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range les objets de l’exposition dans la bonne affiche.",
+       "hint": "Main, énergie ou exemples ?",
+       "success": "Bravo ! L’exposition est bien rangée.",
+       "bins": [
+        {
+         "id": "outil",
+         "label": "Outil",
+         "pict": "main-outil",
+         "emoji": "✋"
+        },
+        {
+         "id": "machine",
+         "label": "Machine simple",
+         "pict": "engrenage",
+         "emoji": "⚙️"
+        },
+        {
+         "id": "ia",
+         "label": "IA",
+         "pict": "ia-ampoule",
+         "emoji": "💡"
+        }
+       ],
+       "items": [
+        {
+         "id": "craie",
+         "label": "La craie",
+         "pict": "craie",
+         "emoji": "🖍️",
+         "bin": "outil",
+         "explain": "Elle écrit seulement quand ta main la tient."
+        },
+        {
+         "id": "sonnerie",
+         "label": "La sonnerie de l’école",
+         "pict": "sonnerie",
+         "emoji": "🔔",
+         "bin": "machine",
+         "explain": "Elle sonne toute seule, mais toujours pareil."
+        },
+        {
+         "id": "visage",
+         "label": "Le téléphone qui reconnaît un visage",
+         "pict": "telephone-visage",
+         "emoji": "📱",
+         "bin": "ia",
+         "explain": "Il a appris avec des exemples de visages."
+        },
+        {
+         "id": "ciseaux",
+         "label": "Les ciseaux",
+         "pict": "ciseaux",
+         "emoji": "✂️",
+         "bin": "outil",
+         "explain": "Ils coupent seulement avec ta main."
+        },
+        {
+         "id": "ventilateur",
+         "label": "Le ventilateur",
+         "pict": "ventilateur",
+         "emoji": "🌀",
+         "bin": "machine",
+         "explain": "Il tourne tout seul, toujours de la même façon."
+        },
+        {
+         "id": "traducteur",
+         "label": "L’application qui traduit",
+         "pict": "appli-traduction",
+         "emoji": "🗣️",
+         "bin": "ia",
+         "explain": "Elle propose une traduction apprise avec beaucoup de phrases."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Quelle est la meilleure preuve que le traducteur est une IA ?",
+       "hint": "Qu’est-ce qu’une IA sait faire ?",
+       "success": "Exact ! Il propose une traduction grâce à des exemples : c’est une IA.",
+       "options": [
+        {
+         "label": "Il propose une traduction qu’il a apprise avec des exemples",
+         "pict": "appli-traduction",
+         "correct": true
+        },
+        {
+         "label": "Il est dans un téléphone",
+         "pict": "telephone",
+         "explain": "Un téléphone contient aussi une lampe ou une calculatrice, qui ne sont pas des IA."
+        },
+        {
+         "label": "Il est très cher",
+         "pict": "argent",
+         "explain": "Le prix ne prouve rien : ce qui compte, c’est ce qu’il sait faire."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe",
+     "pose": "Content",
+     "emoji": "🖼️",
+     "titre": "Projet de classe : l’expo des machines",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe fait une affiche avec trois objets de l’école ou de la maison : un outil, une machine simple et une IA. Pour chaque objet : un dessin, son nom et une preuve. Puis chaque groupe présente son affiche aux visiteurs.",
+     "materiel": [
+      "Une grande feuille par groupe",
+      "Crayons de couleur, feutres, colle",
+      "Facultatif : de vrais objets à exposer (une règle, une lampe de poche)"
+     ]
+    },
+    {
+     "kind": "debat",
+     "pose": "Question",
+     "speaker": "palou",
+     "emoji": "💬",
+     "question": "Palou demande : « Si vous pouviez inventer une IA pour aider notre école, que ferait-elle ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Chaque groupe peut ajouter son idée en bas de son affiche."
+    },
+    {
+     "kind": "play",
+     "pose": "Hero",
+     "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "La règle de la classe est…",
+       "hint": "Elle trace un trait seulement avec ta main.",
+       "success": "Oui ! C’est un outil.",
+       "options": [
+        {
+         "label": "Un outil",
+         "pict": "regle",
+         "correct": true
+        },
+        {
+         "label": "Une machine simple",
+         "pict": "engrenage",
+         "explain": "La règle n’utilise pas d’énergie : c’est un outil."
+        },
+        {
+         "label": "Une IA",
+         "pict": "ia-ampoule",
+         "explain": "La règle ne reconnaît rien, ne devine rien : c’est un outil."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une application propose à Fatou une chanson qu’elle va sûrement aimer. C’est…",
+       "hint": "Elle propose quelque chose…",
+       "success": "Bravo ! Elle propose une chanson grâce aux exemples de ce que Fatou écoute : c’est une IA.",
+       "options": [
+        {
+         "label": "Une IA",
+         "pict": "appli-musique-conseil",
+         "correct": true
+        },
+        {
+         "label": "Un outil",
+         "pict": "main-outil",
+         "explain": "L’application marche toute seule, elle n’a pas besoin de ta main."
+        },
+        {
+         "label": "Une machine simple",
+         "pict": "engrenage",
+         "explain": "Une machine simple ne propose rien. L’application, elle, propose une chanson."
+        }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Palou ne reconnaît pas un fruit qu’il n’a jamais vu. Que fait-on ?",
+       "hint": "Comment une IA apprend-elle ?",
+       "success": "Exact ! On lui donne des exemples, et on vérifie toujours ce qu’il dit.",
+       "options": [
+        {
+         "label": "On lui montre des exemples, et on vérifie",
+         "pict": "photos-exemples",
+         "correct": true
+        },
+        {
+         "label": "On le croit quand même",
+         "pict": "robot-sait-tout",
+         "explain": "Une IA peut se tromper : on vérifie toujours."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo",
+     "pose": "Celebration",
+     "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton exposition est prête. Le module 1 est terminé !",
+     "learned": "Un outil a besoin de ma main. Une machine simple fait toujours pareil. Une IA a appris avec des exemples, et je donne toujours une preuve de ce que j’affirme."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Réinvestir tout le module : outil, machine simple, IA.",
+     "Justifier un classement par une preuve.",
+     "Présenter un travail de groupe à d’autres élèves."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; choix des objets et début des affiches (30 min).",
+     "Séance 2 : fin des affiches (15 min) ; « On en parle » (10 min) ; présentation aux visiteurs (15 min) ; défi de Palou (5 min)."
+    ],
+    "materiel": [
+     "Une grande feuille par groupe, crayons de couleur, feutres, colle.",
+     "Facultatif : inviter une autre classe ou les parents à la présentation."
+    ],
+    "reponses": [
+     "Une bonne preuve dit ce que fait l’objet : « avec ma main » (outil), « avec l’énergie, toujours pareil » (machine simple), « il reconnaît / devine / propose » (IA).",
+     "Idées d’IA pour l’école souvent proposées : une IA qui fait l’appel, qui traduit pour un nouvel élève, qui aide à lire. Les accueillir toutes et demander à chaque fois quels exemples il faudrait lui donner."
+    ],
+    "attention": "Éviter qu’un seul élève fasse toute l’affiche : donner un rôle à chacun (dessinateur, écrivain, chercheur de preuve, présentateur)."
+   }
+  }
+ ]
+}

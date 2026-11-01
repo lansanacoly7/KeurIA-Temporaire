@@ -1,0 +1,471 @@
+/* ── Identify cards (game2) ── */
+.p11-identify-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 700px;
+  animation: btnIn 0.5s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p11-identify-card {
+  background: transparent;
+  border: none;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  flex: 1;
+  min-width: 180px;
+  max-width: 280px;
+}
+
+.p11-identify-card:hover:not(.answered) {
+  transform: translateY(-6px) scale(1.04);
+}
+
+.p11-identify-card:active:not(.answered) {
+  transform: translateY(3px) scale(0.97);
+}
+
+.p11-identify-card.correct {
+  animation: correctPop 0.4s ease-out;
+}
+
+.p11-identify-card.correct .id-img {
+  filter: drop-shadow(0 0 30px rgba(56, 239, 125, 0.8));
+}
+
+.p11-identify-card.wrong {
+  filter: saturate(0.4) brightness(0.65);
+  animation: shakeWrong 0.35s ease-out;
+}
+
+.p11-identify-card.wrong .id-img {
+  filter: drop-shadow(0 0 20px rgba(231, 76, 60, 0.8));
+}
+
+.p11-identify-card .id-img {
+  width: min(225px, 23vw);
+  height: min(225px, 23vw);
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.14));
+  animation: floatAsset 4s ease-in-out infinite;
+}
+
+.p11-identify-card .id-label {
+  font-size: clamp(26px, 3vw, 40px) !important;
+  font-weight: 900;
+  color: var(--brand, #1a3a2a);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ── P1-2 Mission Cards ── */
+.p12-mission-cards {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 18px);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+  animation: btnIn 0.5s 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p12-animal-group {
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px solid #11998e;
+  border-radius: 20px;
+  padding: clamp(10px, 1.3vh, 14px) clamp(12px, 1.5vw, 18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 210px;
+}
+
+.p12-group-title {
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 900;
+  color: var(--brand, #0a4f40);
+}
+
+.p12-cards-mini-row {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+}
+
+.p12-mini-card {
+  width: clamp(97px, 10.5vw, 118px);
+  height: clamp(97px, 10.5vw, 118px);
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.07);
+  border: 2.5px solid rgba(17, 153, 142, 0.24);
+}
+
+.p12-mini-card img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  animation: floatAsset 3.5s ease-in-out infinite;
+}
+
+/* ── P1-2 Discovery Examples ── */
+.p12-examples-row {
+  display: flex;
+  gap: clamp(16px, 2vw, 24px);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 920px;
+  justify-content: center;
+  animation: btnIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p12-example-card {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: clamp(16px, 2vh, 22px) clamp(18px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  border: 3.5px solid rgba(17, 153, 142, 0.26);
+  flex: 1;
+  min-width: 185px;
+  max-width: 270px;
+  position: relative;
+}
+
+.p12-example-tag {
+  background: var(--brand-soft, #e6f7f5);
+  color: var(--brand, #0a4f40);
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 900;
+  padding: 5px 14px;
+  border-radius: 18px;
+  border: 1.5px solid #11998e;
+}
+
+.p12-example-card img {
+  width: clamp(113px, 13vw, 142px);
+  height: clamp(113px, 13vw, 142px);
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: floatAsset 3.8s ease-in-out infinite;
+}
+
+.p12-example-name {
+  font-size: clamp(20px, 2.2vw, 25px);
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+  text-align: center;
+}
+
+/* ── P1-2 Game 1 (Trouve les chats) ── */
+.p12-game1-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 1.8vw, 20px);
+  width: 100%;
+  max-width: 900px;
+  animation: btnIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p12-choice-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: clamp(14px, 1.8vh, 18px) clamp(12px, 1.5vw, 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: 3.5px solid transparent;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.p12-choice-card:hover:not(.correct) {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.p12-choice-card img {
+  width: clamp(138px, 16vw, 185px);
+  height: clamp(138px, 16vw, 185px);
+  object-fit: contain;
+}
+
+.p12-choice-card .card-label {
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 800;
+  color: var(--brand, #1a3a2a);
+}
+
+.p12-choice-card.correct {
+  border-color: #38ef7d;
+  background: #f0fff4;
+  transform: scale(1.03);
+  box-shadow: 0 0 24px rgba(56, 239, 125, 0.5);
+}
+
+.p12-choice-card .card-check {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 1.6rem;
+  animation: correctPop 0.35s ease-out;
+}
+
+/* ── P1-2 Quiz Options ── */
+.p12-quiz-options {
+  display: flex;
+  gap: clamp(16px, 2.4vw, 26px);
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+  animation: btnIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p12-quiz-btn {
+  flex: 1;
+  min-width: 225px;
+  max-width: 340px;
+  padding: clamp(18px, 2.4vh, 24px) clamp(24px, 2.8vw, 34px);
+  border-radius: 28px;
+  border: 4px solid #11998e;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  box-shadow: 0 7px 0 var(--brand-mid, #0a6e62), 0 14px 28px rgba(17, 153, 142, 0.22);
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+
+.p12-quiz-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.p12-quiz-btn:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 var(--brand-mid, #0a6e62);
+}
+
+.p12-quiz-btn.chosen.correct {
+  background: linear-gradient(145deg, #11998e, #38ef7d);
+  color: white;
+  border-color: var(--brand-mid, #0a6e62);
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--brand-mid, #0a6e62);
+}
+
+.p12-quiz-btn.chosen:not(.correct) {
+  opacity: 0.7;
+  border-color: #ddd;
+}
+
+.p12-quiz-btn .p12-btn-icon {
+  font-size: clamp(42px, 5vw, 54px);
+}
+
+.p12-quiz-btn .p12-btn-text {
+  font-size: clamp(25px, 2.9vw, 32px);
+  font-weight: 900;
+  color: var(--brand, #1a3a2a);
+}
+
+.p12-quiz-btn.chosen.correct .p12-btn-text {
+  color: white;
+}
+
+/* ── P1-2 Quiz Step Container (Vertical alignment with Palou) ── */
+.p12-quiz-step-container,
+.p11-quiz-step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: clamp(16px, 2.5vh, 26px);
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px 0;
+}
+
+/* ── P1-2 Mystery Card (Devinette) ── */
+.p12-mystery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 1.8vh, 18px);
+  width: 100%;
+  max-width: 840px;
+  animation: btnIn 0.5s 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.p12-mystery-container .p12-speech {
+  padding: clamp(16px, 2.2vh, 26px) clamp(22px, 2.6vw, 38px);
+}
+
+.p12-mystery-container .p12-speech p {
+  font-size: clamp(23px, 2.6vw, 28px) !important;
+}
+
+.p12-mystery-container .p12-speech .p11-highlight {
+  font-size: clamp(23px, 2.7vw, 29px) !important;
+  padding: 7px 18px;
+}
+
+.p12-mystery-examples-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 7px 20px;
+  border-radius: 24px;
+  border: 1.5px solid rgba(17, 153, 142, 0.22);
+  font-size: clamp(16px, 1.9vw, 21px);
+  font-weight: 800;
+  color: var(--brand, #0a4f40);
+}
+
+.p12-mystery-card-box {
+  background: #ffffff;
+  border-radius: 26px;
+  width: min(223px, 31vh);
+  height: min(223px, 31vh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border: 4px solid #11998e;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.p12-mystery-card-box.revealed {
+  border-color: #38ef7d;
+  box-shadow: 0 0 32px rgba(56, 239, 125, 0.55);
+}
+
+.p12-mystery-img-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.p12-mystery-img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.p12-mystery-cover {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 54%;
+  background: linear-gradient(180deg, rgba(17, 153, 142, 0.92) 0%, #11998e 100%);
+  border-top: 2.5px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.p12-mystery-card-box.revealed .p12-mystery-cover {
+  transform: translateY(110%);
+}
+
+.p12-mystery-cover .cover-q {
+  font-size: clamp(40px, 4.8vw, 52px);
+  animation: pulseIcon 1.8s infinite;
+}
+
+.p12-mystery-cover .cover-label {
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.p12-revealed-tag {
+  position: absolute;
+  bottom: 8px;
+  background: #38ef7d;
+  color: var(--brand, #064e3b);
+  font-weight: 900;
+  font-size: clamp(15px, 1.8vw, 20px);
+  padding: 6px 18px;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  animation: correctPop 0.4s ease-out;
+}
+
+.p12-mystery-container .p11-choice-btn {
+  font-size: clamp(18px, 2.8vw, 26px);
+  padding: 14px 20px;
+  min-width: 148px;
+  max-width: 278px;
+}
+
+/* ── Challenge Final (Réduit de 2px) ── */
+.p12-challenge-container,
+.p11-challenge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 820px;
+  gap: clamp(8px, 1.4vh, 14px);
+}
+
+.p12-challenge-container .p12-speech {
+  padding: clamp(16px, 2.2vh, 26px) clamp(22px, 2.6vw, 38px);
+}
+
+.p12-challenge-container .p12-speech p {
+  font-size: clamp(23px, 2.6vw, 28px) !important;
+}
+
+.p12-challenge-container .p12-speech .p11-highlight {
+  font-size: clamp(23px, 2.7vw, 29px) !important;
+  padding: 6px 18px;
+}
+
+.p12-challenge-container .p11-choice-btn {
+  font-size: clamp(18px, 2.8vw, 26px);
+  padding: 14px 20px;
+  min-width: 148px;
+  max-width: 278px;
+  border-radius: 16px;
+}
+

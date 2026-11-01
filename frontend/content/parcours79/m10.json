@@ -1,0 +1,975 @@
+{
+  "module": {
+    "id": "p10",
+    "chapter": 10,
+    "title": "Une IA pour mon quartier",
+    "place": "La place du quartier, le jour de la fête",
+    "intro": "Des déchets s’accumulent devant l’école. Invente avec la classe une IA utile à tout le quartier !"
+  },
+  "lessons": [
+    {
+      "id": "p10-1",
+      "title": "Un problème autour de moi",
+      "scene": {
+        "id": "place-dechets",
+        "label": "La place devant l’école"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "moussa"
+      ],
+      "problem": "Des déchets s’accumulent devant l’école. Quel est le vrai besoin des voisins ?",
+      "callback": "Tu te rappelles ? Pendant la journée Set Setal, la classe a nettoyé le quartier.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "image": "m10-l1-dechets.webp",
+          "alt": "Des sacs et des déchets s’entassent sur la place devant l’école, des voisins passent à côté.",
+          "text": "Devant l’école, les déchets s’accumulent sur la place du quartier."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou demande aux voisins ce qui les gêne le plus.",
+          "image": "m10-l1-s02.webp",
+          "alt": "Illustration : Fatou demande aux voisins ce qui les gêne le plus."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "text": "Moussa note : mauvaises odeurs, sacs éventrés, poubelles trop rares.",
+          "image": "m10-l1-s03.webp",
+          "alt": "Illustration : Moussa note : mauvaises odeurs, sacs éventrés, poubelles trop rares."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "besoin",
+            "sens": "Ce qu’il manque vraiment aux gens."
+          },
+          "text": "Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou et la classe à trouver le vrai besoin !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait la classe avant d’inventer une solution ?",
+              "hint": "Les voisins connaissent le problème mieux que personne.",
+              "success": "Oui ! Elle écoute d’abord les voisins.",
+              "options": [
+                {
+                  "label": "Elle choisit la première idée venue",
+                  "pict": "premiere-idee",
+                  "explain": "Sans écouter, l’idée risque de ne servir à personne."
+                },
+                {
+                  "label": "Elle écoute les voisins",
+                  "pict": "ecouter-voisins",
+                  "correct": true
+                },
+                {
+                  "label": "Elle attend qu’un autre agisse",
+                  "pict": "attendre-autre",
+                  "explain": "Attendre ne règle rien : la classe peut commencer par écouter."
+                }
+              ]
+            },
+            {
+              "type": "verify",
+              "prompt": "Fatou interroge les voisins. Pose les bonnes questions pour trouver le vrai besoin !",
+              "hint": "Demande ce qui gêne, pas ce qui plaît.",
+              "success": "Oui ! Le vrai besoin, ce sont plus de poubelles dans la rue.",
+              "claim": {
+                "text": "Des déchets s’accumulent devant l’école.",
+                "pict": "dechets-ecole"
+              },
+              "need": 2,
+              "ask": "Les voisins ont répondu. Quel est le vrai besoin ?",
+              "checks": [
+                {
+                  "id": "n1",
+                  "label": "Que vous gêne le plus ?",
+                  "pict": "gene-question",
+                  "useful": true,
+                  "reveal": "Les mauvaises odeurs et les sacs éventrés."
+                },
+                {
+                  "id": "n2",
+                  "label": "Y a-t-il assez de poubelles ?",
+                  "pict": "poubelles-rue",
+                  "useful": true,
+                  "reveal": "Non, il y en a trop peu dans la rue."
+                },
+                {
+                  "id": "n3",
+                  "label": "Quand est-ce le pire ?",
+                  "pict": "c-etait-quand",
+                  "useful": true,
+                  "reveal": "Après le marché, quand les sacs sont pleins."
+                },
+                {
+                  "id": "n4",
+                  "label": "Quelle est ta couleur préférée ?",
+                  "pict": "couleur-preferee",
+                  "reveal": "Le vert !",
+                  "explain": "Cette question ne dit rien sur les déchets. Demande ce qui gêne les voisins."
+                }
+              ],
+              "stamps": [
+                {
+                  "id": "b1",
+                  "label": "Plus de poubelles",
+                  "pict": "poubelles",
+                  "correct": true
+                },
+                {
+                  "id": "b2",
+                  "label": "Une nouvelle fresque",
+                  "pict": "dessin-etal",
+                  "explain": "Une fresque est jolie, mais elle ne règle pas le problème des déchets."
+                },
+                {
+                  "id": "b3",
+                  "label": "Un grand match",
+                  "pict": "ballon",
+                  "explain": "Un match est amusant, mais il ne règle pas le problème des déchets."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA ne choisit pas le problème. Ce sont les gens qui disent leurs besoins."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un besoin ?",
+              "hint": "Ce qui manque vraiment aux gens.",
+              "success": "Oui ! Un besoin, c’est ce qui manque vraiment.",
+              "options": [
+                {
+                  "label": "Ce qui manque vraiment",
+                  "pict": "vrai-besoin",
+                  "correct": true
+                },
+                {
+                  "label": "Une idée géniale qui arrive vite",
+                  "pict": "premiere-idee",
+                  "explain": "Une idée n’est pas un besoin : le besoin vient des gens."
+                },
+                {
+                  "label": "Un cadeau que je voudrais avoir",
+                  "pict": "pas-besoin",
+                  "explain": "Un besoin n’est pas un cadeau : c’est ce qui manque aux gens."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment trouve-t-on le vrai besoin ?",
+              "hint": "Il faut parler avec les gens.",
+              "success": "Bravo ! En écoutant les voisins.",
+              "options": [
+                {
+                  "label": "En écoutant les voisins",
+                  "pict": "ecouter-voisins",
+                  "correct": true
+                },
+                {
+                  "label": "En devinant tout seul",
+                  "pict": "premiere-idee",
+                  "explain": "Deviner seul peut se tromper : on écoute d’abord les gens."
+                },
+                {
+                  "label": "En attendant que ça passe",
+                  "pict": "attendre-autre",
+                  "explain": "Attendre ne trouve rien : il faut écouter les gens."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Une première idée arrive très vite. Que fait-on ?",
+              "hint": "Une idée vient après avoir écouté.",
+              "success": "Exact ! On écoute d’abord.",
+              "options": [
+                {
+                  "label": "On écoute d’abord",
+                  "pict": "ecouter-voisins",
+                  "correct": true
+                },
+                {
+                  "label": "On la construit tout de suite",
+                  "pict": "premiere-idee",
+                  "explain": "Construire tout de suite, c’est risquer de se tromper de besoin."
+                },
+                {
+                  "label": "On l’oublie pour toujours",
+                  "explain": "Une idée peut être bonne : on écoute d’abord le besoin."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu as trouvé le vrai besoin.",
+          "learned": "Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée."
+        }
+      ]
+    },
+    {
+      "id": "p10-2",
+      "title": "Idées pour le Sénégal",
+      "scene": {
+        "id": "classe-idees",
+        "label": "La classe, séance d’idées"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "mame-awa",
+        "moussa"
+      ],
+      "problem": "La classe cherche comment une IA pourrait aider à garder le quartier propre.",
+      "callback": "Tu te rappelles ? Les voisins veulent plus de poubelles et un ramassage régulier.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m10-l2-idees.webp",
+          "alt": "Madame Diop écrit le mot « idées » au tableau, Palou et Moussa lèvent la main, Mame Awa est assise au fond.",
+          "text": "Madame Diop ouvre la séance d’idées : toutes les idées sont bienvenues."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mame-awa",
+          "text": "Mame Awa parle des cageots vides qui s’entassent au marché Kermel.",
+          "image": "m10-l2-s02.webp",
+          "alt": "Illustration : Mame Awa parle des cageots vides qui s’entassent au marché Kermel."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa propose une IA qui repère les poubelles pleines avec une caméra.",
+          "image": "m10-l2-s03.webp",
+          "alt": "Illustration : Moussa propose une IA qui repère les poubelles pleines avec une caméra."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "faisable",
+            "sens": "Une idée qu’on peut vraiment réaliser avec les moyens qu’on a."
+          },
+          "text": "Une idée faisable peut vraiment se réaliser. Il faut penser aux moyens et aux données."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à trier les idées !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Une idée est-elle bonne si elle est impossible à faire ?",
+              "hint": "Pense aux moyens et au temps dont la classe dispose.",
+              "success": "Non ! Une bonne idée doit être faisable.",
+              "options": [
+                {
+                  "label": "Oui, une idée géniale suffit toujours",
+                  "pict": "idee-geniale",
+                  "explain": "Si on ne peut pas la réaliser, elle ne sert à personne."
+                },
+                {
+                  "label": "Oui, les moyens ne comptent pas du tout",
+                  "pict": "moyens-ignores",
+                  "explain": "Sans moyens, une idée reste un rêve : elle doit être faisable."
+                },
+                {
+                  "label": "Non, elle doit être faisable",
+                  "pict": "faisable-check",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "type": "train",
+              "prompt": "Choisis les photos pour apprendre à l’IA à repérer une poubelle pleine !",
+              "hint": "Montre des poubelles, pleines et vides, bien visibles.",
+              "success": "Oui ! Avec de bons exemples, l’IA repère les poubelles pleines.",
+              "learns": "poubelles pleines",
+              "test": {
+                "label": "Une poubelle à repérer",
+                "pict": "poubelle-pleine-camera"
+              },
+              "says": [
+                "Je ne sais pas ce qu’est une poubelle pleine…",
+                "Je commence à reconnaître !",
+                "Presque prêt ! Un dernier exemple, s’il te plaît."
+              ],
+              "examples": [
+                {
+                  "id": "e1",
+                  "label": "Des poubelles pleines",
+                  "pict": "photos-poubelles",
+                  "good": true
+                },
+                {
+                  "id": "e2",
+                  "label": "Des poubelles dans la rue",
+                  "pict": "poubelles-rue",
+                  "good": true
+                },
+                {
+                  "id": "e3",
+                  "label": "Des poubelles vides",
+                  "pict": "poubelles",
+                  "good": true
+                },
+                {
+                  "id": "e4",
+                  "label": "Des photos floues et sombres",
+                  "pict": "photos-floues-sombres",
+                  "explain": "Les photos floues cachent les détails : elles risquent de tromper l’IA."
+                },
+                {
+                  "id": "e5",
+                  "label": "Des ballons",
+                  "pict": "ballon",
+                  "explain": "Des ballons ne montrent pas de poubelle : l’IA n’apprend rien d’utile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut aider le quartier. Mais ce sont les gens qui décident et qui agissent."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Une bonne idée d’IA est comment ?",
+              "hint": "Elle doit servir et pouvoir se faire.",
+              "success": "Oui ! Utile et faisable.",
+              "options": [
+                {
+                  "label": "Utile et faisable",
+                  "pict": "faisable-check",
+                  "correct": true
+                },
+                {
+                  "label": "Géniale, mais impossible à faire",
+                  "pict": "idee-geniale",
+                  "explain": "Une idée impossible n’aide personne."
+                },
+                {
+                  "label": "Chère, avec des moyens qu’on n’a pas",
+                  "pict": "moyens-ignores",
+                  "explain": "Sans les moyens, on ne peut pas la faire."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi penser aux gens du quartier ?",
+              "hint": "Pour qui l’idée est-elle faite ?",
+              "success": "Bravo ! Pour qu’elle serve vraiment.",
+              "options": [
+                {
+                  "label": "Pour qu’elle serve",
+                  "pict": "quartier-fier",
+                  "correct": true
+                },
+                {
+                  "label": "Pour que ce soit joli sur une affiche",
+                  "explain": "Une idée doit servir, pas seulement être jolie."
+                },
+                {
+                  "label": "Pour copier ce que fait une autre ville",
+                  "explain": "Une idée doit répondre aux besoins du quartier, pas copier."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que peut repérer une IA avec beaucoup de photos de poubelles ?",
+              "hint": "Elle apprend avec des exemples.",
+              "success": "Exact ! Elle apprend à repérer une poubelle pleine.",
+              "options": [
+                {
+                  "label": "Une poubelle pleine",
+                  "pict": "poubelle-pleine-camera",
+                  "correct": true
+                },
+                {
+                  "label": "Le nom de chaque voisin",
+                  "pict": "photos-poubelles",
+                  "explain": "Une IA qui regarde des poubelles ne repère pas les noms."
+                },
+                {
+                  "label": "La couleur du ciel à midi",
+                  "explain": "Les photos de poubelles ne servent pas à regarder le ciel."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu as de très bonnes idées.",
+          "learned": "Une bonne idée d’IA est utile, faisable et pensée pour les gens du quartier."
+        }
+      ]
+    },
+    {
+      "id": "p10-3",
+      "title": "Dessine ta solution",
+      "scene": {
+        "id": "classe-prototype",
+        "label": "La classe, atelier prototype"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "moussa"
+      ],
+      "problem": "La classe dessine le prototype de son IA : une poubelle qui prévient quand elle est pleine.",
+      "callback": "Tu te rappelles ? Une idée faisable peut vraiment se réaliser.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "image": "m10-l3-prototype.webp",
+          "alt": "Fatou dessine sur une grande feuille une poubelle avec un petit signal lumineux, Palou et Moussa regardent.",
+          "text": "Fatou dessine une poubelle avec un petit signal lumineux."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "text": "Moussa demande : « Et comment saura-t-elle qu’elle est pleine ? »",
+          "image": "m10-l3-s02.webp",
+          "alt": "Illustration : Moussa demande : « Et comment saura-t-elle qu’elle est pleine ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "palou",
+          "text": "Palou explique : avec une caméra et des photos de poubelles pleines.",
+          "image": "m10-l3-s03.webp",
+          "alt": "Illustration : Palou explique : avec une caméra et des photos de poubelles pleines."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "prototype",
+            "sens": "Un premier modèle simple, fait pour tester une idée."
+          },
+          "text": "Un prototype est un premier modèle simple. Il sert à tester l’idée avant de la construire."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à préparer le prototype !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "À quoi sert un prototype ?",
+              "hint": "On l’essaie avant de faire quelque chose de grand.",
+              "success": "Oui ! Il sert à tester l’idée avant de la construire.",
+              "options": [
+                {
+                  "label": "À tester l’idée avant de la construire",
+                  "pict": "tester-idee",
+                  "correct": true
+                },
+                {
+                  "label": "À remplacer tout de suite la vraie poubelle",
+                  "pict": "remplacer-poubelle",
+                  "explain": "Un prototype est un essai : il ne remplace pas la vraie solution."
+                },
+                {
+                  "label": "À décorer la classe pour la fête",
+                  "pict": "decorer-classe",
+                  "explain": "Un prototype sert à tester une idée, pas à décorer."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Fabrique le prototype de la poubelle intelligente, pièce par pièce !",
+              "hint": "Il lui faut de quoi voir, de quoi prévenir et de quoi fonctionner.",
+              "success": "Oui ! Une caméra, un signal et une batterie : le prototype est prêt.",
+              "goal": {
+                "label": "La poubelle qui prévient",
+                "pict": "poubelles"
+              },
+              "need": 3,
+              "says": [
+                "La poubelle est vide : elle ne voit rien.",
+                "Elle a des yeux ! Mais comment prévient-elle ?",
+                "Elle prévient ! Il lui faut encore de l’énergie."
+              ],
+              "cards": [
+                {
+                  "id": "p1",
+                  "label": "Une caméra",
+                  "pict": "poubelle-pleine-camera",
+                  "good": true
+                },
+                {
+                  "id": "p2",
+                  "label": "Un signal lumineux",
+                  "pict": "signal-lumineux",
+                  "good": true
+                },
+                {
+                  "id": "p3",
+                  "label": "Une batterie",
+                  "pict": "prise-electrique",
+                  "good": true
+                },
+                {
+                  "id": "p4",
+                  "label": "Un ballon",
+                  "pict": "ballon",
+                  "explain": "Un ballon ne sert pas à repérer une poubelle pleine."
+                },
+                {
+                  "id": "p5",
+                  "label": "Une mangue",
+                  "pict": "mangue-rouge",
+                  "explain": "Une mangue ne fait pas partie de la poubelle intelligente."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Un prototype peut être un simple dessin. L’important, c’est de tester l’idée."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un prototype ?",
+              "hint": "C’est un premier essai.",
+              "success": "Oui ! Un premier modèle simple.",
+              "options": [
+                {
+                  "label": "Un premier modèle simple",
+                  "pict": "prototype-maquette",
+                  "correct": true
+                },
+                {
+                  "label": "Un objet fini et parfait, prêt à vendre",
+                  "pict": "dessin-prototype",
+                  "explain": "Un prototype n’est pas fini : c’est un premier essai."
+                },
+                {
+                  "label": "Une décoration pour la classe",
+                  "pict": "decorer-classe",
+                  "explain": "Un prototype sert à tester, pas à décorer."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi teste-t-on un prototype ?",
+              "hint": "Pour voir si l’idée marche.",
+              "success": "Exact ! Pour améliorer l’idée.",
+              "options": [
+                {
+                  "label": "Pour améliorer l’idée",
+                  "pict": "tester-idee",
+                  "correct": true
+                },
+                {
+                  "label": "Pour le jeter tout de suite",
+                  "explain": "On teste pour améliorer, pas pour jeter."
+                },
+                {
+                  "label": "Pour faire un grand spectacle",
+                  "explain": "Un test n’est pas un spectacle : il aide à améliorer l’idée."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Après le test, que font les voisins ?",
+              "hint": "Ils aident à améliorer.",
+              "success": "Bravo ! Ils donnent leur avis.",
+              "options": [
+                {
+                  "label": "Ils donnent leur avis",
+                  "pict": "avis-voisins",
+                  "correct": true
+                },
+                {
+                  "label": "Ils s’en vont sans rien dire",
+                  "explain": "Les voisins aident en donnant leur avis."
+                },
+                {
+                  "label": "Ils se fâchent et partent",
+                  "pict": "se-facher",
+                  "explain": "Les voisins ne se fâchent pas : ils donnent leur avis."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Ton prototype est prêt.",
+          "learned": "Un prototype est un premier modèle simple. Il sert à tester l’idée avant de la construire."
+        }
+      ]
+    },
+    {
+      "id": "p10-4",
+      "title": "Grand projet Explorateur",
+      "scene": {
+        "id": "place-fete",
+        "label": "La place du quartier, jour de fête"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou",
+        "mme-diop",
+        "mame-awa",
+        "papa-ibou",
+        "baye",
+        "tonton-cheikh",
+        "mame-coumba"
+      ],
+      "problem": "C’est la Fête du quartier. La classe présente son invention aux parents et aux voisins.",
+      "callback": "Tu te rappelles ? Un prototype sert à tester l’idée avant de la construire.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Celebration",
+          "speaker": "mme-diop",
+          "image": "m10-l4-fete.webp",
+          "alt": "La place du quartier en fête : des guirlandes, des voisins et des enfants rassemblés autour de la classe de Madame Diop et de Palou.",
+          "text": "Madame Diop ouvre la fête : « Bienvenue à tous ! » Les amis de Palou sont là."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "papa-ibou",
+          "wolof": {
+            "mot": "Teranga",
+            "sens": "L’hospitalité, l’art d’accueillir et de partager"
+          },
+          "text": "Papa Ibou a amené le car et Mame Awa des mangues. Baye allume la radio.",
+          "image": "m10-l4-s02.webp",
+          "alt": "Illustration : Papa Ibou a amené le car et Mame Awa des mangues. Baye allume la radio."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "tonton-cheikh",
+          "text": "Tonton Cheikh est venu de Saint-Louis. Mame Coumba suit la fête en vidéo.",
+          "image": "m10-l4-s03.webp",
+          "alt": "Illustration : Tonton Cheikh est venu de Saint-Louis. Mame Coumba suit la fête en vidéo."
+        },
+        {
+          "kind": "story",
+          "pose": "Hero",
+          "speaker": "moussa",
+          "text": "Moussa et Fatou présentent leur poubelle intelligente aux voisins.",
+          "image": "m10-l4-s04.webp",
+          "alt": "Illustration : Moussa et Fatou présentent leur poubelle intelligente aux voisins."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "projet",
+            "sens": "Une idée préparée pas à pas, de l’idée jusqu’au test."
+          },
+          "text": "Un projet suit des étapes : besoin, prototype, test, puis présentation."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à terminer le grand projet !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une étape dans sa boîte.",
+              "hint": "On prépare avant la fête et on présente pendant la fête.",
+              "success": "Bravo ! Tu connais les étapes d’un projet.",
+              "bins": [
+                {
+                  "id": "avant",
+                  "label": "Avant la fête",
+                  "pict": "avant-fete"
+                },
+                {
+                  "id": "pendant",
+                  "label": "Pendant la fête",
+                  "pict": "pendant-fete"
+                }
+              ],
+              "items": [
+                {
+                  "id": "e1",
+                  "label": "Écouter les voisins",
+                  "pict": "ecouter-voisins",
+                  "bin": "avant",
+                  "explain": "On écoute d’abord, pour comprendre le besoin."
+                },
+                {
+                  "id": "e2",
+                  "label": "Présenter l’invention",
+                  "pict": "presenter-invention",
+                  "bin": "pendant",
+                  "explain": "La présentation a lieu le jour de la fête."
+                },
+                {
+                  "id": "e3",
+                  "label": "Dessiner le prototype",
+                  "pict": "dessin-prototype",
+                  "bin": "avant",
+                  "explain": "Le prototype se prépare avant la fête."
+                },
+                {
+                  "id": "e4",
+                  "label": "Recueillir l’avis des voisins",
+                  "pict": "avis-voisins",
+                  "bin": "pendant",
+                  "explain": "Les voisins donnent leur avis quand on leur présente l’invention."
+                }
+              ]
+            },
+            {
+              "type": "machine",
+              "prompt": "Construis ton IA en trois cases, puis teste-la devant les voisins !",
+              "hint": "Une IA regarde des photos, apprend avec des exemples, puis prévient.",
+              "success": "Bravo ! Ton IA marche, et un adulte vérifie quand elle n’est pas sûre.",
+              "goal": {
+                "label": "La poubelle intelligente",
+                "pict": "poubelles"
+              },
+              "slots": [
+                {
+                  "id": "regarde",
+                  "label": "Elle regarde",
+                  "question": "Que regarde la poubelle ?",
+                  "options": [
+                    {
+                      "label": "Des photos de poubelles",
+                      "pict": "photos-poubelles",
+                      "correct": true
+                    },
+                    {
+                      "label": "Le ciel et le soleil",
+                      "pict": "soleil-chaud",
+                      "explain": "Le ciel ne dit pas si la poubelle est pleine."
+                    },
+                    {
+                      "label": "Les chaussures des voisins",
+                      "pict": "chaussette",
+                      "explain": "Les chaussures ne disent rien sur la poubelle."
+                    }
+                  ]
+                },
+                {
+                  "id": "apprend",
+                  "label": "Elle apprend",
+                  "question": "Comment la poubelle apprend-elle ?",
+                  "options": [
+                    {
+                      "label": "Avec beaucoup d’exemples",
+                      "pict": "bon-exemple",
+                      "correct": true
+                    },
+                    {
+                      "label": "Sans aucun exemple",
+                      "pict": "rien",
+                      "explain": "Sans exemples, une IA ne peut rien apprendre."
+                    },
+                    {
+                      "label": "Avec une seule photo",
+                      "pict": "peu-exemples",
+                      "explain": "Une seule photo ne suffit pas : il en faut beaucoup."
+                    }
+                  ]
+                },
+                {
+                  "id": "fait",
+                  "label": "Elle fait",
+                  "question": "Que fait la poubelle quand elle est pleine ?",
+                  "options": [
+                    {
+                      "label": "Elle allume un signal",
+                      "pict": "signal-lumineux",
+                      "correct": true
+                    },
+                    {
+                      "label": "Elle jette les déchets",
+                      "pict": "ia-jette-dechets",
+                      "explain": "Notre poubelle prévient seulement : un adulte vient la vider."
+                    },
+                    {
+                      "label": "Elle chante une chanson",
+                      "pict": "chanter-note",
+                      "explain": "Chanter n’aide pas le quartier à rester propre."
+                    }
+                  ]
+                }
+              ],
+              "demo": {
+                "prompt": "Ton IA est prête. Montre-lui trois poubelles !",
+                "need": 3,
+                "cases": [
+                  {
+                    "id": "d1",
+                    "label": "Une poubelle pleine",
+                    "pict": "poubelle-pleine-camera",
+                    "result": "Signal allumé : la poubelle est pleine !"
+                  },
+                  {
+                    "id": "d2",
+                    "label": "Une poubelle vide",
+                    "pict": "poubelles",
+                    "result": "Pas de signal : la poubelle est vide."
+                  },
+                  {
+                    "id": "d3",
+                    "label": "Une photo très sombre",
+                    "pict": "photo-sombre",
+                    "result": "Je ne suis pas sûre. Un adulte vérifie !"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une bonne IA de quartier écoute les gens et protège leurs données."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Par quoi commence une IA pour mon quartier ?",
+              "hint": "Pense à ce qui manque aux gens.",
+              "success": "Oui ! Par un vrai besoin.",
+              "options": [
+                {
+                  "label": "Un vrai besoin",
+                  "pict": "vrai-besoin",
+                  "correct": true
+                },
+                {
+                  "label": "Par une machine très chère",
+                  "explain": "Une machine sans besoin ne sert à rien."
+                },
+                {
+                  "label": "Par un grand bruit dans la rue",
+                  "explain": "Un bruit n’est pas un besoin."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que protège-t-on dans le projet ?",
+              "hint": "Les gens du quartier.",
+              "success": "Exact ! Les données des gens.",
+              "options": [
+                {
+                  "label": "Les données des gens",
+                  "pict": "cadenas-secret",
+                  "correct": true
+                },
+                {
+                  "label": "Les jouets de la salle de classe",
+                  "explain": "Les jouets ne sont pas les données des gens."
+                },
+                {
+                  "label": "La couleur de l’affiche du projet",
+                  "explain": "Une couleur n’est pas une donnée personnelle à protéger."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment sait-on si l’idée marche ?",
+              "hint": "On l’essaie.",
+              "success": "Bravo ! On la teste.",
+              "options": [
+                {
+                  "label": "On la teste",
+                  "pict": "tester-idee",
+                  "correct": true
+                },
+                {
+                  "label": "On l’espère très fort",
+                  "pict": "faire-semblant",
+                  "explain": "Espérer ne suffit pas : il faut tester."
+                },
+                {
+                  "label": "On demande à Palou de le promettre",
+                  "explain": "Palou ne peut pas promettre : on teste avec un prototype."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m10",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 10 et tout le parcours !",
+          "learned": "Une IA pour mon quartier part d’un vrai besoin, se teste avec un prototype et protège les données des gens."
+        }
+      ]
+    }
+  ]
+}

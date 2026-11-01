@@ -1,0 +1,123 @@
+/* Cahier de classe de l'élève d'école (T9) : cartes grandes et arrondies,
+   cibles tactiles larges, barre du bas à six onglets sur téléphone (maquette
+   LISEZMOI : cible minimale 56 px, icône + libellé au bureau). */
+
+.cahier { max-width: 860px; margin: 0 auto; color: #173e3c; }
+.cahier-head { margin: 6px 0 20px; }
+.cahier-head span { font-size: 12px; font-weight: 900; letter-spacing: 1.5px; color: #0d846e; }
+.cahier-head h2 { margin: 4px 0 0; font-size: 30px; }
+
+.cahier-rules { display: grid; gap: 6px; margin-bottom: 18px; padding: 14px 18px; border-radius: 18px; border: 2px dashed #fcd34d; background: #fffbeb; }
+.cahier-rules p { margin: 0; font-weight: 700; font-size: 14.5px; color: #92400e; }
+
+.cahier-notice { margin: 0 0 14px; padding: 10px 14px; border-radius: 14px; background: #fef2f2; border: 2px solid #fecaca; color: #991b1b; font-weight: 700; }
+.cahier-empty { margin: 0 0 16px; padding: 18px; border-radius: 18px; background: #f0fdfa; border: 2px solid #ccfbf1; color: #115e59; font-weight: 700; text-align: center; }
+
+.cahier-block { margin-bottom: 26px; }
+.cahier-block h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 20px; }
+
+.cahier-card { display: block; margin-bottom: 14px; padding: 20px 22px; border-radius: 24px; background: #fff; border: 2px solid #e7f3ef; box-shadow: 0 10px 24px rgba(15, 69, 63, 0.07); }
+.cahier-card h3 { margin: 8px 0 4px; font-size: 22px; }
+.cahier-card h4 { margin: 0 0 4px; font-size: 17px; }
+.cahier-card p { margin: 0; font-size: 15.5px; line-height: 1.5; }
+.cahier-card small { color: #64748b; font-weight: 600; }
+.cahier-sub { color: #475569; font-weight: 600; margin-top: 6px !important; }
+
+/* Séance en cours : point vert qui pulse, compte à rebours grand, bouton large. */
+.cahier-live { display: inline-flex; align-items: center; gap: 8px; color: #0d846e; font-size: 13px; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; }
+.cahier-live i { width: 10px; height: 10px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.5); animation: cahier-pulse 1.6s infinite; }
+@keyframes cahier-pulse { 70% { box-shadow: 0 0 0 9px rgba(22, 163, 74, 0); } 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); } }
+@media (prefers-reduced-motion: reduce) { .cahier-live i { animation: none; } }
+.cahier-seance-foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 14px; }
+.cahier-count { display: flex; align-items: center; gap: 8px; font-size: 17px; }
+.cahier-count b { font-size: 24px; font-variant-numeric: tabular-nums; }
+.cahier-seance-foot button { min-height: 56px; padding: 12px 28px; border: 0; border-radius: 18px; background: #d8f05b; color: #103b39; font: inherit; font-size: 18px; font-weight: 800; cursor: pointer; box-shadow: 0 5px 0 #a8c03a; transition: transform 0.12s ease, box-shadow 0.12s ease; }
+.cahier-seance-foot button:hover { background: #e2f57a; }
+.cahier-seance-foot button:active { transform: translateY(3px); box-shadow: 0 2px 0 #a8c03a; }
+.cahier-seance-foot button:focus-visible { outline: 4px solid #103b39; outline-offset: 3px; }
+
+/* Sondage : chaque réponse est un bouton large ; le pourcentage vient après la réponse. */
+.cahier-question { font-weight: 700; margin-bottom: 12px !important; }
+.cahier-poll-options { display: grid; gap: 10px; }
+.cahier-poll-options button { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; min-height: 56px; padding: 12px 18px; border-radius: 16px; border: 2px solid #cfe7e0; background: #f8fffd; font: inherit; font-size: 16px; font-weight: 700; color: #173e3c; text-align: left; cursor: pointer; transition: border-color 0.15s ease, transform 0.15s ease; }
+.cahier-poll-options button:hover { transform: translateY(-1px); border-color: #0d846e; }
+.cahier-poll-options button:focus-visible { outline: 4px solid #0d846e; outline-offset: 2px; }
+.cahier-poll-options button.chosen { border-color: #0d846e; background: #ecfdf5; }
+.cahier-poll-options button span { flex: 1 1 auto; min-width: 0; }
+.cahier-poll-options button b { font-variant-numeric: tabular-nums; color: #0d846e; }
+.cahier-poll-options button small { width: 100%; color: #0d846e; }
+.cahier-poll-total { margin-top: 10px !important; color: #64748b; font-weight: 700; }
+
+/* Devoirs : titre à gauche, échéance à droite. */
+.cahier-hw { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.cahier-hw b { flex-shrink: 0; padding: 8px 12px; border-radius: 12px; background: #f0fdfa; color: #0f766e; font-size: 14px; }
+.cahier-hw b.late { background: #fef2f2; color: #b91c1c; }
+.cahier-more { display: inline-block; margin-top: 4px; padding: 12px 20px; border-radius: 16px; background: #ecfdf5; border: 2px solid #99f6e4; color: #0f766e; font-weight: 800; text-decoration: none; min-height: 44px; }
+.cahier-more:hover { background: #d1fae5; }
+
+/* Ma classe : classement de la classe (T14). Un vrai tableau : rang, élève, points, leçons. */
+.cahier-class h3 { display: flex; align-items: center; gap: 8px; }
+.cahier-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.cahier-board-period { margin: -4px 0 12px !important; }
+.cahier-board-table { width: 100%; border-collapse: separate; border-spacing: 0 8px; table-layout: fixed; margin: -8px 0 4px; font-variant-numeric: tabular-nums; }
+.cahier-board-table thead th { padding: 0 10px; font-size: 12.5px; font-weight: 900; letter-spacing: 0.6px; text-transform: uppercase; color: #475569; text-align: left; }
+.cahier-board-table th:nth-child(1), .cahier-board-table td:nth-child(1) { width: 64px; }
+.cahier-board-table th:nth-child(3), .cahier-board-table td:nth-child(3) { width: 76px; text-align: right; }
+.cahier-board-table th:nth-child(4), .cahier-board-table td:nth-child(4) { width: 70px; text-align: right; }
+.cahier-board-table tbody td, .cahier-board-table tbody th { height: 56px; padding: 6px 10px; background: #f8fafc; border-top: 2px solid #eef2f7; border-bottom: 2px solid #eef2f7; font-size: 16px; font-weight: 700; color: #173e3c; text-align: left; overflow-wrap: anywhere; }
+.cahier-board-table tbody td:first-child { border-left: 2px solid #eef2f7; border-radius: 16px 0 0 16px; }
+.cahier-board-table tbody td:last-child { border-right: 2px solid #eef2f7; border-radius: 0 16px 16px 0; text-align: right; }
+.cahier-board-table tbody td:nth-child(3) { color: #0b6b59; text-align: right; }
+.cahier-board-table td b { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #e2e8f0; font-size: 15px; }
+.cahier-board-table tr.me td, .cahier-board-table tr.me th { background: #ecfdf5; border-color: #0d846e; }
+.cahier-board-table tr.me td b { background: #0d846e; color: #fff; }
+.cahier-me-tag { color: #0b6b59; font-weight: 800; }
+.cahier-locked { margin: 0 0 8px; font-weight: 700; color: #92400e; border-style: dashed; border-color: #fcd34d; background: #fffbeb; }
+.cahier-board-loading { display: grid; gap: 8px; }
+.cahier-skeleton { display: block; height: 56px; border-radius: 16px; background: linear-gradient(90deg, #eef2f7 0%, #f8fafc 50%, #eef2f7 100%); background-size: 200% 100%; animation: cahier-shimmer 1.4s infinite linear; }
+@keyframes cahier-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .cahier-skeleton { animation: none; } }
+.cahier-board-error { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.cahier-board-error p { margin: 0; flex: 1 1 220px; }
+.cahier-retry { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; min-width: 44px; padding: 10px 20px; border: 0; border-radius: 14px; background: #b91c1c; color: #fff; font: inherit; font-weight: 800; cursor: pointer; }
+.cahier-retry:hover { background: #991b1b; }
+.cahier-retry:focus-visible { outline: 4px solid #0d846e; outline-offset: 2px; }
+
+/* Libre : trois cartes côte à côte au bureau, empilées sur téléphone. */
+.cahier-libre { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.cahier-libre-card { display: flex; flex-direction: column; gap: 6px; min-height: 190px; margin: 0; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+a.cahier-libre-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(15, 69, 63, 0.12); }
+.cahier-libre-card h3 { margin: 4px 0 0; font-size: 19px; }
+.cahier-libre-card p { flex: 1; font-size: 14.5px; color: #475569; }
+.cahier-libre-card.closed { background: #f8fafc; border-style: dashed; color: #64748b; }
+.cahier-closed-tag { display: inline-flex; align-items: center; gap: 6px; color: #92400e; font-size: 14px; }
+.cahier-open-tag { color: #0d846e; font-size: 15px; }
+
+/* ── Menu réduit : au bureau la barre latérale, en dessous de 900 px la barre du bas ── */
+@media (max-width: 899px) {
+  .lms-side.cahier-side { position: fixed; inset: auto 0 0 0; width: auto; height: 72px; flex-direction: row; gap: 0; padding: 6px 8px; z-index: 50; }
+  .lms-side.cahier-side .lms-side-header, .lms-side.cahier-side .side-card, .lms-side.cahier-side .back-home { display: none; }
+  .lms-side.cahier-side nav { width: 100%; flex-direction: row; justify-content: space-around; align-items: center; }
+  .lms-side.cahier-side nav a { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px; min-width: 56px; min-height: 56px; justify-content: center; border-radius: 14px; }
+  .lms-side.cahier-side nav a .nav-text { display: block; font-size: 10.5px; font-weight: 800; }
+  .lms-main.cahier-main { margin-left: 0; padding-bottom: 92px; }
+}
+@media (max-width: 760px) {
+  /* La barre générique de responsive.css (cibles 48 px, icônes seules) gouverne le téléphone :
+     le cahier la surcharge en plus spécifique et en !important — six onglets avec libellés,
+     cibles d'au moins 56 px comme dans la maquette. */
+  .lms-side.cahier-side { height: calc(76px + env(safe-area-inset-bottom, 0px)) !important; padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px)) !important; }
+  .lms-side.cahier-side nav { gap: 2px !important; max-width: none; }
+  .lms-side.cahier-side nav a { min-height: 56px !important; padding: 5px 2px !important; max-width: none !important; min-width: 44px; }
+  .lms-side.cahier-side nav a .nav-kid-icon { width: 26px; height: 26px; }
+  .lms-side.cahier-side nav a .nav-text { display: block !important; font-size: 10px !important; line-height: 1.15; }
+  .lms-main.cahier-main { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)) !important; }
+  .cahier-libre { grid-template-columns: 1fr; }
+  .cahier-head h2 { font-size: 25px; }
+  /* Téléphone : colonnes plus étroites, le prénom prend la place qui reste (jamais de défilement horizontal). */
+  .cahier-board-table th:nth-child(1), .cahier-board-table td:nth-child(1) { width: 52px; }
+  .cahier-board-table th:nth-child(3), .cahier-board-table td:nth-child(3) { width: 62px; }
+  .cahier-board-table th:nth-child(4), .cahier-board-table td:nth-child(4) { width: 62px; }
+  .cahier-board-table tbody td, .cahier-board-table tbody th { padding: 6px 7px; font-size: 15px; }
+  .cahier-board-table thead th { padding: 0 7px; font-size: 11px; letter-spacing: 0.3px; }
+}

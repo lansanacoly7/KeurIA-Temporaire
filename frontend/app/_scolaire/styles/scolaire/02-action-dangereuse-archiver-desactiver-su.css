@@ -1,0 +1,452 @@
+/* Action dangereuse (archiver, désactiver, supprimer) : rouge foncé plein, texte blanc 6,6:1. */
+.ec-btn--danger {
+  border-color: #b42318;
+  background: #b42318;
+  color: #fff;
+}
+
+.ec-btn--danger:hover:not(:disabled) {
+  border-color: #8f1c13;
+  background: #8f1c13;
+}
+
+.ec-btn--ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+.ec-btn--whatsapp {
+  border-color: #25D366;
+  background: #25D366;
+  color: #fff !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.ec-btn--whatsapp:hover:not(:disabled) {
+  border-color: #1ebe5d;
+  background: #1ebe5d;
+  color: #fff !important;
+}
+
+.ec-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  background: var(--ec-surface);
+  color: var(--ec-text);
+  cursor: pointer;
+}
+
+/* ─── Cartes et grilles ─────────────────────────────────────────────────── */
+
+.ec-card {
+  padding: 20px;
+  border: 1px solid var(--ec-line);
+  border-radius: var(--ec-radius);
+  background: var(--ec-surface);
+  box-shadow: var(--ec-shadow);
+}
+
+.ec-card h2 {
+  margin: 0 0 14px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.ec-grid-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ec-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
+  .ec-grid-2 {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+/*
+ * Carte de chiffre clé : icône à gauche, puis libellé / nombre / précision.
+ * Dans une grille .ec-grid-stats, chaque carte occupe 3 lignes PARTAGÉES
+ * (subgrid) : la ligne des libellés prend la hauteur du plus long, donc les
+ * nombres restent alignés même si un libellé passe sur deux lignes.
+ */
+.ec-stat {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  align-content: start;
+  column-gap: 14px;
+  row-gap: 2px;
+  border-radius: 18px;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease;
+}
+
+.ec-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -4px rgba(23, 62, 60, 0.08), 0 4px 10px -2px rgba(23, 62, 60, 0.04);
+}
+
+.ec-grid-stats > .ec-stat {
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+}
+
+.ec-stat-icon {
+  grid-row: 1 / span 3;
+  align-self: start;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ec-stat:hover .ec-stat-icon {
+  transform: scale(1.06);
+}
+
+/* Teintes douces coordonnées : menthe, ciel azur, lavande, ambre doré. */
+.ec-grid-stats > .ec-stat:nth-child(4n + 1) .ec-stat-icon {
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+}
+
+.ec-grid-stats > .ec-stat:nth-child(4n + 2) .ec-stat-icon {
+  background: var(--ec-tint-sky);
+  color: var(--ec-tint-sky-ink);
+}
+
+.ec-grid-stats > .ec-stat:nth-child(4n + 3) .ec-stat-icon {
+  background: var(--ec-tint-lavender);
+  color: var(--ec-tint-lavender-ink);
+}
+
+.ec-grid-stats > .ec-stat:nth-child(4n + 4) .ec-stat-icon {
+  background: #fff4dc;
+  color: #b45309;
+}
+
+.ec-grid-stats > .ec-stat[data-tone="warn"] .ec-stat-icon,
+.ec-stat[data-tone="warn"] .ec-stat-icon {
+  background: var(--ec-warn-bg);
+  color: var(--ec-warn);
+}
+
+/* Pastille vivante pulsante pour l'activité en direct */
+.ec-live-dot {
+  position: relative;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+.ec-live-dot::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  animation: ec-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes ec-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.ec-stat small {
+  display: block;
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ec-stat b {
+  display: block;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--ec-text);
+  margin: 2px 0;
+}
+
+.ec-stat span {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+/* ─── Badges ────────────────────────────────────────────────────────────── */
+
+.ec-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--ec-bg);
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ec-badge[data-tone="ok"] { background: var(--ec-brand-soft); color: var(--ec-brand); }
+.ec-badge[data-tone="warn"] { background: var(--ec-warn-bg); color: var(--ec-warn); }
+.ec-badge[data-tone="danger"] { background: var(--ec-danger-bg); color: var(--ec-danger); }
+.ec-badge[data-tone="info"] { background: var(--ec-info-bg); color: var(--ec-info); }
+
+/* ─── Parcours d'apprentissage IA & Code ───────────────────────────────────── */
+.ec-tracks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ec-track-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #fafcfb;
+  border: 1px solid var(--ec-line);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ec-track-item:hover {
+  transform: translateY(-2px);
+  background: var(--ec-surface);
+  box-shadow: 0 8px 20px -4px rgba(23, 62, 60, 0.06);
+  border-color: #cbd5e1;
+}
+
+.ec-track-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.ec-track-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ec-track-badge {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.ec-track-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ec-text);
+}
+
+.ec-track-sub {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ec-muted);
+}
+
+.ec-track-bar-bg {
+  width: 100%;
+  height: 9px;
+  border-radius: 999px;
+  background: #eef2f6;
+  overflow: hidden;
+}
+
+.ec-track-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ec-track-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--ec-muted);
+}
+
+.ec-track-foot b {
+  color: var(--ec-text);
+  font-weight: 800;
+}
+
+/* ─── Réalisations récentes des apprenants ────────────────────────────────── */
+.ec-achieve-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ec-achieve-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 12px;
+  background: #fafcfb;
+  border: 1px solid var(--ec-line);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.ec-achieve-item:hover {
+  transform: translateX(3px);
+  background: var(--ec-surface);
+  border-color: #cbd5e1;
+}
+
+.ec-achieve-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ec-achieve-avatar {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  background: #fff4dc;
+  color: #b45309;
+}
+
+.ec-achieve-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.ec-achieve-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ec-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ec-achieve-sub {
+  font-size: 12px;
+  color: var(--ec-muted);
+}
+
+.ec-xp-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ─── Listes ────────────────────────────────────────────────────────────── */
+
+.ec-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ec-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid var(--ec-line);
+}
+
+.ec-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.ec-list-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.ec-list-main b {
+  display: block;
+  font-size: 14px;
+}
+
+.ec-list-main span {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+.ec-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--ec-warn-bg);
+  color: var(--ec-warn);
+}
+
+.ec-alert + .ec-alert {
+  margin-top: 10px;
+}
+
+.ec-alert a {
+  color: inherit;
+  font-weight: 800;
+}
+

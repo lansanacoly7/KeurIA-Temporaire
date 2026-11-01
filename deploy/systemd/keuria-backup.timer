@@ -1,0 +1,11 @@
+[Unit]
+Description=kEur IA - sauvegarde quotidienne
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+RandomizedDelaySec=15m
+Unit=keuria-backup.service
+
+[Install]
+WantedBy=timers.target

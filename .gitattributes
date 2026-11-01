@@ -1,0 +1,19 @@
+# Les scripts shell sont exécutés dans des conteneurs Linux : une fin de ligne Windows (CRLF) les casserait.
+*.sh text eol=lf
+Dockerfile text eol=lf
+docker-compose.yml text eol=lf
+*.conf.py text eol=lf
+backend/schema.yml text eol=lf
+*.yml text eol=lf
+
+
+# Archives et images : jamais converties.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff2 binary
+*.xlsx binary
+*.pdf binary

@@ -1,0 +1,37 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e01.mp3;1;1;texte (story);Moussa crie : « Tout ce qui s’allume est une IA ! » Fatou n’est pas d’accord.;Moussa crie : « Tout ce qui s’allume est une I A ! » Fatou n’est pas d’accord.;77
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e02.mp3;1;2;texte (story);Palou propose une enquête. Les enfants vont chercher des indices.;Palou propose une enquête. Les enfants vont chercher des indices.;65
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e03.mp3;1;3;texte (discover);Une IA reconnaît, devine ou propose quelque chose. Un objet qui s’allume, ça ne suffit pas.;Une I A reconnaît, devine ou propose quelque chose. Un objet qui s’allume, ça ne suffit pas.;91
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu es un vrai détective.;Bravo ! Tu es un vrai détective.;32
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e07-retiens.mp3;1;7;« Je retiens »;Un objet qui s’allume n’est pas forcément une IA. Cherche s’il reconnaît, devine ou propose.;Un objet qui s’allume n’est pas forcément une I A. Cherche s’il reconnaît, devine ou propose.;92
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Tous les objets sont bien rangés.;Bravo ! Tous les objets sont bien rangés.;41
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-q.mp3;2;4;consigne du jeu;Glisse un objet dans sa boîte.;Glisse un objet dans sa boîte.;30
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Tu sais reconnaître une IA.;Bravo ! Tu sais reconnaître une I A.;35
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-q.mp3;2;4;consigne du jeu;Encore un essai ! Glisse un objet dans sa boîte.;Encore un essai ! Glisse un objet dans sa boîte.;48
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04.mp3;2;4;texte (play);Range chaque objet : IA ou pas IA ?;Range chaque objet : I A ou pas I A ?;35
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Reconnaître une voix ou un visage est un indice d’IA.;Oui ! Reconnaître une voix ou un visage est un indice d’I A.;59
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e05-m1-q.mp3;2;5;consigne du jeu;Quel indice montre qu’un objet utilise une IA ?;Quel indice montre qu’un objet utilise une I A ?;47
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e05.mp3;2;5;texte (why);Pourquoi ces objets sont-ils des IA ?;Pourquoi ces objets sont-ils des I A ?;37
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Une torche s’allume, mais elle ne reconnaît ni ne devine rien.;Oui ! Une torche s’allume, mais elle ne reconnaît ni ne devine rien.;68
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m1-q.mp3;2;6;consigne du jeu;Lequel de ces objets n’est pas une IA ?;Lequel de ces objets n’est pas une I A ?;39
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Exact ! Une IA peut deviner ce qui va arriver.;Exact ! Une I A peut deviner ce qui va arriver.;46
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m2-q.mp3;2;6;consigne du jeu;L’appli météo dit : « Il va pleuvoir demain. » Que fait-elle ?;L’appli météo dit : « Il va pleuvoir demain. » Que fait-elle ?;62
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Bravo ! S’allumer ne suffit pas : une IA reconnaît, devine ou propose.;Bravo ! S’allumer ne suffit pas : une I A reconnaît, devine ou propose.;70
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m3-q.mp3;2;6;consigne du jeu;Moussa dit : « Tout ce qui s’allume est une IA ! » A-t-il raison ?;Moussa dit : « Tout ce qui s’allume est une I A ! » A-t-il raison ?;66
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-i1.mp3;3;4;explication (objet à ranger);Elle s’allume avec un bouton, c’est tout.;Elle s’allume avec un bouton, c’est tout.;41
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-i2.mp3;3;4;explication (objet à ranger);Il reconnaît un visage : c’est un travail d’IA.;Il reconnaît un visage : c’est un travail d’I A.;47
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-i3.mp3;3;4;explication (objet à ranger);Un vélo avance avec tes jambes, sans rien deviner.;Un vélo avance avec tes jambes, sans rien deviner.;50
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m1-i4.mp3;3;4;explication (objet à ranger);Elle joue les ondes qu’elle reçoit, elle ne comprend rien.;Elle joue les ondes qu’elle reçoit, elle ne comprend rien.;58
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-i1.mp3;3;4;explication (objet à ranger);Elle comprend une phrase et la transforme : c’est une IA.;Elle comprend une phrase et la transforme : c’est une I A.;57
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-i2.mp3;3;4;explication (objet à ranger);Elle pèse avec un ressort : pas d’IA dedans.;Elle pèse avec un ressort : pas d’I A dedans.;44
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-i3.mp3;3;4;explication (objet à ranger);Un ballon roule, il ne comprend rien.;Un ballon roule, il ne comprend rien.;37
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e04-m2-i4.mp3;3;4;explication (objet à ranger);Il comprend ta voix et te répond : c’est une IA.;Il comprend ta voix et te répond : c’est une I A.;48
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e05-m1-o2.mp3;3;5;explication (mauvaise réponse);Un écran ne suffit pas : une télévision n’est pas forcément une IA.;Un écran ne suffit pas : une télévision n’est pas forcément une I A.;67
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e05-m1-o3.mp3;3;5;explication (mauvaise réponse);Une lampe aussi ! L’électricité ne veut pas dire IA.;Une lampe aussi ! L’électricité ne veut pas dire I A.;52
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Un assistant vocal comprend ta voix : c’est une IA.;Un assistant vocal comprend ta voix : c’est une I A.;51
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Une appli qui traduit comprend les mots : c’est une IA.;Une appli qui traduit comprend les mots : c’est une I A.;55
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Pour la météo, elle ne regarde pas ton visage.;Pour la météo, elle ne regarde pas ton visage.;46
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);L’appli météo ne chante pas.;L’appli météo ne chante pas.;28
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Une télé simple affiche des images, mais elle ne devine rien.;Une télé simple affiche des images, mais elle ne devine rien.;61
+frontend/public/audio/palou/lecons/m01/p1-3/p1-3_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Beaucoup d’objets ne reconnaissent, ne devinent et ne proposent rien.;Beaucoup d’objets ne reconnaissent, ne devinent et ne proposent rien.;69

@@ -1,0 +1,11 @@
+/* scolaire.css : sommaire. Le CSS est découpé en 9 fichiers (dossier ./styles/scolaire/), importés dans l'ordre d'origine : la cascade est identique.
+   Pour modifier une règle, ouvrir le morceau concerné ; pour en ajouter, respecter cet ordre. */
+@import "./styles/scolaire/01-espace-gestion-de-l-ecole-styles-propres.css";
+@import "./styles/scolaire/02-action-dangereuse-archiver-desactiver-su.css";
+@import "./styles/scolaire/03-a-traiter-du-tableau-de-bord-points-impo.css";
+@import "./styles/scolaire/04-cartes-de-classe.css";
+@import "./styles/scolaire/05-precedent-suivant-en-vert-quand-on-peut.css";
+@import "./styles/scolaire/06-parametres.css";
+@import "./styles/scolaire/07-graphiques-regles-dataviz-barres-24-px-b.css";
+@import "./styles/scolaire/08-bibliotheque-de-devoirs-classe-modules-l.css";
+@import "./styles/scolaire/09-regles-de-classe-ecrans-propres.css";

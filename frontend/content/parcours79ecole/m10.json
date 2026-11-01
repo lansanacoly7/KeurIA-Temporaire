@@ -1,0 +1,582 @@
+{
+ "module": {
+  "id": "ep10",
+  "chapter": 10,
+  "title": "L’IA pour mon école et mon quartier",
+  "place": "L’école, pour la fête de fin d’année",
+  "emoji": "🎉",
+  "intro": "La fête de fin d’année approche. La classe va inventer une IA pour aider l’école… et la présenter aux parents !",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep10-1",
+   "title": "Un problème à l’école",
+   "scene": { "id": "ecole-cour", "label": "La cour de l’école" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Avant d’inventer une IA, il faut trouver un vrai problème à résoudre. Lequel choisir ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "🎉",
+     "image": "ep10-l1-annonce.webp",
+     "alt": "Dans la cour, Madame Diop annonce la fête de fin d’année ; les élèves applaudissent.",
+     "text": "Madame Diop annonce : « Pour la fête de fin d’année, chaque groupe présentera aux parents une idée d’IA pour aider notre école ou notre quartier ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "🚀",
+     "image": "ep10-l1-moussa.webp",
+     "alt": "Moussa, les bras grands ouverts, imagine une fusée géante.",
+     "text": "Moussa s’enthousiasme : « Une IA qui construit une fusée ! » Seydou : « Une IA qui fait pousser des mangues géantes ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "khady", "emoji": "📒",
+     "image": "ep10-l1-khady.webp",
+     "alt": "Khady montre son carnet avec une liste de problèmes de l’école.",
+     "text": "Khady ouvre son carnet : « Et si on partait de vrais problèmes ? La cantine où on fait la queue longtemps, les nouveaux élèves qui ne parlent pas français, les plantes du jardin qui sèchent… »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep10-l1-palou.webp",
+     "alt": "Palou félicite Khady ; derrière, une affiche avec des points d’interrogation.",
+     "text": "Palou approuve : « Une bonne invention commence par un vrai problème, qui gêne de vraies personnes. Allons les interroger ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🎯",
+     "word": { "terme": "Problème", "sens": "Une difficulté réelle que des personnes rencontrent, et qu’on aimerait résoudre." },
+     "text": "Avant d’inventer, on cherche un vrai problème, en écoutant les personnes qui le vivent."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide la classe à choisir un bon problème !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque idée : vrai problème de l’école, ou rêve amusant ?",
+       "hint": "Est-ce que ça gêne vraiment des personnes à l’école ?",
+       "success": "Bravo ! Tu sais repérer un vrai problème.",
+       "bins": [
+        { "id": "vrai", "label": "Vrai problème", "pict": "coche-verte", "emoji": "🎯" },
+        { "id": "reve", "label": "Rêve amusant", "pict": "baguette-magique", "emoji": "✨" }
+       ],
+       "items": [
+        { "id": "a", "label": "La longue queue à la cantine", "pict": "file-attente", "emoji": "🍽️", "bin": "vrai", "explain": "Tout le monde attend longtemps : c’est un vrai problème." },
+        { "id": "b", "label": "Construire une fusée pour aller sur la Lune", "pict": "fusee", "emoji": "🚀", "bin": "reve", "explain": "C’est un beau rêve, mais pas un problème de l’école." },
+        { "id": "c", "label": "Les plantes du jardin qui sèchent pendant les vacances", "pict": "plante-seche", "emoji": "🥀", "bin": "vrai", "explain": "Les plantes meurent : c’est un vrai problème." },
+        { "id": "d", "label": "Des mangues géantes de 100 kilos", "pict": "fruit-geant", "emoji": "🥭", "bin": "reve", "explain": "Amusant, mais ce n’est pas un problème de l’école." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Comment savoir si la queue de la cantine gêne vraiment les élèves ?",
+       "hint": "Souviens-toi du module 2.",
+       "success": "Exact ! On fait un petit sondage auprès des élèves.",
+       "options": [
+        { "label": "On fait un sondage auprès des élèves", "pict": "carnet-batons", "correct": true },
+        { "label": "On devine", "pict": "de-hasard", "explain": "Deviner ne suffit pas : on demande aux personnes concernées." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour le problème des plantes qui sèchent, a-t-on forcément besoin d’une IA ?",
+       "hint": "Une solution simple existe peut-être…",
+       "success": "Exact ! Pas forcément : un tour d’arrosage entre familles peut suffire. L’IA n’est pas toujours la meilleure solution.",
+       "options": [
+        { "label": "Pas forcément, une solution simple peut suffire", "pict": "arrosoir", "correct": true },
+        { "label": "Oui, il faut toujours une IA", "pict": "robot-sait-tout", "explain": "L’IA n’est pas toujours nécessaire : parfois une idée simple marche mieux." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🎤",
+     "titre": "Les reporters de l’école",
+     "duree": "20 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe va interroger des personnes de l’école (élèves d’autres classes, le gardien, la cuisinière, le directeur) : « Qu’est-ce qui vous gêne à l’école ? » Le groupe note les réponses avec des bâtons, puis choisit le problème qui revient le plus souvent.",
+     "materiel": ["Une feuille d’enquête par groupe", "L’accord des adultes interrogés"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "lamine", "emoji": "💬",
+     "question": "Lamine demande : « Est-ce qu’on doit toujours utiliser une IA pour résoudre un problème ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quand une solution simple est-elle meilleure ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une bonne invention commence par…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Un vrai problème.",
+       "options": [
+        { "label": "Un vrai problème", "pict": "coche-verte", "correct": true },
+        { "label": "Une machine très chère", "pict": "argent", "explain": "Le prix ne compte pas : on part d’un vrai problème." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour trouver un vrai problème, on…",
+       "hint": "Les reporters de l’école…",
+       "success": "Exact ! On écoute les personnes concernées.",
+       "options": [
+        { "label": "Écoute les personnes concernées", "pict": "oreille", "correct": true },
+        { "label": "Reste seul dans son coin", "pict": "un-enfant", "explain": "Il faut écouter les autres pour trouver un vrai problème." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais trouver un vrai problème.",
+     "learned": "Une bonne invention commence par un vrai problème, trouvé en écoutant les personnes concernées. Et parfois, une solution simple vaut mieux qu’une IA."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Identifier un problème réel par l’enquête (démarche de conception).",
+     "Distinguer problème réel et idée fantaisiste.",
+     "Comprendre que l’IA n’est pas toujours la bonne solution."
+    ],
+    "deroule": [
+     "Présentation du projet de fin d’année (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : les reporters de l’école (20 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Une feuille d’enquête par groupe ; prévenir les adultes de l’école."],
+    "reponses": [
+     "Problèmes souvent trouvés : la queue de la cantine, la propreté de la cour, les objets perdus, la chaleur dans les classes, l’accueil des nouveaux élèves, le jardin.",
+     "Débat : une IA coûte cher, consomme de l’énergie, demande des données. Si une règle, un planning ou un outil simple suffit, c’est souvent mieux."
+    ],
+    "attention": "Garder les feuilles d’enquête : chaque groupe s’en servira pendant tout le module."
+   }
+  },
+  {
+   "id": "ep10-2",
+   "title": "Une idée qui aide",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Le groupe d’Aïssatou a choisi un problème : les nouveaux élèves qui ne parlent pas français. Quelle IA pourrait aider ? Et de quelles données aurait-elle besoin ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "🗣️",
+     "image": "ep10-l2-aissatou.webp",
+     "alt": "Aïssatou raconte à son groupe son arrivée à l’école, quand elle ne comprenait pas tout.",
+     "text": "Aïssatou raconte : « Quand je suis arrivée, je parlais surtout pulaar. Je ne comprenais pas tout. Je me sentais seule. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "fatou", "emoji": "💡",
+     "image": "ep10-l2-idee.webp",
+     "alt": "Fatou dessine une tablette qui traduit entre plusieurs langues, avec des bulles.",
+     "text": "Fatou a une idée : « Une IA d’accueil qui traduit les mots de l’école en pulaar, en wolof, en sérère… pour aider les nouveaux ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "khady", "emoji": "📒",
+     "image": "ep10-l2-donnees.webp",
+     "alt": "Khady montre le dictionnaire parlé du module 6, accroché au mur.",
+     "text": "Khady montre le mur : « Et nos données, on les a déjà commencées ! Le dictionnaire parlé du module 6 ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep10-l2-palou.webp",
+     "alt": "Palou dessine au tableau une fiche avec quatre cases : problème, idée, données, risques.",
+     "text": "Palou dessine une fiche : « Pour chaque idée, quatre cases : le problème, ce que fait l’IA, ses données, et ses risques. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🗂️",
+     "word": { "terme": "Fiche projet", "sens": "Une feuille qui résume une idée : le problème, ce que fait la solution, les données nécessaires, les risques." },
+     "text": "Une bonne idée d’IA se décrit en quatre cases : le problème, ce que fait l’IA, ses données, et ses risques."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide le groupe d’Aïssatou à remplir sa fiche projet !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque phrase dans la bonne case de la fiche projet.",
+       "hint": "Problème, données ou risque ?",
+       "success": "Bravo ! La fiche est bien remplie.",
+       "bins": [
+        { "id": "probleme", "label": "Le problème", "pict": "coche-verte", "emoji": "🎯" },
+        { "id": "donnees", "label": "Les données", "pict": "carnet-batons", "emoji": "📒" },
+        { "id": "risques", "label": "Les risques", "pict": "ia-hesite", "emoji": "⚠️" }
+       ],
+       "items": [
+        { "id": "a", "label": "Les nouveaux élèves ne comprennent pas les mots de l’école", "pict": "un-enfant", "emoji": "😕", "bin": "probleme", "explain": "C’est la difficulté de départ : le problème." },
+        { "id": "b", "label": "Des mots enregistrés dans nos langues, avec leur texte", "pict": "micro-telephone", "emoji": "🎙️", "bin": "donnees", "explain": "Ce sont les exemples dont l’IA a besoin : les données." },
+        { "id": "c", "label": "L’IA peut se tromper de traduction", "pict": "erreur-croix", "emoji": "❌", "bin": "risques", "explain": "Une erreur de traduction est un risque : un humain vérifie." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "L’IA d’accueil se trompe de mot. Que prévoit le groupe ?",
+       "hint": "Comme toujours…",
+       "success": "Exact ! Un camarade parrain vérifie avec le nouvel élève.",
+       "options": [
+        { "label": "Un camarade parrain vérifie avec le nouvel élève", "pict": "adulte-confiance", "correct": true },
+        { "label": "Rien, l’IA ne se trompe jamais", "pict": "robot-sait-tout", "explain": "Toute IA peut se tromper : on prévoit un humain." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pour enregistrer la voix des élèves dans la base de l’IA, il faut…",
+       "hint": "Module 6…",
+       "success": "Bravo ! L’accord de chaque élève et de ses parents.",
+       "options": [
+        { "label": "L’accord de chacun et de ses parents", "pict": "main-levee", "correct": true },
+        { "label": "Les enregistrer en cachette", "pict": "cacher", "explain": "Jamais en cachette : on demande l’accord." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🗂️",
+     "titre": "Notre fiche projet",
+     "duree": "25 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reprend le problème choisi à la leçon 1 et remplit sa fiche projet en quatre cases : le problème (qui est gêné et comment), ce que fait l’IA (reconnaître, deviner, proposer ?), ses données (quels exemples, d’où, avec quel accord), ses risques (que se passe-t-il si elle se trompe ? qui vérifie ?). Si une solution simple sans IA est meilleure, le groupe a le droit de la choisir !",
+     "materiel": ["Une grande fiche à quatre cases par groupe"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "aissatou", "emoji": "💬",
+     "question": "Aïssatou demande : « Une IA d’accueil, c’est bien… mais est-ce qu’elle peut remplacer un vrai ami qui t’accueille ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Que peut faire un camarade, que l’IA ne peut pas faire ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Les quatre cases de la fiche projet sont : le problème, ce que fait l’IA, ses données et…",
+       "hint": "Ce qui peut mal se passer.",
+       "success": "Oui ! Ses risques.",
+       "options": [
+        { "label": "Ses risques", "pict": "ia-hesite", "correct": true },
+        { "label": "Sa couleur préférée", "pict": "tache-couleur", "explain": "Une IA n’a pas de couleur préférée ! On réfléchit à ses risques." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi réfléchir aux risques avant de créer une IA ?",
+       "hint": "Pense aux erreurs possibles.",
+       "success": "Exact ! Pour prévoir qui vérifie et éviter de faire du tort.",
+       "options": [
+        { "label": "Pour prévoir qui vérifie et éviter de faire du tort", "pict": "loupe-verifier", "correct": true },
+        { "label": "Pour faire peur aux parents", "pict": "gronder", "explain": "Pas pour faire peur : pour que l’IA soit sûre et utile." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ta fiche projet est prête.",
+     "learned": "Une idée d’IA se décrit en quatre cases : le problème, ce que fait l’IA, ses données et ses risques. On prévoit toujours un humain qui vérifie."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Concevoir une solution en s’appuyant sur une fiche structurée.",
+     "Identifier les données nécessaires et les conditions de leur collecte (accord).",
+     "Anticiper les risques et prévoir une supervision humaine."
+    ],
+    "deroule": [
+     "Rappel : le problème choisi par chaque groupe (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : notre fiche projet (25 min).",
+     "« On en parle » (5 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Une grande fiche à quatre cases par groupe."],
+    "reponses": [
+     "Exemple, problème de la cantine : l’IA prévoit combien d’élèves mangent chaque jour (données : le nombre d’élèves chaque jour, la météo, les jours de fête) ; risque : elle se trompe, on garde un peu de réserve.",
+     "Débat : un camarade sourit, accompagne, joue, console, présente aux autres. L’IA peut aider à traduire, mais l’amitié est humaine."
+    ],
+    "attention": "Accepter les projets « sans IA » bien justifiés : c’est une vraie compétence."
+   }
+  },
+  {
+   "id": "ep10-3",
+   "title": "Tester notre idée",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "Avant de présenter leur idée aux parents, les groupes la testent… sans ordinateur, avec une maquette !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "📦",
+     "image": "ep10-l3-maquette.webp",
+     "alt": "Moussa a fabriqué une tablette en carton avec des boutons dessinés.",
+     "text": "Moussa a fabriqué une tablette en carton, avec des boutons dessinés : « Voici notre IA d’accueil ! Enfin… sa maquette ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "seydou", "emoji": "🎭",
+     "image": "ep10-l3-test.webp",
+     "alt": "Derrière la tablette en carton, Seydou joue l’IA ; Aïssatou joue la nouvelle élève.",
+     "text": "Seydou se cache derrière et joue l’IA. Aïssatou joue une nouvelle élève : « Où sont les toilettes ? » en pulaar. Seydou cherche dans le dictionnaire parlé…"
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "lamine", "emoji": "📝",
+     "image": "ep10-l3-lamine.webp",
+     "alt": "Lamine note les problèmes sur une feuille, sa loupe à la main.",
+     "text": "Lamine note tout : « Le mot “toilettes” n’est pas dans le dictionnaire ! Et le bouton est trop petit pour les petits du CP. » Il faut améliorer !"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep10-l3-palou.webp",
+     "alt": "Palou applaudit le groupe qui corrige sa maquette.",
+     "text": "Palou applaudit : « Bravo ! Tester avec de vraies personnes, trouver ce qui ne va pas, améliorer, et recommencer : c’est comme ça qu’on crée de bonnes inventions. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "📦",
+     "word": { "terme": "Maquette", "sens": "Un modèle simple d’une invention (en carton, en dessin) pour la tester avant de la fabriquer vraiment." },
+     "text": "Avec une maquette, on teste une idée simplement, avec de vraies personnes, et on l’améliore avant de la fabriquer."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide les groupes à tester leur idée !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qui doit tester l’IA d’accueil ?",
+       "hint": "Pour qui est-elle faite ?",
+       "success": "Exact ! Les personnes pour qui elle est faite : des élèves qui jouent les nouveaux.",
+       "options": [
+        { "label": "Des élèves qui jouent les nouveaux élèves", "pict": "foule-enfants", "correct": true },
+        { "label": "Seulement le groupe qui l’a inventée", "pict": "un-enfant", "explain": "Le groupe connaît déjà tout ! Il faut des personnes nouvelles pour trouver les problèmes." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Le test montre que le mot « toilettes » manque. Que fait le groupe ?",
+       "hint": "On améliore les…",
+       "success": "Bravo ! Il ajoute le mot et ses enregistrements : il améliore les données.",
+       "options": [
+        { "label": "Il ajoute le mot et ses enregistrements", "pict": "micro-telephone", "correct": true },
+        { "label": "Il abandonne le projet", "pict": "poubelle", "explain": "Trouver un problème, c’est une réussite ! On améliore." }
+       ]
+      },
+      {
+       "type": "sort",
+       "prompt": "Range les étapes pour créer une invention, dans l’ordre.",
+       "hint": "On teste avant d’améliorer !",
+       "success": "Exact ! Fabriquer la maquette, tester, puis améliorer.",
+       "bins": [
+        { "id": "un", "label": "D’abord", "pict": "etape-1", "emoji": "1️⃣" },
+        { "id": "deux", "label": "Puis", "pict": "etape-2", "emoji": "2️⃣" },
+        { "id": "trois", "label": "Ensuite", "pict": "etape-3", "emoji": "3️⃣" }
+       ],
+       "items": [
+        { "id": "a", "label": "Fabriquer une maquette", "pict": "maquette-carton", "emoji": "📦", "bin": "un", "explain": "D’abord, un modèle simple." },
+        { "id": "b", "label": "Tester avec de vraies personnes", "pict": "foule-enfants", "emoji": "🧪", "bin": "deux", "explain": "Puis on teste." },
+        { "id": "c", "label": "Améliorer ce qui ne va pas", "pict": "loupe-verifier", "emoji": "🔧", "bin": "trois", "explain": "Ensuite on améliore, et on recommence !" }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🧪",
+     "titre": "Le grand test des maquettes",
+     "duree": "2 séances de 30 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe fabrique une maquette de son idée (en carton ou en dessin). Un élève « joue l’IA » derrière la maquette, en suivant la fiche projet. Les autres groupes viennent tester comme de vrais utilisateurs. Un élève note tout ce qui ne marche pas. Puis le groupe améliore sa maquette et recommence le test.",
+     "materiel": ["Cartons, ciseaux, colle, feutres", "Une feuille « ce qui ne marche pas » par groupe"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Quand les autres critiquent notre invention, c’est vexant… Pourquoi c’est quand même utile ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Comment dire une critique gentiment ? Comment la recevoir ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une maquette sert à…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Tester une idée simplement, avant de la fabriquer vraiment.",
+       "options": [
+        { "label": "Tester une idée simplement", "pict": "maquette-carton", "correct": true },
+        { "label": "Décorer la classe", "pict": "dessin-joli", "explain": "Elle peut être jolie, mais elle sert surtout à tester." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Un test trouve des problèmes. C’est…",
+       "hint": "Pense à ce qu’a dit Palou.",
+       "success": "Exact ! Une bonne nouvelle : on peut améliorer.",
+       "options": [
+        { "label": "Une bonne nouvelle : on peut améliorer", "pict": "coche-verte", "correct": true },
+        { "label": "Un échec, on arrête", "pict": "erreur-croix", "explain": "Trouver un problème permet d’améliorer : c’est une réussite." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Ton idée a été testée et améliorée.",
+     "learned": "Avec une maquette, je teste mon idée avec de vraies personnes. Je trouve ce qui ne va pas, j’améliore, et je recommence."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Prototyper une solution et la tester avec des utilisateurs (démarche itérative).",
+     "Recueillir et formuler des retours de façon bienveillante.",
+     "Améliorer une solution à partir des tests."
+    ],
+    "deroule": [
+     "Séance 1 (30 min) : histoire, mot nouveau, jeux ; fabrication des maquettes.",
+     "Séance 2 (30 min) : tests croisés, améliorations, « On en parle », défi."
+    ],
+    "materiel": ["Cartons, ciseaux, colle, feutres ; feuilles d’observation."],
+    "reponses": [
+     "L’élève qui « joue l’IA » doit se limiter à ce que permettent les données prévues (par exemple, seulement les mots du dictionnaire) : c’est ce qui fait apparaître les manques.",
+     "Débat : on critique l’invention, pas la personne ; on commence par ce qui marche ; on propose une amélioration."
+    ],
+    "attention": "Veiller à ce que les retours restent bienveillants : ce n’est pas une compétition."
+   }
+  },
+  {
+   "id": "ep10-4",
+   "title": "Le grand projet présenté aux parents",
+   "scene": { "id": "ecole-cour", "label": "La cour de l’école" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "aissatou"],
+   "problem": "C’est la fête de fin d’année ! Chaque groupe présente son idée d’IA aux parents. Et Palou a une surprise…",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "🎉",
+     "image": "ep10-l4-fete.webp",
+     "alt": "La cour est décorée, les parents sont assis, les groupes ont installé leurs stands avec affiches et maquettes.",
+     "text": "C’est la fête ! La cour est décorée, les parents sont là. Chaque groupe a son stand, avec sa fiche projet et sa maquette."
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "🎤",
+     "image": "ep10-l4-presentation.webp",
+     "alt": "Khady présente l’affiche de son groupe à des parents attentifs.",
+     "text": "Khady présente : « Notre problème : la queue de la cantine. Notre IA prévoit combien d’élèves mangent chaque jour. Ses données : nos comptages. Son risque : se tromper, alors la cuisinière vérifie. »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "aissatou", "emoji": "💛",
+     "image": "ep10-l4-aissatou.webp",
+     "alt": "La tante d’Aïssatou, Aminata, est venue du Fouta et applaudit au stand de l’IA d’accueil.",
+     "text": "Au stand de l’IA d’accueil, une surprise : Aminata est venue du Fouta ! « On jaraama ! Votre dictionnaire parlé passera à la radio ! » Aïssatou rayonne."
+    },
+    {
+     "kind": "story", "pose": "Celebration", "speaker": "palou", "emoji": "🦁",
+     "image": "ep10-l4-palou.webp",
+     "alt": "Palou, sur une petite estrade, remet un diplôme à chaque élève sous les applaudissements.",
+     "text": "Palou monte sur l’estrade : « Cette année, vous avez appris à comprendre l’IA, à la vérifier et à l’utiliser pour aider les autres. Vous êtes de vrais petits créateurs d’IA ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🎓",
+     "word": { "terme": "Citoyen numérique", "sens": "Une personne qui utilise le numérique et l’IA de façon responsable : elle vérifie, protège, respecte et aide les autres." },
+     "text": "Un citoyen numérique comprend l’IA, la vérifie, protège ses données, respecte les autres et l’utilise pour aider."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare ta présentation aux parents !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour présenter votre idée, par quoi commencer ?",
+       "hint": "La première case de la fiche projet.",
+       "success": "Exact ! Par le problème : les parents comprennent tout de suite à quoi sert l’idée.",
+       "options": [
+        { "label": "Par le problème qu’on veut résoudre", "pict": "coche-verte", "correct": true },
+        { "label": "Par le prix de la machine", "pict": "argent", "explain": "On commence par le problème : c’est ce qui donne du sens à l’idée." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Touche ce qu’il faut dire aux parents sur votre IA.",
+       "hint": "Il y en a trois.",
+       "success": "Bravo ! Ce qu’elle fait, ses données, et qui vérifie quand elle se trompe.",
+       "options": [
+        { "label": "Ce qu’elle fait", "pict": "ia-ampoule", "emoji": "💡", "correct": true },
+        { "label": "Avec quelles données elle apprend", "pict": "carnet-batons", "emoji": "📒", "correct": true },
+        { "label": "Qui vérifie quand elle se trompe", "pict": "loupe-verifier", "emoji": "🔍", "correct": true },
+        { "label": "Qu’elle ne se trompe jamais", "pict": "robot-sait-tout", "emoji": "🤖", "explain": "Ce serait faux : toute IA peut se tromper." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🎪",
+     "titre": "Projet de classe : la fête des petits créateurs d’IA",
+     "duree": "Une demi-journée (fête de fin d’année)",
+     "groupes": "Par groupes de 4, chacun à son stand",
+     "text": "Chaque groupe installe son stand : l’affiche de la fiche projet, la maquette, et s’il le souhaite le dictionnaire parlé, le journal des petits détectives ou la charte IA. Les élèves présentent à tour de rôle aux parents et invitent les visiteurs à tester la maquette. À la fin, chaque élève reçoit son diplôme de petit créateur d’IA.",
+     "materiel": ["Les affiches et maquettes des groupes", "Les productions de l’année (charte, journal, dictionnaire parlé)", "Les diplômes à imprimer"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Qu’est-ce que vous apprendrez à vos parents sur l’IA, en rentrant à la maison ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quelle est la chose la plus importante que tu as apprise cette année ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le très grand défi de l’année ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Une IA apprend avec…",
+       "hint": "Depuis le module 1…",
+       "success": "Oui ! Des exemples, des données.",
+       "options": [
+        { "label": "Des exemples et des données", "pict": "photos-exemples", "correct": true },
+        { "label": "De la magie", "pict": "baguette-magique", "explain": "Pas de magie : des exemples, choisis par des humains." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA peut-elle se tromper ?",
+       "hint": "Pense à la papaye, aux carottes, au sac en plastique…",
+       "success": "Exact ! Oui. C’est pour ça qu’un humain vérifie toujours.",
+       "options": [
+        { "label": "Oui, un humain vérifie toujours", "pict": "loupe-verifier", "correct": true },
+        { "label": "Non, jamais", "pict": "robot-sait-tout", "explain": "Toute l’année, tu as vu des IA se tromper !" }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Un citoyen numérique…",
+       "hint": "Le mot nouveau.",
+       "success": "Bravo ! Il vérifie, protège, respecte et aide les autres.",
+       "options": [
+        { "label": "Vérifie, protège, respecte et aide", "pict": "coche-verte", "correct": true },
+        { "label": "Croit tout ce qu’il voit sur un écran", "pict": "telephone", "explain": "Un citoyen numérique vérifie avant de croire." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎓",
+     "text": "Bravo {prenom} ! Tu as terminé tout le parcours. Tu es un petit créateur d’IA et un vrai citoyen numérique !",
+     "learned": "Je comprends comment une IA apprend, je la vérifie, je protège mes données, je respecte les autres, et je peux imaginer des IA qui aident mon école et mon quartier."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Présenter oralement un projet à un public (parents).",
+     "Réinvestir l’ensemble du parcours.",
+     "Valoriser le travail de l’année et ouvrir la discussion avec les familles."
+    ],
+    "deroule": [
+     "Avant la fête : histoire, mot nouveau, jeux et répétition des présentations (45 min).",
+     "Pendant la fête : stands, présentations, tests des maquettes, remise des diplômes.",
+     "Après : « On en parle » et grand défi (15 min)."
+    ],
+    "materiel": ["Affiches, maquettes, productions de l’année, diplômes."],
+    "reponses": [
+     "Une présentation en quatre temps : le problème, ce que fait l’IA, ses données, ses risques et qui vérifie.",
+     "Débat : laisser chaque élève dire sa phrase la plus importante ; on peut l’écrire sur le diplôme."
+    ],
+    "attention": "Prévoir un rôle pour chaque élève dans la présentation, même les plus timides (tenir la maquette, montrer l’affiche)."
+   }
+  }
+ ]
+}

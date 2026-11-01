@@ -1,0 +1,309 @@
+/*
+ * Page « Mon aventure » du parcours 7-9 ans. Même univers « borne de jeu » que la carte (parcours79.css) :
+ * traits d'encre de 3-4 px, ombres pleines, gros boutons, Fredoka, texte 18 px minimum, cibles tactiles de 60 px minimum.
+ * Les couleurs viennent des variables de .p79 (charte kEur IA). readability.css impose 15 px à tous les <p>, <small>, <label> :
+ * cette page n'en utilise donc pas, tout est en <div>, <span>, <b>, <h1-3>.
+ */
+.p79.a79 { max-width: 1000px; margin: 0 auto; padding: 4px 4px 56px; display: flex; flex-direction: column; gap: 30px; }
+.a79 h1, .a79 h2, .a79 h3 { margin: 0; font-family: inherit; color: var(--ink); letter-spacing: -.01em; }
+.a79 .p79-btn { font-size: 27px !important; }
+
+/* ── Accueil ─────────────────────────────────────────────── */
+.a79-hero {
+  position: relative; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 10px 28px; align-items: end; padding: 26px 30px 26px; overflow: hidden;
+  border: 4px solid var(--ink); border-radius: 36px; box-shadow: 0 10px 0 rgba(21, 59, 59, .18);
+  background: radial-gradient(circle at 10% 15%, rgba(255, 255, 255, .8), transparent 42%), linear-gradient(135deg, var(--lime-soft) 0%, var(--mint) 55%, var(--sky-soft) 100%);
+}
+.a79-hero-palou { align-self: end; }
+.a79-hero-palou img { width: 100%; display: block; filter: drop-shadow(0 12px 8px rgba(21, 59, 59, .22)); animation: p79-bob 3.2s ease-in-out infinite; }
+.a79-hello { min-width: 0; padding-bottom: 6px; }
+.a79-hello h1 { margin-top: 10px; font-size: clamp(32px, 5.4vw, 52px); line-height: 1.05; font-weight: 700; }
+.a79-sub { margin-top: 8px; font-size: 24px; font-weight: 500; color: var(--muted); max-width: 560px; }
+.a79-cta-row { margin-top: 20px; display: flex; align-items: center; gap: 18px 22px; flex-wrap: wrap; }
+.a79-next { display: flex; flex-direction: column; gap: 2px; min-width: 0; max-width: 420px; }
+.a79-next span { font-size: 19px; color: var(--muted); font-weight: 500; }
+.a79-next b { font-size: 26px; line-height: 1.15; color: var(--green-d); }
+.a79-secret {
+  position: absolute; right: 22px; top: 18px; width: 64px; height: 64px; border-radius: 50%; border: 3px solid var(--ink); background: #fff; cursor: pointer;
+  display: grid; place-items: center; box-shadow: 0 5px 0 var(--ink); animation: p79-bob 2.4s ease-in-out infinite; z-index: 2;
+}
+.a79-secret:hover { background: var(--lime); }
+.a79-secret:active { transform: translateY(5px); box-shadow: none; }
+
+/* Le chemin : un rond par chapitre, relié par un trait. */
+.a79-path-wrap { grid-column: 1 / -1; min-width: 0; display: flex; flex-direction: column; gap: 12px; margin-top: 10px; padding-top: 18px; border-top: 4px dashed rgba(21, 59, 59, .2); }
+.a79-path { display: flex; align-items: center; min-width: 0; max-width: 100%; padding: 10px 6px 14px; overflow-x: auto; text-decoration: none; color: inherit; border-radius: 22px; scrollbar-width: thin; }
+.a79-step { display: inline-flex; align-items: center; flex: none; }
+.a79-link { display: block; width: 26px; height: 8px; border-radius: 4px; background: #c4d9ce; }
+.a79-link.done { background: var(--green); }
+.a79-node {
+  position: relative; display: grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 50%; border: 4px solid var(--ink); background: #fff;
+  font-size: 24px; font-weight: 700; box-shadow: 0 5px 0 rgba(21, 59, 59, .3); transition: transform .15s;
+}
+.a79-path:hover .a79-node { transform: translateY(-2px); }
+.a79-node.done { background: var(--lime); color: var(--green-d); }
+.a79-node.now { background: var(--green); color: #fff; border-color: var(--green-d); }
+.a79-node.here { animation: a79-pulse 1.8s ease-out infinite; }
+.a79-node.lock { background: #eef3ef; color: #6d837b; border-color: #9bb0a7; box-shadow: 0 5px 0 #c9d6cf; }
+.a79-node.soon { background: repeating-linear-gradient(135deg, #fff 0 8px, #eef6f0 8px 16px); color: #6d837b; border-style: dashed; }
+.a79-bar-row { display: flex; align-items: center; gap: 16px; }
+.a79-bar { flex: 1; height: 24px; border-radius: 99px; background: #fff; border: 3px solid var(--ink); overflow: hidden; }
+.a79-bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--green), var(--green-l)); transition: width .8s; }
+.a79-bar.small { flex: none; height: 20px; margin-top: 8px; width: 100%; max-width: 320px; }
+.a79-bar-text { font-size: 21px; font-weight: 700; white-space: nowrap; }
+
+.a79-pause {
+  display: flex; align-items: center; gap: 18px; padding: 16px 24px; border: 4px solid var(--ink); border-radius: 28px; background: var(--amber-soft);
+  box-shadow: 0 7px 0 rgba(21, 59, 59, .15); color: var(--ink);
+}
+.a79-pause > div { display: flex; flex-direction: column; gap: 2px; }
+.a79-pause b { font-size: 24px; }
+.a79-pause span { font-size: 20px; font-weight: 500; }
+
+/* ── Mes trois chiffres ──────────────────────────────────── */
+.a79-stats { display: grid; grid-template-columns: 1fr 1.7fr 1fr; gap: 18px; }
+.a79-stat {
+  display: flex; align-items: center; gap: 16px; min-width: 0; padding: 18px 22px; background: #fff; border: 4px solid var(--ink); border-radius: 28px; box-shadow: 0 7px 0 rgba(21, 59, 59, .18);
+}
+.a79-stat > div { display: flex; flex-direction: column; min-width: 0; }
+.a79-stat > div > span { font-size: 20px; color: var(--muted); font-weight: 500; }
+.a79-big { font-size: 46px; line-height: 1; font-weight: 700; }
+.a79-stat-ico { flex: none; display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; border: 3px solid var(--ink); background: var(--amber-soft); box-shadow: 0 4px 0 rgba(21, 59, 59, .25); }
+.a79-stat-ico.flame { background: #ffe3cf; color: #ee6a12; }
+.a79-level-img { flex: none; width: 84px; height: 84px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; outline: 3px solid var(--ink); box-shadow: 0 5px 0 rgba(21, 59, 59, .3); background: var(--lime-soft); }
+.a79-level-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.a79-level-text { display: flex; flex-direction: column; min-width: 0; }
+.a79-level-text > span:first-child { font-size: 18px; color: var(--muted); font-weight: 600; }
+.a79-level-text > b { font-size: 28px; line-height: 1.1; color: var(--green-d); }
+.a79-level-more { margin-top: 6px; font-size: 18px; color: var(--muted); font-weight: 500; }
+
+/* ── Cartes ──────────────────────────────────────────────── */
+.a79-card {
+  background: #fff; border: 4px solid var(--ink); border-radius: 32px; padding: 22px 26px 26px; box-shadow: 0 8px 0 rgba(21, 59, 59, .18);
+}
+.a79-card-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.a79-card-title { flex: 1; min-width: 180px; }
+.a79-card-title h2 { margin-top: 6px; font-size: clamp(26px, 3.6vw, 34px); font-weight: 700; }
+.a79-section-head { display: flex; align-items: center; gap: 12px 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.a79-section-head h2 { flex: 1; min-width: 200px; font-size: clamp(26px, 3.6vw, 34px); font-weight: 700; }
+.a79-count { margin-left: auto; }
+
+/* Ma semaine */
+.a79-week { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(6px, 2vw, 16px); }
+.a79-day { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.a79-day-box {
+  display: grid; place-items: center; width: 100%; max-width: 84px; aspect-ratio: 1; border-radius: 24px; border: 3px solid var(--line); background: #f1f6f2; color: #9fb3aa;
+  font-size: 28px; font-weight: 700;
+}
+.a79-day.on .a79-day-box { background: var(--gold); border-color: var(--ink); color: #e5560a; box-shadow: 0 6px 0 var(--ink); }
+.a79-day.today .a79-day-box { outline: 4px solid var(--sky-d); outline-offset: 3px; }
+.a79-day-name { font-size: 18px; font-weight: 600; color: var(--muted); text-align: center; line-height: 1.1; }
+.a79-day.today .a79-day-name { color: var(--ink); font-weight: 700; }
+.a79-short { display: none; }
+
+/* Le défi de Palou */
+.a79-challenge { background: linear-gradient(180deg, #fff 0%, var(--amber-soft) 100%); }
+.a79-challenge-palou { flex: none; width: 92px; }
+.a79-challenge-palou img { width: 100%; display: block; filter: drop-shadow(0 6px 5px rgba(21, 59, 59, .2)); }
+.a79-xp { flex: none; }
+/* Le conseil de Palou : sans cette règle, l'image s'afficherait à sa taille d'origine (1254 px). */
+.a79-tip-palou { flex: none; width: 96px; }
+.a79-tip-palou img { width: 100%; display: block; filter: drop-shadow(0 6px 5px rgba(21, 59, 59, .2)); }
+.a79-question { font-size: clamp(24px, 3vw, 30px); font-weight: 600; line-height: 1.3; margin-bottom: 18px; }
+.a79-options { display: flex; flex-direction: column; gap: 14px; }
+.a79-opt {
+  display: flex; align-items: center; gap: 16px; width: 100%; min-height: 72px; padding: 10px 20px; text-align: left; cursor: pointer;
+  background: #fff; border: 3px solid var(--ink); border-radius: 24px; box-shadow: 0 6px 0 var(--ink); transition: transform .12s, box-shadow .12s, background .12s;
+}
+.a79-opt:hover:not(:disabled) { background: var(--lime-soft); transform: translateY(2px); box-shadow: 0 4px 0 var(--ink); }
+.a79-opt:active:not(:disabled) { transform: translateY(6px); box-shadow: 0 0 0 var(--ink); }
+.a79-letter { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--lime); border: 3px solid var(--ink); font-size: 24px; font-weight: 700; }
+.a79-opt-label { flex: 1; font-size: 23px; font-weight: 600; line-height: 1.25; }
+.a79-opt.ok { background: var(--mint); border-color: var(--green); box-shadow: 0 6px 0 var(--green); }
+.a79-opt.ok .a79-letter { background: var(--green); color: #fff; border-color: var(--green-d); }
+.a79-opt.no { background: #fff0ec; border-color: #c4553a; box-shadow: 0 6px 0 #e0a898; color: #7d2d19; opacity: .85; }
+.a79-opt.no .a79-letter { background: #f5b9a7; border-color: #c4553a; }
+.a79-opt:disabled:not(.ok):not(.no) { opacity: .6; cursor: not-allowed; }
+.a79-feedback { margin-top: 18px; display: flex; align-items: center; gap: 14px; padding: 14px 20px; border-radius: 22px; border: 3px solid; font-size: 22px; font-weight: 600; line-height: 1.3; }
+.a79-feedback.ok { background: var(--mint); border-color: var(--green); color: var(--green-d); }
+.a79-feedback.no { background: var(--amber-soft); border-color: var(--amber); color: #6b4a00; }
+.a79-feedback .p79-ico { flex: none; }
+
+/* Où veux-tu aller ? */
+.a79-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+@media (max-width: 760px) {
+  .a79-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+}
+.a79-tile {
+  --t1: var(--lime); display: flex; align-items: center; gap: 12px; min-height: 82px; padding: 12px 16px; text-decoration: none; color: var(--ink);
+  background: #fff; border: 3px solid var(--ink); border-radius: 20px; box-shadow: 0 5px 0 var(--ink); transition: transform .12s, box-shadow .12s;
+}
+.a79-tile.sky { --t1: var(--sky); } .a79-tile.mint { --t1: #8ee0a8; } .a79-tile.amber { --t1: var(--gold); }
+.a79-tile:hover { transform: translateY(2px); box-shadow: 0 3px 0 var(--ink); }
+.a79-tile:active { transform: translateY(5px); box-shadow: 0 0 0 var(--ink); }
+.a79-tile-ico { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--t1); border: 2.5px solid var(--ink); }
+.a79-tile-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.a79-tile-text b { font-size: 16.5px; line-height: 1.15; }
+.a79-tile-text span { font-size: 13px; color: var(--muted); font-weight: 500; line-height: 1.25; margin-top: 2px; }
+.a79-tile-go { flex: none; color: var(--green); }
+@media (max-width: 760px) {
+  .a79-tile { min-height: 72px; padding: 10px 12px; gap: 8px; border-radius: 16px; border-width: 2.5px; box-shadow: 0 3px 0 var(--ink); }
+  .a79-tile-ico { width: 38px; height: 38px; border-width: 2px; }
+  .a79-tile-text b { font-size: 13.5px; }
+  .a79-tile-text span { font-size: 11px; margin-top: 1px; }
+  .a79-tile-go { display: none; }
+}
+
+/* Mes 3 règles d'or */
+.a79-rules { display: flex; flex-direction: column; gap: 12px; }
+.a79-rule {
+  display: flex; align-items: center; gap: 14px; padding: 12px 18px; text-align: left; cursor: pointer; min-height: 80px;
+  background: #fff; border: 3px solid var(--ink); border-radius: 20px; box-shadow: 0 5px 0 rgba(21, 59, 59, .2); transition: transform .12s, box-shadow .12s, background .12s;
+}
+.a79-rule:hover { transform: translateY(2px); box-shadow: 0 3px 0 rgba(21, 59, 59, .2); }
+.a79-rule-ico { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--sky-soft); border: 2.5px solid var(--ink); }
+.a79-rule-text { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.a79-rule-text b { font-size: 16px; line-height: 1.2; }
+.a79-rule-text span { font-size: 13px; color: var(--muted); font-weight: 500; line-height: 1.3; margin-top: 2px; }
+.a79-check { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; border: 2.5px solid var(--ink); background: #fff; color: #fff; }
+.a79-rule.on { background: var(--mint); border-color: var(--green); box-shadow: 0 5px 0 #9fd3b8; }
+.a79-rule.on .a79-rule-ico { background: var(--lime); }
+.a79-rule.on .a79-check { background: var(--green); border-color: var(--green-d); }
+
+/* Le savais-tu ? */
+.a79-know { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 14px; }
+.a79-fact { background: var(--cream); border: 3px solid var(--ink); border-radius: 22px; padding: 16px 18px 18px; box-shadow: 0 5px 0 rgba(21, 59, 59, .15); }
+.a79-fact-ico { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--lime); border: 2.5px solid var(--ink); margin-bottom: 10px; }
+.a79-fact h3 { font-size: 16.5px; line-height: 1.2; font-weight: 700; }
+.a79-fact-text { margin-top: 6px; font-size: 13.5px; line-height: 1.45; color: var(--muted); font-weight: 500; }
+
+@keyframes a79-pulse { 0% { box-shadow: 0 5px 0 rgba(21, 59, 59, .3), 0 0 0 0 rgba(216, 240, 91, .9); } 70% { box-shadow: 0 5px 0 rgba(21, 59, 59, .3), 0 0 0 16px rgba(216, 240, 91, 0); } 100% { box-shadow: 0 5px 0 rgba(21, 59, 59, .3), 0 0 0 0 rgba(216, 240, 91, 0); } }
+
+/* ── Responsivité Tablette (601px à 1024px) ───────────────── */
+@media (max-width: 1024px) {
+  .p79.a79 { max-width: 860px; padding: 12px 16px 60px; gap: 26px; }
+
+  /* Hero Palou tablette : 2 colonnes bien équilibrées */
+  .a79-hero {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 16px 24px;
+    padding: 24px 26px;
+    border-radius: 32px;
+    align-items: end;
+  }
+  .a79-hero-palou { width: 195px; }
+  .a79-hello h1 { font-size: clamp(28px, 4vw, 42px); line-height: 1.08; }
+  .a79-sub { font-size: 21px; line-height: 1.35; }
+  .a79-next span { font-size: 17px; }
+  .a79-next b { font-size: 23px; }
+
+  /* Statistiques sur tablette */
+  .a79-stats { grid-template-columns: 1fr 1.6fr 1fr; gap: 14px; }
+  .a79-stat { padding: 14px 18px; border-radius: 22px; }
+  .a79-big { font-size: 40px; }
+  .a79-stat-ico { width: 58px; height: 58px; }
+
+  /* Tuiles d'activités "Où veux-tu aller ?" en 2 colonnes généreuses */
+  .a79-tiles {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+  .a79-tile {
+    min-height: 84px !important;
+    padding: 12px 16px !important;
+    border-radius: 18px !important;
+    gap: 12px !important;
+  }
+  .a79-tile-ico {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .a79-tile-text b {
+    font-size: 16px !important;
+  }
+  .a79-tile-text span {
+    font-size: 12.5px !important;
+  }
+
+  /* Semaine : 7 jours bien espacés */
+  .a79-week {
+    gap: clamp(8px, 1.8vw, 14px);
+  }
+  .a79-day-box {
+    max-width: 72px;
+    font-size: 24px;
+    border-radius: 20px;
+  }
+  .a79-day-name {
+    font-size: 16px;
+  }
+
+  /* Cartes et options de défi */
+  .a79-card {
+    padding: 22px 24px 24px;
+    border-radius: 28px;
+  }
+  .a79-card-title h2, .a79-section-head h2 {
+    font-size: clamp(24px, 3.2vw, 30px);
+  }
+  .a79-opt {
+    min-height: 72px;
+    padding: 12px 18px;
+    border-radius: 20px;
+    gap: 16px;
+  }
+  .a79-opt-label {
+    font-size: 21px;
+  }
+}
+
+/* ── Responsivité Mobile (<= 640px) ───────────────────────── */
+@media (max-width: 860px) and (max-width: 760px) {
+  .a79-stats { grid-template-columns: 1fr 1fr; }
+  .a79-stat.level { order: -1; grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .p79.a79 { gap: 24px; }
+  .a79-hero { grid-template-columns: minmax(0, 1fr); padding: 20px 18px 22px; text-align: center; border-radius: 30px; }
+  .a79-long { display: none; }
+  .a79-short { display: inline; }
+  .a79-day-box { border-radius: 16px; font-size: 22px; }
+  .a79-hero-palou { width: 150px; margin: 0 auto; }
+  .a79-sub { margin-left: auto; margin-right: auto; font-size: 22px; }
+  .a79-cta-row { justify-content: center; }
+  .a79-next { align-items: center; }
+  .a79-path { justify-content: flex-start; }
+  .a79-bar-row { flex-direction: column; align-items: stretch; gap: 8px; }
+  .a79-bar-text { text-align: center; }
+  .a79-card { padding: 18px 16px 20px; border-radius: 26px; }
+  .a79-opt-label { font-size: 21px; }
+  .a79-tile { min-height: 96px; }
+  .a79-tile-ico { width: 64px; height: 64px; }
+}
+@media (max-width: 520px) {
+  .a79-stat { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 16px 18px; }
+  .a79-stat.level { flex-direction: row; align-items: center; gap: 16px; }
+  .a79-stat-ico { width: 56px; height: 56px; }
+  .a79-big { font-size: 40px; }
+}
+
+/* Moins de mouvement si l'enfant ou sa tablette le demande. */
+@media (prefers-reduced-motion: reduce) {
+  .a79-hero-palou img, .a79-secret, .a79-node.here { animation: none !important; }
+  .a79-opt, .a79-tile, .a79-rule, .a79-bar i { transition: none !important; }
+}
+
+/* ── L'énigme du jour : un seul essai, puis le résultat et l'explication ── */
+.a79-riddle-sub { margin: 4px 0 0; color: var(--muted); font-size: 19px !important; line-height: 1.3; }
+.a79-opt.picked { background: var(--lime-soft); border-color: var(--green); box-shadow: 0 6px 0 var(--green); transform: translateY(0); }
+.a79-opt.picked .a79-letter { background: var(--green); color: #fff; border-color: var(--green-d); }
+.a79-riddle-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
+.a79-riddle-hint { color: var(--muted); font-size: 20px; font-weight: 600; }
+.a79-result { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 18px; animation: p79-pop .4s cubic-bezier(.34, 1.56, .64, 1); }
+.a79-result .a79-feedback { margin-top: 0; width: 100%; }
+.a79-xp-won { display: inline-block; margin-left: 12px; padding: 0 14px; border-radius: 99px; background: var(--ink); color: var(--lime); font-style: normal; font-weight: 700; }
+.a79-explain { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; width: 100%; padding: 12px 18px 14px; border-radius: 22px; background: #fff; border: 3px solid var(--line); }
+.a79-explain p { margin: 0; font-size: 22px !important; line-height: 1.35; }
+.a79-explain small { color: var(--muted); font-size: 18px !important; }
+.a79-riddle-back { margin: 0; color: var(--muted); font-size: 20px !important; font-weight: 600; }
+.a79-challenge.won { background: linear-gradient(180deg, #fff 0%, var(--mint) 100%); }

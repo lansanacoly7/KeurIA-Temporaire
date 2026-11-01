@@ -1,0 +1,413 @@
+/* ==========================================================================
+   FORMULAIRES LOCAUX D'AUTHENTIFICATION - kEur IA
+   ========================================================================== */
+
+.auth-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #eaf7f2;
+  border-radius: 14px;
+  padding: 4px;
+  margin: 18px 0;
+}
+
+.auth-tabs button {
+  border: 0;
+  background: transparent;
+  padding: 11px;
+  border-radius: 10px;
+  font-weight: 750;
+  color: #647a78;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.auth-tabs button.active {
+  background: #ffffff;
+  color: #0f755f;
+  box-shadow: 0 2px 10px rgba(15, 117, 95, 0.12);
+}
+
+.local-auth-form {
+  display: grid;
+  gap: 22px;
+}
+
+.local-auth-form label {
+  display: grid;
+  gap: 9px;
+  font-weight: 700;
+  color: #153b3b;
+}
+
+.local-auth-form input,
+.local-auth-form select {
+  width: 100%;
+  border: 1.5px solid var(--field-border, #7d958f);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font: inherit;
+  color: #153b3b;
+  background: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.local-auth-form input:focus,
+.local-auth-form select:focus {
+  outline: 3px solid #d8f05b;
+  border-color: #0f755f;
+}
+
+.local-auth-form small {
+  font-size: 0.8rem;
+  color: #647a78;
+}
+
+.local-auth-form .login-primary {
+  border: 0;
+  width: 100%;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.local-auth-form .login-primary:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.auth-error {
+  background: #fdecea;
+  border: 1px solid #f3c4bf;
+  color: #b42318;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.login-child-policy {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: #fdfaf3;
+  border: 1px solid #e1ebe7;
+  border-radius: 14px;
+}
+
+.login-child-policy p {
+  margin: 5px 0 0;
+  color: #647a78;
+  line-height: 1.5;
+}
+
+.auth-consent {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+  color: #556c68 !important;
+  cursor: pointer;
+}
+
+.auth-consent input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  margin-top: 2px !important;
+  accent-color: #0f755f;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.auth-consent a {
+  color: #0f755f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ══════════ RESPONSIVE MOBILE & ERGONOMIE TACTILE ══════════ */
+.auth-tabs button,
+.local-auth-form input,
+.local-auth-form select,
+.local-auth-form .login-primary {
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+@media (max-width: 420px) {
+  .auth-tabs button {
+    white-space: nowrap;
+    font-size: 0.9rem;
+    padding-inline: 8px;
+  }
+}
+
+/* Police 16px obligatoire sur mobile pour empêcher le zoom forcé d'iOS Safari */
+.local-auth-form input,
+.local-auth-form select {
+  font-size: 16px;
+}
+
+@media (max-width: 580px) {
+  .auth-tabs {
+    margin: 14px 0 18px;
+  }
+  .auth-tabs button {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+  .local-auth-form {
+    gap: 18px;
+  }
+  .local-auth-form label {
+    gap: 6px;
+    font-size: 0.92rem;
+  }
+  .local-auth-form small {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 380px) {
+  .auth-tabs {
+    margin: 10px 0 14px;
+  }
+  .auth-tabs button {
+    padding: 8px 6px;
+    font-size: 0.84rem;
+    min-height: 44px;
+    white-space: normal;
+  }
+  .local-auth-form {
+    gap: 15px;
+  }
+  .local-auth-form input,
+  .local-auth-form select {
+    padding: 10px 12px;
+    font-size: 16px;
+    min-height: 46px;
+  }
+  .local-auth-form .login-primary {
+    font-size: 0.98rem;
+    padding: 12px 14px;
+    min-height: 44px;
+  }
+  .login-child-policy {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ══════════ SÉLECTEURS DE RÔLE PARENTAL & GENRE ENFANT ══════════ */
+.auth-selection-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-selection-label {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #153b3b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.auth-role-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 520px) {
+  .auth-role-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.auth-gender-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.auth-pill-choice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-weight: 750;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  min-height: 46px;
+  outline: none;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+/* Quatre statuts sur une ligne dans une carte étroite : on serre l'espacement plutôt que de couper « Mère ». */
+.auth-role-grid .auth-pill-choice {
+  padding-inline: 8px;
+  gap: 6px;
+}
+
+.auth-pill-choice:hover:not(.selected) {
+  border-color: #0f766e;
+  background: #f8fafc;
+  color: #0f766e;
+  transform: translateY(-1px);
+}
+
+.auth-pill-choice.selected {
+  border-color: #0f766e;
+  background: #f0fdf4;
+  color: #0f766e;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.15);
+}
+
+.auth-pill-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  margin-left: 2px;
+}
+
+.auth-child-card {
+  background: #fafbf9;
+  border: 1.5px solid #e2ece5;
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 14px rgba(15, 117, 95, 0.04);
+}
+
+.auth-child-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.auth-child-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #eaf7f2;
+  color: #0f766e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-child-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #143c37;
+}
+
+.auth-child-desc {
+  margin: 3px 0 0;
+  font-size: 0.8rem;
+  color: #647a78;
+  line-height: 1.4;
+}
+
+.auth-child-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #d9e6de;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  color: #546e6a;
+  line-height: 1.35;
+}
+
+/* ══════════ CONSENTEMENT ET LIENS LÉGAUX ══════════ */
+.auth-consent {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+  font-size: 0.88rem;
+  font-weight: 500 !important;
+  color: #244843 !important;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+}
+
+.auth-consent input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  margin-top: 2px !important;
+  flex-shrink: 0;
+  accent-color: #0f755f;
+  cursor: pointer;
+}
+
+.auth-inline-link {
+  color: #0f755f !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.auth-inline-link:hover {
+  color: #0b5949 !important;
+}
+
+.auth-legal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+  padding: 8px 0;
+  font-size: 0.88rem;
+}
+
+.auth-legal-footer a {
+  color: #0f755f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: all 0.15s ease;
+}
+
+.auth-legal-footer a:hover {
+  color: #0b5949;
+  text-decoration-thickness: 2px;
+}
+
+.auth-legal-separator {
+  color: #9ab4ac;
+  font-weight: 300;
+  user-select: none;
+}
+

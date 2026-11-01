@@ -1,0 +1,201 @@
+/* Défi éclair du jour : carte « image d'abord » (parcours 7-9 : jamais que du texte). */
+.dcc {
+  --dcc-ink: #1e293b;
+  --dcc-gold: #eab308;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 26px 28px 28px;
+  border-radius: 32px;
+  border: 3px solid #fde047;
+  background: radial-gradient(circle at 12% 0%, #fffbe0 0%, #fff7ed 45%, #ffffff 100%);
+  box-shadow: 0 14px 36px rgba(234, 179, 8, 0.16);
+}
+.dcc::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.28), rgba(250, 204, 21, 0) 70%);
+  pointer-events: none;
+}
+.dcc > * { position: relative; z-index: 1; }
+
+.dcc-head { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.dcc-palou {
+  width: 92px;
+  height: 92px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: dccBob 3.4s ease-in-out infinite;
+}
+.dcc-palou img { width: 78px; height: 78px; object-fit: contain; }
+.dcc-titles { flex: 1; min-width: 180px; }
+.dcc-eyebrow { display: block; font-size: 12px; font-weight: 900; color: #b45309; text-transform: uppercase; letter-spacing: 0.08em; }
+.dcc-title { margin: 2px 0 0; font-size: 26px; font-weight: 900; color: var(--dcc-ink); line-height: 1.15; }
+.dcc-xp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fef08a;
+  color: #854d0e;
+  font-size: 15px;
+  font-weight: 900;
+}
+.dcc-xp .ok { color: #15803d; display: inline-flex; align-items: center; gap: 4px; margin-left: 6px; }
+
+.dcc-ask {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  border-radius: 24px;
+  background: #fff;
+  border: 2px solid #fde68a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+.dcc-ask-img { width: 124px; height: 124px; flex-shrink: 0; object-fit: contain; filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.1)); }
+.dcc-question { margin: 0; font-size: 26px; font-weight: 800; line-height: 1.35; color: var(--dcc-ink); overflow-wrap: anywhere; }
+
+.dcc-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.dcc-opt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 210px;
+  padding: 16px 14px 18px;
+  border-radius: 24px;
+  border: 3px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  font: inherit;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 0 #e2e8f0;
+}
+.dcc-opt:hover:not(:disabled) { transform: translateY(-3px); border-color: #fbbf24; box-shadow: 0 7px 0 #fde68a; }
+.dcc-opt:focus-visible { outline: 4px solid #f59e0b; outline-offset: 3px; }
+.dcc-opt:disabled { cursor: default; }
+.dcc-opt-img { width: 112px; height: 112px; object-fit: contain; flex-shrink: 0; }
+.dcc-opt-text { display: block; font-size: 19px; }
+.dcc-letter {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 900;
+}
+.dcc-opt.ok { background: #f0fdf4; border-color: #22c55e; box-shadow: 0 4px 0 #86efac; color: #15803d; }
+.dcc-opt.ok .dcc-letter { background: #22c55e; color: #fff; }
+.dcc-opt.no { background: #fef2f2; border-color: #ef4444; box-shadow: 0 4px 0 #fca5a5; color: #b91c1c; opacity: 0.85; }
+.dcc-opt.no .dcc-letter { background: #ef4444; color: #fff; }
+.dcc-opt.no .dcc-opt-img { filter: grayscale(0.6); }
+.dcc-opt.ok { animation: dccPop 0.35s ease-out; }
+
+.dcc-msg {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.4;
+  animation: dccPop 0.3s ease-out;
+}
+.dcc-msg.good { background: #dcfce7; border: 2px solid #86efac; color: #166534; }
+.dcc-msg.try { background: #fee2e2; border: 2px solid #fca5a5; color: #991b1b; }
+.dcc-msg.err { background: #fff; border: 2px solid #fca5a5; color: #b91c1c; }
+.dcc-msg svg { flex-shrink: 0; }
+
+@keyframes dccBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes dccPop { 0% { transform: scale(0.96); opacity: 0.6; } 100% { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .dcc-palou, .dcc-opt.ok, .dcc-msg { animation: none; }
+  .dcc-opt { transition: none; }
+}
+
+/* Téléphone (≤ 760px) : proportions calibrées aux standards UI/UX mobile */
+@media (max-width: 760px) {
+  .dcc { padding: 14px 12px 16px; border-radius: 20px; margin-bottom: 24px; border-width: 2px; }
+  .dcc-head { gap: 10px; margin-bottom: 12px; }
+  .dcc-palou { width: 48px; height: 48px; border-radius: 14px; }
+  .dcc-palou img { width: 38px; height: 38px; }
+  .dcc-eyebrow { font-size: 11px; letter-spacing: 0.04em; }
+  .dcc-title { font-size: 16px; line-height: 1.25; margin-top: 1px; }
+  .dcc-badge-new { padding: 4px 10px; font-size: 11px; }
+  .dcc-xp { padding: 4px 10px; font-size: 12px; }
+  .dcc-ask { flex-direction: row; align-items: center; text-align: left; gap: 10px; padding: 10px 12px; border-radius: 14px; margin-bottom: 12px; }
+  .dcc-ask-img { width: 46px; height: 46px; }
+  .dcc-question { font-size: 14.5px; line-height: 1.35; font-weight: 700; }
+  .dcc-options { grid-template-columns: 1fr; gap: 8px; }
+  .dcc-opt { flex-direction: row; min-height: 48px; padding: 8px 12px 8px 44px; text-align: left; gap: 10px; border-radius: 14px; border-width: 2px; box-shadow: 0 2px 0 #e2e8f0; }
+  .dcc-opt-img { width: 36px; height: 36px; }
+  .dcc-opt-text { font-size: 13.5px; line-height: 1.3; font-weight: 700; }
+  .dcc-letter { top: 50%; left: 10px; transform: translateY(-50%); width: 26px; height: 26px; font-size: 12px; }
+  .dcc-msg { padding: 10px 12px; font-size: 13px; border-radius: 14px; margin-top: 12px; }
+  .dcc-msg span { font-size: 13px; line-height: 1.35; }
+  .dcc-done { margin-top: 14px; }
+  .dcc-ok { min-height: 44px; font-size: 14px; border-radius: 12px; width: 100%; box-shadow: 0 3px 0 #075f4f; }
+  .dcc-back { font-size: 12.5px; }
+}
+
+/* Défi nouveau (pas encore répondu) : il se détache de la page à chaque nouveau jour. */
+.dcc-new {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 6px rgba(250, 204, 21, 0.3), 0 18px 44px rgba(234, 179, 8, 0.3);
+  animation: dccGlow 2.6s ease-in-out infinite;
+}
+.dcc-badge-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f97316, #f59e0b);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+  animation: dccWiggle 2.6s ease-in-out infinite;
+}
+@keyframes dccGlow {
+  0%, 100% { box-shadow: 0 0 0 6px rgba(250, 204, 21, 0.28), 0 18px 44px rgba(234, 179, 8, 0.26); }
+  50% { box-shadow: 0 0 0 11px rgba(250, 204, 21, 0.14), 0 18px 44px rgba(234, 179, 8, 0.38); }
+}
+@keyframes dccWiggle { 0%, 88%, 100% { transform: rotate(0); } 92% { transform: rotate(-5deg); } 96% { transform: rotate(5deg); } }
+@media (prefers-reduced-motion: reduce) { .dcc-new, .dcc-badge-new { animation: none; } }
+
+.dcc-msg span { font-size: 18px; line-height: 1.4; }
+
+/* Fin du défi : « J'ai compris » fait disparaître la carte jusqu'à demain. */
+.dcc-done { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 18px; }
+.dcc-ok { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; width: min(360px, 100%); border: 0; border-radius: 18px; background: #0d846e; color: #fff; font: inherit; font-size: 20px; font-weight: 900; cursor: pointer; box-shadow: 0 5px 0 #075f4f; }
+.dcc-ok:active { transform: translateY(2px); box-shadow: 0 3px 0 #075f4f; }
+.dcc-ok:focus-visible { outline: 4px solid #f59e0b; outline-offset: 3px; }
+.dcc-back { font-size: 16px; font-weight: 800; color: #854d0e; }

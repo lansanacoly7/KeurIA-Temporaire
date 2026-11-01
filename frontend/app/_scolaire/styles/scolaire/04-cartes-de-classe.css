@@ -1,0 +1,480 @@
+/* ─── Cartes de classe ──────────────────────────────────────────────────── */
+
+.ec-section-title {
+  margin: 28px 0 12px;
+  color: var(--ec-muted);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ec-section-title:first-of-type {
+  margin-top: 0;
+}
+
+.ec-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: 16px;
+}
+
+.ec-class-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--ec-line);
+  border-radius: var(--ec-radius);
+  background: var(--ec-surface);
+  box-shadow: var(--ec-shadow);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.ec-class-card:hover {
+  border-color: var(--ec-brand);
+  transform: translateY(-2px);
+}
+
+.ec-class-card[data-archived="true"] {
+  opacity: 0.65;
+}
+
+/*
+ * Couleur par parcours d'âge (7-9 menthe, 10-12 bleu ciel, 13-15 lavande) :
+ * bande en haut, fond légèrement teinté, badge et icône assortis.
+ * Textes colorés ≥ 4,5:1 sur leur fond.
+ */
+[data-track="7-9"] {
+  --track-soft: #e8f6f1;
+  --track-ink: #0b6e5c;
+  --track-strong: #1d9e75;
+}
+
+[data-track="10-12"] {
+  --track-soft: #e6f1fb;
+  --track-ink: #185fa5;
+  --track-strong: #378add;
+}
+
+[data-track="13-15"] {
+  --track-soft: #eeedfe;
+  --track-ink: #534ab7;
+  --track-strong: #7f77dd;
+}
+
+.ec-class-card[data-track] {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--track-soft) 0, var(--ec-surface) 96px);
+}
+
+.ec-class-card[data-track]::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: var(--track-strong);
+}
+
+.ec-class-card[data-track]:hover {
+  border-color: var(--track-strong);
+}
+
+.ec-class-card[data-track] .ec-class-card-head b {
+  color: var(--track-ink);
+}
+
+.ec-class-card[data-track] .ec-badge[data-tone="info"] {
+  background: #fff;
+  color: var(--track-ink);
+  box-shadow: inset 0 0 0 1px var(--track-strong);
+}
+
+.ec-class-card[data-track] .ec-class-card-foot svg {
+  color: var(--track-ink);
+}
+
+.ec-track-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: -8px 0 20px;
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+.ec-track-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ec-ink);
+  font-weight: 600;
+}
+
+.ec-track-legend span::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: var(--track-strong);
+}
+
+.ec-class-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ec-class-card-head b {
+  display: block;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.ec-class-card-head span {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+.ec-class-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--ec-line);
+  font-size: 14px;
+}
+
+.ec-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ec-muted);
+  font-size: 14px;
+}
+
+.ec-meta b {
+  color: var(--ec-text);
+}
+
+/* ─── Fiche détaillée ───────────────────────────────────────────────────── */
+
+.ec-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+  color: var(--ec-muted);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ec-back:hover {
+  color: var(--ec-brand);
+}
+
+.ec-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 900px) {
+  .ec-detail-grid {
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+.ec-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ec-person .ec-avatar {
+  width: 48px;
+  height: 48px;
+  font-size: 15px;
+}
+
+.ec-person b {
+  display: block;
+  font-size: 16px;
+}
+
+.ec-person span {
+  display: block;
+  color: var(--ec-muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.ec-mini-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.ec-mini-stats div {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--ec-bg);
+}
+
+.ec-mini-stats small {
+  display: block;
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ec-mini-stats b {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.ec-login {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  color: var(--ec-muted);
+}
+
+/* ─── Messages ──────────────────────────────────────────────────────────── */
+
+.ec-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+  font-weight: 700;
+}
+
+.ec-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--ec-bg);
+  border: 1px dashed var(--ec-line);
+  color: var(--ec-muted);
+  font-weight: 600;
+}
+
+.ec-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start; /* chaque champ garde sa propre hauteur : les libellés et les cases restent alignés d'une colonne à l'autre */
+}
+
+@media (min-width: 560px) {
+  .ec-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ─── Fiche de connexion ────────────────────────────────────────────────── */
+
+.ec-credential {
+  display: grid;
+  gap: 4px;
+  padding: 20px;
+  border: 2px dashed var(--ec-brand);
+  border-radius: 16px;
+  background: var(--ec-brand-soft);
+}
+
+.ec-credential small {
+  color: var(--ec-brand);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ec-credential b {
+  font-size: 20px;
+}
+
+.ec-credential span {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+.ec-credential dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 16px;
+  margin: 12px 0;
+  align-items: baseline;
+}
+
+.ec-credential dt {
+  color: var(--ec-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ec-credential dd {
+  margin: 0;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 16px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.ec-credential-parent {
+  padding-top: 10px;
+  border-top: 1px dashed var(--ec-brand);
+  font-size: 12px;
+}
+
+.ec-credential-parent p {
+  margin: 0 0 4px;
+}
+
+.ec-credential-parent strong {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+/* Code parent sur la fiche élève (école, enseignant). */
+.ec-link-code {
+  display: grid;
+  gap: 2px;
+  justify-items: start;
+  padding: 12px 16px;
+  border: 1.5px dashed var(--ec-brand);
+  border-radius: 12px;
+  background: var(--ec-brand-soft);
+}
+
+.ec-link-code span {
+  color: var(--ec-brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ec-link-code b {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+}
+
+.ec-link-code small {
+  color: var(--ec-muted);
+  font-size: 13px;
+}
+
+/* Écran de démonstration du parent (/parent-demo/relier). */
+.ec-demo-parent {
+  width: min(640px, 100%);
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+}
+
+.ec-demo-logo {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.ec-code-input {
+  max-width: 220px;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Impression : seule la zone .ec-print-area apparaît sur la feuille. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .ec-print-area,
+  .ec-print-area * {
+    visibility: visible !important;
+  }
+
+  .ec-print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+  }
+
+  .ec-app,
+  .ec-shell,
+  .ec-main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* ─── Recherche, pagination, fiche élève ────────────────────────────────── */
+
+.ec-search {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 380px;
+}
+
+.ec-search svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  color: var(--ec-muted);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.ec-search .ec-input {
+  padding-left: 38px;
+}
+
+.ec-toolbar .ec-select {
+  width: auto;
+  min-width: 170px;
+}
+
+.ec-count {
+  margin-left: auto;
+  color: var(--ec-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ec-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: var(--ec-muted);
+  font-size: 14px;
+}
+

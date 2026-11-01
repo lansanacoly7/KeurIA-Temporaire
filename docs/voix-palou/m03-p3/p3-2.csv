@@ -1,0 +1,38 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e01.mp3;1;1;texte (story);Mame Awa a posé trois paniers vides devant elle. Un panier pour chaque fruit.;Mamé Awa a posé trois paniers vides devant elle. Un panier pour chaque fruit.;77
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e02.mp3;1;2;texte (story);Moussa veut tout mélanger pour aller vite. Fatou lui demande de trier d’abord.;Moussa veut tout mélanger pour aller vite. Fatou lui demande de trier d’abord.;78
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e03.mp3;1;3;texte (discover);Une catégorie est un groupe d’objets qui se ressemblent. Trier, c’est ranger par catégorie.;Une catégorie est un groupe d’objets qui se ressemblent. Trier, c’est ranger par catégorie.;91
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Les trois paniers sont bien remplis.;Bravo ! Les trois paniers sont bien remplis.;44
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e08-retiens.mp3;1;8;« Je retiens »;Trier, c’est ranger les objets par catégorie. Une catégorie réunit des choses qui se ressemblent.;Trier, c’est ranger les objets par catégorie. Une catégorie réunit des choses qui se ressemblent.;97
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Avec la bonne règle, Palou trie tous les fruits d’un coup.;Bravo ! Avec la bonne règle, Palou trie tous les fruits d’un coup.;66
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m1-q.mp3;2;4;consigne du jeu;Mame Awa veut un panier par fruit. Quelle règle donnes-tu à la machine de Palou ?;Mamé Awa veut un panier par fruit. Quelle règle donnes-tu à la machine de Palou ?;81
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Chaque fruit est dans son panier.;Bravo ! Chaque fruit est dans son panier.;41
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-q.mp3;2;4;consigne du jeu;Glisse un fruit dans son panier.;Glisse un fruit dans son panier.;32
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04.mp3;2;4;texte (play);Aide Palou à remplir les trois paniers !;Aide Palou à remplir les trois paniers !;40
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Une catégorie réunit des choses qui se ressemblent.;Bravo ! Une catégorie réunit des choses qui se ressemblent.;59
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e05-m1-q.mp3;2;5;consigne du jeu;Touche les groupes qui forment une vraie catégorie.;Touche les groupes qui forment une vraie catégorie.;51
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e05.mp3;2;5;texte (why);Qu’est-ce qu’une bonne catégorie ?;Qu’est-ce qu’une bonne catégorie ?;34
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e06.mp3;2;6;texte (ai);Une IA trie aussi. Elle range les photos ou les messages par catégorie.;Une I A trie aussi. Elle range les photos ou les messages par catégorie.;71
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Une catégorie réunit des choses qui se ressemblent.;Oui ! Une catégorie réunit des choses qui se ressemblent.;57
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m1-q.mp3;2;7;consigne du jeu;Qu’est-ce qu’une catégorie ?;Qu’est-ce qu’une catégorie ?;28
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Ce sont tous des fruits jaunes.;Bravo ! Ce sont tous des fruits jaunes.;39
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m2-q.mp3;2;7;consigne du jeu;Quel groupe forme une vraie catégorie ?;Quel groupe forme une vraie catégorie ?;39
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Exact ! Trier, c’est ranger par catégorie.;Exact ! Trier, c’est ranger par catégorie.;42
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m3-q.mp3;2;7;consigne du jeu;Trier, ça sert à quoi ?;Trier, ça sert à quoi ?;23
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m1-o2.mp3;3;4;explication (mauvaise règle);Par couleur, les fruits se mélangent : Mame Awa ne s’y retrouve pas.;Par couleur, les fruits se mélangent : Mamé Awa ne s’y retrouve pas.;68
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m1-o3.mp3;3;4;explication (mauvaise règle);Au hasard, les fruits sont tous mélangés : impossible de s’y retrouver.;Au hasard, les fruits sont tous mélangés : impossible de s’y retrouver.;71
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i1.mp3;3;4;explication (objet à ranger);Elle a un gros noyau : c’est une mangue.;Elle a un gros noyau : c’est une mangue.;40
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i2.mp3;3;4;explication (objet à ranger);Elle est ronde et pleine de jus : c’est une orange.;Elle est ronde et pleine de jus : c’est une orange.;51
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i3.mp3;3;4;explication (objet à ranger);Elle est longue et jaune : c’est une banane.;Elle est longue et jaune : c’est une banane.;44
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i4.mp3;3;4;explication (objet à ranger);Verte ou rouge, c’est toujours une mangue.;Verte ou rouge, c’est toujours une mangue.;42
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i5.mp3;3;4;explication (objet à ranger);Même pressée, elle reste dans les oranges.;Même pressée, elle reste dans les oranges.;42
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e04-m2-i6.mp3;3;4;explication (objet à ranger);Elle est verte, mais elle est longue : c’est une banane.;Elle est verte, mais elle est longue : c’est une banane.;56
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e05-m1-o2.mp3;3;5;explication (mauvaise réponse);Une seule chose ne fait pas un groupe : il faut plusieurs objets.;Une seule chose ne fait pas un groupe : il faut plusieurs objets.;65
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e05-m1-o4.mp3;3;5;explication (mauvaise réponse);Ces deux objets ne se ressemblent pas : ce n’est pas une catégorie.;Ces deux objets ne se ressemblent pas : ce n’est pas une catégorie.;67
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Un seul objet ne fait pas un groupe.;Un seul objet ne fait pas un groupe.;36
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Une catégorie réunit des choses qui se ressemblent.;Une catégorie réunit des choses qui se ressemblent.;51
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Ils ne se ressemblent pas : ce n’est pas une catégorie.;Ils ne se ressemblent pas : ce n’est pas une catégorie.;55
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Un seul objet n’est pas un groupe.;Un seul objet n’est pas un groupe.;34
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Trier, c’est le contraire de mélanger.;Trier, c’est le contraire de mélanger.;38
+frontend/public/audio/palou/lecons/m03/p3-2/p3-2_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Trier, ce n’est pas jeter : c’est ranger.;Trier, ce n’est pas jeter : c’est ranger.;41

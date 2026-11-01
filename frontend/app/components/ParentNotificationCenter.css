@@ -1,0 +1,9 @@
+/* Cloche de notifications : l'effet de survol ne s'applique qu'aux appareils à souris.
+   Sur iPhone, un survol qui change l'aspect d'un bouton absorbe le premier toucher et le clic n'arrive qu'au second. */
+@media (hover: hover) and (pointer: fine) {
+  .pnc-bell:hover {
+    background: #f8fafc !important;
+    border-color: #cbd5e1 !important;
+    transform: translateY(-1px);
+  }
+}

@@ -1,0 +1,1748 @@
+[
+  {
+    "name": "accueil",
+    "url": "http://localhost:3000/",
+    "perf": 0,
+    "a11y": 96,
+    "bp": 100,
+    "failedAuditsCount": 4,
+    "failedAudits": [
+      {
+        "id": "valid-source-maps",
+        "title": "Missing source maps for large first-party JavaScript",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/turbopack-_06rkbud3pyrlm._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/_06rkbud3pyrlm._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "title": "Background and foreground colors do not have a sufficient contrast ratio.",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-1-SPAN",
+              "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,0,ARTICLE,1,DIV,2,DIV,0,SPAN,1,SPAN",
+              "selector": "div.module-card-content > div.module-card-footer > span.module-card-xp-badge > span",
+              "boundingRect": {
+                "top": 1682,
+                "bottom": 1697,
+                "left": 56,
+                "right": 145,
+                "width": 89,
+                "height": 15
+              },
+              "snippet": "<span>",
+              "nodeLabel": "80 XP à remporter",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0d846e, background color: #eaf7f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "lhId": "1-2-SPAN",
+                    "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,0,ARTICLE,1,DIV,2,DIV,0,SPAN",
+                    "selector": "article.module-landing-card > div.module-card-content > div.module-card-footer > span.module-card-xp-badge",
+                    "boundingRect": {
+                      "top": 1676,
+                      "bottom": 1703,
+                      "left": 25,
+                      "right": 158,
+                      "width": 133,
+                      "height": 27
+                    },
+                    "snippet": "<span class=\"module-card-xp-badge\">",
+                    "nodeLabel": "80 XP à remporter"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-3-SPAN",
+              "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,1,ARTICLE,1,DIV,2,DIV,0,SPAN,1,SPAN",
+              "selector": "div.module-card-content > div.module-card-footer > span.module-card-xp-badge > span",
+              "boundingRect": {
+                "top": 1682,
+                "bottom": 1697,
+                "left": 250,
+                "right": 345,
+                "width": 94,
+                "height": 15
+              },
+              "snippet": "<span>",
+              "nodeLabel": "100 XP à remporter",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0d846e, background color: #eaf7f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "lhId": "1-4-SPAN",
+                    "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,1,ARTICLE,1,DIV,2,DIV,0,SPAN",
+                    "selector": "article.module-landing-card > div.module-card-content > div.module-card-footer > span.module-card-xp-badge",
+                    "boundingRect": {
+                      "top": 1676,
+                      "bottom": 1703,
+                      "left": 220,
+                      "right": 358,
+                      "width": 138,
+                      "height": 27
+                    },
+                    "snippet": "<span class=\"module-card-xp-badge\">",
+                    "nodeLabel": "100 XP à remporter"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-5-SPAN",
+              "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,2,ARTICLE,1,DIV,2,DIV,0,SPAN,1,SPAN",
+              "selector": "div.module-card-content > div.module-card-footer > span.module-card-xp-badge > span",
+              "boundingRect": {
+                "top": 1936,
+                "bottom": 1951,
+                "left": 55,
+                "right": 149,
+                "width": 93,
+                "height": 15
+              },
+              "snippet": "<span>",
+              "nodeLabel": "120 XP à remporter",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0d846e, background color: #eaf7f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "lhId": "1-6-SPAN",
+                    "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,2,ARTICLE,1,DIV,2,DIV,0,SPAN",
+                    "selector": "article.module-landing-card > div.module-card-content > div.module-card-footer > span.module-card-xp-badge",
+                    "boundingRect": {
+                      "top": 1930,
+                      "bottom": 1957,
+                      "left": 25,
+                      "right": 162,
+                      "width": 137,
+                      "height": 27
+                    },
+                    "snippet": "<span class=\"module-card-xp-badge\">",
+                    "nodeLabel": "120 XP à remporter"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-7-SPAN",
+              "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,3,ARTICLE,1,DIV,2,DIV,0,SPAN,1,SPAN",
+              "selector": "div.module-card-content > div.module-card-footer > span.module-card-xp-badge > span",
+              "boundingRect": {
+                "top": 1936,
+                "bottom": 1951,
+                "left": 250,
+                "right": 344,
+                "width": 94,
+                "height": 15
+              },
+              "snippet": "<span>",
+              "nodeLabel": "140 XP à remporter",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0d846e, background color: #eaf7f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "lhId": "1-8-SPAN",
+                    "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,3,ARTICLE,1,DIV,2,DIV,0,SPAN",
+                    "selector": "article.module-landing-card > div.module-card-content > div.module-card-footer > span.module-card-xp-badge",
+                    "boundingRect": {
+                      "top": 1930,
+                      "bottom": 1957,
+                      "left": 220,
+                      "right": 357,
+                      "width": 137,
+                      "height": 27
+                    },
+                    "snippet": "<span class=\"module-card-xp-badge\">",
+                    "nodeLabel": "140 XP à remporter"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-9-SPAN",
+              "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,4,ARTICLE,1,DIV,2,DIV,0,SPAN,1,SPAN",
+              "selector": "div.module-card-content > div.module-card-footer > span.module-card-xp-badge > span",
+              "boundingRect": {
+                "top": 2174,
+                "bottom": 2189,
+                "left": 55,
+                "right": 149,
+                "width": 93,
+                "height": 15
+              },
+              "snippet": "<span>",
+              "nodeLabel": "160 XP à remporter",
+              "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.2 (foreground color: #0d846e, background color: #eaf7f2, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1"
+            },
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "relatedNode": {
+                    "type": "node",
+                    "lhId": "1-10-SPAN",
+                    "path": "1,HTML,1,BODY,2,DIV,3,MAIN,3,SECTION,1,DIV,4,ARTICLE,1,DIV,2,DIV,0,SPAN",
+                    "selector": "article.module-landing-card > div.module-card-content > div.module-card-footer > span.module-card-xp-badge",
+                    "boundingRect": {
+                      "top": 2168,
+                      "bottom": 2195,
+                      "left": 25,
+                      "right": 162,
+                      "width": 137,
+                      "height": 27
+                    },
+                    "snippet": "<span class=\"module-card-xp-badge\">",
+                    "nodeLabel": "160 XP à remporter"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "total-byte-weight",
+        "title": "Avoid enormous network payloads",
+        "score": 0.5,
+        "displayValue": "Total size was 3,396 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/images/palou/Palou_Hero.png",
+            "totalBytes": 419342
+          },
+          {
+            "url": "http://localhost:3000/images/partner-gspe-b2d.png",
+            "totalBytes": 264454
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "totalBytes": 255828
+          },
+          {
+            "url": "http://localhost:3000/images/landing/family_showcase.webp",
+            "totalBytes": 200734
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "totalBytes": 198083
+          }
+        ]
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration",
+        "score": 0,
+        "displayValue": "2 failure reasons",
+        "details": [
+          {
+            "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/"
+                }
+              ]
+            },
+            "protocolReason": "MainResourceHasCacheControlNoStore"
+          },
+          {
+            "reason": "Back/forward cache is disabled because WebSocket has been used.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/"
+                }
+              ]
+            },
+            "protocolReason": "WebSocketUsedWithCCNS"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "connexion",
+    "url": "http://localhost:3000/connexion",
+    "perf": 71,
+    "a11y": 100,
+    "bp": 100,
+    "failedAuditsCount": 15,
+    "failedAudits": [
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.13,
+        "displayValue": "1,570 ms",
+        "details": []
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.09,
+        "displayValue": "490 ms",
+        "details": []
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.32,
+        "displayValue": "9.2 s",
+        "details": []
+      },
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work",
+        "score": 0,
+        "displayValue": "4.4 s",
+        "details": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 1943.3079999999886
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 1257.3720000000003
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 600.5999999999992
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 491.28800000000007
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 55.41199999999999
+          }
+        ]
+      },
+      {
+        "id": "bootup-time",
+        "title": "Reduce JavaScript execution time",
+        "score": 0,
+        "displayValue": "3.0 s",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+            "total": 822.2319999999983,
+            "scripting": 733.3239999999984,
+            "scriptParseCompile": 27.848
+          },
+          {
+            "url": "http://localhost:3000/connexion",
+            "total": 644.6720000000001,
+            "scripting": 22.151999999999987,
+            "scriptParseCompile": 12.031999999999998
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "total": 635.0440000000002,
+            "scripting": 394.1600000000002,
+            "scriptParseCompile": 231.81199999999998
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/turbopack-_06rkbud3pyrlm._.js",
+            "total": 493.6200000000001,
+            "scripting": 439.89600000000013,
+            "scriptParseCompile": 27.067999999999998
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "total": 481.3440000000003,
+            "scripting": 223.32400000000027,
+            "scriptParseCompile": 225.596
+          }
+        ]
+      },
+      {
+        "id": "valid-source-maps",
+        "title": "Missing source maps for large first-party JavaScript",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/turbopack-_06rkbud3pyrlm._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/_06rkbud3pyrlm._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0,
+        "displayValue": "Est savings of 9 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "totalBytes": 42500,
+            "wastedBytes": 8783,
+            "wastedPercent": 20.664959768879008
+          }
+        ]
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "score": 0,
+        "displayValue": "Est savings of 289 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "totalBytes": 196969,
+            "wastedBytes": 99421,
+            "wastedPercent": 50.47531695226548
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "totalBytes": 184229,
+            "wastedBytes": 81796,
+            "wastedPercent": 44.398960738501636
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "totalBytes": 182428,
+            "wastedBytes": 49565,
+            "wastedPercent": 27.169356080699536
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/turbopack-_06rkbud3pyrlm._.js",
+            "totalBytes": 28218,
+            "wastedBytes": 15379,
+            "wastedPercent": 54.50227234171734
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+            "totalBytes": 26598,
+            "wastedBytes": 11441,
+            "wastedPercent": 43.01515403368794
+          }
+        ]
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 39 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "wastedBytes": 40401,
+            "wastedPercent": 97.58775578106804,
+            "totalBytes": 41400
+          }
+        ]
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "score": 0.5,
+        "displayValue": "Est savings of 496 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "totalBytes": 184226,
+            "wastedBytes": 178007,
+            "wastedPercent": 96.62386439449473
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "totalBytes": 254691,
+            "wastedBytes": 153517,
+            "wastedPercent": 60.27603366000061
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "totalBytes": 196854,
+            "wastedBytes": 104745,
+            "wastedPercent": 53.209420302776344
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "totalBytes": 182428,
+            "wastedBytes": 72022,
+            "wastedPercent": 39.4796283303958
+          }
+        ]
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration",
+        "score": 0,
+        "displayValue": "2 failure reasons",
+        "details": [
+          {
+            "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/connexion"
+                }
+              ]
+            },
+            "protocolReason": "MainResourceHasCacheControlNoStore"
+          },
+          {
+            "reason": "Back/forward cache is disabled because WebSocket has been used.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/connexion"
+                }
+              ]
+            },
+            "protocolReason": "WebSocketUsedWithCCNS"
+          }
+        ]
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0.5,
+        "displayValue": "Est savings of 36 KiB",
+        "details": [
+          {
+            "node": {
+              "type": "node",
+              "lhId": "page-1-IMG",
+              "path": "1,HTML,1,BODY,2,MAIN,0,SECTION,0,A,0,IMG",
+              "selector": "main.login-shell > section.login-story > a.login-brand > img",
+              "boundingRect": {
+                "top": 39,
+                "bottom": 79,
+                "left": 20,
+                "right": 140,
+                "width": 120,
+                "height": 40
+              },
+              "snippet": "<img src=\"/images/keur-ia-logo.png\" alt=\"kEur IA — Apprendre, jouer, créer\" width=\"120\" height=\"40\">",
+              "nodeLabel": "kEur IA — Apprendre, jouer, créer"
+            },
+            "url": "http://localhost:3000/images/keur-ia-logo.png",
+            "totalBytes": 37424,
+            "wastedBytes": 36915,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "reason": "This image file is larger than it needs to be (1800x600) for its displayed dimensions (210x70). Use responsive images to reduce the image download size.",
+                  "wastedBytes": 36915
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "legacy-javascript-insight",
+        "title": "Legacy JavaScript",
+        "score": 0.5,
+        "displayValue": "Est savings of 9 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+            "wastedBytes": 9490,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "signal": "Array.prototype.at",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4182,
+                    "column": 27
+                  }
+                },
+                {
+                  "signal": "Array.prototype.flat",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4162,
+                    "column": 29
+                  }
+                },
+                {
+                  "signal": "Array.prototype.flatMap",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4164,
+                    "column": 3
+                  }
+                },
+                {
+                  "signal": "Object.fromEntries",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4178,
+                    "column": 27
+                  }
+                },
+                {
+                  "signal": "Object.hasOwn",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4185,
+                    "column": 22
+                  }
+                },
+                {
+                  "signal": "String.prototype.trimEnd",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4156,
+                    "column": 127
+                  }
+                },
+                {
+                  "signal": "String.prototype.trimStart",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4156,
+                    "column": 36
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "775DD2CDAC9B27719D4C9A16DB3AB317": {
+                  "url": "http://localhost:3000/connexion",
+                  "navStartToEndTime": 364,
+                  "transferSize": 7774,
+                  "isLongest": true,
+                  "children": {
+                    "8360.2": {
+                      "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+                      "navStartToEndTime": 422,
+                      "transferSize": 42500,
+                      "isLongest": true,
+                      "children": {
+                        "8360.74": {
+                          "url": "http://localhost:3000/fonts/d4d84dd169.woff2",
+                          "navStartToEndTime": 818,
+                          "transferSize": 28374,
+                          "isLongest": true,
+                          "children": {}
+                        }
+                      }
+                    },
+                    "8360.4": {
+                      "url": "http://localhost:3000/_next/static/chunks/app__space_space-skeleton_0qkd3wg7w1i7x.css",
+                      "navStartToEndTime": 412,
+                      "transferSize": 2393,
+                      "children": {}
+                    },
+                    "8360.3": {
+                      "url": "http://localhost:3000/_next/static/chunks/app_0xpyxrc241bpk._.css",
+                      "navStartToEndTime": 412,
+                      "transferSize": 5762,
+                      "children": {}
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 818
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "no origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 790 ms",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "totalBytes": 42500,
+            "wastedMs": 640
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app__space_space-skeleton_0qkd3wg7w1i7x.css",
+            "totalBytes": 2393,
+            "wastedMs": 340
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_0xpyxrc241bpk._.css",
+            "totalBytes": 5762,
+            "wastedMs": 340
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "school-baobabs",
+    "url": "http://localhost:3000/school/les-baobabs",
+    "perf": 41,
+    "a11y": 100,
+    "bp": 100,
+    "failedAuditsCount": 17,
+    "failedAudits": [
+      {
+        "id": "first-contentful-paint",
+        "title": "First Contentful Paint",
+        "score": 0.52,
+        "displayValue": "2.9 s",
+        "details": []
+      },
+      {
+        "id": "largest-contentful-paint",
+        "title": "Largest Contentful Paint",
+        "score": 0.02,
+        "displayValue": "8.5 s",
+        "details": []
+      },
+      {
+        "id": "total-blocking-time",
+        "title": "Total Blocking Time",
+        "score": 0.02,
+        "displayValue": "3,040 ms",
+        "details": []
+      },
+      {
+        "id": "max-potential-fid",
+        "title": "Max Potential First Input Delay",
+        "score": 0.06,
+        "displayValue": "540 ms",
+        "details": []
+      },
+      {
+        "id": "interactive",
+        "title": "Time to Interactive",
+        "score": 0.24,
+        "displayValue": "10.4 s",
+        "details": []
+      },
+      {
+        "id": "mainthread-work-breakdown",
+        "title": "Minimize main-thread work",
+        "score": 0,
+        "displayValue": "9.8 s",
+        "details": [
+          {
+            "group": "scriptEvaluation",
+            "groupLabel": "Script Evaluation",
+            "duration": 4201.43599999998
+          },
+          {
+            "group": "scriptParseCompile",
+            "groupLabel": "Script Parsing & Compilation",
+            "duration": 3443.4639999999986
+          },
+          {
+            "group": "other",
+            "groupLabel": "Other",
+            "duration": 1416.7319999999868
+          },
+          {
+            "group": "styleLayout",
+            "groupLabel": "Style & Layout",
+            "duration": 527.664
+          },
+          {
+            "group": "paintCompositeRender",
+            "groupLabel": "Rendering",
+            "duration": 113.96399999999986
+          }
+        ]
+      },
+      {
+        "id": "bootup-time",
+        "title": "Reduce JavaScript execution time",
+        "score": 0,
+        "displayValue": "7.5 s",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+            "total": 1840.319999999993,
+            "scripting": 1612.6679999999928,
+            "scriptParseCompile": 80.15200000000002
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "total": 1728.223999999997,
+            "scripting": 1019.9439999999968,
+            "scriptParseCompile": 566.2560000000001
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "total": 1614.0799999999956,
+            "scripting": 843.4239999999957,
+            "scriptParseCompile": 669.5960000000001
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "total": 1230.808,
+            "scripting": 57.424,
+            "scriptParseCompile": 804.9839999999999
+          },
+          {
+            "url": "http://localhost:3000/connexion?returnTo=%2Fdashboard",
+            "total": 850.5399999999997,
+            "scripting": 16.968,
+            "scriptParseCompile": 11.799999999999999
+          }
+        ]
+      },
+      {
+        "id": "valid-source-maps",
+        "title": "Missing source maps for large first-party JavaScript",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "unminified-css",
+        "title": "Minify CSS",
+        "score": 0.5,
+        "displayValue": "Est savings of 9 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "totalBytes": 42500,
+            "wastedBytes": 8783,
+            "wastedPercent": 20.664959768879008
+          }
+        ]
+      },
+      {
+        "id": "unminified-javascript",
+        "title": "Minify JavaScript",
+        "score": 0,
+        "displayValue": "Est savings of 289 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "totalBytes": 196969,
+            "wastedBytes": 99421,
+            "wastedPercent": 50.47531695226548
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "totalBytes": 184229,
+            "wastedBytes": 81796,
+            "wastedPercent": 44.398960738501636
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+            "totalBytes": 182428,
+            "wastedBytes": 49565,
+            "wastedPercent": 27.169356080699536
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/turbopack-_06rkbud3pyrlm._.js",
+            "totalBytes": 28218,
+            "wastedBytes": 15379,
+            "wastedPercent": 54.50227234171734
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+            "totalBytes": 26598,
+            "wastedBytes": 11441,
+            "wastedPercent": 43.01515403368794
+          }
+        ]
+      },
+      {
+        "id": "unused-css-rules",
+        "title": "Reduce unused CSS",
+        "score": 0,
+        "displayValue": "Est savings of 235 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "wastedBytes": 240514,
+            "wastedPercent": 97.58775578106804,
+            "totalBytes": 246459
+          }
+        ]
+      },
+      {
+        "id": "unused-javascript",
+        "title": "Reduce unused JavaScript",
+        "score": 0,
+        "displayValue": "Est savings of 975 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "totalBytes": 184226,
+            "wastedBytes": 178105,
+            "wastedPercent": 96.67703548735746
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "totalBytes": 184226,
+            "wastedBytes": 178007,
+            "wastedPercent": 96.62386439449473
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "totalBytes": 254691,
+            "wastedBytes": 153517,
+            "wastedPercent": 60.27603366000061
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "totalBytes": 254691,
+            "wastedBytes": 150841,
+            "wastedPercent": 59.22508912952513
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "totalBytes": 196854,
+            "wastedBytes": 104604,
+            "wastedPercent": 53.13820634439471
+          }
+        ]
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration",
+        "score": 0,
+        "displayValue": "2 failure reasons",
+        "details": [
+          {
+            "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/connexion?returnTo=%2Fdashboard"
+                }
+              ]
+            },
+            "protocolReason": "MainResourceHasCacheControlNoStore"
+          },
+          {
+            "reason": "Back/forward cache is disabled because WebSocket has been used.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/connexion?returnTo=%2Fdashboard"
+                }
+              ]
+            },
+            "protocolReason": "WebSocketUsedWithCCNS"
+          }
+        ]
+      },
+      {
+        "id": "image-delivery-insight",
+        "title": "Improve image delivery",
+        "score": 0,
+        "displayValue": "Est savings of 36 KiB",
+        "details": [
+          {
+            "node": {
+              "type": "node",
+              "lhId": "page-0-IMG",
+              "path": "1,HTML,1,BODY,2,MAIN,0,SECTION,0,A,0,IMG",
+              "selector": "main.login-shell > section.login-story > a.login-brand > img",
+              "boundingRect": {
+                "top": 39,
+                "bottom": 79,
+                "left": 20,
+                "right": 140,
+                "width": 120,
+                "height": 40
+              },
+              "snippet": "<img src=\"/images/keur-ia-logo.png\" alt=\"kEur IA — Apprendre, jouer, créer\" width=\"120\" height=\"40\">",
+              "nodeLabel": "kEur IA — Apprendre, jouer, créer"
+            },
+            "url": "http://localhost:3000/images/keur-ia-logo.png",
+            "totalBytes": 37424,
+            "wastedBytes": 36915,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "reason": "This image file is larger than it needs to be (1800x600) for its displayed dimensions (210x70). Use responsive images to reduce the image download size.",
+                  "wastedBytes": 36915
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "legacy-javascript-insight",
+        "title": "Legacy JavaScript",
+        "score": 0.5,
+        "displayValue": "Est savings of 9 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+            "wastedBytes": 9490,
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "signal": "Array.prototype.at",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4182,
+                    "column": 27
+                  }
+                },
+                {
+                  "signal": "Array.prototype.flat",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4162,
+                    "column": 29
+                  }
+                },
+                {
+                  "signal": "Array.prototype.flatMap",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4164,
+                    "column": 3
+                  }
+                },
+                {
+                  "signal": "Object.fromEntries",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4178,
+                    "column": 27
+                  }
+                },
+                {
+                  "signal": "Object.hasOwn",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4185,
+                    "column": 22
+                  }
+                },
+                {
+                  "signal": "String.prototype.trimEnd",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4156,
+                    "column": 127
+                  }
+                },
+                {
+                  "signal": "String.prototype.trimStart",
+                  "location": {
+                    "type": "source-location",
+                    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_05y3oi5z9mc_3._.js",
+                    "urlProvider": "network",
+                    "line": 4156,
+                    "column": 36
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "network-dependency-tree-insight",
+        "title": "Network dependency tree",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "type": "list-section",
+            "value": {
+              "type": "network-tree",
+              "chains": {
+                "A904021D0A7E83317C61E33490EA2660": {
+                  "url": "http://localhost:3000/connexion?returnTo=%2Fdashboard",
+                  "navStartToEndTime": 464,
+                  "transferSize": 7792,
+                  "isLongest": true,
+                  "children": {
+                    "16740.80": {
+                      "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+                      "navStartToEndTime": 488,
+                      "transferSize": 996,
+                      "isLongest": true,
+                      "children": {
+                        "16740.142": {
+                          "url": "http://localhost:3000/fonts/d4d84dd169.woff2",
+                          "navStartToEndTime": 533,
+                          "transferSize": 0,
+                          "isLongest": true,
+                          "children": {}
+                        }
+                      }
+                    },
+                    "16740.81": {
+                      "url": "http://localhost:3000/_next/static/chunks/app_0xpyxrc241bpk._.css",
+                      "navStartToEndTime": 524,
+                      "transferSize": 5762,
+                      "children": {}
+                    },
+                    "16740.82": {
+                      "url": "http://localhost:3000/_next/static/chunks/app__space_space-skeleton_0qkd3wg7w1i7x.css",
+                      "navStartToEndTime": 522,
+                      "transferSize": 994,
+                      "children": {}
+                    }
+                  }
+                }
+              },
+              "longestChain": {
+                "duration": 533
+              }
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnected origins",
+            "description": "[preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.",
+            "value": {
+              "type": "text",
+              "value": "no origins were preconnected"
+            }
+          },
+          {
+            "type": "list-section",
+            "title": "Preconnect candidates",
+            "description": "Add [preconnect](https://developer.chrome.com/docs/lighthouse/performance/uses-rel-preconnect/) hints to your most important origins, but try to use no more than 4.",
+            "value": {
+              "type": "text",
+              "value": "No additional origins are good candidates for preconnecting"
+            }
+          }
+        ]
+      },
+      {
+        "id": "render-blocking-insight",
+        "title": "Render-blocking requests",
+        "score": 0,
+        "displayValue": "Est savings of 470 ms",
+        "details": [
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_0xpyxrc241bpk._.css",
+            "totalBytes": 5762,
+            "wastedMs": 316
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app__space_space-skeleton_0qkd3wg7w1i7x.css",
+            "totalBytes": 994,
+            "wastedMs": 316
+          },
+          {
+            "url": "http://localhost:3000/_next/static/chunks/app_1q6x5ddh-m2_w._.css",
+            "totalBytes": 996,
+            "wastedMs": 316
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dashboard-79",
+    "url": "http://localhost:3000/dashboard/modules",
+    "perf": 0,
+    "a11y": 100,
+    "bp": 96,
+    "failedAuditsCount": 6,
+    "failedAudits": [
+      {
+        "id": "errors-in-console",
+        "title": "Browser errors were logged to the console",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "source": "network",
+            "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "http://localhost:3000/api/profile",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          },
+          {
+            "source": "network",
+            "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "http://localhost:3000/api/charter",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          },
+          {
+            "source": "network",
+            "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "http://localhost:3000/api/progress",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          },
+          {
+            "source": "network",
+            "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "http://localhost:3000/api/profile",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          },
+          {
+            "source": "network",
+            "description": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "sourceLocation": {
+              "type": "source-location",
+              "url": "http://localhost:3000/api/daily-usage?age=7-9",
+              "urlProvider": "network",
+              "line": 0,
+              "column": 0
+            }
+          }
+        ]
+      },
+      {
+        "id": "unsized-images",
+        "title": "Image elements do not have explicit `width` and `height`",
+        "score": 0.5,
+        "displayValue": "",
+        "details": [
+          {
+            "url": "http://localhost:3000/images/palou/Palou_Parfait.png",
+            "node": {
+              "type": "node",
+              "lhId": "1-16-IMG",
+              "path": "1,HTML,1,BODY,3,DIV,1,DIV,2,MAIN,1,DIV,0,DIV,2,SECTION,0,DIV,0,DIV,10,DIV,0,IMG",
+              "selector": "div.p79-ar-stage > div.p79-ar-map > div.p79-ar-palou > img",
+              "boundingRect": {
+                "top": 1168,
+                "bottom": 1234,
+                "left": 186,
+                "right": 250,
+                "width": 64,
+                "height": 66
+              },
+              "snippet": "<img class=\"\" alt=\"Palou, le petit lion-robot\" src=\"/images/palou/Palou_Parfait.png\">",
+              "nodeLabel": "Palou, le petit lion-robot"
+            }
+          }
+        ]
+      },
+      {
+        "id": "valid-source-maps",
+        "title": "Missing source maps for large first-party JavaScript",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_1wygxxh5rwq0t._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_motion-dom_dist_es_0hvf8rgavwtzl._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_motion-dom_dist_es_0hvf8rgavwtzl._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/node_modules_0ap8y434_a9ti._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          },
+          {
+            "scriptUrl": "http://localhost:3000/_next/static/chunks/app_dashboard_parcours79_04qfiezv5uqry._.js",
+            "sourceMapUrl": "http://localhost:3000/_next/static/chunks/app_dashboard_parcours79_04qfiezv5uqry._.js.map",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "error": "Large JavaScript file is missing a source map"
+                },
+                {
+                  "error": "Error: Map has no `mappings` field"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "title": "Elements with visible text labels do not have matching accessible names.",
+        "score": 0,
+        "displayValue": "",
+        "details": [
+          {
+            "node": {
+              "type": "node",
+              "lhId": "1-1-BUTTON",
+              "path": "1,HTML,1,BODY,3,DIV,1,DIV,2,MAIN,1,DIV,0,DIV,2,SECTION,0,DIV,1,HEADER,0,BUTTON",
+              "selector": "section.p79-ar > div.p79-ar-stage > header.p79-ar-title > button.p79-ar-title-badge",
+              "boundingRect": {
+                "top": 700,
+                "bottom": 744,
+                "left": 31,
+                "right": 81,
+                "width": 50,
+                "height": 44
+              },
+              "snippet": "<button type=\"button\" class=\"p79-ar-title-badge\" aria-label=\"Île 1 sur 10 : Voir la carte de l'île\">",
+              "nodeLabel": "1/10",
+              "explanation": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          }
+        ]
+      },
+      {
+        "id": "total-byte-weight",
+        "title": "Avoid enormous network payloads",
+        "score": 0.5,
+        "displayValue": "Total size was 5,584 KiB",
+        "details": [
+          {
+            "url": "http://localhost:3000/images/palou/palou-officiel-cheer.png",
+            "totalBytes": 561291
+          },
+          {
+            "url": "http://localhost:3000/images/palou/Palou_Content.png",
+            "totalBytes": 504722
+          },
+          {
+            "url": "http://localhost:3000/images/palou/Palou_Parfait.png",
+            "totalBytes": 461876
+          },
+          {
+            "url": "http://localhost:3000/images/palou/Palou_Hero.png",
+            "totalBytes": 419342
+          },
+          {
+            "url": "http://localhost:3000/images/parcours79/voyage/archipel-paysage.webp",
+            "totalBytes": 290524
+          }
+        ]
+      },
+      {
+        "id": "bf-cache",
+        "title": "Page prevented back/forward cache restoration",
+        "score": 0,
+        "displayValue": "3 failure reasons",
+        "details": [
+          {
+            "reason": "Pages with cache-control:no-store header cannot enter back/forward cache.",
+            "failureType": "Actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/dashboard/modules"
+                }
+              ]
+            },
+            "protocolReason": "CacheControlNoStoreCookieModified"
+          },
+          {
+            "reason": "Pages whose main resource has cache-control:no-store cannot enter back/forward cache.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/dashboard/modules"
+                }
+              ]
+            },
+            "protocolReason": "MainResourceHasCacheControlNoStore"
+          },
+          {
+            "reason": "Back/forward cache is disabled because WebSocket has been used.",
+            "failureType": "Not actionable",
+            "subItems": {
+              "type": "subitems",
+              "items": [
+                {
+                  "frameUrl": "http://localhost:3000/dashboard/modules"
+                }
+              ]
+            },
+            "protocolReason": "WebSocketUsedWithCCNS"
+          }
+        ]
+      }
+    ]
+  }
+]

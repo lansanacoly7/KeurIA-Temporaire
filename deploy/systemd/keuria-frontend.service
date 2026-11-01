@@ -1,0 +1,40 @@
+# Interface Next.js (le seul service que nginx contacte).
+
+[Unit]
+Description=kEur IA - interface Next.js
+Documentation=file:/opt/keuria/docs/DEPLOIEMENT_DEBIAN_NGINX.md
+After=network-online.target keuria-backend.service
+Wants=network-online.target keuria-backend.service
+
+[Service]
+Type=exec
+User=keuria
+Group=keuria
+WorkingDirectory=/opt/keuria/frontend
+
+Environment=NODE_ENV=production
+# Adresse de Django pour le rendu serveur (app/local-auth.ts). La MÊME valeur doit avoir été
+# présente au moment du « npm run build » : next.config.ts y fige les réécritures /api/* et
+# /media/*. La changer ici sans reconstruire ne change que le rendu serveur.
+Environment=DJANGO_API_URL=http://127.0.0.1:8100
+
+# « -H 127.0.0.1 » est indispensable : par défaut « next start » écoute sur 0.0.0.0 et le
+# port 3001 devient joignable depuis Internet, en contournant nginx (et donc le HTTPS).
+# node appelé directement plutôt que « npm run start » : un npm intermédiaire ne transmet pas
+# proprement SIGTERM, et l'arrêt du service finirait par un kill brutal.
+ExecStart=/usr/bin/node node_modules/next/dist/bin/next start -H 127.0.0.1 -p 3001
+
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+SyslogIdentifier=keuria-frontend
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+# Next écrit son cache d'images optimisées dans .next/cache.
+ReadWritePaths=/opt/keuria/frontend/.next
+
+[Install]
+WantedBy=multi-user.target

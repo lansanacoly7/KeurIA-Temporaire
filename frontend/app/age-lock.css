@@ -1,0 +1,1 @@
+.age-lock-note{display:block;margin-top:12px;padding:9px 12px;border:1px solid var(--brand-tint, #d9e6cd);background:var(--brand-tint, #f4f8e9);color:#31594d;border-radius:10px;font-weight:800;font-size:10px}.age-tabs button.locked-age,.age-tabs button:disabled{opacity:.45;cursor:not-allowed;filter:grayscale(.7)}.age-tabs button:disabled:hover{transform:none;box-shadow:none}

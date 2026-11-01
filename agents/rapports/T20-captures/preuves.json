@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-18T23:37:38.413Z",
+  "agent": "antigravity",
+  "task": "T20 - Nouveaux blocs vidéo, lien et bouton",
+  "tests": [
+    {
+      "test": "Save draft with YouTube and MP4 media screens",
+      "status": "PASS",
+      "statusCode": 200
+    },
+    {
+      "test": "Server rejects untrusted video domain",
+      "status": "PASS",
+      "issues": [
+        {
+          "severity": "warning",
+          "screen": null,
+          "message": "13 écrans (entre 6 et 9)",
+          "where": "p1 · p1-1"
+        },
+        {
+          "severity": "error",
+          "screen": 2,
+          "message": "domaine vidéo non autorisé : untrusted-site.com (seuls YouTube et Vimeo sont acceptés)",
+          "where": "p1 · p1-1 · écran 2 (media)"
+        },
+        {
+          "severity": "error",
+          "screen": 6,
+          "message": "l'adresse cible d'un lien externe doit commencer par « https:// »",
+          "where": "p1 · p1-1 · écran 6 (media) · action 2"
+        }
+      ]
+    },
+    {
+      "test": "Server rejects non-https external action target",
+      "status": "PASS",
+      "issues": [
+        {
+          "severity": "warning",
+          "screen": null,
+          "message": "13 écrans (entre 6 et 9)",
+          "where": "p1 · p1-1"
+        },
+        {
+          "severity": "error",
+          "screen": 2,
+          "message": "l'adresse cible d'un lien externe doit commencer par « https:// »",
+          "where": "p1 · p1-1 · écran 2 (media) · action 2"
+        },
+        {
+          "severity": "error",
+          "screen": 6,
+          "message": "l'adresse cible d'un lien externe doit commencer par « https:// »",
+          "where": "p1 · p1-1 · écran 6 (media) · action 2"
+        }
+      ]
+    },
+    {
+      "test": "Mobile 390px zero horizontal overflow",
+      "status": "PASS",
+      "metrics": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "hasOverflow": false
+      }
+    }
+  ]
+}

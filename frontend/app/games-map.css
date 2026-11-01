@@ -1,0 +1,106 @@
+/* Carte des niveaux "Jeux & défis" (7-9 ans) — voir GamesMapView.tsx */
+.game-map { font-family: 'Nunito', sans-serif; color: var(--brand, #0E3A2E); }
+.game-map .gm-title { font-family: 'Baloo 2', cursive; }
+.game-map button:focus-visible { outline: 3px solid var(--brand, #0E4B3C); outline-offset: 3px; }
+
+@keyframes gmPulse { 0%,100% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 0 rgba(200,242,77,.9); } 50% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 16px rgba(200,242,77,0); } }
+@keyframes gmFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes gmPop { 0% { transform: scale(.6); opacity: 0; } 60% { transform: scale(1.06); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+
+.gm-node-current { animation: gmPulse 2.2s ease-in-out infinite; }
+.gm-avatar-float { animation: gmFloat 3.4s ease-in-out infinite; }
+.gm-pop-in { animation: gmPop .3s ease; }
+
+.gm-node-btn { border: none; cursor: pointer; padding: 0; }
+.gm-node-btn:hover { filter: brightness(1.03); }
+.gm-node-btn:active { transform: translateY(3px); }
+
+/* SVG Animations from Roadmap Jeux.dc.html */
+@keyframes kiSway { 0%,100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+@keyframes kiDrift { 0% { transform: translateX(-40px); } 100% { transform: translateX(760px); } }
+@keyframes kiSpin { to { transform: rotate(360deg); } }
+@keyframes kiFly { 0% { transform: translate(0,0) } 25% { transform: translate(26px,-16px) } 50% { transform: translate(52px,4px) } 75% { transform: translate(24px,18px) } 100% { transform: translate(0,0) } }
+@keyframes kiWing { 0%,100% { transform: scaleX(1) } 50% { transform: scaleX(.45) } }
+@keyframes kiShimmer { 0%,100% { opacity: .35 } 50% { opacity: .85 } }
+@keyframes kiDash { to { stroke-dashoffset: -56; } }
+@keyframes kiTwinkle { 0%,100% { opacity: .25; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.15); } }
+@keyframes kiFloatSlow { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes kiRise { 0% { transform: translateY(6px) scale(.8); opacity: 0; } 25% { transform: translateY(-2px) scale(1); opacity: 1; } 100% { transform: translateY(-34px) scale(1); opacity: 0; } }
+
+/* Nouvelles Animations pour la carte interactive */
+@keyframes gmStarPop { 
+  0% { transform: scale(0.2) translateY(10px); opacity: 0; } 
+  50% { transform: scale(1.3) translateY(-5px); opacity: 1; } 
+  100% { transform: scale(1) translateY(0); opacity: 1; } 
+}
+
+@keyframes gmUnlock {
+  0% { transform: scale(0.8); opacity: 0; filter: blur(4px); }
+  60% { transform: scale(1.15); opacity: 1; filter: blur(0); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes gmPulseAvailable {
+  0% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 0 rgba(200,242,77,0.8); transform: scale(1); }
+  50% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 15px rgba(200,242,77,0); transform: scale(1.04); }
+  100% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 0 rgba(200,242,77,0); transform: scale(1); }
+}
+
+@keyframes gmFloatLock {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(3deg); }
+}
+
+/* Styles des Nodes */
+.gm-node-btn { border: none; cursor: pointer; padding: 0; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, filter 0.2s ease; }
+.gm-node-btn:hover { filter: brightness(1.08); transform: scale(1.08) translateY(-4px); }
+.gm-node-btn:active { transform: scale(0.95) translateY(2px); }
+.gm-node-btn.locked { cursor: not-allowed; filter: grayscale(0.5); opacity: 0.9; }
+.gm-node-btn.locked:hover { transform: scale(1.02); filter: grayscale(0.4); }
+.gm-node-current { animation: gmPulseAvailable 2.5s ease-in-out infinite; }
+.gm-node-done:hover { transform: scale(1.06) translateY(-3px); }
+
+/* Étoiles */
+.gm-star {
+  display: inline-block;
+  animation: gmStarPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
+}
+
+/* Tutorial Spotlight */
+.gm-tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), transparent 0%, rgba(0, 0, 0, 0.6) 120px, rgba(0, 0, 0, 0.8) 100%);
+  transition: background 0.5s ease;
+}
+
+.gm-tutorial-content {
+  position: fixed;
+  z-index: 101;
+  pointer-events: auto;
+}
+
+
+/* ANIMATIONS MAQUETTE PIXEL-PERFECT */
+  @keyframes kiPulse { 0%,100% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 0 rgba(200,242,77,.95); } 55% { box-shadow: 0 7px 0 var(--brand-accent-deep, #7FA229), 0 0 0 18px rgba(200,242,77,0); } }
+  @keyframes kiRing { 0%,100% { transform: scale(1); opacity: .55; } 55% { transform: scale(1.35); opacity: 0; } }
+  @keyframes kiFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+  @keyframes kiFloatSlow { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+  @keyframes kiPop { 0% { transform: scale(.55); opacity: 0; } 62% { transform: scale(1.07); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+  @keyframes kiFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @keyframes kiStar { 0% { transform: scale(0) rotate(-40deg); opacity: 0; } 70% { transform: scale(1.25) rotate(6deg); opacity: 1; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+  @keyframes kiTwinkle { 0%,100% { opacity: .25; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.15); } }
+  @keyframes kiDash { to { stroke-dashoffset: -56; } }
+  @keyframes kiConfetti { 0% { transform: translate3d(0,0,0) rotate(0); opacity: 1; } 100% { transform: translate3d(var(--dx),300px,0) rotate(540deg); opacity: 0; } }
+  @keyframes kiRise { 0% { transform: translateY(6px) scale(.8); opacity: 0; } 25% { transform: translateY(-2px) scale(1); opacity: 1; } 100% { transform: translateY(-34px) scale(1); opacity: 0; } }
+  @keyframes kiArrow { 0%,100% { transform: translateY(0); } 50% { transform: translateY(9px); } }
+  @keyframes kiSway { 0%,100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.6deg); } }
+  @keyframes kiDrift { 0% { transform: translateX(-40px); } 100% { transform: translateX(760px); } }
+  @keyframes kiSpin { to { transform: rotate(360deg); } }
+  @keyframes kiFly { 0% { transform: translate(0,0) } 25% { transform: translate(26px,-16px) } 50% { transform: translate(52px,4px) } 75% { transform: translate(24px,18px) } 100% { transform: translate(0,0) } }
+  @keyframes kiWing { 0%,100% { transform: scaleX(1) } 50% { transform: scaleX(.45) } }
+  @keyframes kiShimmer { 0%,100% { opacity: .35 } 50% { opacity: .85 } }
+  @keyframes kiFlagWave { 0%,100% { transform: skewY(0deg) } 50% { transform: skewY(-4deg) } }
+

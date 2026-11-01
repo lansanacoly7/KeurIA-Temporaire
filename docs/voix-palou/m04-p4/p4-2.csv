@@ -1,0 +1,37 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e01.mp3;1;1;texte (story);Près des pirogues, un chat dort et un chien court. Fatou demande : « Palou, tu les reconnais ? »;Près des pirogues, un chat dort et un chien court. Fatou demande : « Palou, tu les reconnais ? »;96
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e02.mp3;1;2;texte (story);Moussa a pris des photos avec Tonton Cheikh. Chaque photo porte un nom : chat ou chien.;Moussa a pris des photos avec Tonton Cheikh. Chaque photo porte un nom : chat ou chien.;87
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e03.mp3;1;3;texte (discover);Chaque photo reçoit une étiquette : « chat » ou « chien ». Palou apprend avec elles.;Chaque photo reçoit une étiquette : « chat » ou « chien ». Palou apprend avec elles.;84
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Palou sait distinguer un chat d’un chien.;Bravo ! Palou sait distinguer un chat d’un chien.;49
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e08-retiens.mp3;1;8;« Je retiens »;Chaque exemple reçoit une étiquette. Une étiquette fausse apprend une erreur à l’IA.;Chaque exemple reçoit une étiquette. Une étiquette fausse apprend une erreur à l’I A.;84
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Chaque exemple a la bonne étiquette.;Bravo ! Chaque exemple a la bonne étiquette.;44
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-q.mp3;2;4;consigne du jeu;Glisse un exemple dans sa boîte.;Glisse un exemple dans sa boîte.;32
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Avec la bonne étiquette, Palou répond « chat ».;Oui ! Avec la bonne étiquette, Palou répond « chat ».;53
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m2-q.mp3;2;4;consigne du jeu;Palou se trompe de nom ! Touche la photo qui a une fausse étiquette.;Palou se trompe de nom ! Touche la photo qui a une fausse étiquette.;68
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04.mp3;2;4;texte (play);Aide Palou à ranger les exemples !;Aide Palou à ranger les exemples !;34
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Ces exemples montrent bien ce qu’est un chien.;Bravo ! Ces exemples montrent bien ce qu’est un chien.;54
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e05-m1-q.mp3;2;5;consigne du jeu;Touche les bons exemples pour apprendre « chien ».;Touche les bons exemples pour apprendre « chien ».;50
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e05.mp3;2;5;texte (why);Une étiquette peut être fausse !;Une étiquette peut être fausse !;32
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e06.mp3;2;6;texte (ai);Une IA a besoin d’étiquettes justes. Une mauvaise étiquette lui apprend une erreur.;Une I A a besoin d’étiquettes justes. Une mauvaise étiquette lui apprend une erreur.;83
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Une étiquette est le nom de l’exemple.;Oui ! Une étiquette est le nom de l’exemple.;44
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m1-q.mp3;2;7;consigne du jeu;Qu’est-ce qu’une étiquette ?;Qu’est-ce qu’une étiquette ?;28
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Exact ! Une fausse étiquette apprend une erreur.;Exact ! Une fausse étiquette apprend une erreur.;48
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m2-q.mp3;2;7;consigne du jeu;Un chat reçoit l’étiquette « chien ». Qu’apprend Palou ?;Un chat reçoit l’étiquette « chien ». Qu’apprend Palou ?;56
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Un vrai chien, avec la bonne étiquette.;Bravo ! Un vrai chien, avec la bonne étiquette.;47
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m3-q.mp3;2;7;consigne du jeu;Pour apprendre « chien », quel exemple est bon ?;Pour apprendre « chien », quel exemple est bon ?;48
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-i1.mp3;3;4;explication (objet à ranger);Il miaule : c’est un chat.;Il miaule : c’est un chat.;26
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-i2.mp3;3;4;explication (objet à ranger);Il aboie : c’est un chien.;Il aboie : c’est un chien.;26
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-i3.mp3;3;4;explication (objet à ranger);Il ronronne : c’est un chat.;Il ronronne : c’est un chat.;28
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m1-i4.mp3;3;4;explication (objet à ranger);Il rapporte le bâton : c’est un chien.;Il rapporte le bâton : c’est un chien.;38
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m2-o1.mp3;3;4;explication (photo déjà juste);Cette étiquette est juste : c’est bien un chien.;Cette étiquette est juste : c’est bien un chien.;48
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m2-o2.mp3;3;4;explication (photo déjà juste);Cette étiquette est juste : c’est bien un chien.;Cette étiquette est juste : c’est bien un chien.;48
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e04-m2-o3.mp3;3;4;explication (photo déjà juste);Cette étiquette est juste : c’est bien un chat.;Cette étiquette est juste : c’est bien un chat.;47
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e05-m1-o2.mp3;3;5;explication (mauvaise réponse);Une mauvaise étiquette apprend une erreur à Palou.;Une mauvaise étiquette apprend une erreur à Palou.;50
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e05-m1-o4.mp3;3;5;explication (mauvaise réponse);Sans animal, il n’y a rien à apprendre sur les chiens.;Sans animal, il n’y a rien à apprendre sur les chiens.;54
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Une étiquette est un nom, pas un dessin.;Une étiquette est un nom, pas un dessin.;40
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Une étiquette est un nom, pas une couleur.;Une étiquette est un nom, pas une couleur.;42
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Une fausse étiquette ne donne jamais la bonne réponse.;Une fausse étiquette ne donne jamais la bonne réponse.;54
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Palou lit les étiquettes : il apprend aussi les erreurs.;Palou lit les étiquettes : il apprend aussi les erreurs.;56
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Sans photo, il n’y a rien à apprendre.;Sans photo, il n’y a rien à apprendre.;38
+frontend/public/audio/palou/lecons/m04/p4-2/p4-2_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Cette étiquette est fausse : elle apprend une erreur.;Cette étiquette est fausse : elle apprend une erreur.;53

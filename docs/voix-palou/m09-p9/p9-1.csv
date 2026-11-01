@@ -1,0 +1,34 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e01.mp3;1;1;texte (story);Palou annonce d’une voix sûre : « La fête est annulée ! »;Palou annonce d’une voix sûre : « La fête est annulée ! »;57
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e02.mp3;1;2;texte (story);Moussa est triste. Fatou demande : « Qui te l’a dit, Palou ? »;Moussa est triste. Fatou demande : « Qui te l’a dit, Palou ? »;62
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e03.mp3;1;3;texte (discover);Une fausse information semble vraie, mais elle ne l’est pas. Même une IA peut en donner.;Une fausse information semble vraie, mais elle ne l’est pas. Même une I A peut en donner.;88
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu poses les bonnes questions.;Bravo ! Tu poses les bonnes questions.;38
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e07-retiens.mp3;1;7;« Je retiens »;Une IA peut se tromper, même avec assurance. Je vérifie avant de croire.;Une I A peut se tromper, même avec assurance. Je vérifie avant de croire.;72
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Oui ! Une IA peut se tromper, même avec beaucoup d’assurance.;Oui ! Une I A peut se tromper, même avec beaucoup d’assurance.;61
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m1-q.mp3;2;4;consigne du jeu;Palou parle d’une voix très sûre. Est-ce une preuve ?;Palou parle d’une voix très sûre. Est-ce une preuve ?;53
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Être sûr de soi ne prouve rien : il faut des preuves.;Oui ! Être sûr de soi ne prouve rien : il faut des preuves.;59
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-q.mp3;2;4;consigne du jeu;Palou est très sûr de lui. Pose-lui des questions pour vérifier !;Palou est très sûr de lui. Pose-lui des questions pour vérifier !;65
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04.mp3;2;4;texte (play);Aide Palou à démêler le vrai du faux !;Aide Palou à démêler le vrai du faux !;38
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e05.mp3;2;5;texte (ai);Une IA peut se tromper en parlant avec assurance. Vérifie toujours.;Une I A peut se tromper en parlant avec assurance. Vérifie toujours.;67
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Une IA peut se tromper, même sûre d’elle.;Oui ! Une I A peut se tromper, même sûre d’elle.;47
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m1-q.mp3;2;6;consigne du jeu;Une IA peut-elle se tromper même avec assurance ?;Une I A peut-elle se tromper même avec assurance ?;49
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Bravo ! Je vérifie.;Bravo ! Je vérifie.;19
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m2-q.mp3;2;6;consigne du jeu;Que fais-tu avant de croire une réponse ?;Que fais-tu avant de croire une réponse ?;41
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Exact ! Cela ne prouve rien.;Exact ! Cela ne prouve rien.;28
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m3-q.mp3;2;6;consigne du jeu;Que prouve une voix très sûre d’elle ?;Que prouve une voix très sûre d’elle ?;38
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m1-o1.mp3;3;4;explication (mauvaise réponse);Une voix sûre ne prouve rien : on peut se tromper avec assurance.;Une voix sûre ne prouve rien : on peut se tromper avec assurance.;65
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m1-o3.mp3;3;4;explication (mauvaise réponse);Palou ne ment pas, mais il peut se tromper sans le savoir.;Palou ne ment pas, mais il peut se tromper sans le savoir.;58
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-a.mp3;3;4;demande du tampon;Palou n’a pas de preuve. Quel tampon poses-tu ?;Palou n’a pas de preuve. Quel tampon poses-tu ?;47
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-f1.mp3;3;4;explication (mauvais tampon);Palou n’a aucune preuve : on ne peut pas dire que c’est vrai.;Palou n’a aucune preuve : on ne peut pas dire que c’est vrai.;61
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-f3.mp3;3;4;explication (mauvais tampon);On ne sait pas encore si c’est faux : sans preuve, on reste prudent.;On ne sait pas encore si c’est faux : sans preuve, on reste prudent.;68
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-o1.mp3;3;4;explication (question inutile);Palou répète qu’il est sûr, mais ça ne prouve rien. Pose une question sur la source !;Palou répète qu’il est sûr, mais ça ne prouve rien. Pose une question sur la source !;85
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-s2.mp3;3;4;indice révélé par la question;Un message transféré. Je ne sais pas qui l’a écrit.;Un message transféré. Je ne sais pas qui l’a écrit.;51
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-s3.mp3;3;4;indice révélé par la question;Je ne sais plus… peut-être un vieux message.;Je ne sais plus… peut-être un vieux message.;44
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e04-m2-s4.mp3;3;4;indice révélé par la question;Je n’ai aucune preuve. Je l’ai juste entendu.;Je n’ai aucune preuve. Je l’ai juste entendu.;45
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Être sûr de soi ne prouve rien : une IA peut se tromper.;Être sûr de soi ne prouve rien : une I A peut se tromper.;56
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Palou ne ment pas, mais il peut avoir tort : on vérifie.;Palou ne ment pas, mais il peut avoir tort : on vérifie.;56
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Croire sans vérifier, c’est risquer de se tromper.;Croire sans vérifier, c’est risquer de se tromper.;50
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Répéter plus fort ne prouve rien.;Répéter plus fort ne prouve rien.;33
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Même sûre, une voix peut se tromper.;Même sûre, une voix peut se tromper.;36
+frontend/public/audio/palou/lecons/m09/p9-1/p9-1_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Une voix sûre peut avoir raison ou tort : on vérifie.;Une voix sûre peut avoir raison ou tort : on vérifie.;53

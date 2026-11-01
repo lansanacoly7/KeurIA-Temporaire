@@ -1,0 +1,120 @@
+.leaderboard-track {
+  position: relative;
+  isolation: isolate;
+  border-color: color-mix(in srgb, var(--brand-mid, #0d846e) 34%, #dde5db);
+  box-shadow: 0 4px 0 #e0e7dc, 0 16px 34px rgba(13, 132, 110, 0.09);
+}
+
+.leaderboard-track::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: 1px solid rgba(217, 239, 89, 0.22);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.leaderboard-track > header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--brand, #123f3b), var(--brand-mid, #176c60) 55%, var(--brand, #123f3b));
+  background-size: 220% 100%;
+  animation: leaderboardHeaderGlow 7s ease-in-out infinite;
+}
+
+.leaderboard-track > header::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 180%;
+  top: -40%;
+  left: -120px;
+  transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(217, 239, 89, 0.2), transparent);
+  animation: leaderboardSweep 5s ease-in-out infinite;
+}
+
+.leaderboard-window {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  outline: none;
+  background:
+    linear-gradient(rgba(13, 132, 110, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 132, 110, 0.025) 1px, transparent 1px),
+    #fff;
+  background-size: 18px 18px;
+}
+
+.leaderboard-window:focus-visible {
+  box-shadow: inset 0 0 0 3px var(--brand-accent, #d9ef59);
+}
+
+.leaderboard-window::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0 42%, rgba(217, 239, 89, 0.13) 49%, transparent 57%);
+  transform: translateY(-115%);
+  animation: leaderboardScan 4s linear infinite;
+}
+
+.leaderboard-list.is-scrolling {
+  animation: leaderboardVerticalFlow 9s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+  will-change: transform;
+}
+
+.leaderboard-track:nth-child(2) .leaderboard-list.is-scrolling { animation-delay: -2.5s; }
+.leaderboard-track:nth-child(3) .leaderboard-list.is-scrolling { animation-delay: -5s; }
+
+.leaderboard-window:hover .leaderboard-list,
+.leaderboard-window:focus .leaderboard-list,
+.leaderboard-window:focus-within .leaderboard-list {
+  animation-play-state: paused;
+}
+
+.leaderboard-track li {
+  min-height: 63px;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.leaderboard-track li:hover {
+  background: rgba(217, 239, 89, 0.1);
+  transform: translateX(3px);
+}
+
+@keyframes leaderboardVerticalFlow {
+  0%, 16% { transform: translateY(0); }
+  84%, 100% { transform: translateY(calc(-100% + 210px)); }
+}
+
+@keyframes leaderboardScan {
+  to { transform: translateY(115%); }
+}
+
+@keyframes leaderboardHeaderGlow {
+  0%, 100% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes leaderboardSweep {
+  0%, 25% { left: -120px; }
+  60%, 100% { left: calc(100% + 120px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaderboard-track > header,
+  .leaderboard-track > header::after,
+  .leaderboard-window::after,
+  .leaderboard-list.is-scrolling {
+    animation: none;
+  }
+
+  .leaderboard-window {
+    height: auto;
+    overflow: visible;
+  }
+}

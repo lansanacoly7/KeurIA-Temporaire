@@ -1,0 +1,16 @@
+venv
+.venv
+.env
+.env.*
+!.env.example
+.dev_secret_key
+db.sqlite3
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.coverage
+coverage.xml
+htmlcov
+media
+staticfiles

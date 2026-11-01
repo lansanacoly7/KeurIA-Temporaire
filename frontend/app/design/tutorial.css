@@ -1,0 +1,509 @@
+/* ═════════════════════════════════════════════════════════════════════════════
+   PALOU ONBOARDING TUTORIAL & KIDS TOOLTIPS STYLESHEET
+   ═════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Fullscreen Overlay ── */
+.palou-tutorial-overlay {
+  position: fixed;
+  inset: 0;
+  width: calc(100vw / var(--app-zoom, 1));
+  height: calc(100vh / var(--app-zoom, 1));
+  z-index: 99990;
+  pointer-events: none;
+}
+
+/* ── SVG Spotlight Mask (Perfect zero-bleeding cutout) ── */
+.palou-spotlight-svg {
+  position: fixed;
+  inset: 0;
+  width: calc(100vw / var(--app-zoom, 1));
+  height: calc(100vh / var(--app-zoom, 1));
+  z-index: 99991;
+  pointer-events: none;
+}
+
+.palou-spotlight-backdrop {
+  pointer-events: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Golden Glowing Spotlight Target Frame ── */
+.palou-spotlight-frame {
+  position: fixed;
+  border: 3.5px solid #f4b942;
+  border-radius: 18px;
+  box-shadow: 
+    0 0 0 4px rgba(244, 185, 66, 0.3),
+    0 0 30px rgba(244, 185, 66, 0.65),
+    inset 0 0 16px rgba(244, 185, 66, 0.25);
+  animation: palouSpotlightPulse 2s ease-in-out infinite;
+  z-index: 99992;
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes palouSpotlightPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 0 4px rgba(244, 185, 66, 0.3),
+      0 0 25px rgba(244, 185, 66, 0.6),
+      inset 0 0 14px rgba(244, 185, 66, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 0 8px rgba(244, 185, 66, 0.45),
+      0 0 40px rgba(244, 185, 66, 0.85),
+      inset 0 0 22px rgba(244, 185, 66, 0.35);
+    transform: scale(1.015);
+  }
+}
+
+/* ── Spotlight Badge Indicator ── */
+.palou-spotlight-badge {
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f4b942 0%, #f6c867 100%);
+  color: var(--brand, #123835);
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  animation: bounceBadge 1.6s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: none;
+}
+
+@keyframes bounceBadge {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+}
+
+/* ── Dialogue Container (Palou + Speech Bubble) ── */
+.palou-tutorial-container {
+  position: fixed;
+  z-index: 99995;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 14px;
+  max-width: min(560px, calc(100vw - 32px));
+  width: max-content;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  transition: top 0.24s cubic-bezier(0.2, 0.9, 0.4, 1), left 0.24s cubic-bezier(0.2, 0.9, 0.4, 1);
+}
+
+/* ── Speech Bubble ── */
+.palou-tutorial-speech {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 20px 24px;
+  border: 3px solid #f4b942;
+  position: relative;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  max-width: 380px;
+  text-align: left;
+  animation: popSpeech 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Directional pointers from speech bubble towards the spotlighted target */
+.palou-tutorial-speech::before,
+.palou-tutorial-speech::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+/* Card is TOP of target -> arrow points DOWN towards target */
+.palou-tutorial-speech[data-placement="top"]::before {
+  bottom: -15px;
+  left: 45px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 15px solid #f4b942;
+}
+.palou-tutorial-speech[data-placement="top"]::after {
+  bottom: -10px;
+  left: 47px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ffffff;
+}
+
+/* Card is BOTTOM of target -> arrow points UP towards target */
+.palou-tutorial-speech[data-placement="bottom"]::before {
+  top: -15px;
+  left: 45px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 15px solid #f4b942;
+}
+.palou-tutorial-speech[data-placement="bottom"]::after {
+  top: -10px;
+  left: 47px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #ffffff;
+}
+
+/* Card is RIGHT of target -> arrow points LEFT towards target */
+.palou-tutorial-speech[data-placement="right"]::before {
+  left: -15px;
+  top: 35px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 15px solid #f4b942;
+}
+.palou-tutorial-speech[data-placement="right"]::after {
+  left: -10px;
+  top: 37px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid #ffffff;
+}
+
+/* Card is LEFT of target -> arrow points RIGHT towards target */
+.palou-tutorial-speech[data-placement="left"]::before {
+  right: -15px;
+  top: 35px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 15px solid #f4b942;
+}
+.palou-tutorial-speech[data-placement="left"]::after {
+  right: -10px;
+  top: 37px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #ffffff;
+}
+
+@keyframes popSpeech {
+  0% { transform: scale(0.9) translateY(10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Header inside bubble */
+.palou-tutorial-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.palou-tutorial-step-tag {
+  background: rgba(17, 153, 142, 0.12);
+  color: var(--brand-mid, #0f755f);
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.palou-tuto-audio-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.palou-tuto-audio-btn:hover {
+  background: var(--brand-soft, #e6f7f5);
+  border-color: #11998e;
+  color: var(--brand-mid, #0f755f);
+  transform: translateY(-1px);
+}
+
+.palou-tuto-audio-btn.speaking {
+  background: #f4b942;
+  border-color: #d99c2a;
+  color: var(--brand, #153b3b);
+  animation: pulseAudio 1.2s infinite;
+}
+
+.palou-tutorial-speech h3 {
+  margin: 0 0 8px 0;
+  color: var(--brand, #123835);
+  font-size: 1.35rem;
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.palou-tutorial-speech p {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 1.05rem;
+  font-family: 'Baloo 2', system-ui, sans-serif;
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.palou-tutorial-speech p strong {
+  color: var(--brand-mid, #0f755f);
+  font-weight: 800;
+}
+
+/* Dots progress indicator */
+.palou-tutorial-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.palou-tuto-dot {
+  height: 6px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.palou-tuto-dot.active {
+  width: 24px;
+  background: #f4b942;
+}
+
+.palou-tuto-dot.inactive {
+  width: 10px;
+}
+
+.palou-tuto-dot.done {
+  width: 10px;
+  background: #11998e;
+}
+
+/* Actions Row */
+.palou-tutorial-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.palou-tuto-btn-prev {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.palou-tuto-btn-prev:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+.palou-tuto-btn-next {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 22px;
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--brand-mid, #0a6e62), 0 8px 20px rgba(17, 153, 142, 0.4);
+  transition: all 0.15s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.palou-tuto-btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--brand-mid, #0a6e62), 0 12px 24px rgba(17, 153, 142, 0.5);
+}
+
+.palou-tuto-btn-next:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--brand-mid, #0a6e62);
+}
+
+.palou-tuto-btn-next.start-course {
+  background: linear-gradient(135deg, #f4b942 0%, #ff7675 100%);
+  box-shadow: 0 4px 0 #c27803, 0 8px 20px rgba(244, 185, 66, 0.5);
+}
+
+.palou-tuto-btn-next.start-course:hover {
+  box-shadow: 0 6px 0 #c27803, 0 12px 26px rgba(244, 185, 66, 0.6);
+}
+
+/* Skip link */
+.palou-tuto-skip {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 4px;
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.palou-tuto-skip:hover {
+  color: #64748b;
+  text-decoration: underline;
+}
+
+/* ── Palou Mascot ── */
+.palou-tutorial-mascot {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.palou-tutorial-mascot img {
+  width: clamp(110px, 15vw, 140px);
+  height: clamp(110px, 15vw, 140px);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+  animation: palouTutorialFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes palouTutorialFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+@media (max-width: 640px) {
+  .palou-tutorial-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: calc(100vw - 24px);
+    gap: 0;
+  }
+  .palou-tutorial-speech {
+    max-width: 100%;
+    padding: 16px 18px;
+    border-radius: 20px;
+  }
+  .palou-tutorial-mascot img {
+    width: 85px;
+    height: 85px;
+    margin-bottom: -10px;
+    z-index: 2;
+  }
+  .palou-tutorial-speech::before,
+  .palou-tutorial-speech::after {
+    display: none;
+  }
+}
+
+/* ── Global Floating Tooltip for Kids (Hover System) ── */
+.kid-floating-tooltip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.28));
+  animation: tooltipFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tooltipFadeIn {
+  0% { opacity: 0; transform: translate(-50%, -95%) scale(0.94); }
+  100% { opacity: 1; transform: translate(-50%, -100%) scale(1); }
+}
+
+.kid-floating-tooltip.bottom {
+  animation: tooltipFadeInBottom 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tooltipFadeInBottom {
+  0% { opacity: 0; transform: translate(-50%, 5%) scale(0.94); }
+  100% { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+.kid-tooltip-content {
+  background: linear-gradient(135deg, var(--brand, #102a28) 0%, var(--brand, #173e3c) 100%);
+  color: #ffffff;
+  border: 1.5px solid #f4b942;
+  border-radius: 14px;
+  padding: 8px 16px;
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  line-height: 1.4;
+}
+
+.kid-tooltip-arrow.top {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #f4b942;
+  margin-top: -1px;
+}
+
+.kid-tooltip-arrow.bottom {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #f4b942;
+  margin-bottom: -1px;
+  order: -1;
+}
+
+/* ── Tooltip Elements ── */
+[data-kid-tooltip] {
+  /* Garde le curseur naturel sans forcer pointer ou transformation */
+}
+
+/* Re-trigger guide button */
+.guide-relaunch-btn {
+  background: rgba(244, 185, 66, 0.15);
+  border: 1.5px solid #f4b942;
+  color: #b8860b;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Fredoka One', 'Baloo 2', system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.guide-relaunch-btn:hover {
+  background: #f4b942;
+  color: var(--brand, #153b3b);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 185, 66, 0.4);
+}

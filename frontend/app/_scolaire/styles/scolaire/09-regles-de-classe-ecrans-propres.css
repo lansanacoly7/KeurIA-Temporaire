@@ -1,0 +1,300 @@
+/*
+ * Écrans de règles (T12) — direction : /ecole/regles ; enseignant : section
+ * « Règles de la classe » (TeacherClassView). Même maquette des deux côtés :
+ * en-tête clair, panneaux ec-card, interrupteurs au lieu de cases nues,
+ * tableau des créneaux qui défile DANS son cadre à 390 px (la page ne déborde pas).
+ */
+
+/* En-tête de la page direction */
+.ec-rules-eyebrow {
+  margin: 0 0 4px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ec-brand);
+}
+
+.ec-rules-title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ec-ink-deep);
+}
+
+.ec-rules-subtitle {
+  margin: 0 0 18px;
+  font-size: 13.5px;
+  color: var(--ec-muted);
+}
+
+/* Sous-titre de section dans la carte enseignante */
+.ec-rules-subhead {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ec-ink);
+}
+
+/* Description sous un h2 de carte (h2 a déjà 14 px de marge basse) */
+.ec-card-desc {
+  margin: -6px 0 14px;
+  font-size: 13px;
+  color: var(--ec-muted);
+}
+
+/* Cadre du tableau : seul le tableau défile, jamais la page.
+   contain: inline-size — le min-width du tableau ne peut jamais élargir la page
+   (sinon Chrome élargit le viewport mobile et scrollWidth dépasse 390).
+   position: relative — les enfants en position:absolute (sr-only) restent dans le cadre. */
+.ec-table-frame {
+  position: relative;
+  contain: inline-size;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--ec-line);
+  border-radius: 12px;
+  background: var(--ec-surface);
+}
+
+.ec-table-frame:focus-visible {
+  outline: 2px solid var(--ec-brand);
+  outline-offset: 2px;
+}
+
+/* Astuce de glissement : visible seulement là où le tableau déborde */
+.ec-table-hint {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--ec-muted);
+}
+
+@media (min-width: 700px) {
+  .ec-table-hint {
+    display: none;
+  }
+}
+
+/* Tableau des créneaux (Lun → Dim) */
+.ec-slots-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ec-slots-table th,
+.ec-slots-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--ec-line);
+  text-align: center;
+}
+
+.ec-slots-table thead th {
+  background: var(--ec-bg);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--ec-muted);
+  white-space: nowrap;
+}
+
+.ec-slots-table th[scope="row"] {
+  text-align: left;
+  font-weight: 800;
+  color: var(--ec-ink);
+  white-space: nowrap;
+}
+
+.ec-slots-table tbody tr:last-child th,
+.ec-slots-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ec-slots-table td.ec-slots-day {
+  background: #f8fafc;
+}
+
+/* Jour coché : teinte verte douce (avec repli neutre si :has n'est pas géré) */
+.ec-slots-table td.ec-slots-day:has(input:checked) {
+  background: #dcfce7;
+}
+
+.ec-slots-table input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--ec-brand);
+  cursor: pointer;
+}
+
+.ec-slots-table input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+.ec-slots-table input[type="time"] {
+  padding: 5px 7px;
+  border: 1px solid var(--ec-line);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Grille des interrupteurs */
+.ec-rules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 720px) {
+  .ec-rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Carte d'une règle : titre + précision à gauche, interrupteur à droite */
+.ec-rule-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--ec-line);
+  border-radius: 14px;
+  background: var(--ec-surface);
+}
+
+.ec-rule-switch[data-locked] {
+  background: var(--ec-bg);
+}
+
+.ec-rule-switch__info {
+  min-width: 0;
+}
+
+.ec-rule-switch__info h3 {
+  margin: 0 0 2px;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--ec-ink);
+}
+
+.ec-rule-switch__info p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ec-muted);
+}
+
+.ec-rule-switch__lock {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--ec-warn-bg);
+  color: var(--ec-warn);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* Interrupteur (input natif masqué, piste + pastille dessinées) */
+.ec-switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 46px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.ec-switch input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.ec-switch__track {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  transition: background 0.18s ease;
+}
+
+.ec-switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.3);
+  transition: transform 0.18s ease;
+}
+
+.ec-switch input:checked ~ .ec-switch__track {
+  background: var(--ec-brand);
+}
+
+.ec-switch input:checked ~ .ec-switch__track .ec-switch__thumb {
+  transform: translateX(20px);
+}
+
+.ec-switch input:focus-visible ~ .ec-switch__track {
+  outline: 2px solid var(--ec-brand);
+  outline-offset: 2px;
+}
+
+.ec-switch input:disabled ~ .ec-switch__track {
+  opacity: 0.5;
+}
+
+.ec-switch:has(input:disabled) {
+  cursor: not-allowed;
+}
+
+/* Champ « temps quotidien » dans sa carte */
+.ec-minutes-field {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ec-minutes-field input {
+  width: 92px;
+  padding: 7px 10px;
+  border: 1px solid var(--ec-line);
+  border-radius: 10px;
+  font: inherit;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ec-minutes-field span {
+  font-size: 12px;
+  color: var(--ec-muted);
+}
+
+/* Barre d'action : bouton + retour d'état */
+.ec-rules-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ec-rules-status {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ec-brand);
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Espace Enseignant — Ouvrir une séance — kEur IA École</title>
+  <link rel="stylesheet" href="maquette.css">
+</head>
+<body>
+
+  <div class="maquette-demo-bar">
+    <div class="maquette-demo-left">
+      <span class="maquette-demo-badge">T11 Maquette</span>
+      <select class="maquette-nav-select" onchange="window.location.href=this.value">
+        <option value="index.html" >Hub & Galerie des Maquettes [Accueil]</option>
+<option value="01-aujourdhui.html" >01. Aujourd'hui — Cahier de classe [Élève (6-9 ans)]</option>
+<option value="02-mes-devoirs.html" >02. Mes devoirs (À rendre, Rendus, Notés) [Élève (6-9 ans)]</option>
+<option value="03-mon-parcours.html" >03. Mon parcours (Archipel CE1) [Élève (6-9 ans)]</option>
+<option value="04-ma-classe.html" >04. Ma classe (Tableau d'honneur & Camarades) [Élève (6-9 ans)]</option>
+<option value="05-mes-etoiles.html" >05. Mes étoiles (Badges & Niveau) [Élève (6-9 ans)]</option>
+<option value="06-libre.html" >06. Libre (Jeux & Studio Scratch) [Élève (6-9 ans)]</option>
+<option value="07-etats.html" >07. Écrans d'état (Horaires, Clôture, Devoirs faits) [Élève (6-9 ans)]</option>
+<option value="08-enseignant-seance.html" selected>08. Enseignant — Ouvrir une séance & En cours [Enseignant]</option>
+<option value="09-enseignant-annonces.html" >09. Enseignant — Annonces & Sondages [Enseignant]</option>
+<option value="10-enseignant-parcours-eleve.html" >10. Enseignant — Parcours d'un élève [Enseignant]</option>
+<option value="11-regles-classe.html" >11. Direction & Enseignant — Règles de classe [Direction & Enseignant]</option>
+      </select>
+    </div>
+    <div class="maquette-demo-actions">
+      <a href="index.html" class="btn-view-toggle">📚 Galerie</a>
+      <a href="LISEZMOI.md" class="btn-view-toggle" target="_blank">📄 LISEZMOI</a>
+    </div>
+  </div>
+
+  <div class="mockup-viewport-container">
+    <div class="app-shell">
+      
+    <aside class="app-sidebar" style="background:#0F2922;">
+      <div class="school-brand-box">
+        <div class="school-logo-badge">🌳</div>
+        <div class="school-meta">
+          <h2>Les Baobabs</h2>
+          <p style="color:#A7F3D0;">Espace Enseignant</p>
+        </div>
+      </div>
+
+      <div class="student-badge-card" style="background:rgba(255,255,255,0.06);">
+        <div class="student-avatar" style="background:#E8F0EC; border-color:#34D399; font-size:22px;">👩🏾‍🏫</div>
+        <div class="student-info">
+          <h3 style="font-size:16px;">Mme Faye</h3>
+          <p>Classe CE1 A (22 élèves)</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        
+        <a href="08-enseignant-seance.html" class="sidebar-nav-item active">
+          <span class="nav-icon">⏱️</span>
+          <span>Séance de classe</span>
+        </a>
+
+        <a href="09-enseignant-annonces.html" class="sidebar-nav-item ">
+          <span class="nav-icon">📢</span>
+          <span>Annonces & Sondages</span>
+        </a>
+
+        <a href="10-enseignant-parcours-eleve.html" class="sidebar-nav-item ">
+          <span class="nav-icon">👤</span>
+          <span>Fiche & Parcours</span>
+        </a>
+
+        <a href="11-regles-classe.html" class="sidebar-nav-item ">
+          <span class="nav-icon">⚙️</span>
+          <span>Règles de classe</span>
+        </a>
+        <a href="01-aujourdhui.html" class="sidebar-nav-item" style="margin-top:auto; background:rgba(255,255,255,0.08); font-size:13.5px;">
+          <span class="nav-icon">👀</span>
+          <span>Vue cahier élève</span>
+        </a>
+      </nav>
+    </aside>
+
+      
+    <header class="teacher-mobile-header">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:22px;">👩🏾‍🏫</span>
+        <div>
+          <div style="font-size:15px; font-weight:700; color:#FFF;">Mme Faye · CE1 A</div>
+          <span style="font-family:var(--font-sans); font-size:10.5px; color:#A7F3D0;">Groupe Scolaire Les Baobabs</span>
+        </div>
+      </div>
+      <span style="background:rgba(52, 211, 153, 0.2); color:#34D399; font-family:var(--font-sans); font-size:11px; font-weight:800; padding:3px 8px; border-radius:999px;">Enseignant</span>
+    </header>
+
+
+      <main class="app-main-content">
+        <div class="content-top-row">
+          <div>
+            <h1 class="page-main-title">Séance de Classe en Direct</h1>
+            <p class="page-subtitle">Pilotez le travail guidé de vos élèves</p>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="tab-nav-btn" onclick="toggleTeacherView('create', this)">Ouvrir une séance</button>
+            <button class="tab-nav-btn active" onclick="toggleTeacherView('live', this)">🟢 En direct (23:45)</button>
+          </div>
+        </div>
+
+        <!-- Vue 1 : Ouvrir une séance -->
+        <div id="view-create-session" class="teacher-panel" style="display:none;">
+          <h2 class="teacher-section-title">Paramètres de la séance</h2>
+          <p class="teacher-section-desc">Choisissez la leçon et la durée.</p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:16px; margin-bottom:20px;">
+            <div>
+              <label style="font-family:var(--font-sans); font-size:12.5px; font-weight:700; display:block; margin-bottom:4px;">Classe</label>
+              <select style="width:100%; padding:8px 12px; border-radius:8px; border:1.5px solid var(--border-card); font-family:var(--font-sans); font-size:13.5px; background:#FFF;">
+                <option>CE1 A (22 élèves)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-family:var(--font-sans); font-size:12.5px; font-weight:700; display:block; margin-bottom:4px;">Leçon ou Activité</label>
+              <select style="width:100%; padding:8px 12px; border-radius:8px; border:1.5px solid var(--border-card); font-family:var(--font-sans); font-size:13.5px; background:#FFF;">
+                <option>Île 2 — Étape 2 : Les Boucles simples</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-family:var(--font-sans); font-size:12.5px; font-weight:700; display:block; margin-bottom:4px;">Durée</label>
+              <div style="display:flex; gap:6px;">
+                <button class="tab-nav-btn active" type="button">30 min</button>
+                <button class="tab-nav-btn" type="button">45 min</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-big-touch primary" onclick="alert('Séance lancée !')" style="font-size:16px;">
+            <span>🚀 Lancer la séance pour le CE1 A</span>
+          </button>
+        </div>
+
+        <!-- Vue 2 : Séance en direct -->
+        <div id="view-live-session" class="teacher-panel">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px; padding-bottom:14px; border-bottom:1px solid var(--border-light);">
+            <div>
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;">
+                <span class="pulse-dot"></span>
+                <span style="font-family:var(--font-sans); font-size:11px; font-weight:800; color:#059669; text-transform:uppercase;">En direct</span>
+              </div>
+              <h2 style="font-size:20px; font-weight:700;">Île 2 — Les Boucles simples</h2>
+              <span style="font-size:13px; color:var(--text-muted);">19 / 22 élèves connectés</span>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div style="background:#FEF3C7; border:1.5px solid #FCD34D; border-radius:var(--radius-pill); padding:6px 14px; font-size:18px; font-weight:800; color:#B45309;">
+                ⏱️ 23:45
+              </div>
+              <button class="btn-big-touch secondary" style="min-height:40px; padding:0 12px; font-size:13px;" onclick="alert('+10 min')">+10 min</button>
+              <button class="btn-big-touch terracotta" style="min-height:40px; padding:0 14px; font-size:13px;" onclick="alert('Clôturé')">Clôturer</button>
+            </div>
+          </div>
+
+          <!-- Tableau fluide avec scroll tactile -->
+          <div class="table-responsive-container">
+            <table style="width:100%; border-collapse:collapse; font-family:var(--font-sans); font-size:13px;">
+              <thead>
+                <tr style="text-align:left; border-bottom:2px solid var(--border-card); color:var(--text-muted); font-size:11px; text-transform:uppercase;">
+                  <th style="padding:8px 10px;">Élève</th>
+                  <th style="padding:8px 10px;">Statut</th>
+                  <th style="padding:8px 10px;">Étape</th>
+                  <th style="padding:8px 10px;">Erreurs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:10px; font-weight:700; white-space:nowrap;">👦🏾 Moussa Diallo</td>
+                  <td style="padding:10px; white-space:nowrap;"><span style="color:#15803D; font-weight:700;">🟢 En ligne</span></td>
+                  <td style="padding:10px; white-space:nowrap;">Étape 2 / 3</td>
+                  <td style="padding:10px; color:#15803D;">0 erreur</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light);">
+                  <td style="padding:10px; font-weight:700; white-space:nowrap;">👧🏾 Fatou Sow</td>
+                  <td style="padding:10px; white-space:nowrap;"><span style="color:#15803D; font-weight:700;">🟢 Terminé</span></td>
+                  <td style="padding:10px; white-space:nowrap;">Étape 3 / 3 ⭐</td>
+                  <td style="padding:10px; color:#15803D;">0 erreur</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border-light); background:#FEF2F2;">
+                  <td style="padding:10px; font-weight:700; color:#B91C1C; white-space:nowrap;">👦🏾 Ibrahima Fall</td>
+                  <td style="padding:10px; color:#B91C1C; font-weight:700; white-space:nowrap;">⚠️ Bloqué (3m)</td>
+                  <td style="padding:10px; color:#B91C1C; white-space:nowrap;">Étape 1</td>
+                  <td style="padding:10px; color:#B91C1C; font-weight:700;">3 essais</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      
+    <nav class="teacher-mobile-bottom-bar">
+      
+      <a href="08-enseignant-seance.html" class="mobile-tab-btn active">
+        <span class="tab-icon">⏱️</span>
+        <span>Séance</span>
+      </a>
+
+      <a href="09-enseignant-annonces.html" class="mobile-tab-btn ">
+        <span class="tab-icon">📢</span>
+        <span>Annonces</span>
+      </a>
+
+      <a href="10-enseignant-parcours-eleve.html" class="mobile-tab-btn ">
+        <span class="tab-icon">👤</span>
+        <span>Parcours</span>
+      </a>
+
+      <a href="11-regles-classe.html" class="mobile-tab-btn ">
+        <span class="tab-icon">⚙️</span>
+        <span>Règles</span>
+      </a>
+    </nav>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleTeacherView(view, btn) {
+      document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (view === 'create') {
+        document.getElementById('view-create-session').style.display = 'block';
+        document.getElementById('view-live-session').style.display = 'none';
+      } else {
+        document.getElementById('view-create-session').style.display = 'none';
+        document.getElementById('view-live-session').style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>

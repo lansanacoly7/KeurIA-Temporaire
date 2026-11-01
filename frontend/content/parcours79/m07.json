@@ -1,0 +1,888 @@
+{
+  "module": {
+    "id": "p7",
+    "chapter": 7,
+    "title": "Créer avec l’IA",
+    "place": "La classe, pour la journée Set Setal",
+    "intro": "Samedi, c’est la journée Set Setal ! Aide Moussa à créer l’affiche avec Palou, en restant l’auteur."
+  },
+  "lessons": [
+    {
+      "id": "p7-1",
+      "title": "L’IA imagine avec moi",
+      "scene": {
+        "id": "classe-affiche",
+        "label": "La classe, devant la grande feuille"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "mme-diop"
+      ],
+      "problem": "La classe doit faire l’affiche de la journée Set Setal. Moussa n’a aucune idée de slogan.",
+      "callback": "Tu te rappelles ? Palou répond mieux quand la question est claire.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "wolof": {
+            "mot": "Set Setal",
+            "sens": "Nettoyer, rendre propre et beau"
+          },
+          "image": "m07-l1-affiche.webp",
+          "alt": "Une grande feuille blanche accrochée au mur de la classe, avec des feutres et des pinceaux posés dessous.",
+          "text": "Samedi, c’est Set Setal : on nettoie et on décore le quartier !"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "text": "Madame Diop demande une affiche. Moussa soupire : « Je n’ai aucune idée ! »",
+          "image": "m07-l1-s02.webp",
+          "alt": "Illustration : Madame Diop demande une affiche. Moussa soupire : « Je n’ai aucune idée ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "IA générative",
+            "sens": "Une IA qui fabrique du nouveau : un texte, une image ou un son."
+          },
+          "text": "Une IA générative fabrique du nouveau : texte, image ou son."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à aider Moussa !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que peut proposer Palou à Moussa ?",
+              "hint": "Palou donne des idées, il ne fait pas tout à la place.",
+              "success": "Oui ! Palou propose des idées de slogans.",
+              "options": [
+                {
+                  "label": "Des idées de slogans pour l’affiche",
+                  "pict": "idees-ampoules",
+                  "correct": true
+                },
+                {
+                  "label": "Le nettoyage du quartier à sa place",
+                  "pict": "nettoyer-balai",
+                  "explain": "Palou ne peut pas nettoyer à la place des enfants : il propose des idées."
+                },
+                {
+                  "label": "La décision finale",
+                  "pict": "tampon-valider",
+                  "explain": "C’est Moussa l’auteur : il décide."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Moussa n’a pas d’idée. Demande des slogans à Palou, puis choisis le tien !",
+              "hint": "Lis bien : un des slogans a une faute.",
+              "success": "Oui ! Palou propose, mais c’est toi qui choisis le slogan.",
+              "goal": {
+                "label": "Un slogan pour l’affiche",
+                "pict": "slogan-megaphone"
+              },
+              "need": 1,
+              "says": [
+                "Voici mes slogans. Lequel choisis-tu ?"
+              ],
+              "cards": [
+                {
+                  "id": "s1",
+                  "label": "Ensemble, rendons notre quartier propre !",
+                  "pict": "quartier-propre",
+                  "good": true
+                },
+                {
+                  "id": "s2",
+                  "label": "Un quartier propre, c’est notre fierté !",
+                  "pict": "quartier-fier",
+                  "good": true
+                },
+                {
+                  "id": "s4",
+                  "label": "Set Setal : chacun balaie devant sa porte !",
+                  "pict": "nettoyer-balai",
+                  "good": true
+                },
+                {
+                  "id": "s3",
+                  "label": "Netoyons no quartié !",
+                  "pict": "slogan-megaphone",
+                  "explain": "Ce slogan a des fautes : l’IA peut se tromper, c’est à toi de vérifier."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut donner des idées. C’est toi le créateur qui choisis."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce que Palou propose à Moussa ?",
+              "hint": "Il propose, il n’ordonne pas.",
+              "success": "Oui ! Il propose des idées.",
+              "options": [
+                {
+                  "label": "Des idées",
+                  "pict": "idees-ampoules",
+                  "correct": true
+                },
+                {
+                  "label": "Des ordres à suivre",
+                  "explain": "Il propose, il n’ordonne pas : c’est toi qui choisis."
+                },
+                {
+                  "label": "La décision finale de l’affiche",
+                  "explain": "La décision finale revient toujours à Moussa."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou propose trois slogans. Qui choisit le bon ?",
+              "hint": "C’est l’auteur.",
+              "success": "Bravo ! C’est Moussa qui choisit.",
+              "options": [
+                {
+                  "label": "Moussa",
+                  "pict": "choisir-slogan",
+                  "correct": true
+                },
+                {
+                  "label": "Palou, sans rien demander",
+                  "pict": "palou-ecrit-vite",
+                  "explain": "Palou propose, mais c’est Moussa qui choisit."
+                },
+                {
+                  "label": "Le hasard, comme aux dés",
+                  "explain": "Ce n’est pas le hasard : c’est Moussa qui choisit."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait-on des idées de Palou ?",
+              "hint": "On y réfléchit avant de choisir.",
+              "success": "Exact ! On lit et on choisit.",
+              "options": [
+                {
+                  "label": "On choisit",
+                  "pict": "tampon-valider",
+                  "correct": true
+                },
+                {
+                  "label": "On les copie toutes sans les lire",
+                  "pict": "copier-sans-lire",
+                  "explain": "Il faut lire avant de choisir."
+                },
+                {
+                  "label": "On les efface avec colère",
+                  "pict": "effacer-colere",
+                  "explain": "Effacer ne sert à rien : on lit et on choisit."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu as plein d’idées pour l’affiche.",
+          "learned": "Une IA générative propose des idées. C’est toi qui choisis."
+        }
+      ]
+    },
+    {
+      "id": "p7-2",
+      "title": "Décris ton dessin",
+      "scene": {
+        "id": "classe-dessin",
+        "label": "La classe, devant la tablette"
+      },
+      "cast": [
+        "palou",
+        "fatou"
+      ],
+      "problem": "Fatou veut une image du quartier propre. Palou dessine seulement ce qu’elle décrit.",
+      "callback": "Tu te rappelles ? Une question claire aide l’IA à mieux répondre.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "image": "m07-l2-description.webp",
+          "alt": "Fatou décrit son idée à Palou devant la tablette : une rue propre avec des fresques et des enfants.",
+          "text": "Fatou veut une image de la rue propre, avec des fresques. Elle décrit son idée à Palou."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "text": "Palou dessine un grand lion qui balaie. Ce n’est pas ce que Fatou imaginait !",
+          "image": "m07-l2-s02.webp",
+          "alt": "Illustration : Palou dessine un grand lion qui balaie. Ce n’est pas ce que Fatou imaginait !"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "consigne",
+            "sens": "Les mots qu’on donne à l’IA pour lui dire quoi créer."
+          },
+          "text": "La consigne, ce sont les mots qu’on donne à l’IA. Plus elle est précise, mieux c’est."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Fatou à bien décrire son dessin !",
+          "rounds": [
+            {
+              "type": "layers",
+              "prompt": "Fatou veut une rue propre avec des fresques. Décris-la à Palou, carte par carte !",
+              "hint": "Décris la rue, pas un lion : il faut une rue, propre, avec des fresques.",
+              "success": "Oui ! Plus ta description est précise, plus le dessin de Palou te ressemble.",
+              "goal": {
+                "label": "La rue propre avec des fresques",
+                "pict": "rue-fresques-enfants"
+              },
+              "need": 3,
+              "says": [
+                "Je ne dessine rien : tu ne m’as rien dit !",
+                "Je dessine une rue… et ensuite ?",
+                "Une rue propre… il manque encore quelque chose !"
+              ],
+              "cards": [
+                {
+                  "id": "r1",
+                  "label": "Une rue",
+                  "pict": "rue",
+                  "good": true
+                },
+                {
+                  "id": "r2",
+                  "label": "Propre",
+                  "pict": "quartier-propre",
+                  "good": true
+                },
+                {
+                  "id": "r3",
+                  "label": "Des fresques",
+                  "pict": "mains-peignent",
+                  "good": true
+                },
+                {
+                  "id": "r4",
+                  "label": "Un lion qui balaie",
+                  "pict": "nettoyer-balai",
+                  "explain": "Palou a dessiné un lion qui balaie : ce n’est pas ce que Fatou imaginait. Décris la rue, pas un lion !"
+                },
+                {
+                  "id": "r5",
+                  "label": "Une pirogue",
+                  "pict": "pirogue-etiquette",
+                  "explain": "Une pirogue ne va pas dans une rue : Palou dessine ce que tu lui dis."
+                }
+              ]
+            },
+            {
+              "type": "sort",
+              "prompt": "Glisse une consigne dans sa boîte.",
+              "hint": "Une consigne précise dit quoi, où ou combien.",
+              "success": "Bravo ! Tu sais écrire des consignes précises.",
+              "bins": [
+                {
+                  "id": "precise",
+                  "label": "Consigne précise",
+                  "pict": "consigne-precise"
+                },
+                {
+                  "id": "vague",
+                  "label": "Consigne vague",
+                  "pict": "consigne-vague"
+                }
+              ],
+              "items": [
+                {
+                  "id": "c1",
+                  "label": "Un mur bleu avec trois poissons jaunes",
+                  "pict": "mur-bleu-poissons",
+                  "bin": "precise",
+                  "explain": "Elle dit la couleur et le nombre : c’est précis."
+                },
+                {
+                  "id": "c2",
+                  "label": "Un truc beau",
+                  "pict": "truc-beau",
+                  "bin": "vague",
+                  "explain": "Elle ne dit pas ce qu’on veut voir : c’est vague."
+                },
+                {
+                  "id": "c3",
+                  "label": "Des enfants qui plantent un arbre",
+                  "pict": "enfants-plantent-arbre",
+                  "bin": "precise",
+                  "explain": "Elle dit qui et quoi : c’est précis."
+                },
+                {
+                  "id": "c4",
+                  "label": "Fais-moi un dessin",
+                  "pict": "dessin-simple",
+                  "bin": "vague",
+                  "explain": "Elle ne dit pas de quoi : c’est vague."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "L’IA ne lit pas dans tes pensées. Elle crée ce que tu décris."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quelle consigne donne la meilleure image ?",
+              "hint": "Plus tu précises, mieux c’est.",
+              "success": "Oui ! Une rue propre avec des fresques est précis.",
+              "options": [
+                {
+                  "label": "Une rue propre avec des fresques",
+                  "pict": "consigne-precise",
+                  "correct": true
+                },
+                {
+                  "label": "Un truc beau",
+                  "pict": "consigne-vague",
+                  "explain": "« Un truc beau » est trop vague."
+                },
+                {
+                  "label": "Dessine quelque chose, n’importe quoi, comme tu veux",
+                  "explain": "C’est trop vague : l’IA ne sait pas quoi dessiner."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "L’image ne ressemble pas à ce que tu voulais. Que fais-tu ?",
+              "hint": "Ajoute des détails.",
+              "success": "Bravo ! On précise la consigne.",
+              "options": [
+                {
+                  "label": "Je précise ma consigne",
+                  "pict": "preciser-consigne",
+                  "correct": true
+                },
+                {
+                  "label": "J’abandonne tout de suite",
+                  "pict": "abandonner",
+                  "explain": "Abandonner ne règle rien : on peut préciser la consigne."
+                },
+                {
+                  "label": "Je dis que l’IA est nulle",
+                  "pict": "ia-nulle",
+                  "explain": "Dire « nulle » n’aide pas : il vaut mieux préciser."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi une consigne précise est-elle utile ?",
+              "hint": "L’IA a besoin de détails.",
+              "success": "Exact ! L’IA comprend mieux.",
+              "options": [
+                {
+                  "label": "L’IA comprend mieux",
+                  "pict": "consigne-precise",
+                  "correct": true
+                },
+                {
+                  "label": "L’IA se met à danser de joie",
+                  "explain": "Ce n’est pas ça : avec une consigne précise, l’IA comprend mieux."
+                },
+                {
+                  "label": "L’IA dort pendant ce temps-là",
+                  "explain": "Une IA ne dort pas : elle comprend mieux une consigne précise."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Ta consigne est très précise.",
+          "learned": "Une consigne précise aide l’IA à créer ce que tu imagines."
+        }
+      ]
+    },
+    {
+      "id": "p7-3",
+      "title": "Une histoire à deux",
+      "scene": {
+        "id": "classe-histoire",
+        "label": "La classe, pendant l’atelier d’écriture"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Moussa et Palou écrivent une histoire pour la fête, une phrase chacun. Qui reste l’auteur ?",
+      "callback": "Tu te rappelles ? Une consigne précise aide l’IA à créer.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "image": "m07-l3-histoire.webp",
+          "alt": "Moussa et Palou écrivent ensemble une histoire sur un grand cahier, chacun leur tour.",
+          "text": "Moussa et Palou écrivent une histoire pour la fête : une phrase chacun."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "text": "Palou écrit : « Le baobab de la place s’est mis à danser. »",
+          "image": "m07-l3-s02.webp",
+          "alt": "Illustration : Palou écrit : « Le baobab de la place s’est mis à danser. »"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou demande : « Et si Palou invente un fait faux ? »",
+          "image": "m07-l3-s03.webp",
+          "alt": "Illustration : Fatou demande : « Et si Palou invente un fait faux ? »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "auteur",
+            "sens": "La personne qui décide de son travail et le signe."
+          },
+          "text": "L’auteur décide de l’histoire et la signe. L’IA l’aide, mais ne signe pas à sa place."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Moussa à rester l’auteur !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse chaque tâche chez Moussa ou chez Palou.",
+              "hint": "Moussa décide et signe. Palou propose des idées.",
+              "success": "Bravo ! Palou propose, Moussa décide : c’est lui l’auteur.",
+              "bins": [
+                {
+                  "id": "moussa",
+                  "label": "Moussa décide",
+                  "pict": "moussa-auteur"
+                },
+                {
+                  "id": "palou",
+                  "label": "Palou propose",
+                  "pict": "palou-ecrit-vite"
+                }
+              ],
+              "items": [
+                {
+                  "id": "a1",
+                  "label": "Signer l’histoire",
+                  "pict": "auteur-signature",
+                  "bin": "moussa",
+                  "explain": "L’auteur signe : c’est Moussa, pas Palou."
+                },
+                {
+                  "id": "a2",
+                  "label": "Proposer des idées",
+                  "pict": "idees-ampoules",
+                  "bin": "palou",
+                  "explain": "Palou aide en proposant des idées."
+                },
+                {
+                  "id": "a3",
+                  "label": "Corriger les erreurs",
+                  "pict": "corriger-crayon-rouge",
+                  "bin": "moussa",
+                  "explain": "L’auteur relit et corrige : c’est le travail de Moussa."
+                },
+                {
+                  "id": "a4",
+                  "label": "Inventer une phrase",
+                  "pict": "histoire-inventee",
+                  "bin": "palou",
+                  "explain": "Palou peut proposer une phrase, que Moussa choisit ensuite."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Palou propose des phrases pour l’histoire. Garde seulement les phrases vraies !",
+              "hint": "Un baobab ne naît pas en une nuit : une phrase de Palou est fausse.",
+              "success": "Oui ! Moussa vérifie les phrases de Palou avant de signer l’histoire.",
+              "goal": {
+                "label": "Une histoire vraie et amusante",
+                "pict": "histoire-inventee"
+              },
+              "need": 2,
+              "says": [
+                "Voici mes phrases. Lesquelles gardes-tu ?",
+                "Une bonne phrase ! Encore une."
+              ],
+              "cards": [
+                {
+                  "id": "h1",
+                  "label": "Le baobab de la place donne de l’ombre.",
+                  "pict": "baobab",
+                  "good": true
+                },
+                {
+                  "id": "h2",
+                  "label": "Les enfants jouent sous le baobab.",
+                  "pict": "enfants-groupe",
+                  "good": true
+                },
+                {
+                  "id": "h3",
+                  "label": "Le baobab est né hier matin.",
+                  "pict": "baobab",
+                  "explain": "Ce n’est pas vrai : un baobab pousse pendant des centaines d’années. Moussa doit vérifier avant de signer."
+                },
+                {
+                  "id": "h4",
+                  "label": "Palou a planté le premier baobab.",
+                  "pict": "palou-portrait",
+                  "explain": "C’est faux : Palou n’a pas planté le premier baobab. L’auteur vérifie les faits."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut inventer des choses fausses. Relis toujours et corrige."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qui décide de l’histoire ?",
+              "hint": "Celui qui l’écrit.",
+              "success": "Oui ! L’auteur décide.",
+              "options": [
+                {
+                  "label": "L’auteur",
+                  "pict": "nom-auteur",
+                  "correct": true
+                },
+                {
+                  "label": "L’IA, toute seule",
+                  "pict": "histoire-seule",
+                  "explain": "L’IA peut aider, mais l’auteur décide."
+                },
+                {
+                  "label": "Le premier mot que l’IA trouve",
+                  "explain": "Ce n’est pas le premier mot trouvé : l’auteur décide."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou écrit une phrase fausse. Que fait l’auteur ?",
+              "hint": "Il peut changer ce qui ne va pas.",
+              "success": "Bravo ! Il la corrige.",
+              "options": [
+                {
+                  "label": "Il la corrige",
+                  "pict": "corriger-crayon-rouge",
+                  "correct": true
+                },
+                {
+                  "label": "Il la copie sans la lire",
+                  "pict": "copier-sans-lire",
+                  "explain": "Copier sans lire, c’est risquer de garder l’erreur."
+                },
+                {
+                  "label": "Il efface toute l’histoire par colère",
+                  "pict": "effacer-colere",
+                  "explain": "Tout effacer est inutile : on corrige seulement l’erreur."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Avant de finir l’histoire, que fait-on ?",
+              "hint": "Regarde bien chaque ligne.",
+              "success": "Exact ! On relit.",
+              "options": [
+                {
+                  "label": "On relit",
+                  "pict": "relire-loupe",
+                  "correct": true
+                },
+                {
+                  "label": "On ferme les yeux et on signe",
+                  "explain": "Il faut regarder pour trouver les erreurs."
+                },
+                {
+                  "label": "On la donne sans la regarder",
+                  "pict": "copier-sans-lire",
+                  "explain": "On relit d’abord, pour corriger les erreurs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Ton histoire à deux est prête.",
+          "learned": "L’auteur décide de son histoire. Une IA peut aider, mais il faut relire et corriger."
+        }
+      ]
+    },
+    {
+      "id": "p7-4",
+      "title": "Mon affiche créative",
+      "scene": {
+        "id": "classe-affiche-finale",
+        "label": "La classe, devant la grande affiche"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "mme-diop",
+        "fatou"
+      ],
+      "problem": "Palou propose des slogans. Moussa doit choisir, corriger et signer l’affiche.",
+      "callback": "Tu te rappelles ? L’auteur décide et signe son travail.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m07-l4-affiche.webp",
+          "alt": "Madame Diop installe la grande affiche Set Setal sur un tableau. Palou, Moussa et Fatou préparent les feutres.",
+          "text": "Madame Diop installe la grande feuille blanche pour l’affiche Set Setal."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "text": "Palou propose trois slogans. Il y a une faute dans l’un d’eux !",
+          "image": "m07-l4-s02.webp",
+          "alt": "Illustration : Palou propose trois slogans. Il y a une faute dans l’un d’eux !"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "text": "Moussa choisit un slogan et corrige la faute. Fatou colorie les lettres.",
+          "image": "m07-l4-s03.webp",
+          "alt": "Illustration : Moussa choisit un slogan et corrige la faute. Fatou colorie les lettres."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "transparent",
+            "sens": "Dire clairement quand l’IA a aidé."
+          },
+          "text": "Être transparent, c’est dire quand l’IA a aidé. On écrit : « fait avec l’aide de l’IA »."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Moussa à finir l’affiche !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait Moussa avec les slogans de Palou ?",
+              "hint": "L’auteur choisit et corrige.",
+              "success": "Oui ! Moussa choisit et corrige le meilleur slogan.",
+              "options": [
+                {
+                  "label": "Il les copie tous sans les lire",
+                  "pict": "copier-sans-lire",
+                  "explain": "Sans lire, il peut recopier des fautes."
+                },
+                {
+                  "label": "Il choisit et corrige le meilleur",
+                  "pict": "choisir-corriger",
+                  "correct": true
+                },
+                {
+                  "label": "Il laisse Palou signer l’affiche",
+                  "pict": "palou-signe",
+                  "explain": "Palou aide, mais c’est Moussa l’auteur : c’est lui qui signe."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Prépare l’affiche : choisis, corrige, puis signe avec honnêteté !",
+              "hint": "Moussa choisit un slogan, corrige la faute et dit que l’IA l’a aidé.",
+              "success": "Oui ! L’affiche est prête : Moussa est l’auteur et il dit que l’IA l’a aidé.",
+              "goal": {
+                "label": "L’affiche Set Setal",
+                "pict": "slogan-megaphone"
+              },
+              "need": 3,
+              "says": [
+                "Mon affiche est vide. Que fait Moussa ?",
+                "Le slogan est choisi. Et la faute ?",
+                "Sans faute ! Il manque encore une chose."
+              ],
+              "cards": [
+                {
+                  "id": "q1",
+                  "label": "Choisir le slogan",
+                  "pict": "choisir-slogan",
+                  "good": true
+                },
+                {
+                  "id": "q2",
+                  "label": "Corriger la faute",
+                  "pict": "corriger-crayon-rouge",
+                  "good": true
+                },
+                {
+                  "id": "q3",
+                  "label": "Écrire « fait avec l’aide de l’IA »",
+                  "pict": "aide-ia",
+                  "good": true
+                },
+                {
+                  "id": "q4",
+                  "label": "Cacher que l’IA a aidé",
+                  "pict": "faux-nom",
+                  "explain": "Moussa doit dire que l’IA l’a aidé : être transparent, c’est être honnête."
+                },
+                {
+                  "id": "q5",
+                  "label": "Signer sans relire",
+                  "pict": "envoyer-sans-relire",
+                  "explain": "Moussa doit relire avant de signer : l’IA peut faire des fautes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA qui aide ne remplace pas ton idée. Tu restes l’auteur de ton travail."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Comment signe-t-on une affiche faite avec l’aide d’une IA ?",
+              "hint": "Il faut être honnête.",
+              "success": "Oui ! On dit que l’IA a aidé.",
+              "options": [
+                {
+                  "label": "En disant qu’elle a aidé",
+                  "pict": "aide-ia",
+                  "correct": true
+                },
+                {
+                  "label": "Avec le nom d’un grand artiste célèbre",
+                  "pict": "faux-nom",
+                  "explain": "Prendre un faux nom, c’est mentir."
+                },
+                {
+                  "label": "Sans rien dire à personne du tout",
+                  "pict": "rien",
+                  "explain": "Il faut dire que l’IA a aidé."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qui reste l’auteur de l’affiche ?",
+              "hint": "Celui qui choisit et corrige.",
+              "success": "Exact ! C’est Moussa.",
+              "options": [
+                {
+                  "label": "Moussa",
+                  "pict": "nom-auteur",
+                  "correct": true
+                },
+                {
+                  "label": "Palou",
+                  "pict": "palou-signe",
+                  "explain": "Palou a aidé, mais l’auteur reste Moussa."
+                },
+                {
+                  "label": "Personne, car c’est une IA",
+                  "explain": "Moussa choisit et corrige : il reste l’auteur."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait-on d’abord avec les idées de Palou ?",
+              "hint": "On ne les prend pas telles quelles.",
+              "success": "Bravo ! On choisit et on corrige.",
+              "options": [
+                {
+                  "label": "On choisit et on corrige",
+                  "pict": "choisir-corriger",
+                  "correct": true
+                },
+                {
+                  "label": "On les copie sans les lire du tout",
+                  "pict": "copier-sans-lire",
+                  "explain": "Il faut lire, choisir et corriger."
+                },
+                {
+                  "label": "On les cache dans un tiroir pour toujours",
+                  "explain": "Les cacher ne sert à rien : on choisit et on corrige."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m07",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 7 avec Palou.",
+          "learned": "Une IA peut t’aider à créer, mais tu restes l’auteur. Tu choisis, tu corriges et tu dis qu’elle a aidé."
+        }
+      ]
+    }
+  ]
+}

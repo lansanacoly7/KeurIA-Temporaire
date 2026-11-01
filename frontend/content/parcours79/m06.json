@@ -1,0 +1,825 @@
+{
+  "module": {
+    "id": "p6",
+    "chapter": 6,
+    "title": "L’IA qui parle",
+    "place": "Ziguinchor, en appel vidéo",
+    "intro": "Un appel vidéo arrive de Ziguinchor ! Mame Coumba veut envoyer un message vocal pour la fête."
+  },
+  "lessons": [
+    {
+      "id": "p6-1",
+      "title": "Parler à une machine",
+      "scene": {
+        "id": "appel-ziguinchor",
+        "label": "L’appel vidéo avec Ziguinchor"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "mame-coumba"
+      ],
+      "problem": "Mame Coumba appelle de Ziguinchor. Palou doit comprendre sa voix, mais il entend mal.",
+      "callback": "Tu te rappelles ? Un assistant vocal comprend ta voix et te répond.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "image": "m06-l1-appel.webp",
+          "alt": "Sur l’écran d’une tablette, Mame Coumba sourit depuis sa cour à Ziguinchor. Fatou et Palou lui répondent.",
+          "text": "Un appel vidéo arrive de Ziguinchor ! C’est Mame Coumba, la grand-mère de Fatou."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "mame-coumba",
+          "text": "Mame Coumba parle diola, et un peu le français. Elle veut envoyer un message.",
+          "image": "m06-l1-s02.webp",
+          "alt": "Illustration : Mame Coumba parle diola, et un peu le français. Elle veut envoyer un message."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "palou",
+          "text": "Palou écoute très fort. « Je ne comprends pas tous ses mots… »",
+          "image": "m06-l1-s03.webp",
+          "alt": "Illustration : Palou écoute très fort. « Je ne comprends pas tous ses mots… »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "reconnaissance vocale",
+            "sens": "Quand une machine transforme une voix en mots écrits."
+          },
+          "text": "La reconnaissance vocale transforme une voix en mots écrits. Palou en a besoin pour comprendre."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à mieux entendre !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait la reconnaissance vocale ?",
+              "hint": "Elle écoute une voix et écrit ce qu’elle entend.",
+              "success": "Oui ! Elle transforme la voix en mots écrits.",
+              "options": [
+                {
+                  "label": "Elle devine le visage de la personne",
+                  "pict": "visage-devine",
+                  "explain": "Elle ne regarde pas le visage : elle écoute seulement la voix."
+                },
+                {
+                  "label": "Elle écrit ce qu’elle entend",
+                  "pict": "voix-en-texte",
+                  "correct": true
+                },
+                {
+                  "label": "Elle fabrique de nouvelles chansons",
+                  "pict": "fabriquer-chanson",
+                  "explain": "Fabriquer des chansons, c’est autre chose : ici, la machine écoute."
+                }
+              ]
+            },
+            {
+              "type": "speak",
+              "prompt": "Mame Coumba dit « Bonjour Palou ! ». Aide Palou à écrire ce qu’il entend.",
+              "hint": "Choisis les mots que Mame Coumba a dits : bonjour et Palou.",
+              "success": "Oui ! Palou a écrit les bons mots : sa machine a changé la voix en texte.",
+              "say": "Bonjour Palou !",
+              "need": [
+                [
+                  "bonjour"
+                ],
+                [
+                  "palou"
+                ]
+              ],
+              "avoid": [
+                "bonsoir",
+                "balou"
+              ],
+              "cards": [
+                "Bonjour",
+                "Palou",
+                "Bonsoir",
+                "Balou",
+                "Merci"
+              ],
+              "missing": "Il manque un mot. Mame Coumba a dit « Bonjour Palou » !",
+              "vague": "Oh ! Palou a écrit un mot faux. Une machine peut mal entendre !"
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA comprend mieux les langues qu’elle a beaucoup entendues. Le diola en a peu."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que transforme une IA qui comprend la voix ?",
+              "hint": "Elle écoute et elle écrit.",
+              "success": "Oui ! Elle transforme ta voix en mots écrits.",
+              "options": [
+                {
+                  "label": "Ta voix en mots écrits",
+                  "pict": "voix-en-texte",
+                  "correct": true
+                },
+                {
+                  "label": "Tes mots en chanson",
+                  "pict": "fabriquer-chanson",
+                  "explain": "Ce n’est pas une chanson : elle écrit ce que tu dis."
+                },
+                {
+                  "label": "Ton visage en dessin",
+                  "pict": "visage-devine",
+                  "explain": "Elle écoute ta voix, elle ne regarde pas ton visage."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi une IA comprend-elle mal une langue qu’elle connaît peu ?",
+              "hint": "Pense aux exemples qu’elle a reçus.",
+              "success": "Exact ! Elle a eu peu d’exemples de cette langue.",
+              "options": [
+                {
+                  "label": "Elle a eu peu d’exemples",
+                  "pict": "peu-exemples",
+                  "correct": true
+                },
+                {
+                  "label": "Parce qu’elle est fâchée contre toi",
+                  "pict": "se-facher",
+                  "explain": "Une IA n’est pas fâchée : elle manque d’exemples."
+                },
+                {
+                  "label": "Parce qu’elle n’a jamais de micro",
+                  "explain": "Elle a un micro, mais elle manque d’exemples de cette langue."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Mame Coumba parle dans une cour très bruyante. Que se passe-t-il ?",
+              "hint": "Le bruit couvre la voix.",
+              "success": "Bravo ! Le bruit gêne : Palou peut mal comprendre.",
+              "options": [
+                {
+                  "label": "Palou entend mal",
+                  "pict": "bruit-cour",
+                  "correct": true
+                },
+                {
+                  "label": "Palou comprend tout parfaitement bien",
+                  "pict": "ia-parfaite",
+                  "explain": "Le bruit gêne Palou : il peut mal comprendre."
+                },
+                {
+                  "label": "Palou devient muet pour toujours",
+                  "explain": "Le bruit ne rend pas Palou muet : il le gêne seulement."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Palou écoute déjà beaucoup mieux.",
+          "learned": "Une IA transforme la voix en mots. Elle comprend moins bien les langues qu’elle connaît peu."
+        }
+      ]
+    },
+    {
+      "id": "p6-2",
+      "title": "Les mots magiques",
+      "scene": {
+        "id": "classe-mots",
+        "label": "La classe de Madame Diop"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "moussa"
+      ],
+      "problem": "Moussa croit à des mots magiques. Madame Diop explique comment Palou choisit ses réponses.",
+      "callback": "Tu te rappelles ? La reconnaissance vocale transforme une voix en mots écrits.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m06-l2-mots.webp",
+          "alt": "Madame Diop écrit les mots « fête », « heure » et « lieu » au tableau, devant Palou et Moussa.",
+          "text": "Madame Diop écrit trois mots au tableau : fête, heure, lieu."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa lance : « Dis « fête », Palou, et tout se prépare tout seul ! »",
+          "image": "m06-l2-s02.webp",
+          "alt": "Illustration : Moussa lance : « Dis « fête », Palou, et tout se prépare tout seul ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "mot-clé",
+            "sens": "Un mot important que l’IA cherche pour comprendre une phrase."
+          },
+          "text": "Un mot-clé est un mot important. L’IA le cherche dans ta phrase pour répondre."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à trouver les mots-clés !",
+          "rounds": [
+            {
+              "type": "speak",
+              "prompt": "Demande à Palou à quelle heure commence la fête. Les mots importants s’allument !",
+              "hint": "Les mots importants sont « heure » et « fête ».",
+              "success": "Oui ! Palou a trouvé les mots-clés « heure » et « fête » dans ta phrase.",
+              "say": "À quelle heure commence la fête ?",
+              "need": [
+                [
+                  "heure"
+                ],
+                [
+                  "fête"
+                ]
+              ],
+              "cards": [
+                "À",
+                "quelle",
+                "heure",
+                "commence",
+                "la",
+                "fête",
+                "pizza"
+              ],
+              "missing": "Il me manque un mot important : « heure » ou « fête ». Redis ta question !"
+            },
+            {
+              "type": "sort",
+              "prompt": "Glisse un mot dans sa boîte.",
+              "hint": "Un mot-clé dit ce dont on parle.",
+              "success": "Bravo ! Tu sais repérer les mots-clés.",
+              "bins": [
+                {
+                  "id": "cle",
+                  "label": "Mot-clé",
+                  "pict": "cle-mot"
+                },
+                {
+                  "id": "petit",
+                  "label": "Petit mot",
+                  "pict": "petit-mot"
+                }
+              ],
+              "items": [
+                {
+                  "id": "w1",
+                  "label": "fête",
+                  "pict": "fete",
+                  "bin": "cle",
+                  "explain": "« Fête » dit de quoi on parle : c’est un mot-clé."
+                },
+                {
+                  "id": "w2",
+                  "label": "le",
+                  "pict": "petit-mot",
+                  "bin": "petit",
+                  "explain": "« Le » est un petit mot : il aide la phrase seulement."
+                },
+                {
+                  "id": "w3",
+                  "label": "lieu",
+                  "pict": "lieu-pin",
+                  "bin": "cle",
+                  "explain": "« Lieu » dit ce qu’on cherche : c’est un mot-clé."
+                },
+                {
+                  "id": "w4",
+                  "label": "de",
+                  "pict": "petit-mot",
+                  "bin": "petit",
+                  "explain": "« De » est un petit mot : il ne dit pas de quoi on parle."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Il n’y a pas de magie : l’IA cherche des mots qu’elle connaît."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un mot-clé ?",
+              "hint": "C’est un mot qui ouvre la phrase.",
+              "success": "Oui ! Un mot-clé est un mot important.",
+              "options": [
+                {
+                  "label": "Un mot important",
+                  "pict": "cle-mot",
+                  "correct": true
+                },
+                {
+                  "label": "Un tout petit mot de liaison",
+                  "pict": "petit-mot",
+                  "explain": "Les petits mots comme « le » ou « de » aident moins l’IA."
+                },
+                {
+                  "label": "Le mot de passe de ta tablette",
+                  "pict": "mot-de-passe-cle",
+                  "explain": "Un mot-clé n’est pas un mot de passe : c’est un mot important de la phrase."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Dans « À quelle heure commence la fête ? », quel est le mot important ?",
+              "hint": "Cherche le mot qui dit de quoi on parle.",
+              "success": "Bravo ! « Fête » dit de quoi on parle.",
+              "options": [
+                {
+                  "label": "Fête",
+                  "pict": "fete",
+                  "correct": true
+                },
+                {
+                  "label": "À",
+                  "pict": "petit-mot",
+                  "explain": "« À » est un petit mot : il n’aide pas à comprendre."
+                },
+                {
+                  "label": "La",
+                  "pict": "petit-mot",
+                  "explain": "« La » est un petit mot : il n’aide pas à comprendre."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "À quoi sert un mot-clé pour l’IA ?",
+              "hint": "Il lui montre où regarder.",
+              "success": "Exact ! Il l’aide à comprendre ta phrase.",
+              "options": [
+                {
+                  "label": "À comprendre ta phrase",
+                  "pict": "question-claire",
+                  "correct": true
+                },
+                {
+                  "label": "À faire beaucoup de bruit",
+                  "explain": "Un mot-clé ne fait pas de bruit : il aide à comprendre."
+                },
+                {
+                  "label": "À éteindre la machine sans rien dire",
+                  "explain": "Un mot-clé n’éteint rien : il aide à comprendre."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu connais les mots-clés.",
+          "learned": "Un mot-clé est un mot important. Une IA le cherche pour comprendre ta phrase."
+        }
+      ]
+    },
+    {
+      "id": "p6-3",
+      "title": "Question claire",
+      "scene": {
+        "id": "classe-question",
+        "label": "La classe, devant la tablette"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "moussa"
+      ],
+      "problem": "Fatou pose une question vague à Palou et reçoit une réponse inutile. Comment mieux demander ?",
+      "callback": "Tu te rappelles ? L’IA cherche des mots-clés dans ta phrase.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "image": "m06-l3-question.webp",
+          "alt": "Fatou parle à la tablette de la classe, Palou hausse les épaules, Moussa rit derrière eux.",
+          "text": "Fatou demande : « Palou, c’est quand, le truc ? » Palou ne sait pas quoi répondre."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa rit : « Quel truc ? Même moi, je ne comprends pas ! »",
+          "image": "m06-l3-s02.webp",
+          "alt": "Illustration : Moussa rit : « Quel truc ? Même moi, je ne comprends pas ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "question claire",
+            "sens": "Une question avec un sujet précis, sans mots vagues."
+          },
+          "text": "Une question claire dit de quoi on parle. Elle évite les mots vagues comme « truc »."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Fatou à bien parler à Palou !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quelle question est la plus claire ?",
+              "hint": "Une bonne question dit de quoi elle parle.",
+              "success": "Oui ! Cette question dit précisément ce que Fatou veut savoir.",
+              "options": [
+                {
+                  "label": "C’est quand, le truc ?",
+                  "pict": "question-truc",
+                  "explain": "« Le truc » ne dit pas de quoi on parle : Palou ne peut pas répondre."
+                },
+                {
+                  "label": "À quelle heure commence la fête du quartier ?",
+                  "pict": "question-heure-fete",
+                  "correct": true
+                },
+                {
+                  "label": "Tu sais, hein ?",
+                  "pict": "question-vague",
+                  "explain": "Elle ne dit pas ce qu’on veut savoir : Palou ne peut pas aider."
+                }
+              ]
+            },
+            {
+              "type": "speak",
+              "prompt": "Demande clairement l’heure de la fête à Palou, sans dire « truc ».",
+              "hint": "Dis « heure » et « fête », et pas « truc ».",
+              "success": "Oui ! Avec une question claire, Palou sait de quoi tu parles.",
+              "say": "Quelle est l’heure de la fête ?",
+              "need": [
+                [
+                  "heure"
+                ],
+                [
+                  "fête"
+                ]
+              ],
+              "avoid": [
+                "truc"
+              ],
+              "cards": [
+                "Quelle",
+                "est",
+                "l’heure",
+                "de",
+                "la",
+                "fête",
+                "quand",
+                "le",
+                "truc"
+              ],
+              "missing": "Il me manque un mot important. Dis l’heure et la fête !",
+              "vague": "Quel truc ? Dis-moi de quoi tu parles : la fête !"
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Plus ta question est claire, mieux l’IA peut t’aider. Elle peut quand même se tromper."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Laquelle est une question vague ?",
+              "hint": "Le mot « truc » ne dit rien.",
+              "success": "Oui ! « C’est quoi, ce truc ? » est trop vague.",
+              "options": [
+                {
+                  "label": "C’est quoi, ce truc ?",
+                  "pict": "question-truc",
+                  "correct": true
+                },
+                {
+                  "label": "À quelle heure commence la fête ?",
+                  "pict": "question-heure-fete",
+                  "explain": "Celle-ci est claire : elle a un sujet précis."
+                },
+                {
+                  "label": "Où a lieu la fête de l’école ?",
+                  "pict": "lieu-fete",
+                  "explain": "Celle-ci est claire aussi : elle a un sujet précis."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi une question claire aide-t-elle l’IA ?",
+              "hint": "Elle sait où chercher.",
+              "success": "Exact ! L’IA répond mieux.",
+              "options": [
+                {
+                  "label": "L’IA répond mieux",
+                  "pict": "question-claire",
+                  "correct": true
+                },
+                {
+                  "label": "L’IA devient très fâchée contre nous",
+                  "pict": "se-facher",
+                  "explain": "Une IA ne se fâche pas : elle répond mieux à une question claire."
+                },
+                {
+                  "label": "L’IA s’endort tout de suite après",
+                  "explain": "Une IA ne dort pas : elle répond mieux à une question claire."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment rendre « C’est quoi, ça ? » plus clair ?",
+              "hint": "Dis de quoi tu parles.",
+              "success": "Bravo ! On nomme le sujet.",
+              "options": [
+                {
+                  "label": "On nomme le sujet",
+                  "pict": "sujet-precis",
+                  "correct": true
+                },
+                {
+                  "label": "On crie beaucoup plus fort",
+                  "pict": "crier",
+                  "explain": "Crier ne rend pas la question plus claire."
+                },
+                {
+                  "label": "On répète « truc » trois fois de suite",
+                  "pict": "question-vague",
+                  "explain": "Répéter « truc » ne rend pas la question plus claire."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Ta question est claire.",
+          "learned": "Une question claire a un sujet précis et des mots simples. Elle aide l’IA à mieux répondre."
+        }
+      ]
+    },
+    {
+      "id": "p6-4",
+      "title": "Mon mini dialogue",
+      "scene": {
+        "id": "appel-dialogue",
+        "label": "L’appel vidéo, pour le message de la fête"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "mame-coumba",
+        "mme-diop"
+      ],
+      "problem": "Mame Coumba veut envoyer un message vocal pour la fête. Il faut préparer un petit dialogue.",
+      "callback": "Tu te rappelles ? Une question claire aide l’IA à bien répondre.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mame-coumba",
+          "image": "m06-l4-dialogue.webp",
+          "alt": "Mame Coumba, sur l’écran de la tablette, enregistre un message pour la fête. La classe l’écoute avec Madame Diop.",
+          "text": "Mame Coumba veut envoyer un message vocal pour la fête du quartier."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "mme-diop",
+          "text": "Madame Diop propose un petit dialogue en trois phrases courtes.",
+          "image": "m06-l4-s02.webp",
+          "alt": "Illustration : Madame Diop propose un petit dialogue en trois phrases courtes."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "wolof": {
+            "mot": "Jërëjëf",
+            "sens": "Merci"
+          },
+          "text": "Fatou répète les phrases lentement. Palou écoute, puis il répond.",
+          "image": "m06-l4-s03.webp",
+          "alt": "Illustration : Fatou répète les phrases lentement. Palou écoute, puis il répond."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "dialogue",
+            "sens": "Une conversation où chacun parle à son tour."
+          },
+          "text": "Un dialogue, c’est parler chacun son tour. Si on ne comprend pas, on peut demander de répéter."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à bien dialoguer !",
+          "rounds": [
+            {
+              "type": "speak",
+              "prompt": "Fatou veut saluer Palou. Dis-lui bonjour poliment !",
+              "hint": "Dis « bonjour » et « Palou ».",
+              "success": "Oui ! Dans un dialogue, on parle chacun son tour. Maintenant, Palou répond.",
+              "say": "Bonjour Palou !",
+              "need": [
+                [
+                  "bonjour"
+                ],
+                [
+                  "palou"
+                ]
+              ],
+              "cards": [
+                "Bonjour",
+                "Palou",
+                "Salut",
+                "fête",
+                "Merci"
+              ],
+              "missing": "Pour saluer Palou, dis « Bonjour Palou » !"
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou n’a pas compris. Que peut-il dire ?",
+              "hint": "Mieux vaut le dire que faire semblant.",
+              "success": "Oui ! Demander de répéter est une très bonne idée.",
+              "options": [
+                {
+                  "label": "Tout est très clair, merci !",
+                  "pict": "tout-clair-merci",
+                  "explain": "Il n’a pas compris : mieux vaut le dire que faire semblant."
+                },
+                {
+                  "label": "Je n’écoute plus du tout",
+                  "pict": "ne-plus-ecouter",
+                  "explain": "Arrêter d’écouter ne règle rien : il vaut mieux demander de répéter."
+                },
+                {
+                  "label": "Peux-tu répéter, s’il te plaît ?",
+                  "pict": "repeter-fleche",
+                  "correct": true
+                }
+              ]
+            },
+            {
+              "type": "speak",
+              "prompt": "Palou n’a pas compris. Demande-lui poliment de répéter.",
+              "hint": "Dis « répéter » et « s’il te plaît ».",
+              "success": "Oui ! Quand on ne comprend pas, on demande poliment de répéter.",
+              "say": "Peux-tu répéter, s’il te plaît ?",
+              "need": [
+                [
+                  "répéter",
+                  "répète"
+                ],
+                [
+                  "plaît"
+                ]
+              ],
+              "cards": [
+                "Peux-tu",
+                "répéter",
+                "s’il",
+                "te",
+                "plaît",
+                "Salut",
+                "fête"
+              ],
+              "missing": "Pour demander de répéter, dis « répéter » et « s’il te plaît » !"
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut se tromper dans une langue qu’elle connaît peu. Vérifie toujours avec une personne."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Comment salue-t-on Palou ?",
+              "hint": "Avec politesse.",
+              "success": "Oui ! On dit bonjour poliment.",
+              "options": [
+                {
+                  "label": "Bonjour Palou !",
+                  "pict": "bonjour-main",
+                  "correct": true
+                },
+                {
+                  "label": "Hé, le robot, réponds-moi vite !",
+                  "explain": "On salue poliment, avec un bonjour."
+                },
+                {
+                  "label": "On ne dit rien du tout",
+                  "pict": "rien",
+                  "explain": "Un petit bonjour fait plaisir, même à un robot."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou n’a pas compris. Que dis-tu ?",
+              "hint": "Poliment, bien sûr.",
+              "success": "Exact ! On demande de répéter, poliment.",
+              "options": [
+                {
+                  "label": "Tu peux répéter ?",
+                  "pict": "repeter-fleche",
+                  "correct": true
+                },
+                {
+                  "label": "Tais-toi, tu es nul !",
+                  "pict": "ia-nulle",
+                  "explain": "On reste poli : ce n’est pas gentil."
+                },
+                {
+                  "label": "Je ne t’écoute plus jamais",
+                  "pict": "ne-plus-ecouter",
+                  "explain": "Ne plus écouter ne règle rien : on demande de répéter."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment parler pour que Palou comprenne ?",
+              "hint": "Pas trop vite, pas trop fort.",
+              "success": "Bravo ! Clairement, avec des mots simples.",
+              "options": [
+                {
+                  "label": "Parler clairement",
+                  "pict": "voix-douce",
+                  "correct": true
+                },
+                {
+                  "label": "Très vite, la bouche pleine",
+                  "pict": "bouche-pleine",
+                  "explain": "Parler vite et la bouche pleine, c’est difficile à comprendre."
+                },
+                {
+                  "label": "En criant le plus fort possible",
+                  "pict": "crier",
+                  "explain": "Crier ne l’aide pas : il comprend mieux une voix claire."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m06",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 6 avec Palou.",
+          "learned": "Une IA écoute mieux quand on parle clairement. Elle comprend moins bien les langues qu’elle connaît peu."
+        }
+      ]
+    }
+  ]
+}

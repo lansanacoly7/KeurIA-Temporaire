@@ -1,0 +1,539 @@
+{
+  "module": {
+    "id": "a1",
+    "chapter": 1,
+    "title": "Bienvenue dans l’IA",
+    "place": "Le laboratoire numérique",
+    "emoji": "🧭",
+    "intro": "Distingue programmes, robots et intelligence artificielle avec l’équipe."
+  },
+  "lessons": [
+    {
+      "id": "a1-1",
+      "title": "IA ou simple programme ?",
+      "scene": {
+        "id": "labo",
+        "label": "Le laboratoire numérique"
+      },
+      "cast": [
+        "palou",
+        "aminata",
+        "kofi"
+      ],
+      "problem": "Un programme classique et une IA s’affrontent dans le laboratoire. Sauras-tu les différencier ?",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "palou",
+          "emoji": "🧭",
+          "text": "Bienvenue au laboratoire ! Palou observe les ordinateurs qui s’allument."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "aminata",
+          "emoji": "💻",
+          "text": "Aminata regarde l’écran. Est-ce qu’un simple programme est déjà une IA ?"
+        },
+        {
+          "kind": "story",
+          "pose": "Reflexion",
+          "speaker": "kofi",
+          "emoji": "⚙️",
+          "text": "Kofi analyse le code source. Il cherche si la machine apprend toute seule."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "Programme",
+            "sens": "Une suite d’instructions strictes qu’un ordinateur exécute sans réfléchir."
+          },
+          "text": "Un programme applique toujours les mêmes règles. Une IA apprend et s’adapte avec des exemples."
+        },
+        {
+          "kind": "play",
+          "pose": "Reflexion",
+          "emoji": "🎮",
+          "text": "Voici le premier défi interactif !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quelle est la particularité d’une intelligence artificielle ?",
+              "hint": "Pense à la manière dont elle s’améliore avec le temps.",
+              "success": "Exactement ! L’IA améliore ses réponses en observant de nombreux exemples.",
+              "options": [
+                {
+                  "id": "opt-1",
+                  "label": "Elle apprend grâce à des exemples",
+                  "correct": true
+                },
+                {
+                  "id": "opt-2",
+                  "label": "Elle ne fait que calculer des additions",
+                  "correct": false,
+                  "explain": "Une simple calculatrice calcule, mais elle n’apprend rien de nouveau."
+                },
+                {
+                  "id": "opt-3",
+                  "label": "Elle fonctionne sans aucune électricité",
+                  "correct": false,
+                  "explain": "Une IA tourne sur des serveurs informatiques qui ont besoin d’énergie."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "🧩",
+          "text": "Place maintenant au jeu de tri !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Trie ces outils dans la bonne boîte.",
+              "hint": "Distingue les règles fixes de l’apprentissage automatique.",
+              "success": "Bravo ! Tu as parfaitement classé les programmes et les IA.",
+              "bins": [
+                {
+                  "id": "b-prog",
+                  "label": "Programme classique"
+                },
+                {
+                  "id": "b-ia",
+                  "label": "Système IA"
+                }
+              ],
+              "items": [
+                {
+                  "id": "item-1",
+                  "label": "Horloge numérique",
+                  "bin": "b-prog",
+                  "explain": "L’horloge avance les secondes selon un mécanisme fixe."
+                },
+                {
+                  "id": "item-2",
+                  "label": "Reconnaissance faciale",
+                  "bin": "b-ia",
+                  "explain": "Elle compare les visages grâce à un modèle entraîné."
+                },
+                {
+                  "id": "item-3",
+                  "label": "Minuteur de cuisine",
+                  "bin": "b-prog",
+                  "explain": "Le minuteur sonne quand le compte à rebours est terminé."
+                },
+                {
+                  "id": "item-4",
+                  "label": "Traducteur de texte",
+                  "bin": "b-ia",
+                  "explain": "Le traducteur analyse des millions de phrases pour traduire."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🏆",
+          "learned": "Un programme suit des règles fixes, alors qu’une IA apprend avec des exemples.",
+          "text": "Bravo {prenom} ! Tu as réussi ta première leçon du parcours 10-12 ans !"
+        }
+      ]
+    },
+    {
+      "id": "a1-2",
+      "title": "Robot = IA ?",
+      "scene": {
+        "id": "atelier",
+        "label": "L’atelier de robotique"
+      },
+      "cast": [
+        "palou",
+        "aminata",
+        "dr-fall"
+      ],
+      "problem": "Un robot a-t-il toujours une IA dans sa tête ? Nos scientifiques mènent l’enquête.",
+      "callback": "Tu sais déjà qu’une IA apprend grâce à des données et des exemples.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "dr-fall",
+          "emoji": "👩‍🔬",
+          "text": "Dr. Fall accueille les jeunes dans l’atelier. Elle montre un grand bras mécanique."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "aminata",
+          "emoji": "🦾",
+          "text": "Aminata admire le bras métallique qui assemble une pièce rapidement."
+        },
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "palou",
+          "emoji": "🦁",
+          "text": "Palou explique : sans IA, un robot obéit sans réfléchir."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "Capteur",
+            "sens": "Un instrument qui permet à une machine de percevoir son environnement."
+          },
+          "text": "Le robot est le corps physique. L’IA est le cerveau numérique qui analyse les informations."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "🔍",
+          "text": "À toi de trouver le bon robot !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quel robot utilise une intelligence artificielle ?",
+              "hint": "Cherche celui qui doit observer et prendre une décision autonome.",
+              "success": "Bravo ! La voiture autonome analyse la route pour éviter les obstacles.",
+              "options": [
+                {
+                  "id": "r-1",
+                  "label": "Une voiture autonome qui lit les panneaux",
+                  "correct": true
+                },
+                {
+                  "id": "r-2",
+                  "label": "Un grille-pain automatique",
+                  "correct": false,
+                  "explain": "Le grille-pain utilise un simple ressort et une minuterie thermique."
+                },
+                {
+                  "id": "r-3",
+                  "label": "Un ventilateur qui tourne en continu",
+                  "correct": false,
+                  "explain": "Le ventilateur tourne grâce à un moteur sans réfléchir."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Reflexion",
+          "emoji": "🎯",
+          "text": "Trie les fonctions du robot sans hésiter !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Classe ces éléments entre corps mécanique et cerveau IA.",
+              "hint": "Sépare les éléments matériels des fonctions d’analyse.",
+              "success": "Excellent travail ! Tu distingues la mécanique de l’intelligence.",
+              "bins": [
+                {
+                  "id": "b-corps",
+                  "label": "Corps (Robot)"
+                },
+                {
+                  "id": "b-cerveau",
+                  "label": "Cerveau (IA)"
+                }
+              ],
+              "items": [
+                {
+                  "id": "p-1",
+                  "label": "Roues motrices",
+                  "bin": "b-corps",
+                  "explain": "Les roues permettent au robot de se déplacer sur le sol."
+                },
+                {
+                  "id": "p-2",
+                  "label": "Reconnaissance d’objets",
+                  "bin": "b-cerveau",
+                  "explain": "L’algorithme analyse l’image captée par la caméra."
+                },
+                {
+                  "id": "p-3",
+                  "label": "Bras articulé",
+                  "bin": "b-corps",
+                  "explain": "Le bras permet de saisir et de déplacer des objets physiques."
+                },
+                {
+                  "id": "p-4",
+                  "label": "Prise de décision",
+                  "bin": "b-cerveau",
+                  "explain": "L’IA choisit l’action optimale en fonction de la situation."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🌟",
+          "learned": "Le robot est la machine physique, et l’IA est le programme qui prend des décisions intelligentes.",
+          "text": "Superbe travail {prenom} ! Tu as compris la relation entre robot et IA."
+        }
+      ]
+    },
+    {
+      "id": "a1-3",
+      "title": "Les super-pouvoirs de l’IA",
+      "scene": {
+        "id": "salle-serveurs",
+        "label": "La salle des calculs"
+      },
+      "cast": [
+        "palou",
+        "kofi",
+        "dr-fall"
+      ],
+      "problem": "L’IA peut accomplir des exploits incroyables, mais elle a aussi de grandes limites.",
+      "callback": "Tu as vu qu’un robot est un corps et que l’IA est son cerveau numérique.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Hero",
+          "speaker": "palou",
+          "emoji": "⚡",
+          "text": "L’IA analyse des millions d’images médicales. Palou guide la visite du centre."
+        },
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "dr-fall",
+          "emoji": "👩‍🔬",
+          "text": "Dr. Fall montre la puissance des serveurs pour le calcul scientifique."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "kofi",
+          "emoji": "🤔",
+          "text": "Kofi demande si l’ordinateur peut ressentir des émotions humaines véritables."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "Modèle",
+            "sens": "Une structure mathématique entraînée sur des données pour faire des prédictions."
+          },
+          "text": "L’IA n’a pas de conscience ni de sentiments. Elle applique des calculs statistiques rapides."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "✨",
+          "text": "Reconnais les super-pouvoirs de l’IA !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quel est un véritable super-pouvoir de l’IA moderne ?",
+              "hint": "Pense à ce qu’un ordinateur fait beaucoup plus vite qu’un être humain.",
+              "success": "Exactement ! L’IA excelle à repérer des régularités dans d’immenses bases de données.",
+              "options": [
+                {
+                  "id": "sp-1",
+                  "label": "Trouver des motifs dans des millions de données",
+                  "correct": true
+                },
+                {
+                  "id": "sp-2",
+                  "label": "Ressentir la joie et la tristesse",
+                  "correct": false,
+                  "explain": "L’IA n’a pas de cœur ni d’émotions réelles."
+                },
+                {
+                  "id": "sp-3",
+                  "label": "Prédire l’avenir avec une certitude absolue",
+                  "correct": false,
+                  "explain": "L’IA calcule des probabilités, elle ne lit pas dans une boule de cristal."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Reflexion",
+          "emoji": "📊",
+          "text": "Sélectionne les bonnes missions de l’IA !",
+          "rounds": [
+            {
+              "type": "multi",
+              "prompt": "Sélectionne toutes les tâches où l’IA apporte une aide précieuse.",
+              "hint": "Plusieurs réponses sont correctes parmi les propositions.",
+              "success": "Bravo ! L’IA aide les scientifiques et les médecins au quotidien.",
+              "options": [
+                {
+                  "id": "m-1",
+                  "label": "Aider au diagnostic de maladies rares",
+                  "correct": true
+                },
+                {
+                  "id": "m-2",
+                  "label": "Prévoir les trajectoires des tempêtes météo",
+                  "correct": true
+                },
+                {
+                  "id": "m-3",
+                  "label": "Remplacer l’amitié entre les enfants",
+                  "correct": false,
+                  "explain": "L’amitié et l’empathie sont des liens humains irremplaçables."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🚀",
+          "learned": "L’IA est un outil surpuissant pour traiter les données, mais elle n’a ni conscience ni émotions.",
+          "text": "Félicitations {prenom} ! Tu comprends maintenant les forces et les limites de l’IA."
+        }
+      ]
+    },
+    {
+      "id": "a1-4",
+      "title": "Mission détective",
+      "scene": {
+        "id": "centre-commande",
+        "label": "La salle des commandes"
+      },
+      "cast": [
+        "palou",
+        "aminata",
+        "kofi",
+        "dr-fall"
+      ],
+      "problem": "L’équipe doit résoudre une énigme numérique et identifier quelle IA a résolu l’enquête.",
+      "callback": "Tu connais désormais les programmes, les robots et les super-pouvoirs de l’IA.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Determine",
+          "speaker": "palou",
+          "emoji": "🕵️",
+          "text": "Alerte dans le laboratoire ! Palou sonne le rassemblement de toute l’équipe."
+        },
+        {
+          "kind": "story",
+          "pose": "Intelligent",
+          "speaker": "dr-fall",
+          "emoji": "👩‍🔬",
+          "text": "Dr. Fall ouvre le dossier avec Aminata et Kofi pour enquêter."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "emoji": "💡",
+          "word": {
+            "terme": "Prédiction",
+            "sens": "L’estimation ou l’hypothèse calculée par une IA à partir d’indices observés."
+          },
+          "text": "En examinant les preuves, l’IA calcule une prédiction pour aider les détectives."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "emoji": "🧩",
+          "text": "Découvre comment l’IA résout l’enquête !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Comment notre IA détective trouve-t-elle le coupable ?",
+              "hint": "Rappelle-toi comment une IA utilise ses apprentissages.",
+              "success": "Excellent ! En comparant les indices aux cas connus, elle trouve la solution.",
+              "options": [
+                {
+                  "id": "d-1",
+                  "label": "En comparant les indices aux données connues",
+                  "correct": true
+                },
+                {
+                  "id": "d-2",
+                  "label": "En devinant au hasard complet",
+                  "correct": false,
+                  "explain": "L’IA s’appuie sur des calculs précis et des données, pas sur le hasard."
+                },
+                {
+                  "id": "d-3",
+                  "label": "En demandant conseil à un robot ménager",
+                  "correct": false,
+                  "explain": "Les appareils ménagers n’ont pas les compétences d’analyse requises."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Reflexion",
+          "emoji": "📂",
+          "text": "Trie les preuves trouvées par l’équipe !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Classe les indices découverts par l’équipe.",
+              "hint": "Sépare les données numériques des objets physiques.",
+              "success": "Magnifique ! Le mystère du laboratoire est entièrement élucidé.",
+              "bins": [
+                {
+                  "id": "b-num",
+                  "label": "Indice numérique"
+                },
+                {
+                  "id": "b-phy",
+                  "label": "Objet physique"
+                }
+              ],
+              "items": [
+                {
+                  "id": "ind-1",
+                  "label": "Fichier journal de connexion",
+                  "bin": "b-num",
+                  "explain": "Le journal enregistre les accès informatiques sous forme numérique."
+                },
+                {
+                  "id": "ind-2",
+                  "label": "Câble réseau débranché",
+                  "bin": "b-phy",
+                  "explain": "Le câble est un objet matériel que l’on peut toucher."
+                },
+                {
+                  "id": "ind-3",
+                  "label": "Adresse IP suspecte",
+                  "bin": "b-num",
+                  "explain": "L’adresse IP est un identifiant réseau électronique."
+                },
+                {
+                  "id": "ind-4",
+                  "label": "Clé USB oubliée",
+                  "bin": "b-phy",
+                  "explain": "La clé USB est un support physique de stockage."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "emoji": "🎉",
+          "learned": "Une IA analyse des données et calcule des prédictions pour aider les humains à résoudre des problèmes.",
+          "text": "Bravo {prenom} ! Tu as terminé avec brio le premier module des Jeunes Aventuriers !"
+        }
+      ]
+    }
+  ]
+}

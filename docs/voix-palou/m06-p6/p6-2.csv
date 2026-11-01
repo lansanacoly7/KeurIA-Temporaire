@@ -1,0 +1,30 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e01.mp3;1;1;texte (story);Madame Diop écrit trois mots au tableau : fête, heure, lieu.;Madame Diop écrit trois mots au tableau : fête, heure, lieu.;60
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e02.mp3;1;2;texte (story);Moussa lance : « Dis « fête », Palou, et tout se prépare tout seul ! »;Moussa lance : « Dis « fête », Palou, et tout se prépare tout seul ! »;70
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e03.mp3;1;3;texte (discover);Un mot-clé est un mot important. L’IA le cherche dans ta phrase pour répondre.;Un mot-clé est un mot important. L’I A le cherche dans ta phrase pour répondre.;78
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu connais les mots-clés.;Bravo ! Tu connais les mots-clés.;33
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e07-retiens.mp3;1;7;« Je retiens »;Un mot-clé est un mot important. Une IA le cherche pour comprendre ta phrase.;Un mot-clé est un mot important. Une I A le cherche pour comprendre ta phrase.;77
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Oui ! Palou a trouvé les mots-clés « heure » et « fête » dans ta phrase.;Oui ! Palou a trouvé les mots-clés « heure » et « fête » dans ta phrase.;72
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m1-q.mp3;2;4;consigne du jeu;Demande à Palou à quelle heure commence la fête. Les mots importants s’allument !;Demande à Palou à quelle heure commence la fête. Les mots importants s’allument !;81
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Tu sais repérer les mots-clés.;Bravo ! Tu sais repérer les mots-clés.;38
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-q.mp3;2;4;consigne du jeu;Glisse un mot dans sa boîte.;Glisse un mot dans sa boîte.;28
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04.mp3;2;4;texte (play);Aide Palou à trouver les mots-clés !;Aide Palou à trouver les mots-clés !;36
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e05.mp3;2;5;texte (ai);Il n’y a pas de magie : l’IA cherche des mots qu’elle connaît.;Il n’y a pas de magie : l’I A cherche des mots qu’elle connaît.;62
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Un mot-clé est un mot important.;Oui ! Un mot-clé est un mot important.;38
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m1-q.mp3;2;6;consigne du jeu;Qu’est-ce qu’un mot-clé ?;Qu’est-ce qu’un mot-clé ?;25
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Bravo ! « Fête » dit de quoi on parle.;Bravo ! « Fête » dit de quoi on parle.;38
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m2-q.mp3;2;6;consigne du jeu;Dans « À quelle heure commence la fête ? », quel est le mot important ?;Dans « À quelle heure commence la fête ? », quel est le mot important ?;71
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Exact ! Il l’aide à comprendre ta phrase.;Exact ! Il l’aide à comprendre ta phrase.;41
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m3-q.mp3;2;6;consigne du jeu;À quoi sert un mot-clé pour l’IA ?;À quoi sert un mot-clé pour l’I A ?;34
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m1-o1.mp3;3;4;réponse de Palou (un mot manque);Il me manque un mot important : « heure » ou « fête ». Redis ta question !;Il me manque un mot important : « heure » ou « fête ». Redis ta question !;74
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-i1.mp3;3;4;explication (objet à ranger);« Fête » dit de quoi on parle : c’est un mot-clé.;« Fête » dit de quoi on parle : c’est un mot-clé.;49
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-i2.mp3;3;4;explication (objet à ranger);« Le » est un petit mot : il aide la phrase seulement.;« Le » est un petit mot : il aide la phrase seulement.;54
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-i3.mp3;3;4;explication (objet à ranger);« Lieu » dit ce qu’on cherche : c’est un mot-clé.;« Lieu » dit ce qu’on cherche : c’est un mot-clé.;49
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e04-m2-i4.mp3;3;4;explication (objet à ranger);« De » est un petit mot : il ne dit pas de quoi on parle.;« De » est un petit mot : il ne dit pas de quoi on parle.;57
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Les petits mots comme « le » ou « de » aident moins l’IA.;Les petits mots comme « le » ou « de » aident moins l’I A.;57
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Un mot-clé n’est pas un mot de passe : c’est un mot important de la phrase.;Un mot-clé n’est pas un mot de passe : c’est un mot important de la phrase.;75
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);« À » est un petit mot : il n’aide pas à comprendre.;« À » est un petit mot : il n’aide pas à comprendre.;52
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);« La » est un petit mot : il n’aide pas à comprendre.;« La » est un petit mot : il n’aide pas à comprendre.;53
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Un mot-clé ne fait pas de bruit : il aide à comprendre.;Un mot-clé ne fait pas de bruit : il aide à comprendre.;55
+frontend/public/audio/palou/lecons/m06/p6-2/p6-2_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Un mot-clé n’éteint rien : il aide à comprendre.;Un mot-clé n’éteint rien : il aide à comprendre.;48

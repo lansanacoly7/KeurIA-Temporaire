@@ -1,0 +1,36 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e01.mp3;1;1;texte (story);Ça y est : la classe arrive au marché Kermel ! Mame Awa les accueille.;Ça y est : la classe arrive au marché Kermèl ! Mamé Awa les accueille.;70
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e02.mp3;1;2;texte (story);Madame Diop distribue des cartes de bingo. « Trouvez les IA de la journée ! »;Madame Diop distribue des cartes de bingo. « Trouvez les I A de la journée ! »;77
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e03.mp3;1;3;texte (discover);Une IA est un outil : elle aide à faire un travail. Cherche ce qu’elle reconnaît, devine ou propose.;Une I A est un outil : elle aide à faire un travail. Cherche ce qu’elle reconnaît, devine ou propose.;100
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e04.mp3;1;4;texte (story);Mame Awa pèse des mangues sur sa balance. Fatou demande : « C’est une IA, ça ? »;Mamé Awa pèse des mangues sur sa balance. Fatou demande : « C’est une I A, ça ? »;80
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu as fini le chapitre 2 avec Palou.;Bravo ! Tu as fini le chapitre 2 avec Palou.;44
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e08-retiens.mp3;1;8;« Je retiens »;L’IA est partout : dans le téléphone, à l’école et sur la route. Tu sais la repérer.;L’I A est partout : dans le téléphone, à l’école et sur la route. Tu sais la repérer.;84
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Ton bingo est bien rempli.;Bravo ! Ton bingo est bien rempli.;34
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-q.mp3;2;5;consigne du jeu;Glisse un objet du marché dans sa boîte.;Glisse un objet du marché dans sa boîte.;40
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Deux cases gagnantes : la voix et le trajet.;Bravo ! Deux cases gagnantes : la voix et le trajet.;52
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m2-q.mp3;2;5;consigne du jeu;Touche toutes les cases du bingo où se cache une IA.;Touche toutes les cases du bingo où se cache une I A.;52
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05.mp3;2;5;texte (play);Aide Moussa à remplir le bingo !;Aide Moussa à remplir le bingo !;32
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! On demande toujours avant de photographier quelqu’un.;Oui ! On demande toujours avant de photographier quelqu’un.;59
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e06-m1-q.mp3;2;6;consigne du jeu;Que fait Moussa d’abord ?;Que fait Moussa d’abord ?;25
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e06.mp3;2;6;texte (why);Moussa veut photographier Mame Awa pour son bingo.;Moussa veut photographier Mamé Awa pour son bingo.;50
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Le GPS du téléphone propose un chemin.;Oui ! Le GPS du téléphone propose un chemin.;44
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m1-q.mp3;2;7;consigne du jeu;Quel objet du marché utilise une IA ?;Quel objet du marché utilise une I A ?;37
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Exact ! Il y a des IA un peu partout.;Exact ! Il y a des I A un peu partout.;37
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m2-q.mp3;2;7;consigne du jeu;Où peut-on trouver des IA ?;Où peut-on trouver des I A ?;27
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Elle devine ou propose quelque chose.;Bravo ! Elle devine ou propose quelque chose.;45
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m3-q.mp3;2;7;consigne du jeu;Comment repérer une IA ?;Comment repérer une I A ?;24
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-i1.mp3;3;5;explication (objet à ranger);Elle pèse avec un ressort, sans rien deviner.;Elle pèse avec un ressort, sans rien deviner.;45
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-i2.mp3;3;5;explication (objet à ranger);Il lit le panneau et le transforme : c’est une IA.;Il lit le panneau et le transforme : c’est une I A.;50
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-i3.mp3;3;5;explication (objet à ranger);Un sac contient des mangues, rien d’autre.;Un sac contient des mangues, rien d’autre.;42
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m1-i4.mp3;3;5;explication (objet à ranger);Elle compare le son à des exemples : c’est une IA.;Elle compare le son à des exemples : c’est une I A.;50
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m2-o2.mp3;3;5;explication (mauvaise réponse);Un panier porte des fruits, il ne devine rien.;Un panier porte des fruits, il ne devine rien.;46
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e05-m2-o4.mp3;3;5;explication (mauvaise réponse);Une ombrelle donne de l’ombre : pas d’IA dedans.;Une ombrelle donne de l’ombre : pas d’I A dedans.;48
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Poster sans demander peut gêner : on demande d’abord.;Poster sans demander peut gêner : on demande d’abord.;53
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Prendre quelqu’un en photo demande son accord, même pour un jeu.;Prendre quelqu’un en photo demande son accord, même pour un jeu.;64
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Un panier est un simple objet : il ne devine rien.;Un panier est un simple objet : il ne devine rien.;50
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Une ombrelle protège du soleil, sans aucune IA.;Une ombrelle protège du soleil, sans aucune I A.;47
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Les IA sont déjà dans les téléphones, à l’école et sur la route.;Les I A sont déjà dans les téléphones, à l’école et sur la route.;64
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Il y en a aussi dans ton téléphone, à l’école et sur la route.;Il y en a aussi dans ton téléphone, à l’école et sur la route.;62
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Les lumières ne prouvent rien : une lampe n’est pas une IA.;Les lumières ne prouvent rien : une lampe n’est pas une I A.;59
+frontend/public/audio/palou/lecons/m02/p2-4/p2-4_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Le prix ne dit rien : une IA reconnaît, devine ou propose.;Le prix ne dit rien : une I A reconnaît, devine ou propose.;58

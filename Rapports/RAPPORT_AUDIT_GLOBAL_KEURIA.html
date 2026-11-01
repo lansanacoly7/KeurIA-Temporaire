@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport d'Audit Global & Bilan Technique — Projet Kër IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d846e;
+      --primary-dark: #123e3b;
+      --primary-light: #e8f5f1;
+      --accent: #d9ef59;
+      --accent-dark: #9bb718;
+      --bg: #f8faf9;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --success-bg: #ecfdf5;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #123e3b 0%, #0d846e 100%);
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: rgba(217, 239, 89, 0.15);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+    .badge-header {
+      display: inline-block;
+      background: rgba(217, 239, 89, 0.2);
+      color: var(--accent);
+      border: 1px solid rgba(217, 239, 89, 0.4);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 32px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .subtitle { font-size: 16px; color: #cbdcd7; max-width: 750px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 35px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-val { font-size: 32px; font-weight: 900; color: var(--primary); margin: 6px 0 2px; }
+    .stat-label { font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .stat-desc { font-size: 12px; color: #94a3b8; margin-top: auto; }
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    h2 { font-size: 22px; font-weight: 800; color: var(--primary-dark); }
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .item-card {
+      background: #fbfdfc;
+      border: 1px solid #e9ecef;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      transition: all 0.2s ease;
+    }
+    .item-card:hover { border-color: var(--primary); background: #ffffff; box-shadow: var(--shadow-sm); }
+    .item-title { font-size: 15px; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+    .item-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .table-responsive table {
+      margin-top: 0;
+      min-width: 600px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid #edf2f7;
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #475569;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fdfdfd; }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .status-done { background: #dcfce7; color: #15803d; }
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 16px 12px;
+      }
+      header {
+        padding: 26px 18px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+      }
+      .badge-header {
+        font-size: 10.5px;
+        padding: 4px 10px;
+        margin-bottom: 12px;
+      }
+      h1 {
+        font-size: 22px;
+        line-height: 1.25;
+      }
+      .subtitle {
+        font-size: 13px;
+        line-height: 1.45;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .stat-card {
+        padding: 14px 12px;
+        border-radius: 12px;
+      }
+      .stat-val {
+        font-size: 22px;
+        margin: 4px 0 1px;
+      }
+      .stat-label {
+        font-size: 11px;
+      }
+      .stat-desc {
+        font-size: 10.5px;
+      }
+      .section {
+        padding: 20px 14px;
+        border-radius: 16px;
+        margin-bottom: 18px;
+      }
+      .section-header {
+        gap: 10px;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+      }
+      .section-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+      h2 {
+        font-size: 17px;
+      }
+      .section-header p {
+        font-size: 12px !important;
+      }
+      .item-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .item-card {
+        padding: 14px;
+      }
+      .item-title {
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .item-desc {
+        font-size: 12.5px;
+      }
+      .tag {
+        font-size: 10px;
+      }
+      th, td {
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+      th {
+        font-size: 10px;
+      }
+      .code-pill {
+        font-size: 11px;
+        padding: 1px 4px;
+      }
+      .badge-status {
+        font-size: 10px;
+        padding: 3px 7px;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 12px 8px;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 20px 14px;
+      }
+      h1 {
+        font-size: 20px;
+      }
+      .section {
+        padding: 16px 12px;
+      }
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .section, header { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge-header">Rapport Officiel d'Ingénierie</span>
+      <h1>Audit & Bilan des Réalisations — Kër IA</h1>
+      <p class="subtitle">Synthèse exhaustive des développements, de la sécurisation de l'architecture, de la fusion des branches et de la couverture intégrale du plan de conformité technique.</p>
+    </header>
+
+    <!-- METRICS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Tests Automatisés</span>
+        <div class="stat-val">153 / 153</div>
+        <span class="stat-desc">100% de réussite (Pytest backend)</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Routes Next.js</span>
+        <div class="stat-val">39 / 39</div>
+        <span class="stat-desc">0 erreur TypeScript, Build validé</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Plan Excel Auth</span>
+        <div class="stat-val">17 / 17</div>
+        <span class="stat-desc">100% des tâches T01 à T17 finalisées</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Espaces Rôles</span>
+        <div class="stat-val">4 Espaces</div>
+        <span class="stat-desc">Élève, Parent, Enseignant, Direction</span>
+      </div>
+    </div>
+
+    <!-- SECTION 1: EXCEL PLAN -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <div>
+          <h2>1. Réalisation du Plan d'Authentification & Sécurité (Excel)</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Couverture complète des exigences de sécurité et de contrôle d'accès.</p>
+        </div>
+      </div>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tâche & Périmètre</th>
+            <th>Description & Implémentation</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code-pill">T01</span></td>
+            <td><strong>Sécuriser /api/profiles</strong></td>
+            <td>Vérification stricte que l'enfant appartient bien au parent demandeur avant toute création ou mise à jour.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T02</span></td>
+            <td><strong>Unifier la relation Parent → Child</strong></td>
+            <td><span class="code-pill">User.parent</span> est désormais la source de vérité unique, éliminant la duplication par e-mail.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T03</span></td>
+            <td><strong>Création d'un compte enfant</strong></td>
+            <td>Liaison automatique <span class="code-pill">parent=request.user</span> à la création et visibilité immédiate dans le suivi parental.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T04</span></td>
+            <td><strong>Standardisation des rôles</strong></td>
+            <td>Alignement rigoureux entre les rôles Django (<span class="code-pill">eleve</span>, <span class="code-pill">parent</span>, <span class="code-pill">enseignant</span>) et Next.js.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T05</span></td>
+            <td><strong>Routage dynamique par rôle</strong></td>
+            <td>Redirection automatique : Parent → Espace Parental, Enseignant → <span class="code-pill">/enseignant</span>, Direction → <span class="code-pill">/ecole</span>, Élève → LMS.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T06</span></td>
+            <td><strong>Protection des API Parent</strong></td>
+            <td>Contrôles de permissions stricts avec <span class="code-pill">IsParent</span> sur <span class="code-pill">/api/parent/children</span> et le suivi.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T07</span></td>
+            <td><strong>Remplacement de l'ownership email</strong></td>
+            <td>Attachement de la progression aux identifiants uniques <span class="code-pill">User</span> garantissant l'intégrité des données.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T08</span></td>
+            <td><strong>Politique de mots de passe</strong></td>
+            <td>Validation obligatoire : 8 caractères minimum, mélange lettres et chiffres, rejet des mots de passe triviaux.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T09</span></td>
+            <td><strong>Rate Limiting & Anti-Bruteforce</strong></td>
+            <td>Throttling IP et identifiant pour bloquer les attaques par force brute (verrouillage temporaire après échecs).</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T10</span></td>
+            <td><strong>Cookies sécurisés HttpOnly</strong></td>
+            <td>Suppression des écritures manuelles en JavaScript ; session gérée nativement et protégée contre les failles XSS.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T11</span></td>
+            <td><strong>Nettoyage du cache à la déconnexion</strong></td>
+            <td>Suppression complète des caches locaux (<span class="code-pill">keria_progress</span>, sessions) lors de la déconnexion.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T12</span></td>
+            <td><strong>Confidentialité des écoles</strong></td>
+            <td>Filtrage strict des informations sensibles pour masquer les coordonnées internes aux élèves.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T13</span></td>
+            <td><strong>Verrouillage inscription publique</strong></td>
+            <td>Interdiction de s'auto-attribuer le rôle enseignant ou administrateur lors de l'inscription ouverte.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T14</span></td>
+            <td><strong>Flux 'Mot de passe oublié'</strong></td>
+            <td>Génération sécurisée de code à 6 chiffres par e-mail et réinitialisation autonome sans intervention admin.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T15</span></td>
+            <td><strong>Vérification d'e-mail</strong></td>
+            <td>Validation obligatoire par code de vérification avant l'activation définitive du compte adulte.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T16</span></td>
+            <td><strong>Protection de suppression parent-enfant</strong></td>
+            <td>Sécurisation contre la suppression en cascade accidentelle des comptes et données d'apprentissage.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">T17</span></td>
+            <td><strong>Nettoyage des dépendances JWT</strong></td>
+            <td>Architecture épurée reposant sur les sessions Django sécurisées, sans modules obsolètes.</td>
+            <td><span class="badge-status status-done">✓ Réalisé</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <!-- SECTION 2: MODULE SCOLAIRE & ENSEIGNANT -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🏫</div>
+        <div>
+          <h2>2. Écosystème Scolaire & Espace Enseignant Complet</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Architecture multi-écoles, gestion administrative et outils pédagogiques.</p>
+        </div>
+      </div>
+      <div class="item-grid">
+        <div class="item-card">
+          <div class="item-title">Vue d'Ensemble Enseignant <span class="tag tag-ok">/enseignant</span></div>
+          <p class="item-desc">Tableau de bord synthétique affichant les statistiques clés, les devoirs en cours et les cartes interactives des classes confiées.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Gestion des Classes & Élèves <span class="tag tag-ok">/enseignant/classes</span></div>
+          <p class="item-desc">Trombinoscope détaillé des élèves, suivi individuel des parcours, historique des activités et changement de classe tracé.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Missions & Devoirs <span class="tag tag-ok">/enseignant/missions</span></div>
+          <p class="item-desc">Catalogue complet des missions (m1 à m6), attribution personnalisée par classe avec date d'échéance et suivi des rendus.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Fiches de Connexion <span class="tag tag-ok">Fiches PDF/Print</span></div>
+          <p class="item-desc">Génération et impression instantanée des fiches d'identifiants et mots de passe temporaires pour toute la classe.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Liaison Parent-Élève <span class="tag tag-ok">Codes K7P-4Q2</span></div>
+          <p class="item-desc">Génération de codes uniques et sécurisés (validité 30 jours, anti-bruteforce) permettant aux parents de relier leurs enfants à l'école.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Analytiques & Recommandations <span class="tag tag-ok">/enseignant/analytiques</span></div>
+          <p class="item-desc">Détection des décrochages, alertes d'inactivité après 7 jours et analyse du taux de réussite par thématique IA.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: ESPACE PARENTAL & MESSAGERIE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">👨‍👩‍👧‍👦</div>
+        <div>
+          <h2>3. Espace Parental Avancé & Messagerie Familiale</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Suivi bienveillant, contrôle parental et communication directe.</p>
+        </div>
+      </div>
+      <div class="item-grid">
+        <div class="item-card">
+          <div class="item-title">Dashboard Parental Moderne <span class="tag tag-ok">Design Premium</span></div>
+          <p class="item-desc">Design épuré en glassmorphism, métriques de temps d'apprentissage, radar de progression et alertes en direct.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Bulletins Détaillés par Enfant <span class="tag tag-ok">Fiches Dédiées</span></div>
+          <p class="item-desc">Consultation détaillée des compétences acquises, des badges débloqués et du niveau de maîtrise par domaine.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Mode Visiteur Sécurisé <span class="tag tag-ok">Lecture Seule</span></div>
+          <p class="item-desc">Possibilité pour le parent d'explorer le parcours de son enfant en mode miroir sécurisé avec bandeau flottant de sortie.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Messagerie Familiale Directe <span class="tag tag-ok">Chat Temps Réel</span></div>
+          <p class="item-desc">Widget de chat intégré avec historique des échanges entre parents et enfants pour encourager l'apprentissage.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Bouton de Liaison École <span class="tag tag-ok">/parent/relier</span></div>
+          <p class="item-desc">Écran dédié permettant de saisir le code fourni par l'enseignant pour synchroniser instantanément le suivi scolaire.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Limites & Paramètres <span class="tag tag-ok">Contrôle</span></div>
+          <p class="item-desc">Gestion des plages horaires autorisées, limitation du temps d'écran et notifications hebdomadaires.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: GAMIFICATION & LMS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🎮</div>
+        <div>
+          <h2>4. Moteur Pédagogique, Gamification & LMS</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Système d'engagement immersif adapté aux tranches d'âge 7-9, 10-12 et 13-15 ans.</p>
+        </div>
+      </div>
+      <div class="item-grid">
+        <div class="item-card">
+          <div class="item-title">Progression par Niveaux <span class="tag tag-ok">Aventurier → Maître IA</span></div>
+          <p class="item-desc">Barre d'expérience dynamique, modale de niveau avec célébration visuelle et animation lors du passage d'échelon.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Système de Badges & Trophées <span class="tag tag-ok">Visuels HD</span></div>
+          <p class="item-desc">Déblocage one-shot avec pop-up festive (confettis, synthèse vocale de Palou) et collection visuelle sur fond menthe.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Classement Hebdomadaire <span class="tag tag-ok">/dashboard/classement</span></div>
+          <p class="item-desc">Leaderboard dynamique basé sur l'XP de la semaine, modèle Django <span class="code-pill">WeeklyXP</span> et podium animé.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Atelier de Programmation <span class="tag tag-ok">Blockly & Palou</span></div>
+          <p class="item-desc">Interface d'initiation aux algorithmes avec feedback temps réel du compagnon mascotte Palou.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: QUALITÉ & CONFORMITÉ -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🛡️</div>
+        <div>
+          <h2>5. Validation Qualité, Tests & Performance</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Indicateurs de robustesse technique et de stabilité de production.</p>
+        </div>
+      </div>
+      <div class="item-grid">
+        <div class="item-card">
+          <div class="item-title">Suite de Tests Pytest <span class="tag tag-ok">153/153 Tests</span></div>
+          <p class="item-desc">100% de réussite sur l'authentification, la sécurité, l'espace scolaire, le calcul de l'XP et les permissions.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Compilateur TypeScript <span class="tag tag-ok">0 Erreur</span></div>
+          <p class="item-desc">Typage strict sans contournement, 0 warning bloquant lors de l'exécution de <span class="code-pill">tsc --noEmit</span>.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Build de Production Next.js <span class="tag tag-ok">39 Routes OK</span></div>
+          <p class="item-desc">Génération réussie de l'intégralité des 39 routes statiques et dynamiques via Turbopack.</p>
+        </div>
+        <div class="item-card">
+          <div class="item-title">Fusion Git & Conflits <span class="tag tag-ok">Branche Test Propre</span></div>
+          <p class="item-desc">Fusion 100% intègre, 0 marqueur de conflit orphelin, migrations linéaires et historique synchronisé.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Projet Kër IA</strong> — Plateforme d'apprentissage de l'Intelligence Artificielle pour la jeunesse africaine</p>
+      <p style="margin-top: 4px; font-size: 11px;">Rapport généré automatiquement pour revue technique de supervision · Branche <span class="code-pill">test</span></p>
+    </footer>
+  </div>
+</body>
+</html>

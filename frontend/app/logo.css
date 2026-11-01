@@ -1,0 +1,20 @@
+
+
+.lms-logo img{
+  display:block;
+  width:180px;
+  height:60px;
+  padding:4px;
+  border-radius:12px;
+  background:#fff;
+  object-fit:contain;
+}
+
+.login-brand>img{
+  display:block;
+  width:260px;
+  height:auto;
+}
+
+@media(max-width:520px){
+  .login-brand>img{width:220px}}

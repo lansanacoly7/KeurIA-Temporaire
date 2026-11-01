@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kEur IA : rapport d'avancement</title>
+<style>
+:root{--vert:#0f3d36;--teal:#0f766e;--citron:#d8f05b;--creme:#f6f4ec;--encre:#153b3b;--rouge:#b42318;--orange:#b35c00}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--encre);font:16.5px/1.6 system-ui,"Segoe UI",sans-serif}
+header{background:var(--vert);color:#fff;padding:44px 24px}
+header h1{margin:0 0 6px;font-size:36px}header p{margin:0;opacity:.9}
+.badge{display:inline-block;background:var(--citron);color:var(--vert);font-weight:800;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+main{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+h2{color:var(--teal);margin:36px 0 10px;font-size:26px}
+h3{margin:18px 0 6px}
+.carte{background:#fff;border-radius:14px;padding:18px 20px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.grille .carte{margin:0}
+.chiffre{font-size:34px;font-weight:800;color:var(--teal);line-height:1.1}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:9px 12px;border-bottom:1px solid #e3ebe7;text-align:left;vertical-align:top}th{background:#eef5f1}
+.ok{color:var(--teal);font-weight:800}.ko{color:var(--rouge);font-weight:800}.enc{color:var(--orange);font-weight:800}
+.note{background:#fff8d6;border-left:6px solid #e0b400;padding:12px 16px;border-radius:10px}
+.pole{border-top:6px solid var(--teal)}
+@media print{body{background:#fff}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.carte{box-shadow:none;border:1px solid #ddd;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="badge">Rapport d'avancement · 30 octobre 2026</div>
+  <h1>kEur IA : où en est le projet</h1>
+  <p>Ce qui a été réalisé, l'état technique, et le plan de la prochaine étape avec l'équipe élargie.</p>
+</header>
+<main>
+
+<h2>1. En bref</h2>
+<div class="carte">kEur IA apprend l'intelligence artificielle aux enfants et aux jeunes du Sénégal (7-15 ans) en jouant, avec Palou comme guide. <strong>La plateforme est construite et fonctionne</strong> pour les enfants, les parents, les écoles, les enseignants et l'équipe d'administration. <strong>Le parcours 7-9 ans est terminé.</strong> Prochaine étape : <strong>le parcours 10-12 ans</strong>, une <strong>offre école plus riche</strong> que l'offre gratuite, et un <strong>studio de création simplifié</strong>.</div>
+<div class="grille">
+  <div class="carte"><div class="chiffre">40</div>leçons 7-9 complètes (10 modules), illustrées et racontées par Palou</div>
+  <div class="carte"><div class="chiffre">5</div>espaces : enfant, parent, école, enseignant, administration</div>
+  <div class="carte"><div class="chiffre">1 192</div>tests automatiques, tous verts (924 serveur, 268 interface)</div>
+  <div class="carte"><div class="chiffre">4</div>vidéos guidées : parents, enfants, direction d'école, enseignants</div>
+</div>
+
+<h2>2. Ce qui a été réalisé</h2>
+<table>
+<tr><th>Domaine</th><th>Réalisations</th><th>État</th></tr>
+<tr><td>Parcours 7-9 ans</td><td>10 modules × 4 leçons ; 17 types de jeux ; histoires illustrées (plus aucune image manquante) ; voix de Palou générée avec ElevenLabs ; défi de fin de leçon ; archipel de 10 îles ; étoiles, badges, classement.</td><td class="ok">Terminé</td></tr>
+<tr><td>Espace parent</td><td>Inscription avec code par e-mail, validation des parents par l'équipe, inscription des enfants, suivi des progrès, règles (temps d'écran, coucher, Palou), notifications.</td><td class="ok">Terminé</td></tr>
+<tr><td>Espace école et enseignant</td><td>Classes, élèves, import de listes Excel/PDF/CSV, fiches de connexion, années scolaires ; devoirs, séances en direct, annonces et sondages, analytiques, règles école/classe.</td><td class="ok">Terminé</td></tr>
+<tr><td>Élève d'école</td><td>« Cahier de classe » : Aujourd'hui, mes devoirs, mon parcours, ma classe, mes étoiles ; parcours imposé par l'enseignant ; classement de la classe.</td><td class="ok">Terminé</td></tr>
+<tr><td>Administration (Siribra)</td><td>Gestion des comptes et des écoles, validation des inscriptions, Studio de création (modules, leçons, devoirs, jeux, défis, médias) sans coder.</td><td class="enc">À simplifier</td></tr>
+<tr><td>Qualité et sécurité</td><td>Audits de production (8, 25 et 30 octobre), CI GitHub, sauvegardes, suivi des erreurs, pages légales, mobile et tablette.</td><td class="enc">Derniers correctifs</td></tr>
+<tr><td>Communication</td><td>4 vidéos guidées animées (voix ElevenLabs) ; document d'accueil de la nouvelle équipe contenu.</td><td class="ok">Terminé</td></tr>
+</table>
+
+<h2>3. La suite : ce qu'on va faire</h2>
+
+<h3>3.1 Le parcours 10-12 ans « Jeunes Aventuriers »</h3>
+<div class="carte">
+<ul>
+<li><strong>Même squelette que le 7-9</strong> : histoire, mot nouveau, jeux, défi de Palou, « Je retiens », étoiles et badges.</li>
+<li><strong>Nouveau décor : Dakar.</strong> On quitte l'archipel pour une grande ville : quartiers, marché, port, école, transports… Chaque module se déroule dans un lieu de Dakar.</li>
+<li><strong>Plus de personnages</strong>, plus âgés, avec des caractères marqués, en plus de Palou.</li>
+<li><strong>Plan déjà validé</strong> : 12 modules × 4 leçons = 48 leçons (données, apprentissage, vision, chatbots, IA générative, prompts, biais, deepfakes, IA responsable, IA pour le Sénégal).</li>
+<li><strong>Production complète</strong> : textes, pictogrammes, illustrations, voix (ElevenLabs).</li>
+</ul></div>
+
+<h3>3.2 Une offre école plus riche que l'offre gratuite</h3>
+<div class="note">Si un enfant inscrit gratuitement par ses parents a exactement le même contenu qu'un élève d'école, les écoles n'ont pas de raison de choisir kEur IA. <strong>Le compte élève doit offrir plus</strong>, en restant ludique.</div>
+<div class="grille" style="margin-top:12px">
+  <div class="carte"><strong>Leçons « approfondies »</strong><br>Pour chaque module, une leçon de plus réservée aux écoles : expérience, enquête ou mini-projet qui va plus loin.</div>
+  <div class="carte"><strong>Projets de classe</strong><br>Défis à faire en groupe, avec production finale présentée en classe.</div>
+  <div class="carte"><strong>Séances guidées</strong><br>Fiches enseignant prêtes à l'emploi et séances en direct pilotées par l'enseignant.</div>
+  <div class="carte"><strong>Évaluation et certificats</strong><br>Bilans de compétences par élève et certificats de fin de parcours au nom de l'école.</div>
+  <div class="carte"><strong>Compétition entre classes</strong><br>Podium et défis inter-classes et inter-écoles.</div>
+  <div class="carte"><strong>Même univers, plus de profondeur</strong><br>Le compte élève reste gai et animé : on ajoute de la matière, pas de l'austérité.</div>
+</div>
+
+<h3>3.3 Un studio de création simplifié</h3>
+<div class="carte">Aujourd'hui, créer une leçon dans le studio reste trop compliqué. Objectif : <strong>un studio minimaliste, sans perdre aucune fonctionnalité</strong>. Concrètement :
+<ul>
+<li>Créer une leçon en suivant des étapes guidées (histoire → mot nouveau → jeux → défi), au lieu d'un éditeur libre.</li>
+<li>Modèles de leçons prêts à remplir, aperçu toujours visible, options avancées cachées par défaut.</li>
+<li>Médias (images, sons) choisis depuis une bibliothèque unique.</li>
+<li>Tester la création d'une leçon complète en moins de 20 minutes par une personne non technique.</li>
+</ul></div>
+
+<h2>4. Les chantiers à mener</h2>
+<div class="grille">
+  <div class="carte pole"><h3>Contenu 10-12</h3>Univers de Dakar et personnages, écriture des 48 leçons, jeux et défis, exactitude sur l'IA.</div>
+  <div class="carte pole"><h3>Images</h3>Pictogrammes, illustrations des histoires, décors de Dakar, cohérence du style avec le 7-9.</div>
+  <div class="carte pole"><h3>Sons</h3>Voix des personnages et de Palou avec ElevenLabs, règles de prononciation (« iya »), contrôle de qualité.</div>
+  <div class="carte pole"><h3>Studio</h3>Refonte minimaliste du studio, relecture du code, tests de création par des personnes non techniques.</div>
+  <div class="carte pole"><h3>Élève d'école</h3>Contenu et fonctions réservés aux écoles : leçons approfondies, projets de classe, certificats.</div>
+  <div class="carte pole"><h3>Mise en production</h3>Correctifs de sécurité, serveur de production, sauvegardes, validation finale.</div>
+</div>
+
+<h2>5. Objectifs</h2>
+<div class="carte">
+<ul>
+<li><strong>Créer le parcours 10-12 ans complet</strong> : 12 modules et 48 leçons qui se déroulent à Dakar, avec de nouveaux personnages, des illustrations et des voix.</li>
+<li><strong>Tester les premières leçons avec des enfants</strong> et les améliorer à partir de leurs réactions.</li>
+<li><strong>Offrir aux écoles plus que l'offre gratuite</strong> : leçons approfondies, projets de classe, certificats et compétitions entre classes.</li>
+<li><strong>Simplifier le studio de création</strong> pour qu'une personne non technique puisse créer une leçon complète facilement, sans perdre aucune fonctionnalité.</li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>

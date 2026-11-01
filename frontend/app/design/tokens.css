@@ -1,0 +1,376 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ * KeurIA — Design Tokens (3 thèmes visuels)
+ * ═══════════════════════════════════════════════════════════════
+ *
+ * Système de thèmes piloté par l'attribut `data-theme` sur <html>.
+ * 
+ * Usage :
+ *   <html data-theme="explorer">   → 7-10 ans (formes rondes, saturé, Palou omniprésent)
+ *   <html data-theme="aventurier"> → 11-13 ans (jeu vidéo casual, Duolingo-like)
+ *   <html data-theme="createur">   → 14-15 ans (app moderne type Linear, gamification subtile)
+ *
+ * Pour ajouter un nouveau thème :
+ *   1. Copier un bloc [data-theme="..."] ci-dessous
+ *   2. Renommer l'attribut
+ *   3. Ajuster les valeurs des variables
+ *   4. Le thème est immédiatement disponible partout dans l'app
+ *
+ * Palette Palou (character sheet officielle) :
+ *   #FEDA82 — Énergie / Optimisme (or)
+ *   #CD6D19 — Créativité / Confiance (brun)
+ *   #381204 — Lisibilité / Sérieux (brun foncé)
+ *   #FF9971 — Chaleur / Bienveillance (corail)
+ *   #FFF4E8 — Douceur / Simplicité (crème)
+ *   #3B82F6 — Technologie / Innovation (bleu)
+ *   #34D399 — Réussite / Progression (vert)
+ *   #F472B6 — Plaisir / Motivation (rose)
+ */
+
+/* ─── Thème Explorer (7-10 ans) ─── */
+[data-theme="explorer"],
+:root {
+  /* Couleurs primaires */
+  --kia-primary: #FEDA82;
+  --kia-primary-hover: #FDD04A;
+  --kia-primary-text: #381204;
+  --kia-secondary: #CD6D19;
+  --kia-secondary-hover: #B55E14;
+  --kia-accent: #FF9971;
+  --kia-accent-hover: #FF7F50;
+
+  /* Fonds et surfaces */
+  --kia-bg: #FFF4E8;
+  --kia-bg-alt: #FFF9F0;
+  --kia-surface: #FFFFFF;
+  --kia-surface-hover: #FFF8ED;
+  --kia-surface-active: #FEEFDB;
+
+  /* Texte */
+  --kia-text: #381204;
+  --kia-text-secondary: #7A5C3E;
+  --kia-text-muted: #A08060;
+  --kia-text-on-primary: #381204;
+  --kia-text-on-dark: #FFF4E8;
+
+  /* Feedback */
+  --kia-success: #34D399;
+  --kia-success-bg: #ECFDF5;
+  --kia-error: #F472B6;
+  --kia-error-bg: #FDF2F8;
+  --kia-warning: #FBBF24;
+  --kia-warning-bg: #FFFBEB;
+  --kia-info: #3B82F6;
+  --kia-info-bg: #EFF6FF;
+
+  /* Rayons de bordure (très arrondis pour les petits) */
+  --kia-radius-sm: 16px;
+  --kia-radius: 24px;
+  --kia-radius-lg: 32px;
+  --kia-radius-full: 9999px;
+
+  /* Ombres "jouet" (colorées, douces) */
+  --kia-shadow-sm: 0 4px 12px rgba(254, 218, 130, 0.25);
+  --kia-shadow: 0 8px 24px rgba(254, 218, 130, 0.3);
+  --kia-shadow-lg: 0 16px 48px rgba(254, 218, 130, 0.35);
+  --kia-shadow-button: 0 5px 0 #C4A038;
+  --kia-shadow-card: 0 6px 0 #F0D88E;
+
+  /* Typographie */
+  --kia-font: 'Fredoka', var(--font-geist), sans-serif;
+  --kia-font-heading: 'Fredoka', sans-serif;
+  --kia-font-size-xs: 12px;
+  --kia-font-size-sm: 14px;
+  --kia-font-size-base: 16px;
+  --kia-font-size-lg: 20px;
+  --kia-font-size-xl: 28px;
+  --kia-font-size-2xl: 38px;
+  --kia-font-size-3xl: 52px;
+  --kia-font-weight-normal: 400;
+  --kia-font-weight-medium: 500;
+  --kia-font-weight-bold: 700;
+  --kia-font-weight-black: 900;
+
+  /* Espacement */
+  --kia-space-xs: 4px;
+  --kia-space-sm: 8px;
+  --kia-space-md: 16px;
+  --kia-space-lg: 24px;
+  --kia-space-xl: 32px;
+  --kia-space-2xl: 48px;
+  --kia-space-3xl: 64px;
+
+  /* Bordures */
+  --kia-border: 2px solid rgba(205, 109, 25, 0.15);
+  --kia-border-light: 1px solid rgba(205, 109, 25, 0.1);
+  --kia-border-accent: 2px solid var(--kia-accent);
+
+  /* Transitions */
+  --kia-transition-fast: 150ms ease;
+  --kia-transition: 250ms ease;
+  --kia-transition-slow: 400ms ease;
+  --kia-transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Sidebar / Nav */
+  --kia-sidebar-bg: #CD6D19;
+  --kia-sidebar-text: #FFF4E8;
+  --kia-sidebar-active: #A85510;
+  --kia-sidebar-hover: rgba(255, 255, 255, 0.12);
+
+  /* Mascotte */
+  --kia-mascot-scale: 1.1;
+  --kia-mascot-visibility: 1;
+}
+
+/* ─── Thème Aventurier (11-13 ans) ─── */
+[data-theme="aventurier"] {
+  --kia-primary: #0d846e;
+  --kia-primary-hover: #0a6d5a;
+  --kia-primary-text: #FFFFFF;
+  --kia-secondary: #174e49;
+  --kia-secondary-hover: #123f3b;
+  --kia-accent: #d9ef59;
+  --kia-accent-hover: #c8e040;
+
+  --kia-bg: #f6f8f1;
+  --kia-bg-alt: #eef3e5;
+  --kia-surface: #FFFFFF;
+  --kia-surface-hover: #F5F9EE;
+  --kia-surface-active: #EAF2DC;
+
+  --kia-text: #173e3c;
+  --kia-text-secondary: #3d6660;
+  --kia-text-muted: #6b8580;
+  --kia-text-on-primary: #FFFFFF;
+  --kia-text-on-dark: #d9ef59;
+
+  --kia-success: #34D399;
+  --kia-success-bg: #ECFDF5;
+  --kia-error: #ef4444;
+  --kia-error-bg: #FEF2F2;
+  --kia-warning: #f59e0b;
+  --kia-warning-bg: #FFFBEB;
+  --kia-info: #3B82F6;
+  --kia-info-bg: #EFF6FF;
+
+  --kia-radius-sm: 12px;
+  --kia-radius: 16px;
+  --kia-radius-lg: 22px;
+  --kia-radius-full: 9999px;
+
+  --kia-shadow-sm: 0 3px 8px rgba(23, 78, 73, 0.08);
+  --kia-shadow: 0 6px 20px rgba(23, 78, 73, 0.12);
+  --kia-shadow-lg: 0 12px 36px rgba(23, 78, 73, 0.15);
+  --kia-shadow-button: 0 4px 0 #0a5d4e;
+  --kia-shadow-card: 0 4px 0 #d9e4d4;
+
+  --kia-font: 'Fredoka', var(--font-geist), sans-serif;
+  --kia-font-heading: 'Fredoka', sans-serif;
+  --kia-font-size-xs: 11px;
+  --kia-font-size-sm: 13px;
+  --kia-font-size-base: 15px;
+  --kia-font-size-lg: 19px;
+  --kia-font-size-xl: 26px;
+  --kia-font-size-2xl: 34px;
+  --kia-font-size-3xl: 46px;
+  --kia-font-weight-normal: 400;
+  --kia-font-weight-medium: 500;
+  --kia-font-weight-bold: 700;
+  --kia-font-weight-black: 900;
+
+  --kia-space-xs: 4px;
+  --kia-space-sm: 8px;
+  --kia-space-md: 14px;
+  --kia-space-lg: 22px;
+  --kia-space-xl: 30px;
+  --kia-space-2xl: 44px;
+  --kia-space-3xl: 60px;
+
+  --kia-border: 1px solid #e2e9e2;
+  --kia-border-light: 1px solid #edf1e9;
+  --kia-border-accent: 2px solid var(--kia-accent);
+
+  --kia-transition-fast: 150ms ease;
+  --kia-transition: 200ms ease;
+  --kia-transition-slow: 350ms ease;
+  --kia-transition-bounce: 450ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --kia-sidebar-bg: #103f3b;
+  --kia-sidebar-text: #d2e1dd;
+  --kia-sidebar-active: #1c5a53;
+  --kia-sidebar-hover: rgba(255, 255, 255, 0.08);
+
+  --kia-mascot-scale: 0.85;
+  --kia-mascot-visibility: 0.9;
+}
+
+/* ─── Thème Créateur (14-15 ans) ─── */
+[data-theme="createur"] {
+  --kia-primary: #7c3aed;
+  --kia-primary-hover: #6d28d9;
+  --kia-primary-text: #FFFFFF;
+  --kia-secondary: #1e293b;
+  --kia-secondary-hover: #0f172a;
+  --kia-accent: #34D399;
+  --kia-accent-hover: #10B981;
+
+  --kia-bg: #0f172a;
+  --kia-bg-alt: #1e293b;
+  --kia-surface: #1e293b;
+  --kia-surface-hover: #273548;
+  --kia-surface-active: #334155;
+
+  --kia-text: #f1f5f9;
+  --kia-text-secondary: #94a3b8;
+  --kia-text-muted: #64748b;
+  --kia-text-on-primary: #FFFFFF;
+  --kia-text-on-dark: #34D399;
+
+  --kia-success: #34D399;
+  --kia-success-bg: rgba(52, 211, 153, 0.1);
+  --kia-error: #f87171;
+  --kia-error-bg: rgba(248, 113, 113, 0.1);
+  --kia-warning: #fbbf24;
+  --kia-warning-bg: rgba(251, 191, 36, 0.1);
+  --kia-info: #60a5fa;
+  --kia-info-bg: rgba(96, 165, 250, 0.1);
+
+  --kia-radius-sm: 8px;
+  --kia-radius: 12px;
+  --kia-radius-lg: 16px;
+  --kia-radius-full: 9999px;
+
+  --kia-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.2);
+  --kia-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --kia-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --kia-shadow-button: 0 3px 0 #5b21b6;
+  --kia-shadow-card: 0 2px 0 rgba(0, 0, 0, 0.3);
+
+  --kia-font: 'Poppins', var(--font-geist), sans-serif;
+  --kia-font-heading: 'Poppins', sans-serif;
+  --kia-font-size-xs: 11px;
+  --kia-font-size-sm: 13px;
+  --kia-font-size-base: 14px;
+  --kia-font-size-lg: 18px;
+  --kia-font-size-xl: 24px;
+  --kia-font-size-2xl: 32px;
+  --kia-font-size-3xl: 42px;
+  --kia-font-weight-normal: 300;
+  --kia-font-weight-medium: 500;
+  --kia-font-weight-bold: 600;
+  --kia-font-weight-black: 800;
+
+  --kia-space-xs: 4px;
+  --kia-space-sm: 8px;
+  --kia-space-md: 12px;
+  --kia-space-lg: 20px;
+  --kia-space-xl: 28px;
+  --kia-space-2xl: 40px;
+  --kia-space-3xl: 56px;
+
+  --kia-border: 1px solid rgba(255, 255, 255, 0.08);
+  --kia-border-light: 1px solid rgba(255, 255, 255, 0.05);
+  --kia-border-accent: 1px solid var(--kia-accent);
+
+  --kia-transition-fast: 120ms ease;
+  --kia-transition: 200ms ease;
+  --kia-transition-slow: 300ms ease;
+  --kia-transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --kia-sidebar-bg: #0f172a;
+  --kia-sidebar-text: #94a3b8;
+  --kia-sidebar-active: #1e293b;
+  --kia-sidebar-hover: rgba(255, 255, 255, 0.05);
+
+  --kia-mascot-scale: 0.6;
+  --kia-mascot-visibility: 0.6;
+}
+
+/* ─── Thème Admin (espace parent/admin : sobre et pro) ─── */
+[data-theme="admin"] {
+  --kia-primary: #0d846e;
+  --kia-primary-hover: #0a6d5a;
+  --kia-primary-text: #FFFFFF;
+  --kia-secondary: #1e293b;
+  --kia-secondary-hover: #0f172a;
+  --kia-accent: #d9ef59;
+  --kia-accent-hover: #c8e040;
+
+  --kia-bg: #f8fafc;
+  --kia-bg-alt: #f1f5f9;
+  --kia-surface: #FFFFFF;
+  --kia-surface-hover: #f8fafb;
+  --kia-surface-active: #f1f5f9;
+
+  --kia-text: #0f172a;
+  --kia-text-secondary: #475569;
+  --kia-text-muted: #94a3b8;
+  --kia-text-on-primary: #FFFFFF;
+  --kia-text-on-dark: #d9ef59;
+
+  --kia-success: #22c55e;
+  --kia-success-bg: #f0fdf4;
+  --kia-error: #ef4444;
+  --kia-error-bg: #fef2f2;
+  --kia-warning: #f59e0b;
+  --kia-warning-bg: #fffbeb;
+  --kia-info: #3b82f6;
+  --kia-info-bg: #eff6ff;
+
+  --kia-radius-sm: 8px;
+  --kia-radius: 12px;
+  --kia-radius-lg: 16px;
+  --kia-radius-full: 9999px;
+
+  --kia-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --kia-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --kia-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --kia-shadow-button: 0 2px 0 #0a6d5a;
+  --kia-shadow-card: 0 2px 0 #e2e8f0;
+
+  --kia-font: 'Poppins', var(--font-geist), sans-serif;
+  --kia-font-heading: 'Poppins', sans-serif;
+  --kia-font-size-xs: 11px;
+  --kia-font-size-sm: 13px;
+  --kia-font-size-base: 14px;
+  --kia-font-size-lg: 18px;
+  --kia-font-size-xl: 24px;
+  --kia-font-size-2xl: 32px;
+  --kia-font-size-3xl: 40px;
+  --kia-font-weight-normal: 400;
+  --kia-font-weight-medium: 500;
+  --kia-font-weight-bold: 600;
+  --kia-font-weight-black: 700;
+
+  --kia-space-xs: 4px;
+  --kia-space-sm: 8px;
+  --kia-space-md: 12px;
+  --kia-space-lg: 20px;
+  --kia-space-xl: 28px;
+  --kia-space-2xl: 40px;
+  --kia-space-3xl: 56px;
+
+  --kia-border: 1px solid #e2e8f0;
+  --kia-border-light: 1px solid #f1f5f9;
+  --kia-border-accent: 2px solid var(--kia-primary);
+
+  --kia-transition-fast: 120ms ease;
+  --kia-transition: 200ms ease;
+  --kia-transition-slow: 300ms ease;
+  --kia-transition-bounce: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --kia-sidebar-bg: #0f172a;
+  --kia-sidebar-text: #94a3b8;
+  --kia-sidebar-active: #1e293b;
+  --kia-sidebar-hover: rgba(255, 255, 255, 0.05);
+
+  --kia-mascot-scale: 0;
+  --kia-mascot-visibility: 0;
+}
+
+/* Bordure des champs de saisie (input, select, textarea) : visible AVANT la saisie (contraste 3:1 sur blanc, WCAG 1.4.11).
+ * Les gris très pâles des cartes (#e1eae7, #e2e8f0) ne conviennent qu'aux séparateurs, pas aux champs. */
+:root {
+  --field-border: #7d958f;
+  --field-border-hover: #5f7a74;
+}

@@ -1,0 +1,983 @@
+/* ==========================================================================
+   RESPONSIVITÉ : feuille unique et cohérente, chargée EN DERNIER (voir layout.tsx).
+   Elle remplace les règles contradictoires héritées (barre du bas à 760 px ET rail latéral de 641 à 860 px, pas de règle
+   « une colonne » sous 640 px, etc.). Points de rupture, du plus grand au plus petit :
+     ≥ 1025 px  bureau          : menu latéral complet (275 px)
+     861-1024   tablette large  : menu latéral compact (220 px)
+     761-860    tablette        : rail d'icônes (76 px)
+     ≤ 760      téléphone       : barre d'onglets en bas, en-tête compact, une colonne
+     ≤ 400      petit téléphone : tailles resserrées (jusqu'à 320 px)
+   Principes : aucun contenu coupé, aucun défilement horizontal de la page, cibles tactiles ≥ 44 px, textes ≥ 12 px,
+   zones de sécurité (encoches) respectées, animations réduites si l'utilisateur le demande.
+   ========================================================================== */
+
+/* ── Bases sûres ─────────────────────────────────────────────────────────── */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { overflow-wrap: anywhere; }
+img, video, canvas { max-width: 100%; }
+img { height: auto; }
+/* Un enfant d'une grille ou d'un flex ne doit jamais élargir son parent : sans cela, un long titre pousse toute la page. */
+.lms-main, .dash-content, .track-hero > *, .welcome-row > *, .course-grid > *, .arcade-grid > *, .game-row > *, .badge-row > *, .quick-access-grid > * { min-width: 0; }
+.dash-content { box-sizing: border-box; }
+/* Toute grille nommée « …-grid » : ses cases peuvent rétrécir sous la taille de leur contenu au lieu de pousser la page. */
+[class*="-grid"] > *, [class$="grid"] > * { min-width: 0; }
+.pf-logbook-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.keuria-scroll-hint-btn { display: none !important; }
+@media (max-width: 900px) {
+  .keuria-scroll-hint-btn {
+    position: fixed !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translateX(-50%);
+    margin: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    line-height: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 9999 !important;
+    background: #1f5f4a !important;
+    color: #fff !important;
+    border: 2.5px solid #D7F26B !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: grid !important;
+    place-items: center !important;
+    box-shadow: 0 6px 18px rgba(14, 75, 60, 0.45) !important;
+    cursor: pointer !important;
+    animation: keuriaScrollBob 1.5s ease-in-out infinite !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    outline: none !important;
+    padding: 0 !important;
+  }
+}
+@keyframes keuriaScrollBob {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+
+/* ══════════ ADAPTATION INTELLIGENTE DU ZOOM & DENSITÉ ÉCRAN ══════════
+   Résout définitivement le problème des caractères trop grands et de l'interface « trop zoomée »
+   sur les ordinateurs portables et écrans standard à 100% de zoom navigateur.
+   Permet également à chaque utilisateur (Maimouna, développeurs, parents) de personnaliser
+   sa densité d'affichage (Compact / Standard / Confort) sans toucher au zoom navigateur.
+   ══════════════════════════════════════════════════════════════════════ */
+:root {
+  --app-zoom: 1;
+}
+
+/* Invariant : dans un corps zoomé, une hauteur 100vh ne couvre que 100vh × --app-zoom
+   (la page s'arrête à 85 % de l'écran entre 1025 et 1599 px → bande vide en bas des pages
+   courtes). Tout conteneur de page doit donc diviser : min-height: calc(100vh / var(--app-zoom, 1)).
+   Contrôlé par frontend/tests/zoom-page-height.test.mjs. */
+
+/* 1. Écrans d'ordinateurs portables et résolutions bureautiques courantes (1025px à 1599px,
+      ex: 1366x768, 1440x900, ou 1080p avec mise à l'échelle Windows 125% = 1536px) :
+   Rendu automatiquement calibré à 85% pour que l'interface respire avec de vraies marges,
+   des polices élégantes et aucun sentiment de surcharge à 100% de zoom navigateur. */
+@media (min-width: 1025px) and (max-width: 1599px) {
+  :root {
+    --app-zoom: 0.85;
+  }
+  body {
+    zoom: 0.85;
+    zoom: var(--app-zoom, 0.85);
+  }
+}
+
+/* 2. Grands écrans de bureau (≥ 1600px, 1080p natif, 1440p, 4K) :
+   Affichage équilibré à 0.95 ou 1.0 */
+@media (min-width: 1600px) {
+  :root {
+    --app-zoom: 0.95;
+  }
+  body {
+    zoom: 0.95;
+    zoom: var(--app-zoom, 0.95);
+  }
+}
+
+/* 3. Surcharges manuelles choisies par l'utilisateur (enregistrées dans les paramètres) */
+html[data-display-zoom="compact"] {
+  --app-zoom: 0.82 !important;
+}
+html[data-display-zoom="compact"] body {
+  zoom: 0.82 !important;
+}
+
+html[data-display-zoom="standard"] {
+  --app-zoom: 1 !important;
+}
+html[data-display-zoom="standard"] body {
+  zoom: 1 !important;
+}
+
+html[data-display-zoom="comfortable"] {
+  --app-zoom: 1.1 !important;
+}
+html[data-display-zoom="comfortable"] body {
+  zoom: 1.1 !important;
+}
+
+/* Les appareils mobiles et tablettes (≤ 1024px) restent strictement à 1.0 pour garantir des cibles tactiles confortables */
+@media (max-width: 1024px) {
+  body {
+    zoom: 1 !important;
+  }
+}
+
+/* Très grands écrans : le contenu reste lisible, centré, sans s'étirer sur 2500 px. */
+@media (min-width: 1700px) {
+  .dash-content { max-width: 1500px; margin-inline: auto; }
+}
+
+/* ── Tablette : une règle claire à la place des deux qui se chevauchaient ── */
+@media (min-width: 761px) and (max-width: 860px) {
+  .lms-side { width: 76px !important; }
+  .lms-main { margin-left: 76px !important; }
+  .lms-top { padding-inline: 18px; }
+  .user-profile-name { max-width: 110px; }
+}
+@media (min-width: 761px) and (max-width: 1024px) {
+  .userline > span[role="button"] > span { display: none; } /* « — Explorateur débutant » : le niveau s'affiche dans la fenêtre au clic */
+  /* Tablette : texte à gauche, illustration à droite (la règle héritée l'empilait en une colonne). */
+  .track-hero { grid-template-columns: 1.15fr .85fr !important; text-align: left !important; min-height: 290px !important; }
+  .track-hero > div { padding: 26px 24px !important; }
+  .track-hero-visual { order: 0 !important; padding: 12px 18px 12px 4px !important; min-height: 290px !important; }
+  .track-hero img { max-height: 290px !important; order: 0 !important; object-fit: cover !important; object-position: center 20% !important; }
+  .track-hero h2 { font-size: clamp(22px, 3vw, 27px) !important; }
+
+  /* ── Carte des mondes sur tablette (flux vertical de haut en bas) ── */
+  .gm-lock-banner,
+  #ki-worlds {
+    display: none !important;
+  }
+
+  .game-map {
+    width: 100% !important;
+    max-width: 860px !important;
+    margin-inline: auto !important;
+  }
+
+  /* Bandeau d'en-tête de chaque monde sur tablette */
+  .gm-world-header {
+    max-width: 620px !important;
+    margin-inline: auto !important;
+    padding: 14px 20px !important;
+    min-height: 72px !important;
+    gap: 16px !important;
+    border-radius: 20px !important;
+  }
+  .gm-world-header img {
+    width: 56px !important;
+    max-width: 56px !important;
+  }
+  .gm-world-kicker {
+    font-size: 11.5px !important;
+    letter-spacing: .1em !important;
+  }
+  .gm-world-title {
+    font-size: 19px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Conteneur de chaque monde sur tablette : hauteur généreuse et centrage */
+  .mobile-world-card {
+    height: clamp(680px, 80vh, 900px) !important;
+    max-width: 620px !important;
+    margin-inline: auto !important;
+    border-radius: 28px !important;
+    border: 3.5px solid #D5E2B8 !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09) !important;
+  }
+
+  /* Niveaux et boutons de la carte agrandis et ergonomiques pour tablette */
+  .mobile-world-card .gm-node-btn {
+    width: 84px !important;
+    height: 84px !important;
+    min-width: 84px !important;
+    min-height: 84px !important;
+    font-size: 28px !important;
+    border-width: 4.5px !important;
+  }
+  .mobile-world-card .gm-node-btn.gm-node-current {
+    width: 96px !important;
+    height: 96px !important;
+    min-width: 96px !important;
+    min-height: 96px !important;
+    font-size: 32px !important;
+  }
+  .mobile-world-card .gm-node-pill {
+    max-width: 240px !important;
+    font-size: 14px !important;
+    padding: 5px 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Statistiques et progression en 3 colonnes nettes */
+  .gm-progress-card {
+    padding: 18px 22px !important;
+    border-radius: 22px !important;
+    gap: 14px !important;
+  }
+  .gm-stats-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .gm-stat-box {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    min-height: 52px !important;
+  }
+  .gm-stat-val {
+    font-size: 24px !important;
+  }
+  .gm-stat-label {
+    font-size: 12px !important;
+    letter-spacing: .08em !important;
+  }
+
+  /* Modale de niveau centrée avec taille adaptée */
+  .gm-pop-in {
+    max-width: 600px !important;
+    max-height: 85vh !important;
+  }
+}
+
+/* ══════════ TÉLÉPHONE (≤ 760 px) ══════════ */
+@media (max-width: 760px) {
+  /* --- Barre d'onglets en bas ------------------------------------------------ */
+  .lms-side {
+    position: fixed !important; inset: auto 0 0 0 !important;
+    width: 100% !important; height: calc(64px + env(safe-area-inset-bottom, 0px)) !important;
+    flex-direction: row !important; align-items: center;
+    padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
+    gap: 0 !important; overflow: hidden !important; z-index: 50 !important;
+    box-shadow: 0 -6px 22px rgba(0, 0, 0, .18) !important;
+  }
+  .lms-side-header, .lms-side .side-card, .lms-side .side-card-mini-btn, .lms-side .back-home, .lms-side nav i,
+  .lms-logo, .sidebar-toggle-btn { display: none !important; }
+  .lms-side nav {
+    display: flex !important; flex-direction: row !important; width: 100%; max-width: 480px; margin: 0 auto !important; gap: 8px !important;
+    justify-content: space-around !important; align-items: center; overflow: hidden;
+    padding-inline: 4px;
+  }
+  .lms-side nav::-webkit-scrollbar { display: none; }
+  .lms-side nav a.lms-nav-secondary { display: none !important; }
+  .lms-side nav a, .lms-side nav button {
+    display: flex !important; flex: 1 1 0 !important; min-width: 44px !important; min-height: 48px !important; max-width: 68px !important;
+    justify-content: center !important; align-items: center; padding: 6px 0 !important; border-radius: 14px !important;
+    transform: none !important; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+  .lms-side nav a .nav-text, .lms-side nav button .nav-text { display: none !important; }
+  .lms-side nav a.on::after, .lms-side nav button.on::after { display: none !important; }
+  .lms-side nav a.on { justify-content: center !important; box-shadow: 0 4px 14px rgba(216, 240, 91, .45); }
+
+  /* Messagerie familiale au-dessus de la barre de navigation mobile */
+  .family-chat-btn {
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 12px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .family-chat-window {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    width: auto !important;
+    max-width: calc(100vw - 20px) !important;
+    height: min(500px, calc(100dvh - 86px)) !important;
+    border-radius: 20px !important;
+  }
+  body:has(.p79-ar-title) .family-chat-btn {
+    bottom: calc(134px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .lms-main, .lms-main.sidebar-collapsed {
+    margin-left: 0 !important; width: 100%; max-width: 100vw;
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  /* --- En-tête compact ---------------------------------------------------- */
+  .lms-top { height: 56px !important; padding: 0 16px !important; gap: 8px; }
+  .lms-top > div:first-child { flex: 0 0 auto; display: flex; align-items: center; min-width: 0; }
+  .lms-top > div:first-child > b { display: none; }
+  .mobile-brand { display: inline !important; font-size: 19px; font-weight: 900; color: var(--brand, #173e3c); letter-spacing: -.3px; white-space: nowrap; }
+  .kids-theme .lms-top, .kids-theme .userline { font-size: 14px !important; }
+  .userline { flex: 1 1 auto; min-width: 0; justify-content: flex-end; gap: 6px !important; }
+  .userline > span:not(.user-avatar):not(.user-profile-badge) { display: inline-flex !important; align-items: center; gap: 4px; padding: 6px 9px !important; white-space: nowrap; flex: 0 0 auto; font-size: 14px; }
+  .userline > span[role="button"] > span { display: none; }
+  .userline small { display: none; }
+  .user-profile-badge { padding: 3px !important; flex: 0 0 auto; }
+  .user-profile-name { display: none; }
+  .account-link { font-size: 14px; white-space: nowrap; }
+
+  /* --- Contenu ----------------------------------------------------------- */
+  html, body { overflow-x: hidden; }
+  .dash-content { padding: 4px 12px 20px !important; max-width: 100% !important; }
+  .welcome-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    margin-top: 2px !important;
+    margin-bottom: 8px !important;
+    padding: 0 !important;
+  }
+  .welcome-row > div:first-child {
+    display: flex !important;
+    gap: 14px !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .welcome-row h1, .kids-theme .welcome-row h1 {
+    font-size: clamp(21px, 6vw, 26px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+    margin: 3px 0 2px !important;
+  }
+  .welcome-row p { font-size: 13.5px !important; line-height: 1.35 !important; margin: 0 !important; color: #556976 !important; }
+  .welcome-row img { width: clamp(74px, 20vw, 86px) !important; max-height: 86px !important; object-fit: contain !important; }
+  .welcome-row .tiny-kicker { font-size: 11.5px !important; letter-spacing: 0.04em !important; }
+  .welcome-row button { padding: 4px 11px !important; font-size: 12.5px !important; min-height: 30px !important; gap: 5px !important; }
+
+  /* La grande section verte (Track Hero) : bannière pleine largeur d'un bord à l'autre, cadrée sur les visages */
+  .track-hero {
+    grid-template-columns: 1fr !important;
+    text-align: left !important;
+    border-radius: 20px !important;
+    margin-top: 14px !important;
+    margin-bottom: 24px !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+  }
+  .track-hero-visual {
+    order: -1 !important;
+    width: 100% !important;
+    height: 285px !important;
+    max-height: 310px !important;
+    padding: 8px 12px 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+  .track-hero-visual img,
+  .track-hero img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 295px !important;
+    object-fit: cover !important;
+    object-position: center 20% !important; /* Cadre parfaitement la tête complète de Moussa, Palou et Fatou */
+    display: block !important;
+    border-radius: 16px !important;
+  }
+  .track-hero > div:not(.track-hero-visual) {
+    padding: 12px 14px 16px !important;
+  }
+  .track-hero > div > span {
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 800 !important;
+  }
+  .track-hero h2, .kids-theme .track-hero h2 {
+    font-size: 17px !important;
+    line-height: 1.25 !important;
+    margin: 4px 0 10px !important;
+    max-width: none;
+  }
+  .track-steps {
+    margin: 10px 0 !important;
+    max-width: 100%;
+    padding: 8px 10px !important;
+  }
+  .overall {
+    max-width: none;
+    margin-bottom: 12px !important;
+  }
+  .overall strong { font-size: 13px; }
+  .overall small { font-size: 11px; }
+  .track-hero button,
+  .track-hero-btn,
+  .kids-theme .track-hero button {
+    width: 100% !important;
+    margin-top: 14px !important;
+    margin-bottom: 0 !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    min-height: 44px !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.2px !important;
+    box-shadow: 0 4px 0 #b3cc2d !important;
+  }
+
+  /* Règle harmonisée pour TOUS les boutons sur la page Mon aventure en mobile */
+  .dash-content button:not(.modal-x),
+  .kids-theme .dash-content button:not(.modal-x) {
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  /* Titres de sections (dash-title) calibrés pour mobile */
+  .dash-title { margin-top: 20px !important; margin-bottom: 10px !important; }
+  .dash-title span { font-size: 11px !important; letter-spacing: 0.04em !important; }
+  .dash-title h2 { font-size: 17px !important; line-height: 1.25 !important; margin: 2px 0 0 !important; }
+
+  /* Grilles : lisibles et jamais écrasées. */
+  .course-grid, .family-grid { grid-template-columns: 1fr !important; }
+  .arcade-grid, .game-row, .real-games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .badge-row { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 8px !important; }
+
+  /* ── Programme du jour (2 à 2 sur une même ligne sur mobile) ── */
+  .daily-programme-box {
+    padding: 16px 14px 18px !important;
+    border-radius: 20px !important;
+    margin-top: 14px !important;
+    margin-bottom: 24px !important;
+  }
+  .programme-header {
+    gap: 12px !important;
+    margin-bottom: 14px !important;
+  }
+  .programme-header-icon {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .programme-title {
+    font-size: 16px !important;
+    line-height: 1.22 !important;
+  }
+  .programme-subtitle {
+    font-size: 12.5px !important;
+    line-height: 1.35 !important;
+  }
+  .programme-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+  .programme-metric-item {
+    padding: 10px 10px 12px !important;
+    border-radius: 14px !important;
+  }
+  .programme-metric-head {
+    margin-bottom: 8px !important;
+    gap: 4px !important;
+  }
+  .programme-metric-icon svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .programme-metric-label {
+    font-size: 13px !important;
+  }
+  .programme-metric-value {
+    font-size: 15px !important;
+  }
+
+  /* ── Accès rapide : 2 colonnes compactes pour mobile ── */
+  .quick-access-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+  .quick-access-grid .course-card {
+    padding: 12px 10px !important;
+    border-radius: 18px !important;
+  }
+  .quick-access-grid .course-art {
+    height: 64px !important;
+    border-radius: 14px !important;
+  }
+  .quick-access-grid .course-art svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .quick-access-grid .course-card h3 {
+    font-size: 15px !important;
+    margin: 4px 0 2px !important;
+  }
+  .quick-access-grid .course-card p {
+    display: none !important;
+  }
+
+  /* Bannières de page (Jeux & défis…) : reproduit fidèlement l'agencement web adapté au mobile */
+  .page-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 18px 16px !important;
+    gap: 10px !important;
+    min-height: 0 !important;
+    border-radius: 22px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .page-hero > div:first-of-type {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .page-hero-art {
+    order: 0 !important;
+    position: absolute !important;
+    right: 8px !important;
+    top: 12px !important;
+    z-index: 1 !important;
+  }
+  .page-hero-art img {
+    width: 82px !important;
+    max-height: 95px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+  .page-hero h1, .page-hero .gm-title {
+    font-size: clamp(19px, 5.2vw, 23px) !important;
+    line-height: 1.15 !important;
+    max-width: calc(100% - 82px) !important;
+    margin: 4px 0 0 !important;
+  }
+  .page-hero > div:first-of-type > div:first-child {
+    font-size: 10.5px !important;
+    letter-spacing: .12em !important;
+    max-width: calc(100% - 82px) !important;
+  }
+  .page-hero p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 8px 0 14px !important;
+    max-width: 100% !important;
+    color: #DCEBC2 !important;
+  }
+  .page-hero a, .page-hero button {
+    justify-content: center !important;
+    text-align: center !important;
+    font-size: 14.5px !important;
+    padding: 10px 14px !important;
+    border-radius: 12px !important;
+    white-space: normal !important;
+  }
+  .page-hero > div:first-of-type > div:last-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  /* Section Ma Progression ultra-compacte sur mobile pour libérer l'espace vertical */
+  .gm-progress-card {
+    padding: 12px 14px !important;
+    border-radius: 18px !important;
+    gap: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  .gm-progress-card .gm-progress-title {
+    font-size: 16px !important;
+  }
+  .gm-progress-card .gm-progress-count {
+    font-size: 13.5px !important;
+  }
+  .gm-progress-legend {
+    margin-top: 6px !important;
+    font-size: 10.5px !important;
+    gap: 10px !important;
+  }
+
+  /* Remplacement des gros carrés de statistiques par des micro-compartiments horizontaux ultra-compacts */
+  .gm-stats-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+  .gm-stat-box {
+    width: 100% !important;
+    padding: 6px 6px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    min-height: 38px !important;
+    box-sizing: border-box !important;
+  }
+  .gm-stat-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0 !important;
+    flex: none !important;
+  }
+  .gm-stat-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .gm-stat-text-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    line-height: 1 !important;
+    min-width: 0 !important;
+  }
+  .gm-stat-val {
+    font-size: 14px !important;
+    line-height: 1.1 !important;
+  }
+  .gm-stat-label {
+    font-size: 8.5px !important;
+    letter-spacing: .02em !important;
+    margin-top: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  @keyframes gmHintBob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 6px); }
+  }
+
+  /* Masquer la grande bannière jaune et la liste de cartes "Mes mondes" sur mobile */
+  .gm-lock-banner,
+  #ki-worlds {
+    display: none !important;
+  }
+
+  /* Bandeau d'en-tête de chaque monde sur mobile : gabarit et typographie homogènes */
+  .gm-world-header {
+    padding: 10px 14px !important;
+    min-height: 64px !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+  .gm-world-header img {
+    width: 48px !important;
+    max-width: 48px !important;
+  }
+  .gm-world-kicker {
+    font-size: 10px !important;
+    letter-spacing: .08em !important;
+  }
+  .gm-world-title {
+    font-size: clamp(14px, 4vw, 16px) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Conteneur de chaque monde sur mobile avec route visible */
+  .mobile-world-card {
+    height: clamp(480px, 125vw, 560px) !important;
+    border-radius: 24px !important;
+    border: 3px solid #D5E2B8 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  /* Fenêtres (détail d'un niveau, célébration) : jamais plus hautes que l'écran, défilables, mascotte au-dessus. */
+  .gm-pop-in {
+    max-width: 100% !important;
+    max-height: 92vh;
+    overflow-y: auto;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .gm-pop-in > div:first-child {
+    width: auto !important;
+    align-items: center !important;
+  }
+  .gm-pop-in > div:first-child img {
+    width: 90px !important;
+  }
+  .gm-pop-in > div:last-child {
+    width: 100% !important;
+    max-width: min(420px, calc(100vw - 32px)) !important;
+    padding: 20px 18px 18px !important;
+    border-radius: 22px !important;
+  }
+
+  /* ── Ateliers & Mini-Jeux IA : cartes et boutons proportionnés ── */
+  .ateliers-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 24px !important;
+  }
+  .ateliers-grid > div {
+    padding: 14px 14px 16px !important;
+    border-radius: 18px !important;
+  }
+  .ateliers-grid h3 {
+    font-size: 16px !important;
+    margin: 0 0 6px !important;
+  }
+  .ateliers-grid p {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 0 12px !important;
+  }
+  .ateliers-grid button {
+    min-height: 44px !important;
+    font-size: 14px !important;
+    padding: 10px 14px !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+  }
+
+  /* ── Conseil de Palou (DailyTip79) : compact et lisible en mobile ── */
+  .a79-tip {
+    margin-bottom: 24px !important;
+  }
+  .a79-tip .a79-card {
+    padding: 14px 12px 16px !important;
+    border-radius: 20px !important;
+    gap: 12px !important;
+  }
+  .a79-tip-palou {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .a79-tip-palou img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .a79-tip #a79-tip-title {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    margin: 4px 0 2px !important;
+  }
+  .a79-tip p {
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  /* ── Pastilles et étiquettes 7-9 (Eyebrow / Tag) en mobile ── */
+  .p79-eyebrow {
+    font-size: 11px !important;
+    padding: 3px 10px !important;
+    border: 1.5px solid var(--ink, #153f3b) !important;
+    border-radius: 999px !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+  }
+  .p79-tag {
+    font-size: 11px !important;
+    padding: 2px 8px !important;
+  }
+
+  /* ── Charte citoyenne (1 colonne sous 760px) ── */
+  .charte-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 24px !important;
+  }
+  .charte-grid > div {
+    padding: 14px !important;
+    border-radius: 16px !important;
+  }
+  .charte-grid h4 {
+    font-size: 14.5px !important;
+  }
+  .charte-grid p {
+    font-size: 12.5px !important;
+  }
+
+  /* ── Option 1 : Carrousel tactile horizontal pour L'Afrique IA (Swipe compact) ── */
+  .africa-ia-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 12px !important;
+    margin-bottom: 24px !important;
+    padding-bottom: 8px !important;
+    padding-right: 14px !important;
+  }
+  .africa-ia-grid::-webkit-scrollbar {
+    display: none !important;
+  }
+  .africa-ia-grid > div {
+    flex: 0 0 84% !important;
+    max-width: 84% !important;
+    min-width: 0 !important;
+    scroll-snap-align: start !important;
+    padding: 14px 16px !important;
+    border-radius: 18px !important;
+    box-sizing: border-box !important;
+  }
+  .africa-ia-grid h4 {
+    font-size: 14.5px !important;
+    margin: 0 0 4px !important;
+  }
+  .africa-ia-grid p {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+
+  /* ── Boutons standards 7-9 en mobile (« J'ai compris », etc.) : taille compacte ── */
+  .p79-btn,
+  .a79 .p79-btn,
+  .a79-tip .p79-btn,
+  .a79-card .p79-btn {
+    font-size: 13.5px !important;
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 6px 14px !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    box-shadow: 0 3px 0 var(--brand-mid, #0a6650) !important;
+    text-shadow: none !important;
+    gap: 6px !important;
+  }
+  .p79-btn svg,
+  .a79 .p79-btn svg,
+  .a79-tip .p79-btn svg,
+  .a79-card .p79-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* ── Streak / Progression quotidienne : compact et remonté sans trou blanc ── */
+  .streak-card-wrapper,
+  .welcome-row .streak-card-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 10px 10px !important;
+    border-radius: 16px !important;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+  }
+  .streak-card-wrapper > div:first-child {
+    font-size: 11px !important;
+    margin-bottom: 6px !important;
+    letter-spacing: 0.04em !important;
+  }
+  .streak-card-wrapper [style*="border-radius: 10px"] {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 9px !important;
+  }
+
+  /* Cibles tactiles confortables pour de petits doigts. */
+  .lms-main button, .lms-main [role="button"], .lms-main a.btn { min-height: 44px; touch-action: manipulation; }
+  .lms-main input, .lms-main select, .lms-main textarea { font-size: 16px; } /* évite le zoom automatique d'iOS à la saisie */
+
+  /* Textes trop petits des étiquettes : jamais sous 12 px. */
+  .kicker, .eyebrow, small, .lms-main [class*="kicker"], .lms-main [class*="eyebrow"] { font-size: max(12px, 1em); }
+}
+
+/* Cartes de statistiques (étoiles, XP, badges) : elles rétrécissent et se partagent la largeur au lieu de dépasser. */
+@media (max-width: 760px) {
+  #ki-stats, .gm-stats { max-width: 100%; }
+  .game-map section > div > div[style*="flex: none"] { flex: 1 1 100% !important; min-width: 0; }
+  .game-map section > div > div[style*="flex: none"] > div { flex: 1 1 0; width: auto !important; min-width: 0; }
+}
+
+/* ── Page d'accueil publique : en-tête moderne, responsive et tiroir mobile ── */
+@media (max-width: 768px) {
+  .landing-topbar { padding: 0 16px !important; height: 60px !important; justify-content: space-between !important; }
+  .landing-topbar .landing-nav { display: none !important; }
+  .landing-topbar .landing-auth-buttons { display: none !important; }
+  .landing-topbar .landing-mobile-menu-btn { display: inline-flex !important; }
+  .landing-hero h1 { overflow-wrap: break-word; }
+  .tag, .track-tag, .module-card-badge, .landing-mascot-badge span { font-size: 12px !important; }
+  .footer-columns-grid a, .rich-footer a, .legal-links a { display: inline-block; padding-block: 11px; }
+}
+.landing-brand { flex: 0 0 auto; }
+.landing-brand img { flex: none; max-width: none; }
+.landing-stat-item *, .landing-stats-grid * { white-space: normal !important; text-overflow: clip !important; overflow: visible; }
+@media (max-width: 400px) {
+  .landing-topbar { padding: 0 12px !important; }
+  .landing-brand img.official-logo { height: 28px !important; width: auto !important; }
+}
+
+/* ══════════ PETIT TÉLÉPHONE (≤ 400 px, jusqu'à 320 px) ══════════ */
+@media (max-width: 400px) {
+  .lms-top { padding: 0 12px !important; gap: 6px; }
+  .mobile-brand { font-size: 17px; }
+  .userline > span:not(.user-avatar):not(.user-profile-badge) { padding: 5px 7px !important; font-size: 13px; }
+  .dash-content { padding: 4px 10px 20px !important; }
+  .track-hero > div { padding: 18px 14px 20px !important; }
+  .track-hero-visual { height: 265px !important; max-height: 280px !important; }
+  .track-hero img { max-height: 270px !important; object-position: center 20% !important; }
+  .badge-row, .badge-grid-v2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  .lms-side nav a, .lms-side nav button { flex: 1 1 0 !important; min-width: 40px !important; max-width: 58px !important; }
+}
+@media (max-width: 340px) {
+  .arcade-grid, .game-row, .real-games-grid { grid-template-columns: 1fr !important; }
+  .userline > span:first-child { display: none !important; } /* la flamme passe après l'XP : on garde l'essentiel */
+}
+
+/* ══════════ TÉLÉPHONE EN PAYSAGE (peu de hauteur) ══════════ */
+@media (max-width: 900px) and (max-height: 480px) and (orientation: landscape) {
+  .lms-top { height: 46px !important; }
+  .lms-side { height: calc(52px + env(safe-area-inset-bottom, 0px)) !important; }
+  .lms-main, .lms-main.sidebar-collapsed { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)) !important; }
+  .lms-side nav a, .lms-side nav button { min-height: 40px !important; }
+}
+
+/* ══════════ FALLBACK moteurs sans support du mot-clé `zoom` (anciens Firefox/Safari) ══════════ */
+@supports not (zoom: 1) {
+  :root { --app-zoom: 1; }
+  html, body { zoom: 1 !important; }
+}
+
+/* ══════════ MESSAGERIE FAMILIALE : JAMAIS AU-DESSUS DES JEUX / LEÇONS ══════════ */
+body:has(.kids-lesson-container) .family-chat-btn,
+body:has(.kids-lesson-container) .family-chat-window,
+body:has([class*="lesson"]) .family-chat-btn,
+body:has([class*="lesson"]) .family-chat-window,
+body:has(.game-shell) .family-chat-btn,
+body:has(.game-shell) .family-chat-window {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  /* Sur mobile, le bouton de chat est décalé au-dessus de la barre de navigation du bas */
+  .family-chat-btn {
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+    right: 14px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  main.adult-main,
+  .main-content,
+  .lms-main,
+  .dash-content,
+  .dashboard-inner,
+  .landing-inner {
+    overflow-x: hidden !important;
+  }
+}
+
+/* ══════════ ACCESSIBILITÉ ══════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

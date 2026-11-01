@@ -1,0 +1,33 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e01.mp3;1;1;texte (story);C’est la récréation ! Une grande caisse vient d’arriver dans la cour de l’école.;C’est la récréation ! Une grande caisse vient d’arriver dans la cour de l’école.;80
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e02.mp3;1;2;texte (story);Bonjour ! Moi, c’est Palou, une IA.;Bonjour ! Moi, c’est Palou, une I A.;35
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e03.mp3;1;3;texte (story);Moussa et Fatou se regardent : « Une IA ? C’est quoi, ça ? »;Moussa et Fatou se regardent : « Une I A ? C’est quoi, ça ? »;60
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e04.mp3;1;4;texte (discover);IA veut dire intelligence artificielle : un outil fabriqué par des humains. Il aide, mais il ne pense pas comme toi.;I A veut dire intelligence artificielle : un outil fabriqué par des humains. Il aide, mais il ne pense pas comme toi.;116
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Palou est ton nouvel ami.;Bravo ! Palou est ton nouvel ami.;33
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e07-retiens.mp3;1;7;« Je retiens »;Une IA est un outil fabriqué par des humains. Elle aide, mais elle peut se tromper.;Une I A est un outil fabriqué par des humains. Elle aide, mais elle peut se tromper.;83
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Le téléphone reconnaît la chanson : c’est une IA.;Bravo ! Le téléphone reconnaît la chanson : c’est une I A.;57
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m1-q.mp3;2;5;consigne du jeu;Baye met la radio. Le téléphone de Madame Diop reconnaît la chanson. Utilise-t-il une IA ?;Baï met la radio. Le téléphone de Madame Diop reconnaît la chanson. Utilise-t-il une I A ?;90
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Exact ! Palou a l’air vivant, mais c’est une machine.;Exact ! Palou a l’air vivant, mais c’est une machine.;53
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m2-q.mp3;2;5;consigne du jeu;Palou marche, parle et rit. Est-il vivant comme Moussa ?;Palou marche, parle et rit. Est-il vivant comme Moussa ?;56
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m3-ok.mp3;2;5;bravo (bonne réponse);Oui ! C’est pour ça qu’on vérifie toujours ses réponses.;Oui ! C’est pour ça qu’on vérifie toujours ses réponses.;56
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m3-q.mp3;2;5;consigne du jeu;Une IA peut-elle se tromper ?;Une I A peut-elle se tromper ?;29
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05.mp3;2;5;texte (play);Aide Palou à comprendre ! Réponds avec ton doigt.;Aide Palou à comprendre ! Réponds avec ton doigt.;49
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Une IA est un outil fabriqué par des humains.;Oui ! Une I A est un outil fabriqué par des humains.;51
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m1-q.mp3;2;6;consigne du jeu;Palou est une IA. Qu’est-ce qu’une IA ?;Palou est une I A. Qu’est-ce qu’une I A ?;39
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Bravo ! L’assistant vocal comprend ta question et répond.;Bravo ! L’assistant vocal comprend ta question et répond.;57
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m2-q.mp3;2;6;consigne du jeu;Lequel de ces objets est une IA ?;Lequel de ces objets est une I A ?;33
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Exact ! Une IA peut se tromper : on vérifie avec un adulte.;Exact ! Une I A peut se tromper : on vérifie avec un adulte.;59
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m3-q.mp3;2;6;consigne du jeu;Palou donne une mauvaise réponse. Que fais-tu ?;Palou donne une mauvaise réponse. Que fais-tu ?;47
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m1-o2.mp3;3;5;explication (mauvaise réponse);Ce n’est pas de la magie : des humains ont fabriqué cet outil.;Ce n’est pas de la magie : des humains ont fabriqué cet outil.;62
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m1-o3.mp3;3;5;explication (mauvaise réponse);Il n’y a personne dedans ! Le téléphone compare le son à des exemples.;Il n’y a personne dedans ! Le téléphone compare le son à des exemples.;70
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m2-o2.mp3;3;5;explication (mauvaise réponse);Palou a l’air vivant, mais il ne respire pas : il a été construit.;Palou a l’air vivant, mais il ne respire pas : il a été construit.;66
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m2-o3.mp3;3;5;explication (mauvaise réponse);Palou n’a pas de cœur qui bat. Il est fait de pièces et de programmes.;Palou n’a pas de cœur qui bat. Il est fait de pièces et de programmes.;70
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m3-o2.mp3;3;5;explication (mauvaise réponse);Aucune IA ne sait tout. On vérifie toujours ses réponses.;Aucune I A ne sait tout. On vérifie toujours ses réponses.;57
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e05-m3-o3.mp3;3;5;explication (mauvaise réponse);Éteinte, une IA ne fait rien du tout !;Éteinte, une I A ne fait rien du tout !;38
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Une IA ne respire pas : elle est construite.;Une I A ne respire pas : elle est construite.;44
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Ce n’est pas de la magie : des humains l’ont fabriquée.;Ce n’est pas de la magie : des humains l’ont fabriquée.;55
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Une lampe s’allume, mais elle ne comprend rien.;Une lampe s’allume, mais elle ne comprend rien.;47
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Un vélo roule grâce à tes jambes, pas grâce à une IA.;Un vélo roule grâce à tes jambes, pas grâce à une I A.;53
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Une IA peut se tromper : il faut vérifier.;Une I A peut se tromper : il faut vérifier.;42
+frontend/public/audio/palou/lecons/m01/p1-1/p1-1_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Se fâcher n’aide pas. Mieux vaut vérifier avec un adulte.;Se fâcher n’aide pas. Mieux vaut vérifier avec un adulte.;57

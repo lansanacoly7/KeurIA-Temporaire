@@ -1,0 +1,43 @@
+/* Fenêtre « Inscrire un enfant » : les styles de base sont dans le composant, ici seulement l'adaptation aux petits écrans.
+   !important parce que les styles intégrés au composant l'emportent sur toute règle de feuille. */
+
+.acw-step-label { white-space: nowrap; }
+
+.acw-sheet { max-height: 92dvh !important; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+@media (max-width: 520px) {
+  .acw-sheet {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    gap: 14px !important;
+  }
+
+  /* Étapes : seule l'étape en cours garde son texte, les autres restent des pastilles numérotées. */
+  .acw-step-label:not(.is-current) { display: none; }
+  .acw-stepper { gap: 6px !important; }
+
+  /* Âge et parcours : l'un sous l'autre, le parcours peut passer à la ligne. */
+  .acw-age-head { flex-wrap: wrap; }
+  .acw-age-row { flex-direction: column !important; align-items: stretch !important; gap: 10px !important; }
+  .acw-track { flex-wrap: wrap; }
+  .acw-track-desc { white-space: normal !important; overflow: visible !important; text-overflow: clip !important; }
+  .acw-track-badge { display: none !important; }
+
+  /* Zones tactiles confortables ; 16 px dans les champs pour que iPhone ne zoome pas à la saisie. */
+  .acw-input { font-size: 16px !important; padding: 11px 12px !important; }
+  .acw-close { width: 40px !important; height: 40px !important; top: 12px !important; right: 12px !important; }
+  .acw-btn { min-height: 46px; font-size: 14px !important; padding-inline: 18px !important; }
+  .acw-head { padding-right: 44px; }
+  .acw-back { white-space: nowrap; flex-shrink: 0; }
+  .acw-btn:not(.acw-back) { justify-content: center; text-align: center; }
+  .acw-actions { position: sticky; bottom: -20px; background: white; padding-bottom: 4px; }
+}
+
+@media (max-width: 360px) {
+  .acw-sheet { padding: 16px 12px !important; }
+  .acw-names { grid-template-columns: 1fr !important; }
+  /* Très petit écran : le bouton principal prend toute la largeur, « Précédent » passe dessous. */
+  .acw-actions { flex-wrap: wrap; }
+  .acw-btn:not(.acw-back) { flex: 1 1 100%; order: -1; }
+  .acw-back { flex: 1 1 100%; justify-content: center; }
+}

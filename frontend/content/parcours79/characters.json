@@ -1,0 +1,60 @@
+{
+  "characters": [
+    {
+      "id": "palou",
+      "name": "Palou",
+      "role": "Mascotte et guide d'apprentissage",
+      "avatar": "/images/parcours79/references/01_palou_reference.png"
+    },
+    {
+      "id": "moussa",
+      "name": "Moussa",
+      "role": "Ami curieux et inventif",
+      "avatar": "/images/parcours79/references/03_moussa_reference.png"
+    },
+    {
+      "id": "fatou",
+      "name": "Fatou",
+      "role": "Amie observatrice et dynamique",
+      "avatar": "/images/parcours79/references/04_fatou_reference.png"
+    },
+    {
+      "id": "mme-diop",
+      "name": "Madame Diop",
+      "aliases": ["Mme Diop"],
+      "role": "Enseignante bienveillante",
+      "avatar": "/images/parcours79/references/05_mme_diop_reference.png"
+    },
+    {
+      "id": "mame-awa",
+      "name": "Mame Awa",
+      "role": "Grand-mère protectrice",
+      "avatar": ""
+    },
+    {
+      "id": "papa-ibou",
+      "name": "Papa Ibou",
+      "role": "Père et commerçant",
+      "avatar": "/images/parcours79/references/06_papa_ibou_reference.png"
+    },
+    {
+      "id": "tonton-cheikh",
+      "name": "Tonton Cheikh",
+      "role": "Oncle ingénieux",
+      "avatar": ""
+    },
+    {
+      "id": "baye",
+      "name": "Baye",
+      "role": "Grand-père conteur",
+      "avatar": ""
+    },
+    {
+      "id": "mame-coumba",
+      "name": "Mame Coumba",
+      "role": "Ancienne du village",
+      "avatar": ""
+    }
+  ]
+}
+

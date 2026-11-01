@@ -1,0 +1,31 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e01.mp3;1;1;texte (story);Moussa ramasse des feuilles tombées. Certaines sont vertes, d’autres sont tachées.;Moussa ramasse des feuilles tombées. Certaines sont vertes, d’autres sont tachées.;82
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e02.mp3;1;2;texte (story);Fatou demande : « Palou, comment sais-tu qu’une feuille est malade ? »;Fatou demande : « Palou, comment sais-tu qu’une feuille est malade ? »;70
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e03.mp3;1;3;texte (discover);Une caractéristique est ce qu’on remarque sur un objet. Une IA les compare.;Une caractéristique est ce qu’on remarque sur un objet. Une I A les compare.;75
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu sais repérer les bons indices.;Bravo ! Tu sais repérer les bons indices.;41
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e07-retiens.mp3;1;7;« Je retiens »;Une IA compare des caractéristiques, comme la forme et la couleur, avec ses exemples.;Une I A compare des caractéristiques, comme la forme et la couleur, avec ses exemples.;85
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Bravo ! Tu reconnais les feuilles malades.;Bravo ! Tu reconnais les feuilles malades.;42
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-q.mp3;2;4;consigne du jeu;Glisse une feuille dans sa boîte.;Glisse une feuille dans sa boîte.;33
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Avec les taches bien visibles, Palou voit que la feuille est malade.;Oui ! Avec les taches bien visibles, Palou voit que la feuille est malade.;74
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m2-q.mp3;2;4;consigne du jeu;Palou doit dire si la feuille est malade. Que doit-il regarder ?;Palou doit dire si la feuille est malade. Que doit-il regarder ?;64
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04.mp3;2;4;texte (play);Aide Palou à reconnaître les feuilles !;Aide Palou à reconnaître les feuilles !;39
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e05.mp3;2;5;texte (ai);Une IA repère des formes et des couleurs. Elle les compare avec ses exemples.;Une I A repère des formes et des couleurs. Elle les compare avec ses exemples.;77
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! La forme et la couleur sont des caractéristiques.;Oui ! La forme et la couleur sont des caractéristiques.;55
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m1-q.mp3;2;6;consigne du jeu;Qu’est-ce qu’une caractéristique ?;Qu’est-ce qu’une caractéristique ?;34
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Bravo ! La feuille verte et lisse est saine.;Bravo ! La feuille verte et lisse est saine.;44
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m2-q.mp3;2;6;consigne du jeu;Quelle feuille est en bonne santé ?;Quelle feuille est en bonne santé ?;35
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Exact ! La forme et la couleur.;Exact ! La forme et la couleur.;31
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m3-q.mp3;2;6;consigne du jeu;Pour reconnaître une feuille, que compare Palou ?;Pour reconnaître une feuille, que compare Palou ?;49
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-i1.mp3;3;4;explication (objet à ranger);Elle est verte et lisse : elle va bien.;Elle est verte et lisse : elle va bien.;39
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-i2.mp3;3;4;explication (objet à ranger);Les taches brunes montrent qu’elle est malade.;Les taches brunes montrent qu’elle est malade.;46
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-i3.mp3;3;4;explication (objet à ranger);Elle brille : elle est en bonne santé.;Elle brille : elle est en bonne santé.;38
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m1-i4.mp3;3;4;explication (objet à ranger);Un bord jaune et sec est un signe de maladie.;Un bord jaune et sec est un signe de maladie.;45
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m2-o1.mp3;3;4;explication (mauvais regard);La forme seule ne montre pas les taches : Palou ne peut pas savoir si la feuille est malade.;La forme seule ne montre pas les taches : Palou ne peut pas savoir si la feuille est malade.;92
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e04-m2-o2.mp3;3;4;explication (mauvais regard);Des couleurs mélangées cachent les détails : Palou ne voit pas bien les taches.;Des couleurs mélangées cachent les détails : Palou ne voit pas bien les taches.;79
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Le nom du photographe ne décrit pas la photo.;Le nom du photographe ne décrit pas la photo.;45
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Le prix ne décrit pas la feuille : une caractéristique, c’est la forme ou la couleur.;Le prix ne décrit pas la feuille : une caractéristique, c’est la forme ou la couleur.;85
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Les taches montrent que la feuille est malade.;Les taches montrent que la feuille est malade.;46
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Un bord jaune et sec montre que la feuille est malade.;Un bord jaune et sec montre que la feuille est malade.;54
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Une photo ne fait pas de bruit : Palou regarde la forme et la couleur.;Une photo ne fait pas de bruit : Palou regarde la forme et la couleur.;70
+frontend/public/audio/palou/lecons/m05/p5-2/p5-2_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Palou ne goûte pas : il regarde la forme et la couleur.;Palou ne goûte pas : il regarde la forme et la couleur.;55

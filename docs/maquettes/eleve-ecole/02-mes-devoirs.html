@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mes devoirs — Cahier de classe — kEur IA École</title>
+  <link rel="stylesheet" href="maquette.css">
+</head>
+<body>
+
+  <div class="maquette-demo-bar">
+    <div class="maquette-demo-left">
+      <span class="maquette-demo-badge">T11 Maquette</span>
+      <select class="maquette-nav-select" onchange="window.location.href=this.value">
+        <option value="index.html" >Hub & Galerie des Maquettes [Accueil]</option>
+<option value="01-aujourdhui.html" >01. Aujourd'hui — Cahier de classe [Élève (6-9 ans)]</option>
+<option value="02-mes-devoirs.html" selected>02. Mes devoirs (À rendre, Rendus, Notés) [Élève (6-9 ans)]</option>
+<option value="03-mon-parcours.html" >03. Mon parcours (Archipel CE1) [Élève (6-9 ans)]</option>
+<option value="04-ma-classe.html" >04. Ma classe (Tableau d'honneur & Camarades) [Élève (6-9 ans)]</option>
+<option value="05-mes-etoiles.html" >05. Mes étoiles (Badges & Niveau) [Élève (6-9 ans)]</option>
+<option value="06-libre.html" >06. Libre (Jeux & Studio Scratch) [Élève (6-9 ans)]</option>
+<option value="07-etats.html" >07. Écrans d'état (Horaires, Clôture, Devoirs faits) [Élève (6-9 ans)]</option>
+<option value="08-enseignant-seance.html" >08. Enseignant — Ouvrir une séance & En cours [Enseignant]</option>
+<option value="09-enseignant-annonces.html" >09. Enseignant — Annonces & Sondages [Enseignant]</option>
+<option value="10-enseignant-parcours-eleve.html" >10. Enseignant — Parcours d'un élève [Enseignant]</option>
+<option value="11-regles-classe.html" >11. Direction & Enseignant — Règles de classe [Direction & Enseignant]</option>
+      </select>
+    </div>
+    <div class="maquette-demo-actions">
+      <a href="index.html" class="btn-view-toggle">📚 Galerie</a>
+      <a href="LISEZMOI.md" class="btn-view-toggle" target="_blank">📄 LISEZMOI</a>
+    </div>
+  </div>
+
+  <div class="mockup-viewport-container">
+    <div class="app-shell">
+      
+    <aside class="app-sidebar">
+      <div class="school-brand-box">
+        <div class="school-logo-badge">🌳</div>
+        <div class="school-meta">
+          <h2>Les Baobabs</h2>
+          <p>École Partenaire</p>
+        </div>
+      </div>
+
+      <div class="student-badge-card">
+        <div class="student-avatar">👦🏾</div>
+        <div class="student-info">
+          <h3>Moussa</h3>
+          <p>CE1 A · Mme Faye</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        
+        <a href="01-aujourdhui.html" class="sidebar-nav-item ">
+          <span class="nav-icon">☀️</span>
+          <span>Aujourd'hui</span>
+          
+        </a>
+
+        <a href="02-mes-devoirs.html" class="sidebar-nav-item active">
+          <span class="nav-icon">📝</span>
+          <span>Mes devoirs</span>
+          <span class="nav-badge">2</span>
+        </a>
+
+        <a href="03-mon-parcours.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🗺️</span>
+          <span>Mon parcours</span>
+          
+        </a>
+
+        <a href="04-ma-classe.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🏫</span>
+          <span>Ma classe</span>
+          
+        </a>
+
+        <a href="05-mes-etoiles.html" class="sidebar-nav-item ">
+          <span class="nav-icon">⭐</span>
+          <span>Mes étoiles</span>
+          
+        </a>
+
+        <a href="06-libre.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🎮</span>
+          <span>Libre</span>
+          <span class="nav-badge">🔒</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-rule-alert">
+        <span style="font-size:18px;">🔒</span>
+        <div>
+          <strong style="display:block; font-size:12px; color:var(--school-secondary);">Règle active :</strong>
+          <span>Jeux coupés jusqu'à 16h00</span>
+        </div>
+      </div>
+    </aside>
+
+      
+    <header class="mobile-top-header">
+      <div class="mobile-profile-left">
+        <div class="student-avatar" style="width:36px; height:36px; font-size:18px;">👦🏾</div>
+        <div class="mobile-student-meta">
+          <div class="mobile-student-name">Moussa · CE1 A</div>
+          <span class="mobile-class-pill">Mme Faye · Baobabs</span>
+        </div>
+      </div>
+      <div class="xp-pill-badge">⭐ 48</div>
+    </header>
+
+
+      <main class="app-main-content">
+        <div class="content-top-row">
+          <div>
+            <h1 class="page-main-title">Mes devoirs</h1>
+            <p class="page-subtitle">Suivi des devoirs demandés par Mme Faye</p>
+          </div>
+        </div>
+
+        <!-- Onglets de statut -->
+        <div class="tabs-nav-bar">
+          <button class="tab-nav-btn active" onclick="switchHomeworkTab('a-rendre', this)">📌 À rendre (2)</button>
+          <button class="tab-nav-btn" onclick="switchHomeworkTab('rendus', this)">⏳ Rendus (1)</button>
+          <button class="tab-nav-btn" onclick="switchHomeworkTab('notes', this)">⭐ Notés (2)</button>
+        </div>
+
+        <!-- Conteneur À rendre -->
+        <div id="tab-a-rendre" class="homework-tab-content">
+          <div class="task-card">
+            <div class="task-icon-box" style="background:#FEF3C7; color:#B45309;">🧩</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag" style="background:#FEF3C7; color:#92400E;">Logique IA</span>
+                <span class="task-due-date">📅 Pour demain (Jeudi 16 oct.)</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-muted);">⏱️ 15 min</span>
+              </div>
+              <h3 class="task-title">Entraîner le détecteur de formes géométriques</h3>
+              <p style="font-size:13.5px; color:var(--text-muted); margin-top:3px;">
+                Mets les cartes de triangles dans la boîte bleue et les cercles dans la boîte rouge.
+              </p>
+            </div>
+            <button class="btn-big-touch primary" onclick="alert('Ouverture du devoir !')">
+              <span>Commencer</span>
+            </button>
+          </div>
+
+          <div class="task-card">
+            <div class="task-icon-box" style="background:#EDE9FE; color:#6D28D9;">🍲</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag" style="background:#EDE9FE; color:#5B21B6;">Algorithmes</span>
+                <span class="task-due-date">📅 Pour vendredi 17 oct.</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:var(--text-muted);">⏱️ 10 min</span>
+              </div>
+              <h3 class="task-title">La recette du Thiéboudienne en étapes</h3>
+              <p style="font-size:13.5px; color:var(--text-muted); margin-top:3px;">
+                Remets dans le bon ordre les 4 étapes pour préparer le riz au poisson sénégalais !
+              </p>
+            </div>
+            <button class="btn-big-touch primary" onclick="alert('Ouverture du devoir Thiéboudienne !')">
+              <span>Commencer</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Conteneur Rendus -->
+        <div id="tab-rendus" class="homework-tab-content" style="display:none;">
+          <div class="task-card" style="border-left: 6px solid #F59E0B;">
+            <div class="task-icon-box" style="background:#FEF3C7; color:#D97706;">🎤</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag">Reconnaissance vocale</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:#D97706; font-weight:700;">⏳ Rendu ce matin</span>
+              </div>
+              <h3 class="task-title">Distinguer Wolof et Français</h3>
+              <p style="font-size:13.5px; color:var(--text-muted); margin-top:3px;">
+                Devoir envoyé. En attente de vérification par Mme Faye.
+              </p>
+            </div>
+            <span style="font-family:var(--font-sans); font-size:12px; font-weight:700; color:#B45309; padding:6px 12px; background:#FEF3C7; border-radius:10px;">En attente</span>
+          </div>
+        </div>
+
+        <!-- Conteneur Notés -->
+        <div id="tab-notes" class="homework-tab-content" style="display:none;">
+          <div class="task-card" style="border-left: 6px solid #10B981;">
+            <div class="task-icon-box" style="background:#DCFCE7; color:#059669;">🎨</div>
+            <div class="task-info">
+              <div class="task-meta-top">
+                <span class="task-tag" style="background:#DCFCE7; color:#047857;">Introduction aux Pixels</span>
+                <span style="font-family:var(--font-sans); font-size:11.5px; color:#059669; font-weight:700;">Note : 10 / 10 ⭐⭐⭐</span>
+              </div>
+              <h3 class="task-title">Dessiner avec des carrés de couleur</h3>
+              <div style="background:#F0FDF4; border-left:3px solid #10B981; padding:6px 10px; border-radius:6px; margin-top:6px;">
+                <p style="font-size:13px; color:#166534; font-weight:600;">
+                  💬 Mot de Mme Faye : « Excellent travail Moussa ! Ton dessin de baobab en pixels est superbe ! »
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      
+    <nav class="mobile-bottom-bar">
+      
+      <a href="01-aujourdhui.html" class="mobile-tab-btn ">
+        <span class="tab-icon">☀️</span>
+        <span>Aujourd'hui</span>
+        
+      </a>
+
+      <a href="02-mes-devoirs.html" class="mobile-tab-btn active">
+        <span class="tab-icon">📝</span>
+        <span>Devoirs</span>
+        <span class="mobile-tab-badge">2</span>
+      </a>
+
+      <a href="03-mon-parcours.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🗺️</span>
+        <span>Parcours</span>
+        
+      </a>
+
+      <a href="04-ma-classe.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🏫</span>
+        <span>Classe</span>
+        
+      </a>
+
+      <a href="05-mes-etoiles.html" class="mobile-tab-btn ">
+        <span class="tab-icon">⭐</span>
+        <span>Étoiles</span>
+        
+      </a>
+
+      <a href="06-libre.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🎮</span>
+        <span>Libre</span>
+        <span class="mobile-tab-badge">🔒</span>
+      </a>
+    </nav>
+
+    </div>
+  </div>
+
+  <script>
+    function switchHomeworkTab(tabKey, btn) {
+      document.querySelectorAll('.tab-nav-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.homework-tab-content').forEach(c => c.style.display = 'none');
+      document.getElementById('tab-' + tabKey).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

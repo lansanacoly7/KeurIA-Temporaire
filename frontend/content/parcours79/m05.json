@@ -1,0 +1,851 @@
+{
+  "module": {
+    "id": "p5",
+    "chapter": 5,
+    "title": "L’IA qui regarde",
+    "place": "Le jardin de l’école, sous le manguier",
+    "intro": "Une feuille du manguier est malade ! Aide Palou à la regarder comme le fait une machine."
+  },
+  "lessons": [
+    {
+      "id": "p5-1",
+      "title": "Que vois-tu ?",
+      "scene": {
+        "id": "jardin-manguier",
+        "label": "Sous le manguier de l’école"
+      },
+      "cast": [
+        "palou",
+        "fatou"
+      ],
+      "problem": "Une feuille du manguier a des taches. Comment Palou peut-il la regarder pour comprendre ?",
+      "callback": "Tu te rappelles ? À Guet Ndar, Palou a appris les poissons avec des exemples.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "image": "m05-l1-manguier.webp",
+          "alt": "Le grand manguier du jardin de l’école, avec une feuille tachetée de brun au premier plan.",
+          "text": "Au jardin de l’école, une feuille du manguier a des taches."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou la prend en photo. Palou regarde l’écran de tout près.",
+          "image": "m05-l1-s02.webp",
+          "alt": "Illustration : Fatou la prend en photo. Palou regarde l’écran de tout près."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "pixel",
+            "sens": "Un tout petit carré de couleur. Beaucoup de pixels font une image."
+          },
+          "text": "Une photo est faite de pixels : de tout petits carrés de couleur."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à regarder la photo !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que voit une machine dans une photo ?",
+              "hint": "Regarde l’écran de très près : tu verras de petits carrés.",
+              "success": "Oui ! Une machine voit des milliers de petits carrés de couleur.",
+              "options": [
+                {
+                  "label": "Un manguier vivant, comme nous",
+                  "pict": "manguier",
+                  "explain": "Elle ne voit pas l’arbre comme nous : elle voit seulement des pixels."
+                },
+                {
+                  "label": "Des petits carrés de couleur",
+                  "pict": "pixels-carres",
+                  "correct": true
+                },
+                {
+                  "label": "Des mots cachés dans l’image",
+                  "pict": "mots-caches",
+                  "explain": "Il n’y a pas de mots cachés : la machine ne voit que des pixels."
+                }
+              ]
+            },
+            {
+              "type": "focus",
+              "effect": "pixels",
+              "prompt": "Palou regarde la feuille comme une machine. Rends la photo plus nette !",
+              "hint": "Touche « Plus net » : plus il y a de pixels, mieux Palou voit.",
+              "success": "Oui ! Avec assez de pixels, Palou reconnaît la feuille malade.",
+              "photo": {
+                "label": "La feuille du manguier",
+                "pict": "feuille-taches"
+              },
+              "enough": 2,
+              "levels": [
+                {
+                  "says": "Je vois seulement de gros carrés… Je ne sais pas ce que c’est."
+                },
+                {
+                  "says": "Hmm… des carrés verts et bruns. Peut-être une feuille ?"
+                },
+                {
+                  "says": "Je vois une feuille avec des taches brunes !"
+                },
+                {
+                  "says": "Une feuille malade du manguier. J’en suis sûr !"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA regarde une image comme un grand tableau de pixels."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "De quoi une photo est-elle faite pour une machine ?",
+              "hint": "Regarde de très près : de petits carrés.",
+              "success": "Oui ! D’une mosaïque de pixels.",
+              "options": [
+                {
+                  "label": "De pixels",
+                  "pict": "pixels-carres",
+                  "correct": true
+                },
+                {
+                  "label": "De petits mots cachés",
+                  "pict": "mots-caches",
+                  "explain": "Une photo n’est pas faite de mots : elle est faite de petits carrés de couleur."
+                },
+                {
+                  "label": "De vrais morceaux de feuille d’arbre",
+                  "explain": "Une photo n’est pas faite de feuilles : elle est faite de pixels."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un pixel ?",
+              "hint": "Il est tout petit.",
+              "success": "Exact ! Un pixel est un petit carré de couleur.",
+              "options": [
+                {
+                  "label": "Un petit carré de couleur",
+                  "correct": true
+                },
+                {
+                  "label": "Un tout petit insecte volant",
+                  "explain": "Un pixel n’est pas un insecte : c’est un petit carré de couleur."
+                },
+                {
+                  "label": "Un nom de fruit africain",
+                  "explain": "Un pixel n’est pas un fruit : c’est un petit carré de couleur."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait-on pour mieux voir les détails ?",
+              "hint": "Pense à une loupe.",
+              "success": "Bravo ! On zoome.",
+              "options": [
+                {
+                  "label": "On zoome",
+                  "pict": "zoom-loupe",
+                  "correct": true
+                },
+                {
+                  "label": "On éteint l’écran du téléphone",
+                  "pict": "ecran-eteint",
+                  "explain": "Un écran éteint ne montre plus rien."
+                },
+                {
+                  "label": "On ferme les yeux très fort",
+                  "explain": "Fermer les yeux empêche de voir les détails."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu regardes la feuille comme une IA.",
+          "learned": "Une photo est faite de pixels. Une IA regarde ces petits carrés de couleur."
+        }
+      ]
+    },
+    {
+      "id": "p5-2",
+      "title": "Formes et couleurs",
+      "scene": {
+        "id": "jardin-feuilles",
+        "label": "Les feuilles du jardin"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Moussa veut reconnaître les feuilles malades. Faut-il regarder la forme ou la couleur ?",
+      "callback": "Tu te rappelles ? Une photo est faite de pixels, de petits carrés de couleur.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "wolof": {
+            "mot": "Garab",
+            "sens": "Un remède, une plante qui soigne"
+          },
+          "image": "m05-l2-feuilles.webp",
+          "alt": "Moussa ramasse des feuilles tombées sous le manguier : certaines sont vertes, d’autres tachées de brun.",
+          "text": "Moussa ramasse des feuilles tombées. Certaines sont vertes, d’autres sont tachées."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou demande : « Palou, comment sais-tu qu’une feuille est malade ? »",
+          "image": "m05-l2-s02.webp",
+          "alt": "Illustration : Fatou demande : « Palou, comment sais-tu qu’une feuille est malade ? »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "caractéristique",
+            "sens": "Une chose qu’on remarque : la couleur, la forme, la taille."
+          },
+          "text": "Une caractéristique est ce qu’on remarque sur un objet. Une IA les compare."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à reconnaître les feuilles !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une feuille dans sa boîte.",
+              "hint": "Une feuille malade a des taches ou un bord jaune.",
+              "success": "Bravo ! Tu reconnais les feuilles malades.",
+              "bins": [
+                {
+                  "id": "saine",
+                  "label": "Feuille saine",
+                  "pict": "feuille-saine"
+                },
+                {
+                  "id": "malade",
+                  "label": "Feuille malade",
+                  "pict": "feuille-malade"
+                }
+              ],
+              "items": [
+                {
+                  "id": "f1",
+                  "label": "Verte et bien lisse",
+                  "pict": "feuille-verte-lisse",
+                  "bin": "saine",
+                  "explain": "Elle est verte et lisse : elle va bien."
+                },
+                {
+                  "id": "f2",
+                  "label": "Pleine de taches brunes",
+                  "pict": "feuille-taches",
+                  "bin": "malade",
+                  "explain": "Les taches brunes montrent qu’elle est malade."
+                },
+                {
+                  "id": "f3",
+                  "label": "Brillante au soleil",
+                  "pict": "feuille-brillante",
+                  "bin": "saine",
+                  "explain": "Elle brille : elle est en bonne santé."
+                },
+                {
+                  "id": "f4",
+                  "label": "Un bord jaune et sec",
+                  "pict": "feuille-bord-jaune",
+                  "bin": "malade",
+                  "explain": "Un bord jaune et sec est un signe de maladie."
+                }
+              ]
+            },
+            {
+              "type": "lens",
+              "prompt": "Palou doit dire si la feuille est malade. Que doit-il regarder ?",
+              "hint": "Pour voir si la feuille est malade, il faut voir les taches.",
+              "success": "Oui ! Avec les taches bien visibles, Palou voit que la feuille est malade.",
+              "photo": {
+                "label": "Une feuille du manguier",
+                "pict": "feuille-taches"
+              },
+              "lenses": [
+                {
+                  "id": "forme",
+                  "label": "Seulement la forme",
+                  "pict": "formes-geometriques",
+                  "view": "shape",
+                  "says": "Je vois une feuille noire… mais je ne vois pas si elle est malade.",
+                  "explain": "La forme seule ne montre pas les taches : Palou ne peut pas savoir si la feuille est malade."
+                },
+                {
+                  "id": "couleur",
+                  "label": "Seulement la couleur",
+                  "pict": "couleur-palette",
+                  "view": "colors",
+                  "says": "Je vois du vert et du brun mélangés… mais où sont les taches ?",
+                  "explain": "Des couleurs mélangées cachent les détails : Palou ne voit pas bien les taches."
+                },
+                {
+                  "id": "taches",
+                  "label": "Les taches bien nettes",
+                  "pict": "taches-couleur",
+                  "view": "sharp",
+                  "says": "Des taches brunes sur la feuille ! Elle est malade.",
+                  "correct": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA repère des formes et des couleurs. Elle les compare avec ses exemples."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une caractéristique ?",
+              "hint": "Elle décrit ce qu’on voit.",
+              "success": "Oui ! La forme et la couleur sont des caractéristiques.",
+              "options": [
+                {
+                  "label": "La forme ou la couleur",
+                  "pict": "formes-geometriques",
+                  "correct": true
+                },
+                {
+                  "label": "Le nom du photographe",
+                  "explain": "Le nom du photographe ne décrit pas la photo."
+                },
+                {
+                  "label": "Le prix de l’appareil photo",
+                  "explain": "Le prix ne décrit pas la feuille : une caractéristique, c’est la forme ou la couleur."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Quelle feuille est en bonne santé ?",
+              "hint": "Cherche celle qui est verte et lisse.",
+              "success": "Bravo ! La feuille verte et lisse est saine.",
+              "options": [
+                {
+                  "label": "La feuille verte et lisse",
+                  "pict": "feuille-saine",
+                  "correct": true
+                },
+                {
+                  "label": "La feuille avec des taches",
+                  "pict": "feuille-malade",
+                  "explain": "Les taches montrent que la feuille est malade."
+                },
+                {
+                  "label": "La feuille au bord jaune",
+                  "pict": "feuille-bord-jaune",
+                  "explain": "Un bord jaune et sec montre que la feuille est malade."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pour reconnaître une feuille, que compare Palou ?",
+              "hint": "Ce qu’il voit sur la photo.",
+              "success": "Exact ! La forme et la couleur.",
+              "options": [
+                {
+                  "label": "La forme et la couleur",
+                  "pict": "formes-geometriques",
+                  "correct": true
+                },
+                {
+                  "label": "Le bruit du vent dedans",
+                  "pict": "vent-bruit",
+                  "explain": "Une photo ne fait pas de bruit : Palou regarde la forme et la couleur."
+                },
+                {
+                  "label": "Le goût de la feuille",
+                  "pict": "gout-langue",
+                  "explain": "Palou ne goûte pas : il regarde la forme et la couleur."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu sais repérer les bons indices.",
+          "learned": "Une IA compare des caractéristiques, comme la forme et la couleur, avec ses exemples."
+        }
+      ]
+    },
+    {
+      "id": "p5-3",
+      "title": "Photo mystère",
+      "scene": {
+        "id": "jardin-contre-jour",
+        "label": "Le jardin, face au soleil"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "mme-diop"
+      ],
+      "problem": "La photo de Fatou est toute sombre, prise face au soleil. Palou ne reconnaît plus rien.",
+      "callback": "Tu te rappelles ? Une photo floue a trompé Palou à Guet Ndar.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "fatou",
+          "image": "m05-l3-contre-jour.webp",
+          "alt": "Fatou prend le manguier en photo face au soleil : sur son téléphone, l’arbre est tout noir.",
+          "text": "Fatou a pris le manguier face au soleil. La photo est toute sombre !"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "palou",
+          "text": "Palou plisse les yeux : « Je vois une tache noire. Est-ce un arbre ? »",
+          "image": "m05-l3-s02.webp",
+          "alt": "Illustration : Palou plisse les yeux : « Je vois une tache noire. Est-ce un arbre ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "text": "Madame Diop propose de refaire la photo, le soleil dans le dos.",
+          "image": "m05-l3-s03.webp",
+          "alt": "Illustration : Madame Diop propose de refaire la photo, le soleil dans le dos."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "contre-jour",
+            "sens": "Quand la lumière vient de derrière, l’objet paraît tout noir."
+          },
+          "text": "Face au soleil, tout devient sombre : c’est le contre-jour. On ne voit plus les détails."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Fatou à refaire sa photo !",
+          "rounds": [
+            {
+              "type": "focus",
+              "effect": "dark",
+              "prompt": "La photo de Fatou est trop sombre. Éclaire-la pour aider Palou !",
+              "hint": "Touche « Plus de lumière » jusqu’à ce que Palou reconnaisse l’arbre.",
+              "success": "Oui ! Avec assez de lumière, Palou reconnaît le manguier.",
+              "photo": {
+                "label": "La photo prise face au soleil",
+                "pict": "photo-contrejour"
+              },
+              "more": "Plus de lumière",
+              "less": "Moins de lumière",
+              "enough": 2,
+              "levels": [
+                {
+                  "says": "Je ne vois qu’une grosse tache noire… Est-ce un arbre ?"
+                },
+                {
+                  "says": "Je devine une forme sombre. Peut-être un arbre ?"
+                },
+                {
+                  "says": "Je vois un arbre, avec le soleil derrière !"
+                },
+                {
+                  "says": "Un manguier bien visible. Maintenant, j’en suis sûr !"
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment Fatou peut-elle mieux photographier le manguier ?",
+              "hint": "La lumière doit éclairer l’arbre, pas l’appareil.",
+              "success": "Oui ! Avec le soleil dans le dos, l’arbre est bien éclairé.",
+              "options": [
+                {
+                  "label": "Se mettre encore plus face au soleil",
+                  "pict": "face-soleil",
+                  "explain": "Face au soleil, l’arbre devient encore plus sombre."
+                },
+                {
+                  "label": "Mettre le soleil dans son dos",
+                  "pict": "soleil-dos",
+                  "correct": true
+                },
+                {
+                  "label": "Éteindre l’écran du téléphone",
+                  "pict": "ecran-eteint",
+                  "explain": "Éteindre l’écran ne donne pas de photo : il faut changer la lumière."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut dire « je ne suis pas sûre ». C’est plus honnête que de deviner."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Pourquoi une photo sombre est-elle difficile pour Palou ?",
+              "hint": "On y devine à peine une forme.",
+              "success": "Oui ! Dans le noir, on voit mal les détails.",
+              "options": [
+                {
+                  "label": "On voit mal les détails",
+                  "pict": "photo-sombre",
+                  "correct": true
+                },
+                {
+                  "label": "Parce qu’elle est trop belle",
+                  "explain": "Une belle photo ne gêne pas Palou : c’est le noir qui cache les détails."
+                },
+                {
+                  "label": "Parce qu’elle est trop lourde",
+                  "explain": "Une photo ne pèse rien : c’est le noir qui cache les détails."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Où se place Fatou pour une belle photo du manguier ?",
+              "hint": "Le soleil doit éclairer l’arbre.",
+              "success": "Bravo ! Le soleil derrière elle éclaire l’arbre.",
+              "options": [
+                {
+                  "label": "Le soleil derrière elle",
+                  "pict": "soleil-dos",
+                  "correct": true
+                },
+                {
+                  "label": "Face au gros soleil",
+                  "pict": "face-soleil",
+                  "explain": "Face au soleil, la photo devient sombre."
+                },
+                {
+                  "label": "Dans un coin très sombre",
+                  "pict": "fond-sombre",
+                  "explain": "Dans le noir, on ne voit pas les détails."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou n’est pas sûr de la photo. Que fait une IA prudente ?",
+              "hint": "Mieux vaut un doute qu’une erreur.",
+              "success": "Exact ! Elle dit qu’elle n’est pas sûre.",
+              "options": [
+                {
+                  "label": "Elle dit qu’elle n’est pas sûre",
+                  "pict": "pas-sur-refaire",
+                  "correct": true
+                },
+                {
+                  "label": "Elle invente une réponse",
+                  "explain": "Inventer, c’est risquer de se tromper : une IA prudente dit qu’elle doute."
+                },
+                {
+                  "label": "Elle se tait pour toujours",
+                  "explain": "Se taire ne sert à rien : une IA prudente dit qu’elle n’est pas sûre."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu sais faire une bonne photo.",
+          "learned": "Une photo sombre cache les détails. Une IA peut alors se tromper ou dire qu’elle n’est pas sûre."
+        }
+      ]
+    },
+    {
+      "id": "p5-4",
+      "title": "Défi vision",
+      "scene": {
+        "id": "jardin-defi",
+        "label": "Le jardin, pour le grand défi"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Madame Diop lance un défi : Palou doit reconnaître la feuille malade sur plusieurs photos.",
+      "callback": "Tu te rappelles ? Une photo sombre empêche Palou de bien voir.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m05-l4-defi.webp",
+          "alt": "Madame Diop présente cinq photos de feuilles sur une table sous le manguier, Palou, Moussa et Fatou autour.",
+          "text": "Madame Diop lance un défi de vision. Palou doit regarder plusieurs photos."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa croit qu’une seule photo suffit. Fatou n’est pas d’accord.",
+          "image": "m05-l4-s02.webp",
+          "alt": "Illustration : Moussa croit qu’une seule photo suffit. Fatou n’est pas d’accord."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "tester",
+            "sens": "Vérifier si l’IA reconnaît bien, avec des photos nouvelles."
+          },
+          "text": "Tester, c’est vérifier avec des photos nouvelles. Plusieurs photos donnent une réponse plus sûre."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à réussir le défi !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une photo dans sa boîte.",
+              "hint": "Cherche les taches brunes et les bords jaunes.",
+              "success": "Bravo ! Palou a réussi le défi.",
+              "bins": [
+                {
+                  "id": "saine",
+                  "label": "Feuille saine",
+                  "pict": "feuille-saine"
+                },
+                {
+                  "id": "malade",
+                  "label": "Feuille malade",
+                  "pict": "feuille-malade"
+                }
+              ],
+              "items": [
+                {
+                  "id": "t1",
+                  "label": "Nette, avec des taches brunes",
+                  "pict": "feuille-taches",
+                  "bin": "malade",
+                  "explain": "Les taches brunes sont visibles : la feuille est malade."
+                },
+                {
+                  "id": "t2",
+                  "label": "Nette, d’un vert uniforme",
+                  "pict": "feuille-verte-lisse",
+                  "bin": "saine",
+                  "explain": "Elle est verte et lisse : la feuille est saine."
+                },
+                {
+                  "id": "t3",
+                  "label": "De près, avec un bord jaune",
+                  "pict": "feuille-bord-jaune",
+                  "bin": "malade",
+                  "explain": "Le bord jaune montre que la feuille est malade."
+                },
+                {
+                  "id": "t4",
+                  "label": "De près, d’une feuille lisse",
+                  "pict": "feuille-lisse-pres",
+                  "bin": "saine",
+                  "explain": "Elle est lisse et sans tache : la feuille est saine."
+                }
+              ]
+            },
+            {
+              "type": "probe",
+              "prompt": "Palou devine cinq photos. Touche celle où il se trompe !",
+              "hint": "Cherche la photo sombre.",
+              "success": "Oui ! Avec des photos variées et bien éclairées, Palou progresse.",
+              "photos": [
+                {
+                  "id": "d1",
+                  "label": "Une feuille saine",
+                  "pict": "feuille-saine",
+                  "guess": "saine",
+                  "explain": "Palou a bien reconnu cette feuille : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "d2",
+                  "label": "Une feuille tachée",
+                  "pict": "feuille-taches",
+                  "guess": "malade",
+                  "explain": "Palou a bien reconnu cette feuille malade : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "d3",
+                  "label": "Un bord jaune",
+                  "pict": "feuille-bord-jaune",
+                  "guess": "malade",
+                  "explain": "Palou a bien reconnu cette feuille malade : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "d4",
+                  "label": "Une feuille lisse",
+                  "pict": "feuille-verte-lisse",
+                  "guess": "saine",
+                  "explain": "Palou a bien reconnu cette feuille : il n’y a pas d’erreur ici."
+                },
+                {
+                  "id": "d5",
+                  "label": "Une feuille malade, photo sombre",
+                  "pict": "photo-sombre",
+                  "guess": "saine",
+                  "wrong": true
+                }
+              ],
+              "found": "Bien vu ! La photo est sombre. Que faut-il donner à Palou pour qu’il progresse ?",
+              "fix": {
+                "options": [
+                  {
+                    "label": "Des photos variées et bien éclairées",
+                    "pict": "photos-differentes",
+                    "correct": true
+                  },
+                  {
+                    "label": "Toujours la même photo",
+                    "pict": "memes-photos",
+                    "explain": "Toujours la même photo n’apprend rien de nouveau à Palou."
+                  },
+                  {
+                    "label": "Des photos encore plus sombres",
+                    "pict": "photo-sombre",
+                    "explain": "Plus de photos sombres cacheraient encore les détails."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "On teste une IA souvent. Un adulte vérifie toujours les résultats importants."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Pourquoi teste-t-on Palou avec plusieurs photos ?",
+              "hint": "Une seule photo ne suffit pas.",
+              "success": "Oui ! Pour voir si ça marche partout.",
+              "options": [
+                {
+                  "label": "Pour voir si ça marche",
+                  "pict": "photos-differentes",
+                  "correct": true
+                },
+                {
+                  "label": "Pour faire joli sur le mur",
+                  "explain": "Les tests ne servent pas à décorer : ils vérifient si Palou sait."
+                },
+                {
+                  "label": "Parce que Palou s’ennuie tout seul",
+                  "explain": "Palou ne s’ennuie pas : on teste pour voir s’il sait."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Palou se trompe sur une photo. Que fait-on ?",
+              "hint": "Il peut apprendre encore.",
+              "success": "Bravo ! On l’aide avec de meilleurs exemples.",
+              "options": [
+                {
+                  "label": "On l’aide à progresser",
+                  "pict": "ia-ameliorer",
+                  "correct": true
+                },
+                {
+                  "label": "On l’éteint pour toujours",
+                  "explain": "Éteindre Palou ne règle rien : on l’aide à progresser."
+                },
+                {
+                  "label": "On lui dit qu’il a toujours raison",
+                  "explain": "Il s’est trompé : on le corrige pour qu’il progresse."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que regarde une IA dans une image ?",
+              "hint": "De très petits carrés, des formes…",
+              "success": "Exact ! Des pixels, des formes et des couleurs.",
+              "options": [
+                {
+                  "label": "Pixels, formes, couleurs",
+                  "pict": "pixels-carres",
+                  "correct": true
+                },
+                {
+                  "label": "Le goût et l’odeur de la photo",
+                  "pict": "gout-langue",
+                  "explain": "Une photo n’a ni goût ni odeur : l’IA regarde des pixels, des formes et des couleurs."
+                },
+                {
+                  "label": "Les pensées des gens sur la photo",
+                  "pict": "pensees-lues",
+                  "explain": "Une IA ne lit pas les pensées : elle regarde des pixels, des formes et des couleurs."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m05",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 5 avec Palou.",
+          "learned": "Une IA regarde des pixels, des formes et des couleurs. On la teste avec plusieurs photos."
+        }
+      ]
+    }
+  ]
+}

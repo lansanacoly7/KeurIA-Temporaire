@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kEur IA : parcours école 7-9</title>
+<style>
+:root{--vert:#0f3d36;--teal:#0f766e;--citron:#d8f05b;--creme:#f6f4ec;--encre:#153b3b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--encre);font:16.5px/1.6 system-ui,"Segoe UI",sans-serif}
+header{background:var(--vert);color:#fff;padding:40px 24px}
+header h1{margin:0 0 6px;font-size:34px}header p{margin:0;opacity:.9}
+.badge{display:inline-block;background:var(--citron);color:var(--vert);font-weight:800;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+main{max-width:1000px;margin:0 auto;padding:16px 16px 60px}
+h2{color:var(--teal);margin:36px 0 10px;font-size:26px}
+h3{margin:16px 0 6px}
+.carte{background:#fff;border-radius:14px;padding:18px 22px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.grille .carte{margin:0}
+.perso{border-top:6px solid var(--teal)}.perso h3{margin-top:0}
+.note{background:#fff8d6;border-left:6px solid #e0b400;padding:12px 16px;border-radius:10px;margin:12px 0}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:9px 12px;border-bottom:1px solid #e3ebe7;text-align:left;vertical-align:top}th{background:#eef5f1}
+.tableau{overflow-x:auto}
+ol li,ul li{margin:3px 0}
+.etape{display:inline-block;background:#eef5f1;color:var(--teal);font-weight:800;border-radius:8px;padding:0 8px;margin-right:6px}
+@media print{body{background:#fff}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.carte{box-shadow:none;border:1px solid #ddd;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="badge">Cahier de conception · à valider</div>
+  <h1>Le parcours école 7-9 ans</h1>
+  <p>Un parcours entièrement nouveau, réservé aux élèves inscrits par leur école : nouvelles histoires, nouveaux personnages, nouvelles voix, nouvelles images.</p>
+</header>
+<main>
+
+<h2>1. Le principe</h2>
+<div class="carte">
+<ul>
+<li><strong>Le compte famille garde le parcours actuel</strong> (l'archipel, 10 modules, 40 leçons). Rien n'y change.</li>
+<li><strong>Le compte élève d'école reçoit un parcours à lui</strong>, plus riche : on y apprend les mêmes grandes idées sur l'IA, mais plus en profondeur, avec des activités faites en classe et des projets de groupe.</li>
+<li><strong>Tout le contenu est neuf</strong> : histoires, jeux, images et voix. Aucune leçon n'est copiée du parcours famille.</li>
+<li><strong>Ça reste un jeu</strong> : étoiles, badges, défis de Palou et classement de la classe sont gardés.</li>
+</ul>
+</div>
+
+<h2>2. L'univers : la classe, l'école et les sorties scolaires</h2>
+<div class="carte">
+<p>Palou accompagne <strong>une classe de CE1-CE2</strong> dans une école sénégalaise ordinaire, sans nom, pour que chaque élève s'y reconnaisse. Moussa et Fatou sont dans cette classe avec leurs camarades.</p>
+<ul>
+<li><strong>Parfois la classe est à l'école</strong> : en classe, dans la cour, à la bibliothèque.</li>
+<li><strong>Parfois elle part en sortie scolaire</strong> et va d'un endroit à un autre, partout au Sénégal, pas seulement à Dakar.</li>
+<li><strong>Chaque lieu visité a un lien direct avec l'IA</strong> : on y voit une IA au travail (une machine qui trie les mangues, des caméras qui comptent les oiseaux, une radio qui comprend le wolof…). La sortie sert à découvrir l'idée de la leçon en vrai.</li>
+<li>De retour en classe, les élèves refont ce qu'ils ont vu, en jouant et en groupe.</li>
+</ul>
+</div>
+<div class="note">D'autres scénarios pourront s'ajouter plus tard : une visite reçue à l'école, une classe correspondante d'une autre région…</div>
+
+<h2>3. Les personnages</h2>
+<p>Le groupe de départ est petit. D'autres élèves et d'autres personnages <strong>apparaissent au fil des modules</strong>, selon les leçons et les lieux visités.</p>
+<div class="grille">
+  <div class="carte perso"><h3>Palou</h3>Présent du début à la fin. Il accompagne la classe partout, à l'école comme en sortie. Joyeux, patient, parfois il se trompe exprès pour faire réfléchir.</div>
+  <div class="carte perso"><h3>Moussa</h3>Présent dès le module 1. Il veut tout construire et tout tester, quitte à se tromper.</div>
+  <div class="carte perso"><h3>Fatou</h3>Présente dès le module 1. Elle dessine, imagine, raconte, et remarque ce que les autres ne voient pas.</div>
+  <div class="carte perso"><h3>Madame Diop</h3>La maîtresse, la même que dans le parcours enfant. Elle prépare les sorties, pose les questions qui font avancer et lance les activités de groupe.</div>
+  <div class="carte perso"><h3>Khady · arrive au module 2</h3>L'organisatrice : elle adore compter, noter et ranger. C'est elle qui lance le grand sondage de la classe.</div>
+  <div class="carte perso"><h3>Seydou · arrive au module 3</h3>Le gourmand : sa famille cultive des mangues en Casamance. C'est grâce à lui que la classe visite la coopérative.</div>
+  <div class="carte perso"><h3>Lamine · arrive au module 4</h3>Le sceptique : « Tu es sûr ? On vérifie ! ». Il apprend à la classe à douter des réponses toutes faites.</div>
+  <div class="carte perso"><h3>Aïssatou · arrive au module 6</h3>La curieuse : elle demande toujours « pourquoi ? ». Elle vient du Fouta, parle pulaar, et emmène la classe à la radio de sa ville.</div>
+  <div class="carte perso"><h3>Les personnes rencontrées</h3>Dans chaque lieu, une personne explique comment l'IA l'aide dans son travail : l'oncle de Seydou à la coopérative, l'agricultrice, le garde du parc, l'animatrice radio, le technicien du fablab, la journaliste.</div>
+</div>
+<div class="note">Les noms des camarades ont été choisis pour ne pas reprendre ceux de la famille du parcours enfant (Mame Awa, Papa Ibou, Mame Coumba, Tonton Cheikh, Baye).</div>
+
+<h2>4. Une leçon école, étape par étape</h2>
+<div class="carte">
+<p>Le squelette du parcours famille est gardé, avec trois étapes en plus (en gras) qui font la différence pour les écoles :</p>
+<ol>
+<li><span class="etape">Histoire</span>La classe vit une situation à l'école (images et voix des personnages).</li>
+<li><span class="etape">Mot nouveau</span>Le mot clé de la leçon, expliqué simplement par Palou.</li>
+<li><span class="etape">Jeux</span>Plus de manches que dans le parcours famille, avec une difficulté qui monte.</li>
+<li><strong><span class="etape">En classe</span>Une activité à faire tous ensemble ou en petits groupes</strong>, souvent sans écran, guidée par l'enseignant (fiche prête à l'emploi).</li>
+<li><strong><span class="etape">On en parle</span>Une question à débattre en classe</strong>, posée par un personnage.</li>
+<li><span class="etape">Défi de Palou</span>Le défi de fin de leçon.</li>
+<li><span class="etape">Je retiens</span>Le résumé à retenir.</li>
+<li><strong><span class="etape">Fiche enseignant</span>Objectifs, déroulé, matériel, réponses attendues</strong>, visible seulement par l'enseignant.</li>
+</ol>
+<p>La 4<sup>e</sup> leçon de chaque module est un <strong>projet de classe</strong> : une production en groupe (affiche, jeu, exposé, maquette) présentée à la classe.</p>
+</div>
+
+<h2>5. Le programme : 10 modules, 40 leçons</h2>
+<div class="note">Proposition à valider et à ajuster : les titres et l'ordre peuvent changer.</div>
+<div class="tableau">
+<table>
+<tr><th>Module</th><th>Où est la classe</th><th>Leçon 1</th><th>Leçon 2</th><th>Leçon 3</th><th>Leçon 4 : projet de classe</th></tr>
+<tr><td><strong>1. Une machine qui pense ?</strong></td><td>À l'école. Palou arrive dans la classe.</td><td>Machine ou outil ?</td><td>Machine ou IA ?</td><td>Comment une IA décide</td><td>L'expo des machines de l'école</td></tr>
+<tr><td><strong>2. Les données de ma classe</strong></td><td>À l'école, dans la cour : le grand sondage. Khady arrive.</td><td>Compter et noter</td><td>Faire un tableau</td><td>Lire un graphique</td><td>Le grand sondage de la classe</td></tr>
+<tr><td><strong>3. Trier et ranger</strong></td><td>Sortie en Casamance : la coopérative de mangues de l'oncle de Seydou, où une machine à caméra trie les fruits. Seydou arrive.</td><td>Ranger avec une règle</td><td>L'arbre des questions</td><td>Quand la machine trie seule</td><td>Le grand jeu du tri</td></tr>
+<tr><td><strong>4. Apprendre par l'exemple</strong></td><td>Sortie dans les Niayes : une ferme maraîchère, où une application reconnaît les plantes malades. Lamine arrive.</td><td>S'entraîner et tester</td><td>Pas assez d'exemples</td><td>De mauvais exemples</td><td>On entraîne la machine de la classe</td></tr>
+<tr><td><strong>5. Les yeux de la machine</strong></td><td>Sortie près de Saint-Louis : le parc des oiseaux du Djoudj, où des caméras reconnaissent et comptent les oiseaux.</td><td>Une image, ce sont des points</td><td>Reconnaître une forme</td><td>Quand la vision se trompe</td><td>L'atelier des images mystère</td></tr>
+<tr><td><strong>6. Les oreilles de la machine</strong></td><td>Sortie dans le Fouta : la radio communautaire de la ville d'Aïssatou, où une machine écrit ce qu'on dit en wolof et en pulaar. Aïssatou arrive.</td><td>La machine écoute</td><td>Wolof, français, pulaar : toutes nos langues</td><td>Parler à un assistant</td><td>Le dictionnaire parlé de la classe</td></tr>
+<tr><td><strong>7. Robots et instructions</strong></td><td>Sortie à Dakar : un atelier de robotique (fablab), où l'on fabrique et programme des robots.</td><td>Capteurs : sentir le monde</td><td>Suivre des instructions</td><td>Robot ou IA ?</td><td>On programme le robot-élève</td></tr>
+<tr><td><strong>8. L'IA à l'école, bien l'utiliser</strong></td><td>À l'école, à la bibliothèque.</td><td>Apprendre ou tricher ?</td><td>Demander de l'aide à une IA</td><td>Dire d'où vient une idée</td><td>La charte IA de notre classe</td></tr>
+<tr><td><strong>9. Je protège, je vérifie</strong></td><td>Sortie à Thiès : la rédaction d'un journal, où l'on vérifie les photos et les nouvelles avant de les publier.</td><td>Mes informations à moi</td><td>Une photo, ça se partage ?</td><td>Vrai ou inventé ?</td><td>L'enquête des détectives</td></tr>
+<tr><td><strong>10. L'IA pour mon école et mon quartier</strong></td><td>À l'école : la fête de fin d'année, devant les parents.</td><td>Un problème à l'école</td><td>Une idée qui aide</td><td>Tester notre idée</td><td>Le grand projet présenté aux parents</td></tr>
+</table>
+</div>
+
+<h2>6. Les voix</h2>
+<div class="carte">
+<ul>
+<li><strong>Seul Palou a une voix</strong>, avec sa voix ElevenLabs actuelle et ses réglages, comme dans le parcours enfant 7-9.</li>
+<li><strong>Palou lit aussi les passages des autres personnages</strong> (Madame Diop, les camarades, les personnes rencontrées en sortie) pour donner le contexte. Les autres personnages n'ont pas de voix pour l'instant.</li>
+<li>Les règles de prononciation du parcours famille s'appliquent (« IA » se dit « iya »). Les prénoms et les mots wolof sont vérifiés à l'écoute.</li>
+<li>Une fiche par voix (identifiant, réglages, exemples validés) est tenue à jour pour que le rendu ne change pas d'une leçon à l'autre.</li>
+<li>Chaque réplique est écoutée et validée avant d'être intégrée.</li>
+</ul>
+</div>
+
+<h2>7. Les images</h2>
+<div class="carte">
+<ul>
+<li><strong>Personnages d'abord</strong> : une planche de référence par personnage (face, profil, émotions), validée avant toute illustration d'histoire.</li>
+<li><strong>Décors</strong> : un décor par lieu, à l'école (la classe, la cour, la bibliothèque) et pour chaque sortie (la coopérative, la ferme, le parc, la radio, le fablab, le journal).</li>
+<li><strong>Histoires</strong> : les illustrations de chaque écran, générées à partir des descriptions écrites avec le texte de la leçon.</li>
+<li><strong>Pictogrammes</strong> pour les jeux et les activités en classe.</li>
+<li>Toutes les images sont rangées par module et par leçon, avec un nom de fichier prévisible.</li>
+</ul>
+</div>
+
+<h2>8. Qui produit quoi</h2>
+<div class="tableau">
+<table>
+<tr><th>Membre</th><th>Pour le parcours école</th></tr>
+<tr><td><strong>Lansana</strong></td><td>Écrit les leçons, les fiches enseignant et les descriptions d'images ; génère et valide les voix ; valide tout le reste.</td></tr>
+<tr><td><strong>Louise-Sophie Diouf</strong></td><td>Génère les planches des personnages, les décors, les illustrations et les pictogrammes ; les intègre dans les écrans.</td></tr>
+<tr><td><strong>Pathe Fall</strong></td><td>Côté serveur : le parcours école séparé du parcours famille (un enfant de famille n'y a pas accès), le chargement des leçons, les nouvelles étapes (« En classe », « On en parle », fiche enseignant) et les projets de classe.</td></tr>
+</table>
+</div>
+
+<h2>9. Par où on commence</h2>
+<div class="carte">
+<ol>
+<li>Valider ce cahier : univers, personnages, programme.</li>
+<li>Créer les planches d'images des personnages qui reviennent : Palou, Madame Diop, Moussa, Fatou, Khady, Seydou, Lamine, Aïssatou.</li>
+<li>Écrire et produire <strong>le module 1 en entier</strong> (4 leçons, images, voix, fiches enseignant) comme module pilote.</li>
+<li>Le tester dans une classe, corriger, puis produire les modules suivants sur le même modèle.</li>
+</ol>
+</div>
+
+</main>
+</body>
+</html>

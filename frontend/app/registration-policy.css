@@ -1,0 +1,19 @@
+.login-child-policy {
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #ead897;
+  border-radius: 15px;
+  background: #fff7d9;
+  color: #5b553d;
+}
+
+.login-child-policy b {
+  display: block;
+  font-size: .95rem;
+}
+
+.login-child-policy p {
+  margin: .3rem 0 0;
+  font-size: .86rem;
+  line-height: 1.5;
+}

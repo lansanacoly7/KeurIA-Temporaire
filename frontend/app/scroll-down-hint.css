@@ -1,0 +1,33 @@
+.keuria-scroll-hint-btn { display: none !important; }
+@media (max-width: 900px) {
+  .keuria-scroll-hint-btn {
+    position: fixed !important;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    transform: translateX(-50%);
+    margin: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+    line-height: 0 !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    z-index: 9999 !important;
+    background: #1f5f4a !important;
+    color: #fff !important;
+    border: 2.5px solid #D7F26B !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: grid !important;
+    place-items: center !important;
+    box-shadow: 0 6px 18px rgba(14, 75, 60, 0.45) !important;
+    cursor: pointer !important;
+    animation: keuriaScrollBob 1.5s ease-in-out infinite !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+    outline: none !important;
+    padding: 0 !important;
+  }
+}

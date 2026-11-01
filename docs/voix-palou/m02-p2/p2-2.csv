@@ -1,0 +1,36 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e01.mp3;1;1;texte (story);Madame Diop annonce une sortie au marché Kermel. On y achètera des mangues pour la fête !;Madame Diop annonce une sortie au marché Kermèl. On y achètera des mangues pour la fête !;89
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e02.mp3;1;2;texte (story);Fatou et Palou ouvrent l’appli de lecture de la classe. Elle propose un conte à Fatou.;Fatou et Palou ouvrent l’appli de lecture de la classe. Elle propose un conte à Fatou.;86
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e03.mp3;1;3;texte (story);Moussa adore le foot. L’appli lui propose des histoires de foot !;Moussa adore le foot. L’appli lui propose des histoires de foot !;65
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e04.mp3;1;4;texte (discover);Une suggestion est un choix proposé par l’IA. Elle devine ce que tu pourrais aimer.;Une suggestion est un choix proposé par l’I A. Elle devine ce que tu pourrais aimer.;83
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu repères l’IA à l’école.;Bravo ! Tu repères l’I A à l’école.;34
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e08-retiens.mp3;1;8;« Je retiens »;Une suggestion est un choix proposé par une IA. C’est toi qui décides.;Une suggestion est un choix proposé par une I A. C’est toi qui décides.;70
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Tu sais quels outils de la classe utilisent une IA.;Bravo ! Tu sais quels outils de la classe utilisent une I A.;59
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-q.mp3;2;5;consigne du jeu;Glisse un outil dans sa boîte.;Glisse un outil dans sa boîte.;30
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Elle a remarqué ce que Moussa lit souvent.;Oui ! Elle a remarqué ce que Moussa lit souvent.;48
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m2-q.mp3;2;5;consigne du jeu;Moussa aime le foot. Pourquoi l’appli lui propose-t-elle du foot ?;Moussa aime le foot. Pourquoi l’appli lui propose-t-elle du foot ?;66
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05.mp3;2;5;texte (play);Aide Palou à trier les outils de la classe !;Aide Palou à trier les outils de la classe !;44
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! Une suggestion, on peut toujours dire non.;Oui ! Une suggestion, on peut toujours dire non.;48
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e06-m1-q.mp3;2;6;consigne du jeu;L’appli propose une histoire que Fatou n’aime pas. Que fait Fatou ?;L’appli propose une histoire que Fatou n’aime pas. Que fait Fatou ?;67
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e06.mp3;2;6;texte (why);Une suggestion est-elle toujours une bonne idée ?;Une suggestion est-elle toujours une bonne idée ?;49
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Une suggestion est un choix proposé.;Oui ! Une suggestion est un choix proposé.;42
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m1-q.mp3;2;7;consigne du jeu;Qu’est-ce qu’une suggestion de l’appli ?;Qu’est-ce qu’une suggestion de l’appli ?;40
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Fatou choisit un autre livre.;Bravo ! Fatou choisit un autre livre.;37
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m2-q.mp3;2;7;consigne du jeu;L’appli propose un livre que Fatou n’aime pas. Que fait-elle ?;L’appli propose un livre que Fatou n’aime pas. Que fait-elle ?;62
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Exact ! L’IA propose, c’est toi qui décides.;Exact ! L’I A propose, c’est toi qui décides.;44
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m3-q.mp3;2;7;consigne du jeu;Qui décide à la fin ?;Qui décide à la fin ?;21
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-i1.mp3;3;5;explication (objet à ranger);Elle devine ce que tu aimes d’après tes lectures.;Elle devine ce que tu aimes d’après tes lectures.;49
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-i2.mp3;3;5;explication (objet à ranger);La craie écrit ce que la main dessine, rien de plus.;La craie écrit ce que la main dessine, rien de plus.;52
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-i3.mp3;3;5;explication (objet à ranger);Elle sonne à heure fixe, sans rien comprendre.;Elle sonne à heure fixe, sans rien comprendre.;46
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m1-i4.mp3;3;5;explication (objet à ranger);Il comprend ta voix et te répond : c’est une IA.;Il comprend ta voix et te répond : c’est une I A.;48
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m2-o2.mp3;3;5;explication (mauvaise réponse);Elle ne lit pas les pensées : elle regarde seulement ses lectures passées.;Elle ne lit pas les pensées : elle regarde seulement ses lectures passées.;74
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e05-m2-o3.mp3;3;5;explication (mauvaise réponse);C’est l’appli qui choisit, sans que la maîtresse s’en mêle.;C’est l’appli qui choisit, sans que la maîtresse s’en mêle.;59
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Personne ne l’oblige : c’est Fatou qui décide.;Personne ne l’oblige : c’est Fatou qui décide.;46
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Pas besoin ! Il suffit de choisir une autre histoire.;Pas besoin ! Il suffit de choisir une autre histoire.;53
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Une suggestion n’est pas un ordre : tu peux dire non.;Une suggestion n’est pas un ordre : tu peux dire non.;53
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Une suggestion n’est jamais une punition.;Une suggestion n’est jamais une punition.;41
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Personne n’est obligé : c’est toi qui décides.;Personne n’est obligé : c’est toi qui décides.;46
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Casser la tablette ne sert à rien : on peut juste choisir un autre livre.;Casser la tablette ne sert à rien : on peut juste choisir un autre livre.;73
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);L’appli propose, mais elle ne décide pas pour toi.;L’appli propose, mais elle ne décide pas pour toi.;50
+frontend/public/audio/palou/lecons/m02/p2-2/p2-2_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Ce n’est pas le hasard : c’est toi qui choisis.;Ce n’est pas le hasard : c’est toi qui choisis.;47

@@ -1,0 +1,53 @@
+/* Médaillons d'icônes de la barre latérale : une seule famille de teintes, sur le vert foncé de kEur IA. */
+.lms-side nav .nav-kid-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d1ebe3;
+  transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.lms-side nav a:hover .nav-kid-icon {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  transform: scale(1.08);
+}
+.lms-side nav a.on .nav-kid-icon {
+  background: #ffffff;
+  color: var(--brand, #0e3a2e);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+/* « Mon profil » : le portrait rond de l'élève, cerclé d'or. */
+.lms-side nav .nav-kid-avatar,
+.lms-side nav a:hover .nav-kid-avatar,
+.lms-side nav a.on .nav-kid-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 1.5px #f59e0b;
+}
+.lms-side nav a.on .nav-kid-avatar { box-shadow: 0 0 0 2px #f59e0b, 0 2px 8px rgba(0, 0, 0, 0.25); }
+/* Mode replié : le médaillon reste centré. */
+.lms-side.collapsed nav a .nav-kid-icon { margin: 0 auto; }
+/* Barre du bas (mobile) : les médaillons restent visibles alors que les libellés sont masqués. */
+@media (max-width: 760px) {
+  .lms-side nav a .nav-kid-icon { display: grid; width: 32px; height: 32px; }
+  .lms-side nav .nav-kid-avatar { width: 32px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lms-side nav a:hover .nav-kid-icon { transform: none; }
+}
+
+/* Espace d'une école : l'onglet actif prend l'accent du thème choisi par la direction (au lieu du vert fixe). */
+.school-branded .lms-side nav a.on {
+  background: var(--school-accent);
+  color: var(--school-primary);
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+.school-branded .lms-side nav a.on::after { color: var(--school-primary); }
+.school-branded .lms-side nav a.on .nav-kid-icon { background: var(--school-primary); color: var(--school-accent); }

@@ -1,0 +1,43 @@
+/* Allège l'interface sans masquer les états, les verrouillages ni la navigation mobile. */
+.daily-program-title > span,
+.daily-meters article > span,
+.games-mascot,
+.section-intro > span,
+.weekly-challenge > span,
+.scratch-labs-mascot,
+.scratch-lab-number > span,
+.scratch-labs-cta > div > span {
+  display: none !important;
+}
+
+.daily-program-title,
+.daily-meters article,
+.section-intro,
+.weekly-challenge,
+.scratch-labs-hero,
+.scratch-labs-cta > div {
+  grid-template-columns: 1fr !important;
+}
+
+.login-options article {
+  grid-template-columns: 1fr !important;
+}
+
+.login-options a {
+  grid-column: 1 !important;
+}
+
+@media (max-width: 760px) {
+  .lms-side {
+    height: 68px;
+  }
+
+  .lms-side nav button {
+    padding: 8px 5px !important;
+    font-size: 10px !important;
+  }
+
+  .lms-side nav button span {
+    display: inline !important;
+  }
+}

@@ -1,0 +1,541 @@
+/* ─── Graphiques (règles dataviz : barres ≤ 24 px, bout arrondi 4 px,
+       base carrée, grille discrète, valeurs dans la couleur du texte) ─────── */
+
+.ec-chart {
+  --ec-chart-mark: var(--ec-brand);
+  display: grid;
+  gap: 4px;
+}
+
+.ec-chart-empty {
+  color: var(--ec-muted);
+  font-size: 14px;
+}
+
+/* Barres horizontales */
+.ec-hbar-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(96px, 30%) 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 4px 6px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.ec-hbar-row:hover,
+.ec-hbar-row:focus-visible {
+  background: var(--ec-bg);
+}
+
+.ec-hbar-row:focus-visible {
+  box-shadow: 0 0 0 3px var(--ec-lime);
+}
+
+.ec-hbar-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ec-hbar-track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 24px;
+  /* Grille : repères à 0, 50 et 100 %, traits d'un pixel, discrets. */
+  background:
+    linear-gradient(var(--ec-line), var(--ec-line)) 0 0 / 1px 100% no-repeat,
+    linear-gradient(var(--ec-line), var(--ec-line)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--ec-line), var(--ec-line)) 100% 0 / 1px 100% no-repeat;
+}
+
+.ec-hbar-bar {
+  flex-shrink: 0;
+  height: 16px;
+  border-radius: 0 4px 4px 0;
+  background: var(--ec-chart-mark);
+}
+
+.ec-hbar-value {
+  position: relative;
+  padding: 0 4px;
+  border-radius: 4px;
+  /* Fond de la carte : la valeur reste lisible par-dessus les lignes de repère. */
+  background: var(--ec-surface);
+  color: var(--ec-text);
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ec-chart-axis {
+  display: grid;
+  grid-template-columns: minmax(96px, 30%) 1fr;
+  gap: 12px;
+  padding: 0 6px;
+  color: var(--ec-muted);
+  font-size: 11px;
+}
+
+.ec-chart-axis div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Colonnes verticales */
+.ec-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: end;
+  gap: 8px;
+  height: 200px;
+  padding: 0 4px;
+  border-bottom: 1px solid var(--ec-line);
+}
+
+.ec-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+  outline: none;
+}
+
+.ec-column:hover,
+.ec-column:focus-visible {
+  background: var(--ec-bg);
+}
+
+.ec-column:focus-visible {
+  box-shadow: 0 0 0 3px var(--ec-lime);
+}
+
+.ec-column-bar {
+  width: 24px;
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+  background: var(--ec-chart-mark);
+}
+
+.ec-column-labels {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 8px;
+  padding: 8px 4px 0;
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Infobulle au survol et au focus clavier */
+.ec-tooltip {
+  position: absolute;
+  z-index: 5;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  width: max-content;
+  max-width: 240px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--ec-ink-deep);
+  box-shadow: var(--ec-shadow);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  pointer-events: none;
+  transform: translateX(-50%);
+  /* Masquée = hors de la mise en page : sinon elle élargit la page (défilement horizontal). */
+  display: none;
+}
+
+/* Colonnes du bord : l'infobulle s'aligne sur le bord pour rester dans le cadre. */
+.ec-column:first-child .ec-tooltip {
+  left: 0;
+  transform: none;
+}
+
+.ec-column:last-child .ec-tooltip {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.ec-hbar-row:hover .ec-tooltip,
+.ec-hbar-row:focus-visible .ec-tooltip,
+.ec-column:hover .ec-tooltip,
+.ec-column:focus-visible .ec-tooltip {
+  display: block;
+}
+
+.ec-link-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ec-brand);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ─── Palmarès & Émulation (Gamification) ─────────────────────────────────── */
+
+.ec-leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ec-leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--ec-surface);
+  border: 1px solid var(--ec-line);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.ec-leaderboard-row:hover {
+  background: var(--ec-brand-soft);
+  border-color: var(--ec-brand);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(13, 132, 110, 0.12);
+}
+
+.ec-leaderboard-highlight {
+  background: rgba(23, 78, 73, 0.07) !important;
+  border: 1.5px solid var(--ec-brand) !important;
+}
+
+.ec-rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ec-rank-badge--1 {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1.5px solid #f59e0b;
+}
+
+.ec-rank-badge--2 {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1.5px solid #94a3b8;
+}
+
+.ec-rank-badge--3 {
+  background: #ffedd5;
+  color: #9a3412;
+  border: 1.5px solid #ea580c;
+}
+
+.ec-rank-badge--other {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--ec-muted);
+  border: 1px solid var(--ec-border);
+}
+
+.ec-school-rank-hero {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(23, 78, 73, 0.08) 0%, rgba(201, 223, 84, 0.1) 100%);
+  border: 1px solid rgba(23, 78, 73, 0.2);
+  margin-bottom: 12px;
+}
+
+/* ─── Certificat officiel kEur IA ───────────────────────────────────────── */
+
+.ec-cert-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+  background: var(--ec-bg);
+  min-height: calc(100vh / var(--app-zoom, 1));
+}
+
+.ec-cert-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1050px;
+  background: var(--ec-surface);
+  border: 1px solid var(--ec-border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ec-cert-frame {
+  width: 100%;
+  max-width: 1050px;
+  aspect-ratio: 297 / 210;
+  background: #ffffff;
+  border: 10px solid #174e49;
+  border-radius: 4px;
+  padding: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+}
+
+.ec-cert-inner {
+  height: 100%;
+  border: 2px solid #d97706;
+  border-radius: 2px;
+  padding: 24px 36px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background: radial-gradient(circle at center, #ffffff 60%, #faf8f5 100%);
+  position: relative;
+}
+
+.ec-cert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+}
+
+.ec-cert-header.is-centered {
+  justify-content: center;
+}
+
+.ec-cert-title {
+  margin: 10px 0 4px;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #174e49;
+}
+
+.ec-cert-recipient {
+  margin: 6px 0;
+}
+
+.ec-cert-recipient small {
+  display: block;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ec-muted);
+  margin-bottom: 4px;
+}
+
+.ec-cert-name {
+  font-size: 30px;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.ec-cert-context {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.ec-cert-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ec-cert-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.ec-cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 2px solid #174e49;
+  background: rgba(23, 78, 73, 0.03);
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.ec-cert-badge b {
+  font-size: 12px;
+  font-weight: 800;
+  color: #174e49;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.ec-cert-badge span {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ec-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  text-align: center;
+}
+
+.ec-cert-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 8px;
+  font-size: 11px;
+  color: #475569;
+}
+
+.ec-cert-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 190px;
+}
+
+.ec-cert-sign-line {
+  width: 150px;
+  height: 1px;
+  background: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.ec-cert-seal {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fde68a 0%, #d97706 100%);
+  border: 2px dashed #92400e;
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 800;
+  color: #78350f;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 3px;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ec-cert-page {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    display: block !important;
+  }
+
+  .ec-cert-actions,
+  .ec-sidebar,
+  .ec-topbar,
+  .ec-header {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .ec-cert-frame {
+    width: 297mm !important;
+    height: 210mm !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    visibility: visible !important;
+  }
+
+  .ec-cert-frame * {
+    visibility: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ec-cert-inner {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ec-cert-seal {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ec-cert-badge {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+

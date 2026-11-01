@@ -1,0 +1,35 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e01.mp3;1;1;texte (story);Devant l’école, les déchets s’accumulent sur la place du quartier.;Devant l’école, les déchets s’accumulent sur la place du quartier.;66
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e02.mp3;1;2;texte (story);Fatou demande aux voisins ce qui les gêne le plus.;Fatou demande aux voisins ce qui les gêne le plus.;50
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e03.mp3;1;3;texte (story);Moussa note : mauvaises odeurs, sacs éventrés, poubelles trop rares.;Moussa note : mauvaises odeurs, sacs éventrés, poubelles trop rares.;68
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e04.mp3;1;4;texte (discover);Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée.;Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée.;89
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu as trouvé le vrai besoin.;Bravo ! Tu as trouvé le vrai besoin.;36
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e08-retiens.mp3;1;8;« Je retiens »;Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée.;Un besoin, c’est ce qui manque vraiment aux gens. On l’écoute avant de chercher une idée.;89
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Oui ! Elle écoute d’abord les voisins.;Oui ! Elle écoute d’abord les voisins.;38
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m1-q.mp3;2;5;consigne du jeu;Que fait la classe avant d’inventer une solution ?;Que fait la classe avant d’inventer une solution ?;50
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Le vrai besoin, ce sont plus de poubelles dans la rue.;Oui ! Le vrai besoin, ce sont plus de poubelles dans la rue.;60
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-q.mp3;2;5;consigne du jeu;Fatou interroge les voisins. Pose les bonnes questions pour trouver le vrai besoin !;Fatou interroge les voisins. Pose les bonnes questions pour trouver le vrai besoin !;84
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05.mp3;2;5;texte (play);Aide Palou et la classe à trouver le vrai besoin !;Aide Palou et la classe à trouver le vrai besoin !;50
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e06.mp3;2;6;texte (ai);Une IA ne choisit pas le problème. Ce sont les gens qui disent leurs besoins.;Une I A ne choisit pas le problème. Ce sont les gens qui disent leurs besoins.;77
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! Un besoin, c’est ce qui manque vraiment.;Oui ! Un besoin, c’est ce qui manque vraiment.;46
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m1-q.mp3;2;7;consigne du jeu;Qu’est-ce qu’un besoin ?;Qu’est-ce qu’un besoin ?;24
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Bravo ! En écoutant les voisins.;Bravo ! En écoutant les voisins.;32
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m2-q.mp3;2;7;consigne du jeu;Comment trouve-t-on le vrai besoin ?;Comment trouve-t-on le vrai besoin ?;36
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Exact ! On écoute d’abord.;Exact ! On écoute d’abord.;26
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m3-q.mp3;2;7;consigne du jeu;Une première idée arrive très vite. Que fait-on ?;Une première idée arrive très vite. Que fait-on ?;49
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m1-o1.mp3;3;5;explication (mauvaise réponse);Sans écouter, l’idée risque de ne servir à personne.;Sans écouter, l’idée risque de ne servir à personne.;52
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m1-o3.mp3;3;5;explication (mauvaise réponse);Attendre ne règle rien : la classe peut commencer par écouter.;Attendre ne règle rien : la classe peut commencer par écouter.;62
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-a.mp3;3;5;demande du tampon;Les voisins ont répondu. Quel est le vrai besoin ?;Les voisins ont répondu. Quel est le vrai besoin ?;50
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-f2.mp3;3;5;explication (mauvais tampon);Une fresque est jolie, mais elle ne règle pas le problème des déchets.;Une fresque est jolie, mais elle ne règle pas le problème des déchets.;70
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-f3.mp3;3;5;explication (mauvais tampon);Un match est amusant, mais il ne règle pas le problème des déchets.;Un match est amusant, mais il ne règle pas le problème des déchets.;67
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-o4.mp3;3;5;explication (question inutile);Cette question ne dit rien sur les déchets. Demande ce qui gêne les voisins.;Cette question ne dit rien sur les déchets. Demande ce qui gêne les voisins.;76
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-s1.mp3;3;5;indice révélé par la question;Les mauvaises odeurs et les sacs éventrés.;Les mauvaises odeurs et les sacs éventrés.;42
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-s2.mp3;3;5;indice révélé par la question;Non, il y en a trop peu dans la rue.;Non, il y en a trop peu dans la rue.;36
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e05-m2-s3.mp3;3;5;indice révélé par la question;Après le marché, quand les sacs sont pleins.;Après le marché, quand les sacs sont pleins.;44
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Une idée n’est pas un besoin : le besoin vient des gens.;Une idée n’est pas un besoin : le besoin vient des gens.;56
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);Un besoin n’est pas un cadeau : c’est ce qui manque aux gens.;Un besoin n’est pas un cadeau : c’est ce qui manque aux gens.;61
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Deviner seul peut se tromper : on écoute d’abord les gens.;Deviner seul peut se tromper : on écoute d’abord les gens.;58
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Attendre ne trouve rien : il faut écouter les gens.;Attendre ne trouve rien : il faut écouter les gens.;51
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Construire tout de suite, c’est risquer de se tromper de besoin.;Construire tout de suite, c’est risquer de se tromper de besoin.;64
+frontend/public/audio/palou/lecons/m10/p10-1/p10-1_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Une idée peut être bonne : on écoute d’abord le besoin.;Une idée peut être bonne : on écoute d’abord le besoin.;55

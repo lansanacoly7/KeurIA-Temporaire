@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800">
+  <defs>
+    <linearGradient id="cyberSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#042F2E" />
+      <stop offset="40%" stopColor="#115E59" />
+      <stop offset="75%" stopColor="#0D9488" />
+      <stop offset="100%" stopColor="#2DD4BF" />
+    </linearGradient>
+    <linearGradient id="domeGlass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#E0F2FE" stopOpacity="0.85" />
+      <stop offset="45%" stopColor="#7DD3FC" stopOpacity="0.65" />
+      <stop offset="100%" stopColor="#0284C7" stopOpacity="0.85" />
+    </linearGradient>
+    <linearGradient id="copperMetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#FBBF24" />
+      <stop offset="50%" stopColor="#D97706" />
+      <stop offset="100%" stopColor="#92400E" />
+    </linearGradient>
+    <linearGradient id="solarPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stopColor="#1E3A8A" />
+      <stop offset="50%" stopColor="#2563EB" />
+      <stop offset="100%" stopColor="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="botBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stopColor="#F8FAFC" />
+      <stop offset="50%" stopColor="#E2E8F0" />
+      <stop offset="100%" stopColor="#94A3B8" />
+    </linearGradient>
+    <linearGradient id="neonGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stopColor="#C8F24D" />
+      <stop offset="100%" stopColor="#22C55E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Ciel Techno-Solaire Futuriste -->
+  <rect width="800" height="800" fill="url(#cyberSky)" />
+
+  <!-- Soleil d'énergie propre en arrière-plan -->
+  <circle cx="680" cy="150" r="75" fill="#FEF08A" opacity="0.9" filter="drop-shadow(0 0 24px rgba(254,240,138,0.8))" />
+  <circle cx="680" cy="150" r="95" fill="none" stroke="#FDE047" strokeWidth="3" strokeDasharray="8 6" opacity="0.6" />
+
+  <!-- Réseau de circuits lumineux dans le ciel -->
+  <g stroke="#99F6E4" strokeWidth="2.5" opacity="0.35" fill="none">
+    <path d="M 50 100 H 220 L 260 140 H 420" />
+    <circle cx="420" cy="140" r="5" fill="#5EEAD4" />
+    <path d="M 120 40 V 90 L 160 130 V 220" />
+    <circle cx="160" cy="220" r="5" fill="#5EEAD4" />
+    <path d="M 550 80 H 620 L 660 120" />
+  </g>
+
+  <!-- Ligne d'horizon de la cité solaire (Gratte-ciels arrondis) -->
+  <g fill="#0F766E" stroke="#134E4A" strokeWidth="4">
+    <rect x="60" y="320" width="85" height="320" rx="16" />
+    <rect x="165" y="260" width="95" height="380" rx="20" />
+    <rect x="520" y="240" width="105" height="400" rx="22" />
+    <rect x="645" y="300" width="90" height="340" rx="18" />
+  </g>
+
+  <!-- Fenêtres LED des tours -->
+  <g fill="#A7F3D0" opacity="0.8">
+    <circle cx="102" cy="360" r="6" /><circle cx="102" cy="400" r="6" /><circle cx="102" cy="440" r="6" />
+    <circle cx="212" cy="300" r="7" /><circle cx="212" cy="340" r="7" /><circle cx="212" cy="380" r="7" />
+    <circle cx="572" cy="280" r="7" /><circle cx="572" cy="320" r="7" /><circle cx="572" cy="360" r="7" />
+    <circle cx="690" cy="340" r="6" /><circle cx="690" cy="380" r="6" />
+  </g>
+
+  <!-- Dôme de Verre Géant Central (Laboratoire et Serre Écologique) -->
+  <ellipse cx="400" cy="450" rx="180" ry="140" fill="url(#domeGlass)" stroke="#38BDF8" strokeWidth="6" />
+  <path d="M 230 460 Q 400 320 570 460" stroke="#FFF" strokeWidth="4" fill="none" opacity="0.75" />
+  <line x1="400" y1="310" x2="400" y2="470" stroke="#FFF" strokeWidth="4" opacity="0.6" />
+
+  <!-- Végétation futuriste à l'intérieur du dôme -->
+  <ellipse cx="370" cy="450" rx="35" ry="22" fill="#22C55E" opacity="0.8" />
+  <ellipse cx="430" cy="445" rx="30" ry="20" fill="#4ADE80" opacity="0.8" />
+
+  <!-- Engrenages Cuivrés Géants Entrelacés (Clin d'œil mécanique) -->
+  <!-- Grand engrenage gauche -->
+  <g transform="translate(180, 520)">
+    <circle cx="0" cy="0" r="60" fill="url(#copperMetal)" stroke="#78350F" strokeWidth="6" />
+    <circle cx="0" cy="0" r="28" fill="#134E4A" stroke="#78350F" strokeWidth="4" />
+    <!-- Dents -->
+    <rect x="-10" y="-76" width="20" height="24" rx="4" fill="#F59E0B" stroke="#78350F" strokeWidth="3" />
+    <rect x="-10" y="52" width="20" height="24" rx="4" fill="#F59E0B" stroke="#78350F" strokeWidth="3" />
+    <rect x="-76" y="-10" width="24" height="20" rx="4" fill="#F59E0B" stroke="#78350F" strokeWidth="3" />
+    <rect x="52" y="-10" width="24" height="20" rx="4" fill="#F59E0B" stroke="#78350F" strokeWidth="3" />
+  </g>
+
+  <!-- Petit engrenage droit -->
+  <g transform="translate(620, 500)">
+    <circle cx="0" cy="0" r="48" fill="url(#copperMetal)" stroke="#78350F" strokeWidth="5" />
+    <circle cx="0" cy="0" r="20" fill="#134E4A" stroke="#78350F" strokeWidth="3" />
+    <rect x="-8" y="-62" width="16" height="20" rx="3" fill="#F59E0B" stroke="#78350F" strokeWidth="2.5" />
+    <rect x="-8" y="42" width="16" height="20" rx="3" fill="#F59E0B" stroke="#78350F" strokeWidth="2.5" />
+    <rect x="-62" y="-8" width="20" height="16" rx="3" fill="#F59E0B" stroke="#78350F" strokeWidth="2.5" />
+    <rect x="42" y="-8" width="20" height="16" rx="3" fill="#F59E0B" stroke="#78350F" strokeWidth="2.5" />
+  </g>
+
+  <!-- Passerelle d'énergie néon verte au sol -->
+  <rect x="0" y="650" width="800" height="150" fill="#0F172A" />
+  <rect x="0" y="640" width="800" height="18" fill="url(#neonGreen)" />
+  <line x1="0" y1="710" x2="800" y2="710" stroke="#0D9488" strokeWidth="3" strokeDasharray="14 12" />
+
+  <!-- LE PETIT ROBOT COMPAGNON AMICAL AU PREMIER PLAN (Mascotte Robot) -->
+  <g transform="translate(400, 610) scale(1.15)">
+    <!-- Ombre au sol -->
+    <ellipse cx="0" cy="85" rx="58" ry="12" fill="rgba(0,0,0,0.4)" />
+
+    <!-- Chenilles / Roues du robot -->
+    <rect x="-48" y="68" width="96" height="20" rx="10" fill="#334155" stroke="#0F172A" strokeWidth="4" />
+    <circle cx="-32" cy="78" r="6" fill="#94A3B8" />
+    <circle cx="0" cy="78" r="6" fill="#94A3B8" />
+    <circle cx="32" cy="78" r="6" fill="#94A3B8" />
+
+    <!-- Corps du robot blanc et doux -->
+    <rect x="-42" y="10" width="84" height="60" rx="16" fill="url(#botBody)" stroke="#0E4B3C" strokeWidth="5" />
+    <!-- Cœur énergétique vert au centre -->
+    <circle cx="0" cy="40" r="14" fill="#C8F24D" stroke="#0E4B3C" strokeWidth="3" />
+    <polygon points="0,32 -6,44 6,44" fill="#0E4B3C" />
+
+    <!-- Tête arrondie du robot -->
+    <rect x="-36" y="-55" width="72" height="56" rx="18" fill="url(#botBody)" stroke="#0E4B3C" strokeWidth="5" />
+    <!-- Écran du visage noir poli -->
+    <rect x="-28" y="-45" width="56" height="38" rx="12" fill="#0F172A" />
+    <!-- Yeux bleus LED expressifs et souriants -->
+    <ellipse cx="-13" cy="-26" rx="7" ry="8" fill="#38BDF8" />
+    <ellipse cx="13" cy="-26" rx="7" ry="8" fill="#38BDF8" />
+    <!-- Étoile de brillance dans les yeux -->
+    <circle cx="-11" cy="-28" r="2.5" fill="#FFF" />
+    <circle cx="15" cy="-28" r="2.5" fill="#FFF" />
+
+    <!-- Petite antenne avec ampoule allumée au sommet -->
+    <line x1="0" y1="-55" x2="0" y2="-76" stroke="#0E4B3C" strokeWidth="4" />
+    <circle cx="0" cy="-80" r="9" fill="#FDE047" stroke="#D97706" strokeWidth="3" filter="drop-shadow(0 0 6px #F59E0B)" />
+
+    <!-- Petits bras mécaniques saluant amicalement -->
+    <path d="M -42 30 Q -60 20 -58 40" stroke="#0E4B3C" strokeWidth="5" fill="none" strokeLinecap="round" />
+    <circle cx="-58" cy="40" r="6" fill="#D97706" />
+    <path d="M 42 30 Q 64 10 58 -5" stroke="#0E4B3C" strokeWidth="5" fill="none" strokeLinecap="round" />
+    <circle cx="58" cy="-5" r="6" fill="#D97706" />
+  </g>
+</svg>

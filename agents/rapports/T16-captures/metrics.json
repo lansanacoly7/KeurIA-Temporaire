@@ -1,0 +1,4364 @@
+{
+  "auditDate": "2026-10-16T16:18:31.003Z",
+  "targetCommit": "51ed6bea",
+  "summary": {
+    "totalScreens": 33,
+    "resolutionsPerScreen": 4,
+    "totalCaptures": 132,
+    "successCaptures": 132,
+    "failedCaptures": 0,
+    "overflowCount": 0,
+    "emptyCapturesCount": 0,
+    "duplicateHashesCount": 0
+  },
+  "screens": {
+    "01-parent-inscription": {
+      "id": "01-parent-inscription",
+      "name": "Inscription parent (Créer mon compte)",
+      "group": "Parent",
+      "expectedPath": "/connexion",
+      "expectedText": "Créer un compte parent",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/connexion",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1809,
+          "bandeVide": 0,
+          "smallTouchCount": 6,
+          "smallTouchSample": [
+            {
+              "target": "a.login-brand",
+              "width": 353,
+              "height": 34
+            },
+            {
+              "target": "button.auth-back (\"Changer de profil\")",
+              "width": 163,
+              "height": 35
+            },
+            {
+              "target": "button.auth-password-toggle (\"Afficher le mot de passe\")",
+              "width": 42,
+              "height": 42
+            },
+            {
+              "target": "button.auth-password-toggle (\"Afficher le mot de passe\")",
+              "width": 42,
+              "height": 42
+            },
+            {
+              "target": "a.auth-inline-link (\"conditions d'utilisation\")",
+              "width": 229,
+              "height": 41
+            },
+            {
+              "target": "a.auth-inline-link (\"politique de confidentialité\")",
+              "width": 209,
+              "height": 41
+            }
+          ],
+          "screenshot": {
+            "filename": "01-parent-inscription-390.png",
+            "sizeBytes": 471001,
+            "sha1": "c3380cdd3f8bd41f241e84053fe7e045298979ff"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/connexion",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1529,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "01-parent-inscription-768.png",
+            "sizeBytes": 674114,
+            "sha1": "19a719fc1790a56bf57fcfc7f13e2b6f31b82f4f"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/connexion",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1138,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "01-parent-inscription-1280.png",
+            "sizeBytes": 350893,
+            "sha1": "e87d3eb87147ea7e8e48e20152d9893e11fcc62a"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/connexion",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1148,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "01-parent-inscription-1440.png",
+            "sizeBytes": 422866,
+            "sha1": "1897f97f4b9bc30d8381c33bae81f8ab063c490d"
+          }
+        }
+      }
+    },
+    "02-parent-journal-foyer": {
+      "id": "02-parent-journal-foyer",
+      "name": "Le Journal du Foyer (Tableau de bord)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Le Journal du Foyer",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2732,
+          "bandeVide": 0,
+          "smallTouchCount": 11,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.p-btn-pri (\"Inscrire un enfant\")",
+              "width": 180,
+              "height": 36
+            },
+            {
+              "target": "button.p-btn-sec (\"Le Mot de Palou\")",
+              "width": 166,
+              "height": 36
+            },
+            {
+              "target": "button (\"Ajouter un enfant\")",
+              "width": 174,
+              "height": 33
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            },
+            {
+              "target": "button (\"Voir la fiche détaillée\")",
+              "width": 316,
+              "height": 29
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            }
+          ],
+          "screenshot": {
+            "filename": "02-parent-journal-foyer-390.png",
+            "sizeBytes": 349755,
+            "sha1": "43b41f8d613f9a78799c1a10f84ce6cde1462943"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2198,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "02-parent-journal-foyer-768.png",
+            "sizeBytes": 466820,
+            "sha1": "20cfcc0cebeab57b22b34eaaea646e2f456c93cc"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "02-parent-journal-foyer-1280.png",
+            "sizeBytes": 241789,
+            "sha1": "2ead8034df7b339a1a9cb8544ec12b70f4022260"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "02-parent-journal-foyer-1440.png",
+            "sizeBytes": 259966,
+            "sha1": "c210ffd480e6f820c9157cc99432325eef722b36"
+          }
+        }
+      }
+    },
+    "03-parent-inscrire-etape1": {
+      "id": "03-parent-inscrire-etape1",
+      "name": "Modal Inscrire un enfant — Étape 1 (Identité)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Identité de l'enfant",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2732,
+          "bandeVide": 0,
+          "smallTouchCount": 14,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.p-btn-pri (\"Inscrire un enfant\")",
+              "width": 180,
+              "height": 36
+            },
+            {
+              "target": "button.p-btn-sec (\"Le Mot de Palou\")",
+              "width": 166,
+              "height": 36
+            },
+            {
+              "target": "button (\"Ajouter un enfant\")",
+              "width": 174,
+              "height": 33
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            },
+            {
+              "target": "button (\"Voir la fiche détaillée\")",
+              "width": 316,
+              "height": 29
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            }
+          ],
+          "screenshot": {
+            "filename": "03-parent-inscrire-etape1-390.png",
+            "sizeBytes": 171537,
+            "sha1": "f535c322582525a7ddb3899cfcd5263102191d8d"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2198,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "03-parent-inscrire-etape1-768.png",
+            "sizeBytes": 365317,
+            "sha1": "a15b8caa81d40dd34d390510a2c6d5e5105f5603"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "03-parent-inscrire-etape1-1280.png",
+            "sizeBytes": 186896,
+            "sha1": "cb8723dba327b84c83876d33eec2b1f4b7772514"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "03-parent-inscrire-etape1-1440.png",
+            "sizeBytes": 210020,
+            "sha1": "8a4de1d2d1d02fca6bddbc93e52d6c1f3ed19e4d"
+          }
+        }
+      }
+    },
+    "04-parent-inscrire-etape2": {
+      "id": "04-parent-inscrire-etape2",
+      "name": "Modal Inscrire un enfant — Étape 2 (Connexion sécurisée)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Connexion sécurisée",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2732,
+          "bandeVide": 0,
+          "smallTouchCount": 14,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.p-btn-pri (\"Inscrire un enfant\")",
+              "width": 180,
+              "height": 36
+            },
+            {
+              "target": "button.p-btn-sec (\"Le Mot de Palou\")",
+              "width": 166,
+              "height": 36
+            },
+            {
+              "target": "button (\"Ajouter un enfant\")",
+              "width": 174,
+              "height": 33
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            },
+            {
+              "target": "button (\"Voir la fiche détaillée\")",
+              "width": 316,
+              "height": 29
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            }
+          ],
+          "screenshot": {
+            "filename": "04-parent-inscrire-etape2-390.png",
+            "sizeBytes": 219006,
+            "sha1": "e98175be8f0c68c149ff6d715d8717b123c9071b"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2198,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "04-parent-inscrire-etape2-768.png",
+            "sizeBytes": 365140,
+            "sha1": "eccc88c19dc3d26d32bf624f61283d222d5c3748"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1209,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "04-parent-inscrire-etape2-1280.png",
+            "sizeBytes": 176682,
+            "sha1": "b264e897bd1c44c0d525f2ae54558ee48e723f30"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "04-parent-inscrire-etape2-1440.png",
+            "sizeBytes": 202760,
+            "sha1": "f9910a09b7caec32c7cffc582fec292724c292f7"
+          }
+        }
+      }
+    },
+    "05-parent-inscrire-etape3": {
+      "id": "05-parent-inscrire-etape3",
+      "name": "Modal Inscrire un enfant — Étape 3 (Passeport officiel)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Passeport officiel",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "button",
+              "cls": ".p-btn-pri",
+              "right": 469,
+              "width": 180
+            },
+            {
+              "tag": "button",
+              "cls": ".p-btn-sec",
+              "right": 456,
+              "width": 166
+            },
+            {
+              "tag": "span",
+              "cls": "",
+              "right": 413,
+              "width": 110
+            },
+            {
+              "tag": "span",
+              "cls": "",
+              "right": 413,
+              "width": 110
+            },
+            {
+              "tag": "button",
+              "cls": "",
+              "right": 453,
+              "width": 162
+            }
+          ],
+          "appBottom": 12836,
+          "bandeVide": 0,
+          "smallTouchCount": 10,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button (\"Déconnexion\")",
+              "width": 232,
+              "height": 43
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.p-btn-pri (\"Inscrire un enfant\")",
+              "width": 180,
+              "height": 36
+            },
+            {
+              "target": "button.p-btn-sec (\"Le Mot de Palou\")",
+              "width": 166,
+              "height": 36
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 50,
+              "height": 38
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 50,
+              "height": 38
+            },
+            {
+              "target": "button (\"Autre sujet (1/15)\")",
+              "width": 162,
+              "height": 31
+            }
+          ],
+          "screenshot": {
+            "filename": "05-parent-inscrire-etape3-390.png",
+            "sizeBytes": 189576,
+            "sha1": "fdd5ca158ef486f30029928dc5eae56562daa986"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2202,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "05-parent-inscrire-etape3-768.png",
+            "sizeBytes": 366145,
+            "sha1": "546cc0c8781a60bd86e108b7b552338d77eb71a9"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1209,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "05-parent-inscrire-etape3-1280.png",
+            "sizeBytes": 176996,
+            "sha1": "50a5b47d4fc8a7a9f3fe7e9c2ab3cb1a6baba9f5"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1150,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "05-parent-inscrire-etape3-1440.png",
+            "sizeBytes": 203091,
+            "sha1": "bac4e5fda168c33d0fd84af5de76fb79e4d3f576"
+          }
+        }
+      }
+    },
+    "06-parent-inscrire-codes": {
+      "id": "06-parent-inscrire-codes",
+      "name": "Inscrire un enfant — Fenêtre des identifiants & codes",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Voici les identifiants pour connecter votre enfant à son espace",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2732,
+          "bandeVide": 0,
+          "smallTouchCount": 12,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.p-btn-pri (\"Inscrire un enfant\")",
+              "width": 180,
+              "height": 36
+            },
+            {
+              "target": "button.p-btn-sec (\"Le Mot de Palou\")",
+              "width": 166,
+              "height": 36
+            },
+            {
+              "target": "button (\"Ajouter un enfant\")",
+              "width": 174,
+              "height": 33
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            },
+            {
+              "target": "button (\"Voir la fiche détaillée\")",
+              "width": 316,
+              "height": 29
+            },
+            {
+              "target": "button.p-action-btn (\"Consulter son univers\")",
+              "width": 316,
+              "height": 38
+            }
+          ],
+          "screenshot": {
+            "filename": "06-parent-inscrire-codes-390.png",
+            "sizeBytes": 196370,
+            "sha1": "338310e865a9f4b95691f9779d214957f5f6a6bb"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2591,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "06-parent-inscrire-codes-768.png",
+            "sizeBytes": 354800,
+            "sha1": "92a699e958d3a51c156d51ab963a419d3b67f01e"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1508,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "06-parent-inscrire-codes-1280.png",
+            "sizeBytes": 152638,
+            "sha1": "11a0f0ced508f307a5cea0bce0d1abfbb7ec1571"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1499,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "06-parent-inscrire-codes-1440.png",
+            "sizeBytes": 164569,
+            "sha1": "f143379ee35fa2509dbbc3df4bd7aab95ddafe51"
+          }
+        }
+      }
+    },
+    "07-parent-carnets-explorateurs": {
+      "id": "07-parent-carnets-explorateurs",
+      "name": "Carnets d'Explorateurs (Vue d'ensemble)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Carnets d'Explorateurs",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 3,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.family-chat-btn (\"Ouvrir la messagerie familiale\")",
+              "width": 40,
+              "height": 40
+            }
+          ],
+          "screenshot": {
+            "filename": "07-parent-carnets-explorateurs-390.png",
+            "sizeBytes": 36446,
+            "sha1": "44d9d31a67cd4748c06e92bff896802498e82b2d"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "07-parent-carnets-explorateurs-768.png",
+            "sizeBytes": 101531,
+            "sha1": "b01c28275e150a98d52ff2bef9ce27e08cc873c2"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1180,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "07-parent-carnets-explorateurs-1280.png",
+            "sizeBytes": 333667,
+            "sha1": "d4760485934bb7ba0b74ab7c3f0c01f3229b28c7"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1180,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "07-parent-carnets-explorateurs-1440.png",
+            "sizeBytes": 359342,
+            "sha1": "7c049bbb1fca804a12c422eea30667e08d27c972"
+          }
+        }
+      }
+    },
+    "08-parent-carnets-detail": {
+      "id": "08-parent-carnets-detail",
+      "name": "Carnets d'Explorateurs (Détail activités enfant)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Classement & Ligue",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "button",
+              "cls": ".parent-child-tab-pill",
+              "right": 441,
+              "width": 186
+            },
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 424,
+              "width": 100
+            },
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 424,
+              "width": 100
+            },
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 424,
+              "width": 100
+            },
+            {
+              "tag": "button",
+              "cls": ".parent-child-tab-pill",
+              "right": 661,
+              "width": 210
+            }
+          ],
+          "appBottom": 2392,
+          "bandeVide": 0,
+          "smallTouchCount": 11,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.passport-btn-primary (\"Explorer son espace élève\")",
+              "width": 318,
+              "height": 41
+            },
+            {
+              "target": "button.passport-btn-secondary (\"Repères éducatifs\")",
+              "width": 318,
+              "height": 43
+            },
+            {
+              "target": "button.subnav-tab-btn.active (\"Vue d'ensemble\")",
+              "width": 171,
+              "height": 41
+            },
+            {
+              "target": "button.subnav-tab-btn (\"Classement & Ligue\n#4\")",
+              "width": 236,
+              "height": 41
+            },
+            {
+              "target": "button.subnav-tab-btn (\"Trophées & Pouvoirs\n0/12\")",
+              "width": 247,
+              "height": 41
+            },
+            {
+              "target": "button.subnav-tab-btn (\"Exploits & Cursus\n0\")",
+              "width": 209,
+              "height": 41
+            }
+          ],
+          "screenshot": {
+            "filename": "08-parent-carnets-detail-390.png",
+            "sizeBytes": 513923,
+            "sha1": "aa10cb4168de7bd370bce57cc6c8e0fd2ec0ef8c"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "button",
+              "cls": ".subnav-tab-btn",
+              "right": 826,
+              "width": 188
+            },
+            {
+              "tag": "span",
+              "cls": "",
+              "right": 783,
+              "width": 105
+            },
+            {
+              "tag": "span",
+              "cls": ".subnav-pill-badge",
+              "right": 812,
+              "width": 21
+            }
+          ],
+          "appBottom": 1508,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "08-parent-carnets-detail-768.png",
+            "sizeBytes": 742934,
+            "sha1": "51f295c18b69b232ee84c247adf10e1858470ab5"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 917,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "08-parent-carnets-detail-1280.png",
+            "sizeBytes": 196594,
+            "sha1": "3b615e1dd3b196960b304fac8f7e17e8b0f46943"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "08-parent-carnets-detail-1440.png",
+            "sizeBytes": 268260,
+            "sha1": "2e2a9ddb2ba2e29fda75b44099a1adf0bb54bfe2"
+          }
+        }
+      }
+    },
+    "09-parent-equilibre-serenite": {
+      "id": "09-parent-equilibre-serenite",
+      "name": "Équilibre & Sérénité (Vue globale)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Équilibre & Sérénité",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 3,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.family-chat-btn (\"Ouvrir la messagerie familiale\")",
+              "width": 40,
+              "height": 40
+            }
+          ],
+          "screenshot": {
+            "filename": "09-parent-equilibre-serenite-390.png",
+            "sizeBytes": 42650,
+            "sha1": "bed46b91282fef1ebe5533ec409f8bd6bb811dfe"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "09-parent-equilibre-serenite-768.png",
+            "sizeBytes": 46610,
+            "sha1": "94d6c5c55aa28f91ec5ef8cf1d6c65eedf4223b0"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1680,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "09-parent-equilibre-serenite-1280.png",
+            "sizeBytes": 185140,
+            "sha1": "5191e334a4f43a3723e86f1ea5dcb3f927064d8d"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1680,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "09-parent-equilibre-serenite-1440.png",
+            "sizeBytes": 198467,
+            "sha1": "4f8300009508c29f6cc96ef976d7437a05908d18"
+          }
+        }
+      }
+    },
+    "10-parent-equilibre-sections": {
+      "id": "10-parent-equilibre-sections",
+      "name": "Équilibre & Sérénité (Sections créneaux & règles)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Limites & Temps d'Écran",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 421,
+              "width": 200
+            }
+          ],
+          "appBottom": 2732,
+          "bandeVide": 0,
+          "smallTouchCount": 3,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.family-chat-btn (\"Ouvrir la messagerie familiale\")",
+              "width": 40,
+              "height": 40
+            }
+          ],
+          "screenshot": {
+            "filename": "10-parent-equilibre-sections-390.png",
+            "sizeBytes": 272201,
+            "sha1": "24949f73f10b35fcbf7be0bf82b3eb9e2edd5380"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 795,
+              "width": 200
+            }
+          ],
+          "appBottom": 2011,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "10-parent-equilibre-sections-768.png",
+            "sizeBytes": 428221,
+            "sha1": "f3418c43a14b4b1c58c5ec9e7e67568449ab7e0c"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1682,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "10-parent-equilibre-sections-1280.png",
+            "sizeBytes": 185649,
+            "sha1": "2c25e4b3f44d1b4821b2aa174ff0e9f988b90a78"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1680,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "10-parent-equilibre-sections-1440.png",
+            "sizeBytes": 198485,
+            "sha1": "21bf0cfbbe72560bce064f15e5ba7061177130d1"
+          }
+        }
+      }
+    },
+    "11-parent-relier-enfant": {
+      "id": "11-parent-relier-enfant",
+      "name": "Modal « Relier mon enfant » (code école)",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Relier mon enfant",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 420,
+              "width": 200
+            }
+          ],
+          "appBottom": 2824,
+          "bandeVide": 0,
+          "smallTouchCount": 4,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.lc-close (\"Fermer\")",
+              "width": 36,
+              "height": 36
+            },
+            {
+              "target": "button.family-chat-btn (\"Ouvrir la messagerie familiale\")",
+              "width": 40,
+              "height": 40
+            }
+          ],
+          "screenshot": {
+            "filename": "11-parent-relier-enfant-390.png",
+            "sizeBytes": 188509,
+            "sha1": "0eee0f6672de4b9f69512b99ac2f9ab95c15a46c"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 795,
+              "width": 200
+            }
+          ],
+          "appBottom": 2011,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "11-parent-relier-enfant-768.png",
+            "sizeBytes": 404201,
+            "sha1": "b1d53cc7ca35888c9cfec02c1aa2e306d49f82d1"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1681,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "11-parent-relier-enfant-1280.png",
+            "sizeBytes": 169901,
+            "sha1": "2c9076b7308e8e2774c11493f3ef77188b206fd7"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1680,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "11-parent-relier-enfant-1440.png",
+            "sizeBytes": 179429,
+            "sha1": "eb36f80d298b785ee8c69239ac4dbffee13611e7"
+          }
+        }
+      }
+    },
+    "12-parent-notifications": {
+      "id": "12-parent-notifications",
+      "name": "Centre de notifications parent",
+      "group": "Parent",
+      "expectedPath": "/dashboard",
+      "expectedText": "Centre de notifications",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 421,
+              "width": 200
+            }
+          ],
+          "appBottom": 2750,
+          "bandeVide": 0,
+          "smallTouchCount": 3,
+          "smallTouchSample": [
+            {
+              "target": "button.menu-btn (\"Fermer le menu\")",
+              "width": 30,
+              "height": 30
+            },
+            {
+              "target": "button.menu-btn-open (\"Ouvrir le menu de navigation\")",
+              "width": 38,
+              "height": 38
+            },
+            {
+              "target": "button.family-chat-btn (\"Ouvrir la messagerie familiale\")",
+              "width": 40,
+              "height": 40
+            }
+          ],
+          "screenshot": {
+            "filename": "12-parent-notifications-390.png",
+            "sizeBytes": 272674,
+            "sha1": "321e17ea9007e7a2de3fd1f784f89d98973f8387"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "div",
+              "cls": "",
+              "right": 795,
+              "width": 200
+            }
+          ],
+          "appBottom": 2011,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "12-parent-notifications-768.png",
+            "sizeBytes": 428912,
+            "sha1": "fc2e0d0f48173ef787c3349266334762fedab7ae"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1666,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "12-parent-notifications-1280.png",
+            "sizeBytes": 195386,
+            "sha1": "59adde50f5e9015203810620daf44dc1329882f9"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/dashboard",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1680,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "12-parent-notifications-1440.png",
+            "sizeBytes": 220000,
+            "sha1": "d54adfe17793310cf02a7569f7cb1c334abdc166"
+          }
+        }
+      }
+    },
+    "13-ecole-tableau-bord": {
+      "id": "13-ecole-tableau-bord",
+      "name": "Tableau de bord de l'école (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole",
+      "expectedText": "Tableau de bord de l'école",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 3263,
+          "bandeVide": 0,
+          "smallTouchCount": 15,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "13-ecole-tableau-bord-390.png",
+            "sizeBytes": 186921,
+            "sha1": "5987e6900433f180f1eb50d4da124c42e1342ecf"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2372,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "13-ecole-tableau-bord-768.png",
+            "sizeBytes": 313434,
+            "sha1": "1c8bfce92699c0be987667ea6dbb84a4f53155b6"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1510,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "13-ecole-tableau-bord-1280.png",
+            "sizeBytes": 182625,
+            "sha1": "9624e9458a0f8ccbbd527a0d89c281cb1d26ed27"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1510,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "13-ecole-tableau-bord-1440.png",
+            "sizeBytes": 215228,
+            "sha1": "55cb41874ab1add90b90572790f9409e84a02141"
+          }
+        }
+      }
+    },
+    "14-ecole-classes": {
+      "id": "14-ecole-classes",
+      "name": "Gestion des classes (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/classes",
+      "expectedText": "Classes",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1562,
+          "bandeVide": 0,
+          "smallTouchCount": 12,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "14-ecole-classes-390.png",
+            "sizeBytes": 209410,
+            "sha1": "1fe0a24ffae3522682c1bfd4e3e8858ca6229ff5"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1550,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "14-ecole-classes-768.png",
+            "sizeBytes": 239664,
+            "sha1": "b48e0ff19c6af0977024e0f9cf2bf987e1f71dbf"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "14-ecole-classes-1280.png",
+            "sizeBytes": 156654,
+            "sha1": "1782e0c263423642cf9555b28a5522be997aed2c"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "14-ecole-classes-1440.png",
+            "sizeBytes": 173956,
+            "sha1": "15de2b1ba212b1b9360e0f7b36f2b1d3326102d3"
+          }
+        }
+      }
+    },
+    "15-ecole-nouvelle-classe": {
+      "id": "15-ecole-nouvelle-classe",
+      "name": "Modal « Nouvelle classe » (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/classes",
+      "expectedText": "Créer la classe",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2571,
+          "bandeVide": 0,
+          "smallTouchCount": 15,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "15-ecole-nouvelle-classe-390.png",
+            "sizeBytes": 137782,
+            "sha1": "013505c3548d01a498e4839b4c7f57c08d7eb484"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1550,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "15-ecole-nouvelle-classe-768.png",
+            "sizeBytes": 275734,
+            "sha1": "d081a50bf4fcc857ab27e0cd67965a5ad4929372"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "15-ecole-nouvelle-classe-1280.png",
+            "sizeBytes": 142669,
+            "sha1": "f94d4418e14ce584a481222ddb0c9fd4078b2ce0"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/classes",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "15-ecole-nouvelle-classe-1440.png",
+            "sizeBytes": 168416,
+            "sha1": "a844fb3591034cf02c164cb620975f1a24cf64c8"
+          }
+        }
+      }
+    },
+    "16-ecole-enseignants": {
+      "id": "16-ecole-enseignants",
+      "name": "Corps enseignant (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/enseignants",
+      "expectedText": "Enseignants",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/enseignants",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 10,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "16-ecole-enseignants-390.png",
+            "sizeBytes": 129733,
+            "sha1": "a9ce6545df1aa0c7410e6be841c446e4b69a5ce8"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/enseignants",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1263,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "16-ecole-enseignants-768.png",
+            "sizeBytes": 225746,
+            "sha1": "9ac3a1a597242f18a246807e930a54d6b518dda2"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/enseignants",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 811,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "16-ecole-enseignants-1280.png",
+            "sizeBytes": 110240,
+            "sha1": "75fd9c6477b6179747a8d5d43cd6fcfdf85025b2"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/enseignants",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "16-ecole-enseignants-1440.png",
+            "sizeBytes": 135005,
+            "sha1": "0f8ae876a2c97d914551b221eca62c0cc1fdacbc"
+          }
+        }
+      }
+    },
+    "17-ecole-eleves": {
+      "id": "17-ecole-eleves",
+      "name": "Effectif des élèves (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/eleves",
+      "expectedText": "Élèves",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/eleves",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 10,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "17-ecole-eleves-390.png",
+            "sizeBytes": 150433,
+            "sha1": "22ad5f29f18cf83ed179320449a33b646d815ea8"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/eleves",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "17-ecole-eleves-768.png",
+            "sizeBytes": 212860,
+            "sha1": "925574e73fa95562478199d787edb1c19b343e34"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/eleves",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1694,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "17-ecole-eleves-1280.png",
+            "sizeBytes": 111210,
+            "sha1": "4d0048f7d6c99715f9dd348ffcdcc1fa2be00267"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/eleves",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1694,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "17-ecole-eleves-1440.png",
+            "sizeBytes": 156047,
+            "sha1": "d2f40c647eca70b6b3f95e49d196e6e25d57214e"
+          }
+        }
+      }
+    },
+    "18-ecole-fiches-connexions": {
+      "id": "18-ecole-fiches-connexions",
+      "name": "Fiches de connexion (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/fiches",
+      "expectedText": "Fiches & Connexions",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/fiches",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 10,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "18-ecole-fiches-connexions-390.png",
+            "sizeBytes": 99319,
+            "sha1": "98ababd17869e691e5bb1a0e6790933393fb0f49"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/fiches",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "18-ecole-fiches-connexions-768.png",
+            "sizeBytes": 97565,
+            "sha1": "a4988faf3572d762a74c98db4e8dcae22b87cf7d"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/fiches",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "18-ecole-fiches-connexions-1280.png",
+            "sizeBytes": 57051,
+            "sha1": "115e715087e654183f9c7e35ea1b6dccf122bccc"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/fiches",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "18-ecole-fiches-connexions-1440.png",
+            "sizeBytes": 82268,
+            "sha1": "84a05fc9205a5b5e83f796a4f7cf6b6e94a83bdf"
+          }
+        }
+      }
+    },
+    "19-ecole-import-eleves": {
+      "id": "19-ecole-import-eleves",
+      "name": "Importation des élèves (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/import",
+      "expectedText": "Importer une liste",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/import",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1276,
+          "bandeVide": 0,
+          "smallTouchCount": 12,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "19-ecole-import-eleves-390.png",
+            "sizeBytes": 130738,
+            "sha1": "241897d90ff5eb29d4f4a0ece8d33353a6deb072"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/import",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "19-ecole-import-eleves-768.png",
+            "sizeBytes": 180829,
+            "sha1": "08f69297db201504f44eba5691a47717955ae05c"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/import",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "19-ecole-import-eleves-1280.png",
+            "sizeBytes": 81792,
+            "sha1": "e0216e83d15737a5ae5178977faef22447b5fc34"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/import",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "19-ecole-import-eleves-1440.png",
+            "sizeBytes": 112163,
+            "sha1": "23ad14d41b61e9673df333ea55a7283c47a519f4"
+          }
+        }
+      }
+    },
+    "20-ecole-parents": {
+      "id": "20-ecole-parents",
+      "name": "Communauté des parents (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/parents",
+      "expectedText": "Parents",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/parents",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "20-ecole-parents-390.png",
+            "sizeBytes": 147902,
+            "sha1": "6ff32c3878b62bc5232b6c36e5c0d90c2b9688e2"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/parents",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1747,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "20-ecole-parents-768.png",
+            "sizeBytes": 253198,
+            "sha1": "40b4d200545a22b990544a98b1a0c9bf00902084"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/parents",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1405,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "20-ecole-parents-1280.png",
+            "sizeBytes": 100409,
+            "sha1": "715827efa779f82c6f5da8a0ea45e7392ed1dc3a"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/parents",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1405,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "20-ecole-parents-1440.png",
+            "sizeBytes": 143526,
+            "sha1": "74fa24f460ab6c0539793bc86984ab520f3f25fb"
+          }
+        }
+      }
+    },
+    "21-ecole-regles": {
+      "id": "21-ecole-regles",
+      "name": "Règles de l'école (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/regles",
+      "expectedText": "Règles de l'école",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/regles",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "table",
+              "cls": ".ec-slots-table",
+              "right": 598,
+              "width": 560
+            },
+            {
+              "tag": "thead",
+              "cls": "",
+              "right": 598,
+              "width": 560
+            },
+            {
+              "tag": "tr",
+              "cls": "",
+              "right": 598,
+              "width": 560
+            },
+            {
+              "tag": "th",
+              "cls": "",
+              "right": 407,
+              "width": 55
+            },
+            {
+              "tag": "th",
+              "cls": "",
+              "right": 465,
+              "width": 58
+            }
+          ],
+          "appBottom": 1545,
+          "bandeVide": 0,
+          "smallTouchCount": 10,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "21-ecole-regles-390.png",
+            "sizeBytes": 132530,
+            "sha1": "180aecec7fbe8773976433bba93f0ac1670addbf"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/regles",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1061,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "21-ecole-regles-768.png",
+            "sizeBytes": 206410,
+            "sha1": "ff83416186decc05869c8428bd129addb6bbdb54"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/regles",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 824,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "21-ecole-regles-1280.png",
+            "sizeBytes": 88182,
+            "sha1": "c7a1eca4965883cd510e074f2b937f3ff28d35b2"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/regles",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "21-ecole-regles-1440.png",
+            "sizeBytes": 117237,
+            "sha1": "b70a3bfc1dcb77d08b5f9e8bf8cfebbb1181a070"
+          }
+        }
+      }
+    },
+    "22-ecole-parametres": {
+      "id": "22-ecole-parametres",
+      "name": "Paramètres de l'école (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/parametres",
+      "expectedText": "Paramètres",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/parametres",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "22-ecole-parametres-390.png",
+            "sizeBytes": 171186,
+            "sha1": "895e215649a325df7103a16022ea528c8ea25c61"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/parametres",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1600,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "22-ecole-parametres-768.png",
+            "sizeBytes": 194230,
+            "sha1": "1853f9418f14c695935d0298dc7513981466cc82"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/parametres",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1119,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "22-ecole-parametres-1280.png",
+            "sizeBytes": 86247,
+            "sha1": "fe1e57b0ed98be03bca65ebf9dd69cb9a4510e95"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/parametres",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1119,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "22-ecole-parametres-1440.png",
+            "sizeBytes": 143152,
+            "sha1": "fa7f684ed4f1d958307ec7c887f3899a04d51526"
+          }
+        }
+      }
+    },
+    "23-ecole-classement": {
+      "id": "23-ecole-classement",
+      "name": "Palmarès des classes (Direction)",
+      "group": "Direction",
+      "expectedPath": "/ecole/classement",
+      "expectedText": "Classement",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/ecole/classement",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 872,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Tableau de bord\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Enseignants\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Élèves\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Fiches & Connexions\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Parents\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "23-ecole-classement-390.png",
+            "sizeBytes": 204370,
+            "sha1": "2e1c028fe582dad259f0078384449749d11998d5"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/ecole/classement",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1753,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "23-ecole-classement-768.png",
+            "sizeBytes": 241878,
+            "sha1": "5dd24800e48ea1f35c9518a34aa86a34b2ff6408"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/ecole/classement",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1450,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "23-ecole-classement-1280.png",
+            "sizeBytes": 103188,
+            "sha1": "0ab1fc9c15397fab31bde528cd92b86760b84e0c"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/ecole/classement",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1450,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "23-ecole-classement-1440.png",
+            "sizeBytes": 142152,
+            "sha1": "fa4b9b6442278fe119963dd7c96ffee68592e2d0"
+          }
+        }
+      }
+    },
+    "24-enseignant-vue-ensemble": {
+      "id": "24-enseignant-vue-ensemble",
+      "name": "Vue d'ensemble enseignant (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant",
+      "expectedText": "Vue d'ensemble",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 9,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "24-enseignant-vue-ensemble-390.png",
+            "sizeBytes": 114603,
+            "sha1": "192cdc560e3058de4f85fcd95261f4556cfc9ddb"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "24-enseignant-vue-ensemble-768.png",
+            "sizeBytes": 109139,
+            "sha1": "72008173d39a849be3348788b494b5333d4f4517"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "24-enseignant-vue-ensemble-1280.png",
+            "sizeBytes": 72195,
+            "sha1": "542ec025003e9750497e9d2cad93b47b388c7cc1"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "24-enseignant-vue-ensemble-1440.png",
+            "sizeBytes": 82129,
+            "sha1": "9f5412e0c45438736a85700c29b39f093fb7ceb7"
+          }
+        }
+      }
+    },
+    "25-enseignant-mes-classes": {
+      "id": "25-enseignant-mes-classes",
+      "name": "Mes classes (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/classes",
+      "expectedText": "Mes classes",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/classes",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "25-enseignant-mes-classes-390.png",
+            "sizeBytes": 169550,
+            "sha1": "e20c6fc1387fe484073ed770736b292cff308816"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/classes",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "25-enseignant-mes-classes-768.png",
+            "sizeBytes": 72453,
+            "sha1": "188e092759aea8ccaf4af5c9a602f7e1a28dafd3"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/classes",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "25-enseignant-mes-classes-1280.png",
+            "sizeBytes": 38473,
+            "sha1": "9e3c4ba29af423c56a0eab835cb06efe986483f2"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/classes",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "25-enseignant-mes-classes-1440.png",
+            "sizeBytes": 71194,
+            "sha1": "eab011170718faccaf01d2ad6f6640790f898e0e"
+          }
+        }
+      }
+    },
+    "26-enseignant-classe-ce1a": {
+      "id": "26-enseignant-classe-ce1a",
+      "name": "Fiche classe CE1 A (Élèves & stats) (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/classes/3",
+      "expectedText": "CE1 A",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/classes/3",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "table",
+              "cls": ".ec-table",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "thead",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "tr",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "th",
+              "cls": ".ec-row-go",
+              "right": 783,
+              "width": 34
+            },
+            {
+              "tag": "tbody",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            }
+          ],
+          "appBottom": 6589,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "26-enseignant-classe-ce1a-390.png",
+            "sizeBytes": 118865,
+            "sha1": "6a43afed7c15904a73dc0db019f5db9c3804fc8b"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/classes/3",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "table",
+              "cls": ".ec-table",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "thead",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "tr",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            },
+            {
+              "tag": "th",
+              "cls": ".ec-row-go",
+              "right": 783,
+              "width": 34
+            },
+            {
+              "tag": "tbody",
+              "cls": "",
+              "right": 783,
+              "width": 766
+            }
+          ],
+          "appBottom": 8164,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "26-enseignant-classe-ce1a-768.png",
+            "sizeBytes": 224920,
+            "sha1": "f92d82bf94edf09d41b935bfc9d4704eef150a9a"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/classes/3",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 5074,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "26-enseignant-classe-ce1a-1280.png",
+            "sizeBytes": 120546,
+            "sha1": "4cc494af2b17f3a2fd09a78aa62753c44a5eb224"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/classes/3",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 5074,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "26-enseignant-classe-ce1a-1440.png",
+            "sizeBytes": 131466,
+            "sha1": "a49150c2511e9c4e4d9b31257682fd81cae55cea"
+          }
+        }
+      }
+    },
+    "27-enseignant-programme": {
+      "id": "27-enseignant-programme",
+      "name": "Programme & Curriculum (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/programme",
+      "expectedText": "Programme",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/programme",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "27-enseignant-programme-390.png",
+            "sizeBytes": 182841,
+            "sha1": "6b9909abd7b613cb58a998dd822efef61a409933"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/programme",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "27-enseignant-programme-768.png",
+            "sizeBytes": 306269,
+            "sha1": "76e7b996de57fe0000203740c9efc85ca0783727"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/programme",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "27-enseignant-programme-1280.png",
+            "sizeBytes": 159316,
+            "sha1": "2696488f3546f01025ecddf3128e018e46d3c7a4"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/programme",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1661,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "27-enseignant-programme-1440.png",
+            "sizeBytes": 126451,
+            "sha1": "8588afb819f1da4010064e7b506b97005f0df63e"
+          }
+        }
+      }
+    },
+    "28-enseignant-fiche-lecon": {
+      "id": "28-enseignant-fiche-lecon",
+      "name": "Fiche de leçon détaillée (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/programme/p1-1",
+      "expectedText": "Retour au programme",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/programme/p1-1",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [
+            {
+              "tag": "a",
+              "cls": ".ec-btn",
+              "right": 409,
+              "width": 377
+            },
+            {
+              "tag": "svg",
+              "cls": "",
+              "right": 392,
+              "width": 16
+            }
+          ],
+          "appBottom": 4044,
+          "bandeVide": 0,
+          "smallTouchCount": 15,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "28-enseignant-fiche-lecon-390.png",
+            "sizeBytes": 124743,
+            "sha1": "38c09b7645f788d1d3e21ac12fbeca4bd5c76d3b"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/programme/p1-1",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 3225,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "28-enseignant-fiche-lecon-768.png",
+            "sizeBytes": 179002,
+            "sha1": "060e7b5acbfeb3796bd70768fcb6c1e2c70a8d97"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/programme/p1-1",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2553,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "28-enseignant-fiche-lecon-1280.png",
+            "sizeBytes": 113917,
+            "sha1": "aa8302d4c02a1236d09b6a0c5ccc51f5dfe9f535"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/programme/p1-1",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2553,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "28-enseignant-fiche-lecon-1440.png",
+            "sizeBytes": 123630,
+            "sha1": "7def69ee15ade4434f3cf78f47dc6b72f9e8cb84"
+          }
+        }
+      }
+    },
+    "29-enseignant-missions-devoirs": {
+      "id": "29-enseignant-missions-devoirs",
+      "name": "Missions & Devoirs (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/missions",
+      "expectedText": "Bibliothèque de devoirs",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 3456,
+          "bandeVide": 0,
+          "smallTouchCount": 19,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "29-enseignant-missions-devoirs-390.png",
+            "sizeBytes": 137100,
+            "sha1": "bdf84595b6ec208f078fb1e808f14f6237412f1a"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2641,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "29-enseignant-missions-devoirs-768.png",
+            "sizeBytes": 209895,
+            "sha1": "fca1d124e8355886e7e1cac3f6c4ecabbc3db380"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1935,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "29-enseignant-missions-devoirs-1280.png",
+            "sizeBytes": 115358,
+            "sha1": "5fecd5f1185931fb27e63051061322aa6c9ac57e"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1935,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "29-enseignant-missions-devoirs-1440.png",
+            "sizeBytes": 147693,
+            "sha1": "355f9b02af092d38e59238339090ba38b8060a77"
+          }
+        }
+      }
+    },
+    "30-enseignant-assigner-mission": {
+      "id": "30-enseignant-assigner-mission",
+      "name": "Modal « Assigner un devoir » (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/missions",
+      "expectedText": "Assigner un devoir",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 3456,
+          "bandeVide": 0,
+          "smallTouchCount": 19,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "30-enseignant-assigner-mission-390.png",
+            "sizeBytes": 157302,
+            "sha1": "df9d53724ac86722d882f1837106d82e67ecf59e"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 2641,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "30-enseignant-assigner-mission-768.png",
+            "sizeBytes": 233513,
+            "sha1": "e4830893ded9d63bcb0971057c6e5ee4fa6f6415"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 1265,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1935,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "30-enseignant-assigner-mission-1280.png",
+            "sizeBytes": 125406,
+            "sha1": "7b5a83dae6448fe61eaa56ebb2dc94c44e2f3f0d"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/missions",
+          "textFound": true,
+          "scrollWidth": 1425,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1935,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "30-enseignant-assigner-mission-1440.png",
+            "sizeBytes": 162969,
+            "sha1": "9715ad75fcb20ebc11c79a34563d51222c60f755"
+          }
+        }
+      }
+    },
+    "31-enseignant-classement": {
+      "id": "31-enseignant-classement",
+      "name": "Classement des classes (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/classement",
+      "expectedText": "Classement",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/classement",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 846,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "31-enseignant-classement-390.png",
+            "sizeBytes": 191413,
+            "sha1": "4262adbf378585826bc66927c847ec5e348bc742"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/classement",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "31-enseignant-classement-768.png",
+            "sizeBytes": 150113,
+            "sha1": "2984bb219d269e7c1ff9efec8d1e066b6dd144b0"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/classement",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "31-enseignant-classement-1280.png",
+            "sizeBytes": 70516,
+            "sha1": "a137b5a72a46e651cf87c4fcc9b5d0b743af1b5f"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/classement",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "31-enseignant-classement-1440.png",
+            "sizeBytes": 104362,
+            "sha1": "44c3a3b526d52c3fdc1dc767f970633c94f363f3"
+          }
+        }
+      }
+    },
+    "32-enseignant-analytiques": {
+      "id": "32-enseignant-analytiques",
+      "name": "Analytiques de la classe (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/analytiques",
+      "expectedText": "Analytiques & Bilan",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/analytiques",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 9,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "32-enseignant-analytiques-390.png",
+            "sizeBytes": 172464,
+            "sha1": "8cbf22b7423e2c49ddd6469a1d64fb1cc505f24a"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/analytiques",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "32-enseignant-analytiques-768.png",
+            "sizeBytes": 270161,
+            "sha1": "2c7817f0287c2a82a11c78ba7a19a137441b8f35"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/analytiques",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "32-enseignant-analytiques-1280.png",
+            "sizeBytes": 83911,
+            "sha1": "8da6f34babd6deb28b939a87a41f3f32aad2cc1b"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/analytiques",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "32-enseignant-analytiques-1440.png",
+            "sizeBytes": 117641,
+            "sha1": "8b4ce51c1861f7c52cf1ae7f9f669615ae29ed97"
+          }
+        }
+      }
+    },
+    "33-enseignant-parametres": {
+      "id": "33-enseignant-parametres",
+      "name": "Paramètres enseignant (Enseignant)",
+      "group": "Enseignant",
+      "expectedPath": "/enseignant/parametres",
+      "expectedText": "Paramètres",
+      "results": {
+        "390": {
+          "resolution": "390x844",
+          "success": true,
+          "pathname": "/enseignant/parametres",
+          "textFound": true,
+          "scrollWidth": 390,
+          "innerWidth": 390,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 844,
+          "bandeVide": 0,
+          "smallTouchCount": 8,
+          "smallTouchSample": [
+            {
+              "target": "a (\"Vue d'ensemble\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Mes classes\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Programme\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Missions & devoirs\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Classement\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Analytiques\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "a (\"Paramètres\")",
+              "width": 240,
+              "height": 43
+            },
+            {
+              "target": "button.ec-icon-btn.ec-menu-button (\"Ouvrir le menu\")",
+              "width": 42,
+              "height": 42
+            }
+          ],
+          "screenshot": {
+            "filename": "33-enseignant-parametres-390.png",
+            "sizeBytes": 141566,
+            "sha1": "edbe586b1ed1df20d125b5c3f67253c61e905188"
+          }
+        },
+        "768": {
+          "resolution": "768x1024",
+          "success": true,
+          "pathname": "/enseignant/parametres",
+          "textFound": true,
+          "scrollWidth": 768,
+          "innerWidth": 768,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 1024,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "33-enseignant-parametres-768.png",
+            "sizeBytes": 157317,
+            "sha1": "61fcec6e558a4fbd40e65296db1b72aea15c1dcf"
+          }
+        },
+        "1280": {
+          "resolution": "1280x800",
+          "success": true,
+          "pathname": "/enseignant/parametres",
+          "textFound": true,
+          "scrollWidth": 1280,
+          "innerWidth": 1280,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 800,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "33-enseignant-parametres-1280.png",
+            "sizeBytes": 70358,
+            "sha1": "675a067e8ac072e7872f878c273d990c87b57d40"
+          }
+        },
+        "1440": {
+          "resolution": "1440x900",
+          "success": true,
+          "pathname": "/enseignant/parametres",
+          "textFound": true,
+          "scrollWidth": 1440,
+          "innerWidth": 1440,
+          "hasOverflow": false,
+          "overflowDelta": 0,
+          "overflowSample": [],
+          "appBottom": 900,
+          "bandeVide": 0,
+          "smallTouchCount": 0,
+          "smallTouchSample": [],
+          "screenshot": {
+            "filename": "33-enseignant-parametres-1440.png",
+            "sizeBytes": 103051,
+            "sha1": "749243d2c1a8e91cbf2f167b563d6345b44dae12"
+          }
+        }
+      }
+    }
+  }
+}

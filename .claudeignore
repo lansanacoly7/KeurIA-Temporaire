@@ -1,0 +1,103 @@
+# Fichiers que Claude ne doit ni lire ni modifier (syntaxe .gitignore).
+# Objectifs : ne jamais exposer de secret, et ne pas noyer le contexte dans des fichiers générés ou binaires.
+
+# ── Secrets et identifiants (JAMAIS lus, JAMAIS commités) ─────────────────────
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+credentials*.json
+secrets*.json
+*token*.txt
+
+# ── Dépendances et environnements ─────────────────────────────────────────────
+venv/
+.venv/
+env/
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+
+# ── Sorties de build, caches, fichiers générés ────────────────────────────────
+.next/
+**/.next/
+dist/
+build/
+out/
+coverage/
+.vinext/
+.wrangler/
+.vite/
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.tsbuildinfo
+next-env.d.ts
+package-lock.json
+frontend/package-lock.json
+
+# ── Données locales et fichiers téléversés ────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+backend/media/
+backend/mediafiles/
+backend/staticfiles/
+*.log
+logs/
+
+# ── Binaires lourds (images, vidéos, audio, archives) : inutiles à lire ───────
+frontend/public/images/
+frontend/public/videos/
+frontend/public/video/
+frontend/public/palou/
+public/
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.zip
+*.7z
+*.rar
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.ico
+*.pdf
+*.xlsx
+*.docx
+
+# ── Restes de travail et sorties d'outils ─────────────────────────────────────
+scratch/
+*.rej
+*.orig
+*.patch
+*.diff
+diff*.txt
+old_*
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# ── Rapports HTML volumineux (les .md de Rapports/ restent lisibles) ──────────
+Rapports/*.html
+
+# ── IDE et outils locaux ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+.git/

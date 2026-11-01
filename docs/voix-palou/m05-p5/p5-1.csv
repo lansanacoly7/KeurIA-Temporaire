@@ -1,0 +1,31 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e01.mp3;1;1;texte (story);Au jardin de l’école, une feuille du manguier a des taches.;Au jardin de l’école, une feuille du manguier a des taches.;59
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e02.mp3;1;2;texte (story);Fatou la prend en photo. Palou regarde l’écran de tout près.;Fatou la prend en photo. Palou regarde l’écran de tout près.;60
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e03.mp3;1;3;texte (discover);Une photo est faite de pixels : de tout petits carrés de couleur.;Une photo est faite de pixels : de tout petits carrés de couleur.;65
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e07-bravo.mp3;1;7;félicitations de fin;Bravo ! Tu regardes la feuille comme une IA.;Bravo ! Tu regardes la feuille comme une I A.;44
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e07-retiens.mp3;1;7;« Je retiens »;Une photo est faite de pixels. Une IA regarde ces petits carrés de couleur.;Une photo est faite de pixels. Une I A regarde ces petits carrés de couleur.;75
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m1-ok.mp3;2;4;bravo (bonne réponse);Oui ! Une machine voit des milliers de petits carrés de couleur.;Oui ! Une machine voit des milliers de petits carrés de couleur.;64
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m1-q.mp3;2;4;consigne du jeu;Que voit une machine dans une photo ?;Que voit une machine dans une photo ?;37
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-ok.mp3;2;4;bravo (bonne réponse);Oui ! Avec assez de pixels, Palou reconnaît la feuille malade.;Oui ! Avec assez de pixels, Palou reconnaît la feuille malade.;62
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-q.mp3;2;4;consigne du jeu;Palou regarde la feuille comme une machine. Rends la photo plus nette !;Palou regarde la feuille comme une machine. Rends la photo plus nette !;71
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04.mp3;2;4;texte (play);Aide Palou à regarder la photo !;Aide Palou à regarder la photo !;32
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e05.mp3;2;5;texte (ai);Une IA regarde une image comme un grand tableau de pixels.;Une I A regarde une image comme un grand tableau de pixels.;58
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m1-ok.mp3;2;6;bravo (bonne réponse);Oui ! D’une mosaïque de pixels.;Oui ! D’une mosaïque de pixels.;31
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m1-q.mp3;2;6;consigne du jeu;De quoi une photo est-elle faite pour une machine ?;De quoi une photo est-elle faite pour une machine ?;51
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m2-ok.mp3;2;6;bravo (bonne réponse);Exact ! Un pixel est un petit carré de couleur.;Exact ! Un pixel est un petit carré de couleur.;47
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m2-q.mp3;2;6;consigne du jeu;Qu’est-ce qu’un pixel ?;Qu’est-ce qu’un pixel ?;23
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m3-ok.mp3;2;6;bravo (bonne réponse);Bravo ! On zoome.;Bravo ! On zoome.;17
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m3-q.mp3;2;6;consigne du jeu;Que fait-on pour mieux voir les détails ?;Que fait-on pour mieux voir les détails ?;41
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06.mp3;2;6;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m1-o1.mp3;3;4;explication (mauvaise réponse);Elle ne voit pas l’arbre comme nous : elle voit seulement des pixels.;Elle ne voit pas l’arbre comme nous : elle voit seulement des pixels.;69
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m1-o3.mp3;3;4;explication (mauvaise réponse);Il n’y a pas de mots cachés : la machine ne voit que des pixels.;Il n’y a pas de mots cachés : la machine ne voit que des pixels.;64
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-s0.mp3;3;4;ce que Palou voit (cran 1);Je vois seulement de gros carrés… Je ne sais pas ce que c’est.;Je vois seulement de gros carrés… Je ne sais pas ce que c’est.;62
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-s1.mp3;3;4;ce que Palou voit (cran 2);Hmm… des carrés verts et bruns. Peut-être une feuille ?;Hmm… des carrés verts et bruns. Peut-être une feuille ?;55
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-s2.mp3;3;4;ce que Palou voit (cran 3);Je vois une feuille avec des taches brunes !;Je vois une feuille avec des taches brunes !;44
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e04-m2-s3.mp3;3;4;ce que Palou voit (cran 4);Une feuille malade du manguier. J’en suis sûr !;Une feuille malade du manguier. J’en suis sûr !;47
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m1-o2.mp3;3;6;explication (mauvaise réponse);Une photo n’est pas faite de mots : elle est faite de petits carrés de couleur.;Une photo n’est pas faite de mots : elle est faite de petits carrés de couleur.;79
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m1-o3.mp3;3;6;explication (mauvaise réponse);Une photo n’est pas faite de feuilles : elle est faite de pixels.;Une photo n’est pas faite de feuilles : elle est faite de pixels.;65
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m2-o2.mp3;3;6;explication (mauvaise réponse);Un pixel n’est pas un insecte : c’est un petit carré de couleur.;Un pixel n’est pas un insecte : c’est un petit carré de couleur.;64
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m2-o3.mp3;3;6;explication (mauvaise réponse);Un pixel n’est pas un fruit : c’est un petit carré de couleur.;Un pixel n’est pas un fruit : c’est un petit carré de couleur.;62
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m3-o2.mp3;3;6;explication (mauvaise réponse);Un écran éteint ne montre plus rien.;Un écran éteint ne montre plus rien.;36
+frontend/public/audio/palou/lecons/m05/p5-1/p5-1_e06-m3-o3.mp3;3;6;explication (mauvaise réponse);Fermer les yeux empêche de voir les détails.;Fermer les yeux empêche de voir les détails.;44

@@ -1,0 +1,425 @@
+/* Page de connexion : choix du profil, champs mot de passe, messages. */
+
+/* globals.css renvoie à --font-geist, jamais défini : la page tombait sur Times New Roman. */
+.login-shell {
+  font-family: "Plus Jakarta Sans", Arial, sans-serif;
+}
+
+/* Choix du profil : une liste de lignes (icône, libellé, précision, flèche). */
+.auth-roles {
+  display: grid;
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.auth-role {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e1ebe7;
+  border-radius: 16px;
+  background: #fff;
+  color: #153b3b;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-role:hover {
+  border-color: #0f755f;
+  background: #f4faf7;
+  box-shadow: 0 10px 24px -14px rgba(15, 117, 95, 0.35);
+}
+
+.auth-role:focus-visible {
+  border-color: #0f755f;
+  outline: 3px solid #d8f05b;
+  outline-offset: 2px;
+}
+
+.auth-role-icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #eaf7f2;
+  color: #0f755f;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.auth-role:hover .auth-role-icon {
+  background: #0f755f;
+  color: #fff;
+}
+
+.auth-role-text {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+
+.auth-role-label {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.auth-role-desc {
+  color: #5b706c;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.auth-role-arrow {
+  flex-shrink: 0;
+  color: #9fb3ae;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.auth-role:hover .auth-role-arrow {
+  color: #0f755f;
+  transform: translateX(3px);
+}
+
+.auth-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 6px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: #0f755f;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.auth-back:hover {
+  background: #eaf7f2;
+}
+
+.auth-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.auth-password {
+  position: relative;
+}
+
+.local-auth-form .auth-password input {
+  padding-right: 50px;
+}
+
+.auth-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: #647a78;
+  cursor: pointer;
+  transform: translateY(-50%);
+  touch-action: manipulation;
+}
+
+.auth-password-toggle:hover {
+  background: #eaf7f2;
+  color: #0f755f;
+}
+
+.local-auth-form .auth-code {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-align: center;
+}
+
+.auth-error,
+.auth-success {
+  margin: 0 0 1rem;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.auth-error {
+  border: 1px solid #f3c4bf;
+  background: #fdecea;
+  color: #b42318;
+}
+
+.auth-success {
+  border: 1px solid #b9dfd3;
+  background: #eaf7f2;
+  color: #0f755f;
+}
+
+@media (max-width: 580px) {
+  .auth-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .auth-role {
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .auth-role-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .auth-role-label {
+    font-size: 1rem;
+  }
+
+  .auth-role-desc {
+    font-size: 0.84rem;
+  }
+
+  .login-card .local-auth-form {
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .login-card .auth-tabs {
+    margin: 18px 0 0;
+  }
+
+  .login-card .auth-error,
+  .login-card .auth-success {
+    margin: 16px 0 0;
+  }
+
+  .login-card .login-help {
+    margin-top: 24px;
+    padding-top: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .auth-role {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .auth-role-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .auth-role-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .auth-role-desc {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-role,
+  .auth-role-icon,
+  .auth-role-arrow {
+    transition: none;
+  }
+}
+
+/* Titres sur deux lignes (« Connexion direction ») : interligne resserré. */
+.login-card h2 {
+  line-height: 1.1;
+}
+
+.login-card .login-eyebrow {
+  margin: 0 0 8px;
+  color: #0f755f;
+  font-weight: 800;
+}
+
+.login-card .auth-back {
+  margin: 0 0 16px -8px;
+  font-weight: 600;
+}
+
+.login-card h2 {
+  font-size: clamp(1.6rem, 2.6vw, 1.9rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #153b3b;
+}
+
+.auth-intro {
+  margin: 8px 0 0;
+  color: #647a78;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.login-card .auth-tabs {
+  margin: 24px 0 0;
+}
+
+.login-card .auth-error,
+.login-card .auth-success {
+  margin: 24px 0 0;
+}
+
+.login-card .local-auth-form {
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.login-card .local-auth-form label {
+  gap: 8px;
+  color: #153b3b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.login-card .local-auth-form input {
+  min-height: 48px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px solid var(--field-border, #7d958f);
+  border-radius: 12px;
+}
+
+.login-card .local-auth-form input:focus {
+  outline: 3px solid #d8f05b;
+  border-color: #0f755f;
+}
+
+.login-card .local-auth-form input::placeholder {
+  color: #9fb3ae;
+  font-weight: 400;
+}
+
+.login-card .local-auth-form small {
+  margin-top: -2px;
+  color: #647a78;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.login-card .local-auth-form .auth-code {
+  font-weight: 700;
+}
+
+/* Champ suivi d'un lien (« Mot de passe oublié ? ») : 8 px d'écart. */
+.auth-field {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-link {
+  justify-self: center;
+  padding: 2px 4px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: #0f755f;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.auth-link--end {
+  justify-self: end;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: #0b5645;
+}
+
+.auth-link:focus-visible {
+  outline: 3px solid #d8f05b;
+  outline-offset: 2px;
+}
+
+.login-card .local-auth-form .login-primary,
+.auth-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  margin-top: 8px;
+  padding: 14px 20px;
+  border-radius: 16px;
+  background: #0f755f;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 750;
+  box-shadow: 0 6px 0 #0b5645, 0 12px 20px rgba(15, 117, 95, 0.2);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.login-card .local-auth-form .login-primary:hover:not(:disabled),
+.auth-submit:hover:not(:disabled) {
+  background: #11846b;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #0b5645, 0 16px 24px rgba(15, 117, 95, 0.28);
+}
+
+.login-card .local-auth-form .login-primary:active:not(:disabled),
+.auth-submit:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #0b5645, 0 6px 10px rgba(15, 117, 95, 0.18);
+}
+
+.auth-note {
+  margin: 0;
+  color: #647a78;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.login-card .login-help {
+  margin-top: 32px;
+  padding-top: 16px;
+  font-size: 0.82rem;
+}
+
+.login-card .auth-roles {
+  margin-top: 24px;
+}
+
+.login-card .auth-role-label {
+  font-weight: 700;
+  color: #153b3b;
+}
+
+.login-card .auth-tabs button {
+  font-weight: 700;
+}

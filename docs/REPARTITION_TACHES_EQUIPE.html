@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kEur IA : répartition des tâches</title>
+<style>
+:root{--vert:#0f3d36;--teal:#0f766e;--citron:#d8f05b;--creme:#f6f4ec;--encre:#153b3b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--creme);color:var(--encre);font:16.5px/1.6 system-ui,"Segoe UI",sans-serif}
+header{background:var(--vert);color:#fff;padding:40px 24px}
+header h1{margin:0 0 6px;font-size:34px}header p{margin:0;opacity:.9}
+.badge{display:inline-block;background:var(--citron);color:var(--vert);font-weight:800;padding:3px 12px;border-radius:999px;margin-bottom:12px}
+main{max-width:980px;margin:0 auto;padding:16px 16px 60px}
+h2{color:var(--teal);margin:34px 0 10px;font-size:26px}
+.carte{background:#fff;border-radius:14px;padding:18px 22px;margin:12px 0;box-shadow:0 2px 10px rgba(0,0,0,.05);border-top:6px solid var(--teal)}
+.carte h3{margin:0 0 4px;font-size:22px}
+.domaine{color:var(--teal);font-weight:700;margin:0 0 10px}
+.carte h4{margin:14px 0 4px}
+ul{margin:4px 0;padding-left:22px}li{margin:3px 0}
+.note{background:#fff8d6;border-left:6px solid #e0b400;padding:12px 16px;border-radius:10px}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;font-size:15px}
+th,td{padding:9px 12px;border-bottom:1px solid #e3ebe7;text-align:left;vertical-align:top}th{background:#eef5f1}
+@media print{body{background:#fff}header{print-color-adjust:exact;-webkit-print-color-adjust:exact}.carte{box-shadow:none;border:1px solid #ddd;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="badge">Équipe kEur IA</div>
+  <h1>Qui fait quoi</h1>
+  <p>La répartition des tâches pour atteindre nos objectifs : parcours 10-12 ans, offre école enrichie, studio simplifié.</p>
+</header>
+<main>
+
+<h2>1. Vue d'ensemble</h2>
+<table>
+<tr><th>Membre</th><th>Domaine</th></tr>
+<tr><td><strong>Lansana</strong></td><td>Tout le projet : contenu pédagogique, voix, relecture, coordination, mise en ligne.</td></tr>
+<tr><td><strong>Pathe Fall</strong></td><td>Backend du parcours 10-12 ans et de l'offre école.</td></tr>
+<tr><td><strong>Louise-Sophie Diouf</strong></td><td>Génération d'images et intégration frontend.</td></tr>
+<tr><td><strong>Maïmouna</strong></td><td>Studio de création (à venir).</td></tr>
+</table>
+
+<h2>Les trois chantiers</h2>
+<p>Le travail se répartit en trois chantiers séparés. Le parcours 10-12 ans et le compte élève sont deux choses différentes.</p>
+<table>
+<tr><th>Chantier</th><th>Ce que c'est</th><th>Images, pictogrammes et voix</th><th>Qui</th></tr>
+<tr><td><strong>1. Studio de création</strong></td><td>L'outil qui permet de créer et de modifier les leçons sans coder.</td><td>Aucune génération propre : il utilise les médias des deux autres chantiers.</td><td>Maïmouna, Lansana</td></tr>
+<tr><td><strong>2. Parcours 10-12 ans (compte enfant)</strong></td><td>Le parcours de l'enfant inscrit par ses parents, après le 7-9.</td><td>Sa propre série : Palou plus grand, décors de Dakar, personnages du 10-12, pictogrammes, voix de Palou plus mûre.</td><td>Pathe (serveur), Louise-Sophie (images, écrans), Lansana (contenu, voix)</td></tr>
+<tr><td><strong>3. Compte élève (école)</strong></td><td>Le compte de l'élève inscrit par son école. Proche du compte enfant, mais plus riche pédagogiquement : c'est ce qui donne aux écoles une raison d'adopter kEur IA.</td><td>Sa propre série, distincte du compte enfant : décors de l'école, personnages de la classe, pictogrammes, voix de Palou.</td><td>Lansana. Ce qui reste pourra être confié à Maïmouna.</td></tr>
+</table>
+<h2>Les six parcours</h2>
+<p>Pour chaque tranche d'âge, il y a un parcours <strong>enfant</strong> (inscrit par ses parents) et un parcours <strong>élève</strong> (inscrit par son école). Le compte élève s'adapte à l'âge de l'élève.</p>
+<table>
+<tr><th>Tranche d'âge</th><th>Parcours enfant</th><th>Parcours élève</th></tr>
+<tr><td><strong>7-9 ans</strong></td><td>Existe</td><td>Commencé</td></tr>
+<tr><td><strong>10-12 ans</strong></td><td>Commencé</td><td>À venir</td></tr>
+<tr><td><strong>13-15 ans</strong></td><td>À venir</td><td>À venir</td></tr>
+</table>
+<div class="note">Chaque parcours a <strong>son propre contenu, ses images, ses pictogrammes et ses voix</strong>, rangés dans ses propres dossiers. On ne réutilise pas les médias d'un parcours dans un autre sans décision de Lansana.</div>
+
+<h2>Démarrage du parcours 10-12 ans</h2>
+<div class="note">Le parcours 10-12 ans commence officiellement par le serveur. <strong>Pathe Fall démarre maintenant</strong> : ses tâches de la phase 1 sont dans <code>taches/Pathe.md</code> (branche <code>test</code>). Chaque membre aura son propre fichier dans ce dossier.</div>
+
+<h2>2. Les tâches de chacun</h2>
+
+<div class="carte">
+<h3>Lansana</h3>
+<p class="domaine">Présent sur tous les chantiers</p>
+<h4>Contenu du parcours 10-12 ans</h4>
+<ul>
+<li>Écrire l'univers de Dakar : lieux de chaque module, personnages et leur caractère.</li>
+<li>Écrire les 48 leçons : histoires, mots nouveaux, jeux, défis de Palou, « Je retiens ».</li>
+<li>Vérifier que tout ce qui est dit sur l'IA est exact et adapté à l'âge.</li>
+</ul>
+<h4>Voix</h4>
+<ul>
+<li>Générer la voix de Palou avec ElevenLabs, en respectant les règles de prononciation. Seul Palou a une voix : il lit aussi les passages des autres personnages.</li>
+</ul>
+<h4>Coordination</h4>
+<ul>
+<li>Fournir à chacun les textes, les consignes et les descriptions d'images dont il a besoin.</li>
+<li>Relire et valider le travail de chacun avant qu'il soit intégré.</li>
+<li>Organiser les tests avec des enfants et décider des corrections.</li>
+<li>Préparer et suivre la mise en ligne.</li>
+</ul>
+</div>
+
+<div class="carte">
+<h3>Pathe Fall</h3>
+<p class="domaine">Backend (Django)</p>
+<h4>Parcours 10-12 ans</h4>
+<ul>
+<li>Préparer la structure du parcours 10-12 dans la base : 12 modules, 48 leçons, personnages.</li>
+<li>Écrire la commande qui charge le contenu des leçons à partir des textes fournis, sur le modèle du 7-9.</li>
+<li>Ajouter les nouveaux types de jeux dont le 10-12 aura besoin, côté serveur.</li>
+<li>Écrire les tests automatiques de tout ce qui est ajouté.</li>
+</ul>
+<h4>Offre école</h4>
+<ul>
+<li>Réserver certaines leçons aux élèves d'école (leçons approfondies) : un enfant inscrit par ses parents ne doit pas y avoir accès.</li>
+<li>Créer le serveur des projets de classe, des certificats de fin de parcours et des compétitions entre classes.</li>
+</ul>
+</div>
+
+<div class="carte">
+<h3>Louise-Sophie Diouf</h3>
+<p class="domaine">Génération d'images et frontend (Next.js)</p>
+<div class="note">Pas de travail de design pour l'instant : on garde le style et les composants qui existent déjà.</div>
+<h4>Images</h4>
+<ul>
+<li>Générer les illustrations des histoires du 10-12, à partir des descriptions fournies.</li>
+<li>Générer les personnages, les décors de Dakar et les pictogrammes.</li>
+<li>Garder le même style que le parcours 7-9 et ranger les images selon l'organisation du projet.</li>
+</ul>
+<h4>Frontend</h4>
+<ul>
+<li>Brancher les images et les voix dans les écrans des leçons 10-12.</li>
+<li>Afficher le parcours 10-12 dans l'espace de l'enfant à partir des composants du 7-9.</li>
+<li>Vérifier l'affichage sur téléphone, tablette et ordinateur.</li>
+</ul>
+</div>
+
+<div class="carte">
+<h3>Maïmouna</h3>
+<p class="domaine">Studio de création (à venir)</p>
+<h4>Studio</h4>
+<ul>
+<li>Simplifier le studio : création d'une leçon par étapes guidées (histoire, mot nouveau, jeux, défi).</li>
+<li>Proposer des modèles de leçons prêts à remplir, garder l'aperçu toujours visible et cacher les options avancées par défaut.</li>
+<li>Réunir les images et les sons dans une seule bibliothèque de médias.</li>
+<li>Ne perdre aucune fonctionnalité existante.</li>
+<li>Faire tester la création d'une leçon par une personne non technique.</li>
+</ul>
+<div class="note">Le parcours élève est pris en charge par Lansana pour l'instant. Ce qui reste pourra être confié à Maïmouna.</div>
+</div>
+
+<h2>3. Comment on travaille ensemble</h2>
+<div class="carte">
+<ul>
+<li>Le contenu (textes, descriptions d'images) part de Lansana vers Louise-Sophie pour les images et vers Pathe pour le chargement dans la base.</li>
+<li>Pathe et Lansana se mettent d'accord sur ce que le serveur fournit au compte élève d'école.</li>
+<li>Chacun travaille sur sa propre branche Git ; rien n'est fusionné sans relecture.</li>
+<li>Chaque ajout est accompagné de tests, et les tests existants doivent rester verts.</li>
+</ul>
+</div>
+
+</main>
+</body>
+</html>

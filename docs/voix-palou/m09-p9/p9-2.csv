@@ -1,0 +1,37 @@
+﻿fichier_a_deposer;vague;ecran;type;texte;texte_a_generer;caracteres
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e01.mp3;1;1;texte (story);Fatou reçoit un message vocal transféré : la fête est annulée.;Fatou reçoit un message vocal transféré : la fête est annulée.;62
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e02.mp3;1;2;texte (story);Baye écoute la radio dans la cour. Il propose de vérifier la météo.;Baï écoute la radio dans la cour. Il propose de vérifier la météo.;67
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e03.mp3;1;3;texte (story);Madame Diop montre le bulletin météo officiel : pas de pluie samedi.;Madame Diop montre le bulletin météo officiel : pas de pluie samedi.;68
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e04.mp3;1;4;texte (discover);La source, c’est d’où vient l’information. Une bonne source est connue et sérieuse.;La source, c’est d’où vient l’information. Une bonne source est connue et sérieuse.;83
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e08-bravo.mp3;1;8;félicitations de fin;Bravo ! Tu sais où vérifier.;Bravo ! Tu sais où vérifier.;28
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e08-retiens.mp3;1;8;« Je retiens »;Avant de croire ou de partager, je cherche la source et la date.;Avant de croire ou de partager, je cherche la source et la date.;64
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-ok.mp3;2;5;bravo (bonne réponse);Bravo ! Tu sais reconnaître une bonne source.;Bravo ! Tu sais reconnaître une bonne source.;45
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-q.mp3;2;5;consigne du jeu;Glisse une source dans sa boîte.;Glisse une source dans sa boîte.;32
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-ok.mp3;2;5;bravo (bonne réponse);Oui ! Deux bonnes sources disent que la fête a bien lieu.;Oui ! Deux bonnes sources disent que la fête a bien lieu.;57
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-q.mp3;2;5;consigne du jeu;Un message dit que la fête est annulée. Ouvre les sources pour vérifier !;Un message dit que la fête est annulée. Ouvre les sources pour vérifier !;73
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05.mp3;2;5;texte (play);Aide Palou à reconnaître les bonnes sources !;Aide Palou à reconnaître les bonnes sources !;45
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e06.mp3;2;6;texte (ai);Une IA ne vérifie pas toujours ses sources. C’est à toi de vérifier.;Une I A ne vérifie pas toujours ses sources. C’est à toi de vérifier.;68
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m1-ok.mp3;2;7;bravo (bonne réponse);Oui ! La source et la date.;Oui ! La source et la date.;27
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m1-q.mp3;2;7;consigne du jeu;Que cherche-t-on avant de partager un message ?;Que cherche-t-on avant de partager un message ?;47
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m2-ok.mp3;2;7;bravo (bonne réponse);Bravo ! Madame Diop confirme.;Bravo ! Madame Diop confirme.;29
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m2-q.mp3;2;7;consigne du jeu;Laquelle est une source sûre ?;Laquelle est une source sûre ?;30
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m3-ok.mp3;2;7;bravo (bonne réponse);Exact ! Je vérifie d’abord.;Exact ! Je vérifie d’abord.;27
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m3-q.mp3;2;7;consigne du jeu;Un message dit « Transfère vite ! ». Que fais-tu ?;Un message dit « Transfère vite ! ». Que fais-tu ?;50
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07.mp3;2;7;texte (play);Le défi de Palou ! Montre-moi ce que tu as retenu.;Le défi de Palou ! Montre-moi ce que tu as retenu.;50
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-i1.mp3;3;5;explication (objet à ranger);On sait qui l’a fait : c’est une source sûre.;On sait qui l’a fait : c’est une source sûre.;45
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-i2.mp3;3;5;explication (objet à ranger);Personne ne signe le message : on ne peut pas lui faire confiance.;Personne ne signe le message : on ne peut pas lui faire confiance.;66
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-i3.mp3;3;5;explication (objet à ranger);Elle dit qui parle : c’est une source plus sûre.;Elle dit qui parle : c’est une source plus sûre.;48
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m1-i4.mp3;3;5;explication (objet à ranger);On ne sait ni quand ni par qui : elle est douteuse.;On ne sait ni quand ni par qui : elle est douteuse.;51
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-a.mp3;3;5;demande du tampon;Les bonnes sources parlent. Que dit la vérification ?;Les bonnes sources parlent. Que dit la vérification ?;53
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-f1.mp3;3;5;explication (mauvais tampon);Deux bonnes sources disent le contraire : le message est faux.;Deux bonnes sources disent le contraire : le message est faux.;62
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-f3.mp3;3;5;explication (mauvais tampon);Deux bonnes sources répondent : on peut conclure.;Deux bonnes sources répondent : on peut conclure.;49
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-o4.mp3;3;5;explication (question inutile);Un voisin qui ne sait pas pourquoi n’est pas une bonne source.;Un voisin qui ne sait pas pourquoi n’est pas une bonne source.;62
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-s1.mp3;3;5;indice révélé par la question;Il dit : fête annulée. Mais personne ne sait qui l’a envoyé.;Il dit : fête annulée. Mais personne ne sait qui l’a envoyé.;60
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-s2.mp3;3;5;indice révélé par la question;La radio annonce : la fête a bien lieu samedi.;La radio annonce : la fête a bien lieu samedi.;46
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e05-m2-s3.mp3;3;5;indice révélé par la question;Le bulletin dit : pas de pluie samedi.;Le bulletin dit : pas de pluie samedi.;38
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m1-o2.mp3;3;7;explication (mauvaise réponse);Beaucoup de partages ne prouvent pas que c’est vrai.;Beaucoup de partages ne prouvent pas que c’est vrai.;52
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m1-o3.mp3;3;7;explication (mauvaise réponse);La couleur ne dit rien sur la vérité du message.;La couleur ne dit rien sur la vérité du message.;48
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m2-o2.mp3;3;7;explication (mauvaise réponse);Être transféré beaucoup ne prouve rien.;Être transféré beaucoup ne prouve rien.;39
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m2-o3.mp3;3;7;explication (mauvaise réponse);Sans auteur ni date, on ne peut pas vérifier.;Sans auteur ni date, on ne peut pas vérifier.;45
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m3-o2.mp3;3;7;explication (mauvaise réponse);Transférer vite, c’est risquer de partager une fausse info.;Transférer vite, c’est risquer de partager une fausse info.;59
+frontend/public/audio/palou/lecons/m09/p9-2/p9-2_e07-m3-o3.mp3;3;7;explication (mauvaise réponse);Un ami peut aussi se tromper : on vérifie.;Un ami peut aussi se tromper : on vérifie.;42

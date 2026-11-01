@@ -1,0 +1,269 @@
+{
+  "p1-1": {
+    "390": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 35,
+        "y": 369,
+        "width": 319,
+        "height": 372
+      },
+      "bubble": {
+        "x": 35,
+        "y": 369,
+        "width": 319,
+        "height": 141
+      },
+      "frame": {
+        "x": 35,
+        "y": 529,
+        "width": 319,
+        "height": 213
+      },
+      "picture": {
+        "x": 42,
+        "y": 535,
+        "width": 306,
+        "height": 200
+      },
+      "textFontSize": "21.06px",
+      "textAlign": "start"
+    },
+    "1024": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 249,
+        "y": 285,
+        "width": 742,
+        "height": 267
+      },
+      "bubble": {
+        "x": 249,
+        "y": 285,
+        "width": 381,
+        "height": 267
+      },
+      "frame": {
+        "x": 646,
+        "y": 284,
+        "width": 348,
+        "height": 268
+      },
+      "picture": {
+        "x": 654,
+        "y": 292,
+        "width": 333,
+        "height": 254
+      },
+      "textFontSize": "33.792px",
+      "textAlign": "start"
+    },
+    "1440": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 334,
+        "y": 293,
+        "width": 1068,
+        "height": 347
+      },
+      "bubble": {
+        "x": 334,
+        "y": 365,
+        "width": 555,
+        "height": 204
+      },
+      "frame": {
+        "x": 902,
+        "y": 286,
+        "width": 505,
+        "height": 360
+      },
+      "picture": {
+        "x": 907,
+        "y": 292,
+        "width": 495,
+        "height": 350
+      },
+      "textFontSize": "38px",
+      "textAlign": "start"
+    }
+  },
+  "p5-2": {
+    "390": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 46,
+        "y": 461,
+        "width": 298,
+        "height": 466
+      },
+      "bubble": {
+        "x": 46,
+        "y": 461,
+        "width": 298,
+        "height": 251
+      },
+      "frame": {
+        "x": 46,
+        "y": 729,
+        "width": 298,
+        "height": 198
+      },
+      "picture": {
+        "x": 52,
+        "y": 734,
+        "width": 286,
+        "height": 187
+      },
+      "textFontSize": "21.06px",
+      "textAlign": "start"
+    },
+    "1024": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 248,
+        "y": 259,
+        "width": 744,
+        "height": 359
+      },
+      "bubble": {
+        "x": 248,
+        "y": 259,
+        "width": 384,
+        "height": 359
+      },
+      "frame": {
+        "x": 645,
+        "y": 303,
+        "width": 350,
+        "height": 270
+      },
+      "picture": {
+        "x": 652,
+        "y": 310,
+        "width": 337,
+        "height": 257
+      },
+      "textFontSize": "33.792px",
+      "textAlign": "start"
+    },
+    "1440": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 334,
+        "y": 318,
+        "width": 1068,
+        "height": 347
+      },
+      "bubble": {
+        "x": 334,
+        "y": 364,
+        "width": 555,
+        "height": 256
+      },
+      "frame": {
+        "x": 902,
+        "y": 311,
+        "width": 505,
+        "height": 360
+      },
+      "picture": {
+        "x": 907,
+        "y": 317,
+        "width": 495,
+        "height": 350
+      },
+      "textFontSize": "38px",
+      "textAlign": "start"
+    }
+  },
+  "p9-3": {
+    "390": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 46,
+        "y": 461,
+        "width": 298,
+        "height": 386
+      },
+      "bubble": {
+        "x": 46,
+        "y": 461,
+        "width": 298,
+        "height": 170
+      },
+      "frame": {
+        "x": 46,
+        "y": 648,
+        "width": 298,
+        "height": 198
+      },
+      "picture": {
+        "x": 52,
+        "y": 654,
+        "width": 286,
+        "height": 187
+      },
+      "textFontSize": "21.06px",
+      "textAlign": "start"
+    },
+    "1024": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 249,
+        "y": 305,
+        "width": 742,
+        "height": 316
+      },
+      "bubble": {
+        "x": 249,
+        "y": 305,
+        "width": 381,
+        "height": 316
+      },
+      "frame": {
+        "x": 646,
+        "y": 329,
+        "width": 348,
+        "height": 268
+      },
+      "picture": {
+        "x": 654,
+        "y": 336,
+        "width": 333,
+        "height": 254
+      },
+      "textFontSize": "33.792px",
+      "textAlign": "start"
+    },
+    "1440": {
+      "hasTopRow": true,
+      "topRow": {
+        "x": 334,
+        "y": 318,
+        "width": 1068,
+        "height": 347
+      },
+      "bubble": {
+        "x": 334,
+        "y": 410,
+        "width": 555,
+        "height": 163
+      },
+      "frame": {
+        "x": 902,
+        "y": 311,
+        "width": 505,
+        "height": 360
+      },
+      "picture": {
+        "x": 907,
+        "y": 317,
+        "width": 495,
+        "height": 350
+      },
+      "textFontSize": "38px",
+      "textAlign": "start"
+    }
+  }
+}

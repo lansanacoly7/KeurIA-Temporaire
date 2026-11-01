@@ -1,0 +1,29 @@
+================================================================================
+E-MAIL 1 : REFUS AVEC MOTIF (Étape 3)
+================================================================================
+Objet : [kEur IA] À propos de votre demande d'inscription
+De : KeurIA <no-reply@keuria.local>
+À : fatou.sow@keuria.test
+Date : Sun, 18 Oct 2026 19:10:26 +0000
+
+Bonjour Fatou Sow,
+
+Votre demande d'inscription n'a pas été acceptée. Motif : Numéro du parent injoignable lors de l'appel de vérification. Pour toute question, contactez l'équipe kEur IA.
+
+Cordialement,
+L'équipe kEur IA
+
+================================================================================
+E-MAIL 2 : ACCEPTATION FINALE (Étape 5)
+================================================================================
+Objet : [kEur IA] Votre inscription est acceptée
+De : KeurIA <no-reply@keuria.local>
+À : fatou.sow@keuria.test
+Date : Sun, 18 Oct 2026 19:10:44 +0000
+
+Bonjour Fatou Sow,
+
+Bonne nouvelle : l'équipe kEur IA a accepté votre inscription. Vous pouvez dès maintenant vous connecter avec votre adresse e-mail et votre mot de passe, et retrouver votre espace parent.
+
+Cordialement,
+L'équipe kEur IA

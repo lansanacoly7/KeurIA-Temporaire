@@ -1,0 +1,385 @@
+/* Bouton secondaire tactile : VERT OFFICIEL (BRAND TEAL) kEur IA */
+.btn-showcase-secondary {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 750;
+  color: #ffffff;
+  background: var(--kia-brand);
+  border: none;
+  padding: 14px 26px;
+  border-radius: var(--kia-radius-md);
+  box-shadow: 0 4px 0 var(--kia-brand-deep), 0 10px 22px rgba(23, 78, 73, 0.28);
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-showcase-secondary:hover {
+  background: var(--kia-brand-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--kia-brand-deep), 0 14px 26px rgba(23, 78, 73, 0.35);
+}
+
+.btn-showcase-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--kia-brand-deep);
+}
+
+/* Responsive tablette & mobile */
+@media (max-width: 900px) {
+  .landing-showcase-duo {
+    padding: 55px 24px;
+  }
+  .showcase-duo-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .showcase-float-badge.badge-palou {
+    left: 5px;
+  }
+  .showcase-float-badge.badge-fatou {
+    right: 5px;
+  }
+  .showcase-duo-content {
+    align-items: center;
+    text-align: center;
+  }
+  .showcase-duo-title {
+    font-size: 30px;
+  }
+  .showcase-duo-desc {
+    margin: 0 auto 26px;
+  }
+  .showcase-duo-actions {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   FOOTER OFFICIEL kEur IA (VERT PROFOND SIGNATURE #09201d & 4 COLONNES DONT SIRIBRA)
+   Fond vert forêt profond (#09201d), logos adaptés, 4 colonnes aérées
+   ========================================================================== */
+.landing-footer-clean {
+  background: #09201d; /* Vert forêt profond signature kEur IA */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #9ab4af;
+  padding: 60px 0 28px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-clean-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footer-clean-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.35fr; /* 4 colonnes, colonne 4 SIRIBRA plus généreuse */
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-clean-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-clean-col.col-brand {
+  padding-right: 14px;
+}
+
+.footer-brand-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+/* Pastille blanche protégeant le logo officiel kEur IA sur fond vert sombre */
+.footer-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 7px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-brand-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.footer-brand-logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-clean-desc {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #8faea8;
+  margin: 0 0 16px;
+  max-width: 340px;
+}
+
+.footer-clean-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(23, 78, 73, 0.45);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  color: #a5d6c9;
+  font-size: 11.5px;
+  font-weight: 750;
+  padding: 5px 12px;
+  border-radius: var(--kia-radius-full);
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+/* Colonne 4 dédiée à SIRIBRA */
+.footer-clean-col.col-siribra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-clean-col.col-siribra h4 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.footer-siribra-brand-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.siribra-logo-large-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  max-height: 175px;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.98;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.siribra-logo-large-img:hover {
+  transform: translateY(-2px) scale(1.02);
+  opacity: 1;
+}
+
+.footer-clean-col h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.footer-clean-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.footer-clean-links a {
+  color: #cbe0da;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: color 0.15s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-clean-links a:hover {
+  color: #d9ef59; /* Vert lime éclatant au survol */
+  transform: translateX(3px);
+}
+
+.footer-clean-contact {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbe0da;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.contact-item:hover {
+  color: #d9ef59;
+}
+
+.contact-item svg {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+/* Ligne inférieure légale */
+.footer-clean-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  font-size: 12.5px;
+  color: #a2c4bd;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-clean-copyright {
+  margin: 0;
+}
+
+.footer-clean-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-clean-legal a {
+  color: #cbe0da;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.footer-clean-legal a:hover {
+  color: #d9ef59;
+}
+
+.legal-dot {
+  color: #729690;
+}
+
+/* Responsive footer */
+@media (max-width: 992px) {
+  .footer-clean-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .footer-clean-col.col-brand {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-clean-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVITÉ UNIFIÉE & OPTIMISÉE POUR LA LANDING PAGE (MOBILE FIRST)
+   Résout 100% des débordements horizontaux, ajuste la typographie,
+   les espacements, le carrousel 3D, le slider des partenaires et le footer.
+   ========================================================================== */
+
+/* 1. TABLETTE (≤ 992px) */
+@media (max-width: 992px) {
+  .landing-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 36px;
+  }
+  .landing-hero-copy {
+    align-items: center;
+  }
+  .landing-hero-desc {
+    max-width: 100%;
+  }
+  .landing-hero-actions {
+    justify-content: center;
+  }
+  .palou-speech-bubble {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 auto 16px;
+    width: 290px;
+    max-width: 92%;
+    text-align: center;
+  }
+  .palou-bubble-tail {
+    top: auto;
+    bottom: -7px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) rotate(135deg);
+  }
+  .landing-hero-art {
+    justify-content: center;
+  }
+  .landing-mascot-wrapper {
+    margin: 0 auto;
+  }
+  .mascot-backdrop-glow {
+    right: auto;
+  }
+  .hero-scene-panoramic {
+    width: 100%;
+    height: 380px;
+    top: auto;
+    bottom: 20px;
+    opacity: 0.55;
+  }
+  .hero-scene-img {
+    object-position: center 35%;
+  }
+  .palou-ground-shadow {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 2px;
+  }
+  .modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .family-school-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-clean-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .footer-clean-col.col-brand {
+    padding-right: 0;
+  }
+  .partners-slider-wrapper {
+    padding: 10px 44px 20px;
+  }
+}
+
+/* 2. MOBILE STANDARD (≤ 768px) */

@@ -1,0 +1,82 @@
+{
+  "characters": [
+    {
+      "id": "palou",
+      "name": "Palou",
+      "role": "Mascotte IA et guide"
+    },
+    {
+      "id": "mme-diop",
+      "name": "Madame Diop",
+      "aliases": ["Mme Diop"],
+      "role": "Enseignante de la classe"
+    },
+    {
+      "id": "moussa",
+      "name": "Moussa",
+      "role": "Élève"
+    },
+    {
+      "id": "fatou",
+      "name": "Fatou",
+      "role": "Élève"
+    },
+    {
+      "id": "khady",
+      "name": "Khady",
+      "role": "Élève"
+    },
+    {
+      "id": "seydou",
+      "name": "Seydou",
+      "role": "Élève"
+    },
+    {
+      "id": "lamine",
+      "name": "Lamine",
+      "role": "Élève"
+    },
+    {
+      "id": "aissatou",
+      "name": "Aïssatou",
+      "aliases": ["Aissatou"],
+      "role": "Élève"
+    },
+    {
+      "id": "bakary",
+      "name": "Oncle Bakary",
+      "aliases": ["Bakary"],
+      "role": "Invité"
+    },
+    {
+      "id": "ndiaye",
+      "name": "Madame Ndiaye",
+      "aliases": ["Mme Ndiaye", "Ndiaye"],
+      "role": "Invitée"
+    },
+    {
+      "id": "sarr",
+      "name": "Monsieur Sarr",
+      "aliases": ["M. Sarr", "Sarr"],
+      "role": "Invité"
+    },
+    {
+      "id": "aminata",
+      "name": "Aminata",
+      "role": "Invitée"
+    },
+    {
+      "id": "diallo",
+      "name": "Monsieur Diallo",
+      "aliases": ["M. Diallo", "Diallo"],
+      "role": "Invité"
+    },
+    {
+      "id": "gueye",
+      "name": "Madame Guèye",
+      "aliases": ["Mme Guèye", "Madame Gueye", "Mme Gueye", "Guèye", "Gueye"],
+      "role": "Invitée"
+    }
+  ]
+}
+

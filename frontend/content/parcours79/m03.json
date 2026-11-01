@@ -1,0 +1,1122 @@
+{
+  "module": {
+    "id": "p3",
+    "chapter": 3,
+    "title": "La grande famille des données",
+    "place": "Le marché Kermel et la bibliothèque de la classe",
+    "intro": "Mame Awa ne s’y retrouve plus, et la bibliothèque est en désordre ! Aide Palou à trier les données."
+  },
+  "lessons": [
+    {
+      "id": "p3-1",
+      "title": "À quoi servent les données ?",
+      "scene": {
+        "id": "marche-kermel-etal",
+        "label": "L’étal de Mame Awa"
+      },
+      "cast": [
+        "palou",
+        "mame-awa",
+        "fatou",
+        "moussa"
+      ],
+      "problem": "L’étal de Mame Awa est en désordre. Elle ne sait plus combien de fruits il lui reste.",
+      "callback": "Tu te rappelles ? Mame Awa nous a accueillis au marché Kermel.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "image": "m03-l1-etal.webp",
+          "alt": "L’étal de Mame Awa au marché Kermel : des mangues, des oranges et des bananes posées en désordre.",
+          "text": "Au marché Kermel, l’étal de Mame Awa est en désordre. Elle ne sait plus ce qu’il lui reste."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "mame-awa",
+          "text": "Mame Awa soupire : « Combien me reste-t-il de mangues ? »",
+          "image": "m03-l1-s02.webp",
+          "alt": "Illustration : Mame Awa soupire : « Combien me reste-t-il de mangues ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "wolof": {
+            "mot": "Ndank ndank",
+            "sens": "Doucement, petit à petit"
+          },
+          "image": "m03-l1-cahier.webp",
+          "alt": "Fatou écrit dans un cahier pendant que Moussa compte les mangues une par une.",
+          "text": "Fatou propose de noter chaque fruit. Moussa compte les mangues : il y en a douze."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "donnée",
+            "sens": "Une information qu’on note, comme un nombre ou un nom."
+          },
+          "text": "Une donnée est une information qu’on note. Les IA apprennent avec des données."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à reconnaître les données !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Laquelle est une donnée utile pour Mame Awa ?",
+              "hint": "Mame Awa veut savoir combien de fruits il lui reste.",
+              "success": "Oui ! Le nombre de fruits aide Mame Awa à s’y retrouver.",
+              "options": [
+                {
+                  "label": "Un beau dessin de son étal",
+                  "pict": "dessin-etal",
+                  "explain": "Un dessin est joli, mais il ne dit pas combien il reste de fruits."
+                },
+                {
+                  "label": "12 mangues, 8 oranges, 5 bananes",
+                  "pict": "nombres-fruits",
+                  "correct": true
+                },
+                {
+                  "label": "Le prénom de Mame Awa",
+                  "pict": "nom-etiquette",
+                  "explain": "Un prénom est une donnée, mais il ne l’aide pas à compter ses fruits."
+                }
+              ]
+            },
+            {
+              "type": "whois",
+              "prompt": "Mame Awa cherche ce fruit. Décris-le avec des données !",
+              "hint": "Dis à Palou le nom du fruit et sa couleur.",
+              "success": "Bravo ! Plus tu donnes de données, mieux Palou trouve.",
+              "target": "mangue-verte",
+              "items": [
+                {
+                  "id": "mangue-rouge",
+                  "label": "Mangue rouge",
+                  "pict": "mangue-rouge",
+                  "tags": [
+                    "nom-mangue",
+                    "couleur-rouge"
+                  ]
+                },
+                {
+                  "id": "mangue-verte",
+                  "label": "Mangue verte",
+                  "pict": "mangue-verte",
+                  "tags": [
+                    "nom-mangue",
+                    "couleur-vert"
+                  ]
+                },
+                {
+                  "id": "banane-mure",
+                  "label": "Banane jaune",
+                  "pict": "banane-mure",
+                  "tags": [
+                    "nom-banane",
+                    "couleur-jaune"
+                  ]
+                },
+                {
+                  "id": "banane-verte",
+                  "label": "Banane verte",
+                  "pict": "banane-verte",
+                  "tags": [
+                    "nom-banane",
+                    "couleur-vert"
+                  ]
+                },
+                {
+                  "id": "orange",
+                  "label": "Orange",
+                  "pict": "orange",
+                  "tags": []
+                }
+              ],
+              "tags": [
+                {
+                  "id": "nom-mangue",
+                  "label": "Nom : mangue"
+                },
+                {
+                  "id": "nom-banane",
+                  "label": "Nom : banane",
+                  "explain": "Ce n’est pas une banane : Palou ferait fausse route."
+                },
+                {
+                  "id": "couleur-vert",
+                  "label": "Couleur : vert"
+                },
+                {
+                  "id": "couleur-jaune",
+                  "label": "Couleur : jaune",
+                  "explain": "Ce fruit n’est pas jaune : Palou écarterait la bonne mangue."
+                },
+                {
+                  "id": "couleur-rouge",
+                  "label": "Couleur : rouge",
+                  "explain": "Ce fruit n’est pas rouge : Palou chercherait une autre mangue."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA apprend avec beaucoup de données. Plus elles sont justes, mieux elle apprend."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une donnée ?",
+              "hint": "On peut la noter.",
+              "success": "Oui ! Une donnée est une information qu’on note.",
+              "options": [
+                {
+                  "label": "Une information qu’on note",
+                  "pict": "nom-etiquette",
+                  "correct": true
+                },
+                {
+                  "label": "Un fruit qu’on mange au marché",
+                  "explain": "Une donnée n’est pas un objet : c’est une information."
+                },
+                {
+                  "label": "Un dessin accroché au mur",
+                  "pict": "dessin-etal",
+                  "explain": "Un dessin n’est pas une donnée à lui seul : une donnée est une information notée."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Laquelle est une donnée sur une mangue ?",
+              "hint": "Elle se note facilement.",
+              "success": "Bravo ! La couleur est une donnée.",
+              "options": [
+                {
+                  "label": "Sa couleur : rouge",
+                  "pict": "mangue-rouge",
+                  "correct": true
+                },
+                {
+                  "label": "Elle est belle",
+                  "explain": "« Belle » n’est pas précis : une donnée se note facilement."
+                },
+                {
+                  "label": "Mon voisin l’aime bien",
+                  "explain": "Ce n’est pas une information sur la mangue elle-même."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Avec quoi les IA apprennent-elles ?",
+              "hint": "Pense aux exemples qu’on leur montre.",
+              "success": "Exact ! Les IA apprennent avec des données.",
+              "options": [
+                {
+                  "label": "Avec des données",
+                  "pict": "nombres-fruits",
+                  "correct": true
+                },
+                {
+                  "label": "Avec de la magie",
+                  "pict": "baguette-magique",
+                  "explain": "Pas de magie : des données, comme des exemples."
+                },
+                {
+                  "label": "Avec du sommeil et des rêves",
+                  "explain": "Une IA ne dort pas : elle apprend avec des données."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu sais ce qu’est une donnée.",
+          "learned": "Une donnée est une information qu’on note. Les IA apprennent avec des données."
+        }
+      ]
+    },
+    {
+      "id": "p3-2",
+      "title": "Le panier de fruits",
+      "scene": {
+        "id": "marche-kermel-paniers",
+        "label": "Les paniers de Mame Awa"
+      },
+      "cast": [
+        "palou",
+        "mame-awa",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Mame Awa veut ranger ses fruits dans trois paniers. Comment Palou peut-il bien les trier ?",
+      "callback": "Tu te rappelles ? Fatou a noté les fruits dans son cahier : ce sont des données.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mame-awa",
+          "image": "m03-l2-paniers.webp",
+          "alt": "Trois paniers vides devant l’étal de Mame Awa, avec des mangues, des oranges et des bananes à côté.",
+          "text": "Mame Awa a posé trois paniers vides devant elle. Un panier pour chaque fruit."
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "moussa",
+          "text": "Moussa veut tout mélanger pour aller vite. Fatou lui demande de trier d’abord.",
+          "image": "m03-l2-s02.webp",
+          "alt": "Illustration : Moussa veut tout mélanger pour aller vite. Fatou lui demande de trier d’abord."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "catégorie",
+            "sens": "Un groupe d’objets qui se ressemblent."
+          },
+          "text": "Une catégorie est un groupe d’objets qui se ressemblent. Trier, c’est ranger par catégorie."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à remplir les trois paniers !",
+          "rounds": [
+            {
+              "type": "rulesort",
+              "prompt": "Mame Awa veut un panier par fruit. Quelle règle donnes-tu à la machine de Palou ?",
+              "hint": "Pense au nom du fruit : mangue, orange ou banane.",
+              "success": "Bravo ! Avec la bonne règle, Palou trie tous les fruits d’un coup.",
+              "items": [
+                {
+                  "id": "m1",
+                  "label": "Une mangue rouge",
+                  "pict": "mangue-rouge",
+                  "props": {
+                    "nom": "mangue",
+                    "couleur": "rouge",
+                    "hasard": "1"
+                  }
+                },
+                {
+                  "id": "o1",
+                  "label": "Une orange ronde",
+                  "pict": "orange",
+                  "props": {
+                    "nom": "orange",
+                    "couleur": "orange",
+                    "hasard": "2"
+                  }
+                },
+                {
+                  "id": "b1",
+                  "label": "Une banane mûre",
+                  "pict": "banane-mure",
+                  "props": {
+                    "nom": "banane",
+                    "couleur": "jaune",
+                    "hasard": "1"
+                  }
+                },
+                {
+                  "id": "m2",
+                  "label": "Une mangue verte",
+                  "pict": "mangue-verte",
+                  "props": {
+                    "nom": "mangue",
+                    "couleur": "vert",
+                    "hasard": "3"
+                  }
+                },
+                {
+                  "id": "o2",
+                  "label": "Une orange pressée",
+                  "pict": "orange-pressee",
+                  "props": {
+                    "nom": "orange",
+                    "couleur": "orange",
+                    "hasard": "3"
+                  }
+                },
+                {
+                  "id": "b2",
+                  "label": "Une banane verte",
+                  "pict": "banane-verte",
+                  "props": {
+                    "nom": "banane",
+                    "couleur": "vert",
+                    "hasard": "2"
+                  }
+                }
+              ],
+              "rules": [
+                {
+                  "id": "nom",
+                  "label": "Par nom",
+                  "pict": "nom-etiquette",
+                  "prop": "nom",
+                  "correct": true,
+                  "groups": {
+                    "mangue": "Les mangues",
+                    "orange": "Les oranges",
+                    "banane": "Les bananes"
+                  }
+                },
+                {
+                  "id": "couleur",
+                  "label": "Par couleur",
+                  "pict": "couleur-palette",
+                  "prop": "couleur",
+                  "groups": {
+                    "rouge": "Rouge",
+                    "orange": "Orange",
+                    "jaune": "Jaune",
+                    "vert": "Vert"
+                  },
+                  "explain": "Par couleur, les fruits se mélangent : Mame Awa ne s’y retrouve pas."
+                },
+                {
+                  "id": "hasard",
+                  "label": "Au hasard",
+                  "pict": "hasard-de",
+                  "prop": "hasard",
+                  "groups": {
+                    "1": "Panier 1",
+                    "2": "Panier 2",
+                    "3": "Panier 3"
+                  },
+                  "explain": "Au hasard, les fruits sont tous mélangés : impossible de s’y retrouver."
+                }
+              ]
+            },
+            {
+              "type": "sort",
+              "prompt": "Glisse un fruit dans son panier.",
+              "hint": "Regarde bien la forme et la couleur de chaque fruit.",
+              "success": "Bravo ! Chaque fruit est dans son panier.",
+              "bins": [
+                {
+                  "id": "mangues",
+                  "label": "Les mangues",
+                  "pict": "panier-mangues"
+                },
+                {
+                  "id": "oranges",
+                  "label": "Les oranges",
+                  "pict": "panier-oranges"
+                },
+                {
+                  "id": "bananes",
+                  "label": "Les bananes",
+                  "pict": "panier-bananes"
+                }
+              ],
+              "items": [
+                {
+                  "id": "m1",
+                  "label": "Une mangue rouge",
+                  "pict": "mangue-rouge",
+                  "bin": "mangues",
+                  "explain": "Elle a un gros noyau : c’est une mangue."
+                },
+                {
+                  "id": "o1",
+                  "label": "Une orange ronde",
+                  "pict": "orange",
+                  "bin": "oranges",
+                  "explain": "Elle est ronde et pleine de jus : c’est une orange."
+                },
+                {
+                  "id": "b1",
+                  "label": "Une banane mûre",
+                  "pict": "banane-mure",
+                  "bin": "bananes",
+                  "explain": "Elle est longue et jaune : c’est une banane."
+                },
+                {
+                  "id": "m2",
+                  "label": "Une mangue verte",
+                  "pict": "mangue-verte",
+                  "bin": "mangues",
+                  "explain": "Verte ou rouge, c’est toujours une mangue."
+                },
+                {
+                  "id": "o2",
+                  "label": "Une orange pressée",
+                  "pict": "orange-pressee",
+                  "bin": "oranges",
+                  "explain": "Même pressée, elle reste dans les oranges."
+                },
+                {
+                  "id": "b2",
+                  "label": "Une banane verte",
+                  "pict": "banane-verte",
+                  "bin": "bananes",
+                  "explain": "Elle est verte, mais elle est longue : c’est une banane."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "text": "Qu’est-ce qu’une bonne catégorie ?",
+          "rounds": [
+            {
+              "type": "multi",
+              "prompt": "Touche les groupes qui forment une vraie catégorie.",
+              "hint": "Une catégorie réunit plusieurs objets qui se ressemblent.",
+              "success": "Bravo ! Une catégorie réunit des choses qui se ressemblent.",
+              "options": [
+                {
+                  "label": "Les fruits jaunes",
+                  "pict": "fruits-jaunes",
+                  "correct": true
+                },
+                {
+                  "label": "Un seul caillou",
+                  "pict": "caillou",
+                  "explain": "Une seule chose ne fait pas un groupe : il faut plusieurs objets."
+                },
+                {
+                  "label": "Les livres de contes",
+                  "pict": "livres-contes",
+                  "correct": true
+                },
+                {
+                  "label": "Une mangue et une chaussette",
+                  "pict": "mangue-chaussette",
+                  "explain": "Ces deux objets ne se ressemblent pas : ce n’est pas une catégorie."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA trie aussi. Elle range les photos ou les messages par catégorie."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une catégorie ?",
+              "hint": "Les choses se ressemblent.",
+              "success": "Oui ! Une catégorie réunit des choses qui se ressemblent.",
+              "options": [
+                {
+                  "label": "Un groupe qui se ressemble",
+                  "pict": "donnees-classees",
+                  "correct": true
+                },
+                {
+                  "label": "Un objet seul, comme un caillou",
+                  "pict": "caillou",
+                  "explain": "Un seul objet ne fait pas un groupe."
+                },
+                {
+                  "label": "Un mélange de tout et n’importe quoi",
+                  "pict": "melanger-donnees",
+                  "explain": "Une catégorie réunit des choses qui se ressemblent."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Quel groupe forme une vraie catégorie ?",
+              "hint": "Cherche ce qui les réunit.",
+              "success": "Bravo ! Ce sont tous des fruits jaunes.",
+              "options": [
+                {
+                  "label": "Les fruits jaunes",
+                  "pict": "fruits-jaunes",
+                  "correct": true
+                },
+                {
+                  "label": "Une mangue et une chaussette",
+                  "pict": "mangue-chaussette",
+                  "explain": "Ils ne se ressemblent pas : ce n’est pas une catégorie."
+                },
+                {
+                  "label": "Un seul gros caillou gris",
+                  "pict": "caillou",
+                  "explain": "Un seul objet n’est pas un groupe."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Trier, ça sert à quoi ?",
+              "hint": "Le contraire de mélanger.",
+              "success": "Exact ! Trier, c’est ranger par catégorie.",
+              "options": [
+                {
+                  "label": "À ranger par catégorie",
+                  "pict": "donnees-classees",
+                  "correct": true
+                },
+                {
+                  "label": "À tout mélanger",
+                  "pict": "melanger-donnees",
+                  "explain": "Trier, c’est le contraire de mélanger."
+                },
+                {
+                  "label": "À jeter les objets",
+                  "explain": "Trier, ce n’est pas jeter : c’est ranger."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Les trois paniers sont bien remplis.",
+          "learned": "Trier, c’est ranger les objets par catégorie. Une catégorie réunit des choses qui se ressemblent."
+        }
+      ]
+    },
+    {
+      "id": "p3-3",
+      "title": "Trouve l’intrus",
+      "scene": {
+        "id": "bibliotheque",
+        "label": "La bibliothèque de la classe"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou",
+        "mme-diop",
+        "mame-awa"
+      ],
+      "problem": "Madame Diop veut la bibliothèque rangée avant la fête. Sur l’étagère « Contes », quelque chose cloche.",
+      "callback": "Tu te rappelles ? Mame Awa range ses fruits par famille.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "mme-diop",
+          "image": "m03-l3-etagere.webp",
+          "alt": "L’étagère « Contes » de la bibliothèque de la classe : parmi les livres de contes, on voit un cahier de maths.",
+          "text": "Madame Diop veut la bibliothèque rangée avant la fête. Sur l’étagère « Contes », quelque chose cloche."
+        },
+        {
+          "kind": "story",
+          "pose": "Reflexion",
+          "speaker": "palou",
+          "text": "Palou regarde l’étagère avec Moussa. « Ce livre a l’air différent ! »",
+          "image": "m03-l3-s02.webp",
+          "alt": "Illustration : Palou regarde l’étagère avec Moussa. « Ce livre a l’air différent ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "fatou",
+          "text": "Fatou sourit : « Comme Mame Awa qui range ses mangues ensemble ! »",
+          "image": "m03-l3-s03.webp",
+          "alt": "Illustration : Fatou sourit : « Comme Mame Awa qui range ses mangues ensemble ! »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "intrus",
+            "sens": "Ce qui ne ressemble pas aux autres d’un groupe."
+          },
+          "text": "L’intrus est ce qui ne ressemble pas aux autres. Pour le trouver, cherche ce qui les réunit."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à trouver les intrus !",
+          "rounds": [
+            {
+              "type": "cleanup",
+              "prompt": "Palou compte les contes de l’étagère. Touche les intrus pour qu’il compte juste !",
+              "hint": "Cherche les livres qui ne sont pas des contes.",
+              "success": "Oui ! Sans les intrus, Palou compte juste : 3 contes.",
+              "counts": "contes",
+              "rows": [
+                {
+                  "id": "recueil",
+                  "label": "Un recueil de contes",
+                  "pict": "recueil-contes",
+                  "explain": "C’est un recueil de contes : c’est une bonne donnée, Palou la garde."
+                },
+                {
+                  "id": "lievre",
+                  "label": "Leuk-le-Lièvre",
+                  "pict": "lievre-leuk",
+                  "explain": "Leuk-le-Lièvre est un conte célèbre : Palou doit le garder."
+                },
+                {
+                  "id": "baobab",
+                  "label": "Le conte du baobab",
+                  "pict": "conte-baobab",
+                  "explain": "C’est bien un conte : il est à sa place, Palou le garde."
+                },
+                {
+                  "id": "maths",
+                  "label": "Le cahier de maths",
+                  "pict": "cahier-maths",
+                  "intruder": true
+                },
+                {
+                  "id": "foot",
+                  "label": "Un livre de foot",
+                  "pict": "livre-foot",
+                  "intruder": true
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Dans le panier de Mame Awa, quel objet est l’intrus ?",
+              "hint": "Le panier est rempli de fruits.",
+              "success": "Oui ! Une chaussette n’est pas un fruit.",
+              "options": [
+                {
+                  "label": "Une grosse mangue",
+                  "pict": "mangue-rouge",
+                  "explain": "Une mangue est un fruit, comme les autres objets du panier."
+                },
+                {
+                  "label": "La chaussette égarée",
+                  "pict": "chaussette",
+                  "correct": true
+                },
+                {
+                  "label": "Une orange",
+                  "pict": "orange",
+                  "explain": "Une orange est un fruit : elle est bien dans le panier."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "text": "Pourquoi l’intrus compte-t-il pour une IA ?",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "À quoi sert de repérer l’intrus dans des données ?",
+              "hint": "Une erreur dans les données peut tromper l’IA.",
+              "success": "Oui ! Retirer l’intrus aide l’IA à mieux apprendre.",
+              "options": [
+                {
+                  "label": "À retirer ce qui ne va pas",
+                  "pict": "retirer-intrus",
+                  "correct": true
+                },
+                {
+                  "label": "À ajouter encore plus d’objets",
+                  "pict": "ajouter-objets",
+                  "explain": "Ajouter des objets ne règle rien : l’intrus reste caché parmi les autres."
+                },
+                {
+                  "label": "À mélanger toutes les données",
+                  "pict": "melanger-donnees",
+                  "explain": "Mélanger les données les rend plus difficiles à comprendre."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Dans le panier : une mangue, une orange et une chaussette. Quel est l’intrus ?",
+              "hint": "Qui ne ressemble pas aux autres ?",
+              "success": "Oui ! La chaussette n’est pas un fruit.",
+              "options": [
+                {
+                  "label": "La chaussette",
+                  "pict": "chaussette",
+                  "correct": true
+                },
+                {
+                  "label": "La mangue",
+                  "pict": "mangue-rouge",
+                  "explain": "Une mangue est un fruit, comme l’orange."
+                },
+                {
+                  "label": "L’orange",
+                  "pict": "orange",
+                  "explain": "L’orange est un fruit, comme la mangue."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Que fait-on d’un intrus ?",
+              "hint": "Il fausse les données.",
+              "success": "Bravo ! On retire l’intrus.",
+              "options": [
+                {
+                  "label": "On le retire",
+                  "pict": "retirer-intrus",
+                  "correct": true
+                },
+                {
+                  "label": "On en ajoute d’autres",
+                  "pict": "ajouter-objets",
+                  "explain": "Ajouter des intrus rend les données moins justes."
+                },
+                {
+                  "label": "On le mélange avec les autres",
+                  "pict": "melanger-donnees",
+                  "explain": "Mélanger l’intrus fausse le tri."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Pourquoi retirer l’intrus ?",
+              "hint": "Pense aux données de l’IA.",
+              "success": "Exact ! Pour garder des données justes.",
+              "options": [
+                {
+                  "label": "Pour des données justes",
+                  "correct": true
+                },
+                {
+                  "label": "Parce qu’il est vilain à regarder",
+                  "explain": "Ce n’est pas une question de beauté, mais de données justes."
+                },
+                {
+                  "label": "Pour faire plus de place sur l’étagère",
+                  "explain": "Ce n’est pas la place qui compte : ce sont les données justes."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! L’étagère « Contes » est en ordre.",
+          "learned": "L’intrus est ce qui ne ressemble pas aux autres. Le retirer aide à garder des données justes."
+        }
+      ]
+    },
+    {
+      "id": "p3-4",
+      "title": "Mon premier classement",
+      "scene": {
+        "id": "bibliotheque-classement",
+        "label": "La bibliothèque de la classe"
+      },
+      "cast": [
+        "palou",
+        "mme-diop",
+        "moussa",
+        "fatou"
+      ],
+      "problem": "Il reste vingt livres en désordre. Il faut choisir comment les classer avant la fête.",
+      "callback": "Tu te rappelles ? Fatou a trouvé l’intrus de l’étagère « Contes ».",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m03-l4-classement.webp",
+          "alt": "Madame Diop montre une pile de livres à Palou, Moussa et Fatou, devant les étagères de la bibliothèque.",
+          "text": "Madame Diop montre une pile de vingt livres. Il faut les classer avant la fête."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa veut les classer par couleur. Fatou préfère les classer par sujet.",
+          "image": "m03-l4-s02.webp",
+          "alt": "Illustration : Moussa veut les classer par couleur. Fatou préfère les classer par sujet."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "critère",
+            "sens": "Ce qu’on regarde pour classer : la couleur, la taille, le sujet."
+          },
+          "text": "Un critère est ce qu’on regarde pour classer. Changer de critère change le classement."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à ranger la bibliothèque !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse un livre dans son étagère.",
+              "hint": "Le critère, c’est le sujet du livre.",
+              "success": "Bravo ! Tous les livres sont rangés par sujet.",
+              "bins": [
+                {
+                  "id": "contes",
+                  "label": "Contes",
+                  "pict": "livres-contes"
+                },
+                {
+                  "id": "sciences",
+                  "label": "Sciences",
+                  "pict": "livre-sciences"
+                }
+              ],
+              "items": [
+                {
+                  "id": "l1",
+                  "label": "Leuk-le-Lièvre",
+                  "pict": "lievre-leuk",
+                  "bin": "contes",
+                  "explain": "C’est un conte : il va avec les histoires."
+                },
+                {
+                  "id": "l2",
+                  "label": "Un livre sur les étoiles",
+                  "pict": "livre-etoiles",
+                  "bin": "sciences",
+                  "explain": "Il explique le ciel : c’est un livre de sciences."
+                },
+                {
+                  "id": "l3",
+                  "label": "Un conte du baobab",
+                  "pict": "conte-baobab",
+                  "bin": "contes",
+                  "explain": "C’est une histoire : il va avec les contes."
+                },
+                {
+                  "id": "l4",
+                  "label": "Un livre sur les insectes",
+                  "pict": "livre-insectes",
+                  "bin": "sciences",
+                  "explain": "Il explique la nature : c’est un livre de sciences."
+                }
+              ]
+            },
+            {
+              "type": "whois",
+              "prompt": "Madame Diop cherche un livre sur les insectes. Donne deux critères à Palou !",
+              "hint": "Un seul critère ne suffit pas : cherche le sujet et ce dont parle le livre.",
+              "success": "Bravo ! Avec deux bons critères, Palou trouve le bon livre.",
+              "target": "insectes",
+              "items": [
+                {
+                  "id": "lievre",
+                  "label": "Leuk-le-Lièvre",
+                  "pict": "lievre-leuk",
+                  "tags": [
+                    "sujet-contes",
+                    "animaux"
+                  ]
+                },
+                {
+                  "id": "baobab",
+                  "label": "Un conte du baobab",
+                  "pict": "conte-baobab",
+                  "tags": [
+                    "sujet-contes"
+                  ]
+                },
+                {
+                  "id": "insectes",
+                  "label": "Un livre sur les insectes",
+                  "pict": "livre-insectes",
+                  "tags": [
+                    "sujet-sciences",
+                    "animaux"
+                  ]
+                },
+                {
+                  "id": "etoiles",
+                  "label": "Un livre sur les étoiles",
+                  "pict": "livre-etoiles",
+                  "tags": [
+                    "sujet-sciences",
+                    "ciel"
+                  ]
+                },
+                {
+                  "id": "foot",
+                  "label": "Un livre de foot",
+                  "pict": "livre-foot",
+                  "tags": [
+                    "sujet-sport"
+                  ]
+                }
+              ],
+              "tags": [
+                {
+                  "id": "sujet-sciences",
+                  "label": "Sujet : sciences"
+                },
+                {
+                  "id": "animaux",
+                  "label": "Il parle d’animaux"
+                },
+                {
+                  "id": "sujet-contes",
+                  "label": "Sujet : contes",
+                  "explain": "Ce n’est pas un conte : Palou écarterait le bon livre."
+                },
+                {
+                  "id": "sujet-sport",
+                  "label": "Sujet : sport",
+                  "explain": "Ce n’est pas un livre de sport : Palou chercherait au mauvais endroit."
+                },
+                {
+                  "id": "ciel",
+                  "label": "Il parle du ciel",
+                  "explain": "Ce livre ne parle pas du ciel : Palou écarterait le bon livre."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "why",
+          "pose": "Reflexion",
+          "text": "Le bon critère change tout !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Pourquoi le bon critère est-il important pour une IA ?",
+              "hint": "Une IA apprend avec des données classées.",
+              "success": "Oui ! Bien classées, les données l’aident à apprendre.",
+              "options": [
+                {
+                  "label": "Elle apprend mieux avec des données bien classées",
+                  "pict": "donnees-classees",
+                  "correct": true
+                },
+                {
+                  "label": "Elle n’a pas besoin de critère",
+                  "pict": "pas-de-critere",
+                  "explain": "Sans critère, les données sont mélangées et l’IA apprend mal."
+                },
+                {
+                  "label": "Elle choisit toujours le même",
+                  "pict": "toujours-meme",
+                  "explain": "Un seul critère ne convient pas à tout : il faut choisir le bon."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA range aussi avec des critères. Elle classe les photos, les sons ou les messages."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’un critère ?",
+              "hint": "On le regarde pour classer.",
+              "success": "Oui ! Un critère, c’est ce qu’on regarde pour classer.",
+              "options": [
+                {
+                  "label": "Ce qu’on regarde",
+                  "pict": "donnees-classees",
+                  "correct": true
+                },
+                {
+                  "label": "Le titre du livre le plus gros",
+                  "explain": "Un critère n’est pas un titre : c’est ce qu’on regarde pour trier."
+                },
+                {
+                  "label": "Un livre qu’on a perdu dans la classe",
+                  "explain": "Un critère n’est pas un livre : c’est ce qu’on regarde pour trier."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Si on change de critère, que se passe-t-il ?",
+              "hint": "Les groupes ne sont plus les mêmes.",
+              "success": "Exact ! Le classement change.",
+              "options": [
+                {
+                  "label": "Le classement change",
+                  "pict": "donnees-classees",
+                  "correct": true
+                },
+                {
+                  "label": "Rien ne change",
+                  "pict": "toujours-meme",
+                  "explain": "Si on change de critère, les groupes changent aussi."
+                },
+                {
+                  "label": "Les livres disparaissent de l’étagère",
+                  "explain": "Les livres restent : ils sont seulement rangés autrement."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Sans critère, comment est le robot ?",
+              "hint": "Il ne sait pas comment ranger.",
+              "success": "Bravo ! Sans critère, il est perdu.",
+              "options": [
+                {
+                  "label": "Perdu",
+                  "pict": "pas-de-critere",
+                  "correct": true
+                },
+                {
+                  "label": "Très content de ranger vite",
+                  "pict": "palou-content",
+                  "explain": "Sans critère, il ne sait pas comment ranger."
+                },
+                {
+                  "label": "Plus fort qu’avant",
+                  "explain": "Sans critère, il ne sait pas comment ranger."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m03",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 3 avec Palou.",
+          "learned": "Trier, c’est ranger par catégorie avec un bon critère. Les IA apprennent avec des données bien triées."
+        }
+      ]
+    }
+  ]
+}

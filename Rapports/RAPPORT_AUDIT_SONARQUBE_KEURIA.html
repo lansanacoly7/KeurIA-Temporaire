@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport d'Audit Qualité SonarQube — Projet Kër IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d846e;
+      --primary-dark: #123e3b;
+      --primary-light: #e8f5f1;
+      --accent: #d9ef59;
+      --accent-dark: #9bb718;
+      --bg: #f8faf9;
+      --surface: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --success: #10b981;
+      --success-bg: #ecfdf5;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.08);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1080px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #123e3b 0%, #0d846e 100%);
+      color: white;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 30px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: rgba(217, 239, 89, 0.15);
+      border-radius: 50%;
+      filter: blur(40px);
+    }
+    .badge-header {
+      display: inline-block;
+      background: rgba(217, 239, 89, 0.2);
+      color: var(--accent);
+      border: 1px solid rgba(217, 239, 89, 0.4);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+    h1 { font-size: 32px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .subtitle { font-size: 16px; color: #cbdcd7; max-width: 750px; }
+    .header-meta {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      font-size: 12.5px;
+      color: #cbdcd7;
+      position: relative;
+      z-index: 1;
+    }
+    .header-meta b { color: #fff; font-weight: 700; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 35px;
+    }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-val { font-size: 32px; font-weight: 900; color: var(--primary); margin: 6px 0 2px; }
+    .stat-val.is-danger { color: var(--danger); }
+    .stat-val.is-warning { color: var(--warning); }
+    .stat-label { font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+    .stat-desc { font-size: 12px; color: #94a3b8; margin-top: auto; }
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    h2 { font-size: 22px; font-weight: 800; color: var(--primary-dark); }
+    h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin: 26px 0 10px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    h3:first-of-type { margin-top: 4px; }
+    p.lead { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+    .ratings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+    .rating-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #fbfdfc;
+    }
+    .rating-letter {
+      width: 52px; height: 52px;
+      flex-shrink: 0;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; font-weight: 900; color: #fff;
+    }
+    .r-a { background: var(--success); }
+    .r-b { background: #84cc16; }
+    .r-c { background: var(--warning); }
+    .r-d { background: #f97316; }
+    .r-e { background: var(--danger); }
+    .rating-meta strong { display: block; font-size: 14px; font-weight: 800; color: var(--primary-dark); }
+    .rating-meta span { font-size: 12px; color: var(--text-muted); }
+    .item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 16px;
+    }
+    .item-card {
+      background: #fbfdfc;
+      border: 1px solid #e9ecef;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      transition: all 0.2s ease;
+    }
+    .item-card:hover { border-color: var(--primary); background: #ffffff; box-shadow: var(--shadow-sm); }
+    .item-card.flag-crit { border-left: 3px solid var(--danger); }
+    .item-card.flag-warn { border-left: 3px solid var(--warning); }
+    .item-card.flag-info { border-left: 3px solid var(--primary); }
+    .item-title { font-size: 15px; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .item-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .item-desc + .item-desc { margin-top: 8px; }
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #475569;
+      white-space: nowrap;
+    }
+    .tag-ok { background: #dcfce7; color: #15803d; }
+    .tag-warn { background: #fef3c7; color: #92400e; }
+    .tag-danger { background: #fee2e2; color: #b91c1c; }
+    .tag-crit { background: #450a0a; color: #fecaca; }
+    .tag-info { background: var(--primary-light); color: var(--primary); }
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .table-responsive table { margin-top: 0; min-width: 600px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+    th, td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #edf2f7; }
+    th {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #475569;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+    td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fdfdfd; }
+    tfoot td { background: #f8fafc; font-weight: 800; color: var(--primary-dark); border-top: 2px solid var(--border); }
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .status-done { background: #dcfce7; color: #15803d; }
+    .status-todo { background: #fee2e2; color: #b91c1c; }
+    .status-wip { background: #fef3c7; color: #92400e; }
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    pre.code-block {
+      font-family: 'JetBrains Mono', monospace;
+      background: #123e3b;
+      color: #d7e8e3;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 12.5px;
+      line-height: 1.7;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+    }
+    pre.code-block .cmt { color: #7fa89f; }
+    .callout {
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-top: 14px;
+      border-left: 4px solid;
+    }
+    .callout strong { font-weight: 800; }
+    .callout-warn { background: #fffbeb; border-color: var(--warning); color: #78350f; }
+    .callout-danger { background: #fef2f2; border-color: var(--danger); color: #7f1d1d; }
+    .callout-info { background: var(--primary-light); border-color: var(--primary); color: #134e45; }
+    .bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .bar { flex: 1; height: 7px; min-width: 60px; background: #edf2f7; border-radius: 100px; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: 100px; background: var(--primary); }
+    .bar i.b-danger { background: var(--danger); }
+    .bar i.b-warn { background: var(--warning); }
+    footer { text-align: center; padding: 24px; color: var(--text-muted); font-size: 13px; }
+    @media (max-width: 768px) {
+      body { padding: 16px 12px; }
+      header { padding: 26px 18px; border-radius: 16px; margin-bottom: 20px; }
+      .badge-header { font-size: 10.5px; padding: 4px 10px; margin-bottom: 12px; }
+      h1 { font-size: 22px; line-height: 1.25; }
+      .subtitle { font-size: 13px; line-height: 1.45; }
+      .header-meta { font-size: 11.5px; gap: 6px 18px; margin-top: 14px; padding-top: 12px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+      .stat-card { padding: 14px 12px; border-radius: 12px; }
+      .stat-val { font-size: 22px; margin: 4px 0 1px; }
+      .stat-label { font-size: 11px; }
+      .stat-desc { font-size: 10.5px; }
+      .section { padding: 20px 14px; border-radius: 16px; margin-bottom: 18px; }
+      .section-header { gap: 10px; margin-bottom: 16px; padding-bottom: 12px; }
+      .section-icon { width: 38px; height: 38px; font-size: 18px; border-radius: 10px; flex-shrink: 0; }
+      h2 { font-size: 17px; }
+      h3 { font-size: 14px; margin: 20px 0 8px; }
+      .section-header p { font-size: 12px !important; }
+      .ratings-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .rating-card { padding: 12px; gap: 10px; flex-direction: column; align-items: flex-start; }
+      .rating-letter { width: 40px; height: 40px; font-size: 20px; border-radius: 11px; }
+      .item-grid { grid-template-columns: 1fr; gap: 10px; }
+      .item-card { padding: 14px; }
+      .item-title { font-size: 14px; flex-wrap: wrap; gap: 6px; }
+      .item-desc { font-size: 12.5px; }
+      .tag { font-size: 10px; }
+      th, td { padding: 10px 8px; font-size: 12px; }
+      th { font-size: 10px; }
+      .code-pill { font-size: 11px; padding: 1px 4px; }
+      pre.code-block { font-size: 11.5px; padding: 12px 14px; }
+      .callout { font-size: 12.5px; padding: 13px 14px; }
+      .badge-status { font-size: 10px; padding: 3px 7px; }
+    }
+    @media (max-width: 480px) {
+      body { padding: 12px 8px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .ratings-grid { grid-template-columns: 1fr; }
+      header { padding: 20px 14px; }
+      h1 { font-size: 20px; }
+      .section { padding: 16px 12px; }
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .section, header { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge-header">Audit Qualité Statique · SonarQube</span>
+      <h1>Rapport d'Audit SonarQube — Kër IA</h1>
+      <p class="subtitle">Analyse statique complète du code applicatif backend (Django) et frontend (Next.js) : sécurité, fiabilité, maintenabilité, complexité cognitive, duplication et couverture de tests. Inventaire hiérarchisé des 1 083 remontées et plan de remédiation priorisé.</p>
+      <div class="header-meta">
+        <span>Moteur&nbsp;: <b>SonarQube Community 26.9.0</b></span>
+        <span>Scanner&nbsp;: <b>sonar-scanner-cli 6.2.1</b></span>
+        <span>Branche&nbsp;: <b>test</b></span>
+        <span>Commit&nbsp;: <b>13d8c88</b></span>
+        <span>Date&nbsp;: <b>3 octobre 2026</b></span>
+      </div>
+    </header>
+
+    <!-- METRICS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Code analysé</span>
+        <div class="stat-val">40 516</div>
+        <span class="stat-desc">Lignes utiles · 280 fichiers · 5 langages</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Issues ouvertes</span>
+        <div class="stat-val is-warning">1 083</div>
+        <span class="stat-desc">958 smells · 76 bugs · 49 vulnérabilités</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Dette technique</span>
+        <div class="stat-val">111 h</div>
+        <span class="stat-desc">6 663 min · ratio de remédiation 0,5 %</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Couverture de tests</span>
+        <div class="stat-val is-warning">33,3 %</div>
+        <span class="stat-desc">Backend 82,1 % · frontend 0 % · 153 tests</span>
+      </div>
+    </div>
+
+    <!-- SECTION 1: NOTATIONS -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">📊</div>
+        <div>
+          <h2>1. Notations globales & Quality Gate</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Notes attribuées par SonarQube sur l'ensemble du périmètre analysé.</p>
+        </div>
+      </div>
+
+      <div class="ratings-grid">
+        <div class="rating-card">
+          <div class="rating-letter r-e">E</div>
+          <div class="rating-meta">
+            <strong>Sécurité</strong>
+            <span>49 vulnérabilités</span>
+          </div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-letter r-c">C</div>
+          <div class="rating-meta">
+            <strong>Fiabilité</strong>
+            <span>76 bugs</span>
+          </div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-letter r-a">A</div>
+          <div class="rating-meta">
+            <strong>Maintenabilité</strong>
+            <span>958 code smells</span>
+          </div>
+        </div>
+        <div class="rating-card">
+          <div class="rating-letter r-a">A</div>
+          <div class="rating-meta">
+            <strong>Security Review</strong>
+            <span>0 hotspot à réviser</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>Le Quality Gate affiche « Passed » — cette mention ne doit pas être interprétée comme une validation.</strong>
+        Le profil par défaut <em>Sonar way</em> n'évalue que le <b>nouveau code</b> par rapport à une période de référence. S'agissant de la première analyse du dépôt, aucune baseline n'existe : <b>zéro condition n'a été évaluée</b>, et le gate passe par défaut. Les notes ci-dessus (Sécurité E, Fiabilité C) sont les indicateurs réellement représentatifs de l'état du code.
+      </div>
+
+      <h3>Répartition par périmètre</h3>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Périmètre</th>
+            <th>Fichiers</th>
+            <th>Lignes utiles</th>
+            <th>Bugs</th>
+            <th>Vulnérabilités</th>
+            <th>Code smells</th>
+            <th>Dette</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Backend</strong> <span class="tag tag-ok">Sain</span><br><span style="font-size:11.5px;color:var(--text-muted)">Django / Python 3.11</span></td>
+            <td class="num">77</td>
+            <td class="num">5 875</td>
+            <td class="num">0</td>
+            <td class="num">2</td>
+            <td class="num">28</td>
+            <td class="num">4 h 38</td>
+          </tr>
+          <tr>
+            <td><strong>Frontend</strong> <span class="tag tag-danger">À traiter</span><br><span style="font-size:11.5px;color:var(--text-muted)">Next.js 16 / React 19 / TS 5.9</span></td>
+            <td class="num">203</td>
+            <td class="num">34 641</td>
+            <td class="num">76</td>
+            <td class="num">47</td>
+            <td class="num">930</td>
+            <td class="num">106 h 25</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total projet</td>
+            <td class="num">280</td>
+            <td class="num">40 516</td>
+            <td class="num">76</td>
+            <td class="num">49</td>
+            <td class="num">958</td>
+            <td class="num">111 h 03</td>
+          </tr>
+        </tfoot>
+      </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Constat structurant&nbsp;:</strong> le backend Django est remarquablement propre — <b>aucun bug</b>, 28 smells pour 5 875 lignes, soit 4 h 38 de dette. <b>96 % de la dette technique et 100 % des bugs sont concentrés sur le frontend</b>, et plus précisément sur deux fichiers (voir §&nbsp;5). L'effort de remédiation est donc très localisé.
+      </div>
+    </div>
+
+    <!-- SECTION 2: SECURITE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🔐</div>
+        <div>
+          <h2>2. Sécurité — 49 vulnérabilités</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Analyse qualifiée : 4 remontées exigent une action, 45 sont des faux positifs contextuels.</p>
+        </div>
+      </div>
+
+      <h3>2.1 — Remontées à traiter</h3>
+      <div class="item-grid">
+        <div class="item-card flag-crit">
+          <div class="item-title">Clé secrète Django en dur <span class="tag tag-crit">Blocker</span></div>
+          <p class="item-desc"><span class="code-pill">backend/keuria/settings.py:26</span> — règle <span class="code-pill">secrets:S6687</span></p>
+          <p class="item-desc">Le littéral <span class="code-pill">'django-insecure-keuria-dev-only'</span> est présent dans le code source comme valeur de repli de <span class="code-pill">SECRET_KEY</span>.</p>
+          <p class="item-desc"><strong>Risque réel : faible.</strong> Le garde-fou est correctement implémenté — en l'absence de <span class="code-pill">SECRET_KEY</span> et hors <span class="code-pill">DEBUG</span>, le démarrage lève <span class="code-pill">ImproperlyConfigured</span>. Le repli n'est donc jamais atteint en production.</p>
+          <p class="item-desc"><strong>Action :</strong> remplacer le littéral par <span class="code-pill">get_random_secret_key()</span> généré au runtime. Le secret restant dans l'historique Git, il doit être considéré comme révoqué et ne jamais être réutilisé.</p>
+        </div>
+        <div class="item-card flag-warn">
+          <div class="item-title">Mot de passe de démonstration <span class="tag tag-warn">Major</span></div>
+          <p class="item-desc"><span class="code-pill">backend/apps/scolaire/management/commands/seed_demo_school.py:42</span> — règle <span class="code-pill">python:S2068</span></p>
+          <p class="item-desc">Constante <span class="code-pill">DEMO_PASSWORD = 'Demo-Keuria-2026'</span> utilisée pour peupler l'école de démonstration « Les Baobabs ».</p>
+          <p class="item-desc"><strong>Risque réel : faible et acceptable</strong> dans un script de <em>seed</em>. Le point de vigilance n'est pas le littéral mais l'exécutabilité de la commande : si <span class="code-pill">seed_demo_school</span> peut être lancée sur l'instance de production, elle y crée des comptes dont le mot de passe est public dans le dépôt.</p>
+          <p class="item-desc"><strong>Action :</strong> garder le littéral mais verrouiller la commande (refus explicite si <span class="code-pill">DEBUG=False</span>), ou lire le mot de passe depuis l'environnement avec repli de développement.</p>
+        </div>
+        <div class="item-card flag-warn">
+          <div class="item-title">Exécution dynamique de code <span class="tag tag-warn">Critical ×2</span></div>
+          <p class="item-desc"><span class="code-pill">frontend/app/dashboard/DashboardClient.tsx:3157</span> — règle <span class="code-pill">typescript:S1523</span></p>
+          <p class="item-desc">Appel à <span class="code-pill">new Function("move","turn","center","say","wait", generated)</span> pour exécuter le JavaScript produit par l'atelier Blockly.</p>
+          <p class="item-desc"><strong>Risque réel : faible en l'état.</strong> Le code exécuté est généré par <span class="code-pill">javascriptGenerator</span> à partir des blocs assemblés par l'enfant lui-même, côté client uniquement, et les cinq primitives injectées sont inoffensives (déplacement, rotation, message).</p>
+          <p class="item-desc"><strong>Action :</strong> aucune correction immédiate. En revanche, ce point devient bloquant si les projets Blockly deviennent un jour <b>partageables ou persistés entre élèves</b> : un programme reçu d'un tiers serait alors exécuté sans isolation. À tracer comme dette de sécurité conditionnelle.</p>
+        </div>
+      </div>
+
+      <h3>2.2 — Faux positifs qualifiés : 45 occurrences de <span class="code-pill">Math.random()</span></h3>
+      <p class="lead">Règle <span class="code-pill">typescript:S2245</span> — « Pseudorandom number generators (PRNGs) should not be used in security contexts ». Cette règle représente <b>92 % des vulnérabilités remontées</b> et explique à elle seule la note Sécurité E.</p>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Fichier</th><th>Occ.</th><th>Usage constaté</th><th>Qualification</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="code-pill">dashboard/DashboardClient.tsx</span></td><td class="num">17</td><td>Animations, variations visuelles</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/RewardModal.tsx</span></td><td class="num">8</td><td>Confettis, trajectoires de récompense</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">dashboard/GameShell.tsx</span></td><td class="num">4</td><td>Aléa de gameplay</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/LevelAnimation.tsx</span></td><td class="num">3</td><td>Particules d'animation</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/MascotPalou.tsx</span></td><td class="num">3</td><td>Variations d'expression de la mascotte</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">programmation/ProgrammingAtelier.tsx</span></td><td class="num">3</td><td>Positionnement de décor</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/BadgeUnlockAnimation.tsx</span></td><td class="num">2</td><td>Animation de déblocage de badge</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/LevelUpAnimation.tsx</span></td><td class="num">2</td><td>Animation de montée de niveau</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">components/PalouGuide.tsx</span></td><td class="num">2</td><td>Choix de réplique du guide</td><td><span class="badge-status status-done">Faux positif</span></td></tr>
+          <tr><td><span class="code-pill">dashboard/KidsLessonPlayer79.tsx</span></td><td class="num">1</td><td>Mélange de propositions de quiz</td><td><span class="badge-status status-wip">À vérifier</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>Recommandation de priorité 1 — rétablir la lisibilité de la note sécurité.</strong>
+        Aucune de ces occurrences n'alimente un jeton, un identifiant de session, un mot de passe ou un secret cryptographique : il s'agit exclusivement de décoratif et de gameplay. Tant qu'elles restent ouvertes, la note <b>E</b> masque les vraies remontées et rend l'indicateur inexploitable en revue. Deux options :
+        <br>• marquer ces issues en <em>« Won't fix »</em> depuis l'interface SonarQube ;
+        <br>• désactiver <span class="code-pill">S2245</span> sur le périmètre <span class="code-pill">frontend/app/components/**</span> et les vues de jeu via <span class="code-pill">sonar.issue.ignore.multicriteria</span>.
+        <br>Après neutralisation, la note sécurité attendue est <b>A</b> (hors les 3 remontées du §&nbsp;2.1, qui ne pèsent pas sur le rating une fois traitées). Le seul cas méritant un examen manuel est le mélange des propositions de quiz dans <span class="code-pill">KidsLessonPlayer79</span>, si l'ordre des réponses doit être non prédictible pour éviter la triche.
+      </div>
+    </div>
+
+    <!-- SECTION 3: FIABILITE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🐛</div>
+        <div>
+          <h2>3. Fiabilité — 76 bugs</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Aucun bug côté backend. 95 % des remontées relèvent de l'accessibilité clavier.</p>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Règle</th><th>Occ.</th><th>Intitulé</th><th>Sévérité</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="code-pill">typescript:S1082</span></td><td class="num">72</td><td>Les événements souris doivent avoir un équivalent clavier</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6443</span></td><td class="num">3</td><td>Un setter d'état React ne doit pas être appelé avec sa propre variable d'état</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S3923</span></td><td class="num">1</td><td>Toutes les branches d'une conditionnelle ne doivent pas être identiques</td><td><span class="tag tag-warn">Major</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>3.1 — Accessibilité clavier : 72 occurrences</h3>
+      <p class="lead">Des gestionnaires <span class="code-pill">onClick</span> / <span class="code-pill">onMouseOver</span> sont posés sans <span class="code-pill">onKeyDown</span>, <span class="code-pill">role</span> ni <span class="code-pill">tabIndex</span> correspondants. À cela s'ajoutent, côté code smells, <b>49 occurrences de <span class="code-pill">S6848</span></b> (gestionnaire interactif sur un élément DOM non interactif — typiquement un <span class="code-pill">&lt;div&gt;</span> cliquable) et <b>18 occurrences de <span class="code-pill">S6819</span></b> (rôle ARIA là où une balise sémantique existe).</p>
+      <div class="callout callout-warn">
+        <strong>Ce lot de ~140 remontées est le plus structurant du rapport.</strong> Kër IA est une plateforme éducative destinée à des enfants et à un déploiement en milieu scolaire : la navigation entièrement au clavier et la compatibilité lecteur d'écran relèvent moins de la qualité de code que de la <b>conformité d'usage</b> et des exigences d'accessibilité attendues d'un outil scolaire. Elles conditionnent par ailleurs l'accès aux élèves en situation de handicap moteur.
+        <br><br><strong>Approche recommandée :</strong> plutôt que 140 corrections ponctuelles, introduire deux ou trois composants partagés (<span class="code-pill">&lt;Pressable&gt;</span>, <span class="code-pill">&lt;Card clickable&gt;</span>) encapsulant une fois pour toutes <span class="code-pill">role="button"</span>, <span class="code-pill">tabIndex={0}</span> et le couple <span class="code-pill">onClick</span>/<span class="code-pill">onKeyDown</span>, puis substituer les <span class="code-pill">&lt;div&gt;</span> cliquables. L'essentiel des 140 issues tombe mécaniquement.
+      </div>
+
+      <h3>3.2 — Condition morte</h3>
+      <div class="item-grid">
+        <div class="item-card flag-warn">
+          <div class="item-title">Ternaire sans effet <span class="tag tag-warn">S3923</span></div>
+          <p class="item-desc"><span class="code-pill">frontend/app/dashboard/AdvancedGames.tsx:937</span></p>
+          <p class="item-desc">Dans le style du bouton « Lancer le dialogue », la propriété <span class="code-pill">color</span> s'évalue à <span class="code-pill">(!promptData.lieu || !promptData.sujet) ? "#FFF" : "#FFF"</span> — les deux branches retournent la même valeur.</p>
+          <p class="item-desc"><strong>Action :</strong> remplacer par <span class="code-pill">color: "#FFF"</span>. À noter que l'état désactivé du bouton combine un fond <span class="code-pill">#E5E7EB</span> avec un texte blanc, soit un contraste insuffisant — à rapprocher des 34 remontées <span class="code-pill">css:S7924</span> (§&nbsp;4).</p>
+        </div>
+        <div class="item-card flag-info">
+          <div class="item-title">Rollback d'état React fragile <span class="tag tag-info">S6443 ×3</span></div>
+          <p class="item-desc"><span class="code-pill">DashboardClient.tsx:636</span>, <span class="code-pill">DashboardClient.tsx:652</span>, <span class="code-pill">DashboardContext.tsx:129</span></p>
+          <p class="item-desc">Le motif est un rollback optimiste : <span class="code-pill">setProgress(next)</span> puis, si <span class="code-pill">POST /api/progress</span> échoue, <span class="code-pill">setProgress(progress)</span> pour restaurer l'état antérieur.</p>
+          <p class="item-desc"><strong>Le comportement est correct aujourd'hui</strong> — <span class="code-pill">progress</span> est la valeur de closure capturée avant la mise à jour, donc bien l'état précédent. Mais le motif est fragile : toute évolution de la fonction (await supplémentaire, mise à jour concurrente, passage en <span class="code-pill">useTransition</span>) le casse silencieusement, et le rollback restaurerait alors un état périmé.</p>
+          <p class="item-desc"><strong>Action :</strong> capturer explicitement l'état avant mutation (<span class="code-pill">const previous = progress;</span>) et restaurer <span class="code-pill">previous</span>, ce qui rend l'intention lisible et lève la remontée.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: MAINTENABILITE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🧹</div>
+        <div>
+          <h2>4. Maintenabilité — 958 code smells</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Note A malgré le volume : la dette reste proportionnellement faible (ratio 0,5 %).</p>
+        </div>
+      </div>
+
+      <h3>Top 20 des règles déclenchées</h3>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Règle</th><th>Occ.</th><th>Poids</th><th>Intitulé</th><th>Sév.</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="code-pill">typescript:S3358</span></td><td class="num">298</td><td><div class="bar-wrap"><div class="bar"><i style="width:100%"></i></div></div></td><td>Ternaires imbriqués</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6759</span></td><td class="num">168</td><td><div class="bar-wrap"><div class="bar"><i style="width:56%"></i></div></div></td><td>Les props React doivent être <span class="code-pill">readonly</span></td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">css:S4666</span></td><td class="num">79</td><td><div class="bar-wrap"><div class="bar"><i style="width:27%"></i></div></div></td><td>Sélecteurs CSS dupliqués</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6848</span></td><td class="num">49</td><td><div class="bar-wrap"><div class="bar"><i class="b-warn" style="width:16%"></i></div></div></td><td>Gestionnaire interactif sur élément non interactif</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S3776</span></td><td class="num">44</td><td><div class="bar-wrap"><div class="bar"><i class="b-danger" style="width:15%"></i></div></div></td><td>Complexité cognitive trop élevée</td><td><span class="tag tag-danger">Critical</span></td></tr>
+          <tr><td><span class="code-pill">css:S7924</span></td><td class="num">34</td><td><div class="bar-wrap"><div class="bar"><i class="b-warn" style="width:11%"></i></div></div></td><td>Contraste texte / fond insuffisant</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S1854</span></td><td class="num">29</td><td><div class="bar-wrap"><div class="bar"><i style="width:10%"></i></div></div></td><td>Affectations inutilisées</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S2681</span></td><td class="num">29</td><td><div class="bar-wrap"><div class="bar"><i style="width:10%"></i></div></div></td><td>Blocs multilignes non accolés</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6479</span></td><td class="num">26</td><td><div class="bar-wrap"><div class="bar"><i class="b-warn" style="width:9%"></i></div></div></td><td>Index de tableau utilisé comme <span class="code-pill">key</span> JSX</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S1128</span></td><td class="num">21</td><td><div class="bar-wrap"><div class="bar"><i style="width:7%"></i></div></div></td><td>Imports inutiles</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6819</span></td><td class="num">18</td><td><div class="bar-wrap"><div class="bar"><i style="width:6%"></i></div></div></td><td>Balise sémantique préférable au rôle ARIA</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S1874</span></td><td class="num">18</td><td><div class="bar-wrap"><div class="bar"><i style="width:6%"></i></div></div></td><td>API dépréciées utilisées</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6772</span></td><td class="num">13</td><td><div class="bar-wrap"><div class="bar"><i style="width:4%"></i></div></div></td><td>Espacement entre éléments inline à expliciter</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6749</span></td><td class="num">11</td><td><div class="bar-wrap"><div class="bar"><i style="width:4%"></i></div></div></td><td>Fragments JSX redondants</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S2486</span></td><td class="num">10</td><td><div class="bar-wrap"><div class="bar"><i class="b-warn" style="width:3%"></i></div></div></td><td>Exceptions ignorées silencieusement</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6853</span></td><td class="num">9</td><td><div class="bar-wrap"><div class="bar"><i style="width:3%"></i></div></div></td><td><span class="code-pill">&lt;label&gt;</span> sans texte ou sans contrôle associé</td><td><span class="tag tag-warn">Major</span></td></tr>
+          <tr><td><span class="code-pill">python:S1192</span></td><td class="num">9</td><td><div class="bar-wrap"><div class="bar"><i class="b-danger" style="width:3%"></i></div></div></td><td>Littéraux de chaîne dupliqués</td><td><span class="tag tag-danger">Critical</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S6770</span></td><td class="num">9</td><td><div class="bar-wrap"><div class="bar"><i style="width:3%"></i></div></div></td><td>Composants JSX en PascalCase</td><td><span class="tag">Minor</span></td></tr>
+          <tr><td><span class="code-pill">python:S3776</span></td><td class="num">8</td><td><div class="bar-wrap"><div class="bar"><i class="b-danger" style="width:3%"></i></div></div></td><td>Complexité cognitive trop élevée (Python)</td><td><span class="tag tag-danger">Critical</span></td></tr>
+          <tr><td><span class="code-pill">typescript:S2004</span></td><td class="num">4</td><td><div class="bar-wrap"><div class="bar"><i class="b-danger" style="width:2%"></i></div></div></td><td>Fonctions imbriquées trop profondément</td><td><span class="tag tag-danger">Critical</span></td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Lecture des trois lots dominants</h3>
+      <div class="item-grid">
+        <div class="item-card flag-info">
+          <div class="item-title">298 ternaires imbriqués <span class="tag tag-info">31 % des smells</span></div>
+          <p class="item-desc">Conséquence directe du style d'écriture très dense du frontend (styles inline conditionnels, JSX sur une seule ligne). Chaque occurrence est bénigne, mais le cumul est le premier facteur d'illisibilité du code.</p>
+          <p class="item-desc"><strong>Action :</strong> faible priorité en correction isolée. Ces ternaires disparaissent naturellement lors du découpage des gros fichiers (§&nbsp;5) et de l'extraction des styles inline vers des classes CSS ou des variantes de composants.</p>
+        </div>
+        <div class="item-card flag-info">
+          <div class="item-title">168 props non <span class="code-pill">readonly</span> <span class="tag tag-info">Correction mécanique</span></div>
+          <p class="item-desc">Les interfaces de props React ne déclarent pas leurs champs en lecture seule. Aucun impact fonctionnel, mais la règle protège contre les mutations accidentelles de props.</p>
+          <p class="item-desc"><strong>Action :</strong> corrigeable en masse par codemod (<span class="code-pill">type Props = Readonly&lt;{...}&gt;</span>). Gain immédiat de ~17 % du volume de smells pour un risque de régression nul.</p>
+        </div>
+        <div class="item-card flag-warn">
+          <div class="item-title">113 remontées CSS <span class="tag tag-warn">Dont 34 de contraste</span></div>
+          <p class="item-desc"><b>79 sélecteurs dupliqués</b> (<span class="code-pill">css:S4666</span>), concentrés dans <span class="code-pill">lessons/lesson-styles.css</span> (48) et <span class="code-pill">kids-shared.css</span> (45) — signe d'une accumulation de surcharges successives dont certaines sont probablement mortes.</p>
+          <p class="item-desc"><b>34 contrastes insuffisants</b> (<span class="code-pill">css:S7924</span>) : à traiter avec le lot accessibilité du §&nbsp;3.1, même motivation réglementaire.</p>
+          <p class="item-desc"><strong>Note :</strong> le scanner a également échoué à parser <span class="code-pill">frontend/app/keyframes.css:29</span> — une balise <span class="code-pill">&lt;/style&gt;</span> orpheline est présente dans le fichier CSS. À nettoyer : ce fichier n'est donc pas couvert par l'analyse.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: COMPLEXITE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🌡️</div>
+        <div>
+          <h2>5. Complexité cognitive & points chauds</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Le seuil SonarQube est de 15 par fonction. Deux fichiers concentrent 32 % de toutes les issues.</p>
+        </div>
+      </div>
+
+      <h3>Fichiers les plus complexes</h3>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Fichier</th><th>Compl. cognitive</th><th>Lignes</th><th>Issues</th><th>Criticité</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code-pill">dashboard/KidsLessonPlayer79.tsx</span></td>
+            <td class="num" style="color:var(--danger)">1 264</td><td class="num">1 771</td><td class="num">145</td>
+            <td><span class="badge-status status-todo">Critique</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">dashboard/DashboardClient.tsx</span></td>
+            <td class="num" style="color:var(--danger)">934</td><td class="num">3 005</td><td class="num">199</td>
+            <td><span class="badge-status status-todo">Critique</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">dashboard/AdvancedGames.tsx</span></td>
+            <td class="num" style="color:var(--warning)">334</td><td class="num">938</td><td class="num">39</td>
+            <td><span class="badge-status status-wip">Élevée</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">dashboard/GamesMapView.tsx</span></td>
+            <td class="num" style="color:var(--warning)">275</td><td class="num">627</td><td class="num">56</td>
+            <td><span class="badge-status status-wip">Élevée</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">programmation/ProgrammingAtelier.tsx</span></td>
+            <td class="num">145</td><td class="num">703</td><td class="num">21</td>
+            <td><span class="badge-status status-wip">Élevée</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">scolaire/services/imports.py</span></td>
+            <td class="num">100</td><td class="num">191</td><td class="num">—</td>
+            <td><span class="badge-status status-wip">À surveiller</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">superadmin/services.py</span></td>
+            <td class="num">98</td><td class="num">391</td><td class="num">—</td>
+            <td><span class="badge-status status-wip">À surveiller</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">scolaire/services/ecole.py</span></td>
+            <td class="num">96</td><td class="num">428</td><td class="num">—</td>
+            <td><span class="badge-status status-wip">À surveiller</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">connexion/ConnexionClient.tsx</span></td>
+            <td class="num">68</td><td class="num">344</td><td class="num">17</td>
+            <td><span class="badge-status status-done">Acceptable</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">progress/views.py</span></td>
+            <td class="num">63</td><td class="num">314</td><td class="num">—</td>
+            <td><span class="badge-status status-done">Acceptable</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h3>Fonctions dépassant le plus le seuil</h3>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Emplacement</th><th>Complexité</th><th>Facteur de dépassement</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="code-pill">KidsLessonPlayer79.tsx:519</span></td><td class="num" style="color:var(--danger)">597</td><td>×&nbsp;40 le seuil</td></tr>
+          <tr><td><span class="code-pill">KidsLessonPlayer79.tsx:32</span></td><td class="num" style="color:var(--danger)">278</td><td>×&nbsp;19 le seuil</td></tr>
+          <tr><td><span class="code-pill">GamesMapView.tsx:47</span></td><td class="num" style="color:var(--danger)">120</td><td>×&nbsp;8 le seuil</td></tr>
+          <tr><td><span class="code-pill">DashboardClient.tsx:303</span></td><td class="num" style="color:var(--danger)">111</td><td>×&nbsp;7 le seuil</td></tr>
+          <tr><td><span class="code-pill">GamesMapView.tsx:164</span></td><td class="num" style="color:var(--warning)">63</td><td>×&nbsp;4 le seuil</td></tr>
+          <tr><td><span class="code-pill">AdvancedGames.tsx:70</span></td><td class="num" style="color:var(--warning)">53</td><td>×&nbsp;3,5 le seuil</td></tr>
+          <tr><td><span class="code-pill">ProgrammingAtelier.tsx:300</span></td><td class="num" style="color:var(--warning)">51</td><td>×&nbsp;3,4 le seuil</td></tr>
+          <tr><td><span class="code-pill">scolaire/services/annee.py:162</span></td><td class="num">39</td><td>×&nbsp;2,6 le seuil</td></tr>
+          <tr><td><span class="code-pill">components/MascotPalou.tsx:92</span></td><td class="num">39</td><td>×&nbsp;2,6 le seuil</td></tr>
+          <tr><td><span class="code-pill">scolaire/services/imports.py:120</span></td><td class="num">38</td><td>×&nbsp;2,5 le seuil</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>La fonction à 597 de complexité cognitive (<span class="code-pill">KidsLessonPlayer79.tsx:519</span>) est le point le plus préoccupant du rapport.</strong>
+        À ce niveau, une fonction n'est plus testable unitairement, plus revuable en relecture, et toute modification y comporte un risque de régression non estimable. Les deux fonctions de ce fichier totalisent 875 — soit plus que la complexité cumulée de l'ensemble du backend Django.
+        <br><br><strong>Priorité :</strong> le découpage de <span class="code-pill">KidsLessonPlayer79.tsx</span> et <span class="code-pill">DashboardClient.tsx</span> (3 005 lignes) est le seul chantier du rapport qui améliore simultanément les trois notes. Extraire les types d'exercices en composants dédiés, isoler la machine à états de progression dans un <span class="code-pill">useReducer</span> ou un hook testable, et sortir les données statiques de leçon du corps du composant.
+      </div>
+    </div>
+
+    <!-- SECTION 6: TESTS & DUPLICATION -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🧪</div>
+        <div>
+          <h2>6. Couverture de tests, duplication & documentation</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Indicateurs complémentaires de robustesse.</p>
+        </div>
+      </div>
+
+      <div class="item-grid">
+        <div class="item-card flag-warn">
+          <div class="item-title">Couverture de tests <span class="tag tag-warn">33,3 % projet</span></div>
+          <p class="item-desc">La couverture a été instrumentée et transmise au scanner dans le cadre de cet audit (<span class="code-pill">coverage.py</span> → Cobertura XML → <span class="code-pill">sonar.python.coverage.reportPaths</span>). La suite compte <b>153 tests, tous passants</b>.</p>
+          <p class="item-desc">Le 33,3 % global est une <b>moyenne diluée</b> et doit être lu par périmètre : le backend est solidement couvert, le frontend ne l'est pas du tout. C'est la ventilation ci-dessous qui porte l'information, pas le chiffre agrégé.</p>
+        </div>
+        <div class="item-card flag-info">
+          <div class="item-title">Backend Django <span class="tag tag-ok">82,1 % — bon</span></div>
+          <p class="item-desc"><span class="code-pill">backend/apps</span> : <b>82,3 %</b> (599 lignes non couvertes sur 3 389). <span class="code-pill">backend/keuria</span> : <b>74,7 %</b> (22 sur 87).</p>
+          <p class="item-desc">Niveau conforme aux attentes pour une application métier. Les deux seuls modules entièrement découverts sont les commandes de management <span class="code-pill">seed_demo_school.py</span> (144 lignes) et <span class="code-pill">create_school_admin.py</span> (33 lignes) — attendu pour des scripts d'amorçage, et sans enjeu.</p>
+          <p class="item-desc"><strong>Points réellement à renforcer :</strong> <span class="code-pill">scolaire/services/imports.py</span> (65,5 % — le plus faible du code métier, et par ailleurs 4<sup>e</sup> plus complexe du projet), <span class="code-pill">progress/views.py</span> (73,7 %) et <span class="code-pill">scolaire/services/ecole.py</span> (80,8 %, 69 lignes découvertes).</p>
+        </div>
+        <div class="item-card flag-crit">
+          <div class="item-title">Frontend Next.js <span class="tag tag-danger">0 % — angle mort</span></div>
+          <p class="item-desc"><b>5 091 lignes à couvrir, 5 091 non couvertes.</b> Le dépôt ne contient qu'un seul fichier de test frontend (<span class="code-pill">frontend/tests/rendered-html.test.mjs</span>), sans instrumentation de couverture.</p>
+          <p class="item-desc">C'est le déséquilibre majeur du projet : le frontend concentre <b>100 % des bugs, 96 % de la dette technique et la totalité de la complexité critique</b> (§&nbsp;5), et c'est précisément la partie dépourvue de filet de sécurité. Les deux fichiers à refondre — <span class="code-pill">KidsLessonPlayer79.tsx</span> et <span class="code-pill">DashboardClient.tsx</span> — devraient être refactorés sans aucun test de non-régression.</p>
+          <p class="item-desc"><strong>Action :</strong> cet enchaînement conditionne le chantier P3. Écrire les tests avant le découpage ne sera pas praticable sur des fonctions à 597 de complexité ; l'ordre réaliste est d'extraire d'abord la logique pure (machine à états de progression, calcul d'XP, sélection d'exercice) dans des modules testables, puis de la couvrir, et seulement ensuite de réorganiser la couche de présentation.</p>
+        </div>
+        <div class="item-card flag-info">
+          <div class="item-title">Duplication <span class="tag tag-ok">2,3 % — bon</span></div>
+          <p class="item-desc">68 blocs dupliqués pour 2,3 % des lignes, en deçà du seuil usuel de 3 %. Le résultat est d'autant plus satisfaisant que les fichiers de données statiques (<span class="code-pill">curriculum-*.ts</span>, <span class="code-pill">lms-data.ts</span>, <span class="code-pill">daily-plan.ts</span>) ont été exclus du calcul : leur répétition structurelle est intentionnelle et aurait faussé la mesure à la hausse.</p>
+          <p class="item-desc"><strong>Action :</strong> aucune. Indicateur à maintenir.</p>
+        </div>
+        <div class="item-card flag-warn">
+          <div class="item-title">Densité de commentaires <span class="tag tag-warn">3,8 %</span></div>
+          <p class="item-desc">Faible au regard des 40 516 lignes analysées, et particulièrement problématique sur les fichiers à forte complexité où aucun commentaire n'oriente la lecture.</p>
+          <p class="item-desc"><strong>Action :</strong> ne pas traiter comme un objectif chiffré. L'effort de documentation doit cibler les points chauds du §&nbsp;5 — et le découpage de ces fichiers rend de toute façon une part des commentaires inutile en explicitant l'intention par la structure.</p>
+        </div>
+        <div class="item-card flag-info">
+          <div class="item-title">Security Review <span class="tag tag-ok">A — 0 hotspot</span></div>
+          <p class="item-desc">Aucun <em>security hotspot</em> détecté, c'est-à-dire aucun point nécessitant une revue humaine pour arbitrer un risque contextuel. Note A.</p>
+          <p class="item-desc">Ce résultat est cohérent avec le travail de sécurisation documenté dans le rapport d'audit global (plan d'authentification T01–T17).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 7: PLAN D'ACTION -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">🎯</div>
+        <div>
+          <h2>7. Plan de remédiation priorisé</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Séquencement par rapport valeur / effort, de l'action immédiate au chantier de fond.</p>
+        </div>
+      </div>
+      <div class="table-responsive">
+      <table>
+        <thead>
+          <tr><th>Pr.</th><th>Action</th><th>Périmètre</th><th>Effet attendu</th><th>Effort</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="code-pill">P0</span></td>
+            <td><strong>Qualifier les 45 <span class="code-pill">Math.random()</span></strong><br><span style="font-size:11.5px;color:var(--text-muted)">« Won't fix » ou exclusion de règle ciblée</span></td>
+            <td>10 fichiers frontend</td>
+            <td>Sécurité <b>E → A</b>. Rend l'indicateur exploitable en revue.</td>
+            <td><span class="badge-status status-done">~30 min</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P0</span></td>
+            <td><strong>Retirer le littéral <span class="code-pill">SECRET_KEY</span></strong><br><span style="font-size:11.5px;color:var(--text-muted)">Repli via <span class="code-pill">get_random_secret_key()</span></span></td>
+            <td><span class="code-pill">keuria/settings.py</span></td>
+            <td>Lève le seul Blocker du projet.</td>
+            <td><span class="badge-status status-done">~15 min</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P0</span></td>
+            <td><strong>Brancher la couverture Pytest</strong> <span class="tag tag-ok">✓ Fait</span><br><span style="font-size:11.5px;color:var(--text-muted)"><span class="code-pill">.coveragerc</span> + <span class="code-pill">sonar.python.coverage.reportPaths</span></span></td>
+            <td>Backend</td>
+            <td><b>Réalisé pendant l'audit.</b> Mesure obtenue : backend 82,1 %, frontend 0 %, projet 33,3 %.</td>
+            <td><span class="badge-status status-done">Terminé</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P1</span></td>
+            <td><strong>Définir un Quality Gate sur le nouveau code</strong><br><span style="font-size:11.5px;color:var(--text-muted)">Baseline = commit courant, conditions sur le code ajouté</span></td>
+            <td>Projet</td>
+            <td>Arrête l'accumulation de dette sans exiger la reprise de l'existant.</td>
+            <td><span class="badge-status status-done">~1 h</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P1</span></td>
+            <td><strong>Corriger les 4 bugs réels</strong><br><span style="font-size:11.5px;color:var(--text-muted)">Ternaire mort + 3 rollbacks d'état</span></td>
+            <td><span class="code-pill">AdvancedGames</span>, <span class="code-pill">DashboardClient</span>, <span class="code-pill">DashboardContext</span></td>
+            <td>Supprime les bugs non liés à l'accessibilité.</td>
+            <td><span class="badge-status status-done">~1 h</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P1</span></td>
+            <td><strong>Codemod props <span class="code-pill">Readonly&lt;&gt;</span></strong></td>
+            <td>168 occurrences</td>
+            <td>−17 % du volume de smells, risque de régression nul.</td>
+            <td><span class="badge-status status-wip">~2 h</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P1</span></td>
+            <td><strong>Nettoyer <span class="code-pill">keyframes.css</span></strong><br><span style="font-size:11.5px;color:var(--text-muted)">Balise <span class="code-pill">&lt;/style&gt;</span> orpheline ligne 29</span></td>
+            <td>1 fichier</td>
+            <td>Rend le fichier analysable (actuellement hors périmètre).</td>
+            <td><span class="badge-status status-done">~10 min</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P2</span></td>
+            <td><strong>Amorcer la couverture frontend</strong><br><span style="font-size:11.5px;color:var(--text-muted)">Extraire la logique pure puis la tester (Vitest)</span></td>
+            <td>5 091 lignes à 0 %</td>
+            <td>Crée le filet de non-régression indispensable au chantier P3.</td>
+            <td><span class="badge-status status-wip">~4 j</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P2</span></td>
+            <td><strong>Composants accessibles partagés</strong><br><span style="font-size:11.5px;color:var(--text-muted)"><span class="code-pill">&lt;Pressable&gt;</span> encapsulant rôle, <span class="code-pill">tabIndex</span> et clavier</span></td>
+            <td>~140 occurrences<br>(S1082 + S6848 + S6819)</td>
+            <td>Navigation clavier et lecteur d'écran. <b>Enjeu de conformité</b> pour un usage scolaire.</td>
+            <td><span class="badge-status status-wip">~3 j</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P2</span></td>
+            <td><strong>Reprendre les 34 contrastes insuffisants</strong></td>
+            <td>CSS frontend</td>
+            <td>Même enjeu d'accessibilité. À mener avec le lot ci-dessus.</td>
+            <td><span class="badge-status status-wip">~1 j</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P3</span></td>
+            <td><strong>Découper <span class="code-pill">KidsLessonPlayer79.tsx</span></strong><br><span style="font-size:11.5px;color:var(--text-muted)">Fonction à 597 de complexité · 145 issues</span></td>
+            <td>1 771 lignes</td>
+            <td>Rend le lecteur de leçons testable et revuable. Améliore les 3 notes.</td>
+            <td><span class="badge-status status-todo">~5 j</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P3</span></td>
+            <td><strong>Découper <span class="code-pill">DashboardClient.tsx</span></strong><br><span style="font-size:11.5px;color:var(--text-muted)">3 005 lignes · 199 issues · 17 sous-vues</span></td>
+            <td>3 005 lignes</td>
+            <td>Fait tomber mécaniquement une large part des 298 ternaires imbriqués.</td>
+            <td><span class="badge-status status-todo">~8 j</span></td>
+          </tr>
+          <tr>
+            <td><span class="code-pill">P4</span></td>
+            <td><strong>Consolider les feuilles CSS</strong><br><span style="font-size:11.5px;color:var(--text-muted)">79 sélecteurs dupliqués</span></td>
+            <td><span class="code-pill">lesson-styles.css</span>, <span class="code-pill">kids-shared.css</span></td>
+            <td>Supprime les surcharges mortes accumulées.</td>
+            <td><span class="badge-status status-wip">~2 j</span></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div class="callout callout-info">
+        <strong>Lecture d'ensemble.</strong> Des quatre actions P0, celle qui concerne la couverture a été réalisée au cours de cet audit ; les trois autres représentent moins d'une heure de travail et transforment la lisibilité des indicateurs : la note de sécurité devient honnête et le seul Blocker disparaît. La mesure de couverture a par ailleurs déplacé le diagnostic — elle confirme que le backend est bien tenu et isole le frontend comme seul angle mort réel, à la fois pour les bugs, la dette, la complexité et les tests. Le véritable enjeu de fond se résume à <b>deux fichiers</b> (P3) et <b>un lot d'accessibilité</b> (P2) — ce dernier étant le seul à comporter une dimension de conformité, et non de simple qualité interne, compte tenu du public scolaire visé.
+      </div>
+    </div>
+
+    <!-- SECTION 8: REPRODUCTIBILITE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-icon">⚙️</div>
+        <div>
+          <h2>8. Reproductibilité de l'analyse</h2>
+          <p style="font-size: 13px; color: var(--text-muted);">Configuration versionnée et procédure de relance.</p>
+        </div>
+      </div>
+
+      <h3>Périmètre retenu</h3>
+      <p class="lead">La configuration est versionnée dans <span class="code-pill">sonar-project.properties</span> à la racine du dépôt. Sources analysées : <span class="code-pill">backend/apps</span>, <span class="code-pill">backend/keuria</span>, <span class="code-pill">frontend/app</span>, <span class="code-pill">frontend/lib</span>, <span class="code-pill">frontend/worker</span>.</p>
+      <p class="lead">Couverture : <span class="code-pill">sonar.python.coverage.reportPaths=backend/coverage.xml</span>. Le périmètre mesuré et ses exclusions (tests, migrations, <span class="code-pill">wsgi</span>/<span class="code-pill">asgi</span>, <span class="code-pill">manage.py</span>) sont définis dans <span class="code-pill">backend/.coveragerc</span>, également versionné. Aucune couverture frontend n'est produite à ce jour.</p>
+      <p class="lead">Exclusions : <span class="code-pill">node_modules</span>, <span class="code-pill">__pycache__</span>, <span class="code-pill">migrations</span>, <span class="code-pill">.next</span>, <span class="code-pill">dist</span>, <span class="code-pill">public</span>, <span class="code-pill">examples</span>, fichiers minifiés et répertoires de tests (déclarés séparément en <span class="code-pill">sonar.tests</span>). Les fichiers de travail de la racine (<span class="code-pill">old_dashboard*.tsx</span>, diffs, scripts d'extraction) sont volontairement hors périmètre : ils auraient introduit du bruit et une duplication artificielle.</p>
+
+      <h3>Relancer l'audit</h3>
+      <pre class="code-block"><span class="cmt"># 1. Démarrer le serveur SonarQube (port 9000)</span>
+docker start keuria-sonarqube
+
+<span class="cmt"># 2. Générer la couverture backend (voir §6)</span>
+<span class="cmt">#    pytest-cov n'est pas installé : on passe par coverage.py, déjà présent.</span>
+<span class="cmt">#    Le périmètre et les exclusions sont figés dans backend/.coveragerc</span>
+cd backend
+python -m coverage run -m pytest
+python -m coverage xml          <span class="cmt"># → backend/coverage.xml</span>
+cd ..
+
+<span class="cmt"># 3. Lancer le scanner depuis la racine du dépôt</span>
+sonar-scanner \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.token=$SONAR_TOKEN
+
+<span class="cmt"># 4. Consulter le tableau de bord</span>
+open http://localhost:9000/dashboard?id=keuria-v2</pre>
+
+      <div class="callout callout-info">
+        <strong>Piège de configuration à connaître pour l'intégration continue.</strong>
+        La résolution des chemins du rapport Cobertura par SonarQube est sensible à la façon dont <span class="code-pill">coverage.py</span> écrit ses balises <span class="code-pill">&lt;source&gt;</span>. Trois configurations ont été écartées avant d'aboutir&nbsp;:
+        <br>• <span class="code-pill">source = apps,keuria</span> → deux racines, et les <span class="code-pill">__init__.py</span> présents dans chacune deviennent ambigus (<em>« the file exists in several source »</em>)&nbsp;;
+        <br>• ajout de <span class="code-pill">relative_files = True</span> → produit une balise <span class="code-pill">&lt;source&gt;</span> vide qui fait échouer la résolution de <b>74 fichiers</b>, silencieusement exclus de la mesure&nbsp;;
+        <br>• <span class="code-pill">source = .</span> <b>sans</b> <span class="code-pill">relative_files</span> → une racine absolue unique et des chemins préfixés (<span class="code-pill">apps/…</span>, <span class="code-pill">keuria/…</span>) : résolution complète, zéro erreur.
+        <br><br>C'est cette dernière forme qui est figée dans <span class="code-pill">backend/.coveragerc</span>. En CI, <b>vérifier systématiquement que le log du scanner ne contient aucun <span class="code-pill">Cannot resolve the file path</span></b> : l'analyse reste en succès et le chiffre de couverture s'affiche malgré tout, mais amputé des fichiers non résolus — donc faux sans aucun signal d'alerte.
+      </div>
+
+      <div class="callout callout-warn">
+        <strong>Note d'exploitation.</strong> L'analyse a été menée sur une instance SonarQube Community locale (conteneur Docker <span class="code-pill">keuria-sonarqube</span>), avec un jeton d'analyse à usage unique. Ce jeton et le mot de passe administrateur de l'instance sont <b>locaux à la machine d'audit et ne figurent pas dans ce rapport ni dans le dépôt</b>. Pour une intégration continue, provisionner un jeton dédié en variable d'environnement <span class="code-pill">SONAR_TOKEN</span> côté CI, et ne jamais le committer.
+      </div>
+    </div>
+
+    <footer>
+      <p><strong>Projet Kër IA</strong> — Plateforme d'apprentissage de l'Intelligence Artificielle pour la jeunesse africaine</p>
+      <p style="margin-top: 4px; font-size: 11px;">Audit statique SonarQube Community 26.9.0 · Branche <span class="code-pill">test</span> · Commit <span class="code-pill">13d8c88</span> · 3 octobre 2026 · Rapport destiné à la revue technique de supervision</p>
+    </footer>
+  </div>
+</body>
+</html>

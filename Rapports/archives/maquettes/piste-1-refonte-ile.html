@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maquette Piste 1 - Refonte de l'île</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap">
+<style>
+/* Concept : trois écrans téléphone côte à côte, chacun une proposition de la page « modules » enfant. Monde enfant, thème unique clair. */
+:root {
+  --ink: #153b3b;
+  --green: #0f755f;
+  --green-d: #0a4f40;
+  --lime: #d8f05b;
+  --lime-soft: #eefab0;
+  --sky: #87ceeb;
+  --sky-soft: #e3f4fb;
+  --gold: #ffd23f;
+  --gold-d: #e0a100;
+  --grey: #c9d3d0;
+  --paper: #fff9e6;
+  --desk: #e9efe6;
+  --muted: #4b6663;
+  --display: "Fredoka", "Baloo 2", system-ui, sans-serif;
+  --body: "Nunito", system-ui, sans-serif;
+}
+body { background: var(--desk); color: var(--ink); font-family: var(--body); padding-inline: 16px; padding-block: 28px 56px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.top { max-width: 1240px; margin: 0 auto 28px; }
+.top h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+.top p { margin: 8px 0 0; max-width: 62ch; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.row { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px 32px; justify-content: center; }
+.col { width: min(360px, 100%); display: flex; flex-direction: column; gap: 16px; }
+.tag { font: 600 12px/1 var(--display); letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
+.col h2 { font-size: 24px; font-weight: 600; }
+.col ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; line-height: 1.45; }
+.col .warn { font-size: 14px; color: var(--muted); line-height: 1.45; }
+.col .warn b { color: var(--ink); }
+.note { max-width: 1240px; margin: 36px auto 0; font-size: 14px; color: var(--muted); }
+
+/* cadre téléphone */
+.phone { width: 100%; height: 740px; border: 8px solid #10201f; border-radius: 38px; overflow: hidden; position: relative; box-sizing: border-box; font-family: var(--display); color: var(--ink); box-shadow: 0 18px 40px -18px rgba(16,32,31,.45); }
+.phone svg.i { width: 1em; height: 1em; display: block; }
+.stars { display: inline-flex; gap: 2px; }
+.stars svg { width: 18px; height: 18px; color: var(--gold); filter: drop-shadow(0 1px 0 rgba(0,0,0,.18)); }
+.stars svg.off { color: #fff; opacity: .75; filter: none; }
+.chip { display: inline-flex; align-items: center; gap: 6px; background: #fff; border-radius: 99px; padding: 6px 12px; font-weight: 600; font-size: 18px; box-shadow: 0 3px 0 rgba(0,0,0,.12); }
+.chip svg { width: 24px; height: 24px; color: var(--gold); }
+.cta { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; border: 0; border-radius: 24px; padding: 0 20px; height: 72px; font: 700 24px var(--display); color: var(--ink); background: var(--lime); box-shadow: 0 6px 0 #a3c02a; cursor: pointer; }
+.cta svg { width: 30px; height: 30px; }
+.palou { width: 64px; height: 64px; flex: none; }
+.bubble { position: relative; background: #fff; border-radius: 22px; padding: 10px 14px; font-size: 17px; line-height: 1.25; font-weight: 500; }
+.bubble b { display: block; font-size: 20px; font-weight: 700; }
+
+/* ============ 1 · Refonte île ============ */
+.s1 { background: linear-gradient(180deg, #bfe7f7 0%, #dff3fa 30%, #8fd3e8 100%); }
+.s1 .head { display: flex; justify-content: space-between; align-items: center; padding: 18px 14px 6px; }
+.s1 .head h3 { font-size: 22px; font-weight: 700; line-height: 1.05; }
+.s1 .head small { display: block; font: 600 12px var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--green); }
+.s1 .hero { display: flex; align-items: center; gap: 8px; margin: 8px 12px 0; }
+.s1 .bubble::before { content: ""; position: absolute; left: -8px; top: 50%; margin-top: -8px; border: 8px solid transparent; border-left: 0; border-right-color: #fff; }
+.s1 .map { position: absolute; left: 0; right: 0; top: 142px; bottom: 0; overflow: hidden; }
+.s1 .map svg.route { position: absolute; inset: 0; width: 100%; height: 100%; }
+.isl { position: absolute; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; border: 0; background: none; padding: 0; font-family: var(--display); color: var(--ink); }
+.isl .ring { --p: 100; width: 98px; height: 98px; border-radius: 50%; padding: 7px; background: conic-gradient(var(--gold) calc(var(--p) * 1%), rgba(255,255,255,.7) 0); box-shadow: 0 6px 0 rgba(0,0,0,.14); }
+.isl .core { width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(circle at 35% 30%, var(--c1), var(--c2)); color: #fff; font-size: 46px; position: relative; }
+.isl .core svg { filter: drop-shadow(0 2px 0 rgba(0,0,0,.18)); }
+.isl.now { animation: bounce 1.6s ease-in-out infinite; }
+.isl.now .ring { width: 124px; height: 124px; padding: 8px; box-shadow: 0 0 0 8px rgba(255,210,63,.4), 0 6px 0 rgba(0,0,0,.14); }
+.isl.now .core { font-size: 60px; }
+.isl.lock .ring { background: rgba(255,255,255,.7); }
+.isl.lock .core { background: radial-gradient(circle at 35% 30%, #e1e8e5, var(--grey)); color: #8fa09b; }
+.isl .badge { position: absolute; right: -2px; top: -4px; width: 34px; height: 34px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-size: 22px; box-shadow: 0 3px 0 rgba(0,0,0,.14); color: var(--green); }
+.isl.lock .badge { color: #8fa09b; }
+.isl .name { margin-top: 8px; background: #fff; border-radius: 14px; padding: 4px 12px; font-weight: 600; font-size: 17px; box-shadow: 0 3px 0 rgba(0,0,0,.1); white-space: nowrap; }
+.isl.lock .name { opacity: .8; }
+.isl .stars { margin-top: 4px; }
+@keyframes bounce { 50% { transform: translate(-50%, calc(-50% - 7px)); } }
+.s1 .dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 14px 16px; background: linear-gradient(180deg, rgba(143,211,232,0), #8fd3e8 38%); }
+
+/* ============ 2 · Livre d'aventure ============ */
+.s2 { background: #0f755f; background-image: radial-gradient(rgba(255,255,255,.07) 2px, transparent 2.5px); background-size: 22px 22px; }
+.s2 .title { position: absolute; top: 14px; left: 0; right: 0; text-align: center; color: #fff; font-weight: 600; font-size: 17px; }
+.s2 .title .chip { position: absolute; top: -5px; right: 14px; font-size: 16px; color: var(--ink); padding: 4px 10px; }
+.s2 .title .chip svg { width: 20px; height: 20px; }
+.s2 .book { position: absolute; left: 14px; right: 14px; top: 52px; bottom: 76px; background: var(--paper); border-radius: 12px 26px 26px 12px; box-shadow: inset 12px 0 18px -10px rgba(0,0,0,.25), 0 8px 0 #0a4f40, 0 14px 22px rgba(0,0,0,.3); padding: 24px 20px 14px 28px; display: flex; flex-direction: column; gap: 10px; }
+.s2 .rings { position: absolute; left: -10px; top: 28px; bottom: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+.s2 .rings i { width: 26px; height: 9px; border-radius: 6px; background: #c9d3d0; box-shadow: inset 0 -2px 0 rgba(0,0,0,.2); }
+.s2 .ribbon { position: absolute; right: 22px; top: -8px; width: 46px; background: #e5504f; color: #fff; text-align: center; padding: 8px 0 20px; font-weight: 700; font-size: 20px; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 82%, 0 100%); line-height: 1; }
+.s2 .ribbon small { display: block; font: 600 9px var(--body); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 2px; opacity: .9; }
+.s2 h3 { font-size: 30px; font-weight: 700; padding-right: 50px; line-height: 1; }
+.s2 .where { font: 700 13px var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--green); margin-top: -4px; }
+.s2 .pic { height: 150px; border-radius: 20px; background: linear-gradient(180deg, var(--sky-soft), #c9ecf8); border: 3px solid #fff; box-shadow: 0 0 0 3px #f0dfae; position: relative; overflow: hidden; display: grid; place-items: center; }
+.s2 .pic .blocks { display: flex; gap: 8px; margin-top: 14px; }
+.s2 .pic .blocks b { width: 62px; height: 62px; border-radius: 14px; display: grid; place-items: center; font-size: 40px; color: #fff; box-shadow: 0 5px 0 rgba(0,0,0,.18); }
+.s2 .pic .blocks b:nth-child(1) { background: #4aa6d0; transform: rotate(-6deg); }
+.s2 .pic .blocks b:nth-child(2) { background: #35b27f; transform: translateY(-8px); }
+.s2 .pic .blocks b:nth-child(3) { background: #e0a100; transform: rotate(6deg); }
+.s2 .pic .palou { position: absolute; right: 6px; bottom: -6px; width: 58px; height: 58px; }
+.s2 .pic .cloud { position: absolute; width: 70px; height: 22px; border-radius: 20px; background: #fff; left: 14px; top: 16px; box-shadow: 22px -8px 0 -2px #fff; opacity: .9; }
+.s2 .lab { font-weight: 600; font-size: 18px; margin-top: 2px; }
+.s2 .stk { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.s2 .sticker { display: flex; flex-direction: column; align-items: center; gap: 5px; text-align: center; font-size: 14px; font-weight: 500; line-height: 1.1; }
+.s2 .sticker .disc { width: 78px; height: 78px; border-radius: 50%; display: grid; place-items: center; font-size: 34px; font-weight: 700; position: relative; }
+.s2 .sticker.done .disc { background: radial-gradient(circle at 35% 30%, #b6e388, #35b27f); color: #fff; border: 4px solid #fff; box-shadow: 0 4px 0 rgba(0,0,0,.18), 0 0 0 2px #35b27f; transform: rotate(-5deg); }
+.s2 .sticker.now .disc { background: #fff6cc; color: var(--ink); border: 4px dashed var(--gold-d); animation: wob 1.8s ease-in-out infinite; }
+.s2 .sticker.lock .disc { border: 4px dotted var(--grey); color: #a6b3af; }
+.s2 .sticker .stars svg { width: 15px; height: 15px; }
+.s2 .sticker .stars svg.off { color: #e6e0c8; }
+@keyframes wob { 50% { transform: rotate(5deg) scale(1.05); } }
+.s2 .nav { position: absolute; top: 50%; width: 34px; height: 34px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 3px 0 rgba(0,0,0,.18); font-size: 20px; border: 0; color: var(--green); }
+.s2 .nav.l { left: 4px; }
+.s2 .nav.r { right: 4px; }
+.s2 .cta { margin-top: auto; height: 64px; font-size: 22px; }
+.s2 .tabs { position: absolute; left: 22px; right: 22px; bottom: 0; display: flex; justify-content: center; gap: 8px; align-items: flex-end; }
+.s2 .tabs span { width: 44px; height: 46px; border-radius: 12px 12px 0 0; display: grid; place-items: start center; padding-top: 8px; font-weight: 700; font-size: 20px; color: #fff; transform: translateY(14px); }
+.s2 .tabs .d { background: #35b27f; }
+.s2 .tabs .n { background: var(--gold); color: var(--ink); height: 66px; transform: translateY(0); }
+.s2 .tabs .l { background: #7ea89d; }
+
+/* ============ 3 · Jeu de plateau ============ */
+.s3 { background: var(--lime-soft); background-image: linear-gradient(45deg, rgba(168,200,60,.18) 25%, transparent 25%, transparent 75%, rgba(168,200,60,.18) 75%), linear-gradient(45deg, rgba(168,200,60,.18) 25%, transparent 25%, transparent 75%, rgba(168,200,60,.18) 75%); background-size: 44px 44px; background-position: 0 0, 22px 22px; }
+.s3 .head { display: flex; justify-content: space-between; align-items: center; padding: 16px 14px 0; }
+.s3 .head h3 { font-size: 22px; font-weight: 700; line-height: 1.05; }
+.s3 .board { position: absolute; left: 6px; top: 66px; width: 328px; height: 560px; }
+.s3 .board svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.st { position: absolute; transform: translate(-50%, -50%); width: 74px; height: 74px; border-radius: 22px; display: grid; place-items: center; font-weight: 700; font-size: 38px; color: #fff; background: var(--c); box-shadow: 0 6px 0 rgba(0,0,0,.2), inset 0 -6px 0 rgba(0,0,0,.12); }
+.st svg { filter: drop-shadow(0 2px 0 rgba(0,0,0,.2)); }
+.st .no { position: absolute; left: -8px; top: -8px; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: var(--ink); font-size: 16px; display: grid; place-items: center; box-shadow: 0 2px 0 rgba(0,0,0,.18); }
+.st.lock { background: var(--grey); color: #8fa09b; }
+.st.here { width: 88px; height: 88px; font-size: 46px; outline: 6px solid rgba(255,210,63,.55); }
+.st .lbl { position: absolute; top: 100%; margin-top: 8px; background: #fff; color: var(--ink); font-size: 15px; font-weight: 600; padding: 2px 10px; border-radius: 12px; white-space: nowrap; box-shadow: 0 2px 0 rgba(0,0,0,.12); }
+.st.here .lbl { margin-top: 12px; }
+.dot { position: absolute; transform: translate(-50%, -50%); width: 26px; height: 26px; border-radius: 50%; background: #fff; border: 4px solid var(--grey); }
+.dot.done { background: var(--gold); border-color: #fff; box-shadow: 0 3px 0 rgba(0,0,0,.18); }
+.dot.now { width: 34px; height: 34px; background: #fff; border-color: var(--gold-d); }
+.pawn { position: absolute; transform: translate(-50%, -100%); width: 70px; display: flex; flex-direction: column; align-items: center; animation: hop 1.2s ease-in-out infinite; z-index: 2; }
+.pawn .tip { background: var(--ink); color: #fff; border-radius: 12px; padding: 3px 10px; font-weight: 600; font-size: 15px; white-space: nowrap; margin-bottom: 2px; position: relative; }
+.pawn .tip::after { content: ""; position: absolute; left: 50%; margin-left: -6px; top: 100%; border: 6px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+.pawn .palou { width: 58px; height: 58px; margin-top: 6px; filter: drop-shadow(0 4px 0 rgba(0,0,0,.2)); }
+@keyframes hop { 50% { transform: translate(-50%, calc(-100% - 6px)); } }
+.s3 .dock { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 14px 16px; background: linear-gradient(180deg, rgba(238,250,176,0), var(--lime-soft) 40%); display: flex; gap: 10px; }
+.s3 .dock .cta { background: var(--green); color: #fff; box-shadow: 0 6px 0 var(--green-d); }
+.s3 .dock .dice { flex: none; width: 72px; height: 72px; border-radius: 22px; background: #fff; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); padding: 14px; box-shadow: 0 6px 0 rgba(0,0,0,.14); }
+.s3 .dock .dice i { width: 11px; height: 11px; border-radius: 50%; background: var(--ink); place-self: center; }
+
+@media (prefers-reduced-motion: reduce) { .isl.now, .s2 .sticker.now .disc, .pawn { animation: none; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="star" viewBox="0 0 48 48"><path fill="currentColor" d="M24 3.5l6.3 13 14.2 1.9-10.4 9.9 2.6 14.1L24 35.6 11.3 42.4l2.6-14.1L3.5 18.4l14.2-1.9z"/></symbol>
+    <symbol id="lock" viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="22" rx="6" fill="currentColor"/><path d="M16 21v-5a8 8 0 0116 0v5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="check" viewBox="0 0 48 48"><path d="M10 25l9 9 19-20" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="play" viewBox="0 0 48 48"><path fill="currentColor" d="M15 8l26 16-26 16z"/></symbol>
+    <symbol id="nums" viewBox="0 0 48 48"><text x="24" y="33" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="24" fill="currentColor">123</text></symbol>
+    <symbol id="abc" viewBox="0 0 48 48"><text x="24" y="33" text-anchor="middle" font-family="Fredoka,sans-serif" font-weight="700" font-size="22" fill="currentColor">ABC</text></symbol>
+    <symbol id="shapes" viewBox="0 0 48 48"><path fill="currentColor" d="M14 6l11 18H3z"/><circle cx="35" cy="14" r="9" fill="currentColor"/><rect x="22" y="28" width="20" height="16" rx="3" fill="currentColor"/><rect x="4" y="30" width="14" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="0"/></symbol>
+    <symbol id="paw" viewBox="0 0 48 48"><ellipse cx="24" cy="32" rx="12" ry="10" fill="currentColor"/><circle cx="9" cy="22" r="5" fill="currentColor"/><circle cx="19" cy="11" r="5.5" fill="currentColor"/><circle cx="31" cy="11" r="5.5" fill="currentColor"/><circle cx="40" cy="22" r="5" fill="currentColor"/></symbol>
+    <symbol id="clock" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="5"/><path d="M24 12v13l8 5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="palou" viewBox="0 0 64 64">
+      <ellipse cx="32" cy="58" rx="18" ry="4" fill="rgba(0,0,0,.14)"/>
+      <path d="M12 26c0-14 9-20 20-20s20 6 20 20v14c0 10-8 17-20 17S12 50 12 40z" fill="#ffb347"/>
+      <path d="M12 22L8 8l14 6M52 22l4-14-14 6" fill="#ffb347" stroke="#ffb347" stroke-width="3" stroke-linejoin="round"/>
+      <ellipse cx="32" cy="44" rx="12" ry="10" fill="#fff3d6"/>
+      <circle cx="24" cy="30" r="5" fill="#fff"/><circle cx="40" cy="30" r="5" fill="#fff"/>
+      <circle cx="25" cy="31" r="2.6" fill="#153b3b"/><circle cx="39" cy="31" r="2.6" fill="#153b3b"/>
+      <path d="M26 41c3 4 9 4 12 0" fill="none" stroke="#153b3b" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="32" cy="37" rx="3" ry="2" fill="#153b3b"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<main class="row">
+<section class="col">
+    <span class="tag">Piste 1</span>
+    <h2>Refonte de l’île</h2>
+    <div class="phone s1" role="img" aria-label="Maquette de la carte des îles refaite">
+      <div class="head">
+        <div><small>Parcours 7-9 ans</small><h3>Les Petits Explorateurs</h3></div>
+        <span class="chip"><svg class="i"><use href="#star"/></svg>14</span>
+      </div>
+      <div class="hero">
+        <svg class="palou"><use href="#palou"/></svg>
+        <div class="bubble"><b>On continue ?</b>Leçon 2 : les voyelles</div>
+      </div>
+      <div class="map">
+        <svg class="route" viewBox="0 0 328 560" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M105 80 C105 130 223 130 223 190 C223 250 111 250 111 310 C111 370 223 370 223 430 C223 490 132 490 132 540" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 15" opacity=".95"/>
+        </svg>
+        <div class="isl done" style="left:105px;top:80px;--c1:#c9e86f;--c2:#93b52a">
+          <span class="ring" style="--p:100"><span class="core"><svg class="i" style="width:1em;height:1em"><use href="#nums"/></svg><span class="badge"><svg class="i"><use href="#check"/></svg></span></span></span>
+          <span class="name">Les nombres</span><span class="stars"><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg></span>
+        </div>
+        <div class="isl done" style="left:223px;top:190px;--c1:#8ee0a8;--c2:#35b27f">
+          <span class="ring" style="--p:100"><span class="core"><svg class="i" style="width:1em;height:1em"><use href="#shapes"/></svg><span class="badge"><svg class="i"><use href="#check"/></svg></span></span></span>
+          <span class="name">Les formes</span><span class="stars"><svg class="i"><use href="#star"/></svg><svg class="i"><use href="#star"/></svg><svg class="i off"><use href="#star"/></svg></span>
+        </div>
+        <div class="isl now" style="left:111px;top:318px;--c1:#a5dcf0;--c2:#4aa6d0">
+          <span class="ring" style="--p:40"><span class="core"><svg class="i" style="width:1em;height:1em"><use href="#abc"/></svg></span></span>
+          <span class="name">Les lettres</span>
+        </div>
+        <div class="isl lock" style="left:223px;top:452px">
+          <span class="ring"><span class="core"><svg class="i" style="width:1em;height:1em"><use href="#paw"/></svg><span class="badge"><svg class="i"><use href="#lock"/></svg></span></span></span>
+          <span class="name">Les animaux</span>
+        </div>
+        <div class="dock"><button class="cta" type="button"><svg class="i"><use href="#play"/></svg>Continuer</button></div>
+      </div>
+    </div>
+    <ul>
+      <li>Bouton « Continuer » énorme, toujours en bas de l’écran.</li>
+      <li>Un anneau doré montre l’avancement de chaque île, sans lire de chiffre.</li>
+      <li>Une seule île grossit et rebondit : l’enfant sait où appuyer.</li>
+    </ul>
+    <p class="warn"><b>À savoir :</b> c’est la piste la plus rapide à faire et elle garde l’univers actuel. Elle change le moins.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿module;titre_module;lecon;titre_lecon;fichiers;vague_1;vague_2;vague_3;caracteres
+m01;Bonjour, l’IA !;p1-1;C’est quoi une IA ?;32;6;14;12;1794
+m01;Bonjour, l’IA !;p1-2;Comment apprend une IA ?;32;5;15;12;1861
+m01;Bonjour, l’IA !;p1-3;IA ou pas IA ?;36;5;15;16;1901
+m01;Bonjour, l’IA !;p1-4;Ma chasse aux IA;33;5;14;14;1794
+m02;L’IA autour de moi;p2-1;Dans mon téléphone;33;6;15;12;1990
+m02;L’IA autour de moi;p2-2;À l’école;35;6;15;14;1871
+m02;L’IA autour de moi;p2-3;Dans les transports;32;7;13;12;1788
+m02;L’IA autour de moi;p2-4;Bingo de l’IA;35;6;15;14;1801
+m03;La grande famille des données;p3-1;À quoi servent les données ?;30;6;13;11;1683
+m03;La grande famille des données;p3-2;Le panier de fruits;37;5;16;16;1941
+m03;La grande famille des données;p3-3;Trouve l’intrus;34;6;15;13;1864
+m03;La grande famille des données;p3-4;Mon premier classement;36;5;16;15;1956
+m04;Apprendre avec des exemples;p4-1;Montre-moi des exemples;31;6;13;12;1718
+m04;Apprendre avec des exemples;p4-2;Chat ou chien ?;36;5;16;15;1819
+m04;Apprendre avec des exemples;p4-3;Quand Palou se trompe;34;5;13;16;1828
+m04;Apprendre avec des exemples;p4-4;Entraîne ton mini-robot;30;5;13;12;1693
+m05;L’IA qui regarde;p5-1;Que vois-tu ?;30;5;13;12;1578
+m05;L’IA qui regarde;p5-2;Formes et couleurs;30;5;13;12;1674
+m05;L’IA qui regarde;p5-3;Photo mystère;31;6;13;12;1792
+m05;L’IA qui regarde;p5-4;Défi vision;35;5;13;17;2019
+m06;L’IA qui parle;p6-1;Parler à une machine;29;6;13;10;1715
+m06;L’IA qui parle;p6-2;Les mots magiques;29;5;13;11;1555
+m06;L’IA qui parle;p6-3;Question claire;28;5;13;10;1523
+m06;L’IA qui parle;p6-4;Mon mini dialogue;31;6;15;10;1683
+m07;Créer avec l’IA;p7-1;L’IA imagine avec moi;27;5;13;9;1303
+m07;Créer avec l’IA;p7-2;Décris ton dessin;32;5;13;14;1724
+m07;Créer avec l’IA;p7-3;Une histoire à deux;32;6;13;13;1658
+m07;Créer avec l’IA;p7-4;Mon affiche créative;31;6;13;12;1604
+m08;Mon bouclier numérique;p8-1;Secret ou pas secret ?;32;5;13;14;1787
+m08;Mon bouclier numérique;p8-2;Je partage ou pas ?;31;6;13;12;1657
+m08;Mon bouclier numérique;p8-3;Un adulte de confiance;30;6;13;11;1604
+m08;Mon bouclier numérique;p8-4;Mission bouclier;32;5;13;14;1652
+m09;Vrai, faux… vérifions !;p9-1;Palou peut se tromper;33;5;13;15;1740
+m09;Vrai, faux… vérifions !;p9-2;Je vérifie;36;6;13;17;1817
+m09;Vrai, faux… vérifions !;p9-3;Le détective des images;30;5;13;12;1625
+m09;Vrai, faux… vérifions !;p9-4;Vrai ou faux ?;36;6;13;17;1767
+m10;Une IA pour mon quartier;p10-1;Un problème autour de moi;34;6;13;15;1864
+m10;Une IA pour mon quartier;p10-2;Idées pour le Sénégal;31;6;13;12;1673
+m10;Une IA pour mon quartier;p10-3;Dessine ta solution;31;6;13;12;1577
+m10;Une IA pour mon quartier;p10-4;Grand projet Explorateur;40;7;13;20;1983

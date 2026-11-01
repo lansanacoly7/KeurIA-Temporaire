@@ -1,0 +1,371 @@
+/* ==========================================================================
+   PAGE DE CONNEXION - kEur IA (Harmonisée avec la charte du Hero)
+   ========================================================================== */
+
+.login-shell {
+  min-height: calc(100vh / var(--app-zoom, 1));
+  display: grid;
+  grid-template-columns: minmax(min(320px, 100%), 1fr) minmax(min(420px, 100%), 1.15fr);
+  background: #ffffff;
+  color: #153b3b;
+  font-family: var(--font-geist), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+/* Colonne de gauche (Univers & Histoire - Dégradé & Auras identiques au Hero) */
+.login-story {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(135deg, #eaf6f2 0%, #def2ec 40%, #fef7e6 80%, #fff2dc 100%);
+  border-right: 1.5px solid #d8e8e2;
+}
+
+.login-story:before,
+.login-story:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Orbe vert lime lumineux en haut à droite (identique au Hero) */
+.login-story:before {
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(217, 239, 89, 0.42) 0%, rgba(217, 239, 89, 0) 70%);
+  right: -100px;
+  top: -80px;
+  filter: blur(45px);
+}
+
+/* Orbe vert émeraude profond en bas à gauche (identique au Hero) */
+.login-story:after {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(13, 132, 110, 0.22) 0%, transparent 70%);
+  left: -80px;
+  bottom: -60px;
+  filter: blur(45px);
+}
+
+.login-brand {
+  position: absolute;
+  z-index: 2;
+  left: clamp(2rem, 5vw, 5rem);
+  top: 2.2rem;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-brand img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.login-mascot {
+  position: relative;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 3px solid #153b3b;
+  box-shadow: 8px 8px 0 #d8f05b;
+  font-size: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.login-kicker,
+.login-eyebrow {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #0f755f; /* Vert kEur IA */
+}
+
+.login-story h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0.55rem 0 1rem;
+  font-size: clamp(2.4rem, 4.8vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: #153b3b;
+  font-weight: 800;
+}
+
+.login-story > p:not(.login-kicker) {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: #647a78;
+}
+
+.login-story ul {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.85rem;
+  padding: 0;
+  margin: 1.8rem 0 0;
+  list-style: none;
+  font-weight: 700;
+  color: #153b3b;
+}
+
+.login-story li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.login-story li span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #0f755f;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Colonne de droite (Panneau interactif) */
+.login-panel {
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 4rem);
+  background: #ffffff;
+}
+
+.login-card {
+  width: min(100%, 580px);
+  padding: clamp(1.8rem, 4vw, 3.2rem);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(15, 117, 95, 0.08);
+  border: 1px solid #e1ebe7;
+}
+
+.login-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #eaf7f2;
+  color: #0f755f;
+  font-size: 1.8rem;
+}
+
+.login-eyebrow {
+  margin: 1.2rem 0 0.45rem;
+}
+
+.login-card h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  color: #153b3b;
+  letter-spacing: -0.02em;
+}
+
+.login-intro {
+  margin: 0.8rem 0 1.5rem;
+  color: #647a78;
+  line-height: 1.6;
+}
+
+/* Bouton principal harmonisé avec le Hero de la landing page */
+.login-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 1rem 1.4rem;
+  border-radius: 16px;
+  background: #174e49;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 750;
+  box-shadow: 0 6px 0 #0d322f, 0 12px 20px rgba(23, 78, 73, 0.25);
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+}
+
+.login-primary:hover:not(:disabled) {
+  background: #1f645e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #0d322f, 0 16px 24px rgba(23, 78, 73, 0.35);
+}
+
+.login-primary:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #0d322f, 0 6px 10px rgba(23, 78, 73, 0.18);
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2rem 0 1.2rem;
+  color: #647a78;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-divider:before,
+.login-divider:after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e1ebe7;
+}
+
+.login-options {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.login-options article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.8rem;
+  padding: 1.1rem;
+  border: 1px solid #e1ebe7;
+  border-radius: 16px;
+  background: #fbfdfc;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.login-options article:hover {
+  border-color: #0f755f;
+  background: #f4faf7;
+}
+
+.login-options article > span {
+  grid-row: 1/3;
+  font-size: 1.45rem;
+}
+
+.login-options h3 {
+  margin: 0 0 0.25rem;
+  color: #153b3b;
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.login-options p {
+  margin: 0;
+  color: #647a78;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.login-options a {
+  grid-column: 2;
+  color: #0f755f;
+  font-weight: 750;
+  font-size: 0.9rem;
+  margin-top: 0.45rem;
+  text-decoration: none;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+.login-help {
+  margin: 1.5rem 0 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid #e1ebe7;
+  text-align: center;
+  color: #647a78;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* Responsive Mobile & Tablette */
+@media (max-width: 850px) {
+  .login-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .login-story,
+  .login-panel {
+    min-width: 0;
+  }
+  .login-story {
+    min-height: auto;
+    padding: 2rem 1.5rem 1.75rem;
+    border-right: none;
+    border-bottom: 1.5px solid #d8e8e2;
+    justify-content: flex-start;
+  }
+  .login-brand {
+    position: static;
+    margin-bottom: 1rem;
+    display: inline-flex;
+  }
+  .login-story h1 {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    margin: 0.4rem 0 0.6rem;
+  }
+  .login-story > p:not(.login-kicker) {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .login-story ul {
+    display: none;
+  }
+  .login-panel {
+    padding: 1.5rem 1rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 520px) {
+  .login-story {
+    padding: 1.4rem 1.1rem 1.2rem;
+  }
+  .login-brand {
+    margin-bottom: 0.75rem;
+  }
+  .login-brand img {
+    height: 34px;
+  }
+  .login-story ul {
+    display: none;
+  }
+  .login-card {
+    padding: 1.35rem 1.1rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(15, 117, 95, 0.06);
+  }
+  .login-card h2 {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .login-story h1 {
+    font-size: 2.1rem;
+    overflow-wrap: anywhere;
+  }
+  .login-card {
+    padding: 1.1rem;
+  }
+}

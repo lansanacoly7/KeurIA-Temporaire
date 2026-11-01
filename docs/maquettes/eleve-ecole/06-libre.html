@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Espace Libre — Jeux & Scratch — kEur IA École</title>
+  <link rel="stylesheet" href="maquette.css">
+</head>
+<body>
+
+  <div class="maquette-demo-bar">
+    <div class="maquette-demo-left">
+      <span class="maquette-demo-badge">T11 Maquette</span>
+      <select class="maquette-nav-select" onchange="window.location.href=this.value">
+        <option value="index.html" >Hub & Galerie des Maquettes [Accueil]</option>
+<option value="01-aujourdhui.html" >01. Aujourd'hui — Cahier de classe [Élève (6-9 ans)]</option>
+<option value="02-mes-devoirs.html" >02. Mes devoirs (À rendre, Rendus, Notés) [Élève (6-9 ans)]</option>
+<option value="03-mon-parcours.html" >03. Mon parcours (Archipel CE1) [Élève (6-9 ans)]</option>
+<option value="04-ma-classe.html" >04. Ma classe (Tableau d'honneur & Camarades) [Élève (6-9 ans)]</option>
+<option value="05-mes-etoiles.html" >05. Mes étoiles (Badges & Niveau) [Élève (6-9 ans)]</option>
+<option value="06-libre.html" selected>06. Libre (Jeux & Studio Scratch) [Élève (6-9 ans)]</option>
+<option value="07-etats.html" >07. Écrans d'état (Horaires, Clôture, Devoirs faits) [Élève (6-9 ans)]</option>
+<option value="08-enseignant-seance.html" >08. Enseignant — Ouvrir une séance & En cours [Enseignant]</option>
+<option value="09-enseignant-annonces.html" >09. Enseignant — Annonces & Sondages [Enseignant]</option>
+<option value="10-enseignant-parcours-eleve.html" >10. Enseignant — Parcours d'un élève [Enseignant]</option>
+<option value="11-regles-classe.html" >11. Direction & Enseignant — Règles de classe [Direction & Enseignant]</option>
+      </select>
+    </div>
+    <div class="maquette-demo-actions">
+      <a href="index.html" class="btn-view-toggle">📚 Galerie</a>
+      <a href="LISEZMOI.md" class="btn-view-toggle" target="_blank">📄 LISEZMOI</a>
+    </div>
+  </div>
+
+  <div class="mockup-viewport-container">
+    <div class="app-shell">
+      
+    <aside class="app-sidebar">
+      <div class="school-brand-box">
+        <div class="school-logo-badge">🌳</div>
+        <div class="school-meta">
+          <h2>Les Baobabs</h2>
+          <p>École Partenaire</p>
+        </div>
+      </div>
+
+      <div class="student-badge-card">
+        <div class="student-avatar">👦🏾</div>
+        <div class="student-info">
+          <h3>Moussa</h3>
+          <p>CE1 A · Mme Faye</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        
+        <a href="01-aujourdhui.html" class="sidebar-nav-item ">
+          <span class="nav-icon">☀️</span>
+          <span>Aujourd'hui</span>
+          
+        </a>
+
+        <a href="02-mes-devoirs.html" class="sidebar-nav-item ">
+          <span class="nav-icon">📝</span>
+          <span>Mes devoirs</span>
+          <span class="nav-badge">2</span>
+        </a>
+
+        <a href="03-mon-parcours.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🗺️</span>
+          <span>Mon parcours</span>
+          
+        </a>
+
+        <a href="04-ma-classe.html" class="sidebar-nav-item ">
+          <span class="nav-icon">🏫</span>
+          <span>Ma classe</span>
+          
+        </a>
+
+        <a href="05-mes-etoiles.html" class="sidebar-nav-item ">
+          <span class="nav-icon">⭐</span>
+          <span>Mes étoiles</span>
+          
+        </a>
+
+        <a href="06-libre.html" class="sidebar-nav-item active">
+          <span class="nav-icon">🎮</span>
+          <span>Libre</span>
+          <span class="nav-badge">🔒</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-rule-alert">
+        <span style="font-size:18px;">🔒</span>
+        <div>
+          <strong style="display:block; font-size:12px; color:var(--school-secondary);">Règle active :</strong>
+          <span>Jeux coupés jusqu'à 16h00</span>
+        </div>
+      </div>
+    </aside>
+
+      
+    <header class="mobile-top-header">
+      <div class="mobile-profile-left">
+        <div class="student-avatar" style="width:36px; height:36px; font-size:18px;">👦🏾</div>
+        <div class="mobile-student-meta">
+          <div class="mobile-student-name">Moussa · CE1 A</div>
+          <span class="mobile-class-pill">Mme Faye · Baobabs</span>
+        </div>
+      </div>
+      <div class="xp-pill-badge">⭐ 48</div>
+    </header>
+
+
+      <main class="app-main-content">
+        <div class="content-top-row">
+          <div>
+            <h1 class="page-main-title">Espace Libre & Jeux</h1>
+            <p class="page-subtitle">Jeux éducatifs et programmation Scratch</p>
+          </div>
+        </div>
+
+        <!-- Alerte Règle Active -->
+        <div class="rule-banner">
+          <span class="rule-banner-icon">🔒</span>
+          <div class="rule-banner-text">
+            <h4>Accès restreint pendant les cours</h4>
+            <p>Le studio Scratch est verrouillé pendant la classe. Déblocage automatique à 16h00 !</p>
+          </div>
+        </div>
+
+        <!-- Grille des univers libres -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px;">
+          
+          <!-- Module 1 : Mini-Jeux IA -->
+          <div style="background:#FFF; border:2px solid var(--border-card); border-radius:var(--radius-lg); padding:18px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span class="island-badge" style="background:#DCFCE7; color:#166534; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px;">✓ Accessible</span>
+                <span style="font-size:24px;">🎮</span>
+              </div>
+              <h3 style="font-size:18px; font-weight:700; margin-bottom:4px;">Mini-Jeux IA</h3>
+              <p style="font-size:13px; color:var(--text-muted); line-height:1.4;">
+                Défie l'intelligence artificielle au morpion et résous des énigmes de tri rapide.
+              </p>
+            </div>
+            <button class="btn-big-touch primary" style="margin-top:16px;" onclick="alert('Lancement des mini-jeux IA !')">
+              <span>Jouer aux mini-jeux</span>
+            </button>
+          </div>
+
+          <!-- Module 2 : Studio Scratch Junior (VERROUILLÉ) -->
+          <div style="background:#FFF7ED; border:2px solid #FDBA74; border-radius:var(--radius-lg); padding:18px; display:flex; flex-direction:column; justify-content:space-between; position:relative;">
+            <div style="position:absolute; top:10px; right:12px; background:#EA580C; color:#FFF; font-family:var(--font-sans); font-size:10px; font-weight:800; padding:2px 8px; border-radius:999px;">
+              🔒 Verrouillé
+            </div>
+            <div>
+              <div style="margin-bottom:8px;">
+                <span style="font-size:26px;">🐱</span>
+              </div>
+              <h3 style="font-size:18px; font-weight:700; color:#9A3412; margin-bottom:4px;">Studio Scratch Junior</h3>
+              <p style="font-size:13px; color:#C2410C; line-height:1.4;">
+                Crée tes propres histoires et animations de robots.
+              </p>
+              <div style="background:#FED7AA; border-radius:var(--radius-sm); padding:8px 10px; margin-top:10px; font-size:12px; color:#7C2D12;">
+                <strong>Horaire :</strong> Accessible après 16h00.
+              </div>
+            </div>
+            <button class="btn-big-touch secondary" style="margin-top:16px; opacity:0.6; cursor:not-allowed;" disabled>
+              <span>🔒 Coupé par l'enseignante</span>
+            </button>
+          </div>
+
+          <!-- Module 3 : Défis de Palou -->
+          <div style="background:#FFF; border:2px solid var(--border-card); border-radius:var(--radius-lg); padding:18px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+              <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+                <span class="island-badge" style="background:#DCFCE7; color:#166534; font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px;">✓ Accessible</span>
+                <span style="font-size:24px;">🧩</span>
+              </div>
+              <h3 style="font-size:18px; font-weight:700; margin-bottom:4px;">Les Défis de Palou</h3>
+              <p style="font-size:13px; color:var(--text-muted); line-height:1.4;">
+                Des énigmes de logique en solo pour gagner des étoiles bonus !
+              </p>
+            </div>
+            <button class="btn-big-touch primary" style="margin-top:16px;" onclick="alert('Lancement défi Palou !')">
+              <span>Résoudre le défi (+10 ⭐)</span>
+            </button>
+          </div>
+
+        </div>
+      </main>
+
+      
+    <nav class="mobile-bottom-bar">
+      
+      <a href="01-aujourdhui.html" class="mobile-tab-btn ">
+        <span class="tab-icon">☀️</span>
+        <span>Aujourd'hui</span>
+        
+      </a>
+
+      <a href="02-mes-devoirs.html" class="mobile-tab-btn ">
+        <span class="tab-icon">📝</span>
+        <span>Devoirs</span>
+        <span class="mobile-tab-badge">2</span>
+      </a>
+
+      <a href="03-mon-parcours.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🗺️</span>
+        <span>Parcours</span>
+        
+      </a>
+
+      <a href="04-ma-classe.html" class="mobile-tab-btn ">
+        <span class="tab-icon">🏫</span>
+        <span>Classe</span>
+        
+      </a>
+
+      <a href="05-mes-etoiles.html" class="mobile-tab-btn ">
+        <span class="tab-icon">⭐</span>
+        <span>Étoiles</span>
+        
+      </a>
+
+      <a href="06-libre.html" class="mobile-tab-btn active">
+        <span class="tab-icon">🎮</span>
+        <span>Libre</span>
+        <span class="mobile-tab-badge">🔒</span>
+      </a>
+    </nav>
+
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+.siribra-credit {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  color: #647873;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.siribra-credit img {
+  width: 92px;
+  height: 55px;
+  object-fit: contain;
+}
+
+@media (max-width: 800px) {
+  .siribra-credit {
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+}

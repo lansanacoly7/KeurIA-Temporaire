@@ -1,0 +1,31 @@
+# Couverture de tests du backend : `python -m coverage run -m pytest && python -m coverage xml`
+# Le rapport (coverage.xml, format Cobertura) est lu par SonarQube (sonar.python.coverage.reportPaths).
+#
+# Piège connu : `source = .` SANS `relative_files` donne une racine absolue unique et des chemins `apps/...`, `keuria/...` que
+# SonarQube sait résoudre. Avec `relative_files = True`, la balise <source> devient vide et des dizaines de fichiers sont
+# écartés SANS erreur : le pourcentage affiché serait faux. Après une modification, vérifier que le journal du scanner
+# ne contient aucun « Cannot resolve the file path ».
+[run]
+source = .
+branch = False
+omit =
+    */tests/*
+    */test_*.py
+    */migrations/*
+    keuria/wsgi.py
+    keuria/asgi.py
+    manage.py
+    gunicorn.conf.py
+    venv/*
+    .venv/*
+
+[report]
+skip_empty = True
+show_missing = False
+exclude_lines =
+    pragma: no cover
+    raise NotImplementedError
+    if __name__ == .__main__.:
+
+[xml]
+output = coverage.xml

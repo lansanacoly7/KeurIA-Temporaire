@@ -1,0 +1,575 @@
+{
+ "module": {
+  "id": "ep4",
+  "chapter": 4,
+  "title": "Apprendre par l’exemple",
+  "place": "Une ferme maraîchère, dans les Niayes",
+  "emoji": "🌱",
+  "intro": "Direction les Niayes, où une application aide les agriculteurs à soigner leurs plantes. Un nouvel élève n’y croit pas du tout…",
+  "statut": "brouillon"
+ },
+ "lessons": [
+  {
+   "id": "ep4-1",
+   "title": "S’entraîner et tester",
+   "scene": { "id": "ferme-niayes", "label": "La ferme des Niayes" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "ndiaye"],
+   "problem": "Une application dit si une plante est malade, juste avec une photo. Lamine n’y croit pas. Comment savoir si elle marche ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "mme-diop", "emoji": "🌱",
+     "image": "ep4-l1-arrivee.webp",
+     "alt": "La classe arrive dans une ferme des Niayes, entre les rangées d’oignons et de carottes. Un nouvel élève, Lamine, est avec eux.",
+     "text": "La classe arrive dans les Niayes, entre les rangées d’oignons. Madame Diop présente Lamine, un nouvel élève arrivé cette semaine."
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "ndiaye", "emoji": "📱",
+     "image": "ep4-l1-appli.webp",
+     "alt": "Madame Ndiaye, l’agricultrice, photographie une feuille d’oignon avec son téléphone.",
+     "text": "Madame Ndiaye, l’agricultrice, photographie une feuille : « Mon application me dit si la plante est malade. »"
+    },
+    {
+     "kind": "story", "pose": "Question", "speaker": "lamine", "emoji": "🤨",
+     "image": "ep4-l1-lamine-doute.webp",
+     "alt": "Lamine croise les bras, un sourcil levé, devant le téléphone.",
+     "text": "Lamine croise les bras : « Un téléphone qui soigne les plantes ? Tu es sûr ? On vérifie ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep4-l1-palou-explique.webp",
+     "alt": "Palou montre deux paquets de photos de feuilles : un gros paquet et un petit paquet à part.",
+     "text": "Palou explique : « L’application s’est entraînée avec des milliers de photos. Puis on l’a testée avec d’autres photos, qu’elle n’avait jamais vues. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🏋🏾",
+     "word": { "terme": "Entraînement", "sens": "Le moment où une IA apprend avec des exemples. Après, on la teste avec des exemples nouveaux." },
+     "text": "D’abord l’IA s’entraîne avec des exemples. Ensuite, on la teste avec d’autres exemples, pour voir si elle a vraiment appris."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Lamine à vérifier l’application !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour tester l’application, quelles photos faut-il lui montrer ?",
+       "hint": "Pour savoir si elle a vraiment appris…",
+       "success": "Exact ! Des photos nouvelles : sinon, elle pourrait juste se souvenir.",
+       "options": [
+        { "label": "Des photos qu’elle n’a jamais vues", "pict": "photo-nouvelle", "correct": true },
+        { "label": "Les mêmes photos que pendant l’entraînement", "pict": "photos-exemples", "explain": "Elle les connaît déjà par cœur ! Ça ne prouve pas qu’elle a appris." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "C’est comme à l’école. Pour savoir si tu as compris les additions, la maîtresse te donne…",
+       "hint": "Si elle te donne les mêmes calculs que dans le cahier…",
+       "success": "Bravo ! Des calculs nouveaux montrent que tu as vraiment compris.",
+       "options": [
+        { "label": "Des calculs nouveaux", "pict": "cahier", "correct": true },
+        { "label": "Exactement les mêmes calculs que d’habitude", "pict": "photos-exemples", "explain": "Tu pourrais les avoir appris par cœur. Des calculs nouveaux prouvent que tu as compris." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "On teste l’application avec 10 photos nouvelles. Elle en réussit 9. Que peut-on dire ?",
+       "hint": "9 sur 10, c’est très bien… mais pas parfait.",
+       "success": "Exact ! Elle marche bien, mais elle peut encore se tromper.",
+       "options": [
+        { "label": "Elle marche bien, mais elle peut se tromper", "pict": "ia-hesite", "correct": true },
+        { "label": "Elle ne se trompe jamais", "pict": "robot-sait-tout", "explain": "Elle a raté une photo sur 10 : elle peut se tromper." },
+        { "label": "Elle ne sert à rien", "pict": "erreur-croix", "explain": "9 sur 10, c’est déjà très utile ! Il faut juste garder un œil." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🃏",
+     "titre": "Le jeu de l’entraînement",
+     "duree": "15 minutes",
+     "groupes": "Par deux",
+     "text": "Un élève montre à son voisin 6 cartes : des feuilles saines et des feuilles malades (avec des taches). C’est l’entraînement ! Puis il montre 4 cartes nouvelles : le voisin doit dire « saine » ou « malade ». Combien de bonnes réponses ? On échange les rôles.",
+     "materiel": ["10 cartes de feuilles dessinées par élève : saines (vertes) ou malades (avec des taches brunes)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "lamine", "emoji": "💬",
+     "question": "Lamine demande : « Si l’application dit que ma plante est malade, est-ce que je dois la croire tout de suite ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. À qui d’autre peut-on demander ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce que l’entraînement d’une IA ?",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Le moment où elle apprend avec des exemples.",
+       "options": [
+        { "label": "Le moment où elle apprend avec des exemples", "pict": "photos-exemples", "correct": true },
+        { "label": "Un match de football", "pict": "ballon", "explain": "Rien à voir avec le sport ! C’est le moment où l’IA apprend." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Après l’entraînement, on teste l’IA avec…",
+       "hint": "Pense au test de Lamine.",
+       "success": "Exact ! Avec des exemples qu’elle n’a jamais vus.",
+       "options": [
+        { "label": "Des exemples qu’elle n’a jamais vus", "pict": "photo-nouvelle", "correct": true },
+        { "label": "Rien, on la croit", "pict": "robot-sait-tout", "explain": "On teste toujours ! Lamine a raison : on vérifie." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais comment on entraîne et on teste une IA.",
+     "learned": "Une IA s’entraîne avec des exemples. Puis on la teste avec des exemples nouveaux pour voir si elle a vraiment appris."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Distinguer l’entraînement (apprendre avec des exemples) et le test (vérifier avec des exemples nouveaux).",
+     "Faire le lien avec l’apprentissage des élèves (exercice nouveau ≠ par cœur).",
+     "Adopter l’attitude de vérification (Lamine)."
+    ],
+    "deroule": [
+     "Présentation de Lamine et de la sortie (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : le jeu de l’entraînement (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Des cartes de feuilles dessinées (saines / malades), préparées ou dessinées par les élèves."],
+    "reponses": [
+     "Le test doit se faire avec des exemples que la « machine » n’a pas vus, sinon on mesure la mémoire, pas l’apprentissage.",
+     "Débat : on peut demander à un agriculteur expérimenté, à un technicien agricole, comparer avec d’autres plantes. L’application aide, l’humain décide."
+    ],
+    "attention": "Les applications de diagnostic des plantes existent vraiment, mais la sortie et Madame Ndiaye sont des personnages de l’histoire."
+   }
+  },
+  {
+   "id": "ep4-2",
+   "title": "Pas assez d’exemples",
+   "scene": { "id": "ferme-niayes", "label": "La ferme des Niayes" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "ndiaye"],
+   "problem": "L’application reconnaît très bien les oignons malades… mais elle se trompe sur les carottes. Pourquoi ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "🧅",
+     "image": "ep4-l2-oignons.webp",
+     "alt": "Khady photographie des feuilles d’oignon ; le téléphone affiche une coche verte.",
+     "text": "Khady teste l’application sur dix feuilles d’oignon. Dix bonnes réponses ! Elle note tout dans son carnet."
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "seydou", "emoji": "🥕",
+     "image": "ep4-l2-carottes.webp",
+     "alt": "Seydou photographie une feuille de carotte bien verte ; le téléphone affiche une croix rouge : malade.",
+     "text": "Seydou essaie sur une carotte, bien verte et en pleine forme. L’application dit : « Malade ! » Lamine triomphe : « Je vous l’avais dit ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "ndiaye", "emoji": "📸",
+     "image": "ep4-l2-explication.webp",
+     "alt": "Madame Ndiaye montre un grand tas de photos d’oignons et une seule petite photo de carotte.",
+     "text": "Madame Ndiaye sourit : « Elle s’est entraînée avec des milliers d’oignons… et presque pas de carottes. »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep4-l2-palou.webp",
+     "alt": "Palou pointe le petit tas de photos de carottes, l’air de dire « voilà le problème ».",
+     "text": "Palou résume : « Pour bien reconnaître, une IA a besoin de beaucoup d’exemples, et de toutes les sortes. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🌈",
+     "word": { "terme": "Exemples variés", "sens": "Des exemples de toutes les sortes : plusieurs plantes, au soleil, à l’ombre, jeunes, vieilles…" },
+     "text": "Une IA connaît seulement ce qu’elle a vu. S’il lui manque des sortes d’exemples, elle se trompe sur celles-là."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Madame Ndiaye à améliorer son application !",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pourquoi l’application se trompe-t-elle sur les carottes ?",
+       "hint": "Combien de photos de carottes a-t-elle vues ?",
+       "success": "Exact ! Presque pas d’exemples de carottes : elle ne les connaît pas.",
+       "options": [
+        { "label": "Elle a vu presque pas de carottes", "pict": "carotte", "correct": true },
+        { "label": "Elle n’aime pas les carottes", "pict": "gronder", "explain": "Une IA n’aime rien ! Elle n’a simplement pas assez d’exemples de carottes." }
+       ]
+      },
+      {
+       "type": "multi",
+       "prompt": "Quelles photos faut-il ajouter pour qu’elle reconnaisse mieux les carottes ?",
+       "hint": "Des carottes, de toutes les sortes. Il y en a trois.",
+       "success": "Bravo ! Des carottes saines et malades, au soleil et à l’ombre.",
+       "options": [
+        { "label": "Des carottes saines", "pict": "carotte", "emoji": "🥕", "correct": true },
+        { "label": "Des carottes malades", "pict": "carotte-malade", "emoji": "🥕", "correct": true },
+        { "label": "Des carottes photographiées à l’ombre", "pict": "carotte-ombre", "emoji": "🌥️", "correct": true },
+        { "label": "Encore plus d’oignons", "pict": "oignon", "emoji": "🧅", "explain": "Elle connaît déjà très bien les oignons. Ce sont les carottes qui manquent." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA a appris à reconnaître les visages avec des photos d’enfants seulement. Elle risque de se tromper sur…",
+       "hint": "Qui manque dans ses exemples ?",
+       "success": "Exact ! Les grands-parents manquaient dans ses exemples.",
+       "options": [
+        { "label": "Les visages de grands-parents", "pict": "grand-parent", "correct": true },
+        { "label": "Les visages d’enfants", "pict": "un-enfant", "explain": "Les enfants, elle les connaît bien : c’est avec eux qu’elle a appris." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🐾",
+     "titre": "La machine qui n’a vu que des chats",
+     "duree": "15 minutes",
+     "groupes": "Toute la classe",
+     "text": "Un volontaire joue la machine. On lui montre seulement des dessins de chats, en disant « animal ». Puis on lui montre une vache, un poisson, un oiseau : saura-t-il dire « animal » ? Ensuite on recommence en lui montrant des animaux de toutes les sortes. Qu’est-ce qui change ?",
+     "materiel": ["Des dessins d’animaux : 5 chats, puis des animaux variés"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "seydou", "emoji": "💬",
+     "question": "Seydou demande : « Si une IA apprend surtout avec des photos d’autres pays, est-ce qu’elle va bien reconnaître ce qu’on a chez nous, au Sénégal ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Pourquoi c’est important que des exemples viennent aussi de chez nous ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour bien apprendre, une IA a besoin d’exemples…",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Nombreux et variés.",
+       "options": [
+        { "label": "Nombreux et variés", "pict": "photos-exemples", "correct": true },
+        { "label": "Tous pareils", "pict": "egal", "explain": "Tous pareils, elle ne connaîtrait qu’une seule sorte de chose." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Il manque une sorte d’exemples à une IA. Que se passe-t-il ?",
+       "hint": "Souviens-toi des carottes.",
+       "success": "Exact ! Elle se trompe sur ce qu’elle n’a pas vu.",
+       "options": [
+        { "label": "Elle se trompe sur ce qu’elle n’a pas vu", "pict": "ia-hesite", "correct": true },
+        { "label": "Elle devine toujours juste", "pict": "robot-sait-tout", "explain": "Elle ne peut pas deviner ce qu’elle n’a jamais vu." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais pourquoi une IA a besoin d’exemples variés.",
+     "learned": "Une IA connaît seulement ce qu’elle a vu. Il lui faut beaucoup d’exemples, de toutes les sortes, y compris de chez nous."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre qu’une IA ne reconnaît bien que ce qui ressemble à ses exemples.",
+     "Comprendre l’importance d’exemples nombreux et variés.",
+     "Sensibiliser à la représentation : des exemples venus aussi du Sénégal et de l’Afrique."
+    ],
+    "deroule": [
+     "Rappel : entraînement et test (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : la machine qui n’a vu que des chats (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["Des dessins d’animaux : 5 chats, puis une dizaine d’animaux variés."],
+    "reponses": [
+     "Avec seulement des chats, la « machine » peut croire qu’« animal » veut dire « chat » : elle refuse la vache. Avec des exemples variés, elle comprend mieux.",
+     "Débat : beaucoup d’IA ont surtout appris avec des données d’autres pays. Elles peuvent mal reconnaître nos plats, nos langues, nos visages. D’où l’importance que des Sénégalais créent aussi des données et des IA."
+    ],
+    "attention": "Rester concret et positif sur le débat : l’idée n’est pas que l’IA est « méchante », mais qu’il faut des exemples de partout."
+   }
+  },
+  {
+   "id": "ep4-3",
+   "title": "De mauvais exemples",
+   "scene": { "id": "ferme-niayes", "label": "La ferme des Niayes" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine", "ndiaye"],
+   "problem": "Moussa veut aider : il étiquette des photos pour l’application… mais il se trompe. Qu’est-ce que la machine va apprendre ?",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "moussa", "emoji": "🏷️",
+     "image": "ep4-l3-moussa-aide.webp",
+     "alt": "Moussa, assis sous un arbre, met des étiquettes sur des photos de feuilles, très vite.",
+     "text": "Madame Ndiaye demande de l’aide pour étiqueter des photos : « saine » ou « malade ». Moussa se dépêche pour finir le premier."
+    },
+    {
+     "kind": "story", "pose": "Surpris", "speaker": "fatou", "emoji": "😮",
+     "image": "ep4-l3-erreurs.webp",
+     "alt": "Fatou montre une photo : une feuille avec de grosses taches brunes, étiquetée « saine ».",
+     "text": "Fatou regarde : « Moussa ! Cette feuille pleine de taches, tu as mis “saine” ! Et cette photo est toute floue ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "lamine", "emoji": "🔍",
+     "image": "ep4-l3-lamine-verifie.webp",
+     "alt": "Lamine sort sa loupe et vérifie les photos une par une.",
+     "text": "Lamine sort sa loupe : « Si on donne de mauvais exemples à la machine, elle va apprendre des bêtises. On vérifie tout ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep4-l3-palou.webp",
+     "alt": "Palou félicite Lamine et Fatou, Moussa sourit, un peu gêné mais content d’apprendre.",
+     "text": "Palou approuve : « Une IA apprend ce qu’on lui montre, même les erreurs. Bien étiqueter, c’est un travail important. »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "✅",
+     "word": { "terme": "Bon exemple", "sens": "Un exemple net, avec la bonne étiquette. Une photo floue ou une étiquette fausse est un mauvais exemple." },
+     "text": "Une IA apprend aussi les erreurs qu’on lui montre. Il faut des exemples nets, avec la bonne étiquette."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Aide Lamine à trouver les mauvais exemples !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range chaque photo : bon exemple ou mauvais exemple ?",
+       "hint": "Est-elle nette ? L’étiquette est-elle juste ?",
+       "success": "Bravo ! Tu as trouvé tous les mauvais exemples.",
+       "bins": [
+        { "id": "bon", "label": "Bon exemple", "pict": "coche-verte", "emoji": "✅" },
+        { "id": "mauvais", "label": "Mauvais exemple", "pict": "erreur-croix", "emoji": "❌" }
+       ],
+       "items": [
+        { "id": "a", "label": "Feuille verte, nette, étiquetée « saine »", "pict": "feuille-saine", "emoji": "🌿", "bin": "bon", "explain": "Nette, et la bonne étiquette : bon exemple." },
+        { "id": "b", "label": "Feuille pleine de taches, étiquetée « saine »", "pict": "feuille-malade", "emoji": "🍂", "bin": "mauvais", "explain": "L’étiquette est fausse : elle est malade !" },
+        { "id": "c", "label": "Photo toute floue", "pict": "photo-floue", "emoji": "🌫️", "bin": "mauvais", "explain": "On ne voit rien : la machine ne peut rien apprendre." },
+        { "id": "d", "label": "Feuille tachée, nette, étiquetée « malade »", "pict": "feuille-malade", "emoji": "🍂", "bin": "bon", "explain": "Nette, et la bonne étiquette : bon exemple." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "La machine a appris avec beaucoup de feuilles malades étiquetées « saine ». Que va-t-elle faire ?",
+       "hint": "Elle apprend ce qu’on lui montre…",
+       "success": "Exact ! Elle dira que des plantes malades sont saines. Les erreurs d’étiquette se répètent.",
+       "options": [
+        { "label": "Dire que des plantes malades sont saines", "pict": "feuille-malade", "correct": true },
+        { "label": "Corriger les erreurs toute seule", "pict": "robot-sait-tout", "explain": "Elle ne sait pas que les étiquettes sont fausses : elle les apprend." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Pourquoi Moussa a-t-il fait des erreurs ?",
+       "hint": "Comment travaillait-il ?",
+       "success": "Exact ! Il allait trop vite. Étiqueter demande de l’attention.",
+       "options": [
+        { "label": "Il allait trop vite", "pict": "sablier", "correct": true },
+        { "label": "Il ne connaît pas les plantes", "pict": "feuille-saine", "explain": "Moussa sait voir des taches : il est surtout allé trop vite." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🕵🏾",
+     "titre": "Les détectives d’étiquettes",
+     "duree": "15 minutes",
+     "groupes": "Par groupes de 4",
+     "text": "Chaque groupe reçoit 12 cartes de feuilles déjà étiquetées par une « machine pressée ». Trouvez les étiquettes fausses et les cartes illisibles ! Le groupe qui trouve toutes les erreurs a gagné.",
+     "materiel": ["12 cartes par groupe, dont 3 mal étiquetées et 1 illisible (préparées par l’enseignant)"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "moussa", "emoji": "💬",
+     "question": "Moussa demande : « Si quelqu’un donne exprès de mauvais exemples à une IA, qu’est-ce qui peut arriver ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Pourquoi faut-il savoir qui a préparé les exemples ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Qu’est-ce qu’un bon exemple pour une IA ?",
+       "hint": "Le mot nouveau.",
+       "success": "Oui ! Un exemple net, avec la bonne étiquette.",
+       "options": [
+        { "label": "Net, avec la bonne étiquette", "pict": "coche-verte", "correct": true },
+        { "label": "Le plus rapide à faire", "pict": "sablier", "explain": "Aller vite donne des erreurs, comme Moussa. Il faut surtout être juste." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Une IA apprend avec des étiquettes fausses. Elle va…",
+       "hint": "Elle apprend ce qu’on lui montre.",
+       "success": "Exact ! Elle va répéter les erreurs.",
+       "options": [
+        { "label": "Répéter les erreurs", "pict": "ia-hesite", "correct": true },
+        { "label": "Devenir parfaite", "pict": "robot-sait-tout", "explain": "Avec des erreurs, une IA apprend des erreurs." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu sais reconnaître un bon exemple.",
+     "learned": "Une IA apprend ce qu’on lui montre, même les erreurs. Il lui faut des exemples nets, avec la bonne étiquette : on vérifie."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Comprendre qu’une IA reproduit les erreurs de ses exemples.",
+     "Repérer des exemples de mauvaise qualité (étiquette fausse, image illisible).",
+     "Valoriser le soin et la vérification."
+    ],
+    "deroule": [
+     "Rappel : exemples variés (5 min).",
+     "Histoire et mot nouveau (5 min).",
+     "Jeux (10 min).",
+     "« En classe » : les détectives d’étiquettes (15 min).",
+     "« On en parle » (10 min).",
+     "Défi de Palou et « Je retiens » (5 min)."
+    ],
+    "materiel": ["12 cartes de feuilles par groupe : 3 mal étiquetées, 1 illisible (gribouillée)."],
+    "reponses": [
+     "Les erreurs à trouver : feuilles tachées étiquetées « saine », feuille verte étiquetée « malade », carte illisible.",
+     "Débat : de mauvais exemples donnés exprès peuvent rendre une IA dangereuse ou injuste. Il faut savoir d’où viennent les données et qui les a vérifiées."
+    ],
+    "attention": "Moussa se trompe mais apprend : insister sur le fait que se tromper est normal, l’important est de vérifier."
+   }
+  },
+  {
+   "id": "ep4-4",
+   "title": "On entraîne la machine de la classe",
+   "scene": { "id": "ecole-classe", "label": "La classe" },
+   "cast": ["palou", "mme-diop", "moussa", "fatou", "khady", "seydou", "lamine"],
+   "problem": "De retour en classe, les élèves entraînent leur propre « machine » : un élève qui doit apprendre seulement avec des exemples !",
+   "screens": [
+    {
+     "kind": "story", "pose": "Content", "speaker": "lamine", "emoji": "🧑🏾‍🔬",
+     "image": "ep4-l4-defi.webp",
+     "alt": "Lamine, debout devant la classe, lance un défi en souriant.",
+     "text": "De retour en classe, Lamine lance un défi : « Je joue la machine. Entraînez-moi avec des exemples, et testez-moi ! »"
+    },
+    {
+     "kind": "story", "pose": "Content", "speaker": "khady", "emoji": "📒",
+     "image": "ep4-l4-preparation.webp",
+     "alt": "Khady et Fatou préparent des cartes, Seydou et Moussa les trient en deux paquets.",
+     "text": "Khady organise : « Un paquet pour l’entraînement, un paquet pour le test. Et on vérifie chaque étiquette ! »"
+    },
+    {
+     "kind": "story", "pose": "Intelligent", "speaker": "palou", "emoji": "💡",
+     "image": "ep4-l4-palou.webp",
+     "alt": "Palou applaudit les élèves qui ont bien séparé les deux paquets.",
+     "text": "Palou est fier : « Vous faites exactement comme les créateurs d’IA ! »"
+    },
+    {
+     "kind": "discover", "pose": "Intelligent", "emoji": "🧑🏾‍💻",
+     "word": { "terme": "Créateur d’IA", "sens": "Une personne qui choisit les exemples, entraîne une IA, la teste et l’améliore." },
+     "text": "Derrière chaque IA, il y a des humains qui choisissent les exemples, l’entraînent, la testent et l’améliorent."
+    },
+    {
+     "kind": "play", "pose": "Question", "emoji": "👆",
+     "text": "Prépare l’entraînement de la machine de la classe !",
+     "rounds": [
+      {
+       "type": "sort",
+       "prompt": "Range les étapes du créateur d’IA : d’abord, puis, ensuite.",
+       "hint": "On ne peut pas tester avant d’avoir entraîné !",
+       "success": "Bravo ! Préparer les exemples, entraîner, puis tester.",
+       "bins": [
+        { "id": "un", "label": "D’abord", "pict": "etape-1", "emoji": "1️⃣" },
+        { "id": "deux", "label": "Puis", "pict": "etape-2", "emoji": "2️⃣" },
+        { "id": "trois", "label": "Ensuite", "pict": "etape-3", "emoji": "3️⃣" }
+       ],
+       "items": [
+        { "id": "a", "label": "Préparer et vérifier les exemples", "pict": "loupe-verifier", "emoji": "🔍", "bin": "un", "explain": "On commence par de bons exemples, bien étiquetés." },
+        { "id": "b", "label": "Entraîner la machine", "pict": "photos-exemples", "emoji": "🏋🏾", "bin": "deux", "explain": "Puis la machine apprend avec ces exemples." },
+        { "id": "c", "label": "Tester avec des exemples nouveaux", "pict": "photo-nouvelle", "emoji": "🧪", "bin": "trois", "explain": "Enfin, on vérifie avec des exemples qu’elle n’a jamais vus." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Lamine a raté 3 tests sur 10. Que font les créateurs ?",
+       "hint": "On n’abandonne pas…",
+       "success": "Exact ! On regarde les erreurs et on ajoute de meilleurs exemples.",
+       "options": [
+        { "label": "Ils regardent les erreurs et ajoutent de meilleurs exemples", "pict": "photos-exemples", "correct": true },
+        { "label": "Ils se moquent de la machine", "pict": "rire", "explain": "Se moquer n’aide pas ! On améliore les exemples." },
+        { "label": "Ils cachent les erreurs", "pict": "cacher", "explain": "Cacher les erreurs est dangereux : on les étudie pour améliorer." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "classe", "pose": "Content", "emoji": "🤖",
+     "titre": "Projet de classe : la machine de la classe",
+     "duree": "2 séances de 45 minutes",
+     "groupes": "Par groupes de 5 : 1 « machine », 4 « créateurs »",
+     "text": "Les créateurs choisissent une catégorie secrète (par exemple : « les objets qui flottent »). Ils préparent 10 cartes d’entraînement bien étiquetées « oui » ou « non », et 5 cartes de test. Ils entraînent la machine, puis la testent. Ils notent le score, cherchent pourquoi elle s’est trompée, améliorent les exemples et recommencent !",
+     "materiel": ["Des cartes vierges et des crayons", "Une feuille de score par groupe"]
+    },
+    {
+     "kind": "debat", "pose": "Question", "speaker": "palou", "emoji": "💬",
+     "question": "Palou demande : « Plus tard, voudriez-vous être créateurs d’IA ? Quelle IA voudriez-vous créer pour le Sénégal ? »",
+     "text": "Parlez-en ensemble avec Madame Diop. Quels exemples faudrait-il lui donner ?"
+    },
+    {
+     "kind": "play", "pose": "Hero", "emoji": "🏆",
+     "text": "Le grand défi du module ! Montre tout ce que tu as appris.",
+     "rounds": [
+      {
+       "type": "choose",
+       "prompt": "Pour tester une IA, on utilise…",
+       "hint": "La leçon 1.",
+       "success": "Oui ! Des exemples qu’elle n’a jamais vus.",
+       "options": [
+        { "label": "Des exemples qu’elle n’a jamais vus", "pict": "photo-nouvelle", "correct": true },
+        { "label": "Les exemples de l’entraînement", "pict": "photos-exemples", "explain": "Elle les connaît déjà : ça ne prouve rien." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Il manque une sorte d’exemples à une IA. Elle…",
+       "hint": "La leçon 2, les carottes.",
+       "success": "Exact ! Elle se trompe sur cette sorte-là.",
+       "options": [
+        { "label": "Se trompe sur cette sorte-là", "pict": "carotte", "correct": true },
+        { "label": "Les invente toute seule", "pict": "baguette-magique", "explain": "Elle ne peut pas inventer ce qu’elle n’a jamais vu." }
+       ]
+      },
+      {
+       "type": "choose",
+       "prompt": "Les exemples ont des étiquettes fausses. L’IA…",
+       "hint": "La leçon 3, Moussa pressé.",
+       "success": "Bravo ! Elle apprend les erreurs. On vérifie toujours les exemples.",
+       "options": [
+        { "label": "Apprend les erreurs", "pict": "feuille-malade", "correct": true },
+        { "label": "Les corrige toute seule", "pict": "robot-sait-tout", "explain": "Elle ne sait pas qu’elles sont fausses : elle les apprend." }
+       ]
+      }
+     ]
+    },
+    {
+     "kind": "bravo", "pose": "Celebration", "emoji": "🎉",
+     "text": "Bravo {prenom} ! Tu as entraîné ta première machine. Le module 4 est terminé !",
+     "learned": "Des humains créent les IA : ils choisissent de bons exemples, variés et bien étiquetés, entraînent l’IA, la testent et l’améliorent."
+    }
+   ],
+   "fiche": {
+    "objectifs": [
+     "Vivre tout le cycle : préparer les données, entraîner, tester, améliorer.",
+     "Réinvestir les notions du module (test, variété, qualité des exemples).",
+     "Se projeter comme créateur d’IA."
+    ],
+    "deroule": [
+     "Séance 1 : histoire, mot nouveau et jeux (15 min) ; choix des catégories et préparation des cartes (30 min).",
+     "Séance 2 : entraînement et test (20 min) ; amélioration et second test (10 min) ; « On en parle » (10 min) ; défi (5 min)."
+    ],
+    "materiel": ["Des cartes vierges, des crayons, une feuille de score par groupe."],
+    "reponses": [
+     "Catégories faciles : « ça flotte », « ça vit », « ça se mange », « c’est rond ». Les catégories floues (« c’est beau ») donnent des étiquettes contestées : bonne occasion d’en parler.",
+     "Débat : accueillir toutes les idées (IA pour les maladies des plantes, pour traduire le wolof, pour la météo des pêcheurs…) et demander à chaque fois quels exemples il faudrait."
+    ],
+    "attention": "Faire tourner le rôle de « machine » pour que plusieurs élèves le vivent."
+   }
+  }
+ ]
+}

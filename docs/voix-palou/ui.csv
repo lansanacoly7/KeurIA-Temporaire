@@ -1,0 +1,55 @@
+﻿cle;texte;fichier_a_deposer
+tuto-1;Bienvenue dans ton espace kEur IA ! Je suis ton compagnon et guide. Ensemble, nous allons percer tous les mystères de l'Intelligence Artificielle en nous amusant. Laisse-moi te faire visiter !;frontend/public/audio/palou/ui/tuto-1.mp3
+tuto-2;Regarde en haut à droite : c'est ici que tu découvres tes étoiles, tes points d'expérience et ton rang d'explorateur ! Chaque cours et jeu réussi te fait progresser.;frontend/public/audio/palou/ui/tuto-2.mp3
+tuto-3;Sur le côté gauche, voici ton menu magique ! Il te permet de naviguer entre ton aventure, tous tes modules de cours, des jeux amusants et même un atelier de programmation Scratch.;frontend/public/audio/palou/ui/tuto-3.mp3
+tuto-4;En cliquant sur 'Mes badges', tu accèdes à ta galerie de trophées. À chaque module validé, tu remportes un diplôme officiel d'IA que tu pourras même imprimer chez toi !;frontend/public/audio/palou/ui/tuto-4.mp3
+tuto-5;Voici le cœur de ta mission ! Le premier module va t'apprendre ce qu'est vraiment l'IA : comment elle voit avec ses yeux caméra, comment elle écoute et comment elle apprend grâce aux exemples.;frontend/public/audio/palou/ui/tuto-5.mp3
+tuto-6;Tu as toutes les clés en main ! Appuie sur ce bouton brillant pour démarrer immédiatement ton tout premier cours avec moi. Es-tu prêt ? C'est parti !;frontend/public/audio/palou/ui/tuto-6.mp3
+accueil-palou;Bonjour les amis ! Je suis Palou et je suis super content de vous voir !;frontend/public/audio/palou/ui/accueil-palou.mp3
+bloque-ile;Finis d’abord l’île d’avant !;frontend/public/audio/palou/ui/bloque-ile.mp3
+bloque-cours;Finis d’abord le cours d’avant !;frontend/public/audio/palou/ui/bloque-cours.mp3
+bloque-etape;Finis d’abord l’étape d’avant !;frontend/public/audio/palou/ui/bloque-etape.mp3
+defi-bravo-1;Bravo, tu as trouvé !;frontend/public/audio/palou/ui/defi-bravo-1.mp3
+defi-bravo-2;Excellent, tu t’en souviens !;frontend/public/audio/palou/ui/defi-bravo-2.mp3
+defi-bravo-3;Quel champion, c’est la bonne réponse !;frontend/public/audio/palou/ui/defi-bravo-3.mp3
+defi-courage-1;Ce n’est pas grave : on apprend en se trompant !;frontend/public/audio/palou/ui/defi-courage-1.mp3
+defi-courage-2;Presque ! Même Palou se trompe parfois.;frontend/public/audio/palou/ui/defi-courage-2.mp3
+defi-courage-3;Courage ! Regarde l’explication, tu vas comprendre.;frontend/public/audio/palou/ui/defi-courage-3.mp3
+niveau-01;Associe chaque symbole à la bonne idée pour prouver que tu as compris ce qu'est une IA !;frontend/public/audio/palou/ui/niveau-01.mp3
+niveau-02;Trie les objets du quotidien : qui utilise l'IA et qui est une simple machine ?;frontend/public/audio/palou/ui/niveau-02.mp3
+niveau-03;Range les données et les images dans la bonne famille pour préparer l'IA !;frontend/public/audio/palou/ui/niveau-03.mp3
+niveau-04;Entraîne l'IA en lui montrant les bons exemples de chats et de chiens !;frontend/public/audio/palou/ui/niveau-04.mp3
+niveau-05;Découvre la vision par ordinateur en apprenant à l'IA à reconnaître tes gestes !;frontend/public/audio/palou/ui/niveau-05.mp3
+niveau-06;Interagis avec l'assistant vocal en lui donnant le contexte parfait !;frontend/public/audio/palou/ui/niveau-06.mp3
+niveau-07;Dessine des objets à l'écran et regarde Palou deviner en temps réel ce que tu représentes !;frontend/public/audio/palou/ui/niveau-07.mp3
+niveau-08;Active tes réflexes de sécurité et protège tes informations personnelles !;frontend/public/audio/palou/ui/niveau-08.mp3
+niveau-09;Ouvre l'œil ! Détecte les anomalies et les détails bizarres des images générées par IA !;frontend/public/audio/palou/ui/niveau-09.mp3
+niveau-10;Mets tout ce que tu as appris au service de ton quartier et relève le grand défi final !;frontend/public/audio/palou/ui/niveau-10.mp3
+jeu-memoire-apercu;Mémorise les images ! Les cartes vont se retourner dans quelques secondes.;frontend/public/audio/palou/ui/jeu-memoire-apercu.mp3
+jeu-memoire-jouer;À toi de jouer ! Retrouve les paires.;frontend/public/audio/palou/ui/jeu-memoire-jouer.mp3
+jeu-image-ia;Entre ces deux images, laquelle montre l'utilisation de l'IA ?;frontend/public/audio/palou/ui/jeu-image-ia.mp3
+jeu-couleurs-observe;Observe attentivement les couleurs !;frontend/public/audio/palou/ui/jeu-couleurs-observe.mp3
+jeu-couleurs-jouer;À toi de jouer ! Clique sur les couleurs dans l'ordre.;frontend/public/audio/palou/ui/jeu-couleurs-jouer.mp3
+jeu-ou-chat;Où est le chat ?;frontend/public/audio/palou/ui/jeu-ou-chat.mp3
+jeu-ou-chien;Où est le chien ?;frontend/public/audio/palou/ui/jeu-ou-chien.mp3
+jeu-correction;Regarde bien ! La bonne réponse était l'image encadrée en vert.;frontend/public/audio/palou/ui/jeu-correction.mp3
+jeu-recette;Construis la recette dans le bon ordre pour parler à l'IA !;frontend/public/audio/palou/ui/jeu-recette.mp3
+jeu-dessin-debut;Dessine ce que tu veux sur cette partie ! Puis demande à Palou de deviner.;frontend/public/audio/palou/ui/jeu-dessin-debut.mp3
+jeu-dessin-modele;Voici tout ce que mon modèle d'IA sait reconnaître ! Regarde ces 14 objets, choisis-en un dans ta tête, puis appuie sur le bouton pour le dessiner !;frontend/public/audio/palou/ui/jeu-dessin-modele.mp3
+jeu-trier-images;Trie les images par famille !;frontend/public/audio/palou/ui/jeu-trier-images.mp3
+jeu-gestes;Apprends des gestes à l'IA !;frontend/public/audio/palou/ui/jeu-gestes.mp3
+jeu-assistant-prompt;Créons ensemble un prompt parfait ! Choisis un lieu et un sujet.;frontend/public/audio/palou/ui/jeu-assistant-prompt.mp3
+jeu-assistant-q1;Tu veux savoir la météo. Que dois-tu faire ?;frontend/public/audio/palou/ui/jeu-assistant-q1.mp3
+jeu-assistant-q2;Tu veux demander une histoire à Palou. Que dis-tu ?;frontend/public/audio/palou/ui/jeu-assistant-q2.mp3
+jeu-assistant-q3;L'IA a besoin de détails pour comprendre ! Laquelle est la meilleure question ?;frontend/public/audio/palou/ui/jeu-assistant-q3.mp3
+jeu-assistant-pause;Maintenant que tu as compris comment parler à l'IA, crée ton propre prompt !;frontend/public/audio/palou/ui/jeu-assistant-pause.mp3
+mission-bouclier-1;Un inconnu te demande ton mot de passe.;frontend/public/audio/palou/ui/mission-bouclier-1.mp3
+mission-bouclier-2;Une application te demande ton adresse de maison.;frontend/public/audio/palou/ui/mission-bouclier-2.mp3
+mission-bouclier-3;Un lien bizarre arrive dans un message suspect.;frontend/public/audio/palou/ui/mission-bouclier-3.mp3
+mission-source-1;Une vidéo annonce la fermeture des écoles.;frontend/public/audio/palou/ui/mission-source-1.mp3
+mission-source-2;Un chiffre étonnant circule sur le Sénégal.;frontend/public/audio/palou/ui/mission-source-2.mp3
+mission-source-3;Une image spectaculaire devient virale.;frontend/public/audio/palou/ui/mission-source-3.mp3
+mission-ethique-1;Une IA scolaire veut collecter toutes les conversations.;frontend/public/audio/palou/ui/mission-ethique-1.mp3
+mission-ethique-2;Un modèle réussit moins bien pour un groupe.;frontend/public/audio/palou/ui/mission-ethique-2.mp3
+mission-ethique-3;Un résultat automatisé affecte un élève.;frontend/public/audio/palou/ui/mission-ethique-3.mp3
+mission-protege;Protège tes secrets !;frontend/public/audio/palou/ui/mission-protege.mp3

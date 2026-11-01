@@ -1,0 +1,884 @@
+{
+  "module": {
+    "id": "p8",
+    "chapter": 8,
+    "title": "Mon bouclier numérique",
+    "place": "Le groupe WhatsApp de la classe",
+    "intro": "Moussa veut publier la photo de la classe dans le groupe WhatsApp. Aide-le à protéger les secrets de tous !"
+  },
+  "lessons": [
+    {
+      "id": "p8-1",
+      "title": "Secret ou pas secret ?",
+      "scene": {
+        "id": "groupe-whatsapp",
+        "label": "Le groupe WhatsApp de la classe"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "mme-diop"
+      ],
+      "problem": "Moussa veut tout raconter dans le groupe de la classe. Que faut-il garder secret ?",
+      "callback": "Tu te rappelles ? On ne partage ni son mot de passe ni son adresse.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "mme-diop",
+          "wolof": {
+            "mot": "Sutura",
+            "sens": "Protéger ce qui est privé, avec discrétion"
+          },
+          "image": "m08-l1-groupe.webp",
+          "alt": "Madame Diop montre à la classe le téléphone avec le groupe WhatsApp, où les parents échangent des messages.",
+          "text": "Madame Diop montre le groupe WhatsApp de la classe. Les parents y écrivent."
+        },
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "text": "Moussa veut tout raconter : son adresse, son numéro, sa photo !",
+          "image": "m08-l1-s02.webp",
+          "alt": "Illustration : Moussa veut tout raconter : son adresse, son numéro, sa photo !"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "donnée personnelle",
+            "sens": "Une information qui permet de reconnaître une personne."
+          },
+          "text": "Une donnée personnelle te reconnaît : ton nom complet, ton adresse, ton numéro."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à protéger les secrets !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une information dans sa boîte.",
+              "hint": "Une information qui permet de te trouver reste secrète.",
+              "success": "Bravo ! Tu sais ce qu’on peut dire et ce qu’on garde.",
+              "bins": [
+                {
+                  "id": "dire",
+                  "label": "Je peux le dire",
+                  "pict": "bouche-dire"
+                },
+                {
+                  "id": "secret",
+                  "label": "Je le garde secret",
+                  "pict": "cadenas-secret"
+                }
+              ],
+              "items": [
+                {
+                  "id": "i1",
+                  "label": "Mon plat préféré",
+                  "pict": "assiette-plat",
+                  "bin": "dire",
+                  "explain": "Ton plat préféré ne permet pas de te retrouver."
+                },
+                {
+                  "id": "i2",
+                  "label": "Mon adresse",
+                  "pict": "maison-adresse",
+                  "bin": "secret",
+                  "explain": "Une adresse permet de te trouver : elle reste secrète."
+                },
+                {
+                  "id": "i3",
+                  "label": "Mon animal préféré",
+                  "pict": "animal-prefere",
+                  "bin": "dire",
+                  "explain": "Un animal préféré ne dit rien de dangereux sur toi."
+                },
+                {
+                  "id": "i4",
+                  "label": "Mon numéro de téléphone",
+                  "pict": "numero-telephone",
+                  "bin": "secret",
+                  "explain": "Un numéro permet de te joindre : il reste secret."
+                }
+              ]
+            },
+            {
+              "type": "shield",
+              "prompt": "Moussa écrit au groupe de la classe. Touche ce qui doit rester secret !",
+              "hint": "Cache l’adresse, le numéro et la photo : un inconnu pourrait les lire.",
+              "success": "Oui ! Les secrets sont cachés : un inconnu ne peut plus les lire.",
+              "scene": {
+                "label": "Le message de Moussa",
+                "pict": "message-ok"
+              },
+              "items": [
+                {
+                  "id": "a1",
+                  "label": "Mon adresse",
+                  "pict": "maison-adresse",
+                  "secret": true
+                },
+                {
+                  "id": "a2",
+                  "label": "Mon numéro de téléphone",
+                  "pict": "numero-telephone",
+                  "secret": true
+                },
+                {
+                  "id": "a3",
+                  "label": "Ma photo",
+                  "pict": "peur-visage",
+                  "secret": true
+                },
+                {
+                  "id": "a4",
+                  "label": "Mon sport préféré",
+                  "pict": "sport",
+                  "explain": "Ton sport préféré ne te reconnaît pas : tu peux le dire sans danger."
+                },
+                {
+                  "id": "a5",
+                  "label": "Ma couleur préférée",
+                  "pict": "couleur-preferee",
+                  "explain": "Ta couleur préférée n’est pas un secret : elle peut rester visible."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA peut garder ce qu’on lui écrit. Ne lui donne jamais de secret."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Quelle information doit rester secrète ?",
+              "hint": "Elle permet de te retrouver.",
+              "success": "Oui ! Mon adresse reste secrète.",
+              "options": [
+                {
+                  "label": "Mon adresse",
+                  "pict": "maison-adresse",
+                  "correct": true
+                },
+                {
+                  "label": "Ma couleur préférée",
+                  "pict": "couleur-preferee",
+                  "explain": "Une couleur préférée ne permet pas de te retrouver : tu peux la dire."
+                },
+                {
+                  "label": "Mon animal préféré dans la cour",
+                  "pict": "animal-prefere",
+                  "explain": "Cela ne permet pas de te retrouver : tu peux le dire."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Qu’est-ce qu’une donnée personnelle ?",
+              "hint": "Elle parle de toi.",
+              "success": "Exact ! Elle permet de te reconnaître.",
+              "options": [
+                {
+                  "label": "Ce qui te reconnaît",
+                  "correct": true
+                },
+                {
+                  "label": "Un fruit de ton panier",
+                  "explain": "Un fruit n’est pas une donnée personnelle."
+                },
+                {
+                  "label": "Un jeu préféré de la cour de l’école",
+                  "explain": "Un jeu préféré ne te reconnaît pas toujours : une donnée personnelle te reconnaît vraiment."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Quelqu’un te demande ton numéro de téléphone. Que fais-tu ?",
+              "hint": "Un numéro est personnel.",
+              "success": "Bravo ! Je le garde secret.",
+              "options": [
+                {
+                  "label": "Je le garde secret",
+                  "pict": "numero-telephone",
+                  "correct": true
+                },
+                {
+                  "label": "Je le donne très vite",
+                  "pict": "donner-inconnu",
+                  "explain": "On ne donne pas ses données personnelles à n’importe qui."
+                },
+                {
+                  "label": "Je l’écris sur un papier pour tout le monde",
+                  "explain": "Écrire son numéro pour tout le monde, ce n’est pas le garder secret."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu protèges bien tes secrets.",
+          "learned": "Une donnée personnelle permet de te reconnaître. Je la garde secrète."
+        }
+      ]
+    },
+    {
+      "id": "p8-2",
+      "title": "Je partage ou pas ?",
+      "scene": {
+        "id": "classe-photo",
+        "label": "La classe, devant la photo"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou",
+        "mme-diop"
+      ],
+      "problem": "Moussa veut publier la photo de la classe avec l’adresse de l’école. Est-ce une bonne idée ?",
+      "callback": "Tu te rappelles ? Une donnée personnelle permet de reconnaître quelqu’un.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "moussa",
+          "image": "m08-l2-photo.webp",
+          "alt": "Moussa montre sur un téléphone la photo de la classe, Palou et les enfants posent devant l’école.",
+          "text": "Moussa a pris la photo de la classe. Il veut la publier avec l’adresse de l’école !"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "fatou",
+          "text": "Fatou hésite : « Et si tout le monde pouvait voir la photo ? »",
+          "image": "m08-l2-s02.webp",
+          "alt": "Illustration : Fatou hésite : « Et si tout le monde pouvait voir la photo ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Calme",
+          "speaker": "mme-diop",
+          "text": "Madame Diop rappelle que chacun peut dire non à une photo.",
+          "image": "m08-l2-s03.webp",
+          "alt": "Illustration : Madame Diop rappelle que chacun peut dire non à une photo."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "droit à l’image",
+            "sens": "Le droit de décider si ta photo est montrée."
+          },
+          "text": "Le droit à l’image, c’est décider si ta photo est montrée. On demande avant de publier."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Palou à choisir quoi publier !",
+          "rounds": [
+            {
+              "type": "shield",
+              "prompt": "Avant de publier la photo, cache ce qui doit rester privé !",
+              "hint": "Cache l’adresse de l’école et le visage de celui qui a dit non.",
+              "success": "Oui ! La photo peut être publiée sans montrer ce qui doit rester privé.",
+              "scene": {
+                "label": "La photo de la classe",
+                "pict": "photo-maitresse"
+              },
+              "items": [
+                {
+                  "id": "b1",
+                  "label": "Le panneau de l’école",
+                  "pict": "ecole-adresse",
+                  "secret": true
+                },
+                {
+                  "id": "b2",
+                  "label": "Le visage d’un camarade qui a dit non",
+                  "pict": "cacher-visages",
+                  "secret": true
+                },
+                {
+                  "id": "b3",
+                  "label": "Le ballon",
+                  "pict": "ballon",
+                  "explain": "Le ballon est sans danger : il peut rester visible."
+                },
+                {
+                  "id": "b4",
+                  "label": "Le ciel bleu",
+                  "pict": "soleil-chaud",
+                  "explain": "Le ciel ne dit rien sur personne : il peut rester visible."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un camarade dit non à la photo. Que faire ?",
+              "hint": "Un « non » doit être respecté.",
+              "success": "Oui ! On respecte sa réponse et on ne publie pas la photo.",
+              "options": [
+                {
+                  "label": "La publier quand même",
+                  "pict": "publier-quand-meme",
+                  "explain": "Sans son accord, c’est lui manquer de respect."
+                },
+                {
+                  "label": "Respecter son non et ne rien publier",
+                  "pict": "respecter-non",
+                  "correct": true
+                },
+                {
+                  "label": "Le taquiner jusqu’à ce qu’il accepte",
+                  "pict": "taquiner",
+                  "explain": "Taquiner pour obtenir un oui n’est pas respecter son choix."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une photo publiée peut être copiée. Réfléchis avant de l’envoyer."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Avant de publier une photo de groupe, que fais-tu ?",
+              "hint": "Chacun doit être d’accord.",
+              "success": "Exact ! Je demande l’accord.",
+              "options": [
+                {
+                  "label": "Je demande l’accord",
+                  "pict": "demander-avant-publier",
+                  "correct": true
+                },
+                {
+                  "label": "Je la publie vite, avant qu’on me dise non",
+                  "pict": "publier-quand-meme",
+                  "explain": "On publie seulement si chacun est d’accord."
+                },
+                {
+                  "label": "Je la publie en cachant seulement mon visage",
+                  "pict": "tout-publier",
+                  "explain": "Tous les visages comptent : il faut l’accord de chacun."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un camarade dit « non » à la photo. Que fait-on ?",
+              "hint": "Un non se respecte.",
+              "success": "Bravo ! On respecte son non.",
+              "options": [
+                {
+                  "label": "On le respecte",
+                  "pict": "respecter-non",
+                  "correct": true
+                },
+                {
+                  "label": "On le taquine pour qu’il accepte",
+                  "pict": "taquiner",
+                  "explain": "Taquiner n’est pas respectueux : un non est un non."
+                },
+                {
+                  "label": "On publie quand même la photo",
+                  "pict": "publier-quand-meme",
+                  "explain": "Publier malgré un non, ce n’est pas respecter son choix."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Comment protéger la vie privée sur une photo ?",
+              "hint": "Cache ce qui est privé.",
+              "success": "Oui ! On cache ce qui doit rester privé.",
+              "options": [
+                {
+                  "label": "On cache le privé",
+                  "pict": "cacher-visages",
+                  "correct": true
+                },
+                {
+                  "label": "On montre l’adresse de l’école",
+                  "pict": "ecole-adresse",
+                  "explain": "Une adresse est une donnée à protéger."
+                },
+                {
+                  "label": "On écrit le nom de chacun dessous",
+                  "explain": "Les noms sont des données personnelles : on les protège."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu penses avant de publier.",
+          "learned": "Je demande l’accord de chacun avant de publier une photo. Un non est toujours respecté."
+        }
+      ]
+    },
+    {
+      "id": "p8-3",
+      "title": "Un adulte de confiance",
+      "scene": {
+        "id": "classe-confiance",
+        "label": "La classe de Madame Diop"
+      },
+      "cast": [
+        "palou",
+        "fatou",
+        "mme-diop"
+      ],
+      "problem": "Fatou reçoit un message d’un inconnu qui lui demande une photo. Elle ne sait pas quoi faire.",
+      "callback": "Tu te rappelles ? Chacun a le droit de dire non à une photo.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "fatou",
+          "image": "m08-l3-message.webp",
+          "alt": "Fatou regarde l’écran d’une tablette, l’air inquiet : un message d’un inconnu demande une photo.",
+          "text": "Sur la tablette, un inconnu écrit à Fatou : « Envoie-moi une photo ! »"
+        },
+        {
+          "kind": "story",
+          "pose": "Question",
+          "speaker": "palou",
+          "text": "Palou s’inquiète pour Fatou. « Qui peut nous aider ? »",
+          "image": "m08-l3-s02.webp",
+          "alt": "Illustration : Palou s’inquiète pour Fatou. « Qui peut nous aider ? »"
+        },
+        {
+          "kind": "story",
+          "pose": "Calme",
+          "speaker": "mme-diop",
+          "text": "Madame Diop reste calme : « Tu as bien fait de me le montrer. »",
+          "image": "m08-l3-s03.webp",
+          "alt": "Illustration : Madame Diop reste calme : « Tu as bien fait de me le montrer. »"
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "adulte de confiance",
+            "sens": "Un adulte qu’on connaît bien et qui nous protège."
+          },
+          "text": "Un adulte de confiance, tu le connais bien. Il te protège et il t’écoute."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Fatou à bien réagir !",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Un inconnu te demande une photo. Que fais-tu ?",
+              "hint": "Ne réponds pas, et montre le message à un adulte.",
+              "success": "Oui ! Je ne réponds pas et je montre le message à un adulte.",
+              "options": [
+                {
+                  "label": "Je lui envoie vite une photo",
+                  "pict": "envoyer-photo-inconnu",
+                  "explain": "Jamais : un inconnu ne doit pas avoir ta photo."
+                },
+                {
+                  "label": "Je ne réponds pas et je montre le message",
+                  "pict": "montrer-message-adulte",
+                  "correct": true
+                },
+                {
+                  "label": "Je lui réponds pour savoir qui il est",
+                  "pict": "repondre-inconnu",
+                  "explain": "Lui répondre peut être dangereux : montre plutôt le message à un adulte."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Un inconnu a écrit à Fatou. À qui le montre-t-elle ?",
+              "hint": "Montre le message à un adulte que tu connais bien.",
+              "success": "Oui ! Fatou montre le message à un adulte de confiance : elle a bien fait.",
+              "goal": {
+                "label": "Le message d’un inconnu",
+                "pict": "inconnu-ombre"
+              },
+              "need": 2,
+              "says": [
+                "Le message est arrivé. Qui peut aider Fatou ?",
+                "Une personne de confiance : très bien ! Une autre ?"
+              ],
+              "cards": [
+                {
+                  "id": "m1",
+                  "label": "Madame Diop",
+                  "pict": "maitresse",
+                  "good": true
+                },
+                {
+                  "id": "m2",
+                  "label": "Ses parents",
+                  "pict": "parents",
+                  "good": true
+                },
+                {
+                  "id": "m3",
+                  "label": "L’inconnu",
+                  "pict": "inconnu-gentil",
+                  "explain": "Un inconnu n’est pas un adulte de confiance : on ne lui répond pas."
+                },
+                {
+                  "id": "m4",
+                  "label": "Un ami qui répète tout",
+                  "pict": "enfants-groupe",
+                  "explain": "Un ami qui répète tout peut montrer le message à d’autres : choisis un adulte."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Une IA n’est pas un adulte de confiance. Si quelque chose te gêne, parle à une vraie personne."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Qui est un adulte de confiance ?",
+              "hint": "Il m’écoute et me protège.",
+              "success": "Oui ! Un adulte qui m’écoute.",
+              "options": [
+                {
+                  "label": "Un adulte qui m’écoute",
+                  "pict": "adulte-confiance",
+                  "correct": true
+                },
+                {
+                  "label": "Un inconnu très gentil",
+                  "pict": "inconnu-gentil",
+                  "explain": "Un inconnu gentil n’est pas un adulte de confiance."
+                },
+                {
+                  "label": "Quelqu’un qui me demande un secret",
+                  "pict": "secret-chuchote",
+                  "explain": "Un adulte de confiance ne te demande pas de secret qui te gêne."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un message te gêne. Que fais-tu ?",
+              "hint": "Tu n’es pas seul.",
+              "success": "Exact ! Je le montre à un adulte.",
+              "options": [
+                {
+                  "label": "Je le montre à un adulte",
+                  "pict": "montrer-message-adulte",
+                  "correct": true
+                },
+                {
+                  "label": "Je réponds à l’inconnu",
+                  "pict": "repondre-inconnu",
+                  "explain": "Répondre à un inconnu peut être dangereux."
+                },
+                {
+                  "label": "Je le garde pour moi, tout seul",
+                  "explain": "Garder pour soi ne règle rien : on en parle à un adulte."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "On te demande un secret qui te gêne. Que fais-tu ?",
+              "hint": "Un secret qui gêne, on en parle.",
+              "success": "Bravo ! J’en parle à un adulte.",
+              "options": [
+                {
+                  "label": "J’en parle",
+                  "pict": "parler-adulte",
+                  "correct": true
+                },
+                {
+                  "label": "Je garde le secret pour toujours",
+                  "pict": "secret-chuchote",
+                  "explain": "Un secret qui gêne, on ne le garde pas : on en parle."
+                },
+                {
+                  "label": "J’envoie une photo pour être gentil",
+                  "pict": "envoyer-photo-inconnu",
+                  "explain": "N’envoie jamais de photo à quelqu’un qui te gêne."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "text": "Bravo {prenom} ! Tu sais à qui parler.",
+          "learned": "Un adulte de confiance me protège et m’écoute. Je lui montre ce qui me gêne."
+        }
+      ]
+    },
+    {
+      "id": "p8-4",
+      "title": "Mission bouclier",
+      "scene": {
+        "id": "classe-bouclier",
+        "label": "La classe, avant d’envoyer le message"
+      },
+      "cast": [
+        "palou",
+        "moussa",
+        "fatou",
+        "mme-diop"
+      ],
+      "problem": "Moussa prépare le message pour le groupe de la classe. Il doit y mettre un bouclier de protection.",
+      "callback": "Tu te rappelles ? Un adulte de confiance me protège et m’écoute.",
+      "screens": [
+        {
+          "kind": "story",
+          "pose": "Content",
+          "speaker": "mme-diop",
+          "image": "m08-l4-bouclier.webp",
+          "alt": "Madame Diop dessine un grand bouclier au tableau, Palou, Moussa et Fatou l’écoutent.",
+          "text": "Madame Diop lance la mission bouclier : protéger les secrets de la classe."
+        },
+        {
+          "kind": "story",
+          "pose": "Surpris",
+          "speaker": "moussa",
+          "text": "Moussa écrit un message pour le groupe. Fatou relit avec lui.",
+          "image": "m08-l4-s02.webp",
+          "alt": "Illustration : Moussa écrit un message pour le groupe. Fatou relit avec lui."
+        },
+        {
+          "kind": "discover",
+          "pose": "Intelligent",
+          "word": {
+            "terme": "bouclier numérique",
+            "sens": "Les bons réflexes qui protègent tes informations."
+          },
+          "text": "Le bouclier numérique, ce sont les bons réflexes. Ils protègent tes secrets en ligne."
+        },
+        {
+          "kind": "play",
+          "pose": "Question",
+          "text": "Aide Moussa à fabriquer son bouclier !",
+          "rounds": [
+            {
+              "type": "sort",
+              "prompt": "Glisse une phrase dans sa boîte.",
+              "hint": "On remercie et on félicite, mais on ne donne pas d’infos secrètes.",
+              "success": "Bravo ! Le message est bien protégé.",
+              "bins": [
+                {
+                  "id": "dans",
+                  "label": "Dans le message",
+                  "pict": "message-ok"
+                },
+                {
+                  "id": "pas",
+                  "label": "Pas dans le message",
+                  "pict": "message-non"
+                }
+              ],
+              "items": [
+                {
+                  "id": "m1",
+                  "label": "Bravo pour la journée Set Setal !",
+                  "pict": "bravo-set-setal",
+                  "bin": "dans",
+                  "explain": "Un message de félicitations ne dévoile aucun secret."
+                },
+                {
+                  "id": "m2",
+                  "label": "L’adresse de l’école",
+                  "pict": "ecole-adresse",
+                  "bin": "pas",
+                  "explain": "L’adresse permet de trouver les enfants : on ne l’écrit pas."
+                },
+                {
+                  "id": "m3",
+                  "label": "Merci aux parents qui ont aidé",
+                  "pict": "merci-parents",
+                  "bin": "dans",
+                  "explain": "Un remerciement est sans danger."
+                },
+                {
+                  "id": "m4",
+                  "label": "Le mot de passe de la tablette",
+                  "pict": "mot-de-passe-tablette",
+                  "bin": "pas",
+                  "explain": "Un mot de passe ne se partage jamais."
+                }
+              ]
+            },
+            {
+              "type": "layers",
+              "prompt": "Construis le bouclier du message de Moussa, protection par protection !",
+              "hint": "Cache les secrets, demande à un adulte et relis avant d’envoyer.",
+              "success": "Oui ! Le bouclier protège le message : Moussa peut l’envoyer.",
+              "goal": {
+                "label": "Le message protégé",
+                "pict": "cadenas-secret"
+              },
+              "need": 3,
+              "says": [
+                "Le message n’a pas encore de bouclier.",
+                "Une protection est posée ! Il en faut d’autres.",
+                "Presque sûr ! Encore une protection."
+              ],
+              "cards": [
+                {
+                  "id": "u1",
+                  "label": "Cacher l’adresse",
+                  "pict": "cacher-adresse",
+                  "good": true
+                },
+                {
+                  "id": "u2",
+                  "label": "Demander à un adulte",
+                  "pict": "demander-adulte",
+                  "good": true
+                },
+                {
+                  "id": "u3",
+                  "label": "Relire le message",
+                  "pict": "relire-loupe",
+                  "good": true
+                },
+                {
+                  "id": "u4",
+                  "label": "Tout publier",
+                  "pict": "tout-publier",
+                  "explain": "Tout publier montre les secrets : ce n’est pas une protection."
+                },
+                {
+                  "id": "u5",
+                  "label": "Écrire son numéro",
+                  "pict": "donner-inconnu",
+                  "explain": "Écrire son numéro donne un secret : ce n’est pas une protection."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ai",
+          "pose": "Reflexion",
+          "text": "Un bon bouclier : je protège, je demande, je montre à un adulte."
+        },
+        {
+          "kind": "play",
+          "pose": "Hero",
+          "emoji": "🏆",
+          "text": "Le défi de Palou ! Montre-moi ce que tu as retenu.",
+          "rounds": [
+            {
+              "type": "choose",
+              "prompt": "Que fait mon bouclier numérique ?",
+              "hint": "Il me protège.",
+              "success": "Oui ! Il protège mes secrets.",
+              "options": [
+                {
+                  "label": "Il protège mes secrets",
+                  "pict": "cadenas-secret",
+                  "correct": true
+                },
+                {
+                  "label": "Il montre mon adresse à tout le monde",
+                  "pict": "maison-adresse",
+                  "explain": "Un bouclier cache mon adresse, il ne la montre pas."
+                },
+                {
+                  "label": "Il envoie mes photos à tous les inconnus",
+                  "pict": "tout-publier",
+                  "explain": "Un bouclier garde mes photos, il ne les donne pas."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Avant de publier une photo de la classe, que fais-tu ?",
+              "hint": "Je pense aux autres.",
+              "success": "Exact ! Je demande l’accord.",
+              "options": [
+                {
+                  "label": "Je demande l’accord",
+                  "pict": "demander-accord",
+                  "correct": true
+                },
+                {
+                  "label": "Je ne demande rien à personne",
+                  "pict": "publier-quand-meme",
+                  "explain": "Il faut toujours demander l’accord avant de publier."
+                },
+                {
+                  "label": "Je choisis la photo la plus drôle",
+                  "explain": "Une photo drôle n’empêche pas de demander l’accord de chacun."
+                }
+              ]
+            },
+            {
+              "type": "choose",
+              "prompt": "Un message étrange arrive. À qui en parles-tu ?",
+              "hint": "À quelqu’un qui te protège.",
+              "success": "Bravo ! À un adulte de confiance.",
+              "options": [
+                {
+                  "label": "À un adulte de confiance",
+                  "pict": "adulte-confiance",
+                  "correct": true
+                },
+                {
+                  "label": "À l’inconnu qui l’a écrit",
+                  "pict": "inconnu-gentil",
+                  "explain": "Ne parle pas à l’inconnu : montre le message à un adulte."
+                },
+                {
+                  "label": "À personne, jamais, même pas à un adulte",
+                  "pict": "enfant-seul-chemin",
+                  "explain": "Garder le message pour soi ne te protège pas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "bravo",
+          "pose": "Celebration",
+          "sticker": "m08",
+          "text": "Bravo {prenom} ! Tu as fini le chapitre 8 avec Palou.",
+          "learned": "Mon bouclier numérique : je protège mes secrets, je demande l’accord et je parle à un adulte de confiance."
+        }
+      ]
+    }
+  ]
+}

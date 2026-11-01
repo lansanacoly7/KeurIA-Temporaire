@@ -1,0 +1,37 @@
+{
+  "archipel": {
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  "archipelModal": {
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  "lessonIntro": {
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  "lessonInteractive": {
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  },
+  "parentDashboard": {
+    "docWidth": 390,
+    "bodyWidth": 390,
+    "winWidth": 390,
+    "hasHorizontalOverflow": false,
+    "overflowingElements": []
+  }
+}

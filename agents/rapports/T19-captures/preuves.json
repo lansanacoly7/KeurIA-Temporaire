@@ -1,0 +1,939 @@
+{
+  "titre": "Preuves de conformité T19 — Mise en page par écran",
+  "date": "2026-10-18T22:29:06.528Z",
+  "point1_compatibilite": {
+    "ecartsMax": 0,
+    "details": {
+      "p1-1_1440": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 293,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 365,
+            "width": 555,
+            "height": 204
+          },
+          "frame": {
+            "x": 902,
+            "y": 286,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 292,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 293,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 365,
+            "width": 555,
+            "height": 204
+          },
+          "frame": {
+            "x": 902,
+            "y": 286,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 292,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p1-1_1024": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 249,
+            "y": 285,
+            "width": 742,
+            "height": 267
+          },
+          "bubble": {
+            "x": 249,
+            "y": 285,
+            "width": 381,
+            "height": 267
+          },
+          "frame": {
+            "x": 646,
+            "y": 284,
+            "width": 348,
+            "height": 268
+          },
+          "picture": {
+            "x": 654,
+            "y": 292,
+            "width": 333,
+            "height": 254
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 249,
+            "y": 285,
+            "width": 742,
+            "height": 267
+          },
+          "bubble": {
+            "x": 249,
+            "y": 285,
+            "width": 381,
+            "height": 267
+          },
+          "frame": {
+            "x": 646,
+            "y": 284,
+            "width": 348,
+            "height": 268
+          },
+          "picture": {
+            "x": 654,
+            "y": 292,
+            "width": 333,
+            "height": 254
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p1-1_390": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 372
+          },
+          "bubble": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 141
+          },
+          "frame": {
+            "x": 35,
+            "y": 529,
+            "width": 319,
+            "height": 213
+          },
+          "picture": {
+            "x": 42,
+            "y": 535,
+            "width": 306,
+            "height": 200
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 372
+          },
+          "bubble": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 141
+          },
+          "frame": {
+            "x": 35,
+            "y": 529,
+            "width": 319,
+            "height": 213
+          },
+          "picture": {
+            "x": 42,
+            "y": 535,
+            "width": 306,
+            "height": 200
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p5-2_1440": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 318,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 364,
+            "width": 555,
+            "height": 256
+          },
+          "frame": {
+            "x": 902,
+            "y": 311,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 317,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 318,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 364,
+            "width": 555,
+            "height": 256
+          },
+          "frame": {
+            "x": 902,
+            "y": 311,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 317,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p5-2_1024": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 248,
+            "y": 259,
+            "width": 744,
+            "height": 359
+          },
+          "bubble": {
+            "x": 248,
+            "y": 259,
+            "width": 384,
+            "height": 359
+          },
+          "frame": {
+            "x": 645,
+            "y": 303,
+            "width": 350,
+            "height": 270
+          },
+          "picture": {
+            "x": 652,
+            "y": 310,
+            "width": 337,
+            "height": 257
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 248,
+            "y": 259,
+            "width": 744,
+            "height": 359
+          },
+          "bubble": {
+            "x": 248,
+            "y": 259,
+            "width": 384,
+            "height": 359
+          },
+          "frame": {
+            "x": 645,
+            "y": 303,
+            "width": 350,
+            "height": 270
+          },
+          "picture": {
+            "x": 652,
+            "y": 310,
+            "width": 337,
+            "height": 257
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p5-2_390": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 466
+          },
+          "bubble": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 251
+          },
+          "frame": {
+            "x": 46,
+            "y": 729,
+            "width": 298,
+            "height": 198
+          },
+          "picture": {
+            "x": 52,
+            "y": 734,
+            "width": 286,
+            "height": 187
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 466
+          },
+          "bubble": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 251
+          },
+          "frame": {
+            "x": 46,
+            "y": 729,
+            "width": 298,
+            "height": 198
+          },
+          "picture": {
+            "x": 52,
+            "y": 734,
+            "width": 286,
+            "height": 187
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p9-3_1440": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 318,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 410,
+            "width": 555,
+            "height": 163
+          },
+          "frame": {
+            "x": 902,
+            "y": 311,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 317,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 334,
+            "y": 318,
+            "width": 1068,
+            "height": 347
+          },
+          "bubble": {
+            "x": 334,
+            "y": 410,
+            "width": 555,
+            "height": 163
+          },
+          "frame": {
+            "x": 902,
+            "y": 311,
+            "width": 505,
+            "height": 360
+          },
+          "picture": {
+            "x": 907,
+            "y": 317,
+            "width": 495,
+            "height": 350
+          },
+          "textFontSize": "38px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p9-3_1024": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 249,
+            "y": 305,
+            "width": 742,
+            "height": 316
+          },
+          "bubble": {
+            "x": 249,
+            "y": 305,
+            "width": 381,
+            "height": 316
+          },
+          "frame": {
+            "x": 646,
+            "y": 329,
+            "width": 348,
+            "height": 268
+          },
+          "picture": {
+            "x": 654,
+            "y": 336,
+            "width": 333,
+            "height": 254
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 249,
+            "y": 305,
+            "width": 742,
+            "height": 316
+          },
+          "bubble": {
+            "x": 249,
+            "y": 305,
+            "width": 381,
+            "height": 316
+          },
+          "frame": {
+            "x": 646,
+            "y": 329,
+            "width": 348,
+            "height": 268
+          },
+          "picture": {
+            "x": 654,
+            "y": 336,
+            "width": 333,
+            "height": 254
+          },
+          "textFontSize": "33.792px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      },
+      "p9-3_390": {
+        "baseline": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 386
+          },
+          "bubble": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 170
+          },
+          "frame": {
+            "x": 46,
+            "y": 648,
+            "width": 298,
+            "height": 198
+          },
+          "picture": {
+            "x": 52,
+            "y": 654,
+            "width": 286,
+            "height": 187
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "apres": {
+          "hasTopRow": true,
+          "topRow": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 386
+          },
+          "bubble": {
+            "x": 46,
+            "y": 461,
+            "width": 298,
+            "height": 170
+          },
+          "frame": {
+            "x": 46,
+            "y": 648,
+            "width": 298,
+            "height": 198
+          },
+          "picture": {
+            "x": 52,
+            "y": 654,
+            "width": 286,
+            "height": 187
+          },
+          "textFontSize": "21.06px",
+          "textAlign": "start"
+        },
+        "diffs": []
+      }
+    }
+  },
+  "point2_image": {
+    "positions": {
+      "left": {
+        "390": {
+          "bubble": {
+            "x": 35,
+            "y": 600,
+            "width": 319,
+            "height": 141
+          },
+          "frame": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 213
+          },
+          "placementVerifie": true,
+          "details": "Mobile left (au-dessus) : frame.y=369, bubble.y=600",
+          "capture": "image-left-390.png"
+        },
+        "1024": {
+          "bubble": {
+            "x": 609,
+            "y": 285,
+            "width": 381,
+            "height": 267
+          },
+          "frame": {
+            "x": 245,
+            "y": 284,
+            "width": 348,
+            "height": 268
+          },
+          "placementVerifie": true,
+          "details": "Image à gauche : frame.x+w=593 <= bubble.x=609",
+          "capture": "image-left-1024.png"
+        },
+        "1440": {
+          "bubble": {
+            "x": 847,
+            "y": 365,
+            "width": 556,
+            "height": 204
+          },
+          "frame": {
+            "x": 329,
+            "y": 286,
+            "width": 505,
+            "height": 360
+          },
+          "placementVerifie": true,
+          "details": "Image à gauche : frame.x+w=834 <= bubble.x=847",
+          "capture": "image-left-1440.png"
+        }
+      },
+      "right": {
+        "390": {
+          "bubble": {
+            "x": 35,
+            "y": 369,
+            "width": 319,
+            "height": 141
+          },
+          "frame": {
+            "x": 35,
+            "y": 529,
+            "width": 319,
+            "height": 213
+          },
+          "placementVerifie": true,
+          "details": "Mobile right (actuel) : bubble.y=369, frame.y=529",
+          "capture": "image-right-390.png"
+        },
+        "1024": {
+          "bubble": {
+            "x": 249,
+            "y": 285,
+            "width": 381,
+            "height": 267
+          },
+          "frame": {
+            "x": 646,
+            "y": 284,
+            "width": 348,
+            "height": 268
+          },
+          "placementVerifie": true,
+          "details": "Image à droite : bubble.x+w=630 <= frame.x=646",
+          "capture": "image-right-1024.png"
+        },
+        "1440": {
+          "bubble": {
+            "x": 334,
+            "y": 365,
+            "width": 555,
+            "height": 204
+          },
+          "frame": {
+            "x": 902,
+            "y": 286,
+            "width": 505,
+            "height": 360
+          },
+          "placementVerifie": true,
+          "details": "Image à droite : bubble.x+w=889 <= frame.x=902",
+          "capture": "image-right-1440.png"
+        }
+      },
+      "top": {
+        "390": {
+          "bubble": {
+            "x": 40,
+            "y": 605,
+            "width": 311,
+            "height": 138
+          },
+          "frame": {
+            "x": 40,
+            "y": 365,
+            "width": 311,
+            "height": 222
+          },
+          "placementVerifie": true,
+          "details": "Mobile top (au-dessus) : frame.y=365, bubble.y=605",
+          "capture": "image-top-390.png"
+        },
+        "1024": {
+          "bubble": {
+            "x": 249,
+            "y": 453,
+            "width": 742,
+            "height": 181
+          },
+          "frame": {
+            "x": 357,
+            "y": 197,
+            "width": 526,
+            "height": 243
+          },
+          "placementVerifie": true,
+          "details": "Image en haut : frame.y+h=440 <= bubble.y=453",
+          "capture": "image-top-1024.png"
+        },
+        "1440": {
+          "bubble": {
+            "x": 334,
+            "y": 506,
+            "width": 1068,
+            "height": 163
+          },
+          "frame": {
+            "x": 644,
+            "y": 259,
+            "width": 448,
+            "height": 236
+          },
+          "placementVerifie": true,
+          "details": "Image en haut : frame.y+h=495 <= bubble.y=506",
+          "capture": "image-top-1440.png"
+        }
+      },
+      "bottom": {
+        "390": {
+          "bubble": {
+            "x": 40,
+            "y": 365,
+            "width": 311,
+            "height": 138
+          },
+          "frame": {
+            "x": 40,
+            "y": 520,
+            "width": 311,
+            "height": 222
+          },
+          "placementVerifie": true,
+          "details": "Mobile bottom : bubble.y=365, frame.y=520",
+          "capture": "image-bottom-390.png"
+        },
+        "1024": {
+          "bubble": {
+            "x": 249,
+            "y": 204,
+            "width": 742,
+            "height": 181
+          },
+          "frame": {
+            "x": 357,
+            "y": 397,
+            "width": 526,
+            "height": 243
+          },
+          "placementVerifie": true,
+          "details": "Image en bas : bubble.y+h=385 <= frame.y=397",
+          "capture": "image-bottom-1024.png"
+        },
+        "1440": {
+          "bubble": {
+            "x": 334,
+            "y": 265,
+            "width": 1068,
+            "height": 163
+          },
+          "frame": {
+            "x": 644,
+            "y": 438,
+            "width": 448,
+            "height": 236
+          },
+          "placementVerifie": true,
+          "details": "Image en bas : bubble.y+h=428 <= frame.y=438",
+          "capture": "image-bottom-1440.png"
+        }
+      }
+    },
+    "tailles": {
+      "s": {
+        "frameWidth": 312,
+        "pictureWidth": 302,
+        "capture": "image-size-s-1440.png"
+      },
+      "m": {
+        "frameWidth": 505,
+        "pictureWidth": 495,
+        "capture": "image-size-m-1440.png"
+      },
+      "l": {
+        "frameWidth": 520,
+        "pictureWidth": 510,
+        "capture": "image-size-l-1440.png"
+      }
+    }
+  },
+  "point3_texte": {
+    "tailles": {
+      "sm": {
+        "390": {
+          "fontSize": "16.38px",
+          "capture": "text-size-sm-390.png"
+        },
+        "1440": {
+          "fontSize": "29px",
+          "capture": "text-size-sm-1440.png"
+        }
+      },
+      "md": {
+        "390": {
+          "fontSize": "21.06px",
+          "capture": "text-size-md-390.png"
+        },
+        "1440": {
+          "fontSize": "38px",
+          "capture": "text-size-md-1440.png"
+        }
+      },
+      "lg": {
+        "390": {
+          "fontSize": "25px",
+          "capture": "text-size-lg-390.png"
+        },
+        "1440": {
+          "fontSize": "44px",
+          "capture": "text-size-lg-1440.png"
+        }
+      },
+      "xl": {
+        "390": {
+          "fontSize": "29px",
+          "capture": "text-size-xl-390.png"
+        },
+        "1440": {
+          "fontSize": "52px",
+          "capture": "text-size-xl-1440.png"
+        }
+      }
+    },
+    "alignements": {
+      "left": {
+        "390": {
+          "textAlign": "start",
+          "capture": "text-align-left-390.png"
+        },
+        "1440": {
+          "textAlign": "start",
+          "capture": "text-align-left-1440.png"
+        }
+      },
+      "center": {
+        "390": {
+          "textAlign": "center",
+          "capture": "text-align-center-390.png"
+        },
+        "1440": {
+          "textAlign": "center",
+          "capture": "text-align-center-1440.png"
+        }
+      }
+    }
+  },
+  "point4_anti_debordement": {
+    "390": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "boxScrollHeight": 631,
+      "boxClientHeight": 547,
+      "hasScrollHint": true,
+      "hasNextBtn": false,
+      "horizontalOverflow": false,
+      "capture": "anti-overflow-worst-case-390.png"
+    },
+    "1024": {
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "boxScrollHeight": 588,
+      "boxClientHeight": 588,
+      "hasScrollHint": false,
+      "hasNextBtn": false,
+      "horizontalOverflow": false,
+      "capture": "anti-overflow-worst-case-1024.png"
+    }
+  },
+  "point5_studio_et_eleve": {
+    "studioCustomCapture": "studio-custom-layout-1440.png",
+    "draftCustomLayout": {
+      "image": "left",
+      "textSize": "lg"
+    },
+    "studioResetCapture": "studio-reset-layout-1440.png",
+    "draftAfterResetLayout": null,
+    "livePublishedLayout": {
+      "image": "left",
+      "textSize": "lg"
+    },
+    "childPlayerMetrics": {
+      "hasTopRow": true,
+      "topRowClass": "p79-top-row p79-img-left p79-ts-lg",
+      "hasImgLeft": true,
+      "hasTsLg": true,
+      "fontSize": "44px",
+      "bubbleRect": {
+        "x": 847,
+        "y": 331,
+        "width": 556,
+        "height": 271
+      },
+      "frameRect": {
+        "x": 329,
+        "y": 286,
+        "width": 505,
+        "height": 360
+      },
+      "imageIsLeftOfBubble": true
+    },
+    "childPlayerCapture": "child-player-published-layout-1440.png",
+    "publicAfterRollback": null,
+    "childPlayerRestoredMetrics": {
+      "hasTopRow": true,
+      "hasImgLeft": false,
+      "hasTsLg": false,
+      "imageIsRightOfBubble": true
+    },
+    "childPlayerRestoredCapture": "child-player-restored-1440.png"
+  },
+  "point6_clavier": {
+    "focusPositionCapture": "studio-keyboard-focus-position-1440.png",
+    "activeElementPosition": {
+      "tagName": "BUTTON",
+      "role": "radio",
+      "ariaLabel": "Position de l'image",
+      "text": "À droite",
+      "outline": "rgb(13, 132, 110) solid 2.35294px"
+    },
+    "focusTextCapture": "studio-keyboard-focus-text-1440.png",
+    "activeElementText": {
+      "tagName": "BUTTON",
+      "role": "radio",
+      "ariaLabel": "Taille du texte de Palou",
+      "text": "ANormal",
+      "outline": "rgb(13, 132, 110) solid 2.35294px"
+    }
+  }
+}

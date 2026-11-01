@@ -1,0 +1,426 @@
+/*
+ * Super admin — zone de contenu (la barre latérale n'est pas concernée).
+ * Formes reprises du tableau de bord parent (titres DM Serif Display, boutons
+ * en pilule, cartes très arrondies, barre d'accent, tuiles pastel) avec les
+ * couleurs de l'application (vert de la barre latérale #173e3c, vert #0d846e,
+ * citron #d9ef59).
+ */
+
+.sa-page {
+  --sa-ink: #0f172a;
+  --sa-muted: #64748b;
+  --sa-line: #e2e8f0;
+  --sa-green: #173e3c;
+  --sa-brand: #0d846e;
+  color: var(--sa-ink);
+}
+
+/* ─── En-tête de page ─── */
+
+.sa-hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.sa-kicker {
+  margin: 0 0 6px;
+  color: var(--sa-brand);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sa-title {
+  margin: 0;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(32px, 4vw, 42px);
+  font-weight: 400;
+  line-height: 1.08;
+  color: var(--sa-ink);
+}
+
+.sa-subtitle {
+  margin: 8px 0 0;
+  color: var(--sa-muted);
+  font-size: 16px;
+}
+
+.sa-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ─── Boutons en pilule ─── */
+
+.sa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border: 2px solid #d6efe6;
+  border-radius: 99px;
+  background: #fff;
+  color: var(--sa-brand);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sa-pill:hover {
+  transform: translateY(-1px);
+}
+
+.sa-pill--primary {
+  border-color: transparent;
+  background: linear-gradient(135deg, #173e3c 0%, #0d846e 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px -6px rgba(13, 132, 110, 0.45);
+}
+
+.sa-pill:focus-visible,
+.sa-chip:focus-visible,
+.sa-school:focus-visible {
+  outline: 3px solid #d9ef59;
+  outline-offset: 3px;
+}
+
+/* ─── Barre d'outils : recherche + filtres ─── */
+
+.sa-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sa-search {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 420px;
+}
+
+.sa-search svg {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  color: #94a3b8;
+  transform: translateY(-50%);
+}
+
+.sa-search input {
+  width: 100%;
+  padding: 12px 18px 12px 46px;
+  border: 1px solid var(--sa-line);
+  border-radius: 99px;
+  background: #fff;
+  font: inherit;
+  font-size: 15px;
+  color: var(--sa-ink);
+}
+
+.sa-search input:focus {
+  border-color: var(--sa-brand);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 132, 110, 0.12);
+}
+
+.sa-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sa-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--sa-line);
+  border-radius: 99px;
+  background: #fff;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sa-chip[aria-pressed="true"] {
+  border-color: var(--sa-green);
+  background: var(--sa-green);
+  color: #fff;
+}
+
+.sa-chip-count {
+  min-width: 20px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: rgba(15, 23, 42, 0.07);
+  font-size: 12px;
+  text-align: center;
+}
+
+.sa-chip[aria-pressed="true"] .sa-chip-count {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ─── Cartes d'écoles ─── */
+
+.sa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sa-school {
+  --tone: #0d846e;
+  --tone-soft: #e8f6f1;
+  --tone-line: #bfe6d6;
+  --tone-grad: linear-gradient(135deg, #22c55e, #0d846e);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  height: 100%;
+  padding: 24px 24px 20px 30px;
+  overflow: hidden;
+  border: 2px solid var(--tone-line);
+  border-radius: 28px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 0 16px 36px -18px color-mix(in srgb, var(--tone) 45%, transparent);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: sa-rise 0.45s ease both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+.sa-school:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px -18px color-mix(in srgb, var(--tone) 60%, transparent);
+}
+
+.sa-school[data-tone="sky"] { --tone: #185fa5; --tone-soft: #e6f0fb; --tone-line: #bfdbfe; --tone-grad: linear-gradient(135deg, #3b82f6, #185fa5); }
+.sa-school[data-tone="lavender"] { --tone: #534ab7; --tone-soft: #eeedfe; --tone-line: #d4d0fb; --tone-grad: linear-gradient(135deg, #8b83ee, #534ab7); }
+.sa-school[data-tone="amber"] { --tone: #b45309; --tone-soft: #fff7e6; --tone-line: #fde68a; --tone-grad: linear-gradient(135deg, #f59e0b, #b45309); }
+.sa-school[data-suspended="true"] { --tone: #64748b; --tone-soft: #f1f5f9; --tone-line: #e2e8f0; --tone-grad: linear-gradient(135deg, #cbd5e1, #64748b); }
+
+/* Barre d'accent à gauche. */
+.sa-school::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  background: var(--tone-grad);
+}
+
+.sa-school-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sa-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--tone-soft);
+  color: var(--tone);
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.sa-school-name {
+  display: block;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.sa-school-city {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 3px;
+  color: var(--sa-muted);
+  font-size: 13px;
+}
+
+.sa-status {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: #e8f6f1;
+  color: #0b6e5c;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sa-status[data-state="suspendue"] {
+  background: #fdecea;
+  color: #b42318;
+}
+
+/* Tuiles de chiffres (élèves, enseignants, classes). */
+.sa-tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.sa-tile {
+  padding: 12px 8px;
+  border: 1px solid color-mix(in srgb, var(--tile) 22%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--tile) 9%, #fff);
+  color: var(--tile);
+  text-align: center;
+}
+
+.sa-tile b {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: color-mix(in srgb, var(--tile) 80%, #000);
+}
+
+.sa-tile small {
+  display: block;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Santé de l'école. */
+.sa-health-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.sa-health-label b {
+  color: var(--tone);
+  font-weight: 900;
+}
+
+.sa-gauge {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #f1f5f9;
+}
+
+.sa-gauge span {
+  display: block;
+  height: 100%;
+  border-radius: 99px;
+  background: var(--tone-grad);
+  transition: width 0.8s ease;
+}
+
+.sa-school-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  color: var(--sa-muted);
+  font-size: 12.5px;
+}
+
+.sa-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-weight: 700;
+}
+
+.sa-flag--warn {
+  background: #fff4dc;
+  color: #9a5b00;
+}
+
+.sa-flag--ok {
+  background: #e8f6f1;
+  color: #0b6e5c;
+}
+
+.sa-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  color: var(--tone);
+  font-weight: 800;
+}
+
+.sa-empty {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 60px 24px;
+  border: 2px dashed var(--sa-line);
+  border-radius: 28px;
+  background: #fff;
+  color: var(--sa-muted);
+  text-align: center;
+}
+
+@keyframes sa-rise {
+  from { opacity: 0; transform: translateY(14px); }
+}
+
+@media (max-width: 560px) {
+  .sa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sa-school {
+    padding: 20px 18px 18px 24px;
+    border-radius: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sa-school {
+    animation: none;
+    transition: none;
+  }
+}

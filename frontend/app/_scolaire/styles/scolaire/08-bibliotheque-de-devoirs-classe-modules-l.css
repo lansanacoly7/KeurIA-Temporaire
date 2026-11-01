@@ -1,0 +1,433 @@
+/* ─── Bibliothèque de devoirs : classe, modules, leçons ──────────────────── */
+
+.ec-lib-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ec-lib-class {
+  display: grid;
+  gap: 6px;
+  flex: 1 1 280px;
+  max-width: 420px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ec-lib-help {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid var(--ec-line);
+  border-radius: 14px;
+  background: var(--ec-surface);
+  color: var(--ec-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ec-lib-help svg { flex-shrink: 0; margin-top: 2px; color: var(--ec-brand); }
+.ec-lib-help p { margin: 0; }
+.ec-lib-help b { color: var(--ec-ink); }
+
+/* Programme Enseignant */
+.ec-prog-track {
+  margin-bottom: 32px;
+}
+.ec-prog-track-header {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ec-prog-module {
+  margin-bottom: 16px;
+}
+.ec-prog-module-header {
+  padding: 16px;
+  background: var(--ec-surface);
+  border-bottom: 1px solid var(--ec-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.ec-prog-module-header:hover {
+  background: var(--ec-brand-soft);
+  box-shadow: inset 4px 0 0 var(--ec-brand);
+}
+.ec-prog-module-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.ec-prog-lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ec-prog-lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ec-line);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+.ec-prog-lesson-item:hover {
+  background: var(--ec-brand-soft);
+  box-shadow: inset 4px 0 0 var(--ec-brand);
+}
+.ec-prog-lesson-item:last-child {
+  border-bottom: none;
+}
+.ec-prog-lesson-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.ec-prog-lesson-meta {
+  font-size: 13px;
+  color: var(--ec-muted);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Fiche Leçon — Palette sobre, douce et épurée */
+.ec-prog-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ec-prog-sheet-hero {
+  background: var(--ec-surface);
+  border-radius: var(--ec-radius);
+  border: 1px solid var(--ec-line);
+  border-left: 4px solid var(--ec-brand);
+  padding: 24px;
+  box-shadow: var(--ec-shadow);
+}
+
+.ec-prog-sheet-section {
+  background: var(--ec-surface);
+  border-radius: var(--ec-radius);
+  border: 1px solid var(--ec-line);
+  padding: 24px;
+  box-shadow: var(--ec-shadow);
+}
+
+.ec-prog-sheet-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ec-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ec-prog-section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ec-prog-section-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Bloc générique de contenu pédagogique : fond neutre/doux très clair */
+.ec-prog-block-card {
+  background: #fafbfa;
+  border: 1px solid var(--ec-line);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.ec-prog-block-card:last-child {
+  margin-bottom: 0;
+}
+.ec-prog-block-card h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ec-ink);
+  margin: 0 0 10px;
+}
+.ec-prog-block-card p {
+  margin: 0;
+  color: var(--ec-text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.ec-prog-block-card ul, .ec-prog-block-card ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--ec-text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+.ec-prog-block-card li {
+  margin-bottom: 4px;
+}
+
+/* Bloc d'avertissement : erreurs fréquentes (accent ambre doux fonctionnel) */
+.ec-prog-card-mistakes {
+  background: #fdfaf3;
+  border: 1px solid #f6e8cc;
+  border-left: 3px solid #d97706;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 0;
+}
+.ec-prog-card-mistakes h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0 0 10px;
+}
+.ec-prog-card-mistakes ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #78350f;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.ec-prog-card-mistakes li {
+  margin-bottom: 4px;
+}
+
+/* Bloc Mission élève : carte claire avec accent de marque */
+.ec-prog-card-mission {
+  background: var(--ec-brand-soft);
+  border: 1px solid var(--ec-mint);
+  border-left: 4px solid var(--ec-brand);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+}
+.ec-prog-card-mission-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  color: var(--ec-brand);
+  border: 1px solid var(--ec-mint);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+.ec-prog-card-mission p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ec-ink);
+}
+
+/* Grille découverte / exemple */
+.ec-prog-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* Vocabulaire */
+.ec-prog-vocab {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+.ec-prog-vocab-item {
+  background: #fafbfa;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--ec-line);
+}
+.ec-prog-vocab-item strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  color: var(--ec-brand);
+  font-size: 14px;
+  font-weight: 700;
+}
+.ec-prog-vocab-item span {
+  display: block;
+  font-size: 13px;
+  color: var(--ec-text);
+  line-height: 1.45;
+}
+
+/* Quiz & Questions */
+.ec-prog-question {
+  background: var(--ec-surface);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--ec-line);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  margin-bottom: 16px;
+}
+.ec-prog-question-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.ec-prog-q-badge {
+  background: var(--ec-brand-soft);
+  color: var(--ec-brand);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.ec-prog-q-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ec-text);
+  line-height: 1.45;
+}
+.ec-prog-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ec-prog-option {
+  padding: 10px 14px;
+  border: 1px solid var(--ec-line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  transition: border-color 0.15s ease;
+}
+.ec-prog-option-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ec-prog-opt-letter {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: var(--ec-muted);
+  font-size: 12px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.ec-prog-opt-text {
+  font-size: 14px;
+  color: var(--ec-text);
+}
+.ec-prog-option.is-correct {
+  border-color: #16a34a;
+  background: #f4fbf7;
+}
+.ec-prog-option.is-correct .ec-prog-opt-letter {
+  background: #16a34a;
+  color: #ffffff;
+}
+.ec-prog-option.is-correct .ec-prog-opt-text {
+  color: #15803d;
+  font-weight: 600;
+}
+.ec-prog-correct-badge {
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ec-prog-explain {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #fafbfa;
+  border-left: 3px solid var(--ec-brand);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--ec-text);
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.ec-prog-explain-icon {
+  color: var(--ec-brand);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+@media print {
+  .ec-prog-hide-print, .ec-sidebar, .ec-header {
+    display: none !important;
+  }
+  .ec-main {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .ec-prog-sheet-section {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+  }
+  .ec-prog-question {
+    border: 1px solid #ccc;
+    background: transparent;
+  }
+  .ec-prog-option {
+    border: 1px solid #ccc;
+  }
+  .ec-prog-option.is-correct {
+    border-color: #000;
+    background: transparent;
+    font-weight: bold;
+  }
+  body, .ec-prog-sheet, * {
+    color: #000 !important;
+    background: transparent !important;
+  }
+}

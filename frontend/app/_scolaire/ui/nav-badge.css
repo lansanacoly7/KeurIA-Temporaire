@@ -1,0 +1,15 @@
+/* Pastille de compteur à droite d'une entrée du menu latéral (ex. demandes d'inscription en attente). */
+.ec-nav a .ec-nav-badge {
+  margin-left: auto;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  background: var(--ec-lime, #d9ef59);
+  color: var(--ec-ink-deep, #0d2e2c);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
