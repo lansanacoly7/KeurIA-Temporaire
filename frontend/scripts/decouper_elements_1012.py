@@ -21,14 +21,16 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "decoupes")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-def cutout_element(img_crop, is_vehicle=False, padding=20):
+def cutout_element(img_crop, padding=20):
     """
     Détoure une image sur fond blanc en préservant strictement les blancs internes
     (yeux, dents, losange, détails du car, phares, lettrages traditionnels),
     tout en supprimant :
     1. Le fond blanc extérieur.
-    2. L'ombre grise/blanche peinte au sol sous les roues.
-    3. Tout résidu ou halo blanc périphérique.
+    2. Tout résidu ou halo blanc périphérique.
+    3. Les zones ajourées sous le châssis et entre les roues reliées à l'extérieur.
+    Les boîtes d'extraction terminent précisément au point de contact des roues / semelles,
+    évitant l'inclusion de l'ombre portée peinte au sol sans mordre dans les pneus ni le pare-chocs.
     """
     w, h = img_crop.size
     padded = Image.new("RGB", (w + 2 * padding, h + 2 * padding), (255, 255, 255))
@@ -42,18 +44,10 @@ def cutout_element(img_crop, is_vehicle=False, padding=20):
     lum = 0.299 * r + 0.587 * g + 0.114 * b
     ph, pw = lum.shape
     
-    # Fond candidat : clair et peu saturé
-    is_bg_candidate = (lum >= 170) & (sat < 35)
-    
-    # Pour les véhicules : éliminer également l'ombre portée grise sous les roues
-    if is_vehicle:
-        lower_zone = np.zeros((ph, pw), dtype=bool)
-        lower_zone[int(ph * 0.70):, :] = True
-        # Ombre au sol : grise, sombre à moyenne, très peu saturée
-        shadow_candidate = lower_zone & (lum >= 60) & (sat < 22)
-        is_bg_candidate |= shadow_candidate
+    # Fond blanc pur extérieur : lumineux et peu saturé
+    is_bg_candidate = (lum >= 240) & (sat < 15)
         
-    # Détection des composantes connectées aux bords extérieurs
+    # Détection des composantes connectées aux bords extérieurs (inondation depuis les marges)
     lbl, n_components = label(is_bg_candidate)
     border_mask = np.zeros((ph, pw), dtype=bool)
     border_mask[0, :] = True
@@ -64,20 +58,20 @@ def cutout_element(img_crop, is_vehicle=False, padding=20):
     bg_labels = np.unique(lbl[border_mask & is_bg_candidate])
     true_bg = np.isin(lbl, bg_labels)
     
-    # Le premier plan est tout ce qui n'est pas relié au fond extérieur
+    # Le premier plan est tout ce qui n'est pas relié au fond blanc extérieur
     fg_mask = ~true_bg
     
-    # Nettoyage des bords : légère érosion du premier plan pour supprimer la bordure blanche
+    # Nettoyage des bords : très légère érosion (1-2 px) du premier plan pour supprimer le halo blanc
     fg_eroded = binary_erosion(fg_mask, structure=np.ones((2, 2)), border_value=0)
     
-    # Antialiasing par flou gaussien très léger
-    alpha = gaussian_filter(fg_eroded.astype(float), sigma=0.6)
+    # Antialiasing par flou gaussien très doux
+    alpha = gaussian_filter(fg_eroded.astype(float), sigma=0.5)
     
-    # Verrouillage strict : les 3 pixels périphériques du padding sont STRICTEMENT 0
-    alpha[0:3, :] = 0.0
-    alpha[-3:, :] = 0.0
-    alpha[:, 0:3] = 0.0
-    alpha[:, -3:] = 0.0
+    # Verrouillage strict : les 2 pixels périphériques du padding sont STRICTEMENT 0
+    alpha[0:2, :] = 0.0
+    alpha[-2:, :] = 0.0
+    alpha[:, 0:2] = 0.0
+    alpha[:, -2:] = 0.0
     
     alpha_uint8 = np.clip(alpha * 255, 0, 255).astype(np.uint8)
     
@@ -87,10 +81,10 @@ def cutout_element(img_crop, is_vehicle=False, padding=20):
     res[:, :, 3] = alpha_uint8
     
     # Décontamination des franges semi-transparentes :
-    # Si un pixel de bordure était blanc ou grisâtre, le teinter avec la couleur du contour (#381204)
+    # Si un pixel de bordure était blanchâtre, le teinter avec la couleur du contour (#381204)
     semi = (alpha_uint8 > 0) & (alpha_uint8 < 240)
     is_whitish = (lum > 150) & semi
-    res[is_whitish, 0] = 0x38 # Rouge foncé #381204
+    res[is_whitish, 0] = 0x38 # Brun foncé #381204
     res[is_whitish, 1] = 0x12
     res[is_whitish, 2] = 0x04
     
@@ -131,10 +125,10 @@ ELEMENTS_SPEC = {
         ("papa-ibou-buste-signe.png", (572, 661, 933, 992), "Papa Ibou buste faisant signe de la main", 0.85, "centre", False),
     ],
     "03_car-rapide_reference.png": [
-        ("car-rapide-profil.png", (19, 4, 997, 492), "Car rapide vue de profil complet", 2.70, "roues", True),
-        ("car-rapide-face.png", (1075, 12, 1497, 490), "Car rapide vue de face", 2.70, "roues", True),
-        ("car-rapide-arriere-ouvert.png", (53, 496, 521, 998), "Car rapide vue arrière avec porte ouverte", 2.70, "roues", True),
-        ("car-rapide-trois-quarts.png", (640, 500, 1500, 1012), "Car rapide vue de trois-quarts", 2.70, "roues", True),
+        ("car-rapide-profil.png", (19, 4, 997, 487), "Car rapide vue de profil complet", 2.70, "roues"),
+        ("car-rapide-face.png", (1075, 12, 1497, 487), "Car rapide vue de face", 2.70, "roues"),
+        ("car-rapide-arriere-ouvert.png", (53, 496, 521, 976), "Car rapide vue arrière avec porte ouverte", 2.70, "roues"),
+        ("car-rapide-trois-quarts.png", (640, 500, 1500, 1009), "Car rapide vue de trois-quarts", 2.70, "roues"),
     ]
 }
 
@@ -158,9 +152,10 @@ def process_extractions():
             continue
             
         with Image.open(ref_path) as full_img:
-            for filename, box, desc, hauteur_m, ancrage_type, is_veh in items:
+            for item in items:
+                filename, box, desc, hauteur_m, ancrage_type = item[:5]
                 crop = full_img.crop(box)
-                cutout = cutout_element(crop, is_vehicle=is_veh)
+                cutout = cutout_element(crop)
                 out_path = os.path.join(OUTPUT_DIR, filename)
                 cutout.save(out_path, "PNG", optimize=True)
                 extracted_images[filename] = cutout
@@ -183,27 +178,30 @@ def process_extractions():
                 }
                 print(f"Découpé (v2.0): {filename} ({cw}x{ch})")
                 
-    # Découpe de la porte ouverte
+    # Découpe de la porte arrière isolée depuis la vue arrière découpée
     if "car-rapide-arriere-ouvert.png" in extracted_images:
         arriere_img = extracted_images["car-rapide-arriere-ouvert.png"]
-        door_crop = arriere_img.crop((0, int(arriere_img.height * 0.18), int(arriere_img.width * 0.40), int(arriere_img.height * 0.88)))
-        door_cutout = cutout_element(door_crop, is_vehicle=False)
+        # La porte ouverte est sur la gauche
+        door_crop = arriere_img.crop((0, int(arriere_img.height * 0.23), int(arriere_img.width * 0.28), int(arriere_img.height * 0.77)))
+        door_bbox = door_crop.getbbox()
+        if door_bbox:
+            door_crop = door_crop.crop(door_bbox)
         door_filename = "car-rapide-porte-seule.png"
         door_path = os.path.join(OUTPUT_DIR, door_filename)
-        door_cutout.save(door_path, "PNG", optimize=True)
-        extracted_images[door_filename] = door_cutout
+        door_crop.save(door_path, "PNG", optimize=True)
+        extracted_images[door_filename] = door_crop
         
         manifest["elements"][door_filename] = {
             "fichier": door_filename,
             "description": "Porte battante arrière du car rapide isolée pour animation d'ouverture/fermeture",
-            "largeur_px": door_cutout.width,
-            "hauteur_px": door_cutout.height,
-            "point_ancrage": [door_cutout.width, door_cutout.height // 2],
+            "largeur_px": door_crop.width,
+            "hauteur_px": door_crop.height,
+            "point_ancrage": [door_crop.width, door_crop.height // 2],
             "ancrage_type": "charniere_droite",
             "hauteur_reelle_m": 1.70,
             "source_planche": "03_car-rapide_reference.png"
         }
-        print(f"Découpé (v2.0): {door_filename} ({door_cutout.width}x{door_cutout.height})")
+        print(f"Découpé (v2.0): {door_filename} ({door_crop.width}x{door_crop.height})")
         
     # Écriture du manifest.json
     manifest_path = os.path.join(OUTPUT_DIR, "manifest.json")
@@ -344,13 +342,20 @@ def generate_planche_controle(extracted_images, echelle):
             car_h_px = int(v_param["hauteur_car_recommandee_px"] * scale_f)
             car_w_px = int(car.width * (car_h_px / car.height))
             car_res = car.resize((car_w_px, car_h_px), Image.Resampling.LANCZOS)
-            board.paste(car_res, (dec_x + int(120 * scale_f), y_sol_board - car_h_px), car_res)
+            board.paste(car_res, (dec_x + int(80 * scale_f), y_sol_board - car_h_px), car_res)
+            
+        if "car-rapide-arriere-ouvert.png" in extracted_images:
+            car_arr = extracted_images["car-rapide-arriere-ouvert.png"]
+            car_arr_h = int(v_param["hauteur_car_recommandee_px"] * scale_f * 0.95)
+            car_arr_w = int(car_arr.width * (car_arr_h / car_arr.height))
+            car_arr_res = car_arr.resize((car_arr_w, car_arr_h), Image.Resampling.LANCZOS)
+            board.paste(car_arr_res, (dec_x + int(1230 * scale_f), y_sol_board - car_arr_h), car_arr_res)
             
         chars = [
-            ("moussa-face.png", v_param["hauteur_moussa_px"], 820),
-            ("fatou-face.png", v_param["hauteur_fatou_px"], 950),
-            ("palou-face.png", v_param["hauteur_palou_px"], 1080),
-            ("papa-ibou-face.png", v_param["hauteur_papa_ibou_px"], 680)
+            ("papa-ibou-face.png", v_param["hauteur_papa_ibou_px"], 620),
+            ("moussa-face.png", v_param["hauteur_moussa_px"], 760),
+            ("fatou-face.png", v_param["hauteur_fatou_px"], 880),
+            ("palou-face.png", v_param["hauteur_palou_px"], 1000)
         ]
         
         for ch_file, h_target, x_target in chars:
