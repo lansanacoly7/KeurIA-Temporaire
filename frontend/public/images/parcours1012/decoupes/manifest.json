@@ -9,10 +9,10 @@
     "palou-face.png": {
       "fichier": "palou-face.png",
       "description": "Palou jeune lion debout de face",
-      "largeur_px": 362,
+      "largeur_px": 361,
       "hauteur_px": 539,
       "point_ancrage": [
-        181,
+        180,
         539
       ],
       "ancrage_type": "pieds",
@@ -23,10 +23,10 @@
       "fichier": "palou-profil.png",
       "description": "Palou debout de profil",
       "largeur_px": 318,
-      "hauteur_px": 539,
+      "hauteur_px": 538,
       "point_ancrage": [
         159,
-        539
+        538
       ],
       "ancrage_type": "pieds",
       "hauteur_reelle_m": 1.0,
@@ -35,11 +35,11 @@
     "palou-tete-souriant.png": {
       "fichier": "palou-tete-souriant.png",
       "description": "Tête Palou souriant",
-      "largeur_px": 338,
-      "hauteur_px": 388,
+      "largeur_px": 337,
+      "hauteur_px": 387,
       "point_ancrage": [
-        169,
-        194
+        168,
+        193
       ],
       "ancrage_type": "centre",
       "hauteur_reelle_m": 0.45,
@@ -61,10 +61,10 @@
     "palou-tete-pensif.png": {
       "fichier": "palou-tete-pensif.png",
       "description": "Tête Palou pensif",
-      "largeur_px": 341,
+      "largeur_px": 339,
       "hauteur_px": 395,
       "point_ancrage": [
-        170,
+        169,
         197
       ],
       "ancrage_type": "centre",
@@ -75,10 +75,10 @@
       "fichier": "fatou-face.png",
       "description": "Fatou 11 ans debout de face",
       "largeur_px": 330,
-      "hauteur_px": 991,
+      "hauteur_px": 990,
       "point_ancrage": [
         165,
-        991
+        990
       ],
       "ancrage_type": "pieds",
       "hauteur_reelle_m": 1.38,
@@ -101,10 +101,10 @@
       "fichier": "fatou-tete-souriant.png",
       "description": "Tête Fatou souriante",
       "largeur_px": 284,
-      "hauteur_px": 284,
+      "hauteur_px": 283,
       "point_ancrage": [
         142,
-        142
+        141
       ],
       "ancrage_type": "centre",
       "hauteur_reelle_m": 0.38,
@@ -127,7 +127,7 @@
       "fichier": "fatou-tete-pensif.png",
       "description": "Tête Fatou pensive",
       "largeur_px": 287,
-      "hauteur_px": 391,
+      "hauteur_px": 390,
       "point_ancrage": [
         143,
         195
@@ -166,7 +166,7 @@
       "fichier": "moussa-tete-souriant.png",
       "description": "Tête Moussa souriant",
       "largeur_px": 270,
-      "hauteur_px": 255,
+      "hauteur_px": 254,
       "point_ancrage": [
         135,
         127
@@ -178,7 +178,7 @@
     "moussa-tete-surpris.png": {
       "fichier": "moussa-tete-surpris.png",
       "description": "Tête Moussa surpris",
-      "largeur_px": 267,
+      "largeur_px": 266,
       "hauteur_px": 258,
       "point_ancrage": [
         133,
@@ -205,10 +205,10 @@
       "fichier": "papa-ibou-face.png",
       "description": "Papa Ibou chauffeur en pied de face",
       "largeur_px": 373,
-      "hauteur_px": 956,
+      "hauteur_px": 955,
       "point_ancrage": [
         186,
-        956
+        955
       ],
       "ancrage_type": "pieds",
       "hauteur_reelle_m": 1.75,
@@ -231,7 +231,7 @@
       "fichier": "papa-ibou-tete-surpris.png",
       "description": "Tête Papa Ibou surpris",
       "largeur_px": 315,
-      "hauteur_px": 285,
+      "hauteur_px": 284,
       "point_ancrage": [
         157,
         142
@@ -244,10 +244,10 @@
       "fichier": "papa-ibou-buste-signe.png",
       "description": "Papa Ibou buste faisant signe de la main",
       "largeur_px": 362,
-      "hauteur_px": 332,
+      "hauteur_px": 330,
       "point_ancrage": [
         181,
-        166
+        165
       ],
       "ancrage_type": "centre",
       "hauteur_reelle_m": 0.85,
@@ -256,11 +256,11 @@
     "car-rapide-profil.png": {
       "fichier": "car-rapide-profil.png",
       "description": "Car rapide vue de profil complet",
-      "largeur_px": 979,
-      "hauteur_px": 484,
+      "largeur_px": 1046,
+      "hauteur_px": 522,
       "point_ancrage": [
-        489,
-        484
+        523,
+        522
       ],
       "ancrage_type": "roues",
       "hauteur_reelle_m": 2.7,
@@ -269,11 +269,11 @@
     "car-rapide-face.png": {
       "fichier": "car-rapide-face.png",
       "description": "Car rapide vue de face",
-      "largeur_px": 423,
-      "hauteur_px": 476,
+      "largeur_px": 477,
+      "hauteur_px": 529,
       "point_ancrage": [
-        211,
-        476
+        238,
+        529
       ],
       "ancrage_type": "roues",
       "hauteur_reelle_m": 2.7,
@@ -282,11 +282,11 @@
     "car-rapide-arriere-ouvert.png": {
       "fichier": "car-rapide-arriere-ouvert.png",
       "description": "Car rapide vue arrière avec porte ouverte",
-      "largeur_px": 469,
-      "hauteur_px": 481,
+      "largeur_px": 536,
+      "hauteur_px": 588,
       "point_ancrage": [
-        234,
-        481
+        268,
+        588
       ],
       "ancrage_type": "roues",
       "hauteur_reelle_m": 2.7,
@@ -295,11 +295,11 @@
     "car-rapide-trois-quarts.png": {
       "fichier": "car-rapide-trois-quarts.png",
       "description": "Car rapide vue de trois-quarts",
-      "largeur_px": 861,
-      "hauteur_px": 510,
+      "largeur_px": 1092,
+      "hauteur_px": 589,
       "point_ancrage": [
-        430,
-        510
+        546,
+        589
       ],
       "ancrage_type": "roues",
       "hauteur_reelle_m": 2.7,
@@ -308,11 +308,11 @@
     "car-rapide-porte-seule.png": {
       "fichier": "car-rapide-porte-seule.png",
       "description": "Porte battante arrière du car rapide isolée pour animation d'ouverture/fermeture",
-      "largeur_px": 131,
-      "hauteur_px": 260,
+      "largeur_px": 150,
+      "hauteur_px": 317,
       "point_ancrage": [
-        131,
-        130
+        150,
+        158
       ],
       "ancrage_type": "charniere_droite",
       "hauteur_reelle_m": 1.7,
