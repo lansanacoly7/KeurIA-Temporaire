@@ -95,3 +95,4 @@
   ```text
   Cinematic wide landscape 2D animation looking down an endless paved Senegalese highway stretching towards the distant horizon through flat savanna dotted with acacia trees, exactly matching the reference background. The colorful Car Rapide minibus is seen from behind, driving steadily away from the camera down the center lane, gradually getting smaller into the deep perspective towards the radiant morning sun. Smooth receding motion with gentle heat shimmer on the asphalt. Static contemplative camera framing the vast African landscape. The scene smoothly and elegantly fades to complete black over the final second (from 01.5s to 02.5s). Beautiful closing shot of the departure, 2D vector animation, no text, no logo, graceful fade to black.
   ```
+

@@ -128,3 +128,4 @@
 - **Mouvement de caméra :** Plan fixe contemplatif en plan large d'horizon.
 - **Fin de la vidéo :** Fondu au noir complet (Fade to Black, durée 1 seconde de 00:18.5 à 00:19.5).
 - **Difficulté technique :** Perspective fuyante naturelle du véhicule sans écrasement de texture.
+

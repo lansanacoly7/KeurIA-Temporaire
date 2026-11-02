@@ -68,3 +68,4 @@ Tous les assets essentiels sont **disponibles, détourés et conformes** dans le
 - 100% des décors nécessaires (Village, Route, Dakar) sont présents.
 - 100% des poses clés narratives (Arrivée, Salutation, Marche, Embarquement, Passagers aux vitres, Départ) sont prêtes.
 - Aucun asset manquant bloquant pour la fabrication de la Vidéo 01.
+

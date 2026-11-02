@@ -74,3 +74,4 @@
    - Enfants : ~ 40 à 50 % de la hauteur du car.
    - Palou : hauteur aux genoux de Moussa / hanches de Fatou.
    - Papa Ibou : adulte bien proportionné dans sa cabine.
+

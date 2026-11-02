@@ -95,3 +95,4 @@ Pour chaque scène, la superposition rigoureuse des calques garantit l'immersion
 - **Température de couleur :** Ambiance matinale sahélienne (5400 K), dominante ocre, sable et ciel azur pur.
 - **Lumière directionnelle :** Soleil rasant venant de la gauche (Est) créant des ombres portées étirées vers la droite à 45°.
 - **Grading de transition :** Passage de la lumière douce du village à la lumière éclatante de la route ouverte vers Dakar.
+
