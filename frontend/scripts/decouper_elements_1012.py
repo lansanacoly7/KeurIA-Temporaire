@@ -125,10 +125,10 @@ ELEMENTS_SPEC = {
         ("papa-ibou-buste-signe.png", (572, 661, 933, 992), "Papa Ibou buste faisant signe de la main", 0.85, "centre", False),
     ],
     "03_car-rapide_reference.png": [
-        ("car-rapide-profil.png", (45, 10, 1115, 545), "Car rapide vue de profil complet", 2.70, "roues"),
-        ("car-rapide-face.png", (1510, 10, 2010, 545), "Car rapide vue de face", 2.70, "roues"),
-        ("car-rapide-arriere-ouvert.png", (80, 535, 640, 1135), "Car rapide vue arrière avec porte ouverte", 2.70, "roues"),
-        ("car-rapide-trois-quarts.png", (885, 535, 1990, 1135), "Car rapide vue de trois-quarts", 2.70, "roues"),
+        ("car-rapide-profil.png", (45, 10, 1125, 545), "Car rapide vue de profil complet", 2.70, "roues"),
+        ("car-rapide-face.png", (1525, 10, 2025, 545), "Car rapide vue de face", 2.70, "roues"),
+        ("car-rapide-arriere-ouvert.png", (80, 535, 645, 1135), "Car rapide vue arrière avec porte ouverte", 2.70, "roues"),
+        ("car-rapide-trois-quarts.png", (890, 535, 2005, 1135), "Car rapide vue de trois-quarts", 2.70, "roues"),
     ]
 }
 
