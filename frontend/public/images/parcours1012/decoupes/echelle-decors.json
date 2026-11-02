@@ -1,0 +1,535 @@
+{
+  "format_canvas": {
+    "largeur": 1600,
+    "hauteur": 900
+  },
+  "description": "Table de placement, perspective et échelle des 28 décors pour animation vidéo",
+  "regles_composition": {
+    "ratio_hauteur_enfants_vs_car": 0.52,
+    "ratio_hauteur_palou_vs_car": 0.37,
+    "ratio_hauteur_papa_ibou_vs_car": 0.65
+  },
+  "decors": {
+    "arrivee-dakar.png": {
+      "fichier": "arrivee-dakar.png",
+      "description": "Avenue goudronnée propre, colline des Mamelles au loin",
+      "y_sol": 850,
+      "y_horizon": 530,
+      "zone_pose_car_x": [
+        100,
+        1500
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1200
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 390,
+      "hauteur_moussa_px": 202,
+      "hauteur_fatou_px": 198,
+      "hauteur_palou_px": 144,
+      "hauteur_papa_ibou_px": 253
+    },
+    "dakar-arena-exterieur.png": {
+      "fichier": "dakar-arena-exterieur.png",
+      "description": "Vaste esplanade en pavés modernes de l'arène",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "dakar-arena-interieur.png": {
+      "fichier": "dakar-arena-interieur.png",
+      "description": "Bord du terrain de basket, parquet ciré",
+      "y_sol": 880,
+      "y_horizon": 550,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "gare-ter-exterieur.png": {
+      "fichier": "gare-ter-exterieur.png",
+      "description": "Parvis pavé de la gare TER, train à quai à droite",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "gare-ter-interieur.png": {
+      "fichier": "gare-ter-interieur.png",
+      "description": "Quai intérieur moderne, personnages seuls",
+      "y_sol": 880,
+      "y_horizon": 550,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        250,
+        1350
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "goree-exterieur.png": {
+      "fichier": "goree-exterieur.png",
+      "description": "Cour de la Maison des Esclaves, escalier double volée",
+      "y_sol": 870,
+      "y_horizon": 540,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        400,
+        1200
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "goree-interieur.png": {
+      "fichier": "goree-interieur.png",
+      "description": "Atelier de peinture sous verre de Kiné, sol sablonneux",
+      "y_sol": 880,
+      "y_horizon": 570,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        250,
+        1250
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "labo-langues-exterieur.png": {
+      "fichier": "labo-langues-exterieur.png",
+      "description": "Allée universitaire sous les arbres de l'UCAD",
+      "y_sol": 860,
+      "y_horizon": 510,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "labo-langues-interieur.png": {
+      "fichier": "labo-langues-interieur.png",
+      "description": "Salle informatique phonétique, sol carrelé net",
+      "y_sol": 880,
+      "y_horizon": 560,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "monument-exterieur.png": {
+      "fichier": "monument-exterieur.png",
+      "description": "Esplanade pavée en contre-plongée devant le grand escalier",
+      "y_sol": 870,
+      "y_horizon": 600,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 430,
+      "hauteur_moussa_px": 223,
+      "hauteur_fatou_px": 219,
+      "hauteur_palou_px": 159,
+      "hauteur_papa_ibou_px": 279
+    },
+    "monument-hall.png": {
+      "fichier": "monument-hall.png",
+      "description": "Intérieur hall, dalles en marbre, personnages seuls",
+      "y_sol": 870,
+      "y_horizon": 560,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "monument-sommet.png": {
+      "fichier": "monument-sommet.png",
+      "description": "Intérieur sommet panoramique, personnages seuls",
+      "y_sol": 880,
+      "y_horizon": 580,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "musee-exterieur.png": {
+      "fichier": "musee-exterieur.png",
+      "description": "Grande esplanade dallée devant la façade ronde",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "musee-interieur.png": {
+      "fichier": "musee-interieur.png",
+      "description": "Grande salle d'exposition aux masques, sol ciré sombre",
+      "y_sol": 880,
+      "y_horizon": 560,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "palais-exterieur.png": {
+      "fichier": "palais-exterieur.png",
+      "description": "Avenue Léopold-Sédar-Senghor goudronnée devant la grille",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "palais-interieur.png": {
+      "fichier": "palais-interieur.png",
+      "description": "Allée piétonne ombragée avec banc public",
+      "y_sol": 870,
+      "y_horizon": 550,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        250,
+        1100
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "parc-hann-exterieur.png": {
+      "fichier": "parc-hann-exterieur.png",
+      "description": "Chemin de terre devant le portail bleu du parc",
+      "y_sol": 850,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 420,
+      "hauteur_moussa_px": 218,
+      "hauteur_fatou_px": 214,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 273
+    },
+    "parc-hann-interieur.png": {
+      "fichier": "parc-hann-interieur.png",
+      "description": "Clairière ombragée sous les grands arbres avec caméra",
+      "y_sol": 870,
+      "y_horizon": 550,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "phare-exterieur.png": {
+      "fichier": "phare-exterieur.png",
+      "description": "Route en lacet au pied de la colline du phare",
+      "y_sol": 850,
+      "y_horizon": 480,
+      "zone_pose_car_x": [
+        150,
+        700
+      ],
+      "zone_pose_enfants_x": [
+        650,
+        1300
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 390,
+      "hauteur_moussa_px": 202,
+      "hauteur_fatou_px": 198,
+      "hauteur_palou_px": 144,
+      "hauteur_papa_ibou_px": 253
+    },
+    "phare-interieur.png": {
+      "fichier": "phare-interieur.png",
+      "description": "Salle de la lanterne Fresnel, vue mer à 360°",
+      "y_sol": 880,
+      "y_horizon": 560,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "place-independance-exterieur.png": {
+      "fichier": "place-independance-exterieur.png",
+      "description": "Esplanade dallée devant la fontaine tricolore",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        750
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1350
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "place-independance-interieur.png": {
+      "fichier": "place-independance-interieur.png",
+      "description": "Esplanade festive avec estrade et fanions colorés",
+      "y_sol": 860,
+      "y_horizon": 520,
+      "zone_pose_car_x": [
+        150,
+        650
+      ],
+      "zone_pose_enfants_x": [
+        650,
+        1400
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": 400,
+      "hauteur_moussa_px": 208,
+      "hauteur_fatou_px": 204,
+      "hauteur_palou_px": 148,
+      "hauteur_papa_ibou_px": 260
+    },
+    "port-exterieur.png": {
+      "fichier": "port-exterieur.png",
+      "description": "Quai en béton du port, vue sur conteneurs et cargo",
+      "y_sol": 850,
+      "y_horizon": 500,
+      "zone_pose_car_x": [
+        200,
+        800
+      ],
+      "zone_pose_enfants_x": [
+        750,
+        1350
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    },
+    "port-interieur.png": {
+      "fichier": "port-interieur.png",
+      "description": "Salle de contrôle des conteneurs, personnages seuls",
+      "y_sol": 870,
+      "y_horizon": 550,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "face",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "route.png": {
+      "fichier": "route.png",
+      "description": "Route goudronnée plate au milieu des baobabs",
+      "y_sol": 840,
+      "y_horizon": 510,
+      "zone_pose_car_x": [
+        100,
+        1500
+      ],
+      "zone_pose_enfants_x": [
+        600,
+        1100
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 380,
+      "hauteur_moussa_px": 197,
+      "hauteur_fatou_px": 193,
+      "hauteur_palou_px": 140,
+      "hauteur_papa_ibou_px": 247
+    },
+    "soumbedioune-exterieur.png": {
+      "fichier": "soumbedioune-exterieur.png",
+      "description": "Plage de sable dorée et route côtière, pirogues tirées",
+      "y_sol": 850,
+      "y_horizon": 490,
+      "zone_pose_car_x": [
+        150,
+        700
+      ],
+      "zone_pose_enfants_x": [
+        650,
+        1300
+      ],
+      "sens_lumiere": "droite",
+      "hauteur_car_recommandee_px": 400,
+      "hauteur_moussa_px": 208,
+      "hauteur_fatou_px": 204,
+      "hauteur_palou_px": 148,
+      "hauteur_papa_ibou_px": 260
+    },
+    "soumbedioune-interieur.png": {
+      "fichier": "soumbedioune-interieur.png",
+      "description": "Marché aux poissons et étals, sol sableux",
+      "y_sol": 870,
+      "y_horizon": 540,
+      "zone_pose_car_x": null,
+      "zone_pose_enfants_x": [
+        300,
+        1300
+      ],
+      "sens_lumiere": "zenith",
+      "hauteur_car_recommandee_px": null,
+      "hauteur_moussa_px": 220,
+      "hauteur_fatou_px": 215,
+      "hauteur_palou_px": 155,
+      "hauteur_papa_ibou_px": 275
+    },
+    "village.png": {
+      "fichier": "village.png",
+      "description": "Cour sablonneuse ouverte, soleil matinal venant de gauche",
+      "y_sol": 830,
+      "y_horizon": 460,
+      "zone_pose_car_x": [
+        150,
+        850
+      ],
+      "zone_pose_enfants_x": [
+        700,
+        1300
+      ],
+      "sens_lumiere": "gauche",
+      "hauteur_car_recommandee_px": 410,
+      "hauteur_moussa_px": 213,
+      "hauteur_fatou_px": 209,
+      "hauteur_palou_px": 151,
+      "hauteur_papa_ibou_px": 266
+    }
+  }
+}
