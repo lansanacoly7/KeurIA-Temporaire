@@ -1,0 +1,28 @@
+L3 — Les vacances à Dakar — 20 références personnages
+Validation de la série : indiquée par l'utilisateur comme validée par Lansana.
+Contenu : 20 images extraites de la fiche DOCX, renommées selon le format du projet.
+Les images JPEG d'origine (Rama, Samba, Ndella, Maître Thioro), en 886x886, ont été converties en PNG et redimensionnées en 1024x1024.
+Les autres images PNG d'origine étaient déjà en 1024x1024.
+
+02_ousmane_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_mariama_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_omar_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_seynabou_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_rama_reference.png | source JPEG 886x886 | output PNG 1024x1024
+02_ablaye_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_vieux-mbaye_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_sokhna_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_oumy_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_djibril_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_docteure-penda_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_alioune_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_tante-fama_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_kine_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_madame-yacine_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_coach-astou_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_ngone_reference.png | source PNG 1024x1024 | output PNG 1024x1024
+02_samba_reference.png | source JPEG 886x886 | output PNG 1024x1024
+02_ndella_reference.png | source JPEG 886x886 | output PNG 1024x1024
+02_maitre-thioro_reference.png | source JPEG 886x886 | output PNG 1024x1024
+
+À copier dans : frontend/public/images/parcours1012/references/
